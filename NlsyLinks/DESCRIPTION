@@ -32,7 +32,6 @@ Collate:
     'CreateSpatialNeighbours.R'
     'CreateSpatialNeighbours79Gen2.R'
     'CreateSubjectTag.R'
-    'DeFriesFulkerMethod3.R'
     'RGroupSummary.R'
     'ReadCsvNlsy79Gen2.R'
     'RenameColumn.R'
