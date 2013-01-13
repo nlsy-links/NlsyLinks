@@ -1,3 +1,5 @@
+#roxygen2 documentation in CreatePairLinksDoubleEntered.R
+
 CreatePairLinksSingleEntered <-
 function( outcomeDataset, linksPairDataset, outcomeNames, 
   linksNames=c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset=TRUE ) {
