@@ -1,5 +1,5 @@
 library(Rd2roxygen)
 options(roxygen.comment = "##' ")
 #(info = parse_file( "F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/man/Ace.Rd"))
-(info = parse_file( "man/CreatePairLinks.Rd"))
+(info = parse_file( "man/ValidatePairLinks.Rd"))
 cat(create_roxygen(info), sep = "\n")
