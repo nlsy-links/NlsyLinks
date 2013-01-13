@@ -1,37 +1,45 @@
+# ' @name ColumnUtilities
+# ' #@aliases VerifyColumnExists RenameColumn RenameNlsyColumn
+# '
+# ' @export
+# ' @description  A collection of functions that helps data management \code{data.frame}s, particularly those derived from NLS Extracts.
+# ' 
+# ' @title  A collection of functions that helps data management \code{data.frame}s, particularly those derived from NLS Extracts.
+# ' 
+# ' @param dataFrame A \code{data.frame} object whose columns are to be verified or renamed.
+# ' @param columnName The name of the column to verify is present in the \code{data.frame}.
+# ' @param nlsyRNumber The name of the column to change. 
+# ' @param oldColumnName The name of the column to change. 
+# ' @param newColumnName The desired name of the column.
+# ' 
+# ' @details The RNumber assigned by the NLS has a pattern.  In the Nlsy79 Gen1 dataset, the names start with a `R' or `T' and are followed by seven digits (eg, R0000100).  In the Nlsy79 Gen2 dataset, the names start with `C' or `Y' and are followed by seven digits (eg, C0007030, Y1994600).
+# ' 
+# ' In the NLS Investigator, a decimal is present in the RNumber (eg, R00001.00).  When the Investigator saves the dataset as a CSV, the decimal is removed (R0000100).
+# ' @return *IMPORTANT* The \code{RenameColumn} and \code{RenameNlsyColumn} functions do not use side-effects to rename the \code{data.frame}.  Instead, it returns a new \code{data.frame}.  In the example below, notice the assignment to \code{ds}: \code{ds <- RenameNlsyColumn(...)}.
+# ' 
+# ' The \code{VerifyColumnExists} function check that exactly one column exists with the specified \code{columnName}.  If so, the index of the column is returned.  If not, an exception is thrown.
+# ' 
+# ' @author Will Beasley
+# ' 
+# ' 
 
-CreateSubjectTag <- function( subjectID, generation ) {
-  if( length(subjectID) != length(generation) ) stop("The length of the 'subjectID' vector did not match the length of the 'generation' vector.")
-  tag <- rep(NA, length(subjectID))
-   for( i in seq(length(subjectID)) ) {
-    if( is.na(subjectID[i]) || is.na(generation[i]) )
-      tag[i] <- NA
-    else if( generation[i] == 1 ) 
-      tag[i] <- subjectID[i] * 100
-    else if( generation[i] == 2 )
-      tag[i] <- subjectID[i]
-    else
-      stop(paste("The generation value of '", generation[i], "' at element '", i, "' is not valid.  It must be either 1 or 2."))
-   }
-   return( tag )
-}
+# ' @usage VerifyColumnExists( dataFrame, columnName )
 VerifyColumnExists <- function( dataFrame, columnName ) {
-  #columnName <- 'C0000200'
-  #dataFrame <- ds
   indices <- match(columnName, colnames(dataFrame))
   if( length(indices) != 1 ) stop(paste("Exactly 1 matching column name should be found, but", length(indices), "were found."))
   return( indices )
 }
+
+
+# ' @usage RenameColumn( dataFrame, oldColumnName, newColumnName )
 RenameColumn <- function( dataFrame, oldColumnName, newColumnName ) {
   index <- VerifyColumnExists(dataFrame=dataFrame, columnName=oldColumnName)
   colnames(dataFrame)[index] <- newColumnName
   return( dataFrame )
 }
+
+# ' @aliases ColumnUtilities 
+# ' @usage RenameNlsyColumn( dataFrame, nlsyRNumber, newColumnName )
 RenameNlsyColumn <- function( dataFrame, nlsyRNumber, newColumnName ) {
   return( RenameColumn(dataFrame=dataFrame,  oldColumnName=nlsyRNumber, newColumnName=newColumnName) )
 }
-
-# IncludeSubjectTag <- function( ds ) {
-#   if( !("SubjectID" %in% colnames(ds)) ) stop("The data frame must contain a column named 'SubjectID' (case-sensitive).")
-#   if( !("Generation" %in% colnames(ds)) ) stop("The data frame must contain a column named 'Generation' (case-sensitive).")  
-#   ds$SubjectTag <<- CreateSubjectTag(subjectID=ds[, "SubjectID"], generation=ds[, "Generation"])
-# }

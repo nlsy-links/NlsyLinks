@@ -1,5 +1,4 @@
-CreateSubjectTag <-
-function( subjectID, generation ) {
+CreateSubjectTag <- function( subjectID, generation ) {
   if( length(subjectID) != length(generation) ) stop("The length of the 'subjectID' vector did not match the length of the 'generation' vector.")
   tag <- rep(NA, length(subjectID))
    for( i in seq(length(subjectID)) ) {
@@ -14,3 +13,9 @@ function( subjectID, generation ) {
    }
    return( tag )
 }
+
+# IncludeSubjectTag <- function( ds ) {
+#   if( !("SubjectID" %in% colnames(ds)) ) stop("The data frame must contain a column named 'SubjectID' (case-sensitive).")
+#   if( !("Generation" %in% colnames(ds)) ) stop("The data frame must contain a column named 'Generation' (case-sensitive).")  
+#   ds$SubjectTag <<- CreateSubjectTag(subjectID=ds[, "SubjectID"], generation=ds[, "Generation"])
+# }
