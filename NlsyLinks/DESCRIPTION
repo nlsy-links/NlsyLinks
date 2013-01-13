@@ -32,7 +32,6 @@ Collate:
     'CreateSpatialNeighbours.R'
     'CreateSpatialNeighbours79Gen2.R'
     'CreateSubjectTag.R'
-    'DeFriesFulkerMethod1.R'
     'DeFriesFulkerMethod3.R'
     'RGroupSummary.R'
     'ReadCsvNlsy79Gen2.R'
@@ -43,3 +42,4 @@ Collate:
     'ValidatePairLinksAreSymmetric.R'
     'VerifyColumnExists.R'
     'ColumnUtilities.R'
+    'DeFriesFulker.R'
