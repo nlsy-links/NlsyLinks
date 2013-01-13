@@ -1,0 +1,90 @@
+TITLE: McArdle & Prescott ACE model
+DATA: FILE = "P:/SAS/Rodgers/GMRF/GMRF/NLSYwgtMplus.dat";
+DEFINE:
+IF (R==.25) then grp = 1;
+IF (R==.375) then grp = 2;
+IF (R==.5) then grp = 3;
+IF (R==.75) then grp = 4;
+IF (R==1) then grp = 5;
+var1 = wgt1;
+var2 = wgt2;
+VARIABLE: NAMES = s1tag s2tag eid rpath R mbirths ismz s1last s2last Rimp1 Rimp
+     Rimp04 Rexp Rexp1 Rpass1 RexpOSV RexpYSV gens1 gens2 s1id s2id math1 wgt1 math2
+     wgt2;
+
+MISSING=.;
+     
+usev = var1 var2 grp;
+useo = (R/=.75);!R/=.375 and !and CRace1==2 and CRace2==2);
+
+grouping = grp (1=HSib 2=ASib 
+                3=FSib !4=ATSib 
+                5=MZSib);
+
+analysis:
+!type = mixture;
+estimator = mlr;
+
+model:
+
+!%overall%
+A1 by   var1*.5 (a);
+A2 by   var2*.5 (a);
+
+C by    var1*.1 (c)
+        var2*.1 (c);
+
+E1 by   var1*.4 (e);
+E2 by   var2*.4 (e);
+
+A1 with A2*1;
+A1 A2 with C@0 E1@0 E2@0;
+C with E1@0 E2@0;
+E1 with E2@0;
+
+[A1@0 A2@0 C@0 E1@0 E2@0];
+A1@1 A2@1 C@1 E1@1 E2@1;
+
+var1@0;
+var2@0;
+
+[var1] (mHt);
+[var2] (mHt); 
+
+model HSib:
+!%CR#1%
+A1 with A2 (HS);
+
+Model ASib:
+!%CR#2%
+A1 with A2 (AS);
+
+Model FSib:
+!%CR#3%
+A1 with A2 (FS);
+
+!Model ATSib:
+!%CR#4%
+!A1 with A2 (AT);
+
+Model MZSib:
+!%CR#4%
+A1 with A2 (MZ);
+
+Model Constraint:
+New(h2 c2 e2);
+  HS = .25;!sqrt(.25); 
+  AS = .375;!sqrt(.375); 
+  FS = .5;!sqrt(.5); 
+  !AT = .75;
+  MZ = 1; 
+  h2 = a**2/(a**2+c**2+e**2);
+  c2 = c**2/(a**2+c**2+e**2);
+  e2 = e**2/(a**2+c**2+e**2);
+
+output:
+sampstat;
+residual;
+tech1;
+tech4;
+

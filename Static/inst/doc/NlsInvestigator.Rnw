@@ -1,0 +1,5 @@
+
+% \VignetteIndexEntry{The NLS Investigator}
+\documentclass{article}
+\begin{document}
+\end{document}

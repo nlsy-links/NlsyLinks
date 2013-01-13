@@ -1,0 +1,45 @@
+TITLE: McArdle & Prescott ACE model
+ 
+DATA: FILE = "ACEmplus.dat";
+VARIABLE: NAMES = mu MzF a c e y famSz sib1 sib2 sib3 uID cID ID aID matSel rowID
+     MzT minR maxR wAC wAM wAU1 wAU2 wAU3;
+
+MISSING=.;
+     
+usev = y wAC wAM wAU1 wAU2 wAU3;
+
+within = wAC wAM wAU1 wAU2 wAU3;
+cluster = cID;
+
+analysis:
+type= twolevel random;
+estimator=mlr;
+
+model:
+%within%
+y (E);
+AC | y on wAC;
+AM | y on wAM;
+AU1 | y on wAU1;
+AU2 | y on wAU2;
+AU3 | y on wAU3;
+%between%
+y (C);
+[y] (mu);
+AC (A)
+AM (A)
+AU1 (A)
+AU2 (A)
+AU3 (A);
+[AC@0]
+[AM@0]
+[AU1@0]
+[AU2@0]
+[AU3@0];
+
+output:
+sampstat;
+tech1;
+tech4;
+
+

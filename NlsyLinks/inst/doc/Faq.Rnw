@@ -1,0 +1,5 @@
+
+% \VignetteIndexEntry{FAQ for NLSYLinks}
+\documentclass{article}
+\begin{document}
+\end{document}

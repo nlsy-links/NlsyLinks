@@ -1,0 +1,6 @@
+
+exportPattern("^[[:alpha:]]+")
+exportClass(AceEstimate)
+exportClassPattern("^[[:alpha:]]+")
+import(methods)
+import(lavaan)

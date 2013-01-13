@@ -1,0 +1,170 @@
+% -*- mode: noweb; noweb-default-code-mode: R-mode; -*-
+\documentclass[letter]{article}\usepackage{graphicx, color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
+\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
+\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
+\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
+\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
+\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
+\newcommand{\hlslot}[1]{\textit{#1}}%
+\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+
+\usepackage{color}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[colorlinks=true,urlcolor=darkblue,linkcolor=greenteal]{hyperref}  %This makes reference links hyperlinks in pdf (tip from Revelle's 'psych' package).
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent (tip from Revelle's 'psych' package).
+% \usepackage[pdftex]{graphicx}
+\usepackage{amssymb,amsmath} %ftp://ftp.ams.org/ams/doc/amsmath/short-math-guide.pdf
+\definecolor{darkblue}{rgb}{.0,0.2,.8}
+\definecolor{greenteal}{rgb}{0,0.5,.5}
+
+\title{ACE Models with the NLSY}
+\author{William Howard Beasley (Howard Live Oak LLC, Norman)\\
+Joseph Lee Rodgers (University of Oklahoma, Norman)\\
+David Bard (University of Oklahoma Health Sciences Center, OKC)\\
+Kelly Meredith (University of Oklahoma, Norman)\\
+Michael D. Hunter (University of Oklahoma, Norman)
+}
+\begin{document}
+\setkeys{Gin}{width=\textwidth}
+\newcommand{\code}[1]{\texttt{\small{#1}}}
+\newcommand{\pkg}[1]{\textsf{\small{#1}}}
+\newcommand{\R}{\textsf{R}} %(tip from Revelle's 'psych' package).
+
+\maketitle
+\begin{abstract}
+   We describe how to use the \pkg{NlsyLinks} package to examine various biometric models, using the NLSY79.
+\end{abstract}
+\tableofcontents
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Loading required package: NlsyLinks}}\end{kframe}
+\end{knitrout}
+
+\section{Ambiguous twins}
+\textsf{What are ``ambiguous twins"?}\\ \\
+MZ twins share all of the genetic information (\emph{i.e.}, $R=1$), while DZ twins on average share half (\emph{i.e.}, $R=0.5$).  Sometimes a sibling pair doesn't have enough information for us to classify comfortably as either MZ or DZ.  We assign these ``ambiguous twins" $R=.75$.  Currently there are 12 ambiguous twins in the NLSY79C sample.  
+
+Of these 13 pairs, all had close birthdays and were the same gender.  12 pairs are ambiguous because the mother didn't complete an NLSY survey since 1993; the first twin items were presented in 1994 (\emph{e.g.}, \code{R48257.00}, and \code{R48260.00}).  The mother of 13th pair (\emph{i.e.}, subjects 864902 and 864903) simply avoided responding to the twin survey items.
+
+Occasionally they mother of twins provided conflicting evidence. Fortunately, these mother were consistent among their most recent responses.  For instance, Subjects 392401 and 392402 were indicated DZ in 1998, but MZ in 2000, 2002, and 2004.  This pair was assigned $R=1$.
+
+Gen2 ambiguous twins can be viewed with:
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{subset}(Links79Pair, RelationshipPath == \hlstring{"Gen2Siblings"} & R == 0.75)
+\end{alltt}
+\begin{verbatim}
+##       ExtendedID Subject1Tag Subject2Tag    R RelationshipPath
+## 5200        1460      146001      146002 0.75     Gen2Siblings
+## 20230       5658      565901      565902 0.75     Gen2Siblings
+## 24698       6639      663901      663902 0.75     Gen2Siblings
+## 26363       7111      711101      711102 0.75     Gen2Siblings
+## 29746       7913      791406      791407 0.75     Gen2Siblings
+## 36439       9596      959601      959602 0.75     Gen2Siblings
+## 37729      10012     1001201     1001202 0.75     Gen2Siblings
+## 39899      11191     1119103     1119104 0.75     Gen2Siblings
+## 40067      11486     1148601     1148602 0.75     Gen2Siblings
+## 40154      11733     1173301     1173302 0.75     Gen2Siblings
+## 40157      11739     1173901     1173902 0.75     Gen2Siblings
+## 42728      12574     1257402     1257403 0.75     Gen2Siblings
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+% The nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & MultipleBirth != 'No'))  Gen2 siblings who are potentially twins or triplets can be similarly viewed with: \begin{Sinput}
+% subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & MultipleBirth != 'No')
+% \end{Sinput}
+% 
+
+\section{Ambiguous siblings}
+\textsf{What are  ``ambiguous siblings''?}\\ \\
+Similar to ambiguous twins, ambiguous siblings are sibling pairs that we cannot comfortably classify as either full-siblings ($R=.5$) or half-siblings ($R=.25$).  All siblings in the NLSY79-C/YA dataset share the same biological mother, so for these pairs, the problem is reduced to determining if they share the same biological father.  There are two typical reasons for classifying siblings as ambiguous: (a) the relevant items are missing responses, or (b) the existing responses conflict with each other.  
+
+For instance, there are at least 194 Gen2 pairs where one sibling explicitly reported they shared a biological father, while the other sibling explicitly reported they did not.  These subjects can be viewed with: 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{subset}(Links79PairExpanded, RelationshipPath == \hlstring{"Gen2Siblings"} & ((RExplicitOlderSibVersion == 
+    0.5 & RExplicitYoungerSibVersion == 0.25) | (RExplicitOlderSibVersion == 0.25 & 
+    RExplicitYoungerSibVersion == 0.5)))
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Another example occurs when a subject reports they are unsure or if their own responses are inconsistent over the years.  These 80 Gen2 pairs can be viewed with:
+\begin{Sinput}
+subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' &
+  (RExplicitOlderSibVersion==.375 | RExplicitYoungerSibVersion==.375))
+\end{Sinput}
+When the one perspective provided inconclusive evidence of $R$, we looked at other perspectives to resolve their relationship.
+
+
+\section{Retaining vs. dropping the ambiguous twins and siblings}
+\textsf{I am running ACE models with sibling pairs.  Do you recommend including the pairs who are classified as $R=.375$ or $R=.75$?  Or should I exclude them from the analyses?}\\ \\
+This important issue touches Behavior Genetic concepts and modeling pragmatics.  However, this issue typically has an easier resolution than it used to.  In the links we released 10 years ago, there were 3,053 Gen2 pairs classified as ambiguous;in our current version, this has been reduced to 610.  From one perspective, we are more likely to recommend dropping the ambiguous siblings because there are fewer of them (and therefore less potential gain by including them).
+
+Here's another perspective.  Usually if they're missing the data necessary to determine the $R$ value, they're also missing the phenotype, so they'd contribute very little to the analysis anyway.  If there's only a few in an $R$ group, it may not be worth including them.  Virtually none of the ambiguous twins have phenotype values for both Gen2 siblings.
+
+Our advice to include/exclude an $R$ group also depends on the kind of analysis.  Some analyses break up the $R$ values into separate categories (like multiple group SEMs).  While some analyses treat $R$ like a continuous variable (like DF analysis, or SEMs with constraint/definition variables).  If you're running the former, we're more likely to recommend dropping small $R$ groups, because they're more likely to be estimated poorly (eg, the covariance matrix is more likely to misbehave).  If you're running the latter, the estimation is more robust.  (Though the estimation's robustness is a different issue that if that $R$ group is a good representation).
+
+We don't recommend blindly dropping the ambiguous twins and siblings in every analysis.  For each scenario, the group sizes and phenotypic measurement issues should be considered.
+
+We do recommend running a casual sensitivity test, at the very least.  Run different models that include and exclude the small $R$ groups.  Hopefully the estimates change in expected ways (\emph{e.g.,}, including ambiguous siblings makes only a small difference)  and you don't have to dig deeper.  For all analyses, inspect each $R$ group's covariance matrix, especially with for the MZs, which typically is the smallest group. 
+
+
+\section{Grant support}
+This package's development was largely supported by the NIH Grant 1R01HD65865, ``NLSY Kinship Links: Reliable and Valid Sibling Identification" (PI: Joe Rodgers; Vignette Construction by Will Beasley)
+\end{document}
