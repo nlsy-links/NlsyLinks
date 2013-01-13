@@ -1,43 +1,43 @@
 \name{CreateSubjectTag}
 \alias{CreateSubjectTag}
-
-\title{
-Creates a \code{SubjectTag}.  This value uniquely identifies subjects, when both generations are included in the same dataset.
-}
-\description{
-A \code{SubjectTag} uniquely identify subjects.  For Gen2 subjects, the SubjectTag is identical to their CID (ie, C00001.00 -the SubjectID assigned in the NLSY79-Children files).  However for Gen1 subjects, the SubjectTag is their CaseID (ie, R00001.00), with "00" appended.  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The SubjectTags of her four children remain 4301, 4302, 4303, and 4304.
-}
+\title{Creates a \code{SubjectTag}.  This value uniquely identifies subjects, when both generations are included in the same dataset.}
 \usage{
-CreateSubjectTag(subjectID, generation)
+  CreateSubjectTag(subjectID, generation)
 }
-
 \arguments{
-  \item{subjectID}{The ID assigned by the NLSY.  For Gen1 subjects, this will be their CaseID (ie, R00001.00).  For Gen2 subjects, this will be their CID (ie, C00001.00).}
-  \item{generation}{The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a \code{factor} (in constrast with data frames like \code{\link{Links79Pair}}).   This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a \code{factor}.
-}
-}
-\details{
-For a fuller explanation of \code{SubjectTag} in context, see the \code{\link{Links79Pair}} dataset documentation.
+  \item{subjectID}{The ID assigned by the NLSY.  For Gen1
+  subjects, this will be their CaseID (ie, R00001.00).  For
+  Gen2 subjects, this will be their CID (ie, C00001.00).}
+
+  \item{generation}{The generation of the subject.  Values
+  are either 1 or 2, representing Gen1 and Gen2.  Note that
+  this variable is not a \code{factor} (in constrast with
+  data frames like \code{\link{Links79Pair}}).  This
+  dataset is supposed to mimick the dataset provided by the
+  researcher, which typically will not have been converted
+  to a \code{factor}.}
 }
 \value{
-A integer value under normal circumstances.
-
-An error is thrown if the vectors \code{subjectID} and \code{generation} are different lengths.
-
-If either input vector has NA values, the respective output element(s) will be NA too.
+  A integer value under normal circumstances. An error is
+  thrown if the vectors \code{subjectID} and
+  \code{generation} are different lengths. If either input
+  vector has NA values, the respective output element(s)
+  will be NA too.
 }
-%\references{
-%% ~put references to the literature/web site here ~
-%}
-\author{
-Will Beasley
+\description{
+  A \code{SubjectTag} uniquely identify subjects.  For Gen2
+  subjects, the SubjectTag is identical to their CID (ie,
+  C00001.00 -the SubjectID assigned in the NLSY79-Children
+  files).  However for Gen1 subjects, the SubjectTag is
+  their CaseID (ie, R00001.00), with "00" appended.  This
+  manipulation is necessary to identify subjects uniquely
+  in inter-generational datasets.  A Gen1 subject with an
+  ID of 43 becomes 4300.  The SubjectTags of her four
+  children remain 4301, 4302, 4303, and 4304.
 }
-%\note{
-%%  ~~further notes~~
-%}
-
-\seealso{
-\code{\link{Links79Pair}}
+\details{
+  For a fuller explanation of \code{SubjectTag} in context,
+  see the \code{\link{Links79Pair}} dataset documentation.
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
@@ -52,9 +52,14 @@ CreateSubjectTag(subjectIDs, generation)
 
 #Use the ExtraOutcomes79 dataset, with numeric variables 'SubjectID' and 'Generation'.
 ExtraOutcomes79$SubjectTag <- CreateSubjectTag(
-  subjectID=ExtraOutcomes79$SubjectID, 
-  generation=ExtraOutcomes79$Generation
+   subjectID=ExtraOutcomes79$SubjectID,
+   generation=ExtraOutcomes79$Generation
 )
 }
-
+\author{
+  Will Beasley
+}
+\seealso{
+  \code{\link{Links79Pair}}
+}
 

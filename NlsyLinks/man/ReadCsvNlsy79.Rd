@@ -42,10 +42,10 @@
   \code{HHID} is attached to each Gen2 record).
 }
 \examples{
-## Not run:
-#filePathGen2 <- "F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"
-#ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
-## End(Not run)
+\dontrun{
+filePathGen2 <- "F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"
+ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
+}
 }
 \author{
   Will Beasley
