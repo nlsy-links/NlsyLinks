@@ -1,7 +1,7 @@
 #' @name CreatePairLinks
 #' @aliases CreatePairLinksSingleEntered CreatePairLinksDoubleEntered
 #' CreatePairLinksDoubleEnteredWithNoOutcomes
-#' @export
+#' @export CreatePairLinksSingleEntered CreatePairLinksDoubleEntered CreatePairLinksDoubleEnteredWithNoOutcomes
 #' 
 #' @title Creates a pairs linking file.
 #' @description Creates a linking file for BG designs using this file structure (e.g., DF analysis, other ACE modeling).

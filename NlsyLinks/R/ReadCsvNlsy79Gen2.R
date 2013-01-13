@@ -1,6 +1,6 @@
 #' @name ReadCsvNlsy79
 #' @aliases ReadCsvNlsy79 ReadCsvNlsy79Gen2
-#' @export
+#' @export ReadCsvNlsy79Gen2
 #' 
 #' @title Read a CSV file downloaded from the NLS Investigator
 #' @description The function accepts a (file path to) CSV file and creates a \code{data.frame}.  The \code{data.frame} is modified and augmented with columns to assist later routines.
