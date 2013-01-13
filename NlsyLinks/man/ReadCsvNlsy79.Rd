@@ -20,26 +20,17 @@
   routines.
 }
 \details{
-  The function does seven things.
-
-  1) Reads the CSV into a \code{data.frame}.
-
-  2) Checks that the NLSY variables \code{C00001.00} and
-  \code{C00002.00} exist in the \code{data.frame}.
-
-  3) The NLSY variable \code{C00001.00} is renamed
-  \code{SubjectID}.
-
-  4) A variable named \code{Generation} is given a value of
-  2 for all subjects.
-
-  5) The \code{SubjectTag} variable is created.
-
-  6) The NLSY variable \code{C00002.00} is multiplied by
-  100 and renamed \code{SubjectTagOfMother}.
-
-  7) The NLSY variable \code{R00001.49} (ie, their Mother's
-  \code{HHID} is attached to each Gen2 record).
+  The function does seven things. \enumerate{ \item Reads
+  the CSV into a \code{data.frame}.  \item Checks that the
+  NLSY variables \code{C00001.00} and \code{C00002.00}
+  exist in the \code{data.frame}.  \item The NLSY variable
+  \code{C00001.00} is renamed \code{SubjectID}.  \item A
+  variable named \code{Generation} is given a value of 2
+  for all subjects.  \item The \code{SubjectTag} variable
+  is created.  \item The NLSY variable \code{C00002.00} is
+  multiplied by 100 and renamed \code{SubjectTagOfMother}.
+  \item The NLSY variable \code{R00001.49} (ie, their
+  Mother's \code{HHID} is attached to each Gen2 record). }
 }
 \examples{
 \dontrun{

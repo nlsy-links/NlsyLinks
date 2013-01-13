@@ -10,16 +10,20 @@
 #' @param dsOutcome A data frame with the measured variables
 #' @param outcomeNames The column names of the measure variables that eventually will be used by a statistical procedure.
 #' 
-#' @details The \code{dsOutcome} parameter must:
-#' 1) Have a non-missing value.
-#' 2) Contain at least one row.
-#' 3) Contain a column called 'SubjectTag' (case sensitive).
-#' 4) Have the SubjectTag column containing only positive numbers.
-#' 5) Have the SubjectTag column where all values are unique (ie, two rows/subjects cannot have the same value).
+#' @details The \code{dsOutcome} parameter must:#' 
+#' \enumerate{
+#'    \item Have a non-missing value.
+#'    \item Contain at least one row.
+#'    \item Contain a column called 'SubjectTag' (case sensitive).
+#'    \item Have the SubjectTag column containing only positive numbers.
+#'    \item Have the SubjectTag column where all values are unique (ie, two rows/subjects cannot have the same value).
+#' }
 #' 
-#' The \code{outcomeNames} parameter must:#' 
-#' 1) Have a non-missing value
-#' #' 2) Contain only column names that are present in the \code{dsOutcome} data frame.
+#' The \code{outcomeNames} parameter must:
+#' \enumerate{
+#'    \item Have a non-missing value
+#'    \item Contain only column names that are present in the \code{dsOutcome} data frame.
+#' }
 #' 
 #' @return
 #' Returns \code{TRUE} if the validation passes.

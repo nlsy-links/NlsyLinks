@@ -1,5 +1,3 @@
-
-
 #' @name Ace
 #' @aliases AceUnivariate DeFriesFulkerMethod1 DeFriesFulkerMethod3
 #' @export AceUnivariate DeFriesFulkerMethod1 DeFriesFulkerMethod3
