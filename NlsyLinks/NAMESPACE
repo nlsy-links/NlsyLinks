@@ -4,3 +4,4 @@ exportClassPattern("^[[:alpha:]]+")
 import(methods)
 import(lavaan)
 
+

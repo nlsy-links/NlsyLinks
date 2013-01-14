@@ -18,8 +18,8 @@ Description: Utilities and kinship information for Behavioral Genetics and
     Developmental research using the NLSY.
 License: GPL
 URL: https://r-forge.r-project.org/projects/nlsylinks/
-LazyLoad: yes
-LazyData: yes
+LazyLoad: TRUE
+LazyData: TRUE
 Collate:
     'AceEstimate.R'
     'AceLavaanGroup.R'
