@@ -106,11 +106,12 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 #' @title A generic function for extracting the \code{Details} slot of an object.
 #' 
 #' @description A generic function for extracting the \code{Details} slot of an \code{AceEstimation} object.
-#' 
-#' @section Methods
-#'  \itemize{ 
-#'     \item{list("signature(object = \"AceEstimate\")")}{Extracts the \code{Details} slot of an \code{AceEstimation} object.} 
-#'  }   
+# ' 
+#For examples see https://r-forge.r-project.org/scm/viewvc.php/pkg/lme4/man/lmList-class.Rd?view=markup&revision=2&root=lme4&pathrev=452
+# ' @section Methods
+# '  \describe{ 
+# '   \item{GetDetails}{\code{signature(object="AceEstimate")}: Extracts the \code{Details} slot of an \code{AceEstimation} object.} 
+# '  }   
 #' @author Will Beasley
 #' @keywords methods
 methods::setMethod(f="GetDetails", "AceEstimate", 
