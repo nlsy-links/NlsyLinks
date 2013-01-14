@@ -42,3 +42,4 @@ Collate:
     'ValidatePairLinks.R'
     'ValidatePairLinksAreSymmetric.R'
     'VerifyColumnExists.R'
+    'NlsyLinks.r'

@@ -4,6 +4,8 @@ devtools::document(roclets = c("collate","rd") ) #  "namespace",
 devtools::check_doc()
 #  system("R CMD Rd2pdf --force --output=F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/NlsyLinksDocumentationPeek.pdf F:/Projects/RDev/NlsyLinksStaging/NlsyLinks" )
 
+
+
 pkg <- as.package("F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/")
 devtools:::find_code(pkg)
 cat(pkg$collate)
