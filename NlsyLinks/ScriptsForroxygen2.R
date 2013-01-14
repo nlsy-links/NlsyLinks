@@ -1,7 +1,7 @@
 library(Rd2roxygen)
 options(roxygen.comment = "##' ")
-#(info = parse_file( "F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/man/Ace.Rd"))
-(info = parse_file( "man/ExtraOutcomes79.Rd"))
+#(info = parse_file( "F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/man/NlsyLinks-package.Rd"))
+(info = parse_file( "man/NlsyLinks-package.Rd"))
 cat(create_roxygen(info), sep = "\n")
 
 #Help files: https://github.com/hadley/devtools/wiki/docs-function
