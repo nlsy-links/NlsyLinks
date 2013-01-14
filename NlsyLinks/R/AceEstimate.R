@@ -108,7 +108,7 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 #' @description A generic function for extracting the \code{Details} slot of an \code{AceEstimation} object.
 #' 
 #' @section Methods
-#'  \describe{ 
+#'  \itemize{ 
 #'     \item{list("signature(object = \"AceEstimate\")")}{Extracts the \code{Details} slot of an \code{AceEstimation} object.} 
 #'  }   
 #' @author Will Beasley
