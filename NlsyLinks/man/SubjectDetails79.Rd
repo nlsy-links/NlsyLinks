@@ -1,43 +1,39 @@
+\docType{data}
 \name{SubjectDetails79}
 \alias{SubjectDetails79}
-\docType{data}
-\title{
-Dataset containing further details of the Gen1 and Gen2 subjects.
+\title{Dataset containing further details of the Gen1 and Gen2 subjects.}
+\format{A data frame with 24,181 observations on the following 12
+variables.
+\describe{
+   \item{SubjectTag}{see the variable of the same name in \code{\link{Links79Pair}}}
+   \item{ExtendedID}{see the variable of the same name in \code{\link{Links79Pair}}}
+   \item{Generation}{Indicates if the subject is in generation \code{1} or \code{2}.}
+   \item{SiblingCountInNls}{The number of the subject's siblings, including himself/herself (a singleton has a value of one).  This considers only the siblings in the NLSY.  For Gen1, this can exclude anyone outside the age range.  For Gen2, this excludes anyone who doesn't share the same mother.}
+   \item{BirthOrderInNls}{Indicates the subject's birth order among the NLSY siblings.}
+   \item{SimilarAgeCount}{??I forgot what this is??}
+   \item{KidCountBio}{The number of biological children known to the NLSY (but not necessarily interviewed by the NLSY.}
+   \item{KidCountInNls}{The number of children who belong to the NLSY. This is nonnull for only Gen1 subjects.}
+   \item{Mob}{The subject's month of birth.  The exact day is not available to the public.  By default, we set their birthday to the 15th day of the month.}
+   \item{LastSurveyYearCompleted}{##This variable is not available yet## The year of the most recently completed survey.}
+   \item{AgeAtLastSurvey}{##This variable is not available yet## The subject's age at the most recently completed survey.}
+   \item{IsDead}{##This variable is not available yet## Indicates if the subject was alive for the last attempted survey.}
+   \item{DeathDate}{##This variable is not available yet## The subject's month of death.  The exact day is not available to the public. By default, we set their birthday to the 15th day of the month.}
+}}
+\source{
+  Gen1 information comes from the May 15, 2010 release of
+  the \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79
+  sample}.  Gen2 information comes from the Sept 15, 2010
+  release of the
+  \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79
+  Children and Young Adults sample}.  Data were extracted
+  with the NLS Investigator
+  (\url{https://www.nlsinfo.org/investigator/}).
 }
 \description{
-These variables are useful to many types of analyses (not just behavior genetics), and are provided to save users time.
+  These variables are useful to many types of analyses (not
+  just behavior genetics), and are provided to save users
+  time.
 }
-\usage{data(SubjectDetails79)}
-\format{
-  A data frame with 24,181 observations on the following 12 variables.
-  \describe{
-    \item{\code{SubjectTag}}{see the variable of the same name in \code{\link{Links79Pair}}}
-    \item{\code{ExtendedID}}{see the variable of the same name in \code{\link{Links79Pair}}}
-    \item{\code{Generation}}{Indicates if the subject is in generation \code{1} or \code{2}.}    
-    \item{\code{SiblingCountInNls}}{The number of the subject's siblings, including himself/herself (a singleton has a value of one).  This considers only the siblings in the NLSY.  For Gen1, this can exclude anyone outside the age range.  For Gen2, this excludes anyone who doesn't share the same mother.}
-    \item{\code{BirthOrderInNls}}{Indicates the subject's birth order among the NLSY siblings.}
-    \item{\code{SimilarAgeCount}}{??I forgot what this is??}
-    \item{\code{KidCountBio}}{The number of biological children known to the NLSY (but not necessarily interviewed by the NLSY.}
-    \item{\code{KidCountInNls}}{The number of children who belong to the NLSY.  This is nonnull for only Gen1 subjects.}
-    \item{\code{Mob}}{The subject's month of birth.  The exact day is not available to the public.  By default, we set their birthday to the 15th day of the month.}
-    \item{\code{LastSurveyYearCompleted}}{##This variable is not available yet##  The year of the most recently completed survey.}
-    \item{\code{AgeAtLastSurvey}}{##This variable is not available yet##  The subject's age at the most recently completed survey.}
-    \item{\code{IsDead}}{##This variable is not available yet##  Indicates if the subject was alive for the last attempted survey.}
-    \item{\code{DeathDate}}{##This variable is not available yet##  The subject's month of death.  The exact day is not available to the public.  By default, we set their birthday to the 15th day of the month.}
-  }
-}
-%\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-%}
-\source{
-Gen1 information comes from the May 15, 2010 release of the \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information comes from the Sept 15, 2010 release of the \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator (\url{https://www.nlsinfo.org/investigator/}).
-}
-\author{
-Will Beasley
-}
-%\references{
-%%  ~~ possibly secondary sources and usages ~~
-%}
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
 data(SubjectDetails79)  #Load the dataset from the NlsyLinks package.
@@ -60,12 +56,16 @@ hist(SubjectDetails79$KidCountBio, main="",
 hist(SubjectDetails79$KidCountInNls, main="",
      breaks=seq(from=0, to=max(SubjectDetails79$KidCountInNls, na.rm=TRUE), by=1)
 )
-#hist(SubjectDetails79$Mob, main="", 
+#hist(SubjectDetails79$Mob, main="",
 #     breaks=seq.Date(
-#       from=min(SubjectDetails79$Mob, na.rm=TRUE), 
-#       to=max(SubjectDetails79$Mob, na.rm=TRUE), 
+#       from=min(SubjectDetails79$Mob, na.rm=TRUE),
+#       to=max(SubjectDetails79$Mob, na.rm=TRUE),
 #       by="year")
 #)
 par(oldPar)
 }
+\author{
+  Will Beasley
+}
 \keyword{datasets}
+

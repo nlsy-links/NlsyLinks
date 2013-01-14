@@ -43,3 +43,4 @@ Collate:
     'ValidateOutcomeDataset.R'
     'ValidatePairLinks.R'
     'ValidatePairLinksAreSymmetric.R'
+    'SubjectDetails79Doc.R'
