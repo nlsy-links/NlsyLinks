@@ -2,18 +2,10 @@
 \name{NlsyLinks-package}
 \alias{NlsyLinks}
 \alias{NlsyLinks-package}
-\title{Utilities and kinship information for Behavior Genetics and Developmental
-research using the NLSY.}
+\title{Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.}
 \description{
   Utilities and kinship information for Behavior Genetics
   and Developmental research using the NLSY.
-}
-\details{
-  \tabular{ll}{ Package: \tab NlsyLinks\cr Type: \tab
-  Package\cr Version: \tab 1.200\cr Date: \tab
-  2012-12-18\cr License: \tab GPL\cr LazyLoad: \tab yes\cr
-  } An overview of how to use the package, including the
-  most important functions
 }
 \note{
   This package considers both Gen1 and Gen2 subjects.

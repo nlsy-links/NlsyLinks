@@ -1,17 +1,9 @@
-#' Utilities and kinship information for Behavior Genetics and Developmental
-#' research using the NLSY.
+#' @title Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 #' 
-#' Utilities and kinship information for Behavior Genetics and Developmental
-#' research using the NLSY.
-#' 
-#' \tabular{ll}{ Package: \tab NlsyLinks\cr Type: \tab Package\cr Version:
-#' \tab 1.200\cr Date: \tab 2012-12-18\cr License: \tab GPL\cr LazyLoad: \tab
-#' yes\cr } An overview of how to use the package, including the most
-#' important functions
+#' @description Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 #' 
 #' @docType package
 #' @name NlsyLinks-package
-#' @rdname NlsyLinks-package
 #' @aliases NlsyLinks-package NlsyLinks
 #' @note This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 #' subjects in the original NLSY79 sample
