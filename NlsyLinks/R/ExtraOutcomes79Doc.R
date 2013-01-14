@@ -1,6 +1,7 @@
 #' @name ExtraOutcomes79
-#' @docType data
 #' @export
+#' @docType data
+
 #' @title Extra outcome variables in the NLSY79
 #' 
 #' @description This dataset is provided primarily to facilitate documentation examples.
@@ -9,7 +10,6 @@
 #' include Gen1 subjects.  Code written using this dataset should NOT assume
 #' it contains only Gen2 subjects.  See below for an example of filtering by
 #' generation.
-#' 
 #' 
 #' @format A data frame with 11,495 observations on the following 6 variables. There is one row per subject.  
 #' \describe{ 
