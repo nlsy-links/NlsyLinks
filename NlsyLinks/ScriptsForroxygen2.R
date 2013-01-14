@@ -1,7 +1,7 @@
 library(Rd2roxygen)
 options(roxygen.comment = "##' ")
 #(info = parse_file( "F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/man/NlsyLinks-package.Rd"))
-(info = parse_file( "man/GetDetails.Rd")) #Rd2roxygen
+(info = parse_file( "man/AceEstimate-class.Rd")) #Rd2roxygen
 cat(create_roxygen(info), sep = "\n")
 
 #Help files: https://github.com/hadley/devtools/wiki/docs-function
