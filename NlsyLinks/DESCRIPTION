@@ -34,6 +34,8 @@ Collate:
     'CreateSpatialNeighbours79Gen2.R'
     'CreateSubjectTag.R'
     'DeFriesFulker.R'
+    'ExtraOutcomes79Doc.R'
+    'NlsyLinks.R'
     'RGroupSummary.R'
     'ReadCsvNlsy79Gen2.R'
     'RenameColumn.R'
@@ -42,4 +44,3 @@ Collate:
     'ValidatePairLinks.R'
     'ValidatePairLinksAreSymmetric.R'
     'VerifyColumnExists.R'
-    'NlsyLinks.r'

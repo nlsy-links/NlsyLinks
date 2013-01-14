@@ -7,3 +7,4 @@ cat(create_roxygen(info), sep = "\n")
 #Help files: https://github.com/hadley/devtools/wiki/docs-function
 
 roc_proc(roclet, "R/NlsyLinks.R", base_path=".")
+
