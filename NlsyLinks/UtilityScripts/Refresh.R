@@ -4,8 +4,6 @@ devtools::document(roclets = c("collate", "rd") ) #  "namespace",
 devtools::check_doc()
 #  system("R CMD Rd2pdf --force --output=F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/NlsyLinksDocumentationPeek.pdf F:/Projects/RDev/NlsyLinksStaging/NlsyLinks" )
 
-
-
 # pkg <- as.package("F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/")
 # devtools:::find_code(pkg)
 # cat(pkg$collate)
@@ -17,8 +15,8 @@ devtools::check_doc()
 # r_files <- with_collate("C", sort(code_paths))
 
 
-devtools::run_examples()
-devtools::run_examples(, "rv.Rd")
+devtools::run_examples() #Overwrites the NAMESPACE file
+devtools::run_examples(, "ExtraOutcomes79.Rd")
 test()
 check()
 build()
