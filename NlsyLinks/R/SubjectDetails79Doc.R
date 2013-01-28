@@ -1,5 +1,4 @@
 #' @name SubjectDetails79
-#' @export
 #' @docType data
 
 #' @title Dataset containing further details of the Gen1 and Gen2 subjects.

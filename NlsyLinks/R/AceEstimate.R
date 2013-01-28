@@ -8,7 +8,7 @@
 ##' initialize,AceEstimate-method print,AceEstimate-method
 ##' show,AceEstimate-method GetDetails,AceEstimate-method
 ##' @docType class
-##' @export
+
 ##' @note The contents of the \code{Details} list depends on the underlying
 ##' estimation routine.  For example, when the ACE model is estimated with a DF
 ##' analysis, the output is an \code{lm} object, because the \code{lm} function
@@ -101,8 +101,8 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 
 #' @name GetDetails-methods
 #' @aliases GetDetails-methods GetDetails AceEstimate-method
+#' @exportMethod GetDetails
 #' @docType methods
-#' @export "GetDetails-methods"
 #' @title A generic function for extracting the \code{Details} slot of an object.
 #' 
 #' @description A generic function for extracting the \code{Details} slot of an \code{AceEstimation} object.

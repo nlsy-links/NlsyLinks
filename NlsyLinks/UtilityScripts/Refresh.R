@@ -1,6 +1,6 @@
 library(devtools)
 
-devtools::document(roclets = c("collate", "rd") ) #  "namespace", 
+devtools::document(roclets = c("collate", "namespace","rd") ) #   
 devtools::check_doc()
 #  system("R CMD Rd2pdf --force --output=F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/NlsyLinksDocumentationPeek.pdf F:/Projects/RDev/NlsyLinksStaging/NlsyLinks" )
 
@@ -16,7 +16,8 @@ devtools::check_doc()
 
 
 devtools::run_examples() #Overwrites the NAMESPACE file
-devtools::run_examples(, "ExtraOutcomes79.Rd")
+devtools::run_examples(, "Ace.Rd")
 test()
-check()
 build()
+check()
+release()

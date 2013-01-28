@@ -1,5 +1,4 @@
 #' @name Links79Pair
-#' @export
 #' @docType data
 
 #' @title Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults

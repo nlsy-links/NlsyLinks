@@ -1,5 +1,4 @@
 #' @name Links79PairExpanded
-#' @export
 #' @docType data
 # 
 #' @title Kinship linking file for pairs of relatives.  It builds upon the \code{\link{Links79Pair}} dataset.
