@@ -101,6 +101,7 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 
 #' @name GetDetails-methods
 #' @aliases GetDetails-methods GetDetails AceEstimate-method
+#' @export GetDetails
 #' @exportMethod GetDetails
 #' @docType methods
 #' @title A generic function for extracting the \code{Details} slot of an object.

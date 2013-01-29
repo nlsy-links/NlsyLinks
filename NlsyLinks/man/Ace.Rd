@@ -69,13 +69,13 @@ estimatedAdultHeight <- DeFriesFulkerMethod3(
   dataSet=dsDF,
   oName_1="HeightZGenderAge_1",
   oName_2="HeightZGenderAge_2")
-estimatedAdultHeight #ASquared and CSquared should be 0.606 and 0.105 for this rough analysis.
+estimatedAdultHeight #ASquared and CSquared should be 0.60 and 0.10 for this rough analysis.
 
 estimatedMath <- DeFriesFulkerMethod3(
   dataSet=dsDF,
   oName_1="MathStandardized_1",
   oName_2="MathStandardized_2")
-estimatedMath #ASquared and CSquared should be 0.878 and 0.048.
+estimatedMath #ASquared and CSquared should be 0.85 and 0.045.
 
 class(GetDetails(estimatedMath))
 summary(GetDetails(estimatedMath))
