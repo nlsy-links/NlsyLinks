@@ -1,4 +1,5 @@
 library(devtools)
+options(device = "windows") #http://support.rstudio.org/help/discussions/problems/80-error-in-function-only-one-rstudio-graphics-device-is-permitted
 
 devtools::document(roclets = c("collate", "namespace","rd") ) #   
 devtools::check_doc()
