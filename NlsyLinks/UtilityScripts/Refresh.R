@@ -7,8 +7,10 @@ devtools::check_doc() #Should return NULL
 
 
 devtools::run_examples() #This overwrites the NAMESPACE file too
+devtools::check_doc()
 # devtools::run_examples(, "Ace.Rd")
 test()
 build()
 devtools::check()
 release()
+revdep_check("NlsyLinks")
