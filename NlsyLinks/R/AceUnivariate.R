@@ -38,9 +38,10 @@
 #' @references Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' Reformulating and simplifying the DF analysis model.
 #' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{\emph{Behavior Genetics, 35 (2), 211-217}}.
-#' @examples
-#' 
+#' @examples 
 #' library(NlsyLinks) #Load the package into the current R session.
+#' data(ExtraOutcomes79)
+#' data(Links79Pair)
 #' dsOutcomes <- ExtraOutcomes79
 #' dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,
 #'   generation=dsOutcomes$Generation)

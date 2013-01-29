@@ -22,7 +22,6 @@
 ##' withinBounds, details, ...)}
 ##' @keywords classes ACE
 ##' @examples
-##' 
 ##' library(NlsyLinks) #Load the package into the current R session.
 ##' 
 ##' showClass("AceEstimate")
