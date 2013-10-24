@@ -17,9 +17,9 @@ test_that("AceLavaanGroup -MathStandardized", {
   
   ace <- AceLavaanGroup(dsClean)
   
-  expectedASquared <- 0.66726463036133044 #0.66818735332097090041 #0.670103215171409
-  expectedCSquared  <- 0.11880754807264618 #0.11812265118722645174 #0.11670604326754
-  expectedESquared <- 0.21392782156602341 #0.21368999549180262010 #0.213190741561051
+  expectedASquared <- 0.66726524577656531889 #0.66726463036133044 #0.66818735332097090041 #0.670103215171409
+  expectedCSquared  <- 0.11880724941394785188 #0.11880754807264618 #0.11812265118722645174 #0.11670604326754
+  expectedESquared <- 0.21392750480948682923 #0.21392782156602341 #0.21368999549180262010 #0.213190741561051
   expectedCaseCount <- 8390 #8292
     
   expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1)
@@ -42,9 +42,9 @@ test_that("AceLavaanGroup -HeightZGenderAge", {
   
   ace <- AceLavaanGroup(dsClean)
   
-  expectedASquared <- 0.785693984682088
-  expectedCSquared  <- 0.0320796864720722
-  expectedESquared <- 0.18222632884584
+  expectedASquared <- 0.78569416052626706026 #0.785693984682088
+  expectedCSquared  <- 0.03207961688916031312 #0.0320796864720722
+  expectedESquared <- 0.18222622258457257804 #0.18222632884584
   expectedCaseCount <- 5884
   
   expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1)

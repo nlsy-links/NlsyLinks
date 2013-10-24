@@ -50,4 +50,3 @@ test_that("Nlsy79Gen2", {
 #   expect_equal(object=actualFromWrapper$CSquared, expected=expectedCSquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=actualFromWrapper$ESquared, expected=expectedESquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=actualFromWrapper$RowCount, expected=expectedRowCount, tolerance=1e-6, scale=1)  
-

@@ -1,3 +1,4 @@
+
 #options(digits=17)
 #expect_equal(object=10.01, expected=10, tolerance=.002, scale=1) #Absolute Difference
 #expect_equal(object=10.01, expected=10, tolerance=.002, scale=NULL) #Relative Difference
