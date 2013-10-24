@@ -14,7 +14,6 @@ LoadDefaultOutcomeNames <- function( ) {
 
 
 
-
 ###########
 context("Validate Outcome Dataset")
 ###########

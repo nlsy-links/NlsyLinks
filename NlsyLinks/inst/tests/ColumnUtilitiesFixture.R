@@ -6,6 +6,21 @@
 #   data(Links79Pair)
 #   return( Links79Pair )
 # }
+fileNameGen2 <- "Gen2Birth.csv"
+
+# print(basename(normalizePath(".")))
+{
+  if( basename(normalizePath("."))=="NlsyLinks" ) {
+    directoryForExpectedVectors <- "./inst/tests"
+  }
+  else if( basename(normalizePath("."))=="tests" ) {
+    directoryForExpectedVectors <- "."
+  }
+  else {
+    stop("The working directory is not recognized by this test fixture.")
+  }
+}
+source(file.path(directoryForExpectedVectors, "ExpectedVectors.R"))
 
 
 ###########
@@ -73,7 +88,8 @@ test_that("CreateSubjectTag -With ExtraOutcomes79", {
 context("ExtractColumnExists")
 ###########
 test_that("Nlsy79Gen2", {
-  filePathGen2 <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+  #filePathGen2 <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+  filePathGen2 <- file.path(inst("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
   expectedColumNames <- c("C0000100", "C0000200", "C0005300", "C0005400", "C0005700", "C0328000", "C0328600", "C0328800")
   ds <- read.csv(filePathGen2)
   expectedIndex <- 0
@@ -87,7 +103,7 @@ test_that("Nlsy79Gen2", {
 context("Rename Nlsy Column")
 ###########
 test_that("RenameNlsyColumn", {
-  filePathGen2 <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"
+  filePathGen2 <- file.path(inst("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
   ds <- read.csv(filePathGen2)
   originalColumNames <- c("C0000100", "C0000200", "C0005300", "C0005400", "C0005700", "C0328000", "C0328600", "C0328800")
   newColumnNames <- c("SubjectID", "MotherID", "Race", "Gender", "Yob", "GestationWeeks", "BirthWeightInOunces", "BirthLengthInInches")

@@ -3,9 +3,9 @@ rm(list=ls(all=TRUE)) #Clear all the variables before starting a new run.
 require(testthat)
 #test_dir("F:/Projects/RDev/NlsyLinksStaging/Static/tests")
 #trace(ValidatePairLinks)
-isDevelopmentBox <- Sys.info()["nodename"] == "MICKEY"
+isDevelopmentBox <- Sys.info()["nodename"] == "Gimble"
 if( isDevelopmentBox ) {
-  directory <- "F:/Projects/RDev/NlsyLinksStaging"
+  directory <- "D:/Projects/RDev/NlsyLinksStaging"
   directoryTests <- file.path(directory, "Static/inst/tests")
   pathToBeIncorporated <- file.path(directory, "Content/ToBeIncorporated.R")
 }
