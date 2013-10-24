@@ -1,4 +1,10 @@
-﻿Version 1.200 (2012-12-18)
+﻿Version 1.300 (2013-10)
+------------------------------------------------------------------------------
+Updates:
+* A complete version of the Gen1 links are included.  95% of all Gen1 Housemates have been linked.
+* `R` now has missing values for Gen1 pairs if the 1979 roster (eg, R00001.51) doesn't indicate they're the same generation.  If this value is desirable for your research, their R values are still available in `RFull`.
+
+Version 1.200 (2012-12-18)
 ------------------------------------------------------------------------------
 Updates:
 * Renamed `R` to `RFull`.  `RFull` contains all the _R_ values we have.  `R` excludes _R_ values in Gen1Housemates if they're 0, .375, or .75.  The associated relationships (ie, Gen2Cousins and AuntNieces) become null for _R_, but not for _RFull_.
@@ -16,7 +22,7 @@ Updates:
 Version 1.014 (2012-11-09)
 ------------------------------------------------------------------------------
 Updates:
-* Based on gecodoe variables, five Gen1 ambiguous twin was demoted to R=0 (two were R=.5; three were R=NULL).
+* Based on geocode variables, five Gen1 ambiguous twin was demoted to R=0 (two were R=.5; three were R=NULL).
 
 Version 1.013 (2012-11-08)
 ------------------------------------------------------------------------------
@@ -40,14 +46,12 @@ Version 1.010 (2012-10-11)
 
 Version 1.007 (2012-06-08)
 ------------------------------------------------------------------------------
-
 Updates:
-* Added material to appendicies of the NlsyAce vignette.
+* Added material to appendices of the NlsyAce vignette.
 * Removed 'stringr' package from Depends list.  It's no longer used creating lavaan syntax.
 
 Version 1.004 (2012-06-07)
 ------------------------------------------------------------------------------
-
 New Features:
 * Added ParentChild links.
 * Added Gen1 links (using only Explicit items).  There will be much more work to these relationship in the next few months.
@@ -55,39 +59,33 @@ New Features:
 
 Version 1.003 (2012-05-21)
 ------------------------------------------------------------------------------
-
 Updates:
 * Additional Documentation.
 
 Version 1.001 (2012-05-04)
 ------------------------------------------------------------------------------
-
 Updates:
 * Started a FAQ (as a vignette).
 
 Version 1.0 (2012-04-27)
 ------------------------------------------------------------------------------
-
 Updates:
 * Additional documentation and unit tests.
 * Changed R-Forge development status from "Beta" to "Production/Stable"
 
 Version 0.29 (2012-04-22)
 ------------------------------------------------------------------------------
-
 Updates:
 * Modified some function signatures to be make package more consistent.
 * Additional lavaan example in ACE vignette.
 
 Version 0.26 (2012-04-20)
 ------------------------------------------------------------------------------
-
 New Features:
 * The new function 'AceLavaanGroup' uses the 'lavaan' package to estimate a multigroup SEM ACE model.
 
 Version 0.24 (2012-04-16)
 ------------------------------------------------------------------------------
-
 New Features:
 * The S4 class 'AceEstimate' is returned by the 'Ace' function. 
 * Methods & functions associated with the AceEstimate class.
@@ -98,7 +96,6 @@ New Features:
 
 Version 0.19 (2012-03-10)
 ------------------------------------------------------------------------------
-
 New Features:
 * NLS Investigator vignette
 * ACE vignette
@@ -107,7 +104,6 @@ New Features:
 * Links79PairExpanded dataset
 * Validation functions: (a) OutcomeDataset, (b) PairLinks, (c) PairLinksAreSymmetric
 * Create functions for (a) SpatialNeighbours, (b) PairLinks, (c) SubjectTag
-
 
 Version 0.10 (2012-01-16)
 ------------------------------------------------------------------------------
