@@ -28,8 +28,6 @@ dsPairsWithOutcomes <- dsPairsWithOutcomes[, !(colnames(dsPairsWithOutcomes) %in
 summary(dsPairsWithOutcomes)
 table(Links79PairWithoutOutcomes$RelationshipPath)
 table(dsPairsWithOutcomes$RelationshipPath)
-
-
   
   
 dsPairsWithOutcomes <- subset(dsPairsWithOutcomes, Subject1Tag < Subject2Tag)

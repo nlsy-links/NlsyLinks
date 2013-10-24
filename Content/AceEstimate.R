@@ -35,9 +35,6 @@ methods::setMethod( f="initialize",
   }
 )
 
-
-
-
 CreateAceEstimate <- function( aSquared, cSquared, eSquared, caseCount, details=list(), unityTolerance=1e-11 ) {
   componentSum <- aSquared + cSquared + eSquared
   #print(class(caseCount))
@@ -74,8 +71,6 @@ methods::setMethod(f="GetDetails", "AceEstimate",
     return( slot(object, "Details")[[1]] )
   }
 )
-
-
 
 
 # setMethod("summary", "Ace", function(x, ...) {

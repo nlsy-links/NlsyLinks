@@ -9,4 +9,3 @@ PrintVector <- function( scores ) {
   str <- paste(str, ")", sep="")
   return( str )
 }
- 10043 %%100

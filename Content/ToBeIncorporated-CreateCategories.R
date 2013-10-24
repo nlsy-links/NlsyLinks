@@ -18,4 +18,3 @@ rownames(categoryStats)[1] <- "Full Sibs"
 categoryStats[1, ] <- c(.5, 0, .235, 45, .55, .01, .24, .51, .76, .98, 1.2, 1)
 
 CreateCategoryStatsEmpty(3)
-

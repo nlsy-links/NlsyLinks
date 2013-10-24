@@ -35,8 +35,6 @@ ValidatePairLinksAreSymmetric <- function( linksPair ) {
   }  
   return( TRUE )
 }
-
-
 CreatePairLinksDoubleEntered <- function( outcomeDataset, linksPairDataset, outcomeNames, 
   linksNames=c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset=TRUE ) {
   

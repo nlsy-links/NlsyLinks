@@ -3,7 +3,6 @@
 # Author: wibeasley
 ###############################################################################
 
-
 d <- rnorm(32)
 d
      
@@ -43,4 +42,3 @@ dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_1, oName_2
 #Steps 11-12: Run the model & Inspect the output 
 (ace <- AceLavaanGroup(dsClean))
 GetDetails(ace)
-
