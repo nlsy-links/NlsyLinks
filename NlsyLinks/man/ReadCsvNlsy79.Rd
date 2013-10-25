@@ -3,12 +3,17 @@
 \alias{ReadCsvNlsy79Gen2}
 \title{Read a CSV file downloaded from the NLS Investigator}
 \usage{
-  ReadCsvNlsy79Gen2(filePath)
+  ReadCsvNlsy79Gen2(filePath, dsExtract=read.csv(filePath)
+    )
 }
 \arguments{
   \item{filePath}{A path to the CSV file. Remember to use
   double back-slashes in Windows, or forward-slashes in
-  Windows or *nix.}
+  Windows or Linux.}
+
+  \item{dsExtract}{A `data.frame` (containing the extract)
+  can be passed instead of the file path if the data has
+  already been read into R's memory.}
 }
 \value{
   A \code{data.frame} to facililate biometric analysis.

@@ -17,7 +17,7 @@
 ###########
 context("Read CSV")
 ###########
-test_that("Nlsy79Gen2", {  
+test_that("Nlsy79Gen2Path", {  
 #   ds <- ReadCsvNlsy79Gen2(filePath=file.path(directory, fileNameGen2))
   filePathGen2 <- file.path(inst("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
   ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
@@ -30,6 +30,18 @@ test_that("Nlsy79Gen2", {
   expect_equal(object=nrow(ds), expected=11495, scale=1)
 })
 
+test_that("Nlsy79Gen2DataFrame", {  
+  filePathGen2 <- file.path(inst("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+  dsRaw <- read.csv(filePathGen2)
+  ds <- ReadCsvNlsy79Gen2(dsExtract=dsRaw)
+  
+  expect_equal(object=min(ds$SubjectTag), expected=201, scale=1)
+  expect_equal(object=max(ds$SubjectTag), expected=1267501, scale=1)
+  expect_true(all(ds$Generation==2))
+  expect_equal(object=min(ds$SubjectTagOfMother), expected=200, scale=1)
+  expect_equal(object=max(ds$SubjectTagOfMother), expected=1267500, scale=1)
+  expect_equal(object=nrow(ds), expected=11495, scale=1)
+})
 
 #   dsOutcomes <- ExtraOutcomes79
 #   dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,generation=dsOutcomes$Generation)

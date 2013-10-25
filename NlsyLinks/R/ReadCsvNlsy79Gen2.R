@@ -4,9 +4,10 @@
 #' 
 #' @title Read a CSV file downloaded from the NLS Investigator
 #' @description The function accepts a (file path to) CSV file and creates a \code{data.frame}.  The \code{data.frame} is modified and augmented with columns to assist later routines.
-#' @usage ReadCsvNlsy79Gen2(filePath)
+#' @usage ReadCsvNlsy79Gen2(filePath, dsExtract=read.csv(filePath) )
 
-#' @param filePath A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or *nix.
+#' @param filePath A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or Linux.
+#' @param dsExtract A `data.frame` (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.
 #' 
 #' @return A \code{data.frame} to facililate biometric analysis.
 #' 
@@ -28,23 +29,22 @@
 #' ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 #' }
 #'
-ReadCsvNlsy79Gen2 <-
-function( filePath ) {
-  ds <- read.csv(filePath)
-  if( !("C0000100" %in% colnames(ds)) ) stop("The NLSY variable 'C0000100' should be present, but was not found.")
-  if( !("C0000200" %in% colnames(ds)) ) stop("The NLSY variable 'C0000200' should be present, but was not found.")
+ReadCsvNlsy79Gen2 <- function( filePath, dsExtract=read.csv(filePath) ) {
+#   dsExtract <- read.csv(filePath)
+  if( !("C0000100" %in% colnames(dsExtract)) ) stop("The NLSY variable 'C0000100' should be present, but was not found.")
+  if( !("C0000200" %in% colnames(dsExtract)) ) stop("The NLSY variable 'C0000200' should be present, but was not found.")
   
-  colnames(ds)[colnames(ds)=='C0000100'] <- "SubjectID"
-  colnames(ds)[colnames(ds)=='C0000200'] <- "SubjectTagOfMother"
-  ds$SubjectTagOfMother <- ds$SubjectTagOfMother * 100
-  ds$Generation <- 2
-  ds$SubjectTag <- ds$SubjectID #CreateSubjectTag(ds$SubjectID, ds$Generation)
+  colnames(dsExtract)[colnames(dsExtract)=='C0000100'] <- "SubjectID"
+  colnames(dsExtract)[colnames(dsExtract)=='C0000200'] <- "SubjectTagOfMother"
+  dsExtract$SubjectTagOfMother <- dsExtract$SubjectTagOfMother * 100
+  dsExtract$Generation <- 2
+  dsExtract$SubjectTag <- dsExtract$SubjectID #CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
   
-  data(SubjectDetails79)
+#   data(SubjectDetails79)
   #dsWithExtended <- subset(SubjectDetails79, Generation==2, select=c("SubjectTag", "ExtendedID"))
   dsWithExtended <- SubjectDetails79[SubjectDetails79$Generation==2, c("SubjectTag", "ExtendedID")]
   #summary(dsWithExtended)
-  ds <- merge(x=ds, y=dsWithExtended, by="SubjectTag", all.x=TRUE, all.y=FALSE)
+  ds <- merge(x=dsExtract, y=dsWithExtended, by="SubjectTag", all.x=TRUE, all.y=FALSE)
   
   firstColumns <- c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
   remaining <- setdiff(colnames(ds), firstColumns)
