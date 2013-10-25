@@ -3,6 +3,7 @@
 Updates:
 * A complete version of the Gen1 links are included.  95% of all Gen1 Housemates have been linked.
 * `R` now has missing values for Gen1 pairs if the 1979 roster (eg, R00001.51) doesn't indicate they're the same generation.  If this value is desirable for your research, their R values are still available in `RFull`.
+* Added function `ReadCsvNlsy79Gen1()`
 
 Version 1.200 (2012-12-18)
 ------------------------------------------------------------------------------
@@ -12,7 +13,7 @@ Updates:
 Version 1.017 (2012-11-29)
 ------------------------------------------------------------------------------
 Updates:
-* Removed code that assigned all unassigned siblings to .375.  This doesn't make sense for Gen1.
+* Removed code that assigned all unassigned siblings to .375.  This doesn't make sense for Gen1, and was mostly an internal experiment (and wasn't released on CRAN).
 
 Version 1.015 (2012-11-10)
 ------------------------------------------------------------------------------

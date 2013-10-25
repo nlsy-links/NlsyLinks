@@ -17,8 +17,31 @@
 ###########
 context("Read CSV")
 ###########
+test_that("Nlsy79Gen1Path", {  
+  filePathGen1 <- file.path(inst("NlsyLinks"), "extdata", "Gen1LifeCourse.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+#   dsExtract <- read.csv(filePathGen1)
+  ds <- ReadCsvNlsy79Gen1(filePath=filePathGen1)
+  
+  expect_equal(object=min(ds$SubjectTag), expected=100, scale=1)
+  expect_equal(object=max(ds$SubjectTag), expected=1268600, scale=1)
+  expect_true(all(ds$Generation==1))
+  expect_equal(object=nrow(ds), expected=12686, scale=1)
+  expect_equal(object=ncol(ds), expected=13, scale=1)
+})
+test_that("Nlsy79Gen1DataFrame", {  
+  filePathGen1 <- file.path(inst("NlsyLinks"), "extdata", "Gen1LifeCourse.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+  dsRaw <- read.csv(filePathGen1)
+  ds <- ReadCsvNlsy79Gen1(dsExtract=dsRaw)
+  
+  expect_equal(object=min(ds$SubjectTag), expected=100, scale=1)
+  expect_equal(object=max(ds$SubjectTag), expected=1268600, scale=1)
+  expect_true(all(ds$Generation==1))
+  expect_equal(object=nrow(ds), expected=12686, scale=1)
+  expect_equal(object=ncol(ds), expected=13, scale=1)
+})
+
 test_that("Nlsy79Gen2Path", {  
-#   ds <- ReadCsvNlsy79Gen2(filePath=file.path(directory, fileNameGen2))
+  #   ds <- ReadCsvNlsy79Gen2(filePath=file.path(directory, fileNameGen2))
   filePathGen2 <- file.path(inst("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
   ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
   
@@ -28,6 +51,7 @@ test_that("Nlsy79Gen2Path", {
   expect_equal(object=min(ds$SubjectTagOfMother), expected=200, scale=1)
   expect_equal(object=max(ds$SubjectTagOfMother), expected=1267500, scale=1)
   expect_equal(object=nrow(ds), expected=11495, scale=1)
+  expect_equal(object=ncol(ds), expected=11, scale=1)
 })
 
 test_that("Nlsy79Gen2DataFrame", {  
@@ -41,6 +65,7 @@ test_that("Nlsy79Gen2DataFrame", {
   expect_equal(object=min(ds$SubjectTagOfMother), expected=200, scale=1)
   expect_equal(object=max(ds$SubjectTagOfMother), expected=1267500, scale=1)
   expect_equal(object=nrow(ds), expected=11495, scale=1)
+  expect_equal(object=ncol(ds), expected=11, scale=1)
 })
 
 #   dsOutcomes <- ExtraOutcomes79

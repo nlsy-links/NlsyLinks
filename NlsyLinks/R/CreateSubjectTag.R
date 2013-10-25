@@ -42,7 +42,7 @@ CreateSubjectTag <- function( subjectID, generation ) {
     if( is.na(subjectID[i]) || is.na(generation[i]) )
       tag[i] <- NA
     else if( generation[i] == 1 ) 
-      tag[i] <- subjectID[i] * 100
+      tag[i] <- subjectID[i] * 100L
     else if( generation[i] == 2 )
       tag[i] <- subjectID[i]
     else

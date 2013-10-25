@@ -5,8 +5,7 @@ devtools::document(roclets = c("collate", "namespace","rd") ) # #Remember to cha
 devtools::check_doc() #Should return NULL
 #  system("R CMD Rd2pdf --force --output=./NlsyLinksDocumentationPeek.pdf ." )
 
-
-devtools::run_examples() #This overwrites the NAMESPACE file too
+devtools::run_examples(); dev.off() #This overwrites the NAMESPACE file too
 # devtools::run_examples(, "Ace.Rd")
 devtools::check_doc()
 devtools::test()
