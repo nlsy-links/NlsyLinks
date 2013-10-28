@@ -29,7 +29,7 @@
 #' @param rName The name of the relatedness coefficient for the pair (this is
 #' typically abbreviated as \code{R}). This should be a \code{character}
 #' value.
-#' @param manifestScale Currently, only continuous manifest/outcome variables
+#' @param manifestScale Currently, only \emph{continuous} manifest/outcome variables
 #' are supported.
 #' @return Currently, a list is returned with the arguments \code{HSquared},
 #' \code{CSquared}, \code{ESquared}, and \code{RowCount}.  In the future, this

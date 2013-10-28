@@ -35,7 +35,7 @@
   the pair (this is typically abbreviated as \code{R}).
   This should be a \code{character} value.}
 
-  \item{manifestScale}{Currently, only continuous
+  \item{manifestScale}{Currently, only \emph{continuous}
   manifest/outcome variables are supported.}
 }
 \value{

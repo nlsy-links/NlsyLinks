@@ -135,8 +135,6 @@ components <- as.numeric(cbind(a2, c2, e2)[1,] / (a2 + c2 + e2)) #The 'as.numeri
 print(components) #Print the unity-SCALED ace components.
 caseCount <- nrow(dsClean)
 details <- list(lavaan=fit)
-#print(paste("R Levels excluded:",  stringr::str_c(rLevelsToExclude, collapse=", "), "; R Levels retained:", rString)) #Print the dropped & retained groups.
+#print(paste("R Levels excluded:", stringr::str_c(rLevelsToExclude, collapse=", "), "; R Levels retained:", rString)) #Print the dropped & retained groups.
 ace <- CreateAceEstimate(aSquared=components[1], cSquared=components[2], eSquared=components[3], caseCount=caseCount, details=details)
 ace
-
-
