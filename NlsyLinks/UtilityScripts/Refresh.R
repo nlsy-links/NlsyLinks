@@ -10,12 +10,12 @@ devtools::run_examples(); dev.off() #This overwrites the NAMESPACE file too
 devtools::check_doc()
 devtools::test()
 
-# devtools::build(args="--resave-data")
-system("R CMD build --resave-data")
+devtools::build()#args="--resave-data")
+# system("R CMD build --resave-data")
 
 #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check F:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
-system("R CMD check --as-cran --no-clean D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check F:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
-devtools::check(build_args="--resave-data")
+# system("R CMD check --as-cran --no-clean D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check F:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
+devtools::check()#build_args="--resave-data")
 
 devtools::revdep_check(pkg="NlsyLinks", recursive=TRUE)
 # devtools::revdep_check(pkg="Wats", recursive=TRUE)
