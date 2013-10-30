@@ -6,7 +6,7 @@ rm(list=ls(all=TRUE))
 
 setwd("F:/Projects/RDev/NlsyLinksStaging/")
 system("R CMD build --resave-data D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
-system("R CMD check F:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.200.tar.gz") #system("R CMD check F:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
+system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check F:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
 # system("R CMD check --as-cran F:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.200.tar.gz") #system("R CMD check F:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
 # q()
 

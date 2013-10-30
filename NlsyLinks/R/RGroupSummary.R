@@ -49,11 +49,11 @@
 #' 
 #' #Should return: 
 #' # R Included PairCount O1Variance O2Variance O1O2Covariance Correlation Determinant PosDefinite
-#' # 1 0.250     TRUE      2719   169.1291   207.0233       40.66048   0.2172970    33360.38        TRUE
-#' # 2 0.375     TRUE       141   167.9943   181.8788       40.67609   0.2327024    28900.07        TRUE
-#' # 3 0.500     TRUE      5508   230.9663   233.3492      107.59822   0.4634764    42318.42        TRUE
-#' # 4 0.750    FALSE         2   220.5000    18.0000       63.00000   1.0000000        0.00       FALSE
-#' # 5 1.000     TRUE        22   319.1948   343.1169      277.58874   0.8387893    32465.62        TRUE
+#' # 1 0.250     TRUE      2719   169.1291   207.0233       40.66048   0.2172970    33360.38    TRUE
+#' # 2 0.375     TRUE       141   167.9943   181.8788       40.67609   0.2327024    28900.07    TRUE
+#' # 3 0.500     TRUE      5508   230.9663   233.3492      107.59822   0.4634764    42318.42    TRUE
+#' # 4 0.750    FALSE         2   220.5000    18.0000       63.00000   1.0000000        0.00   FALSE
+#' # 5 1.000     TRUE        22   319.1948   343.1169      277.58874   0.8387893    32465.62    TRUE
 #' 
 #' #To get summary stats for the whole sample, create one large inclusive group.
 #' dsLinks$Dummy <- 1

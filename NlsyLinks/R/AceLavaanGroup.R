@@ -19,7 +19,7 @@
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
 #' dsLinks <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-#' dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only the Gen2 Siblings (ie, NLSY79-C subjects)
+#' dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only Gen2 Siblings (NLSY79-C)
 #' 
 #' oName_1 <- "MathStandardized_1" #Stands for Outcome1
 #' oName_2 <- "MathStandardized_2" #Stands for Outcome2

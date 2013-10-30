@@ -1,3 +1,6 @@
+import(methods)
+import(lavaan)
+
 export(AceLavaanGroup)
 export(AceUnivariate)
 export(CleanSemAceDataset)
