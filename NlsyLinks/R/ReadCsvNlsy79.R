@@ -1,10 +1,11 @@
 #' @name ReadCsvNlsy79
-#' @aliases ReadCsvNlsy79 ReadCsvNlsy79Gen1 ReadCsvNlsy79Gen2
+#' @aliases ReadCsvNlsy79Gen1 ReadCsvNlsy79Gen2
 #' @export ReadCsvNlsy79Gen1 ReadCsvNlsy79Gen2
 #' 
 #' @title Read a CSV file downloaded from the NLS Investigator
 #' @description The function accepts a (file path to) CSV file and creates a \code{data.frame}.  The \code{data.frame} is modified and augmented with columns to assist later routines.
-#' @usage ReadCsvNlsy79Gen1(filePath, dsExtract=read.csv(filePath)) 
+#' @usage 
+#' ReadCsvNlsy79Gen1(filePath, dsExtract=read.csv(filePath)) 
 #' 
 #' ReadCsvNlsy79Gen2(filePath, dsExtract=read.csv(filePath))
 
