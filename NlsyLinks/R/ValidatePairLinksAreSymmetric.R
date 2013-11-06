@@ -57,8 +57,8 @@ function( linksPair ) {
     #oppositeCount <- nrow(subset(linksPair, Subject1Tag==tag2 & Subject2Tag==tag1 & R==r & RelationshipPath==path))
     oppositeCount <- nrow(linksPair[linksPair$Subject1Tag==tag2 & linksPair$Subject2Tag==tag1 & linksPair$R==r & linksPair$RelationshipPath==path, ])
     if( oppositeCount != 1 ) {
-      stop(paste("The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (Subject1Tag, Subject2Tag, R)=(",
-                 tag1, ", ", tag2, ", ", r, ") was found ", oppositeCount, " time(s).", sep=""))
+      stop(paste0("The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (Subject1Tag, Subject2Tag, R)=(",
+                 tag1, ", ", tag2, ", ", r, ") was found ", oppositeCount, " time(s)."))
     }
   }  
   return( TRUE )

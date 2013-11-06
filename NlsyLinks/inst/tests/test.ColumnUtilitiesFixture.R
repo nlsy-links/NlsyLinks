@@ -1,7 +1,7 @@
 
 # LoadPairFile <- function( ) {
-#   #directory <- "F:/Projects/Nls/Links2011/Analysis/Df/2012-01-13/"
-#   #pathLinks <- paste(directory, "Links2011V28.csv", sep="")
+#   #directory <- "F:/Projects/Nls/Links2011/Analysis/Df/2012-01-13"
+#   #pathLinks <- file.path(directory, "Links2011V28.csv")
 #   #dsLinks <- read.csv(pathLinks)
 #   data(Links79Pair)
 #   return( Links79Pair )

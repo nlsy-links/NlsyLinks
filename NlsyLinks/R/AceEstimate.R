@@ -71,7 +71,7 @@ CreateAceEstimate <- function( aSquared, cSquared, eSquared, caseCount, details=
   componentSum <- aSquared + cSquared + eSquared
   #print(class(caseCount))
   if( missing(caseCount) ) stop("The argument 'caseCount' is missing.")
-  #else if( class(caseCount) != "numeric" ) stop(paste("The argument 'caseCount' should be class 'numeric', but was '", class(caseCount), "'.", sep=""))
+  #else if( class(caseCount) != "numeric" ) stop(paste0("The argument 'caseCount' should be class 'numeric', but was '", class(caseCount), "'."))
   
   unity <- ( abs(componentSum - 1.0) < unityTolerance )
   withinBounds <- (0 <= min(aSquared, cSquared, eSquared)) && (max( aSquared, cSquared, eSquared) <= 1)

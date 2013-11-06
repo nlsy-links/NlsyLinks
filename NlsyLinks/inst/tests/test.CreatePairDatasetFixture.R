@@ -4,15 +4,15 @@
 #expect_equal(object=10.01, expected=10, tolerance=.002, scale=NULL) #Relative Difference
 
 LoadPairFile <- function( ) {
-  #directory <- "F:/Projects/Nls/Links2011/Analysis/Df/2012-01-13/"
-  #pathLinks <- paste(directory, "Links2011V28.csv", sep="")
+#   directory <- "F:/Projects/Nls/Links2011/Analysis/Df/2012-01-13"
+#   pathLinks <- file.path(directory, "Links2011V28.csv")
   #dsLinks <- read.csv(pathLinks)
   data(Links79Pair)
   return( Links79Pair )
 }
 LoadOutcomeFile <- function( ) {
-#   directory <- "F:/Projects/Nls/Links2011/Analysis/Df/2012-01-13/"
-#   pathDv <-  paste(directory, "BMI_Sex_Intell.csv", sep="")
+#   directory <- "F:/Projects/Nls/Links2011/Analysis/Df/2012-01-13"
+#   pathDv <-  file.path(directory, "BMI_Sex_Intell.csv")
 #   dsDv <- read.csv(pathDv)
   data(ExtraOutcomes79)
   return( ExtraOutcomes79 )

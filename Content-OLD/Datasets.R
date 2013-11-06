@@ -2,8 +2,8 @@
 # directory <- "F:/Projects/RDev/NlsyLinksStaging"
 # directoryDatasets <- file.path(directory, "Datasets")
 require(plyr)
-pathLinksPair <- file.path(directoryDatasets, "Links79PairsWithOutcomes.csv")
-Links79PairExpanded <- read.csv(pathLinksPair)
+
+Links79PairExpanded <- read.csv("./Datasets/Links79PairsWithOutcomes.csv", stringsAsFactors=F)
 
 relationshipLabels <- c("Gen1Housemates","Gen2Siblings","Gen2Cousins","ParentChild", "AuntNiece")
 # multipleBirthLabels <- c("No", "Twin", "Triplet", "DoNotKnow")
@@ -20,7 +20,7 @@ Links79PairExpanded <- subset(Links79PairExpanded, select=-RImplicitDifference) 
 
 Links79Pair <- subset(Links79PairExpanded, select=c("ExtendedID", "Subject1Tag", "Subject2Tag", "R", "RelationshipPath"))
 
-ExtraOutcomes79 <- read.csv(file.path(directoryDatasets, "ExtraOutcomes79.csv"))
+ExtraOutcomes79 <- read.csv("./Datasets/ExtraOutcomes79.csv", stringsAsFactors=F)
 #ExtraOutcomes79$SubjectTag <- CreateSubjectTag(ExtraOutcomes79$SubjectID, ExtraOutcomes79$Generation)
 # ExtraOutcomes79 <- subset(ExtraOutcomes79, select=-c(HeightForAge19To25, HeightStandarizedFor19to25))
 # ExtraOutcomes79$Weight <- round(ExtraOutcomes79$Weight / 16)

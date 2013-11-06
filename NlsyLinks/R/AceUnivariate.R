@@ -70,9 +70,9 @@ AceUnivariate <-
 function( method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_1, oName_2, rName="R", manifestScale="Continuous" ) {
   #print( length(method) )
   if( length(method) != 1 )
-    stop(paste("The method argument must contain exactly one element when calling the AceUnivariate function.  It contained ", length(method), " elements.", sep=""))
+    stop(paste0("The method argument must contain exactly one element when calling the AceUnivariate function.  It contained ", length(method), " elements."))
   else if( method == ""  )
-    stop(paste("The method argument must contain exactly one element when calling the AceUnivariate function.  It was blank.", sep=""))
+    stop(paste0("The method argument must contain exactly one element when calling the AceUnivariate function.  It was blank."))
   else if( method == 'DeFriesFulkerMethod1' )
     #return( DeFriesFulkerMethod1(outcomeForSubject1, outcomeForSubject2, relatedness) )
     return( DeFriesFulkerMethod1(dataSet, oName_1, oName_2, rName) )
@@ -80,5 +80,5 @@ function( method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oNam
     #return( DeFriesFulkerMethod3(outcomeForSubject1, outcomeForSubject2, relatedness) )
     return( DeFriesFulkerMethod3(dataSet, oName_1, oName_2, rName) )
   else
-    stop(paste("The method argument, '", method ,"' was not recognized as a valid option to the AceUnivariate function.", sep=""))
+    stop(paste0("The method argument, '", method ,"' was not recognized as a valid option to the AceUnivariate function."))
 }

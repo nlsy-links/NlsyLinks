@@ -15,8 +15,8 @@ function( outcomeDataset, linksPairDataset, outcomeNames,
   for( j in 1:ncol(dsOutcomeSubject1) ) {
     columnName <- colnames(dsOutcomeSubject1)[j]
     if( columnName %in% outcomeNames ) {
-      colnames(dsOutcomeSubject1)[colnames(dsOutcomeSubject1) == columnName] <- paste(columnName, "_1", sep="")
-      colnames(dsOutcomeSubject2)[colnames(dsOutcomeSubject2) == columnName] <- paste(columnName, "_2", sep="")      
+      colnames(dsOutcomeSubject1)[colnames(dsOutcomeSubject1) == columnName] <- paste0(columnName, "_1")
+      colnames(dsOutcomeSubject2)[colnames(dsOutcomeSubject2) == columnName] <- paste0(columnName, "_2")      
     }
   }
  
