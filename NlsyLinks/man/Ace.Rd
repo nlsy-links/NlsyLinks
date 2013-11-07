@@ -57,8 +57,6 @@
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
-data(ExtraOutcomes79)
-data(Links79Pair)
 dsOutcomes <- ExtraOutcomes79
 dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,
   generation=dsOutcomes$Generation)

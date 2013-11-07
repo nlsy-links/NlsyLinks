@@ -16,7 +16,6 @@
 #' 
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
-#' data(ExtraOutcomes79)  #Load the dataset from the NlsyLinks package.
 #'   
 #' #Typically these two vectors will come from a data frame.
 #' subjectIDs <- c(71:82, 10001:10012)

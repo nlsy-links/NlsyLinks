@@ -75,6 +75,7 @@ CreateAceEstimate <- function( aSquared, cSquared, eSquared, caseCount, details=
   
   unity <- ( abs(componentSum - 1.0) < unityTolerance )
   withinBounds <- (0 <= min(aSquared, cSquared, eSquared)) && (max( aSquared, cSquared, eSquared) <= 1)
+#   withinBounds <- (0 <= min(aSquared, cSquared, eSquared)) & (max( aSquared, cSquared, eSquared) <= 1)
   return( new("AceEstimate", aSquared, cSquared, eSquared, caseCount, unity, withinBounds, details) )  
 }
 
