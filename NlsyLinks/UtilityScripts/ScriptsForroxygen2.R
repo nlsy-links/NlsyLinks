@@ -1,4 +1,4 @@
-library(Rd2roxygen)
+require(Rd2roxygen)
 options(roxygen.comment = "##' ")
 #(info = parse_file( "F:/Projects/RDev/NlsyLinksStaging/NlsyLinks/man/NlsyLinks-package.Rd"))
 (info = parse_file( "man/ExtraOutcomes79.Rd")) #Rd2roxygen

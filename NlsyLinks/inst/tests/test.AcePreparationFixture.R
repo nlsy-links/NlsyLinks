@@ -77,7 +77,6 @@ test_that("CleanSemAceDataset HeightZGenderAge", {
 #   expect_equal(object=mean(dsClean$GroupID), expected=expectedMeanGroupID, scale=1)
 #   expect_equal(object=nrow(subset(dsClean, !is.na(R) & !is.na(O1) & !is.na(O2) & !is.na(GroupID))), expected=expectedCompleteRows, scale=1)
 # })
-# require(stringr)
 # nrow(dsClean)
 # str_c(colnames(dsClean), collapse="', '")
 # str_c(mean(dsClean$R))
@@ -257,7 +256,6 @@ test_that("Single Group Summary MathStandardized", {
   expect_equal(object=dsGroupSummary$PosDefinite, expected=expectedPosDefinite, scale=1)
 })
 # 
-# require(stringr)
 # dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
 # rName <- "R"
 # str_c(colnames(dsGroupSummary), collapse="', '")
