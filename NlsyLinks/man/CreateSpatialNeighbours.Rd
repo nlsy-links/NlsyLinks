@@ -7,7 +7,9 @@
 \arguments{
   \item{linksPairsDoubleEntered}{A \code{data.frame}
   containing the links, preferably created by a function
-  like \code{\link{CreatePairLinksDoubleEntered}}.}
+  like
+
+  \code{\link{CreatePairLinksDoubleEntered}}.}
 }
 \value{
   An S3 \code{spatial.neighbours} object to work with
@@ -42,13 +44,15 @@
   \code{\link{Links79Pair}} for more details.
 }
 \note{
-  Notice the British variant of 'neighbo\emph{u}rs'
+  Notice the British variant of 'neighbo\emph{u}rs', to be
+  consistent with the \code{spatial.neighbour} class in the
+  \code{spdep} package.
 }
 \examples{
 ##Need something here
 }
 \author{
-  Will Beasley David Bard
+  Will Beasley and David Bard
 }
 \references{
   Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2008).

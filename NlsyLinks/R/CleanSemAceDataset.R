@@ -1,5 +1,4 @@
 #' @name CleanSemAceDataset
-#' @aliases CleanSemAceDataset
 #' @export
 #' 
 #' @title Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.

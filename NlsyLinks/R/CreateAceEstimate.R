@@ -1,5 +1,4 @@
 #' @name CreateAceEstimate
-#' @aliases CreateAceEstimate
 #' @export
 #' 
 #' @title Instantiate an \code{\link{AceEstimate-class}} object.

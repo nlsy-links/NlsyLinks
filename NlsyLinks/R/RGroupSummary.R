@@ -1,5 +1,4 @@
 #' @name RGroupSummary
-#' @aliases RGroupSummary
 #' @export
 #' 
 #' @title Calculates summary statistics for each \emph{R}elatedness Group in the sample.

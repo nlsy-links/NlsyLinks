@@ -1,12 +1,13 @@
 #' @name CreateSpatialNeighbours
-#' @aliases CreateSpatialNeighbours
 #' @export
 #' 
 #' @title Distances between related family members, formated for spatial analysis.
 #' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a \code{\link{data.frame}}) to represent neigbours.
 #' @usage  CreateSpatialNeighbours(linksPairsDoubleEntered)
 ## CreateSpatialNeighbours79Gen2()
-#' @param linksPairsDoubleEntered A \code{data.frame} containing the links, preferably created by a function like \code{\link{CreatePairLinksDoubleEntered}}.
+#' @param linksPairsDoubleEntered A \code{data.frame} containing the links, preferably created by a function like 
+#' 
+#' \code{\link{CreatePairLinksDoubleEntered}}.
 #' 
 #' @details There is one row per unique pair of subjects, \emph{respecting order}.  This is different than \code{\link{Links79Pair}} and \code{\link{Links79PairExpanded}}, which has one row per unique pair of subjects, \emph{irrespective of order}.
 # #' \code{CreateSpatialNeighbours79Gen2} automatically creates dataset of NLSY79 Gen2 subjects (i.e., the children of the mothers in the initial NLSY79 sample.
@@ -22,8 +23,8 @@
 #' 
 #' @references Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2008). \emph{Applied Spatial Data Analysis with R.} New York: Springer. (Especially Chapter 9.)
 #' ##David, can you please give me some of the articles/books that you used this with?
-#' @author Will Beasley  David Bard
-#' @note Notice the British variant of 'neighbo\emph{u}rs'
+#' @author Will Beasley and  David Bard
+#' @note Notice the British variant of 'neighbo\emph{u}rs', to be consistent with the \code{spatial.neighbour} class in the  \code{spdep} package.
 #' @examples
 #' ##Need something here
 #' @keywords spatial analysis

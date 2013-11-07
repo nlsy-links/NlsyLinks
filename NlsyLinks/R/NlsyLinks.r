@@ -4,7 +4,7 @@
 #' 
 #' @docType package
 #' @name NlsyLinks-package
-#' @aliases NlsyLinks-package NlsyLinks
+#' @aliases NlsyLinks
 #' @note This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 #' subjects in the original NLSY79 sample
 #' (\url{http://www.bls.gov/nls/nlsy79.htm}).  "Gen2" subjects are the

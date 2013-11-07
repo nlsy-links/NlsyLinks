@@ -1,5 +1,4 @@
 #' @name ValidateOutcomeDataset
-#' @aliases ValidateOutcomeDataset
 #' @export
 #' 
 #' @title Validates the schema of datasets containing outcome variables.

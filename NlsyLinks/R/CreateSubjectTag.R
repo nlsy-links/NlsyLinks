@@ -1,5 +1,4 @@
 #' @name CreateSubjectTag
-#' @aliases CreateSubjectTag
 #' @export
 #' 
 #' @title Creates a \code{SubjectTag}.  This value uniquely identifies subjects, when both generations are included in the same dataset.

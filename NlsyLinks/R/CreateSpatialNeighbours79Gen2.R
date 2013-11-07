@@ -1,5 +1,4 @@
 #' @name CreateSpatialNeighbours79Gen2
-#' @aliases CreateSpatialNeighbours79Gen2
 #' @export
 #' 
 #' @usage CreateSpatialNeighbours79Gen2()
