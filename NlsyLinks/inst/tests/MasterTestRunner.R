@@ -1,18 +1,20 @@
 rm(list=ls(all=TRUE)) #Clear all the variables before starting a new run.
 
 require(testthat)
+require(devtools)
 #test_dir("F:/Projects/RDev/NlsyLinksStaging/Static/tests")
 #trace(ValidatePairLinks)
-isDevelopmentBox <- Sys.info()["nodename"] == "GIMBLE"
-if( isDevelopmentBox ) {
-  directory <- "D:/Projects/RDev/NlsyLinksStaging"
-  directoryTests <- file.path(directory, "NlsyLinks/inst/tests")
-  pathToBeIncorporated <- file.path(directory, "Content/ToBeIncorporated.R")
-}
-if( !isDevelopmentBox ) {
-  directory <- path.package("NlsyLinks")
+# isDevelopmentBox <- Sys.info()["nodename"] == "GIMBLE"
+# if( isDevelopmentBox ) {
+#   directory <- "D:/Projects/RDev/NlsyLinksStaging"
+#   directoryTests <- file.path(directory, "NlsyLinks/inst/tests")
+#   pathToBeIncorporated <- file.path(directory, "Content/ToBeIncorporated.R")
+# }
+# if( !isDevelopmentBox ) {
+  #directory <- path.package("NlsyLinks")
+  directory <- devtools::inst("NlsyLinks")
   directoryTests <- file.path(directory, "tests")
-}
+# }
 
 
 ClearMostVariables <- function( ) {
