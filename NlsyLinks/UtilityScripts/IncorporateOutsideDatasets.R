@@ -70,6 +70,10 @@ save(Links79PairExpanded, file=pathOutputLinkExpanded, compress="xz")
 ###  SubjectDetails
 ###############################################################
 SubjectDetails79 <- read.csv(pathInputSubjectDetails, stringsAsFactors=TRUE)
+SubjectDetails79$Gender <- factor(SubjectDetails79$Gender, levels=1:2, labels=c("Male", "Female"))
+
+vectorOfTwins <- sort(unique(unlist(Links79PairExpanded[Links79PairExpanded$IsMz=="Yes", c("Subject1Tag", "Subject2Tag")])))
+SubjectDetails79$IsMz <- (SubjectDetails79$SubjectTag %in% vectorOfTwins)
 
 sapply(SubjectDetails79, class)
 save(SubjectDetails79, file=pathOutputSubjectDetails, compress="xz")
