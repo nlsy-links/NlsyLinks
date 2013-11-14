@@ -13,3 +13,4 @@ The following files come from the [NlsyLinksDetermination](https://github.com/Li
  * **Gen1LifeCourse.csv**: This dataset comes straight from the [NLSY Investigator](https://www.nlsinfo.org/investigator/).  The tagset, which defines the variables to extract, can be downloaded from the repository file, [Gen1Documentation_LifeCourse.NLSY79](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Extracts/Tagsets/Gen1Documentation_LifeCourse.NLSY79).
  
  * **Gen1LifeCourse.csv**: This dataset comes straight from the [NLSY Investigator](https://www.nlsinfo.org/investigator/).  The tagset, which defines the variables to extract, can be downloaded from the repository file, [Gen2Documentation_Birth.CHILDYA](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Extracts/Tagsets/Gen2Documentation_Birth.CHILDYA).
+ 
