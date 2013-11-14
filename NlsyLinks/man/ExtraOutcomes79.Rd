@@ -58,7 +58,6 @@
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
-data(ExtraOutcomes79)  #Load the dataset from the NlsyLinks package.
 gen2Outcomes <- subset(ExtraOutcomes79, Generation==2) #Create a dataset of only Gen2 subjects.
 
 plot(ExtraOutcomes79)

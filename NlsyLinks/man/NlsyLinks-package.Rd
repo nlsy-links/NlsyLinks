@@ -17,7 +17,6 @@
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
-data(Links79Pair)  #Load the dataset from the NlsyLinks package.
 summary(Links79Pair)  #Summarize the five variables.
 hist(Links79Pair$R)  #Display a histogram of the Relatedness values.
 table(Links79Pair$R)  #Create a table of the Relatedness values for the whole sample.

@@ -36,7 +36,6 @@ variables.
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
-data(SubjectDetails79)  #Load the dataset from the NlsyLinks package.
 
 summary(SubjectDetails79)
 

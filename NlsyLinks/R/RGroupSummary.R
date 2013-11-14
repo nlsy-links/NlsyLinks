@@ -65,7 +65,7 @@
 #' ### ReadCsvNlsy79
 #' ###
 #' \dontrun{
-#' filePathGen2 <- "F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"
+#' filePathGen2 <- "./NlsyLinksStaging/Datasets/Gen2Birth.csv"
 #' ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 #' }
 #' 

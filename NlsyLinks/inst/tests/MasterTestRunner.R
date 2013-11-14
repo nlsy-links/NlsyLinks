@@ -2,7 +2,7 @@ rm(list=ls(all=TRUE)) #Clear all the variables before starting a new run.
 
 require(testthat)
 require(devtools)
-#test_dir("F:/Projects/RDev/NlsyLinksStaging/Static/tests")
+#test_dir("./Static/tests")
 #trace(ValidatePairLinks)
 # isDevelopmentBox <- Sys.info()["nodename"] == "GIMBLE"
 # if( isDevelopmentBox ) {

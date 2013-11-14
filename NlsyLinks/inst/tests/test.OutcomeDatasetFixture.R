@@ -1,10 +1,8 @@
 
 # LoadPairFile <- function( ) {
-#   data(Links79Pair)
 #   return( Links79Pair )
 # }
 LoadOutcomeFile <- function( ) {
-  data(ExtraOutcomes79)
   return( ExtraOutcomes79 )
 }
 LoadDefaultOutcomeNames <- function( ) {

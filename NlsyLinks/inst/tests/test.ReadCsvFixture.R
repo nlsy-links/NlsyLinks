@@ -1,5 +1,5 @@
 require(devtools)
-# filePathGen2 <- "./../extdata/Gen2Birth.csv" #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"
+# filePathGen2 <- "./../extdata/Gen2Birth.csv" #"./Datasets/Gen2Birth.csv"
 # fileNameGen2 <- "Gen2Birth.csv"
 
 # print(basename(normalizePath(".")))
@@ -18,7 +18,7 @@ require(devtools)
 context("Read CSV")
 ###########
 test_that("Nlsy79Gen1Path", {  
-  filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "Gen1LifeCourse.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+  filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "Gen1LifeCourse.csv")
 #   dsExtract <- read.csv(filePathGen1)
   ds <- ReadCsvNlsy79Gen1(filePath=filePathGen1)
   
@@ -29,7 +29,7 @@ test_that("Nlsy79Gen1Path", {
   expect_equal(object=ncol(ds), expected=13, scale=1)
 })
 test_that("Nlsy79Gen1DataFrame", {  
-  filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "Gen1LifeCourse.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+  filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "Gen1LifeCourse.csv")
   dsRaw <- read.csv(filePathGen1)
   ds <- ReadCsvNlsy79Gen1(dsExtract=dsRaw)
   
@@ -42,7 +42,7 @@ test_that("Nlsy79Gen1DataFrame", {
 
 test_that("Nlsy79Gen2Path", {  
   #   ds <- ReadCsvNlsy79Gen2(filePath=file.path(directory, fileNameGen2))
-  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "Gen2Birth.csv")
   ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
   
   expect_equal(object=min(ds$SubjectTag), expected=201, scale=1)
@@ -55,7 +55,7 @@ test_that("Nlsy79Gen2Path", {
 })
 
 test_that("Nlsy79Gen2DataFrame", {  
-  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "Gen2Birth.csv") #"F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"  
+  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "Gen2Birth.csv")
   dsRaw <- read.csv(filePathGen2)
   ds <- ReadCsvNlsy79Gen2(dsExtract=dsRaw)
   

@@ -28,7 +28,7 @@
 #' @author Will Beasley
 #' @examples
 #' \dontrun{
-#' filePathGen2 <- "F:/Projects/RDev/NlsyLinksStaging/Datasets/Gen2Birth.csv"
+#' filePathGen2 <- "~/Nlsy/Datasets/Gen2Birth.csv"
 #' ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 #' }
 #'

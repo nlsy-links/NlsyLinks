@@ -34,7 +34,7 @@
   pair's group membership.}
 }
 \description{
-  This function takes a 'GroupSummary' \code{data.frame}
+  This function takes a `GroupSummary' \code{data.frame}
   (which is created by the \code{RGroupSummary} function)
   and returns a \code{data.frame} that is used by the
   \code{Ace} function.

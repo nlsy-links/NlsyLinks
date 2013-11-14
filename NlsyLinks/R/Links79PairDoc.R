@@ -3,7 +3,7 @@
 
 #' @title Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults
 #' 
-#' @description This dataset specifies the relatedness coefficient (ie, '\code{R}') between
+#' @description This dataset specifies the relatedness coefficient (ie, `\code{R}') between
 #' subjects in the same extended family.  Each row represents a unique
 #' relationship pair.  An extended family with \eqn{k} subjects will have
 #' \eqn{k}(\eqn{k}-1)/2 rows.  Typically, Subject1 is older while Subject2 is
@@ -89,7 +89,6 @@
 #' @keywords datasets
 #' @examples 
 #' library(NlsyLinks) #Load the package into the current R session.
-#' data(Links79Pair)  #Load the dataset from the NlsyLinks package.
 #' summary(Links79Pair)  #Summarize the five variables.
 #' hist(Links79Pair$R)  #Display a histogram of the Relatedness coefficients.
 #' table(Links79Pair$R)  #Create a table of the Relatedness coefficients for the whole sample.

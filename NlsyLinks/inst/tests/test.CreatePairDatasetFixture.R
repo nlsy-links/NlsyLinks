@@ -7,14 +7,12 @@ LoadPairFile <- function( ) {
 #   directory <- "F:/Projects/Nls/Links2011/Analysis/Df/2012-01-13"
 #   pathLinks <- file.path(directory, "Links2011V28.csv")
   #dsLinks <- read.csv(pathLinks)
-  data(Links79Pair)
   return( Links79Pair )
 }
 LoadOutcomeFile <- function( ) {
 #   directory <- "F:/Projects/Nls/Links2011/Analysis/Df/2012-01-13"
 #   pathDv <-  file.path(directory, "BMI_Sex_Intell.csv")
 #   dsDv <- read.csv(pathDv)
-  data(ExtraOutcomes79)
   return( ExtraOutcomes79 )
 }
 LoadDefaultOutcomeNames <- function( ) {

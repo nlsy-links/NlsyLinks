@@ -1,54 +1,7 @@
 \docType{data}
 \name{Links79PairExpanded}
 \alias{Links79PairExpanded}
-\title{Kinship linking file for pairs of relatives.  It builds upon the \code{\link{Links79Pair}} dataset.
-
-Please first read the documentation for \code{\link{Links79Pair}}.  That
-dataset contains the same pairs/rows, but only a subset of the
-variables/columns.
-
-Specifies the relatedness coefficient (ie, 'R') between subjects in the
-same extended family.  Each row represents a unique relationship pair.  An
-extended family with \eqn{k} subjects will have \eqn{k}(\eqn{k}-1)/2 rows.
-Typically, Subject1 is older while Subject2 is younger.
-
-Currently this dataset contains only Gen2 siblings.  However, it soon will
-be generalized to the five categories specified by the
-\code{RelationshipPath} variable.  Code written using this dataset should
-NOT assume it contains only Gen2 sibiling pairs.  See an example of
-filtering the relationship category in the in \code{\link{Links79Pair}}
-documentation.
-
-Please first read the documentation for \code{\link{Links79Pair}}.  That
-dataset contains the same pairs/rows, but only a subset of the
-variables/columns.
-
-The specific steps to determine the \code{R} coefficient will be described
-in an upcoming publication.  The following information may influence the
-decisions of an applied researcher.
-
-A distinction is made between 'Explicit' and 'Implicit' information.
-Explicit information comes from survey items that directly address the
-subject's relationships.  For instance in 2006, surveys asked if the
-sibling pair share the same biological father (eg, Y19940.00 and
-T00020.00).  Implicit information comes from items where the subject
-typically isn't aware that their responses may be used to determine genetic
-relatedness.  For instance, if two siblings have biological fathers with
-the same month of death (eg, R37722.00 and R37723.00), it may be reasonable
-to assume they share the same biological father.
-
-'Interpolation' is our lingo when other siblings are used to leverage
-insight into the current pair.  For example, assume Subject 101, 102, and
-103 have the same mother.  Further assume 101 and 102 report they share a
-biological father, and that 101 and 103 share one too.  Finally, assume
-that we don't have information about the relationship between 102 and 103.
-If we are comfortable with our level of uncertainty of these
-determinations, then we can interpolate/infer that 102 and 103 are
-full-siblings as well.
-
-The math and height scores are duplicated from
-\code{\link{ExtraOutcomes79}}, but are included here to make some examples
-more concise and accessible.}
+\title{Kinship linking file for pairs of relatives.  It builds upon the \code{\link{Links79Pair}} dataset.}
 \format{A data frame with 11,075 observations on the following 22
 variables.  There is one row per unique pair of subjects, irrespective of
 order.
@@ -84,15 +37,12 @@ order.
   See \code{\link{Links79Pair}}.
 }
 \description{
-  Kinship linking file for pairs of relatives.  It builds
-  upon the \code{\link{Links79Pair}} dataset.
-
   Please first read the documentation for
   \code{\link{Links79Pair}}.  That dataset contains the
   same pairs/rows, but only a subset of the
   variables/columns.
 
-  Specifies the relatedness coefficient (ie, 'R') between
+  Specifies the relatedness coefficient (ie, `R') between
   subjects in the same extended family.  Each row
   represents a unique relationship pair.  An extended
   family with \eqn{k} subjects will have
@@ -117,7 +67,7 @@ order.
   following information may influence the decisions of an
   applied researcher.
 
-  A distinction is made between 'Explicit' and 'Implicit'
+  A distinction is made between `Explicit' and `Implicit'
   information. Explicit information comes from survey items
   that directly address the subject's relationships.  For
   instance in 2006, surveys asked if the sibling pair share
@@ -129,7 +79,7 @@ order.
   death (eg, R37722.00 and R37723.00), it may be reasonable
   to assume they share the same biological father.
 
-  'Interpolation' is our lingo when other siblings are used
+  `Interpolation' is our lingo when other siblings are used
   to leverage insight into the current pair.  For example,
   assume Subject 101, 102, and 103 have the same mother.
   Further assume 101 and 102 report they share a biological
@@ -146,7 +96,6 @@ order.
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
-data(Links79PairExpanded)  #Load the dataset from the NlsyLinks package.
 olderR <- Links79PairExpanded$RExplicitOlderSibVersion  #Declare a concise variable name.
 youngerR <- Links79PairExpanded$RExplicitYoungerSibVersion  #Declare a concise variable name.
 
@@ -154,7 +103,7 @@ plot(jitter(olderR), jitter(youngerR))  #Scatterplot the siblings' responses.
 table(youngerR, olderR)  #Table of the relationship between the siblings' responses.
 ftable(youngerR, olderR, dnn=c("Younger's Version", "Older's Version")) #A formatted table.
 
-#write.csv(Links79PairExpanded, file='F:/Projects/RDev/NlsyLinksStaging/Links79PairExpanded.csv',
+#write.csv(Links79PairExpanded, file='~/NlsyLinksStaging/Links79PairExpanded.csv',
 #  row.names=FALSE)
 }
 \author{

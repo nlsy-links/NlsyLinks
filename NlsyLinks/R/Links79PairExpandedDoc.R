@@ -3,11 +3,11 @@
 # 
 #' @title Kinship linking file for pairs of relatives.  It builds upon the \code{\link{Links79Pair}} dataset.
 #' 
-#' Please first read the documentation for \code{\link{Links79Pair}}.  That
+#' @description Please first read the documentation for \code{\link{Links79Pair}}.  That
 #' dataset contains the same pairs/rows, but only a subset of the
 #' variables/columns.
 #' 
-#' Specifies the relatedness coefficient (ie, 'R') between subjects in the
+#' Specifies the relatedness coefficient (ie, `R') between subjects in the
 #' same extended family.  Each row represents a unique relationship pair.  An
 #' extended family with \eqn{k} subjects will have \eqn{k}(\eqn{k}-1)/2 rows.
 #' Typically, Subject1 is older while Subject2 is younger.
@@ -19,15 +19,18 @@
 #' filtering the relationship category in the in \code{\link{Links79Pair}}
 #' documentation.
 #' 
+#' 
 #' Please first read the documentation for \code{\link{Links79Pair}}.  That
 #' dataset contains the same pairs/rows, but only a subset of the
 #' variables/columns.
+#' 
 #' 
 #' The specific steps to determine the \code{R} coefficient will be described
 #' in an upcoming publication.  The following information may influence the
 #' decisions of an applied researcher.
 #' 
-#' A distinction is made between 'Explicit' and 'Implicit' information.
+#' 
+#' A distinction is made between `Explicit' and `Implicit' information.
 #' Explicit information comes from survey items that directly address the
 #' subject's relationships.  For instance in 2006, surveys asked if the
 #' sibling pair share the same biological father (eg, Y19940.00 and
@@ -37,7 +40,8 @@
 #' the same month of death (eg, R37722.00 and R37723.00), it may be reasonable
 #' to assume they share the same biological father.
 #' 
-#' 'Interpolation' is our lingo when other siblings are used to leverage
+#' 
+#' `Interpolation' is our lingo when other siblings are used to leverage
 #' insight into the current pair.  For example, assume Subject 101, 102, and
 #' 103 have the same mother.  Further assume 101 and 102 report they share a
 #' biological father, and that 101 and 103 share one too.  Finally, assume
@@ -90,7 +94,6 @@
 #' @examples
 #' 
 #' library(NlsyLinks) #Load the package into the current R session.
-#' data(Links79PairExpanded)  #Load the dataset from the NlsyLinks package.
 #' olderR <- Links79PairExpanded$RExplicitOlderSibVersion  #Declare a concise variable name.
 #' youngerR <- Links79PairExpanded$RExplicitYoungerSibVersion  #Declare a concise variable name.
 #' 
@@ -98,7 +101,7 @@
 #' table(youngerR, olderR)  #Table of the relationship between the siblings' responses.
 #' ftable(youngerR, olderR, dnn=c("Younger's Version", "Older's Version")) #A formatted table.
 #' 
-#' #write.csv(Links79PairExpanded, file='F:/Projects/RDev/NlsyLinksStaging/Links79PairExpanded.csv', 
+#' #write.csv(Links79PairExpanded, file='~/NlsyLinksStaging/Links79PairExpanded.csv', 
 #' #  row.names=FALSE)
 #' 
 NULL
