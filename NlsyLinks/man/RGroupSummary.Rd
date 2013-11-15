@@ -31,18 +31,22 @@
   Included }{Indicates if the group should be included in a
   multiple-group SEM.} \item{ PairCount }{The number of
   pairs in the group with \emph{complete} data for \code{R}
-  and the two outcome/manifest variables.} \item{
-  O1Variance }{ The variance (of the outcome variable)
-  among the group's first members. } \item{ O2Variance }{
-  The variance (of the outcome variable) among the group's
-  second members. } \item{ O1O2Covariance }{ The covariance
-  (of the outcome variable) across the group's first and
-  second members.} \item{ Correlation }{The correlation (of
-  the outcome variable) across the group's first and second
-  members.} \item{ Determinant }{ The determinant of the
-  group's covariance matrix.} \item{ PosDefinite }{
-  Indicates if the group's covariance matrix is positive
-  definite.}
+  and the two outcome/manifest variables.} \item{ O1Mean }{
+  The mean (of the outcome variable) among the group's
+  first members, excluding the missing values. } \item{
+  O2Mean }{ The mean (of the outcome variable) among the
+  group's second members, excluding the missing values. }
+  \item{ O1Variance }{ The variance (of the outcome
+  variable) among the group's first members. } \item{
+  O2Variance }{ The variance (of the outcome variable)
+  among the group's second members. } \item{ O1O2Covariance
+  }{ The covariance (of the outcome variable) across the
+  group's first and second members.} \item{ Correlation
+  }{The correlation (of the outcome variable) across the
+  group's first and second members.} \item{ Determinant }{
+  The determinant of the group's covariance matrix.} \item{
+  PosDefinite }{ Indicates if the group's covariance matrix
+  is positive definite.}
 }
 \description{
   Before and after running ACE Models, it is important to
