@@ -22,16 +22,32 @@ hist(Links79Pair$R)  #Display a histogram of the Relatedness values.
 table(Links79Pair$R)  #Create a table of the Relatedness values for the whole sample.
 }
 \author{
-  Will Beasley, Joe Rodgers, Kelly Meredith, and David Bard
+  \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William
+  Howard Beasley} (\href{http://howardliveoak.com/}{Howard
+  Live Oak LLC}, Norman)
+
+  \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph
+  Lee Rodgers} (Vanderbilt University, Nashville)
+
+  \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David
+  Bard} (University of Oklahoma Health Sciences Center,
+  OKC)
+
+  Kelly Meredith (University of Oklahoma, Norman)
+
+  \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael
+  D. Hunter} (University of Oklahoma, Norman)
 
   Maintainer: Will Beasley <wibeasley@hotmail.com>
 }
 \references{
   This package's development was largely supported by the
-  NIH Grant 1R01HD65865, "NLSY Kinship Links: Reliable and
-  Valid Sibling Identification" (PI: Joe Rodgers).  A more
-  complete list of research articles using NLSY Kinship
-  Links is maintained on our
+  NIH Grant 1R01HD65865,
+  \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY
+  Kinship Links: Reliable and Valid Sibling
+  Identification"} (PI: Joe Rodgers).  A more complete list
+  of research articles using NLSY Kinship Links is
+  maintained on our
   \href{https://github.com/LiveOak/NlsyLinksDetermination/wiki/Articles}{repository's
   wiki}.
 

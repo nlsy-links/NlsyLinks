@@ -8,11 +8,12 @@
 \definecolor{greenteal}{rgb}{0,.5,.5}
 
 \title{The NLS Investigator}
-\author{\href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)\\
-\href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)\\
-\href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)\\
-Kelly Meredith (University of Oklahoma, Norman)\\
-\href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
+\author{
+  \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)\\
+  \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)\\
+  \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)\\
+  Kelly Meredith (University of Oklahoma, Norman)\\
+  \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
 }
 
 \begin{document}
@@ -95,7 +96,7 @@ We recommend saving the tagsets on both the NLS server and your local machine.  
 \includegraphics[width=4in]{D:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorTagsetBackups.png}
 
 \section{Notes}
-This package's development was largely supported by the NIH Grant 1R01HD65865,  \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)\\
+This package's development was largely supported by the NIH Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)\\
 
 
 These screenshots were taken February and March 2012 with Google Chrome 17 and Windows 7 SP1 Enterprise.  If you notice something that no longer corresponds to the current version to the NLS Investigator, please tell us.

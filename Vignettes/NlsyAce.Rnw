@@ -1,5 +1,4 @@
-% -*- mode: noweb; noweb-default-code-mode: R-mode; -*-
-\documentclass[letterpaper]{article}
+\documentclass{article}
 
 \usepackage{color}
 \usepackage[margin=1.0in]{geometry}
@@ -11,11 +10,12 @@
 \definecolor{greenteal}{rgb}{0,0.5,.5}
 
 \title{ACE Models with the NLSY}
-\author{William Howard Beasley (Howard Live Oak LLC, Norman)\\
-Joseph Lee Rodgers (University of Oklahoma, Norman)\\
-David Bard (University of Oklahoma Health Sciences Center, OKC)\\
-Kelly Meredith (University of Oklahoma, Norman)\\
-Michael D. Hunter (University of Oklahoma, Norman)
+\author{
+  \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)\\
+  \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)\\
+  \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)\\
+  Kelly Meredith (University of Oklahoma, Norman)\\
+  \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
 }
 \begin{document}
 
@@ -30,7 +30,7 @@ Michael D. Hunter (University of Oklahoma, Norman)
    We describe how to use the \pkg{NlsyLinks} package to examine various biometric models, using the NLSY79.
 \end{abstract}
 \tableofcontents
-<<preliminaries,echo=FALSE,print=FALSE>>=
+<<preliminaries,echo=FALSE>>=
 opts_chunk$set(echo=TRUE)
 options(width=88, show.signif.stars = FALSE, continue=" ") #, lattice.theme = function() canonical.theme("pdf", color = FALSE)
 if( any(search()=="package:NlsyLinks") ) detach("package:NlsyLinks")
@@ -282,7 +282,7 @@ ace
 #Step 11: Inspect the output further (see the final step in the previous example).
 @
 
-Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects (\emph{i.e.}, $r_{R0}$=\Sexpr{dsGroupSummary[1, 'Correlation']}).  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.  **Joe, is there anything else you'd like to say about this here?**
+Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.  **Joe, is there anything else you'd like to say about this here?**
 
 If you wish to exclude additional groups from the analyses, one line of code in Step 8 should change.  For instance, two exclude ambiguous sibs (in addition to $R=0$ pairs), change\\ \code{rGroupsToDrop <- c( 0 )} \\to \\ \code{rGroupsToDrop <- c( 0, .375 )}.
 
@@ -365,7 +365,7 @@ update our kinship links (embedded in \pkg{NlsyLinks}) with the newest informati
 \href{http://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC}{Neale, Michael C., \& Cardon, Lou R. (1992)}. \emph{Methodology for genetic studies of twins and families}. Norwell, MA: Kluwer Academic Publishers. (Also see Neale \& Maes: \url{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}).
  
 \section{Notes}
-This package's development was largely supported by the NIH Grant 1R01HD65865, ``NLSY Kinship Links: Reliable and Valid Sibling Identification" (PI: Joe Rodgers; Vignette Construction by Will Beasley)
+This package's development was largely supported by the NIH Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)
 
 \section{Version Information}
 << results='asis', echo=FALSE>>=

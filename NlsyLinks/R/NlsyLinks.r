@@ -10,13 +10,21 @@
 #' (\url{http://www.bls.gov/nls/nlsy79.htm}).  "Gen2" subjects are the
 #' biological children of the Gen1 females -ie, those in the NLSY79 Children
 #' and Young Adults sample (\url{http://www.bls.gov/nls/nlsy79ch.htm}).
-#' @author Will Beasley, Joe Rodgers, Kelly Meredith, and David Bard
+#' @author 
+#'   \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)
+#'   
+#'  \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
+#'  
+#'  \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
+#'  
+#'  Kelly Meredith (University of Oklahoma, Norman)
+#'  
+#'  \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
 #' 
 #' Maintainer: Will Beasley <wibeasley@@hotmail.com>
 #' 
 #' @references This package's development was largely supported by the NIH
-#' Grant 1R01HD65865, "NLSY Kinship Links: Reliable and Valid Sibling
-#' Identification" (PI: Joe Rodgers).  A more complete list of research articles
+#' Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers).  A more complete list of research articles
 #' using NLSY Kinship Links is maintained on our \href{https://github.com/LiveOak/NlsyLinksDetermination/wiki/Articles}{repository's wiki}.
 #' 
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and

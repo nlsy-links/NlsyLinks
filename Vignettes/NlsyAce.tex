@@ -1,5 +1,4 @@
-% -*- mode: noweb; noweb-default-code-mode: R-mode; -*-
-\documentclass[letterpaper]{article}\usepackage{graphicx, color}
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
 %% maxwidth is the original width if it is less than linewidth
 %% otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -12,22 +11,16 @@
 }
 \makeatother
 
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
-\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
-\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
-\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
-\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
-\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
-\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
-\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
-\newcommand{\hlslot}[1]{\textit{#1}}%
-\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
 
 \usepackage{framed}
 \makeatletter
@@ -56,7 +49,6 @@
 
 \usepackage{alltt}
 
-
 \usepackage{color}
 \usepackage[margin=1.0in]{geometry}
 \usepackage[colorlinks=true,urlcolor=darkblue,linkcolor=greenteal]{hyperref}  %This makes reference links hyperlinks in pdf (tip from Revelle's 'psych' package).
@@ -67,12 +59,14 @@
 \definecolor{greenteal}{rgb}{0,0.5,.5}
 
 \title{ACE Models with the NLSY}
-\author{William Howard Beasley (Howard Live Oak LLC, Norman)\\
-Joseph Lee Rodgers (University of Oklahoma, Norman)\\
-David Bard (University of Oklahoma Health Sciences Center, OKC)\\
-Kelly Meredith (University of Oklahoma, Norman)\\
-Michael D. Hunter (University of Oklahoma, Norman)
+\author{
+  \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)\\
+  \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)\\
+  \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)\\
+  Kelly Meredith (University of Oklahoma, Norman)\\
+  \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
 }
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 \newcommand{\code}[1]{\texttt{\small{#1}}}
@@ -116,17 +110,17 @@ Before starting the real examples, first verify that the \pkg{NlsyLinks} package
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlfunctioncall{any}(\hlfunctioncall{.packages}(all.available = TRUE) == \hlstring{"NlsyLinks"})  #Should evaluate to TRUE.
+\hlkwd{any}\hlstd{(}\hlkwd{.packages}\hlstd{(}\hlkwc{all.available} \hlstd{=} \hlnum{TRUE}\hlstd{)} \hlopt{==} \hlstr{"NlsyLinks"}\hlstd{)}  \hlcom{#Should evaluate to TRUE.}
 \end{alltt}
 \begin{verbatim}
 ## [1] TRUE
 \end{verbatim}
 \begin{alltt}
-\hlfunctioncall{require}(NlsyLinks)  \hlcomment{#Load the package into the current session.}
+\hlkwd{require}\hlstd{(NlsyLinks)}  \hlcom{#Load the package into the current session.}
 \end{alltt}
 
 
-{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Loading required package: NlsyLinks}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: NlsyLinks\\\#\# Loading required package: Matrix}}\end{kframe}
 \end{knitrout}
 
 The package's documentation manual can be opened by typing \code{?NlsyLinks} in
@@ -153,13 +147,13 @@ The steps are:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcomment{### R Code for Example DF analysis with a simple outcome and Gen2 subjects}
-\hlcomment{#Step 2: Load the package containing the linking routines.}
-\hlfunctioncall{require}(NlsyLinks) 
+\hlcom{### R Code for Example DF analysis with a simple outcome and Gen2 subjects}
+\hlcom{#Step 2: Load the package containing the linking routines.}
+\hlkwd{require}\hlstd{(NlsyLinks)}
 
-\hlcomment{#Step 3: Load the LINKING dataset and filter for the Gen2 subjects}
-dsLinking <- \hlfunctioncall{subset}(Links79Pair, RelationshipPath==\hlstring{"Gen2Siblings"})
-\hlfunctioncall{summary}(dsLinking) \hlcomment{#Notice there are 11,088 \hlfunctioncall{records} (one for each unique pair).}
+\hlcom{#Step 3: Load the LINKING dataset and filter for the Gen2 subjects}
+\hlstd{dsLinking} \hlkwb{<-} \hlkwd{subset}\hlstd{(Links79Pair, RelationshipPath}\hlopt{==}\hlstr{"Gen2Siblings"}\hlstd{)}
+\hlkwd{summary}\hlstd{(dsLinking)} \hlcom{#Notice there are 11,088 records (one for each unique pair).}
 \end{alltt}
 \begin{verbatim}
 ##    ExtendedID     Subject1Tag       Subject2Tag            R        
@@ -178,10 +172,9 @@ dsLinking <- \hlfunctioncall{subset}(Links79Pair, RelationshipPath==\hlstring{"G
 ## 
 \end{verbatim}
 \begin{alltt}
-
-\hlcomment{#Step 4: Load the OUTCOMES dataset, and then examine the summary.}
-dsOutcomes <- ExtraOutcomes79 \hlcomment{#\hlstring{'ds'} stands for \hlstring{'Data Set'}}
-\hlfunctioncall{summary}(dsOutcomes)
+\hlcom{#Step 4: Load the OUTCOMES dataset, and then examine the summary.}
+\hlstd{dsOutcomes} \hlkwb{<-} \hlstd{ExtraOutcomes79} \hlcom{#'ds' stands for 'Data Set'}
+\hlkwd{summary}\hlstd{(dsOutcomes)}
 \end{alltt}
 \begin{verbatim}
 ##    SubjectTag        SubjectID         Generation   AfqtRescaled2006Gaussified
@@ -210,19 +203,18 @@ dsOutcomes <- ExtraOutcomes79 \hlcomment{#\hlstring{'ds'} stands for \hlstring{'
 ##  NA's   :18165   NA's   :15048
 \end{verbatim}
 \begin{alltt}
+\hlcom{#Step 5: This step isn't necessary for this example, because Kelly Meredith already }
+\hlcom{#   groomed the values.  If the negative values (which represent NLSY missing or }
+\hlcom{#   skip patterns) still exist, then:}
+\hlstd{dsOutcomes}\hlopt{$}\hlstd{MathStandardized[dsOutcomes}\hlopt{$}\hlstd{MathStandardized} \hlopt{<} \hlnum{0}\hlstd{]} \hlkwb{<-} \hlnum{NA}
 
-\hlcomment{#Step 5: This step isn't necessary for this example, because Kelly Meredith already }
-\hlcomment{#   groomed the values.  If the negative values (which represent NLSY missing or }
-\hlcomment{#   skip patterns) still exist, then:}
-dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
-
-\hlcomment{#Step 6: Create the double entered dataset.}
-dsDouble <- \hlfunctioncall{CreatePairLinksDoubleEntered}(
-  outcomeDataset=dsOutcomes, 
-  linksPairDataset=dsLinking,
-  outcomeNames=\hlfunctioncall{c}(\hlstring{'MathStandardized'})
-)
-\hlfunctioncall{summary}(dsDouble) \hlcomment{#Notice there are 22176=(2*11088) records \hlfunctioncall{now} (two for each unique pair).}
+\hlcom{#Step 6: Create the double entered dataset.}
+\hlstd{dsDouble} \hlkwb{<-} \hlkwd{CreatePairLinksDoubleEntered}\hlstd{(}
+  \hlkwc{outcomeDataset}\hlstd{=dsOutcomes,}
+  \hlkwc{linksPairDataset}\hlstd{=dsLinking,}
+  \hlkwc{outcomeNames}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{'MathStandardized'}\hlstd{)}
+\hlstd{)}
+\hlkwd{summary}\hlstd{(dsDouble)} \hlcom{#Notice there are 22176=(2*11088) records now (two for each unique pair).}
 \end{alltt}
 \begin{verbatim}
 ##   Subject1Tag       Subject2Tag        ExtendedID          R        
@@ -243,13 +235,12 @@ dsDouble <- \hlfunctioncall{CreatePairLinksDoubleEntered}(
 ##                         NA's   :3815       NA's   :3815
 \end{verbatim}
 \begin{alltt}
-
-\hlcomment{#Step 7: Estimate the ACE components with a DF Analysis }
-ace <- \hlfunctioncall{DeFriesFulkerMethod3}(
-    dataSet=dsDouble,  
-    oName_1=\hlstring{"MathStandardized_1"}, 
-    oName_2=\hlstring{"MathStandardized_2"})
-ace
+\hlcom{#Step 7: Estimate the ACE components with a DF Analysis }
+\hlstd{ace} \hlkwb{<-} \hlkwd{DeFriesFulkerMethod3}\hlstd{(}
+    \hlkwc{dataSet}\hlstd{=dsDouble,}
+    \hlkwc{oName_1}\hlstd{=}\hlstr{"MathStandardized_1"}\hlstd{,}
+    \hlkwc{oName_2}\hlstd{=}\hlstr{"MathStandardized_2"}\hlstd{)}
+\hlstd{ace}
 \end{alltt}
 \begin{verbatim}
 ## [1] "Results of ACE estimation: [show]"
@@ -282,18 +273,18 @@ The steps are:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcomment{### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects}
-\hlcomment{#Step 2: Load the package containing the linking routines.}
-\hlfunctioncall{require}(NlsyLinks) 
+\hlcom{### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects}
+\hlcom{#Step 2: Load the package containing the linking routines.}
+\hlkwd{require}\hlstd{(NlsyLinks)}
 
-\hlcomment{#Step 3: Load the linking dataset and filter for the Gen2 subjects}
-dsLinking <- \hlfunctioncall{subset}(Links79Pair, RelationshipPath==\hlstring{"Gen2Siblings"})
+\hlcom{#Step 3: Load the linking dataset and filter for the Gen2 subjects}
+\hlstd{dsLinking} \hlkwb{<-} \hlkwd{subset}\hlstd{(Links79Pair, RelationshipPath}\hlopt{==}\hlstr{"Gen2Siblings"}\hlstd{)}
 
-\hlcomment{#Step 4: Load the outcomes dataset from the hard drive and then examine the summary.}
-\hlcomment{#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/Gen2Birth.csv'}
-filePathOutcomes <- \hlfunctioncall{file.path}(\hlfunctioncall{path.package}(\hlstring{"NlsyLinks"}), \hlstring{"extdata"}, \hlstring{"Gen2Birth.csv"})
-dsOutcomes <- \hlfunctioncall{ReadCsvNlsy79Gen2}(filePathOutcomes)
-\hlfunctioncall{summary}(dsOutcomes)
+\hlcom{#Step 4: Load the outcomes dataset from the hard drive and then examine the summary.}
+\hlcom{#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/Gen2Birth.csv'}
+\hlstd{filePathOutcomes} \hlkwb{<-} \hlkwd{file.path}\hlstd{(}\hlkwd{path.package}\hlstd{(}\hlstr{"NlsyLinks"}\hlstd{),} \hlstr{"extdata"}\hlstd{,} \hlstr{"Gen2Birth.csv"}\hlstd{)}
+\hlstd{dsOutcomes} \hlkwb{<-} \hlkwd{ReadCsvNlsy79Gen2}\hlstd{(filePathOutcomes)}
+\hlkwd{summary}\hlstd{(dsOutcomes)}
 \end{alltt}
 \begin{verbatim}
 ##    SubjectTag        SubjectID         ExtendedID      Generation SubjectTagOfMother
@@ -322,38 +313,37 @@ dsOutcomes <- \hlfunctioncall{ReadCsvNlsy79Gen2}(filePathOutcomes)
 ## 
 \end{verbatim}
 \begin{alltt}
-
-\hlcomment{#Step 5: Verify and rename an existing column.}
-\hlfunctioncall{VerifyColumnExists}(dsOutcomes,  \hlstring{"C0328600"}) #Should return \hlstring{'10'} in this example.
+\hlcom{#Step 5: Verify and rename an existing column.}
+\hlkwd{VerifyColumnExists}\hlstd{(dsOutcomes,}  \hlstr{"C0328600"}\hlstd{)} \hlcom{#Should return '10' in this example.}
 \end{alltt}
 \begin{verbatim}
 ## [1] 10
 \end{verbatim}
 \begin{alltt}
-dsOutcomes <- \hlfunctioncall{RenameNlsyColumn}(dsOutcomes, \hlstring{"C0328600"}, \hlstring{"BirthWeightInOunces"})
+\hlstd{dsOutcomes} \hlkwb{<-} \hlkwd{RenameNlsyColumn}\hlstd{(dsOutcomes,} \hlstr{"C0328600"}\hlstd{,} \hlstr{"BirthWeightInOunces"}\hlstd{)}
 
-\hlcomment{#Step 6: For this item, a negative value indicates the parent refused, didn't know, }
-\hlcomment{#   invalidly skipped, or was missing for some other reason.  }
-\hlcomment{#   For our present purposes, we'll treat these responses equivalently.}
-\hlcomment{#   Then clip/Winsorized/truncate the weight to something reasonable.}
-dsOutcomes$BirthWeightInOunces[dsOutcomes$BirthWeightInOunces < 0] <- NA
-dsOutcomes$BirthWeightInOunces <- \hlfunctioncall{pmin}(dsOutcomes$BirthWeightInOunces, 200)
+\hlcom{#Step 6: For this item, a negative value indicates the parent refused, didn't know, }
+\hlcom{#   invalidly skipped, or was missing for some other reason.  }
+\hlcom{#   For our present purposes, we'll treat these responses equivalently.}
+\hlcom{#   Then clip/Winsorized/truncate the weight to something reasonable.}
+\hlstd{dsOutcomes}\hlopt{$}\hlstd{BirthWeightInOunces[dsOutcomes}\hlopt{$}\hlstd{BirthWeightInOunces} \hlopt{<} \hlnum{0}\hlstd{]} \hlkwb{<-} \hlnum{NA}
+\hlstd{dsOutcomes}\hlopt{$}\hlstd{BirthWeightInOunces} \hlkwb{<-} \hlkwd{pmin}\hlstd{(dsOutcomes}\hlopt{$}\hlstd{BirthWeightInOunces,} \hlnum{200}\hlstd{)}
 
-\hlcomment{#Step 7: Create the double entered dataset.}
-dsDouble <- \hlfunctioncall{CreatePairLinksDoubleEntered}(
-  outcomeDataset=dsOutcomes, 
-  linksPairDataset=dsLinking,
-  outcomeNames=\hlfunctioncall{c}(\hlstring{'BirthWeightInOunces'})
-)
+\hlcom{#Step 7: Create the double entered dataset.}
+\hlstd{dsDouble} \hlkwb{<-} \hlkwd{CreatePairLinksDoubleEntered}\hlstd{(}
+  \hlkwc{outcomeDataset}\hlstd{=dsOutcomes,}
+  \hlkwc{linksPairDataset}\hlstd{=dsLinking,}
+  \hlkwc{outcomeNames}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{'BirthWeightInOunces'}\hlstd{)}
+\hlstd{)}
 
-\hlcomment{#Step 8: Estimate the ACE components with a DF Analysis }
-ace <- \hlfunctioncall{AceUnivariate}(
-  method=\hlstring{"DeFriesFulkerMethod3"},
-  dataSet=dsDouble,
-  oName_1=\hlstring{"BirthWeightInOunces_1"}, 
-  oName_2=\hlstring{"BirthWeightInOunces_2"}  
-)
-ace
+\hlcom{#Step 8: Estimate the ACE components with a DF Analysis }
+\hlstd{ace} \hlkwb{<-} \hlkwd{AceUnivariate}\hlstd{(}
+  \hlkwc{method}\hlstd{=}\hlstr{"DeFriesFulkerMethod3"}\hlstd{,}
+  \hlkwc{dataSet}\hlstd{=dsDouble,}
+  \hlkwc{oName_1}\hlstd{=}\hlstr{"BirthWeightInOunces_1"}\hlstd{,}
+  \hlkwc{oName_2}\hlstd{=}\hlstr{"BirthWeightInOunces_2"}
+\hlstd{)}
+\hlstd{ace}
 \end{alltt}
 \begin{verbatim}
 ## [1] "Results of ACE estimation: [show]"
@@ -392,24 +382,24 @@ The steps are:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcomment{### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects}
-\hlcomment{#Steps 1-5 are explained in the vignette's first example:}
-\hlfunctioncall{require}(NlsyLinks) 
-dsLinking <- \hlfunctioncall{subset}(Links79Pair, RelationshipPath==\hlstring{"Gen2Siblings"})
-dsOutcomes <- ExtraOutcomes79 
-dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
+\hlcom{### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects}
+\hlcom{#Steps 1-5 are explained in the vignette's first example:}
+\hlkwd{require}\hlstd{(NlsyLinks)}
+\hlstd{dsLinking} \hlkwb{<-} \hlkwd{subset}\hlstd{(Links79Pair, RelationshipPath}\hlopt{==}\hlstr{"Gen2Siblings"}\hlstd{)}
+\hlstd{dsOutcomes} \hlkwb{<-} \hlstd{ExtraOutcomes79}
+\hlstd{dsOutcomes}\hlopt{$}\hlstd{MathStandardized[dsOutcomes}\hlopt{$}\hlstd{MathStandardized} \hlopt{<} \hlnum{0}\hlstd{]} \hlkwb{<-} \hlnum{NA}
 
-\hlcomment{#Step 6: Create the single entered dataset.}
-dsSingle <- \hlfunctioncall{CreatePairLinksSingleEntered}(outcomeDataset=dsOutcomes, 
-  linksPairDataset=dsLinking, outcomeNames=\hlfunctioncall{c}(\hlstring{'MathStandardized'}))
+\hlcom{#Step 6: Create the single entered dataset.}
+\hlstd{dsSingle} \hlkwb{<-} \hlkwd{CreatePairLinksSingleEntered}\hlstd{(}\hlkwc{outcomeDataset}\hlstd{=dsOutcomes,}
+  \hlkwc{linksPairDataset}\hlstd{=dsLinking,} \hlkwc{outcomeNames}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{'MathStandardized'}\hlstd{))}
 
-\hlcomment{#Step 7: Declare the names for the two outcome variables. }
-oName_1 <- \hlstring{"MathStandardized_1"} #Stands for Outcome1
-oName_2 <- \hlstring{"MathStandardized_2"} #Stands for Outcome2
-  
-\hlcomment{#Step 8: Summarize the R groups and determine which groups can be estimated.}
-dsGroupSummary <- \hlfunctioncall{RGroupSummary}(dsSingle, oName_1, oName_2)
-dsGroupSummary
+\hlcom{#Step 7: Declare the names for the two outcome variables. }
+\hlstd{oName_1} \hlkwb{<-} \hlstr{"MathStandardized_1"} \hlcom{#Stands for Outcome1}
+\hlstd{oName_2} \hlkwb{<-} \hlstr{"MathStandardized_2"} \hlcom{#Stands for Outcome2}
+
+\hlcom{#Step 8: Summarize the R groups and determine which groups can be estimated.}
+\hlstd{dsGroupSummary} \hlkwb{<-} \hlkwd{RGroupSummary}\hlstd{(dsSingle, oName_1, oName_2)}
+\hlstd{dsGroupSummary}
 \end{alltt}
 \begin{verbatim}
 ##       R Included PairCount O1Variance O2Variance O1O2Covariance Correlation Determinant
@@ -426,13 +416,12 @@ dsGroupSummary
 ## 5        TRUE
 \end{verbatim}
 \begin{alltt}
+\hlcom{#Step 9: Create a cleaned dataset}
+\hlstd{dsClean} \hlkwb{<-} \hlkwd{CleanSemAceDataset}\hlstd{(}\hlkwc{dsDirty}\hlstd{=dsSingle, dsGroupSummary, oName_1, oName_2)}
 
-\hlcomment{#Step 9: Create a cleaned dataset}
-dsClean <- \hlfunctioncall{CleanSemAceDataset}(dsDirty=dsSingle, dsGroupSummary, oName_1, oName_2)
-
-\hlcomment{#Step 10: Run the model}
-ace <- \hlfunctioncall{AceLavaanGroup}(dsClean)
-ace
+\hlcom{#Step 10: Run the model}
+\hlstd{ace} \hlkwb{<-} \hlkwd{AceLavaanGroup}\hlstd{(dsClean)}
+\hlstd{ace}
 \end{alltt}
 \begin{verbatim}
 ## [1] "Results of ACE estimation: [show]"
@@ -440,16 +429,16 @@ ace
 ##    0.6673    0.1188    0.2139 8390.0000
 \end{verbatim}
 \begin{alltt}
-\hlcomment{#Notice the `CaseCount' is 8,390 instead of 17,440.}
-\hlcomment{#  This is because (a) one pair with R=.75 was excluded, and}
-\hlcomment{#  (b) the SEM uses a single-entered dataset instead of double-entered.}
-\hlcomment{#}
-\hlcomment{#Step 11: Inspect the output further}
-\hlfunctioncall{require}(lavaan) \hlcomment{#Load the package to access methods of the lavaan class.}
-\hlfunctioncall{GetDetails}(ace)
+\hlcom{#Notice the `CaseCount' is 8,390 instead of 17,440.}
+\hlcom{#  This is because (a) one pair with R=.75 was excluded, and}
+\hlcom{#  (b) the SEM uses a single-entered dataset instead of double-entered.}
+\hlcom{#}
+\hlcom{#Step 11: Inspect the output further}
+\hlkwd{require}\hlstd{(lavaan)} \hlcom{#Load the package to access methods of the lavaan class.}
+\hlkwd{GetDetails}\hlstd{(ace)}
 \end{alltt}
 \begin{verbatim}
-## lavaan (0.5-10) converged normally after  60 iterations
+## lavaan (0.5-14) converged normally after  62 iterations
 ## 
 ##   Number of observations per group         
 ##   1                                               2718
@@ -458,9 +447,9 @@ ace
 ##   4                                                 22
 ## 
 ##   Estimator                                         ML
-##   Minimum Function Chi-square                  447.272
+##   Minimum Function Test Statistic              447.272
 ##   Degrees of freedom                                16
-##   P-value                                        0.000
+##   P-value (Chi-square)                           0.000
 ## 
 ## Chi-square for each group:
 ## 
@@ -470,28 +459,33 @@ ace
 ##   4                                              4.339
 \end{verbatim}
 \begin{alltt}
-\hlcomment{#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.}
-\hlfunctioncall{fitMeasures}(\hlfunctioncall{GetDetails}(ace)) \hlcomment{#\hlstring{'fitMeasures'} is defined in the lavaan package.}
+\hlcom{#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.}
+\hlkwd{fitMeasures}\hlstd{(}\hlkwd{GetDetails}\hlstd{(ace))} \hlcom{#'fitMeasures' is defined in the lavaan package.}
 \end{alltt}
 \begin{verbatim}
-##             chisq                df            pvalue    baseline.chisq 
-##           447.272            16.000             0.000          1499.091 
-##       baseline.df   baseline.pvalue               cfi               tli 
-##             4.000             0.000             0.712             0.928 
-##              logl unrestricted.logl              npar               aic 
-##        -68369.132        -68145.496             4.000        136746.264 
-##               bic            ntotal              bic2             rmsea 
-##        136774.404          8390.000        136761.692             0.113 
-##    rmsea.ci.lower    rmsea.ci.upper      rmsea.pvalue              srmr 
-##             0.104             0.123             0.000             0.128 
-##       srmr_nomean 
-##             0.093
+##              fmin             chisq                df            pvalue 
+##             0.027           447.272            16.000             0.000 
+##    baseline.chisq       baseline.df   baseline.pvalue               cfi 
+##          1499.091             4.000             0.000             0.712 
+##               tli              nnfi               rfi               nfi 
+##             0.928             0.928             0.925             0.702 
+##              pnfi               ifi               rni              logl 
+##             2.807             0.709             0.712        -68369.132 
+## unrestricted.logl              npar               aic               bic 
+##        -68145.496             4.000        136746.264        136774.404 
+##            ntotal              bic2             rmsea    rmsea.ci.lower 
+##          8390.000        136761.692             0.113             0.104 
+##    rmsea.ci.upper      rmsea.pvalue               rmr        rmr_nomean 
+##             0.123             0.000            13.895            17.820 
+##              srmr       srmr_nomean             cn_05             cn_01 
+##             0.128             0.093           494.269           601.260 
+##               gfi              agfi              pgfi               mfi 
+##             0.999             0.999             0.799             0.975
 \end{verbatim}
 \begin{alltt}
-
-\hlcomment{#Examine low-level details like each group's individual parameter estimates and standard}
-\hlcomment{#  errors.  Uncomment the next line to view the entire output (which is roughly 4 pages).}
-\hlcomment{#summary(GetDetails(ace))}
+\hlcom{#Examine low-level details like each group's individual parameter estimates and standard}
+\hlcom{#  errors.  Uncomment the next line to view the entire output (which is roughly 4 pages).}
+\hlcom{#summary(GetDetails(ace))}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -504,62 +498,62 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcomment{### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects}
-\hlcomment{#Steps 1-5 are explained in the vignette's first example:}
-\hlfunctioncall{require}(NlsyLinks) 
-dsLinking <- \hlfunctioncall{subset}(Links79Pair, RelationshipPath==\hlstring{"Gen1Housemates"})
-dsOutcomes <- ExtraOutcomes79 
-\hlcomment{#The HeightZGenderAge variable is already groomed}
+\hlcom{### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects}
+\hlcom{#Steps 1-5 are explained in the vignette's first example:}
+\hlkwd{require}\hlstd{(NlsyLinks)}
+\hlstd{dsLinking} \hlkwb{<-} \hlkwd{subset}\hlstd{(Links79Pair, RelationshipPath}\hlopt{==}\hlstr{"Gen1Housemates"}\hlstd{)}
+\hlstd{dsOutcomes} \hlkwb{<-} \hlstd{ExtraOutcomes79}
+\hlcom{#The HeightZGenderAge variable is already groomed}
 
-\hlcomment{#Step 6: Create the single entered dataset.}
-dsSingle <- \hlfunctioncall{CreatePairLinksSingleEntered}(outcomeDataset=dsOutcomes, 
-  linksPairDataset=dsLinking, outcomeNames=\hlfunctioncall{c}(\hlstring{'HeightZGenderAge'}))
+\hlcom{#Step 6: Create the single entered dataset.}
+\hlstd{dsSingle} \hlkwb{<-} \hlkwd{CreatePairLinksSingleEntered}\hlstd{(}\hlkwc{outcomeDataset}\hlstd{=dsOutcomes,}
+  \hlkwc{linksPairDataset}\hlstd{=dsLinking,} \hlkwc{outcomeNames}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{'HeightZGenderAge'}\hlstd{))}
 
-\hlcomment{#Step 7: Declare the names for the two outcome variables. }
-oName_1 <- \hlstring{"HeightZGenderAge_1"} 
-oName_2 <- \hlstring{"HeightZGenderAge_2"} 
-  
-\hlcomment{#Step 8: Summarize the R groups and determine which groups can be estimated.}
-dsGroupSummary <- \hlfunctioncall{RGroupSummary}(dsSingle, oName_1, oName_2)
-rGroupsToDrop <- \hlfunctioncall{c}( 0 )
-dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, \hlstring{"Included"}] <- FALSE
-dsGroupSummary
+\hlcom{#Step 7: Declare the names for the two outcome variables. }
+\hlstd{oName_1} \hlkwb{<-} \hlstr{"HeightZGenderAge_1"}
+\hlstd{oName_2} \hlkwb{<-} \hlstr{"HeightZGenderAge_2"}
+
+\hlcom{#Step 8: Summarize the R groups and determine which groups can be estimated.}
+\hlstd{dsGroupSummary} \hlkwb{<-} \hlkwd{RGroupSummary}\hlstd{(dsSingle, oName_1, oName_2)}
+\hlstd{rGroupsToDrop} \hlkwb{<-} \hlkwd{c}\hlstd{(} \hlnum{0} \hlstd{)}
+\hlstd{dsGroupSummary[dsGroupSummary}\hlopt{$}\hlstd{R} \hlopt{%in%} \hlstd{rGroupsToDrop,} \hlstr{"Included"}\hlstd{]} \hlkwb{<-} \hlnum{FALSE}
+\hlstd{dsGroupSummary}
 \end{alltt}
 \begin{verbatim}
-##       R Included PairCount O1Variance O2Variance O1O2Covariance Correlation Determinant
-## 1 0.125     TRUE        88     0.9118     0.9502         0.1503      0.1614     0.84381
-## 2 0.250     TRUE       238     1.0110     1.1427         0.2613      0.2431     1.08697
-## 3 0.500     TRUE      3392     0.9660     1.0158         0.4376      0.4417     0.78982
-## 4 1.000     TRUE        11     0.2909     0.6106         0.3747      0.8892     0.03719
-##   PosDefinite
-## 1        TRUE
-## 2        TRUE
-## 3        TRUE
-## 4        TRUE
+##        R Included PairCount O1Variance O2Variance O1O2Covariance Correlation
+## 1 0.0625     TRUE        37     0.7872     0.9773        0.37990     0.43312
+## 2 0.1250     TRUE        63     0.9499     0.9529        0.09187     0.09656
+## 3 0.2500     TRUE       267     0.9853     1.1350        0.26929     0.25465
+## 4 0.5000     TRUE      3778     0.9769     1.0194        0.44371     0.44465
+## 5 1.0000     TRUE        11     0.2909     0.6106        0.37473     0.88917
+##   Determinant PosDefinite
+## 1     0.62499        TRUE
+## 2     0.89677        TRUE
+## 3     1.04577        TRUE
+## 4     0.79890        TRUE
+## 5     0.03719        TRUE
 \end{verbatim}
 \begin{alltt}
+\hlcom{#Step 9: Create a cleaned dataset}
+\hlstd{dsClean} \hlkwb{<-} \hlkwd{CleanSemAceDataset}\hlstd{(}\hlkwc{dsDirty}\hlstd{=dsSingle, dsGroupSummary, oName_1, oName_2)}
 
-\hlcomment{#Step 9: Create a cleaned dataset}
-dsClean <- \hlfunctioncall{CleanSemAceDataset}(dsDirty=dsSingle, dsGroupSummary, oName_1, oName_2)
-
-\hlcomment{#Step 10: Run the model}
-ace <- \hlfunctioncall{AceLavaanGroup}(dsClean)
-ace
+\hlcom{#Step 10: Run the model}
+\hlstd{ace} \hlkwb{<-} \hlkwd{AceLavaanGroup}\hlstd{(dsClean)}
+\hlstd{ace}
 \end{alltt}
 \begin{verbatim}
 ## [1] "Results of ACE estimation: [show]"
 ##  ASquared  CSquared  ESquared CaseCount 
-## 8.956e-01 1.940e-14 1.044e-01 3.729e+03
+##    0.8834    0.0087    0.1079 4156.0000
 \end{verbatim}
 \begin{alltt}
-
-\hlcomment{#Step 11: Inspect the output further (see the final step in the previous example).}
+\hlcom{#Step 11: Inspect the output further (see the final step in the previous example).}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
 
 
-Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects (\emph{i.e.}, $r_{R0}$=0.1614).  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.  **Joe, is there anything else you'd like to say about this here?**
+Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.  **Joe, is there anything else you'd like to say about this here?**
 
 If you wish to exclude additional groups from the analyses, one line of code in Step 8 should change.  For instance, two exclude ambiguous sibs (in addition to $R=0$ pairs), change\\ \code{rGroupsToDrop <- c( 0 )} \\to \\ \code{rGroupsToDrop <- c( 0, .375 )}.
 
@@ -642,18 +636,20 @@ update our kinship links (embedded in \pkg{NlsyLinks}) with the newest informati
 \href{http://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC}{Neale, Michael C., \& Cardon, Lou R. (1992)}. \emph{Methodology for genetic studies of twins and families}. Norwell, MA: Kluwer Academic Publishers. (Also see Neale \& Maes: \url{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}).
  
 \section{Notes}
-This package's development was largely supported by the NIH Grant 1R01HD65865, ``NLSY Kinship Links: Reliable and Valid Sibling Identification" (PI: Joe Rodgers; Vignette Construction by Will Beasley)
+This package's development was largely supported by the NIH Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)
 
 \section{Version Information}
 \begin{itemize}\raggedright
-  \item R version 2.15.2 (2012-10-26), \verb|x86_64-w64-mingw32|
+  \item R version 3.0.2 (2013-09-25), \verb|x86_64-w64-mingw32|
   \item Locale: \verb|LC_COLLATE=English_United States.1252|, \verb|LC_CTYPE=English_United States.1252|, \verb|LC_MONETARY=English_United States.1252|, \verb|LC_NUMERIC=C|, \verb|LC_TIME=English_United States.1252|
   \item Base packages: base, datasets, graphics, grDevices, methods, stats,
     utils
-  \item Other packages: boot~1.3-7, knitr~0.9, lavaan~0.5-10, MASS~7.3-22,
-    mnormt~1.4-5, NlsyLinks~1.018, quadprog~1.5-4
-  \item Loaded via a namespace (and not attached): digest~0.6.0,
-    evaluate~0.4.3, formatR~0.7, stats4~2.15.2, stringr~0.6.2, tools~2.15.2
+  \item Other packages: boot~1.3-9, knitr~1.5, lavaan~0.5-14, MASS~7.3-29,
+    Matrix~1.1-0, mnormt~1.4-5, NlsyLinks~1.216, pbivnorm~0.5-1,
+    quadprog~1.5-5
+  \item Loaded via a namespace (and not attached): evaluate~0.5.1,
+    formatR~0.10, grid~3.0.2, highr~0.3, lattice~0.20-24, stats4~3.0.2,
+    stringr~0.6.2, tools~3.0.2
 \end{itemize}
 
 
