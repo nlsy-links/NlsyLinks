@@ -1,4 +1,5 @@
-\contentsline {section}{\numberline {1}Ambiguous twins}{1}{section.1}
-\contentsline {section}{\numberline {2}Ambiguous siblings}{2}{section.2}
-\contentsline {section}{\numberline {3}Retaining vs. dropping the ambiguous twins and siblings}{2}{section.3}
-\contentsline {section}{\numberline {4}Grant support}{3}{section.4}
+\contentsline {section}{\numberline {1}Getting Started}{1}{section.1}
+\contentsline {section}{\numberline {2}Ambiguous twins}{1}{section.2}
+\contentsline {section}{\numberline {3}Ambiguous siblings}{2}{section.3}
+\contentsline {section}{\numberline {4}Retaining vs. dropping the ambiguous twins and siblings}{3}{section.4}
+\contentsline {section}{\numberline {5}Grant support}{3}{section.5}
