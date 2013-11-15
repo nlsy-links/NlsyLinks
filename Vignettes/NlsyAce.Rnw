@@ -153,7 +153,7 @@ dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
 summary(dsOutcomes)
 
 #Step 5: Verify and rename an existing column.
-VerifyColumnExists(dsOutcomes,  "C0328600") #Should return '10' in this example.
+VerifyColumnExists(dsOutcomes, "C0328600") #Should return '10' in this example.
 dsOutcomes <- RenameNlsyColumn(dsOutcomes, "C0328600", "BirthWeightInOunces")
 
 #Step 6: For this item, a negative value indicates the parent refused, didn't know, 
@@ -179,6 +179,8 @@ ace <- AceUnivariate(
 )
 ace
 @
+
+For another example of incorporating CSVs downloaded from the NLS Investigator, please see the ``Race and Gender Variables'' entry in the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Multiple Group SEM of a Simple Outcome for Gen2 Subjects}

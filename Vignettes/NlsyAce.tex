@@ -314,7 +314,7 @@ The steps are:
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 5: Verify and rename an existing column.}
-\hlkwd{VerifyColumnExists}\hlstd{(dsOutcomes,}  \hlstr{"C0328600"}\hlstd{)} \hlcom{#Should return '10' in this example.}
+\hlkwd{VerifyColumnExists}\hlstd{(dsOutcomes,} \hlstr{"C0328600"}\hlstd{)} \hlcom{#Should return '10' in this example.}
 \end{alltt}
 \begin{verbatim}
 ## [1] 10
@@ -353,6 +353,8 @@ The steps are:
 \end{kframe}
 \end{knitrout}
 
+
+For another example of incorporating CSVs downloaded from the NLS Investigator, please see the ``Race and Gender Variables'' entry in the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Multiple Group SEM of a Simple Outcome for Gen2 Subjects}
@@ -402,18 +404,18 @@ The steps are:
 \hlstd{dsGroupSummary}
 \end{alltt}
 \begin{verbatim}
-##       R Included PairCount O1Variance O2Variance O1O2Covariance Correlation Determinant
-## 1 0.250     TRUE      2718      169.7      207.8          41.08      0.2188       33573
-## 2 0.375     TRUE       139      172.5      187.1          40.48      0.2253       30639
-## 3 0.500     TRUE      5511      230.5      233.0         107.37      0.4633       42172
-## 4 0.750    FALSE         2      220.5       18.0          63.00      1.0000           0
-## 5 1.000     TRUE        22      319.2      343.1         277.59      0.8388       32466
-##   PosDefinite
-## 1        TRUE
-## 2        TRUE
-## 3        TRUE
-## 4       FALSE
-## 5        TRUE
+##       R Included PairCount O1Mean O2Mean O1Variance O2Variance O1O2Covariance
+## 1 0.250     TRUE      2718  94.64  95.60      169.7      207.8          41.08
+## 2 0.375     TRUE       139  92.60  93.17      172.5      187.1          40.48
+## 3 0.500     TRUE      5511  99.89 100.18      230.5      233.0         107.37
+## 4 0.750    FALSE         2 108.50 106.00      220.5       18.0          63.00
+## 5 1.000     TRUE        22  98.64  95.55      319.2      343.1         277.59
+##   Correlation Determinant PosDefinite
+## 1      0.2188       33573        TRUE
+## 2      0.2253       30639        TRUE
+## 3      0.4633       42172        TRUE
+## 4      1.0000           0       FALSE
+## 5      0.8388       32466        TRUE
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 9: Create a cleaned dataset}
@@ -520,18 +522,18 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 \hlstd{dsGroupSummary}
 \end{alltt}
 \begin{verbatim}
-##        R Included PairCount O1Variance O2Variance O1O2Covariance Correlation
-## 1 0.0625     TRUE        37     0.7872     0.9773        0.37990     0.43312
-## 2 0.1250     TRUE        63     0.9499     0.9529        0.09187     0.09656
-## 3 0.2500     TRUE       267     0.9853     1.1350        0.26929     0.25465
-## 4 0.5000     TRUE      3778     0.9769     1.0194        0.44371     0.44465
-## 5 1.0000     TRUE        11     0.2909     0.6106        0.37473     0.88917
-##   Determinant PosDefinite
-## 1     0.62499        TRUE
-## 2     0.89677        TRUE
-## 3     1.04577        TRUE
-## 4     0.79890        TRUE
-## 5     0.03719        TRUE
+##        R Included PairCount   O1Mean    O2Mean O1Variance O2Variance O1O2Covariance
+## 1 0.0625     TRUE        37 -0.39797  0.019119     0.7872     0.9773        0.37990
+## 2 0.1250     TRUE        63 -0.15982 -0.455057     0.9499     0.9529        0.09187
+## 3 0.2500     TRUE       267  0.05476  0.006209     0.9853     1.1350        0.26929
+## 4 0.5000     TRUE      3778 -0.02323 -0.023449     0.9769     1.0194        0.44371
+## 5 1.0000     TRUE        11  0.02395  0.146080     0.2909     0.6106        0.37473
+##   Correlation Determinant PosDefinite
+## 1     0.43312     0.62499        TRUE
+## 2     0.09656     0.89677        TRUE
+## 3     0.25465     1.04577        TRUE
+## 4     0.44465     0.79890        TRUE
+## 5     0.88917     0.03719        TRUE
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 9: Create a cleaned dataset}
@@ -645,7 +647,7 @@ This package's development was largely supported by the NIH Grant 1R01HD65865, \
   \item Base packages: base, datasets, graphics, grDevices, methods, stats,
     utils
   \item Other packages: boot~1.3-9, knitr~1.5, lavaan~0.5-14, MASS~7.3-29,
-    Matrix~1.1-0, mnormt~1.4-5, NlsyLinks~1.216, pbivnorm~0.5-1,
+    Matrix~1.1-0, mnormt~1.4-5, NlsyLinks~1.220, pbivnorm~0.5-1,
     quadprog~1.5-5
   \item Loaded via a namespace (and not attached): evaluate~0.5.1,
     formatR~0.10, grid~3.0.2, highr~0.3, lattice~0.20-24, stats4~3.0.2,

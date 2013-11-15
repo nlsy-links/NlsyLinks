@@ -139,13 +139,13 @@ For instance, there are at least 194 Gen2 pairs where one sibling explicitly rep
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{dsLinks} \hlkwb{<-} \hlstd{Links79PairExpanded}
-\hlstd{isGen2Sib} \hlkwb{<-} \hlstd{dsLinks}\hlopt{$}\hlstd{RelationshipPath} \hlopt{==} \hlstr{"Gen2Siblings"}
+\hlstd{isGen2Sib} \hlkwb{<-} \hlstd{dsLinks}\hlopt{$}\hlstd{RelationshipPath}\hlopt{==}\hlstr{'Gen2Siblings'}
 
-\hlstd{olderFullYoungerHalf} \hlkwb{<-} \hlstd{(dsLinks}\hlopt{$}\hlstd{RExplicitOlderSibVersion} \hlopt{==} \hlnum{0.5} \hlopt{&} \hlstd{dsLinks}\hlopt{$}\hlstd{RExplicitYoungerSibVersion} \hlopt{==}
-    \hlnum{0.25}\hlstd{)}
+\hlstd{olderFullYoungerHalf} \hlkwb{<-} \hlstd{(dsLinks}\hlopt{$}\hlstd{RExplicitOlderSibVersion}\hlopt{==}\hlnum{.5} \hlopt{&}
+                           \hlstd{dsLinks}\hlopt{$}\hlstd{RExplicitYoungerSibVersion}\hlopt{==}\hlnum{.25}\hlstd{)}
 
-\hlstd{olderHalfYoungerFull} \hlkwb{<-} \hlstd{(dsLinks}\hlopt{$}\hlstd{RExplicitOlderSibVersion} \hlopt{==} \hlnum{0.25} \hlopt{&} \hlstd{dsLinks}\hlopt{$}\hlstd{RExplicitYoungerSibVersion} \hlopt{==}
-    \hlnum{0.5}\hlstd{)}
+\hlstd{olderHalfYoungerFull} \hlkwb{<-} \hlstd{(dsLinks}\hlopt{$}\hlstd{RExplicitOlderSibVersion}\hlopt{==}\hlnum{.25} \hlopt{&}
+                           \hlstd{dsLinks}\hlopt{$}\hlstd{RExplicitYoungerSibVersion}\hlopt{==}\hlnum{.5}\hlstd{)}
 
 
 \hlstd{dsLinks[isGen2Sib} \hlopt{&} \hlstd{(olderFullYoungerHalf} \hlopt{|} \hlstd{olderHalfYoungerFull), ]}
@@ -157,8 +157,8 @@ Another example occurs when a subject reports they are unsure or if their own re
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{dsLinks[isGen2Sib} \hlopt{&} \hlstd{(dsLinks}\hlopt{$}\hlstd{RExplicitOlderSibVersion} \hlopt{==} \hlnum{0.375} \hlopt{|} \hlstd{dsLinks}\hlopt{$}\hlstd{RExplicitYoungerSibVersion} \hlopt{==}
-    \hlnum{0.375}\hlstd{), ]}
+\hlstd{dsLinks[ isGen2Sib} \hlopt{&} \hlstd{(dsLinks}\hlopt{$}\hlstd{RExplicitOlderSibVersion}\hlopt{==}\hlnum{.375} \hlopt{|}
+     \hlstd{dsLinks}\hlopt{$}\hlstd{RExplicitYoungerSibVersion}\hlopt{==}\hlnum{.375}\hlstd{), ]}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -176,6 +176,119 @@ Our advice to include/exclude an $R$ group also depends on the kind of analysis.
 We don't recommend blindly dropping the ambiguous twins and siblings in every analysis.  For each scenario, the group sizes and phenotypic measurement issues should be considered.
 
 We do recommend running a casual sensitivity test, at the very least.  Run different models that include and exclude the small $R$ groups.  Hopefully the estimates change in expected ways (\emph{e.g.,}, including ambiguous siblings makes only a small difference)  and you don't have to dig deeper.  For all analyses, inspect each $R$ group's covariance matrix, especially with for the MZs, which typically is the smallest group. 
+
+\section{Race and Gender Variables}
+\textsf{Where are the race and gender variables?}\\ \\
+Any NLSY dataset extracted using the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsInvestigator.pdf}{NLS Investigator} will include some mandatory fields, including race and gender.  For Gen1, these are the \code{R02147.00} and \code{R02148.00} variables; for Gen2, they are the \code{C00053.00} and \code{C00054.00} variables.
+
+The \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NlsyAce vignette} describes how to incorporate extracts into \R{} for manipulation and analysis (\emph{e.g.}, ``DF analysis with a univariate outcome from a Gen2 Extract'').  Those vignette example focused on incorporating outcomes.  The FAQ entry focuses on race and gender.
+
+For Gen1, create a string variable that points to your extract\\(\emph{e.g.}, \code{filePathOutcomes <- "C:/BGResearch/NlsExtracts/Gen2Birth.csv"}).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{require}\hlstd{(NlsyLinks)}
+\hlstd{filePathOutcomes} \hlkwb{<-} \hlkwd{file.path}\hlstd{(}\hlkwd{path.package}\hlstd{(}\hlstr{"NlsyLinks"}\hlstd{),} \hlstr{"extdata"}\hlstd{,} \hlstr{"Gen1LifeCourse.csv"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Next, pass that path to the \code{ReadCsvNlsy79Gen1()} function, which converts that CSV into an \R{} \code{data.frame} and adds a few extra columns that will make NLSY research easier.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{dsDemographics} \hlkwb{<-} \hlkwd{ReadCsvNlsy79Gen1}\hlstd{(filePathOutcomes)}
+\hlkwd{summary}\hlstd{(dsDemographics)}
+\end{alltt}
+\begin{verbatim}
+##    SubjectTag        SubjectID       ExtendedID      Generation    R0214700   
+##  Min.   :    100   Min.   :    1   Min.   :    1   Min.   :1    Min.   :1.00  
+##  1st Qu.: 317225   1st Qu.: 3172   1st Qu.: 3171   1st Qu.:1    1st Qu.:2.00  
+##  Median : 634350   Median : 6344   Median : 6338   Median :1    Median :3.00  
+##  Mean   : 634350   Mean   : 6344   Mean   : 6337   Mean   :1    Mean   :2.43  
+##  3rd Qu.: 951475   3rd Qu.: 9515   3rd Qu.: 9505   3rd Qu.:1    3rd Qu.:3.00  
+##  Max.   :1268600   Max.   :12686   Max.   :12686   Max.   :1    Max.   :3.00  
+##     R0214800      R9908100       R9908200       R9908300       R9908600   
+##  Min.   :1.0   Min.   :-998   Min.   :-998   Min.   :-998   Min.   :-999  
+##  1st Qu.:1.0   1st Qu.:-998   1st Qu.:-998   1st Qu.:-998   1st Qu.:  16  
+##  Median :1.0   Median :  20   Median :  20   Median :-996   Median :  21  
+##  Mean   :1.5   Mean   :-246   Mean   :-438   Mean   :-731   Mean   :-194  
+##  3rd Qu.:2.0   3rd Qu.:  25   3rd Qu.:  27   3rd Qu.:  20   3rd Qu.:  25  
+##  Max.   :2.0   Max.   :  47   Max.   :  51   Max.   :  50   Max.   :  51  
+##     R9909700       R9909800       R9910400    
+##  Min.   :-999   Min.   :-999   Min.   :-4.00  
+##  1st Qu.:-998   1st Qu.:-998   1st Qu.:-4.00  
+##  Median :   9   Median :   0   Median :-4.00  
+##  Mean   :-329   Mean   :-356   Mean   :-1.93  
+##  3rd Qu.:  36   3rd Qu.:   1   3rd Qu.: 0.00  
+##  Max.   : 416   Max.   :   1   Max.   : 9.00
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+You can see which variables were added or renamed by \code{ReadCsvNlsy79Gen1()} (\emph{i.e.}, the first four), and which still retain the original names from the NLS Investigator (\emph{i.e.}, the ones that start with `R' and are followed by numbers).  The first two original variables happen to correspond to Gen1's race and gender.  Rename to something more salient to you, such as
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{dsDemographics} \hlkwb{<-} \hlkwd{RenameNlsyColumn}\hlstd{(dsDemographics,} \hlstr{"R0214700"}\hlstd{,} \hlstr{"Race"}\hlstd{)}
+\hlstd{dsDemographics} \hlkwb{<-} \hlkwd{RenameNlsyColumn}\hlstd{(dsDemographics,} \hlstr{"R0214800"}\hlstd{,} \hlstr{"Gender"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Finally, consider converting the numeric variables to \href{http://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html}{factor} variables so your code will be more readable.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#The official documentation calls this last level "NON-BLACK, NON-HISPANIC"}
+\hlstd{dsDemographics}\hlopt{$}\hlstd{Race} \hlkwb{<-} \hlkwd{factor}\hlstd{(}\hlkwc{x}\hlstd{=dsDemographics}\hlopt{$}\hlstd{Race,}
+                          \hlkwc{levels}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,}
+                          \hlkwc{labels}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Hispanic"}\hlstd{,} \hlstr{"Black"}\hlstd{,} \hlstr{"NBNH"}\hlstd{))}
+\hlstd{dsDemographics}\hlopt{$}\hlstd{Gender} \hlkwb{<-} \hlkwd{factor}\hlstd{(}\hlkwc{x}\hlstd{=dsDemographics}\hlopt{$}\hlstd{Gender,}
+                          \hlkwc{levels}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{2}\hlstd{,}
+                          \hlkwc{labels}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Male"}\hlstd{,} \hlstr{"Female"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+For Gen2, race and gender can be incorporated with a similar approach.  Remember to change \code{filePathOutcomes} to your desired location.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{require}\hlstd{(NlsyLinks)}
+\hlstd{filePathOutcomes} \hlkwb{<-} \hlkwd{file.path}\hlstd{(}\hlkwd{path.package}\hlstd{(}\hlstr{"NlsyLinks"}\hlstd{),} \hlstr{"extdata"}\hlstd{,} \hlstr{"Gen2Birth.csv"}\hlstd{)}
+\hlstd{dsDemographics} \hlkwb{<-} \hlkwd{ReadCsvNlsy79Gen2}\hlstd{(filePathOutcomes)}  \hlcom{#Notice this function is for Gen2.}
+\hlcom{# summary(dsDemographics) #Uncomment to see the summary}
+
+\hlstd{dsDemographics} \hlkwb{<-} \hlkwd{RenameNlsyColumn}\hlstd{(dsDemographics,} \hlstr{"C0005300"}\hlstd{,} \hlstr{"Race"}\hlstd{)}
+\hlstd{dsDemographics} \hlkwb{<-} \hlkwd{RenameNlsyColumn}\hlstd{(dsDemographics,} \hlstr{"C0005400"}\hlstd{,} \hlstr{"Gender"}\hlstd{)}
+
+\hlstd{dsDemographics}\hlopt{$}\hlstd{Race} \hlkwb{<-} \hlkwd{factor}\hlstd{(}\hlkwc{x}\hlstd{=dsDemographics}\hlopt{$}\hlstd{Race,}
+                          \hlkwc{levels}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,}
+                          \hlkwc{labels}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Hispanic"}\hlstd{,} \hlstr{"Black"}\hlstd{,} \hlstr{"NBNH"}\hlstd{))}
+\hlstd{dsDemographics}\hlopt{$}\hlstd{Gender} \hlkwb{<-} \hlkwd{factor}\hlstd{(}\hlkwc{x}\hlstd{=dsDemographics}\hlopt{$}\hlstd{Gender,}
+                          \hlkwc{levels}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{2}\hlstd{,}
+                          \hlkwc{labels}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Male"}\hlstd{,} \hlstr{"Female"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+If you have another \code{data.frame} that needs to be merged with the demographic dataset, use \code{SubjectTag} as the key, because this variable is guaranteed to be unique when the subjects in both generations are in the same dataset.  Supposed your other dataset is called \code{dsOutcomes}, the merging code would be 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{dsCombined} \hlkwb{<-} \hlkwd{merge}\hlstd{(}\hlkwc{x}\hlstd{=dsDemographics,} \hlkwc{y}\hlstd{=dsOutcomes,} \hlkwc{by}\hlstd{=}\hlstr{"SubjectTag"}\hlstd{,} \hlkwc{all}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Make sure that \code{dsOutcomes} also has the \code{SubjectTag} variable; this will happen automatically if it was read into \R{} using the \code{ReadCsvNlsy79Gen1()} or \code{ReadCsvNlsy79Gen2()} functions.  For more information about \code{SubjectTag}, please see the \code{Links79Pair} entry in the \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual}.
+
 
 
 \section{Grant support}

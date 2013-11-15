@@ -67,7 +67,7 @@ subset(Links79Pair, RelationshipPath=='Gen2Siblings' & R==.75)
 Similar to ambiguous twins, ambiguous siblings are sibling pairs that we cannot comfortably classify as either full-siblings ($R=.5$) or half-siblings ($R=.25$).  All siblings in the NLSY79-C/YA dataset share the same biological mother, so for these pairs, the problem is reduced to determining if they share the same biological father.  There are two typical reasons for classifying siblings as ambiguous: (a) the relevant items are missing responses, or (b) the existing responses conflict with each other.  
 
 For instance, there are at least \Sexpr{nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & ((RExplicitOlderSibVersion==.5 & RExplicitYoungerSibVersion==.25) | (RExplicitOlderSibVersion==.25 & RExplicitYoungerSibVersion==.5))))} Gen2 pairs where one sibling explicitly reported they shared a biological father, while the other sibling explicitly reported they did not.  These subjects can be viewed with: 
-<<eval=FALSE, echo=TRUE>>=
+<<eval=FALSE, echo=TRUE, tidy=FALSE>>=
 dsLinks <- Links79PairExpanded
 isGen2Sib <- dsLinks$RelationshipPath=='Gen2Siblings'
 
@@ -81,7 +81,7 @@ olderHalfYoungerFull <- (dsLinks$RExplicitOlderSibVersion==.25 &
 dsLinks[isGen2Sib & (olderFullYoungerHalf | olderHalfYoungerFull), ]
 @
 Another example occurs when a subject reports they are unsure or if their own responses are inconsistent over the years.  These \Sexpr{nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & (RExplicitOlderSibVersion==.375 | RExplicitYoungerSibVersion==.375)))} Gen2 pairs can be viewed with:
-<<eval=FALSE, echo=TRUE>>=
+<<eval=FALSE, echo=TRUE, tidy=FALSE>>=
 dsLinks[ isGen2Sib & (dsLinks$RExplicitOlderSibVersion==.375 | 
      dsLinks$RExplicitYoungerSibVersion==.375), ]
 @
@@ -98,6 +98,66 @@ Our advice to include/exclude an $R$ group also depends on the kind of analysis.
 We don't recommend blindly dropping the ambiguous twins and siblings in every analysis.  For each scenario, the group sizes and phenotypic measurement issues should be considered.
 
 We do recommend running a casual sensitivity test, at the very least.  Run different models that include and exclude the small $R$ groups.  Hopefully the estimates change in expected ways (\emph{e.g.,}, including ambiguous siblings makes only a small difference)  and you don't have to dig deeper.  For all analyses, inspect each $R$ group's covariance matrix, especially with for the MZs, which typically is the smallest group. 
+
+\section{Race and Gender Variables}
+\textsf{Where are the race and gender variables?}\\ \\
+Any NLSY dataset extracted using the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsInvestigator.pdf}{NLS Investigator} will include some mandatory fields, including race and gender.  For Gen1, these are the \code{R02147.00} and \code{R02148.00} variables; for Gen2, they are the \code{C00053.00} and \code{C00054.00} variables.
+
+The \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NlsyAce vignette} describes how to incorporate extracts into \R{} for manipulation and analysis (\emph{e.g.}, ``DF analysis with a univariate outcome from a Gen2 Extract'').  Those vignette example focused on incorporating outcomes.  The FAQ entry focuses on race and gender.
+
+For Gen1, create a string variable that points to your extract\\(\emph{e.g.}, \code{filePathOutcomes <- "C:/BGResearch/NlsExtracts/Gen2Birth.csv"}).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
+<<echo=TRUE>>=
+require(NlsyLinks)
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen1LifeCourse.csv")
+@
+
+Next, pass that path to the \code{ReadCsvNlsy79Gen1()} function, which converts that CSV into an \R{} \code{data.frame} and adds a few extra columns that will make NLSY research easier.
+<<echo=TRUE>>=
+dsDemographics <- ReadCsvNlsy79Gen1(filePathOutcomes)
+summary(dsDemographics)
+@
+
+You can see which variables were added or renamed by \code{ReadCsvNlsy79Gen1()} (\emph{i.e.}, the first four), and which still retain the original names from the NLS Investigator (\emph{i.e.}, the ones that start with `R' and are followed by numbers).  The first two original variables happen to correspond to Gen1's race and gender.  Rename to something more salient to you, such as
+<<echo=TRUE>>=
+dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214700", "Race")
+dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214800", "Gender")
+@
+
+Finally, consider converting the numeric variables to \href{http://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html}{factor} variables so your code will be more readable.
+<<echo=TRUE, tidy=FALSE>>=
+#The official documentation calls this last level "NON-BLACK, NON-HISPANIC"
+dsDemographics$Race <- factor(x=dsDemographics$Race, 
+                          levels=1:3, 
+                          labels=c("Hispanic", "Black", "NBNH")) 
+dsDemographics$Gender <- factor(x=dsDemographics$Gender, 
+                          levels=1:2, 
+                          labels=c("Male", "Female")) 
+@
+
+For Gen2, race and gender can be incorporated with a similar approach.  Remember to change \code{filePathOutcomes} to your desired location.
+<<echo=TRUE, tidy=FALSE>>=
+require(NlsyLinks)
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
+dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is for Gen2.
+# summary(dsDemographics) #Uncomment to see the summary
+
+dsDemographics <- RenameNlsyColumn(dsDemographics, "C0005300", "Race")
+dsDemographics <- RenameNlsyColumn(dsDemographics, "C0005400", "Gender")
+
+dsDemographics$Race <- factor(x=dsDemographics$Race, 
+                          levels=1:3, 
+                          labels=c("Hispanic", "Black", "NBNH")) 
+dsDemographics$Gender <- factor(x=dsDemographics$Gender, 
+                          levels=1:2, 
+                          labels=c("Male", "Female")) 
+@
+
+If you have another \code{data.frame} that needs to be merged with the demographic dataset, use \code{SubjectTag} as the key, because this variable is guaranteed to be unique when the subjects in both generations are in the same dataset.  Supposed your other dataset is called \code{dsOutcomes}, the merging code would be 
+<<echo=TRUE, eval=FALSE, tidy=FALSE>>=
+dsCombined <- merge(x=dsDemographics, y=dsOutcomes, by="SubjectTag", all=TRUE)
+@
+Make sure that \code{dsOutcomes} also has the \code{SubjectTag} variable; this will happen automatically if it was read into \R{} using the \code{ReadCsvNlsy79Gen1()} or \code{ReadCsvNlsy79Gen2()} functions.  For more information about \code{SubjectTag}, please see the \code{Links79Pair} entry in the \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual}.
+
 
 
 \section{Grant support}
