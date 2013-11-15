@@ -36,6 +36,12 @@ Welcome to the \code{NlsyLinks} package, which facilitates research with the \hr
 
 The current \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ} and the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette} provide overview, and the \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual} documents the package's syntax; the documents are available on \href{http://cran.r-project.org/web/packages/NlsyLinks/}{CRAN}.  Furthermore, \href{https://github.com/LiveOak/NlsyLinksDetermination/wiki/Articles}{the articles involving the NLSY kinship links} provides the theoretical and academic perspective.
 
+\section{Gen1 and Gen2}
+\textsf{What does ``Gen1'' and ``Gen2'' mean?}\\ \\
+This package considers both generations of the NLSY79.  The first generation (\emph{ie}, `Gen1') refers to subjects in the original NLSY79 sample (\url{http://www.bls.gov/nls/nlsy79.htm}).  The second generation (\emph{ie}, `Gen2') of subjects are the biological offspring of the original females -\emph{i.e.}, those in the NLSY79 Children and Young Adults sample ( \url{http://www.bls.gov/nls/nlsy79ch.htm}).  The NLSY97 is a third dataset that can be used for behavior genetic research (\url{http://www.bls.gov/nls/nlsy97.htm}), although this vignette focuses on the two generations in the NLSY79.
+
+Standard terminology is to refer second generation subjects as `children' when they are younger than age 15 (NSLYC), and as `young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as `NLSY79-C', `NLSY79C', `NLSY-C' or `NLSYC'. This packages uses `Gen2' to refer to subjects of this generation, regardless of their age at the time of the survey.
+
 \section{Ambiguous twins}
 \textsf{What are ``ambiguous twins"?}\\ \\
 MZ twins share all of the genetic information (\emph{i.e.}, $R=1$), while DZ twins on average share half (\emph{i.e.}, $R=0.5$).  Sometimes a sibling pair doesn't have enough information for us to classify comfortably as either MZ or DZ.  We assign these ``ambiguous twins" $R=.75$.  Currently there are \Sexpr{sum(Links79Pair$RelationshipPath=='Gen2Siblings' & Links79Pair$R==.75) } ambiguous twins in the NLSY79C sample.  

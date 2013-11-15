@@ -1,20 +1,71 @@
-% -*- mode: noweb; noweb-default-code-mode: R-mode; -*-
-\documentclass[a4paper]{article}
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
 
-%\usepackage{a4wide}
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage[margin=1.0in]{geometry}
-\usepackage[colorlinks=true,urlcolor=blue]{hyperref}  %This makes reference links hyperlinks in pdf (tip from Revelle's 'psych' package).
+\usepackage[colorlinks=true,urlcolor=darkblue,linkcolor=greenteal]{hyperref}  %This makes reference links hyperlinks in pdf (tip from
+
 \usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent (tip from Revelle's 'psych' package).
-\usepackage[pdftex]{graphicx}
+
+\definecolor{darkblue}{rgb}{.0,.2,.8}
+\definecolor{greenteal}{rgb}{0,.5,.5}
 
 \title{The NLS Investigator}
-\author{William Howard Beasley (Howard Live Oak LLC, Norman)\\
-Joseph Lee Rodgers (University of Oklahoma, Norman)\\
+\author{\href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)\\
+\href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)\\
+\href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)\\
 Kelly Meredith (University of Oklahoma, Norman)\\
-David Bard (University of Oklahoma Health Sciences Center, OKC)}
-\usepackage{Sweave}
-\begin{document}
+\href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
+}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 
+\begin{document}
 
 \setkeys{Gin}{width=\textwidth}
 \newcommand{\code}[1]{\texttt{\small{#1}}}
@@ -23,16 +74,19 @@ David Bard (University of Oklahoma Health Sciences Center, OKC)}
 \newcommand{\R}{\proglang{R}} %(tip from Revelle's 'psych' package).
 
 \maketitle
+\tableofcontents
 
 \begin{abstract}
-   This vignettes will be useful to behavior genetic researchers interested in using the National Longitudinal Survey of Youth (NLSY79) or Children (NLSYC) data.  To fit biometrical models to the NLSY or NLSYC requires that they be extracted from the appropriate online NLS database into a usable file format.  The extracting software is called the NLS Investigator.  We describe how to use the NLS Investigator to select and download variables.   In subsequent vignettes, we show how to reformat the data extract into file structures that support behavior genetic research, and how to fit biometrical models.  The following steps are not specific to \R{}, but rather precede the use of any analytic statistical software.
+This vignette will be useful to behavior genetic researchers interested in using the National Longitudinal Survey of Youth (NLSY79) or Children (NLSYC) data.  To fit biometrical models to the NLSY or NLSYC requires that the data be extracted from the appropriate online NLSY database into a usable file format.  The extracting software is called the \href{https://www.nlsinfo.org/investigator/pages/login.jsp}{NLS Investigator}.  We describe how to use the NLS Investigator to select and download variables.   In \href{http://cran.r-project.org/web/packages/NlsyLinks/}{subsequent vignettes}, we show how to reformat the data into file structures that accommodate behavior genetic research, and how to fit biometrical models.  The following steps are not specific to \R{}, but rather precede the use of any analytic statistical software.
 \end{abstract}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Terminology} %\label{sec:Terminology}
-This package considers both generations of the NLSY79.  The `first generation' refers to subjects in the original NLSY79 sample (\url{http://www.bls.gov/nls/nlsy79.htm}).  The second generation of subjects are the biological offspring of the original females -\emph{i.e.}, those in the NLSY79 Children and Young Adults sample ( \url{http://www.bls.gov/nls/nlsy79ch.htm}).  The NLSY97 is a third dataset that can be used for behavior genetic research (\url{http://www.bls.gov/nls/nlsy97.htm}), although this vignette focuses on the two generations in the NLSY79.
+This package considers both generations of the NLSY79.  The first generation (\emph{ie}, `Gen1') refers to subjects in the original NLSY79 sample (\url{http://www.bls.gov/nls/nlsy79.htm}).  The second generation (\emph{ie}, `Gen2') of subjects are the biological offspring of the original females -\emph{i.e.}, those in the NLSY79 Children and Young Adults sample ( \url{http://www.bls.gov/nls/nlsy79ch.htm}).  The NLSY97 is a third dataset that can be used for behavior genetic research (\url{http://www.bls.gov/nls/nlsy97.htm}), although this vignette focuses on the two generations in the NLSY79.
 
-Standard terminology is to refer second generation subjects as `children' when they are younger than age 15 (NSLYC), and as `young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as `NLSY79-C', `NLSY79C', `NLSY-C' or `NLSYC'. 
+Standard terminology is to refer second generation subjects as `children' when they are younger than age 15 (NSLYC), and as `young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as `NLSY79-C', `NLSY79C', `NLSY-C' or `NLSYC'. This packages uses `Gen2' to refer to subjects of this generation, regardless of their age at the time of the survey.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Steps to Select Variables and Download Data}
@@ -40,31 +94,31 @@ Standard terminology is to refer second generation subjects as `children' when t
 \item Browse to \url{http://www.nlsinfo.org/investigator/}.  Select the `REGISTER' link in the top right, and create a personal account.  If you have already registered, Log In and proceed to the next step.
 \item Select your desired cohort, in the dropdown box titled, ``Select the study you want to work with:''.  In the screenshot below, second generation of the NLSY79 sample is selected.
 
-\includegraphics{F:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorCohort.png}
+\includegraphics{D:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorCohort.png}
 
 \item Select the variables.  There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks.  A thorough tutorial begins on the NLS Investigator page: \url{http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html}.  To better leverage the NLSY's extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial.  However for the purposes of this vignette, we'll simply select a few easy variables.  
 
 First, in the `Variables Search' tab, select `Word in Title (enter search term)'.  Second, type ``other symptom - f'' in the textbox.  Third, clicking the `Display Variables' button should retrieve at least four NLSYC variables whose title starts with ``other symptom - f''.  Fourth, supposing we care about only their fevers, click their two corresponding checkboxes.  (If you're curious, the `XRND' value for year stands for \href{http://www.bls.gov/nls/nls138.pdf}{cross round}; XRND variables are calculated by the NLS staff, and typically come from the subject's most recent survey).
 
-\includegraphics{F:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorSelect.png}
+\includegraphics{D:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorSelect.png}
 
 \item Review your selected variables by clicking the corresponding tab.  Notice that several important variables are automatically included in every  dataset.  In real research these steps are iterated many times, as you repeated select, then review, then save, then re-select, then re-review, then...  But we'll move on, because these seven variables are good enough for an example.
 
-\includegraphics{F:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorReview.png}
+\includegraphics{D:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorReview.png}
 
 \item When the dataset is complete, it is time to save the tagset.  A \textbf{tagset file} is simply metadata of the desired variables.  The file identifies the variables, \emph{but does not contain actual data values}.  As your project evolves over time (because you're adding variables, or refreshing your dataset after a new survey is released), it's convenient to keep the metadata distinct from the real data.  
 
 The actual values are contained in the \textbf{data file}, which is discussed in the next two steps.  These issues are covered further in the \href{http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html}{official tutorial}.
 
-\includegraphics{F:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorTagset.png}
+\includegraphics{D:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorTagset.png}
 
 \item The first step of the download process is to create the data file on the NLS server.  Click the `Save/Download' tab, and then the `Advanced Download' tab.  As far as the \pkg{NlsyLinks} package is concerned, only the the `Comma-delimited datafile...' box needs to be checked.  Then provide a `Data filename'.  Finally, click the `Start Download' button.
 
-\includegraphics{F:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorDownloadStep1.png}
+\includegraphics{D:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorDownloadStep1.png}
 
 \item The second step of the download process is to transfer the zip file to your local computer.  Click the maroon `download' hyperlink.
 
-\includegraphics{F:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorDownloadStep2.png}
+\includegraphics{D:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorDownloadStep2.png}
 
 \item Open the zip file and extract the *.csv file to a location that the vignette examples have permission to read.  Then try some of the \code{NlsyLinks} vignette examples at \url{http://cran.r-project.org/web/packages/NlsyLinks/}. 
 
@@ -87,10 +141,11 @@ If you're importing CSV files specifically for the \pkg{NlsyLinks} package, you'
 \section{Tagset History}
 We recommend saving the tagsets on both the NLS server and your local machine.  Tagsets are not guaranteed to be retained on the NLS server more than 90 days.  Locally save when variables are added or removed from the tagset in a consistent location, and name the file to reflect the current date.  The files can be read with any simple text editor.  The directory below contains the partial evolution of four distinct tagsets (i.e., `Gen1Links', `Gen2Links', `Gen2ImplicitFather', `Gen2LinksFromGen1').
 
-\includegraphics[width=4in]{F:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorTagsetBackups.png}
+\includegraphics[width=4in]{D:/Projects/RDev/NlsyLinksStaging/Vignettes/NlsInvestigatorTagsetBackups.png}
 
 \section{Notes}
-This package's development was largely supported by the NIH Grant 1R01HD65865, ``NLSY Kinship Links: Reliable and Valid Sibling Identification" (PI: Joe Rodgers; Vignette Construction by Will Beasley).
+This package's development was largely supported by the NIH Grant 1R01HD65865,  \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)\\
 
-These screenshots were taken February and March, 2012 with Google Chrome 17 and Windows 7 SP1 Enterprise.
+
+These screenshots were taken February and March 2012 with Google Chrome 17 and Windows 7 SP1 Enterprise.  If you notice something that no longer corresponds to the current version to the NLS Investigator, please tell us.
 \end{document}

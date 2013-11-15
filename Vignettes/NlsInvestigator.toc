@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Terminology}{1}{section.1}
+\contentsline {section}{\numberline {2}Steps to Select Variables and Download Data}{2}{section.2}
+\contentsline {section}{\numberline {3}Using Multiple Tagsets}{5}{section.3}
+\contentsline {section}{\numberline {4}Tagset History}{5}{section.4}
+\contentsline {section}{\numberline {5}Notes}{6}{section.5}
