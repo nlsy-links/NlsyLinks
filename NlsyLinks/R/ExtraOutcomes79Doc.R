@@ -18,11 +18,11 @@
 #' \item{WeightZGenderAge}{The subject's weight, standardized by gender and age (see Details).} 
 #' \item{Afi}{Self-reported age of first intercourse (see Details).} 
 #' \item{Afm}{Self-reported age of first menstration (see Details).}
-#' \item{MathStandardized}{Standardized PIAT Math scores for Gen2 (see Details).} 
+#' \item{MathStandardized}{\emph{not implemented yet.}  Standardized PIAT Math scores (see Details).} 
 #' }
 #' @author Will Beasley
-#' @source Gen1 information comes from the May 15, 2010 release of the
-#' \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information comes from the Sept 15, 2010 release of the
+#' @source Gen1 information comes from the Summer 2013 release of the
+#' \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information comes from the Summer 2013 release of the
 #' \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
 #' (\url{https://www.nlsinfo.org/investigator/}).
 #' 

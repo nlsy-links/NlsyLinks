@@ -27,7 +27,7 @@
   requirements, see \code{Details} below.
 }
 \details{
-  The \code{dsOutcome} parameter must:#' \enumerate{ \item
+  The \code{dsOutcome} parameter must: \enumerate{ \item
   Have a non-missing value.  \item Contain at least one
   row.  \item Contain a column called 'SubjectTag' (case
   sensitive).  \item Have the SubjectTag column containing

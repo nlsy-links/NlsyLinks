@@ -23,9 +23,9 @@ variables.
    \item{DeathDate}{##This variable is not available yet## The subject's month of death.  The exact day is not available to the public. By default, we set their birthday to the 15th day of the month.}
 }}
 \source{
-  Gen1 information comes from the May 15, 2010 release of
+  Gen1 information comes from the Summer 2013 release of
   the \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79
-  sample}.  Gen2 information comes from the Sept 15, 2010
+  sample}.  Gen2 information comes from the Summer 2013
   release of the
   \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79
   Children and Young Adults sample}.  Data were extracted

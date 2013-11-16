@@ -61,7 +61,7 @@
   recommended to exclude that group from the SEM.
 }
 \details{
-  This function doesn't specific to an ACE model and groups
+  This function isn't specific to an ACE model and groups
   defined by \code{R}.  It could be applied to any
   multiple-group SEM with two manifest/outcome variables.
   In the future, we may generalize it beyond two manifest

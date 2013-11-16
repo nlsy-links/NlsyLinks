@@ -38,11 +38,12 @@
 #' MZ twins have \code{R}=1.  DZ twins and full-siblings have \code{R}=.5.
 #' Half-siblings have \code{R}=.25. Typical first-cousins have \code{R}=.125
 #' Unrelated subjects have \code{R}=0 (this occasionally happens for
-#' \code{Gen1Housemates}).  Other \code{R} coefficients are possible. ??Joe,
-#' do you have an earlier paper that enumerates all the obscure combinations,
+#' \code{Gen1Housemates}).  Other \code{R} coefficients are possible. 
+#' 
+#' ??Joe, do you have an earlier paper that enumerates all the obscure combinations,
 #' like half-cousins or an ambiguous AuntNiece??
 #' 
-#' @format A data frame with 11,075 observations on the following 5 variables.
+#' @format A data frame with 42,773 observations on the following 5 variables.
 #' There is one row per unique pair of subjects, irrespective of order.
 #' \describe{ 
 #'    \item{ExtendedID}{Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.}
@@ -78,14 +79,14 @@
 #' \url{http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm}. ** We
 #' need an introduction reference/information for 'R'/Relatedness. **
 #' 
-#' @source Gen1 information comes from the May 15, 2010 release of the
+#' @source Gen1 information comes from the Summer 2013 release of the
 #' \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
-#' comes from the Sept 15, 2010 release of the
+#' comes from the Summer 2013 release of the
 #' \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults
 #' sample}.  Data were extracted with the NLS Investigator
 #' (\url{https://www.nlsinfo.org/investigator/}).
 #' 
-#' The internal version for the links is \code{Links2011V51}.
+#' The internal version for the links is \code{Links2011V84}.
 #' @keywords datasets
 #' @examples 
 #' library(NlsyLinks) #Load the package into the current R session.

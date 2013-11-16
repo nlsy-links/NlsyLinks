@@ -2,7 +2,7 @@
 \name{Links79Pair}
 \alias{Links79Pair}
 \title{Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults}
-\format{A data frame with 11,075 observations on the following 5 variables.
+\format{A data frame with 42,773 observations on the following 5 variables.
 There is one row per unique pair of subjects, irrespective of order.
 \describe{
    \item{ExtendedID}{Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.}
@@ -12,9 +12,9 @@ There is one row per unique pair of subjects, irrespective of order.
    \item{RelationshipPath}{Specifies the relationship category of the pair.  This variable is a factor, with levels \code{Gen1Housemates}=1, \code{Gen2Siblings}=2, \code{Gen2Cousins}=3, \code{ParentChild}=4, \code{AuntNiece}=5.}
 }}
 \source{
-  Gen1 information comes from the May 15, 2010 release of
+  Gen1 information comes from the Summer 2013 release of
   the \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79
-  sample}.  Gen2 information comes from the Sept 15, 2010
+  sample}.  Gen2 information comes from the Summer 2013
   release of the
   \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79
   Children and Young Adults sample}.  Data were extracted
@@ -22,7 +22,7 @@ There is one row per unique pair of subjects, irrespective of order.
   (\url{https://www.nlsinfo.org/investigator/}).
 
   The internal version for the links is
-  \code{Links2011V51}.
+  \code{Links2011V84}.
 }
 \description{
   This dataset specifies the relatedness coefficient (ie,
@@ -69,9 +69,11 @@ There is one row per unique pair of subjects, irrespective of order.
   Typical first-cousins have \code{R}=.125 Unrelated
   subjects have \code{R}=0 (this occasionally happens for
   \code{Gen1Housemates}).  Other \code{R} coefficients are
-  possible. ??Joe, do you have an earlier paper that
-  enumerates all the obscure combinations, like
-  half-cousins or an ambiguous AuntNiece??
+  possible.
+
+  ??Joe, do you have an earlier paper that enumerates all
+  the obscure combinations, like half-cousins or an
+  ambiguous AuntNiece??
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.

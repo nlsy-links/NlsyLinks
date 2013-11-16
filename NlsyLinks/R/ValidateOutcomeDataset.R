@@ -9,7 +9,7 @@
 #' @param dsOutcome A data frame with the measured variables
 #' @param outcomeNames The column names of the measure variables that eventually will be used by a statistical procedure.
 #' 
-#' @details The \code{dsOutcome} parameter must:#' 
+#' @details The \code{dsOutcome} parameter must:
 #' \enumerate{
 #'    \item Have a non-missing value.
 #'    \item Contain at least one row.

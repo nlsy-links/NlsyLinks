@@ -14,7 +14,7 @@
 #' @param rName The name of the variable specifying the pair's \code{Relatedness} coefficient.
 #' @param determinantThreshold The minimum value the covariance matrix's determinant (for the group) should exceed to be considered Positive Definite.
 #' 
-#' @details This function doesn't specific to an ACE model and groups defined by \code{R}.  It could be applied to any multiple-group SEM with two manifest/outcome variables.  In the future, we may generalize it beyond two manifest variables.
+#' @details This function isn't specific to an ACE model and groups defined by \code{R}.  It could be applied to any multiple-group SEM with two manifest/outcome variables.  In the future, we may generalize it beyond two manifest variables.
 #' 
 #' To get summary stats for the entire sample, create a dummy indicator variable that assigns everyone to the same group.  See the second example below.
 #' 
