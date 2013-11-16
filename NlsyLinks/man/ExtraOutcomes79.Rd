@@ -15,7 +15,7 @@
 \item{WeightZGenderAge}{The subject's weight, standardized by gender and age (see Details).}
 \item{Afi}{Self-reported age of first intercourse (see Details).}
 \item{Afm}{Self-reported age of first menstration (see Details).}
-\item{MathStandardized}{Standardized PIAT Math score for Gen2 (see Details).}
+\item{MathStandardized}{Standardized PIAT Math scores for Gen2 (see Details).}
 }}
 \source{
   Gen1 information comes from the May 15, 2010 release of
@@ -26,7 +26,12 @@
   Children and Young Adults sample}.  Data were extracted
   with the NLS Investigator
   (\url{https://www.nlsinfo.org/investigator/}).
-
+}
+\description{
+  This dataset is provided primarily to facilitate
+  documentation examples.
+}
+\details{
   The \code{SubjectTag} variable uniquely identify
   subjects.  For Gen2 subjects, the SubjectTag is identical
   to their CID (ie, C00001.00 -the SubjectID assigned in
@@ -45,16 +50,6 @@
   values were simplied (to one value per subject) by Kelly
   Meredith in January 2012 using the Sept 15, 2010 release
   of NLSY data.
-}
-\description{
-  This dataset is provided primarily to facilitate
-  documentation examples.
-
-  Currently this dataset contains only Gen2 subjects.
-  However, it soon will include Gen1 subjects.  Code
-  written using this dataset should NOT assume it contains
-  only Gen2 subjects.  See below for an example of
-  filtering by generation.
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.

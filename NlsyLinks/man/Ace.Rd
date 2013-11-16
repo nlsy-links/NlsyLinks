@@ -40,16 +40,17 @@
 }
 \value{
   Currently, a list is returned with the arguments
-  \code{HSquared}, \code{CSquared}, \code{ESquared}, and
+  \code{ASquared}, \code{CSquared}, \code{ESquared}, and
   \code{RowCount}.  In the future, this may be changed to
   an \code{S4} class.
 }
 \description{
-  An ACE model is the foundation of most Behavior Genetic
+  An ACE model is the foundation of most behavior genetic
   research.  It estimates the additive heritability (with
   \emph{a}), common environment (with \emph{c}) and
   unshared heritability/environment (with \emph{e}).
-
+}
+\details{
   The \code{AceUnivariate} function is a wrapper that calls
   \code{DeFriesFulkerMethod1} or
   \code{DeFriesFulkerMethod3}.  Future versions will
@@ -61,7 +62,7 @@ dsOutcomes <- ExtraOutcomes79
 dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,
   generation=dsOutcomes$Generation)
 dsLinks <- Links79Pair
-dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only the Gen2 Siblings (ie, NLSY79-C subjects)
+dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only Gen2 Siblings (ie, NLSY79-C)
 dsDF <- CreatePairLinksDoubleEntered(outcomeDataset=dsOutcomes, linksPairDataset=dsLinks,
   outcomeNames=c("MathStandardized", "HeightZGenderAge", "WeightZGenderAge"))
 
@@ -85,8 +86,8 @@ summary(GetDetails(estimatedMath))
 }
 \references{
   Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
-  Reformulating and simplifying the DF analysis model.
-  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{\emph{Behavior
-  Genetics, 35 (2), 211-217}}.
+  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating
+  and simplifying the DF analysis model.} \emph{Behavior
+  Genetics, 35} (2), 211-217.
 }
 

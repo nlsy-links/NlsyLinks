@@ -10,13 +10,9 @@
 #' 
 #' DeFriesFulkerMethod3(dataSet, oName_1, oName_2, rName="R")
 #' 
-#' @description An ACE model is the foundation of most Behavior Genetic research.  It
+#' @description An ACE model is the foundation of most behavior genetic research.  It
 #' estimates the additive heritability (with \emph{a}), common environment
 #' (with \emph{c}) and unshared heritability/environment (with \emph{e}).
-#' 
-#' The \code{AceUnivariate} function is a wrapper that calls
-#' \code{DeFriesFulkerMethod1} or \code{DeFriesFulkerMethod3}.  Future
-#' versions will incorporate methods that use latent variable models.
 #' 
 #' @param method The specific estimation technique.
 #' @param dataSet The \code{data.frame} that contains the two outcome
@@ -31,20 +27,26 @@
 #' value.
 #' @param manifestScale Currently, only \emph{continuous} manifest/outcome variables
 #' are supported.
-#' @return Currently, a list is returned with the arguments \code{HSquared},
+#' @return Currently, a list is returned with the arguments \code{ASquared},
 #' \code{CSquared}, \code{ESquared}, and \code{RowCount}.  In the future, this
 #' may be changed to an \code{S4} class.
+#' 
+#' @details 
+#' The \code{AceUnivariate} function is a wrapper that calls
+#' \code{DeFriesFulkerMethod1} or \code{DeFriesFulkerMethod3}.  Future
+#' versions will incorporate methods that use latent variable models.
+#' 
 #' @author Will Beasley
 #' @references Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
-#' Reformulating and simplifying the DF analysis model.
-#' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{\emph{Behavior Genetics, 35 (2), 211-217}}.
+#' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
+#' \emph{Behavior Genetics, 35} (2), 211-217.
 #' @examples 
 #' library(NlsyLinks) #Load the package into the current R session.
 #' dsOutcomes <- ExtraOutcomes79
 #' dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,
 #'   generation=dsOutcomes$Generation)
 #' dsLinks <- Links79Pair
-#' dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only the Gen2 Siblings (ie, NLSY79-C subjects)
+#' dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only Gen2 Siblings (ie, NLSY79-C)
 #' dsDF <- CreatePairLinksDoubleEntered(outcomeDataset=dsOutcomes, linksPairDataset=dsLinks, 
 #'   outcomeNames=c("MathStandardized", "HeightZGenderAge", "WeightZGenderAge"))
 #' 

@@ -36,7 +36,6 @@ Collate:
     'CreatePairLinksDoubleEnteredWithNoOutcomes.R'
     'CreatePairLinksSingleEntered.R'
     'CreateSpatialNeighbours.R'
-    'CreateSpatialNeighbours79Gen2.R'
     'CreateSubjectTag.R'
     'DeFriesFulker.R'
     'ExtraOutcomes79Doc.R'

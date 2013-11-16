@@ -17,7 +17,7 @@
 #'  
 #'  \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
 #'  
-#'  Kelly Meredith (University of Oklahoma, Norman)
+#'  Kelly Meredith (Oklahoma City University, OKC)
 #'  
 #'  \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
 #' 
@@ -29,8 +29,7 @@
 #' 
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and
 #' simplifying the DF analysis model.}
-#' \emph{Behavior
-#' Genetics, 35} (2), 211-217.
+#' \emph{Behavior Genetics, 35} (2), 211-217.
 #' 
 #' Rodgers, J.L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W.B. (2008).
 #' \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing

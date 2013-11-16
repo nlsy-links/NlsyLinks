@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.23)  15 NOV 2013 00:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.23)  15 NOV 2013 21:28
 entering extended mode
 **NlsyAce.tex
 (D:\Projects\RDev\NlsyLinksStaging\Vignettes\NlsyAce.tex
@@ -441,7 +441,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 660.
 Here is how much of TeX's memory you used:
  6510 strings out of 493921
  93116 string characters out of 3147284
- 205159 words of memory out of 3000000
+ 205158 words of memory out of 3000000
  9670 multiletter control sequences out of 15000+200000
  13263 words of font info for 52 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -461,7 +461,7 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmtt9.pfb>
-Output written on NlsyAce.pdf (12 pages, 285706 bytes).
+Output written on NlsyAce.pdf (12 pages, 285725 bytes).
 PDF statistics:
  251 PDF objects out of 1000 (max. 8388607)
  49 named destinations out of 1000 (max. 500000)

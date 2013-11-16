@@ -2,7 +2,6 @@
 ##' 
 ##' A class containing information about a single univariate ACE model.
 ##' 
-##' 
 ##' @name AceEstimate-class
 ##' @aliases AceEstimate-class getEstimate,AceEstimate-method
 ##' initialize,AceEstimate-method print,AceEstimate-method

@@ -3,7 +3,7 @@
 \alias{RenameColumn}
 \alias{RenameNlsyColumn}
 \alias{VerifyColumnExists}
-\title{A collection of functions that helps data management \code{data.frame}s, particularly those derived from NLS Extracts.}
+\title{A collection of functions that helps data management \code{data.frame}s, particularly those derived from NLSY Extracts.}
 \usage{
   VerifyColumnExists( dataFrame, columnName )
 
@@ -12,8 +12,8 @@
   RenameNlsyColumn( dataFrame, nlsyRNumber, newColumnName )
 }
 \arguments{
-  \item{dataFrame}{A \code{data.frame} object whose columns
-  are to be verified or renamed.}
+  \item{dataFrame}{The \code{data.frame} whose columns are
+  to be verified or renamed.}
 
   \item{columnName}{The name of the column to verify is
   present in the \code{data.frame}.}
@@ -39,7 +39,7 @@
 }
 \description{
   A collection of functions that helps data management
-  \code{data.frame}s, particularly those derived from NLS
+  \code{data.frame}s, particularly those derived from NLSY
   Extracts.
 }
 \details{
@@ -51,7 +51,7 @@
 
   In the NLS Investigator, a decimal is present in the
   RNumber (eg, R00001.00).  When the Investigator saves the
-  dataset as a CSV, the decimal is removed (R0000100).
+  dataset as a CSV, the decimal is removed (eg, R0000100).
 }
 \author{
   Will Beasley

@@ -7,7 +7,7 @@ devtools::build()#args="--resave-data")
 devtools::document(roclets = c("collate", "namespace", "rd"), clean=T, reload=T) # #Remember to change this in RStudio too.
 devtools::check_doc() #Should return NULL
 #  system("R CMD Rd2pdf --force --output=./NlsyLinksDocumentationPeek.pdf ." )
-
+#
 devtools::run_examples(); dev.off() #This overwrites the NAMESPACE file too
 # devtools::run_examples(, "Ace.Rd")
 devtools::test()

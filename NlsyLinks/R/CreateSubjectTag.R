@@ -6,7 +6,7 @@
 #'
 #' @usage CreateSubjectTag(subjectID, generation)
 #' @param subjectID The ID assigned by the NLSY.  For Gen1 subjects, this will be their CaseID (ie, R00001.00).  For Gen2 subjects, this will be their CID (ie, C00001.00).
-#' @param generation The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a \code{factor} (in constrast with data frames like \code{\link{Links79Pair}}).   This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a \code{factor}.
+#' @param generation The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  
 #' 
 #' @details For a fuller explanation of \code{SubjectTag} in context, see the \code{\link{Links79Pair}} dataset documentation.
 #' 

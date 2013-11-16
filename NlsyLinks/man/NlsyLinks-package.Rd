@@ -33,7 +33,7 @@ table(Links79Pair$R)  #Create a table of the Relatedness values for the whole sa
   Bard} (University of Oklahoma Health Sciences Center,
   OKC)
 
-  Kelly Meredith (University of Oklahoma, Norman)
+  Kelly Meredith (Oklahoma City University, OKC)
 
   \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael
   D. Hunter} (University of Oklahoma, Norman)

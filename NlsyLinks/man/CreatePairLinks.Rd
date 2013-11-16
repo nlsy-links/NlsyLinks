@@ -75,10 +75,10 @@ ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
   Will Beasley
 }
 \references{
-  For more information about a DF analysis, see: Rodgers,
-  Joseph Lee, & Kohler, Hans-Peter (2005).  Reformulating
-  and simplifying the DF analysis model.
-  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{\emph{Behavior
-  Genetics, 35} (2), 211-217}.
+  For more information about a DF analysis, see Rodgers,
+  Joseph Lee, & Kohler, Hans-Peter (2005).
+  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating
+  and simplifying the DF analysis model.} \emph{Behavior
+  Genetics, 35} (2), 211-217.
 }
 

@@ -10,12 +10,7 @@
   Gen2 subjects, this will be their CID (ie, C00001.00).}
 
   \item{generation}{The generation of the subject.  Values
-  are either 1 or 2, representing Gen1 and Gen2.  Note that
-  this variable is not a \code{factor} (in constrast with
-  data frames like \code{\link{Links79Pair}}).  This
-  dataset is supposed to mimick the dataset provided by the
-  researcher, which typically will not have been converted
-  to a \code{factor}.}
+  are either 1 or 2, representing Gen1 and Gen2.}
 }
 \value{
   A integer value under normal circumstances. An error is

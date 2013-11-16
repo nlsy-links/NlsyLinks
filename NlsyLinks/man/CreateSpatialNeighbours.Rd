@@ -13,12 +13,19 @@
 }
 \value{
   An S3 \code{spatial.neighbours} object to work with
-  functions in the \pkg{spdep} package. \code{Subject1Tag}
-  is renamed \code{from}. \code{Subject2Tag} is renamed
-  \code{to}. \code{R} is renamed \code{weight}. The
-  attribute \code{region.id} specifies each unique
-  SubjectTag. The attribue \code{n} specifies the number of
-  unique subjects.
+  functions in the \pkg{spdep} package.
+
+  \code{Subject1Tag} is renamed `\code{from}'.
+
+  \code{Subject2Tag} is renamed `\code{to}'.
+
+  \code{R} is renamed `\code{weight}'.
+
+  The attribute \code{region.id} specifies each unique
+  SubjectTag.
+
+  The attribue \code{n} specifies the number of unique
+  subjects.
 }
 \description{
   This helper function formats the LinksPair datasets so it
@@ -29,37 +36,59 @@
 }
 \details{
   There is one row per unique pair of subjects,
-  \emph{respecting order}.  This is different than
+  \emph{respecting order}.  This has twice as many rows as
   \code{\link{Links79Pair}} and
-  \code{\link{Links79PairExpanded}}, which has one row per
-  unique pair of subjects, \emph{irrespective of order}.
-  #\code{CreateSpatialNeighbours79Gen2} automatically
-  creates dataset of NLSY79 Gen2 subjects (i.e., the
-  children of the mothers in the initial NLSY79 sample.
+  \code{\link{Links79PairExpanded}} (which have one row per
+  unique pair of subjects, \emph{irrespective of order}).
 
   \code{CreateSpatialNeighbours} accepts any paired
   relationships in a \code{data.frame}, as long as it
   contains the columns \code{Subject1Tag},
   \code{Subject2Tag}, and \code{R}.  See
-  \code{\link{Links79Pair}} for more details.
+  \code{\link{Links79Pair}} for more details about these
+  columns.
 }
 \note{
-  Notice the British variant of 'neighbo\emph{u}rs', to be
-  consistent with the \code{spatial.neighbour} class in the
-  \code{spdep} package.
+  Notice the British variant of 'neighbo\emph{u}rs' is
+  used, to be consistent with the \code{spatial.neighbour}
+  class in the
+  \href{http://cran.r-project.org/web/packages/spdep/index.html}{\code{spdep}}
+  package.
 }
 \examples{
-##Need something here
+dsLinksAll <- Links79Pair
+dsLinksGen1Housemates <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen1Housemates", ]
+dsLinksGen2Siblings <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen2Siblings", ]
+
+spGen1 <- CreateSpatialNeighbours(dsLinksGen1Housemates)
+spGen2 <- CreateSpatialNeighbours(dsLinksGen2Siblings)
+
+head(spGen2)
+#Returns:
+#   from  to weight
+#3   201 202   0.50
+#6   301 302   0.50
+#7   301 303   0.50
+#9   302 303   0.50
+#24  401 403   0.25
+#28  801 802   0.50
+
+table(spGen2$weight)
+#Returns:
+#0.25 0.375   0.5  0.75     1
+#3442   610  6997    12    27
 }
 \author{
   Will Beasley and David Bard
 }
 \references{
-  Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2008).
-  \emph{Applied Spatial Data Analysis with R.} New York:
-  Springer. (Especially Chapter 9.) ##David, can you please
-  give me some of the articles/books that you used this
-  with?
+  Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013).
+  \href{http://link.springer.com/book/10.1007/978-1-4614-7618-4}{\emph{Applied
+  Spatial Data Analysis with R.}} New York: Springer.
+  (Especially Chapter 9.)
+
+  ##David, can you please give me some of the
+  articles/books that you used this with?
 }
 \keyword{analysis}
 \keyword{spatial}

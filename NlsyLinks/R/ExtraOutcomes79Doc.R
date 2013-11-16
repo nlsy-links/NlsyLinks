@@ -4,12 +4,7 @@
 #' @title Extra outcome variables in the NLSY79
 #' 
 #' @description This dataset is provided primarily to facilitate documentation examples.
-#' 
-#' Currently this dataset contains only Gen2 subjects.  However, it soon will
-#' include Gen1 subjects.  Code written using this dataset should NOT assume
-#' it contains only Gen2 subjects.  See below for an example of filtering by
-#' generation.
-#' 
+#'  
 #' @format A data frame with 11,495 observations on the following 6 variables. There is one row per subject.  
 #' \describe{ 
 #' \item{SubjectTag}{The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).} 
@@ -23,7 +18,7 @@
 #' \item{WeightZGenderAge}{The subject's weight, standardized by gender and age (see Details).} 
 #' \item{Afi}{Self-reported age of first intercourse (see Details).} 
 #' \item{Afm}{Self-reported age of first menstration (see Details).}
-#' \item{MathStandardized}{Standardized PIAT Math score for Gen2 (see Details).} 
+#' \item{MathStandardized}{Standardized PIAT Math scores for Gen2 (see Details).} 
 #' }
 #' @author Will Beasley
 #' @source Gen1 information comes from the May 15, 2010 release of the
@@ -31,6 +26,7 @@
 #' \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
 #' (\url{https://www.nlsinfo.org/investigator/}).
 #' 
+#' @details 
 #' The \code{SubjectTag} variable uniquely identify subjects.  For Gen2
 #' subjects, the SubjectTag is identical to their CID (ie, C00001.00 -the
 #' SubjectID assigned in the NLSY79-Children files).  However for Gen1
