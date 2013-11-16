@@ -1,8 +1,12 @@
-﻿Version 1.300 (2013-10)
+﻿Version 1.300 (2013-11)
 ------------------------------------------------------------------------------
+New Features:
+* A more complete version of the Gen1 links are included.  95% of all Gen1 Housemates have been linked.
+
 Updates:
-* A complete version of the Gen1 links are included.  95% of all Gen1 Housemates have been linked.
 * `R` now has missing values for Gen1 pairs if the 1979 roster (eg, R00001.51) doesn't indicate they're the same generation.  If this value is desirable for your research, their R values are still available in `RFull`.
+* The naming scheme for the `Links79Pair` and `Links79PairExpanded` datasets are more consistent across variables.  For variables that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an `_S1` or `_S2` appended to it.  For instance, the variables `LastSurvey_S1` and `LastSurvey_S2` correspond to the last surveys completed by the pair's first and second subject, respectively.  
+* Similarly, the functions `CreatePairLinksDoubleEntered` and `CreatePairLinksSingleEntered` now by default append `_S1` and `_S2`, instead of `_1` and `_2`.  However this can be modified using the `subject1Qualifier` and `subject2Qualifier` parameters.
 * Added function `ReadCsvNlsy79Gen1()`
 
 Version 1.200 (2012-12-18)

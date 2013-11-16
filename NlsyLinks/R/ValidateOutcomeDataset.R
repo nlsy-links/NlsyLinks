@@ -6,7 +6,7 @@
 #' 
 #' @usage ValidateOutcomeDataset(dsOutcome, outcomeNames)
 #' 
-#' @param dsOutcome A data frame with the measured variables
+#' @param dsOutcome A \code{data.frame} with the measured variables
 #' @param outcomeNames The column names of the measure variables that eventually will be used by a statistical procedure.
 #' 
 #' @details The \code{dsOutcome} parameter must:

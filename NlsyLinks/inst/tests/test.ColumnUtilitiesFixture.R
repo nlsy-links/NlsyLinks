@@ -120,18 +120,18 @@ test_that("RenameNlsyColumn", {
 #   expect_error(ValidatePairLinks(dsLinks), "The linksPair file should have at least one row, but does not.")
 # })
 # 
-# test_that("Bad Subject1Tag", {
+# test_that("Bad SubjectTag_S1", {
 #   dsLinks <- LoadPairFile()
 #   expect_true(ValidatePairLinks(dsLinks))
-#   colnames(dsLinks)[colnames(dsLinks)=="Subject1Tag"] <- "Bad"
-#   expect_error(ValidatePairLinks(dsLinks), "The column 'Subject1Tag' should exist in the linksPair file, but does not.")
+#   colnames(dsLinks)[colnames(dsLinks)=="SubjectTag_S1"] <- "Bad"
+#   expect_error(ValidatePairLinks(dsLinks), "The column 'SubjectTag_S1' should exist in the linksPair file, but does not.")
 # })
 # 
-# test_that("Bad Subject2Tag", {
+# test_that("Bad SubjectTag_S2", {
 #   dsLinks <- LoadPairFile()
 #   expect_true(ValidatePairLinks(dsLinks))
-#   colnames(dsLinks)[colnames(dsLinks)=="Subject2Tag"] <- "Bad"
-#   expect_error(ValidatePairLinks(dsLinks), "The column 'Subject2Tag' should exist in the linksPair file, but does not.")
+#   colnames(dsLinks)[colnames(dsLinks)=="SubjectTag_S2"] <- "Bad"
+#   expect_error(ValidatePairLinks(dsLinks), "The column 'SubjectTag_S2' should exist in the linksPair file, but does not.")
 # })
 # 
 # test_that("Bad R", {

@@ -32,8 +32,8 @@
 \examples{
 dsSingleLinks <- data.frame(
   ExtendedID=c(1, 1, 1, 2),
-  Subject1Tag=c(101, 101, 102, 201),
-  Subject2Tag=c(102, 103, 103, 202),
+  SubjectTag_S1=c(101, 101, 102, 201),
+  SubjectTag_S2=c(102, 103, 103, 202),
   R=c(.5, .25, .25, .5),
   RelationshipPath=rep("Gen2Siblings", 4)
 )

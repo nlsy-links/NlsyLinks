@@ -22,8 +22,8 @@
 #' 
 #' dsSingleLinks <- data.frame(
 #'   ExtendedID=c(1, 1, 1, 2), 
-#'   Subject1Tag=c(101, 101, 102, 201), 
-#'   Subject2Tag=c(102, 103, 103, 202), 
+#'   SubjectTag_S1=c(101, 101, 102, 201), 
+#'   SubjectTag_S2=c(102, 103, 103, 202), 
 #'   R=c(.5, .25, .25, .5), 
 #'   RelationshipPath=rep("Gen2Siblings", 4)
 #' )
@@ -46,18 +46,18 @@ ValidatePairLinksAreSymmetric <-
 function( linksPair ) {
   ValidatePairLinks(linksPair)
   for( rowIndex in seq_along(nrow(linksPair)) ) {
-#     tag1 <- linksPair$Subject1Tag[rowIndex]
-#     tag2 <- linksPair$Subject2Tag[rowIndex]    
+#     tag1 <- linksPair$SubjectTag_S1[rowIndex]
+#     tag2 <- linksPair$SubjectTag_S2[rowIndex]    
 #     r <- linksPair$R[rowIndex]    
 #     path <- linksPair$RelationshipPath[rowIndex]
-    tag1 <- linksPair[rowIndex, 'Subject1Tag']
-    tag2 <- linksPair[rowIndex, 'Subject2Tag']    
+    tag1 <- linksPair[rowIndex, 'SubjectTag_S1']
+    tag2 <- linksPair[rowIndex, 'SubjectTag_S2']    
     r <- linksPair[rowIndex, 'R']    
     path <- linksPair[rowIndex, 'RelationshipPath']    
-    #oppositeCount <- nrow(subset(linksPair, Subject1Tag==tag2 & Subject2Tag==tag1 & R==r & RelationshipPath==path))
-    oppositeCount <- nrow(linksPair[linksPair$Subject1Tag==tag2 & linksPair$Subject2Tag==tag1 & linksPair$R==r & linksPair$RelationshipPath==path, ])
+    #oppositeCount <- nrow(subset(linksPair, SubjectTag_S1==tag2 & SubjectTag_S2==tag1 & R==r & RelationshipPath==path))
+    oppositeCount <- nrow(linksPair[linksPair$SubjectTag_S1==tag2 & linksPair$SubjectTag_S2==tag1 & linksPair$R==r & linksPair$RelationshipPath==path, ])
     if( oppositeCount != 1 ) {
-      stop(paste0("The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (Subject1Tag, Subject2Tag, R)=(",
+      stop(paste0("The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (SubjectTag_S1, SubjectTag_S2, R)=(",
                  tag1, ", ", tag2, ", ", r, ") was found ", oppositeCount, " time(s)."))
     }
   }  

@@ -6,11 +6,11 @@
 #' @description Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.  
 #' 
 #' If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM. 
-#' @usage RGroupSummary(ds, oName_1, oName_2, rName, determinantThreshold=1e-5)
+#' @usage RGroupSummary(ds, oName_S1, oName_S2, rName, determinantThreshold=1e-5)
 #' 
 #' @param ds The \code{data.frame} containing the following variables:
-#' @param oName_1 The name of the outcome variable corresponding to the first subject in the pair.
-#' @param oName_2 The name of the outcome variable corresponding to the first subject in the pair.
+#' @param oName_S1 The name of the outcome variable corresponding to the first subject in the pair.
+#' @param oName_S2 The name of the outcome variable corresponding to the first subject in the pair.
 #' @param rName The name of the variable specifying the pair's \code{Relatedness} coefficient.
 #' @param determinantThreshold The minimum value the covariance matrix's determinant (for the group) should exceed to be considered Positive Definite.
 #' 
@@ -43,9 +43,9 @@
 #' library(NlsyLinks) #Load the package into the current R session.
 #' dsLinks <- Links79PairExpanded  #Load the dataset from the NlsyLinks package.
 #' dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
-#' oName_1 <- "MathStandardized_1" #Stands for Outcome1
-#' oName_2 <- "MathStandardized_2" #Stands for Outcome2
-#' dsGroupSummary <- RGroupSummary(dsLinks, oName_1, oName_2)
+#' oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
+#' oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+#' dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
 #' dsGroupSummary
 #' 
 #' #Should return: 
@@ -64,7 +64,7 @@
 #' 
 #' #To get summary stats for the whole sample, create one large inclusive group.
 #' dsLinks$Dummy <- 1
-#' (dsSampleSummary <- RGroupSummary(dsLinks, oName_1, oName_2, rName="Dummy"))
+#' (dsSampleSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2, rName="Dummy"))
 #'                      
 #' #Should return:
 #' #  Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
@@ -82,10 +82,10 @@
 #' @keywords ACE 
 
 RGroupSummary <-
-function( ds, oName_1, oName_2, rName="R", determinantThreshold=1e-5) {
+function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
 #     ds <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-#     oName_1 <- "MathStandardized_1" #Stands for Manifest1
-#     oName_2 <- "MathStandardized_2" #Stands for Manifest2
+#     oName_S1 <- "MathStandardized_S1" #Stands for Manifest1
+#     oName_S2 <- "MathStandardized_S2" #Stands for Manifest2
 #   
 #   ds <-dsFull
 #   rName <- "RRR"
@@ -106,15 +106,15 @@ function( ds, oName_1, oName_2, rName="R", determinantThreshold=1e-5) {
   #TODO: Consider rewriting with plyr.  It's small, so there won't be a performance benefit.  It will add another dependency to the package.
   for( rLevel in rLevelsFirstPass ) {
     #print(rLevel)
-    dsGroupSlice <- ds[!is.na(ds[,rName]) & ds[,rName]==rLevel & !is.na(ds[, oName_1]) & !is.na(ds[, oName_2]), c(oName_1, oName_2)]
+    dsGroupSlice <- ds[!is.na(ds[,rName]) & ds[,rName]==rLevel & !is.na(ds[, oName_S1]) & !is.na(ds[, oName_S2]), c(oName_S1, oName_S2)]
     
     if( nrow(dsGroupSlice) > 0 ) {
-      o1Mean <- mean(dsGroupSlice[, oName_1], na.rm=TRUE)
-      o2Mean <- mean(dsGroupSlice[, oName_2], na.rm=TRUE)
+      o1Mean <- mean(dsGroupSlice[, oName_S1], na.rm=TRUE)
+      o2Mean <- mean(dsGroupSlice[, oName_S2], na.rm=TRUE)
       groupCovarianceMatrix <- cov(dsGroupSlice)#, use="complete.obs") 
       determinant <- det(groupCovarianceMatrix)
       isPositiveDefinite <- (determinant > determinantThreshold)
-      correlation <- cor(dsGroupSlice[, oName_1], dsGroupSlice[, oName_2])
+      correlation <- cor(dsGroupSlice[, oName_S1], dsGroupSlice[, oName_S2])
     }
     else {
       o1Mean <- NA

@@ -5,7 +5,7 @@
   ValidateOutcomeDataset(dsOutcome, outcomeNames)
 }
 \arguments{
-  \item{dsOutcome}{A data frame with the measured
+  \item{dsOutcome}{A \code{data.frame} with the measured
   variables}
 
   \item{outcomeNames}{The column names of the measure

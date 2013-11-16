@@ -11,13 +11,13 @@
 #' 
 #' @details There is one row per unique pair of subjects, \emph{respecting order}.  This has twice as many rows as \code{\link{Links79Pair}} and \code{\link{Links79PairExpanded}} (which have one row per unique pair of subjects, \emph{irrespective of order}).
 #' 
-#' \code{CreateSpatialNeighbours} accepts any paired relationships in a \code{data.frame}, as long as it contains the columns \code{Subject1Tag}, \code{Subject2Tag}, and \code{R}.  See \code{\link{Links79Pair}} for more details about these columns.
+#' \code{CreateSpatialNeighbours} accepts any paired relationships in a \code{data.frame}, as long as it contains the columns \code{SubjectTag_S1}, \code{SubjectTag_S2}, and \code{R}.  See \code{\link{Links79Pair}} for more details about these columns.
 #' 
 #' @return An S3 \code{spatial.neighbours} object to work with functions in the \pkg{spdep} package. 
 #' 
-#' \code{Subject1Tag} is renamed `\code{from}'. 
+#' \code{SubjectTag_S1} is renamed `\code{from}'. 
 #' 
-#' \code{Subject2Tag} is renamed `\code{to}'. 
+#' \code{SubjectTag_S2} is renamed `\code{to}'. 
 #' 
 #' \code{R} is renamed `\code{weight}'.
 #' 
@@ -59,9 +59,9 @@ CreateSpatialNeighbours <-
 function( linksPairsDoubleEntered )  {
   ValidatePairLinks(linksPairsDoubleEntered)
   
-  ds <- subset(linksPairsDoubleEntered, select=c("Subject1Tag", "Subject2Tag", "R"))
-  colnames(ds)[colnames(ds) == "Subject1Tag"] <- "from"
-  colnames(ds)[colnames(ds) == "Subject2Tag"] <- "to"
+  ds <- subset(linksPairsDoubleEntered, select=c("SubjectTag_S1", "SubjectTag_S2", "R"))
+  colnames(ds)[colnames(ds) == "SubjectTag_S1"] <- "from"
+  colnames(ds)[colnames(ds) == "SubjectTag_S2"] <- "to"
   colnames(ds)[colnames(ds) == "R"] <- "weight"
 #   summary(ds)
   

@@ -4,11 +4,11 @@
 #' 
 #' @title Estimates the heritability of additive traits using a single variable.
 #' 
-#' @usage AceUnivariate(method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_1, oName_2, rName="R", manifestScale="Continuous")
+#' @usage AceUnivariate(method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_S1, oName_S2, rName="R", manifestScale="Continuous")
 #' 
-#' DeFriesFulkerMethod1(dataSet, oName_1, oName_2, rName="R")
+#' DeFriesFulkerMethod1(dataSet, oName_S1, oName_S2, rName="R")
 #' 
-#' DeFriesFulkerMethod3(dataSet, oName_1, oName_2, rName="R")
+#' DeFriesFulkerMethod3(dataSet, oName_S1, oName_S2, rName="R")
 #' 
 #' @description An ACE model is the foundation of most behavior genetic research.  It
 #' estimates the additive heritability (with \emph{a}), common environment
@@ -16,11 +16,11 @@
 #' 
 #' @param method The specific estimation technique.
 #' @param dataSet The \code{data.frame} that contains the two outcome
-#' variables and the relatedness coefficient (corresponding to \code{oName_1},
-#' \code{oName_2}, and \code{rName})
-#' @param oName_1 The name of the outcome variable corresponding to the first
+#' variables and the relatedness coefficient (corresponding to \code{oName_S1},
+#' \code{oName_S2}, and \code{rName})
+#' @param oName_S1 The name of the outcome variable corresponding to the first
 #' subject in the pair. This should be a \code{character} value.
-#' @param oName_2 The name of theoutcome variable corresponding to the second
+#' @param oName_S2 The name of theoutcome variable corresponding to the second
 #' subject in the pair. This should be a \code{character} value.
 #' @param rName The name of the relatedness coefficient for the pair (this is
 #' typically abbreviated as \code{R}). This should be a \code{character}
@@ -52,14 +52,14 @@
 #' 
 #' estimatedAdultHeight <- DeFriesFulkerMethod3(
 #'   dataSet=dsDF,    
-#'   oName_1="HeightZGenderAge_1", 
-#'   oName_2="HeightZGenderAge_2")  
+#'   oName_S1="HeightZGenderAge_S1", 
+#'   oName_S2="HeightZGenderAge_S2")  
 #' estimatedAdultHeight #ASquared and CSquared should be 0.60 and 0.10 for this rough analysis.
 #' 
 #' estimatedMath <- DeFriesFulkerMethod3(
 #'   dataSet=dsDF,    
-#'   oName_1="MathStandardized_1", 
-#'   oName_2="MathStandardized_2")
+#'   oName_S1="MathStandardized_S1", 
+#'   oName_S2="MathStandardized_S2")
 #' estimatedMath #ASquared and CSquared should be 0.85 and 0.045.
 #' 
 #' class(GetDetails(estimatedMath))
@@ -67,7 +67,7 @@
 #' 
 #' 
 AceUnivariate <-
-function( method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_1, oName_2, rName="R", manifestScale="Continuous" ) {
+function( method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_S1, oName_S2, rName="R", manifestScale="Continuous" ) {
   #print( length(method) )
   if( length(method) != 1 )
     stop(paste0("The method argument must contain exactly one element when calling the AceUnivariate function.  It contained ", length(method), " elements."))
@@ -75,10 +75,10 @@ function( method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oNam
     stop(paste0("The method argument must contain exactly one element when calling the AceUnivariate function.  It was blank."))
   else if( method == 'DeFriesFulkerMethod1' )
     #return( DeFriesFulkerMethod1(outcomeForSubject1, outcomeForSubject2, relatedness) )
-    return( DeFriesFulkerMethod1(dataSet, oName_1, oName_2, rName) )
+    return( DeFriesFulkerMethod1(dataSet, oName_S1, oName_S2, rName) )
   else if( method == 'DeFriesFulkerMethod3' )
     #return( DeFriesFulkerMethod3(outcomeForSubject1, outcomeForSubject2, relatedness) )
-    return( DeFriesFulkerMethod3(dataSet, oName_1, oName_2, rName) )
+    return( DeFriesFulkerMethod3(dataSet, oName_S1, oName_S2, rName) )
   else
     stop(paste0("The method argument, '", method ,"' was not recognized as a valid option to the AceUnivariate function."))
 }

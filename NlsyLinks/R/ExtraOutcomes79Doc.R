@@ -47,7 +47,7 @@
 #' library(NlsyLinks) #Load the package into the current R session.
 #' gen2Outcomes <- subset(ExtraOutcomes79, Generation==2) #Create a dataset of only Gen2 subjects.
 #'                   
-#' plot(ExtraOutcomes79)
+#' #plot(ExtraOutcomes79) #Uncomment to see a large scatterplot matrix.
 #' summary(ExtraOutcomes79)
 #' 
 #' oldPar <- par(mfrow=c(3,2))

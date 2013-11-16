@@ -4,12 +4,12 @@ context("Clean Ace Sem Dataset")
 ###########
 test_that("CleanSemAceDataset MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_1 <- "MathStandardized_1" 
-  oName_2 <- "MathStandardized_2"
+  oName_S1 <- "MathStandardized_S1" 
+  oName_S2 <- "MathStandardized_S2"
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
-  dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
+  dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
   
-  dsClean <- CleanSemAceDataset( dsDirty=dsFull, dsGroupSummary, oName_1, oName_2, rName="R" )
+  dsClean <- CleanSemAceDataset( dsDirty=dsFull, dsGroupSummary, oName_S1, oName_S2, rName="R" )
   
   expectedRowCount <- 8390
   expectedColumnNames <- c('R', 'O1', 'O2', 'GroupID')
@@ -29,12 +29,12 @@ test_that("CleanSemAceDataset MathStandardized", {
 })
 test_that("CleanSemAceDataset HeightZGenderAge", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_1 <- "HeightZGenderAge_1" 
-  oName_2 <- "HeightZGenderAge_2" 
+  oName_S1 <- "HeightZGenderAge_S1" 
+  oName_S2 <- "HeightZGenderAge_S2" 
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
-  dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
+  dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
   
-  dsClean <- CleanSemAceDataset( dsDirty=dsFull, dsGroupSummary, oName_1, oName_2, rName="R" )
+  dsClean <- CleanSemAceDataset( dsDirty=dsFull, dsGroupSummary, oName_S1, oName_S2, rName="R" )
   
   expectedRowCount <- 5884
   expectedColumnNames <- c('R', 'O1', 'O2', 'GroupID')
@@ -58,11 +58,11 @@ context("R Group Summary")
 ###########
 test_that("Group Summary MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_1 <- "MathStandardized_1" #Stands for Manifest1
-  oName_2 <- "MathStandardized_2" #Stands for Manifest2
+  oName_S1 <- "MathStandardized_S1" #Stands for Manifest1
+  oName_S2 <- "MathStandardized_S2" #Stands for Manifest2
    
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
-  dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
+  dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
   
   expectedRowCount <- 5
   expectedColumnNames <- c('R', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
@@ -94,11 +94,11 @@ test_that("Group Summary MathStandardized", {
 })
 test_that("Group Summary HeightZGenderAge", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_1 <- "HeightZGenderAge_1"
-  oName_2 <- "HeightZGenderAge_2"
+  oName_S1 <- "HeightZGenderAge_S1"
+  oName_S2 <- "HeightZGenderAge_S2"
   
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
-  dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
+  dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
   
   expectedRowCount <- 5
   expectedColumnNames <- c('R', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
@@ -132,13 +132,13 @@ test_that("Group Summary HeightZGenderAge", {
 
 test_that("Group Summary Changed Variable Name for 'R'", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_1 <- "HeightZGenderAge_1"
-  oName_2 <- "HeightZGenderAge_2"
+  oName_S1 <- "HeightZGenderAge_S1"
+  oName_S2 <- "HeightZGenderAge_S2"
   rName <- "RRR"
   dsFull <- RenameNlsyColumn(dsFull, "R", rName)
                          
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
-  dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2, rName)
+  dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2, rName)
   
   expectedRowCount <- 5
   expectedColumnNames <- c('RRR', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
@@ -171,13 +171,13 @@ test_that("Group Summary Changed Variable Name for 'R'", {
 
 test_that("Single Group Summary MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_1 <- "MathStandardized_1" #Stands for Manifest1
-  oName_2 <- "MathStandardized_2" #Stands for Manifest2
+  oName_S1 <- "MathStandardized_S1" #Stands for Manifest1
+  oName_S2 <- "MathStandardized_S2" #Stands for Manifest2
   dsFull$DummyGroup <- 1
   rName <- "DummyGroup"
   
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
-  dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2, rName)
+  dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2, rName)
   
   expectedRowCount <- 1
   expectedColumnNames <- c('DummyGroup', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
@@ -209,7 +209,7 @@ test_that("Single Group Summary MathStandardized", {
   expect_equal(object=dsGroupSummary$PosDefinite, expected=expectedPosDefinite, scale=1)
 })
 # 
-# dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
+# dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
 # rName <- "R"
 # str_c(colnames(dsGroupSummary), collapse="', '")
 # # str_c(dsGroupSummary[, rName], collapse=", ")

@@ -6,13 +6,13 @@
 \title{Estimates the heritability of additive traits using a single variable.}
 \usage{
   AceUnivariate(method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"),
-    dataSet, oName_1, oName_2, rName="R",
+    dataSet, oName_S1, oName_S2, rName="R",
     manifestScale="Continuous")
 
-  DeFriesFulkerMethod1(dataSet, oName_1, oName_2,
+  DeFriesFulkerMethod1(dataSet, oName_S1, oName_S2,
     rName="R")
 
-  DeFriesFulkerMethod3(dataSet, oName_1, oName_2,
+  DeFriesFulkerMethod3(dataSet, oName_S1, oName_S2,
     rName="R")
 }
 \arguments{
@@ -20,14 +20,14 @@
 
   \item{dataSet}{The \code{data.frame} that contains the
   two outcome variables and the relatedness coefficient
-  (corresponding to \code{oName_1}, \code{oName_2}, and
+  (corresponding to \code{oName_S1}, \code{oName_S2}, and
   \code{rName})}
 
-  \item{oName_1}{The name of the outcome variable
+  \item{oName_S1}{The name of the outcome variable
   corresponding to the first subject in the pair. This
   should be a \code{character} value.}
 
-  \item{oName_2}{The name of theoutcome variable
+  \item{oName_S2}{The name of theoutcome variable
   corresponding to the second subject in the pair. This
   should be a \code{character} value.}
 
@@ -68,14 +68,14 @@ dsDF <- CreatePairLinksDoubleEntered(outcomeDataset=dsOutcomes, linksPairDataset
 
 estimatedAdultHeight <- DeFriesFulkerMethod3(
   dataSet=dsDF,
-  oName_1="HeightZGenderAge_1",
-  oName_2="HeightZGenderAge_2")
+  oName_S1="HeightZGenderAge_S1",
+  oName_S2="HeightZGenderAge_S2")
 estimatedAdultHeight #ASquared and CSquared should be 0.60 and 0.10 for this rough analysis.
 
 estimatedMath <- DeFriesFulkerMethod3(
   dataSet=dsDF,
-  oName_1="MathStandardized_1",
-  oName_2="MathStandardized_2")
+  oName_S1="MathStandardized_S1",
+  oName_S2="MathStandardized_S2")
 estimatedMath #ASquared and CSquared should be 0.85 and 0.045.
 
 class(GetDetails(estimatedMath))

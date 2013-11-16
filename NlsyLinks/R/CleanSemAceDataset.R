@@ -4,12 +4,12 @@
 #' @title Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.
 #' 
 #' @description This function takes a `GroupSummary' \code{data.frame} (which is created by the \code{RGroupSummary} function) and returns a \code{data.frame} that is used by the \code{Ace} function.
-#' @usage CleanSemAceDataset(dsDirty, dsGroupSummary, oName_1, oName_2, rName = "R")
+#' @usage CleanSemAceDataset(dsDirty, dsGroupSummary, oName_S1, oName_S2, rName = "R")
 #' 
 #' @param dsDirty This is the \code{data.frame} to be cleaned.
 #' @param dsGroupSummary The \code{data.frame} containing information about which groups should be included in the analyses.  It should be created by the \code{RGroupSummary} function.
-#' @param oName_1 The name of the manifest variable (in \code{dsDirty}) for the first subject in each pair.
-#' @param oName_2 The name of the manifest variable (in \code{dsDirty}) for the second subject in each pair.
+#' @param oName_S1 The name of the manifest variable (in \code{dsDirty}) for the first subject in each pair.
+#' @param oName_S2 The name of the manifest variable (in \code{dsDirty}) for the second subject in each pair.
 #' @param rName The name of the variable (in \code{dsDirty}) indicating the pair's relatedness coefficient.
 #'
 #' @details The function takes \code{dsDirty} and produces a new \code{data.frame} with the following features:
@@ -35,11 +35,11 @@
 #' dsLinks <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
 #' dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only NLSY79-C siblings
 #' 
-#' oName_1 <- "MathStandardized_1" #Stands for Outcome1
-#' oName_2 <- "MathStandardized_2" #Stands for Outcome2
-#' dsGroupSummary <- RGroupSummary(dsLinks, oName_1, oName_2)
+#' oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
+#' oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+#' dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
 #' 
-#' dsClean <- CleanSemAceDataset( dsDirty=dsLinks, dsGroupSummary, oName_1, oName_2, rName="R" )
+#' dsClean <- CleanSemAceDataset( dsDirty=dsLinks, dsGroupSummary, oName_S1, oName_S2, rName="R" )
 #' summary(dsClean)
 #' 
 #' dsClean$AbsDifference <- abs(dsClean$O1 - dsClean$O2)
@@ -47,13 +47,13 @@
 #' @keywords ACE
 
 
-CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_1, oName_2, rName="R" ) {
+CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rName="R" ) {
   rLevelsToInclude <- dsGroupSummary[dsGroupSummary$Included, rName]
   
   #It's necessary to drop the missing Groups & unnecessary columns.  Missing O1s & O2s are dropped for the sake of memory space.
-  oldColumnNames <- c(rName, oName_1, oName_2)
+  oldColumnNames <- c(rName, oName_S1, oName_S2)
   newColumnNames <- c("R", "O1", "O2")
-  selectedRows <- (!is.na(dsDirty[, rName])) & (dsDirty[, rName] %in%  rLevelsToInclude) & (!is.na(dsDirty[, oName_1])) & (!is.na(dsDirty[, oName_2]))
+  selectedRows <- (!is.na(dsDirty[, rName])) & (dsDirty[, rName] %in%  rLevelsToInclude) & (!is.na(dsDirty[, oName_S1])) & (!is.na(dsDirty[, oName_S2]))
   dsClean <- dsDirty[selectedRows, oldColumnNames] 
   
   colnames(dsClean) <- newColumnNames

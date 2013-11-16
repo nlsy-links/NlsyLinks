@@ -5,13 +5,13 @@ context("Lavaan")
 ###########
 test_that("AceLavaanGroup -MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_1 <- "MathStandardized_1" #Stands for Manifest1
-  oName_2 <- "MathStandardized_2" #Stands for Manifest2
+  oName_S1 <- "MathStandardized_S1" #Stands for Manifest1
+  oName_S2 <- "MathStandardized_S2" #Stands for Manifest2
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
   
-  dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
+  dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
 #   rLevels <- dsGroupSummary[dsGroupSummary$Included, "R"]
-  dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_1=oName_1, oName_2=oName_2)
+  dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_S1=oName_S1, oName_S2=oName_S2)
 #   dsClean
   
   ace <- AceLavaanGroup(dsClean)
@@ -31,13 +31,13 @@ test_that("AceLavaanGroup -MathStandardized", {
 })
 test_that("AceLavaanGroup -HeightZGenderAge", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_1 <- "HeightZGenderAge_1"
-  oName_2 <- "HeightZGenderAge_2"
+  oName_S1 <- "HeightZGenderAge_S1"
+  oName_S2 <- "HeightZGenderAge_S2"
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
   
-  dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
+  dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
   #   rLevels <- dsGroupSummary[dsGroupSummary$Included, "R"]
-  dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_1=oName_1, oName_2=oName_2)
+  dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_S1=oName_S1, oName_S2=oName_S2)
   
   ace <- AceLavaanGroup(dsClean)
   
@@ -55,13 +55,13 @@ test_that("AceLavaanGroup -HeightZGenderAge", {
 })
 # test_that("AceLavaanGroup -WeightStandardizedForAge19To25", {
 #   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-#   oName_1 <- "WeightStandardizedForAge19To25_1"
-#   oName_2 <- "WeightStandardizedForAge19To25_2"
+#   oName_S1 <- "WeightStandardizedForAge19To25_S1"
+#   oName_S2 <- "WeightStandardizedForAge19To25_S2"
 #   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
 #   
-#   dsGroupSummary <- RGroupSummary(dsFull, oName_1, oName_2)
+#   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
 # #   rLevels <- dsGroupSummary[dsGroupSummary$Included, "R"]
-#   dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_1=oName_1, oName_2=oName_2)
+#   dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_S1=oName_S1, oName_S2=oName_S2)
 #   
 #   ace <- AceLavaanGroup(dsClean)
 #   

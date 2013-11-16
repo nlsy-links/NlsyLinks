@@ -13,11 +13,11 @@ test_that("DFMethod1 -MathStandardized", {
   expectedRowCount <- 16784
   unique(dsDF$R)
   #dsDF <- dsDF[dsDF$R %in% c(0, .25, .375, .5, 1), ]  
-  oName_1 <- "MathStandardized_1"
-  oName_2 <- "MathStandardized_2"  
+  oName_S1 <- "MathStandardized_S1"
+  oName_S2 <- "MathStandardized_S2"  
   
-  actual <- DeFriesFulkerMethod1(dataSet=dsDF, oName_1=oName_1, oName_2=oName_2)  
-  #actual <- DeFriesFulkerMethod1(outcomeForSubject1=dsDF$MathStandardized_1, outcomeForSubject2=dsDF$MathStandardized_2, relatedness=dsDF$R)
+  actual <- DeFriesFulkerMethod1(dataSet=dsDF, oName_S1=oName_S1, oName_S2=oName_S2)  
+  #actual <- DeFriesFulkerMethod1(outcomeForSubject1=dsDF$MathStandardized_S1, outcomeForSubject2=dsDF$MathStandardized_S2, relatedness=dsDF$R)
   expect_equal(object=slot(actual, "ASquared"), expected=expectedASquared, tolerance=1e-6, scale=1)
   expect_equal(object=slot(actual, "CSquared"), expected=expectedCSquared, tolerance=1e-6, scale=1)
   expect_equal(object=slot(actual, "ESquared"), expected=expectedESquared, tolerance=1e-6, scale=1)  
@@ -27,8 +27,8 @@ test_that("DFMethod1 -MathStandardized", {
   #expect_equal(object=actual$ASquared, expected=expectedASquared, tolerance=1e-6, scale=1)
   
   
-  actualFromWrapper <- AceUnivariate(method="DeFriesFulkerMethod1", dataSet=dsDF, oName_1=oName_1, oName_2=oName_2)
-  #actualFromWrapper <- AceUnivariate(outcomeForSubject1=dsDF$MathStandardized_1, outcomeForSubject2=dsDF$MathStandardized_2, relatedness=dsDF$R, method="DeFriesFulkerMethod1")
+  actualFromWrapper <- AceUnivariate(method="DeFriesFulkerMethod1", dataSet=dsDF, oName_S1=oName_S1, oName_S2=oName_S2)
+  #actualFromWrapper <- AceUnivariate(outcomeForSubject1=dsDF$MathStandardized_S1, outcomeForSubject2=dsDF$MathStandardized_S2, relatedness=dsDF$R, method="DeFriesFulkerMethod1")
   expect_equal(object=slot(actualFromWrapper, "ASquared"), expected=expectedASquared, tolerance=1e-6, scale=1)
   expect_equal(object=slot(actualFromWrapper, "CSquared"), expected=expectedCSquared, tolerance=1e-6, scale=1)
   expect_equal(object=slot(actualFromWrapper, "ESquared"), expected=expectedESquared, tolerance=1e-6, scale=1)
@@ -46,13 +46,13 @@ test_that("DFMethod1 -MathStandardized", {
 #   expectedCSquared <- -0.013283359091640816 
 #   expectedESquared <- 0.33926189643535687 
 #   expectedRowCount <- 6958
-#   oName_1 <- "WeightZGenderAge_1"
-#   oName_2 <- "WeightZGenderAge_2"
+#   oName_S1 <- "WeightZGenderAge_S1"
+#   oName_S2 <- "WeightZGenderAge_S2"
 #   
-#   dsDF$WeightZGenderAge_1
-#   dsDF[, c(oName_1, oName_2)]
+#   dsDF$WeightZGenderAge_S1
+#   dsDF[, c(oName_S1, oName_S2)]
 #   
-#   actual <- DeFriesFulkerMethod1(dataSet=dsDF, oName_1=oName_1, oName_2=oName_2)  
+#   actual <- DeFriesFulkerMethod1(dataSet=dsDF, oName_S1=oName_S1, oName_S2=oName_S2)  
 #   expect_equal(object=slot(actual, "ASquared"), expected=expectedASquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=slot(actual, "CSquared"), expected=expectedCSquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=slot(actual, "ESquared"), expected=expectedESquared, tolerance=1e-6, scale=1)  
@@ -62,7 +62,7 @@ test_that("DFMethod1 -MathStandardized", {
 #   #expect_equal(object=actual$ASquared, expected=expectedASquared, tolerance=1e-6, scale=1)
 #   
 #   
-#   actualFromWrapper <- AceUnivariate(method="DeFriesFulkerMethod1", dataSet=dsDF, oName_1=oName_1, oName_2=oName_2)
+#   actualFromWrapper <- AceUnivariate(method="DeFriesFulkerMethod1", dataSet=dsDF, oName_S1=oName_S1, oName_S2=oName_S2)
 #   expect_equal(object=slot(actualFromWrapper, "ASquared"), expected=expectedASquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=slot(actualFromWrapper, "CSquared"), expected=expectedCSquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=slot(actualFromWrapper, "ESquared"), expected=expectedESquared, tolerance=1e-6, scale=1)
@@ -86,10 +86,10 @@ test_that("DFMethod3 -MathStandardized", {
   expectedESquared <- 0.10725885867604845 
   expectedRowCount <- 16784
   #dsDF <- dsDF[dsDF$R %in% c(0, .25, .375, .5, 1), ]
-  oName_1 <- "MathStandardized_1"
-  oName_2 <- "MathStandardized_2"  
+  oName_S1 <- "MathStandardized_S1"
+  oName_S2 <- "MathStandardized_S2"  
   
-  actual <- DeFriesFulkerMethod3(dataSet=dsDF, oName_1=oName_1, oName_2=oName_2)
+  actual <- DeFriesFulkerMethod3(dataSet=dsDF, oName_S1=oName_S1, oName_S2=oName_S2)
   expect_equal(object=slot(actual, "ASquared"), expected=expectedASquared, tolerance=1e-6, scale=1)
   expect_equal(object=slot(actual, "CSquared"), expected=expectedCSquared, tolerance=1e-6, scale=1)
   expect_equal(object=slot(actual, "ESquared"), expected=expectedESquared, tolerance=1e-6, scale=1)  
@@ -98,7 +98,7 @@ test_that("DFMethod3 -MathStandardized", {
   expect_true(object=slot(actual, "WithinBounds"))
   #expect_equal(object=actual$ASquared, expected=expectedASquared, tolerance=1e-6, scale=1)
   
-  actualFromWrapper <- AceUnivariate(method="DeFriesFulkerMethod3", dataSet=dsDF, oName_1=oName_1, oName_2=oName_2)
+  actualFromWrapper <- AceUnivariate(method="DeFriesFulkerMethod3", dataSet=dsDF, oName_S1=oName_S1, oName_S2=oName_S2)
   expect_equal(object=slot(actualFromWrapper, "ASquared"), expected=expectedASquared, tolerance=1e-6, scale=1)
   expect_equal(object=slot(actualFromWrapper, "CSquared"), expected=expectedCSquared, tolerance=1e-6, scale=1)
   expect_equal(object=slot(actualFromWrapper, "ESquared"), expected=expectedESquared, tolerance=1e-6, scale=1)
@@ -119,10 +119,10 @@ test_that("DFMethod3 -MathStandardized", {
 #   expectedESquared <- 0.35599716165402995 
 #   expectedRowCount <- 6958
 #   #dsDF <- dsDF[dsDF$R %in% c(0, .25, .375, .5, 1), ]
-#   oName_1 <- "WeightStandardizedForAge19To25_1"
-#   oName_2 <- "WeightStandardizedForAge19To25_2"  
+#   oName_S1 <- "WeightStandardizedForAge19To25_S1"
+#   oName_S2 <- "WeightStandardizedForAge19To25_S2"  
 #   
-#   actual <- DeFriesFulkerMethod3(dataSet=dsDF, oName_1=oName_1, oName_2=oName_2)
+#   actual <- DeFriesFulkerMethod3(dataSet=dsDF, oName_S1=oName_S1, oName_S2=oName_S2)
 #   expect_equal(object=slot(actual, "ASquared"), expected=expectedASquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=slot(actual, "CSquared"), expected=expectedCSquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=slot(actual, "ESquared"), expected=expectedESquared, tolerance=1e-6, scale=1)  
@@ -131,7 +131,7 @@ test_that("DFMethod3 -MathStandardized", {
 #   expect_true(object=slot(actual, "WithinBounds"))
 #   #expect_equal(object=actual$ASquared, expected=expectedASquared, tolerance=1e-6, scale=1)
 #   
-#   actualFromWrapper <- AceUnivariate(method="DeFriesFulkerMethod3", dataSet=dsDF, oName_1=oName_1, oName_2=oName_2)
+#   actualFromWrapper <- AceUnivariate(method="DeFriesFulkerMethod3", dataSet=dsDF, oName_S1=oName_S1, oName_S2=oName_S2)
 #   expect_equal(object=slot(actualFromWrapper, "ASquared"), expected=expectedASquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=slot(actualFromWrapper, "CSquared"), expected=expectedCSquared, tolerance=1e-6, scale=1)
 #   expect_equal(object=slot(actualFromWrapper, "ESquared"), expected=expectedESquared, tolerance=1e-6, scale=1)

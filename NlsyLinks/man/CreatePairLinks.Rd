@@ -8,12 +8,14 @@
   CreatePairLinksDoubleEntered(outcomeDataset,
     linksPairDataset, outcomeNames, linksNames =
     c("ExtendedID", "R", "RelationshipPath"),
-    validateOutcomeDataset = TRUE)
+    validateOutcomeDataset = TRUE, subject1Qualifier =
+    "_S1", subject2Qualifier = "_S2")
 
   CreatePairLinksSingleEntered(outcomeDataset,
     linksPairDataset, outcomeNames, linksNames =
     c("ExtendedID", "R", "RelationshipPath"),
-    validateOutcomeDataset = TRUE)
+    validateOutcomeDataset = TRUE, subject1Qualifier =
+    "_S1", subject2Qualifier = "_S2")
 
   CreatePairLinksDoubleEnteredWithNoOutcomes(linksPairDataset,
     linksNames = c("ExtendedID", "R", "RelationshipPath"))
@@ -30,12 +32,20 @@
   variable(s)}
 
   \item{linksNames}{The column names desired to be prseent
-  in the newly created data frame.  \code{Subject1Tag} and
-  \code{Subject2Tag} are included automatically.}
+  in the newly created data frame.  \code{SubjectTag_S1}
+  and \code{SubjectTag_S2} are included automatically.}
 
   \item{validateOutcomeDataset}{Indicates if
   characteristics of the outcomeDataset should be
   validated.}
+
+  \item{subject1Qualifier}{Indicates how the outcome
+  variable for the pair's first subject is distinguished
+  from the other subject.  The default is \code{_S1}.}
+
+  \item{subject2Qualifier}{Indicates how the outcome
+  variable for the pair's second subject is distinguished
+  from the other subject.  The default is \code{_S2}.}
 }
 \description{
   Creates a linking file for BG designs using this file
@@ -51,8 +61,8 @@
 \examples{
 dsSingleLinks <- data.frame(
   ExtendedID=c(1, 1, 1, 2),
-  Subject1Tag=c(101, 101, 102, 201),
-  Subject2Tag=c(102, 103, 103, 202),
+  SubjectTag_S1=c(101, 101, 102, 201),
+  SubjectTag_S2=c(102, 103, 103, 202),
   R=c(.5, .25, .25, .5),
   RelationshipPath=rep("Gen2Siblings", 4)
 )

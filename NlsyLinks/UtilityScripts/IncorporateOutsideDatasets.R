@@ -41,17 +41,17 @@ sapply(dsLinks79PairWithoutOutcomes, class)
 
 ExtraOutcomes79$SubjectTag <- NlsyLinks::CreateSubjectTag(subjectID=ExtraOutcomes79$SubjectID, generation=ExtraOutcomes79$Generation)
 # colnames(dsLinks79PairWithoutOutcomes)
-firstNames <- c("Subject1Tag", "Subject2Tag")
+firstNames <- c("SubjectTag_S1", "SubjectTag_S2")
 remaining <- setdiff(colnames(dsLinks79PairWithoutOutcomes), firstNames)
 Links79PairExpanded <- NlsyLinks::CreatePairLinksSingleEntered(
   outcomeNames=c("MathStandardized", "HeightZGenderAge"), 
   outcomeDataset=ExtraOutcomes79, 
   linksPairDataset=dsLinks79PairWithoutOutcomes, 
   linksNames=remaining)
-Links79PairExpanded <- Links79PairExpanded[Links79PairExpanded$Subject1Tag < Links79PairExpanded$Subject2Tag, ]
+Links79PairExpanded <- Links79PairExpanded[Links79PairExpanded$SubjectTag_S1 < Links79PairExpanded$SubjectTag_S2, ]
 
 ### Prepare for rda
-Links79PairExpanded <- Links79PairExpanded[order(Links79PairExpanded$ExtendedID, Links79PairExpanded$Subject1Tag, Links79PairExpanded$Subject2Tag), ]
+Links79PairExpanded <- Links79PairExpanded[order(Links79PairExpanded$ExtendedID, Links79PairExpanded$SubjectTag_S1, Links79PairExpanded$SubjectTag_S2), ]
 relationshipLabels <- c("Gen1Housemates","Gen2Siblings","Gen2Cousins","ParentChild", "AuntNiece")
 # multipleBirthLabels <- c("No", "Twin", "Triplet", "DoNotKnow")
 isMzLabels <- c("No", "Yes", "DoNotKnow")
@@ -61,7 +61,7 @@ Links79PairExpanded$RelationshipPath <- factor(Links79PairExpanded$RelationshipP
 Links79PairExpanded$IsMz <- factor(Links79PairExpanded$IsMz, levels=c(0, 1, 255), labels=isMzLabels)
 Links79PairExpanded <- subset(Links79PairExpanded, select=-RImplicitDifference) #Drop RImplicitDifference
 
-Links79Pair <- Links79PairExpanded[, c("ExtendedID", "Subject1Tag", "Subject2Tag", "R", "RelationshipPath")]
+Links79Pair <- Links79PairExpanded[, c("ExtendedID", "SubjectTag_S1", "SubjectTag_S2", "R", "RelationshipPath")]
 
 save(Links79Pair, file=pathOutputLinkTrim, compress="xz")
 save(Links79PairExpanded, file=pathOutputLinkExpanded, compress="xz")
@@ -72,7 +72,7 @@ save(Links79PairExpanded, file=pathOutputLinkExpanded, compress="xz")
 SubjectDetails79 <- read.csv(pathInputSubjectDetails, stringsAsFactors=TRUE)
 SubjectDetails79$Gender <- factor(SubjectDetails79$Gender, levels=1:2, labels=c("Male", "Female"))
 
-vectorOfTwins <- sort(unique(unlist(Links79PairExpanded[Links79PairExpanded$IsMz=="Yes", c("Subject1Tag", "Subject2Tag")])))
+vectorOfTwins <- sort(unique(unlist(Links79PairExpanded[Links79PairExpanded$IsMz=="Yes", c("SubjectTag_S1", "SubjectTag_S2")])))
 SubjectDetails79$IsMz <- (SubjectDetails79$SubjectTag %in% vectorOfTwins)
 
 sapply(SubjectDetails79, class)

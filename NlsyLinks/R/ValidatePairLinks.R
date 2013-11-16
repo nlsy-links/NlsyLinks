@@ -29,8 +29,8 @@
 ##' 
 ##' dsSingleLinks <- data.frame(
 ##'   ExtendedID=c(1, 1, 1, 2), 
-##'   Subject1Tag=c(101, 101, 102, 201), 
-##'   Subject2Tag=c(102, 103, 103, 202), 
+##'   SubjectTag_S1=c(101, 101, 102, 201), 
+##'   SubjectTag_S2=c(102, 103, 103, 202), 
 ##'   R=c(.5, .25, .25, .5), 
 ##'   RelationshipPath=rep("Gen2Siblings", 4)
 ##' )
@@ -54,13 +54,13 @@ function( linksPair ) {
   if(!nrow(linksPair) > 0 ) stop("The linksPair data frame should have at least one row, but does not.")
   
   columnNames <- colnames(linksPair)
-  if( !any(columnNames=="Subject1Tag") ) stop("The column 'Subject1Tag' should exist in the linksPair file, but does not.")
-  if( !any(columnNames=="Subject2Tag") ) stop("The column 'Subject2Tag' should exist in the linksPair file, but does not.")
+  if( !any(columnNames=="SubjectTag_S1") ) stop("The column 'SubjectTag_S1' should exist in the linksPair file, but does not.")
+  if( !any(columnNames=="SubjectTag_S2") ) stop("The column 'SubjectTag_S2' should exist in the linksPair file, but does not.")
   if( !any(columnNames=="R") ) stop("The column 'R' should exist in the linksPair file, but does not.")
 #   if( !any(columnNames=="MultipleBirth") ) stop("The column 'MultipleBirth' should exist in the linksPair file, but does not.")
   
-  if( mode(linksPair$Subject1Tag) != 'numeric' ) stop("The column 'Subject1Tag' should have a 'numeric' mode, but does not.")
-  if( mode(linksPair$Subject2Tag) != 'numeric' ) stop("The column 'Subject2Tag' should have a 'numeric' mode, but does not.")
+  if( mode(linksPair$SubjectTag_S1) != 'numeric' ) stop("The column 'SubjectTag_S1' should have a 'numeric' mode, but does not.")
+  if( mode(linksPair$SubjectTag_S2) != 'numeric' ) stop("The column 'SubjectTag_S2' should have a 'numeric' mode, but does not.")
   if( mode(linksPair$R) != 'numeric' ) stop("The column 'R' should have a 'numeric' mode, but does not.")
 #   if( mode(linksPair$MultipleBirth) != 'numeric' ) stop("The column 'MultipleBirth' should have a 'numeric' mode, but does not.")
   

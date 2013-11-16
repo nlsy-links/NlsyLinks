@@ -15,9 +15,9 @@
   An S3 \code{spatial.neighbours} object to work with
   functions in the \pkg{spdep} package.
 
-  \code{Subject1Tag} is renamed `\code{from}'.
+  \code{SubjectTag_S1} is renamed `\code{from}'.
 
-  \code{Subject2Tag} is renamed `\code{to}'.
+  \code{SubjectTag_S2} is renamed `\code{to}'.
 
   \code{R} is renamed `\code{weight}'.
 
@@ -43,8 +43,8 @@
 
   \code{CreateSpatialNeighbours} accepts any paired
   relationships in a \code{data.frame}, as long as it
-  contains the columns \code{Subject1Tag},
-  \code{Subject2Tag}, and \code{R}.  See
+  contains the columns \code{SubjectTag_S1},
+  \code{SubjectTag_S2}, and \code{R}.  See
   \code{\link{Links79Pair}} for more details about these
   columns.
 }

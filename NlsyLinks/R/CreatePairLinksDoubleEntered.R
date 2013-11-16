@@ -11,9 +11,9 @@
 #' \code{CreatePairLinksDoubleEnteredWithNoOutcomes} is intended to be a
 #' primarily a helper function for \code{\link{CreateSpatialNeighbours}}.
 #' 
-#' @usage CreatePairLinksDoubleEntered(outcomeDataset, linksPairDataset, outcomeNames, linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE)
+#' @usage CreatePairLinksDoubleEntered(outcomeDataset, linksPairDataset, outcomeNames, linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, subject1Qualifier = "_S1", subject2Qualifier = "_S2")
 #' 
-#'  CreatePairLinksSingleEntered(outcomeDataset, linksPairDataset, outcomeNames, linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE)
+#'  CreatePairLinksSingleEntered(outcomeDataset, linksPairDataset, outcomeNames, linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, subject1Qualifier = "_S1", subject2Qualifier = "_S2")
 #'  
 #'  CreatePairLinksDoubleEnteredWithNoOutcomes(linksPairDataset, linksNames = c("ExtendedID", "R", "RelationshipPath"))
 #' 
@@ -22,10 +22,11 @@
 #' each subject in the pair and their \code{R} coefficient.
 #' @param outcomeNames The column names of the outcome variable(s)
 #' @param linksNames The column names desired to be prseent in the newly
-#' created data frame.  \code{Subject1Tag} and \code{Subject2Tag} are included
+#' created data frame.  \code{SubjectTag_S1} and \code{SubjectTag_S2} are included
 #' automatically.
-#' @param validateOutcomeDataset Indicates if characteristics of the
-#' outcomeDataset should be validated.
+#' @param validateOutcomeDataset Indicates if characteristics of the outcomeDataset should be validated.
+#' @param subject1Qualifier Indicates how the outcome variable for the pair's first subject is distinguished from the other subject.  The default is \code{_S1}.
+#' @param subject2Qualifier Indicates how the outcome variable for the pair's second subject is distinguished from the other subject.  The default is \code{_S2}.
 #' @author Will Beasley
 #' @references For more information about a DF analysis, see Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
@@ -34,8 +35,8 @@
 #' 
 #' dsSingleLinks <- data.frame(
 #'   ExtendedID=c(1, 1, 1, 2), 
-#'   Subject1Tag=c(101, 101, 102, 201), 
-#'   Subject2Tag=c(102, 103, 103, 202), 
+#'   SubjectTag_S1=c(101, 101, 102, 201), 
+#'   SubjectTag_S2=c(102, 103, 103, 202), 
 #'   R=c(.5, .25, .25, .5), 
 #'   RelationshipPath=rep("Gen2Siblings", 4)
 #' )
@@ -56,17 +57,18 @@
 #' 
 CreatePairLinksDoubleEntered <-
 function( outcomeDataset, linksPairDataset, outcomeNames, 
-  linksNames=c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset=TRUE ) {
+          linksNames=c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset=TRUE,
+          subject1Qualifier="_S1", subject2Qualifier="_S2" ) {
   
   ValidatePairLinks(linksPairDataset)
   if(validateOutcomeDataset) ValidateOutcomeDataset(dsOutcome=outcomeDataset, outcomeNames=outcomeNames)
   
-  dsLinksLeftHand <- subset(linksPairDataset, select=c("Subject1Tag","Subject2Tag", linksNames)) #'Lefthand' is my slang for Subjec1Tag is less than the Subject2Tag
-  dsLinksRightHand <- subset(linksPairDataset, select=c("Subject1Tag", "Subject2Tag", linksNames))
-
-  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="Subject1Tag"] <- "SubjectTempTag"
-  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="Subject2Tag"] <- "Subject1Tag"
-  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="SubjectTempTag"] <- "Subject2Tag"
+  dsLinksLeftHand <- subset(linksPairDataset, select=c("SubjectTag_S1","SubjectTag_S2", linksNames)) #'Lefthand' is my slang for Subjec1Tag is less than the SubjectTag_S2
+  dsLinksRightHand <- subset(linksPairDataset, select=c("SubjectTag_S1", "SubjectTag_S2", linksNames))
+  
+  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="SubjectTag_S1"] <- "SubjectTempTag"
+  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="SubjectTag_S2"] <- "SubjectTag_S1"
+  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="SubjectTempTag"] <- "SubjectTag_S2"
   
   dsOutcomeSubject1 <- subset(outcomeDataset, select=c("SubjectTag", outcomeNames))
   dsOutcomeSubject2 <- subset(outcomeDataset, select=c("SubjectTag", outcomeNames))
@@ -74,24 +76,24 @@ function( outcomeDataset, linksPairDataset, outcomeNames,
   for( j in 1:ncol(dsOutcomeSubject1) ) {
     columnName <- colnames(dsOutcomeSubject1)[j]
     if( columnName %in% outcomeNames ) {
-      colnames(dsOutcomeSubject1)[colnames(dsOutcomeSubject1) == columnName] <- paste0(columnName, "_1")
-      colnames(dsOutcomeSubject2)[colnames(dsOutcomeSubject2) == columnName] <- paste0(columnName, "_2")      
+      colnames(dsOutcomeSubject1)[colnames(dsOutcomeSubject1) == columnName] <- paste0(columnName, subject1Qualifier)
+      colnames(dsOutcomeSubject2)[colnames(dsOutcomeSubject2) == columnName] <- paste0(columnName, subject2Qualifier)      
     }
   }
- 
-  dsLeftHand <- merge(x=dsLinksLeftHand, y=dsOutcomeSubject1, by.x="Subject1Tag", by.y="SubjectTag", all.x=TRUE)
-  dsLeftHand <- merge(x=dsLeftHand, y=dsOutcomeSubject2, by.x="Subject2Tag", by.y="SubjectTag", all.x=TRUE)
-    
-  dsRightHand <- merge(x=dsLinksRightHand, y=dsOutcomeSubject2, by.x="Subject2Tag", by.y="SubjectTag", all.x=TRUE)
-  dsRightHand <- merge(x=dsRightHand, y=dsOutcomeSubject1, by.x="Subject1Tag", by.y="SubjectTag", all.x=TRUE)
- 
+  
+  dsLeftHand <- merge(x=dsLinksLeftHand, y=dsOutcomeSubject1, by.x="SubjectTag_S1", by.y="SubjectTag", all.x=TRUE)
+  dsLeftHand <- merge(x=dsLeftHand, y=dsOutcomeSubject2, by.x="SubjectTag_S2", by.y="SubjectTag", all.x=TRUE)
+  
+  dsRightHand <- merge(x=dsLinksRightHand, y=dsOutcomeSubject2, by.x="SubjectTag_S2", by.y="SubjectTag", all.x=TRUE)
+  dsRightHand <- merge(x=dsRightHand, y=dsOutcomeSubject1, by.x="SubjectTag_S1", by.y="SubjectTag", all.x=TRUE)
+  
   rm(dsLinksLeftHand, dsLinksRightHand, dsOutcomeSubject1, dsOutcomeSubject2)
   
   ds <- rbind(dsLeftHand, dsRightHand) #'RowBind' the two datasets
   
-  firstTwoNames <- c("Subject1Tag", "Subject2Tag")
+  firstTwoNames <- c("SubjectTag_S1", "SubjectTag_S2")
   remaining <- setdiff(colnames(ds), firstTwoNames)
   ds <- ds[, c(firstTwoNames, remaining)]
-    
+  
   return( ds )
 }

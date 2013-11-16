@@ -2,8 +2,8 @@
 \alias{CleanSemAceDataset}
 \title{Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.}
 \usage{
-  CleanSemAceDataset(dsDirty, dsGroupSummary, oName_1,
-    oName_2, rName = "R")
+  CleanSemAceDataset(dsDirty, dsGroupSummary, oName_S1,
+    oName_S2, rName = "R")
 }
 \arguments{
   \item{dsDirty}{This is the \code{data.frame} to be
@@ -14,10 +14,10 @@
   analyses.  It should be created by the
   \code{RGroupSummary} function.}
 
-  \item{oName_1}{The name of the manifest variable (in
+  \item{oName_S1}{The name of the manifest variable (in
   \code{dsDirty}) for the first subject in each pair.}
 
-  \item{oName_2}{The name of the manifest variable (in
+  \item{oName_S2}{The name of the manifest variable (in
   \code{dsDirty}) for the second subject in each pair.}
 
   \item{rName}{The name of the variable (in \code{dsDirty})
@@ -65,11 +65,11 @@ library(NlsyLinks) #Load the package into the current R session.
 dsLinks <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
 dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only NLSY79-C siblings
 
-oName_1 <- "MathStandardized_1" #Stands for Outcome1
-oName_2 <- "MathStandardized_2" #Stands for Outcome2
-dsGroupSummary <- RGroupSummary(dsLinks, oName_1, oName_2)
+oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
+oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
 
-dsClean <- CleanSemAceDataset( dsDirty=dsLinks, dsGroupSummary, oName_1, oName_2, rName="R" )
+dsClean <- CleanSemAceDataset( dsDirty=dsLinks, dsGroupSummary, oName_S1, oName_S2, rName="R" )
 summary(dsClean)
 
 dsClean$AbsDifference <- abs(dsClean$O1 - dsClean$O2)

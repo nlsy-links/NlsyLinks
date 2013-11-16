@@ -2,17 +2,17 @@
 \alias{RGroupSummary}
 \title{Calculates summary statistics for each \emph{R}elatedness Group in the sample.}
 \usage{
-  RGroupSummary(ds, oName_1, oName_2, rName,
+  RGroupSummary(ds, oName_S1, oName_S2, rName,
     determinantThreshold=1e-5)
 }
 \arguments{
   \item{ds}{The \code{data.frame} containing the following
   variables:}
 
-  \item{oName_1}{The name of the outcome variable
+  \item{oName_S1}{The name of the outcome variable
   corresponding to the first subject in the pair.}
 
-  \item{oName_2}{The name of the outcome variable
+  \item{oName_S2}{The name of the outcome variable
   corresponding to the first subject in the pair.}
 
   \item{rName}{The name of the variable specifying the
@@ -79,9 +79,9 @@
 library(NlsyLinks) #Load the package into the current R session.
 dsLinks <- Links79PairExpanded  #Load the dataset from the NlsyLinks package.
 dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
-oName_1 <- "MathStandardized_1" #Stands for Outcome1
-oName_2 <- "MathStandardized_2" #Stands for Outcome2
-dsGroupSummary <- RGroupSummary(dsLinks, oName_1, oName_2)
+oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
+oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
 dsGroupSummary
 
 #Should return:
@@ -100,7 +100,7 @@ dsGroupSummary
 
 #To get summary stats for the whole sample, create one large inclusive group.
 dsLinks$Dummy <- 1
-(dsSampleSummary <- RGroupSummary(dsLinks, oName_1, oName_2, rName="Dummy"))
+(dsSampleSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2, rName="Dummy"))
 
 #Should return:
 #  Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
