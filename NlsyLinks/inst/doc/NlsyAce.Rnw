@@ -33,6 +33,7 @@
 \end{abstract}
 \tableofcontents
 <<preliminaries,echo=FALSE>>=
+require(knitr)
 opts_chunk$set(echo=TRUE)
 options(width=88, show.signif.stars = FALSE, continue=" ") #, lattice.theme = function() canonical.theme("pdf", color = FALSE)
 if( any(search()=="package:NlsyLinks") ) detach("package:NlsyLinks")
@@ -117,8 +118,8 @@ summary(dsDouble) #Notice there are 22176=(2*11088) records now (two for each un
 #Step 7: Estimate the ACE components with a DF Analysis 
 ace <- DeFriesFulkerMethod3(
     dataSet=dsDouble,  
-    oName_1="MathStandardized_1", 
-    oName_2="MathStandardized_2")
+    oName_S1="MathStandardized_S1", 
+    oName_S2="MathStandardized_S2")
 ace
 @
 
@@ -177,8 +178,8 @@ dsDouble <- CreatePairLinksDoubleEntered(
 ace <- AceUnivariate(
   method="DeFriesFulkerMethod3",
   dataSet=dsDouble,
-  oName_1="BirthWeightInOunces_1", 
-  oName_2="BirthWeightInOunces_2"  
+  oName_S1="BirthWeightInOunces_S1", 
+  oName_S2="BirthWeightInOunces_S2"  
 )
 ace
 @
@@ -199,7 +200,7 @@ The steps are:
 %6
 \item Create a \emph{single}-entered file by calling the \code{CreatePairLinksSingleEntered} function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s). 
 %7
-\item Declare the names of the outcome variables corresponding to the two members in each pair.  Assuming the variable is called `ZZZ' and the preceeding steps have been followed, the variable `ZZZ\_1' corresponds to the first members and ZZZ\_2' corresponds to the second members. 
+\item Declare the names of the outcome variables corresponding to the two members in each pair.  Assuming the variable is called `ZZZ' and the preceeding steps have been followed, the variable `ZZZ\_S1' corresponds to the first members and ZZZ\_S2' corresponds to the second members. 
 %8
 \item Create a GroupSummary \code{data.frame}, which identifies the \code{R} groups that should be considered by the model.  Inspect the output to see if the groups show unexpected or fishy differences.
 %9
@@ -223,15 +224,15 @@ dsSingle <- CreatePairLinksSingleEntered(outcomeDataset=dsOutcomes,
   linksPairDataset=dsLinking, outcomeNames=c('MathStandardized'))
 
 #Step 7: Declare the names for the two outcome variables. 
-oName_1 <- "MathStandardized_1" #Stands for Outcome1
-oName_2 <- "MathStandardized_2" #Stands for Outcome2
+oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
+oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
   
 #Step 8: Summarize the R groups and determine which groups can be estimated.
-dsGroupSummary <- RGroupSummary(dsSingle, oName_1, oName_2)
+dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
 #Step 9: Create a cleaned dataset
-dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_1, oName_2)
+dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
 
 #Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
@@ -268,17 +269,17 @@ dsSingle <- CreatePairLinksSingleEntered(outcomeDataset=dsOutcomes,
   linksPairDataset=dsLinking, outcomeNames=c('HeightZGenderAge'))
 
 #Step 7: Declare the names for the two outcome variables. 
-oName_1 <- "HeightZGenderAge_1" 
-oName_2 <- "HeightZGenderAge_2" 
+oName_S1 <- "HeightZGenderAge_S1" 
+oName_S2 <- "HeightZGenderAge_S2" 
   
 #Step 8: Summarize the R groups and determine which groups can be estimated.
-dsGroupSummary <- RGroupSummary(dsSingle, oName_1, oName_2)
+dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 rGroupsToDrop <- c( 0 )
 dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE
 dsGroupSummary
 
 #Step 9: Create a cleaned dataset
-dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_1, oName_2)
+dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
 
 #Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
