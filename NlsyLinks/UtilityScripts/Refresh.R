@@ -3,7 +3,8 @@ require(devtools)
 # setwd("~nlsylinks/pkg")
 options(device = "windows") #http://support.rstudio.org/help/discussions/problems/80-error-in-function-only-one-rstudio-graphics-device-is-permitted
 
-devtools::build()#args="--resave-data")
+#devtools::build()#args="--resave-data")
+devtools::build(args="--resave-data --no-build-vignettes")
 devtools::document(roclets = c("collate", "namespace", "rd"), clean=T, reload=T) # #Remember to change this in RStudio too.
 devtools::check_doc() #Should return NULL
 #  system("R CMD Rd2pdf --force --output=./NlsyLinksDocumentationPeek.pdf ." )

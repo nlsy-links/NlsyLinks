@@ -1,5 +1,381 @@
-
 % \VignetteIndexEntry{ACE Models with the NLSY}
+% \VignetteEngine{knitr::knitr} 
 \documentclass{article}
+
+\usepackage{color}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[colorlinks=true,urlcolor=darkblue,linkcolor=greenteal]{hyperref}  %This makes reference links hyperlinks in pdf (tip from Revelle's 'psych' package).
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent (tip from Revelle's 'psych' package).
+% \usepackage[pdftex]{graphicx}
+\usepackage{amssymb,amsmath} %ftp://ftp.ams.org/ams/doc/amsmath/short-math-guide.pdf
+\definecolor{darkblue}{rgb}{.0,0.2,.8}
+\definecolor{greenteal}{rgb}{0,0.5,.5}
+
+\title{ACE Models with the NLSY}
+\author{
+  \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)\\
+  \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)\\
+  \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)\\
+  Kelly Meredith (Oklahoma City University, OKC)\\
+  \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
+}
 \begin{document}
+
+\newcommand{\code}[1]{\texttt{\small{#1}}}
+\newcommand{\pkg}[1]{\textsf{\small{#1}}}
+\newcommand{\R}{\textsf{R}} %(tip from Revelle's 'psych' package).
+
+\maketitle
+%\href{http://personality-project.org/r/r.guide.html}{dss}
+
+\begin{abstract}
+   We describe how to use the \pkg{NlsyLinks} package to examine various biometric models, using the NLSY79.
+\end{abstract}
+\tableofcontents
+<<preliminaries,echo=FALSE>>=
+opts_chunk$set(echo=TRUE)
+options(width=88, show.signif.stars = FALSE, continue=" ") #, lattice.theme = function() canonical.theme("pdf", color = FALSE)
+if( any(search()=="package:NlsyLinks") ) detach("package:NlsyLinks")
+@
+
+%\href{http://personality-project.org/r/r.guide.html}{dss}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Terminology} %\label{sec:Terminology}
+This package considers both Gen1 and Gen2 subjects.  \textbf{Gen1} refers to subjects in the original NLSY79 sample (\url{http://www.bls.gov/nls/nlsy79.htm}).  \textbf{Gen2} subjects are the biological offspring of the Gen1 females -\emph{i.e.}, those in the NLSY79 Children and Young Adults sample ( \url{http://www.bls.gov/nls/nlsy79ch.htm}).  The NLSY97 is a third dataset that can be used for behavior genetic research (\url{http://www.bls.gov/nls/nlsy97.htm}), although this vignette focuses on the two generations in the NLSY79.
+
+Standard terminology is to refer Gen2 subjects as `children' when they are younger than age 15 (NSLY79-C), and as `young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as `NLSY79-C', `NLSY79C', `NLSY-C' or `NLSYC'. 
+
+The \textbf{SubjectTag}\phantomsection\label{term:SubjectTag} variable uniquely identify NLSY79 subjects when a dataset contains both generations.  For Gen2 subjects, the \code{SubjectTag} is identical to their CID (\emph{i.e.}, C00001.00 -the ID assigned in the NLSY79-Children files).  However for Gen1 subjects, the \code{SubjectTag} is their CaseID (\emph{i.e.}, R00001.00), with ``00" appended.  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The \code{SubjectTag}s of her four children remain 4301, 4302, 4303, and 4304.
+
+The \textbf{expected coefficient of relatedness} of a pair of subjects is typically represented by the variable \code{R}.  Examples are: Monozygotic twins have \code{R}=1; dizygotic twins have \code{R}=0.5; full siblings (\emph{i.e.}, those who share both biological parents) have \code{R}=0.5;  half-siblings (\emph{i.e.}, those who share exactly one biological parent) have \code{R}=0.25; adopted siblings have \code{R}=0.0.  Other possibilities exist too.  The font (and hopefully their context) should distinguish the variable \code{R} from the software \R{}.
+
+A subject's \code{\textbf{ExtendedID}} indicates their extended family.  Two subjects will be in the same extended family if either: [1] they are Gen1 housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (\emph{i.e.}, they have mothers who are Gen1 sisters in the NLSY79), [4] they are mother and child (in Gen1 and Gen2, respectively), or [5] they are (aunt|uncle) and (niece|nephew) (in Gen1 and Gen2, respectively).
+
+An \textbf{outcome variable} is directly relevant to the applied researcher; these might represent constructs like height, IQ, and income.  A \textbf{plumbing variable} is necessary to manage BG datasets; examples are \code{R}, a subject's ID, and the date of a subject's last survey.
+
+An ACE model is the basic biometrical model used by Behavior Genetic researchers, where the genetic and environmental effects are assumed to be additive. The three primary variance components are (1) the proportion of variability due to a shared genetic influence (typically represented as $a^2$, or sometimes $h^2$), (2) the proportion of variability due to shared common environmental influence (typically $c^2$), and (3) the proportion of variability due to unexplained/residual/error influence (typically $e^2$).  
+
+The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend Plomin (1990) and Carey (2003).  For more in-depth ACE model-fitting strategies, we recommend Neale \& Cardon (1992). 
+//This paragraph may get moved to the yet-to-be-written introduction that precedes the Terminology section.
+
+The \textbf{NLS Investigator}\phantomsection\label{term:NlsInvestigator} (\url{http://www.nlsinfo.org/investigator/}) is the best way to obtain the NLSY79 and NLSY97 datasets.  See our vignette dedicated to the NLS Investigator by typing\\ \code{vignette("NlsInvestigator")} or by visiting \url{http://cran.r-project.org/web/packages/NlsyLinks/}.
+
+Before starting the real examples, first verify that the \pkg{NlsyLinks} package is installed correctly.  If not, refer to \hyperref[sec:InstallingPackage]{Appendix \ref*{sec:InstallingPackage}}.
+<<eval=TRUE,echo=TRUE>>=
+any(.packages(all.available=TRUE) == "NlsyLinks") #Should evaluate to TRUE.
+require(NlsyLinks) #Load the package into the current session.
+@
+The package's documentation manual can be opened by typing \code{?NlsyLinks} in
+\R{} or RStudio.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example: DF analysis with a Simple Outcome for Gen2 Subjects, Using a Package Variable}
+The vignette's first example uses a simple statistical model and all available Gen2 subjects.  The \\\code{CreatePairLinksDoubleEntered} function will create a data frame where each represents one pair of siblings, respective of order (\emph{i.e.}, there is a row for Subjects 201 and 202, and a second row for Subjects 202 and 201). This function examines the subjects' IDs and determines who is related to whom (and by how much).  By default, each row it produces has at least six values/columns: (i) ID for the older member of the kinship pair: \code{Subject1Tag}, (ii) ID for the younger member: \code{Subject2Tag}, (iii) ID for their extended family: \code{ExtendedID}, (iv) their estimated coefficient of genetic relatedness: \code{R}, (v \emph{and beyond}) outcome values for the older member; (vi \emph{and beyond}) outcome values for the younger member.  
+
+A DeFries-Fulker (\textbf{DF}) Analysis uses linear regression to estimate the $a^2$, $c^2$, and $e^2$ of a univariate biometric system.  The interpretations of the DF analysis can be found in Rodgers \& Kohler (2005) and Rodgers, Rowe, \& Li (1999).  This  vignette example uses the newest variation, which estimates two parameters; the corresponding function is called \code{DeFriesFulkerMethod3}.
+The steps are:
+\begin{enumerate}
+\item Use the \hyperref[term:NlsInvestigator]{NLS Investigator} to select and download a Gen2 dataset.  
+
+\item Open \R{} and create a new script (see \hyperref[sec:RScripts]{Appendix \ref*{sec:RScripts}}) and load the \pkg{NlsyLinks} package.  If you haven't done so, first install the \pkg{NlsyLinks} package (see \hyperref[sec:InstallingPackage]{Appendix \ref*{sec:InstallingPackage}}).
+%\item Within the \R{} script, identify the locations of the downloaded data file, and load it into a data frame.  
+\item Within the \R{} script, load the linking dataset.  Then select only Gen2 subjects.  The `Pair' version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.
+\item Load and assign the \code{ExtraOutcomes79} dataset.
+\item Specify the outcome variable name and filter out all subjects who have a negative value in this variable.  The NLSY typically uses negative values to indicate different types of missingness (see `Further Information' below).   
+\item Create a double-entered file by calling the \code{CreatePairLinksDoubleEntered} function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).  \emph{(There are occasions when a single-entered file is more appropriate for a DF analysis.  See Rodgers \& Kohler, 2005, for additional information.)}
+\item Use \code{DeFriesFulkerMethod3} function (i.e., general linear model) to estimate the coefficients of the DF model.  
+\end{enumerate}
+
+<<eval=TRUE, echo=TRUE, tidy=FALSE>>=
+### R Code for Example DF analysis with a simple outcome and Gen2 subjects
+#Step 2: Load the package containing the linking routines.
+require(NlsyLinks) 
+
+#Step 3: Load the LINKING dataset and filter for the Gen2 subjects
+dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
+summary(dsLinking) #Notice there are 11,088 records (one for each unique pair).
+
+#Step 4: Load the OUTCOMES dataset, and then examine the summary.
+dsOutcomes <- ExtraOutcomes79 #'ds' stands for 'Data Set'
+summary(dsOutcomes)
+
+#Step 5: This step isn't necessary for this example, because Kelly Meredith already 
+#   groomed the values.  If the negative values (which represent NLSY missing or 
+#   skip patterns) still exist, then:
+dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
+
+#Step 6: Create the double entered dataset.
+dsDouble <- CreatePairLinksDoubleEntered(
+  outcomeDataset=dsOutcomes, 
+  linksPairDataset=dsLinking,
+  outcomeNames=c('MathStandardized')
+)
+summary(dsDouble) #Notice there are 22176=(2*11088) records now (two for each unique pair).
+
+#Step 7: Estimate the ACE components with a DF Analysis 
+ace <- DeFriesFulkerMethod3(
+    dataSet=dsDouble,  
+    oName_1="MathStandardized_1", 
+    oName_2="MathStandardized_2")
+ace
+@
+
+\emph{Further Information}: If the different reasons of missingness are important, further work is necessary.  For instance, some analyses that use item \code{Y19940000} might need to distinguish a response of ``Don't Know" (which is coded as -2) from ``Missing" (which is coded as -7).  For this vignette example, we'll assume it's safe to clump the responses together.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example: DF analysis with a univariate outcome from a Gen2 Extract}
+The vignette's second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV (\href{http://en.wikipedia.org/wiki/Comma-separated_values}{comma separated values} file) that was downloaded from the \hyperref[term:NlsInvestigator]{NLS Investigator}.  Second, the DF analysis is called through the function \code{AceUnivariate}; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later in the vignette.   
+
+The steps are:
+\begin{enumerate}
+\item Use the \hyperref[term:NlsInvestigator]{NLS Investigator} to select and download a Gen2 dataset.  Select the variables `length of gestation of child in weeks' (\code{C03280.00}), `weight of child at birth in ounces' (\code{C03286.00}), and `length of child at birth' (\code{C03288.00}), and then download the *.zip file to your local computer.
+
+\item Open \R{} and create a new script (see \hyperref[sec:RScripts]{Appendix \ref*{sec:RScripts}}) and load the \pkg{NlsyLinks} package.
+\item Within the \R{} script, load the linking dataset.  Then select only Gen2 subjects.
+\item Read the CSV into \R{} as a \code{data.frame} using \code{ReadCsvNlsy79Gen2}.
+\item Verify the desired outcome column exists, and rename it something meaningful to your project.  It is important that the \code{data.frame} is reassigned (\emph{i.e.}, \code{ds <- RenameNlsyColumn(...)}).  In this example, we rename column \code{C0328800} to \code{BirthWeightInOunces}.
+\item Filter out all subjects who have a negative \code{BirthWeightInOunces} value.  See the `Further Information' note in the previous example.
+\item Create a double-entered file by calling the \code{CreatePairLinksDoubleEntered} function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s). 
+\item Call the \code{AceUnivariate} function to estimate the coefficients.
+\end{enumerate}
+
+<<eval=TRUE, echo=TRUE, tidy=FALSE>>=
+### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects
+#Step 2: Load the package containing the linking routines.
+require(NlsyLinks) 
+
+#Step 3: Load the linking dataset and filter for the Gen2 subjects
+dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
+
+#Step 4: Load the outcomes dataset from the hard drive and then examine the summary.
+#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/Gen2Birth.csv'
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
+dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
+summary(dsOutcomes)
+
+#Step 5: Verify and rename an existing column.
+VerifyColumnExists(dsOutcomes, "C0328600") #Should return '10' in this example.
+dsOutcomes <- RenameNlsyColumn(dsOutcomes, "C0328600", "BirthWeightInOunces")
+
+#Step 6: For this item, a negative value indicates the parent refused, didn't know, 
+#   invalidly skipped, or was missing for some other reason.  
+#   For our present purposes, we'll treat these responses equivalently.
+#   Then clip/Winsorized/truncate the weight to something reasonable.
+dsOutcomes$BirthWeightInOunces[dsOutcomes$BirthWeightInOunces < 0] <- NA
+dsOutcomes$BirthWeightInOunces <- pmin(dsOutcomes$BirthWeightInOunces, 200)
+
+#Step 7: Create the double entered dataset.
+dsDouble <- CreatePairLinksDoubleEntered(
+  outcomeDataset=dsOutcomes, 
+  linksPairDataset=dsLinking,
+  outcomeNames=c('BirthWeightInOunces')
+)
+
+#Step 8: Estimate the ACE components with a DF Analysis 
+ace <- AceUnivariate(
+  method="DeFriesFulkerMethod3",
+  dataSet=dsDouble,
+  oName_1="BirthWeightInOunces_1", 
+  oName_2="BirthWeightInOunces_2"  
+)
+ace
+@
+
+For another example of incorporating CSVs downloaded from the NLS Investigator, please see the ``Race and Gender Variables'' entry in the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example: Multiple Group SEM of a Simple Outcome for Gen2 Subjects}
+The example differs from the first one by the statistical mechanism used to estimate the components.  The first example uses multiple regression to estimate the influence of the shared genetic and environmental factors, while this example uses structural equation modeling (SEM).
+
+The \code{CreatePairLinksSingleEntered} function will create a \code{data.frame} where each row represents one unique pair of siblings, \emph{irrespective of order}.  Other than producing half the number of rows, this function is identical to \code{CreatePairLinksDoubleEntered}.
+
+The steps are:
+
+(Steps 1-5 proceed identically to the first example.)
+\begin{enumerate}
+\setcounter{enumi}{5}   
+%6
+\item Create a \emph{single}-entered file by calling the \code{CreatePairLinksSingleEntered} function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s). 
+%7
+\item Declare the names of the outcome variables corresponding to the two members in each pair.  Assuming the variable is called `ZZZ' and the preceeding steps have been followed, the variable `ZZZ\_1' corresponds to the first members and ZZZ\_2' corresponds to the second members. 
+%8
+\item Create a GroupSummary \code{data.frame}, which identifies the \code{R} groups that should be considered by the model.  Inspect the output to see if the groups show unexpected or fishy differences.
+%9
+\item Create a \code{data.frame} with cleaned variables to pass to the SEM function.  This \code{data.frame} contains only the three necessary rows and columns.
+%10
+\item Estimate the SEM with the \pkg{lavaan} package.  The function returns an \code{S4} object, which shows the basic ACE information.
+%11
+\item Inspect details of the SEM, beyond the ACE components.  In this example, we look at the fit stats and the parameter estimates.  The \pkg{lavaan} package has additional methods that may be useful for your purposes.
+\end{enumerate}
+
+<<eval=TRUE, echo=TRUE, tidy=FALSE, message=FALSE>>=
+### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects
+#Steps 1-5 are explained in the vignette's first example:
+require(NlsyLinks) 
+dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
+dsOutcomes <- ExtraOutcomes79 
+dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
+
+#Step 6: Create the single entered dataset.
+dsSingle <- CreatePairLinksSingleEntered(outcomeDataset=dsOutcomes, 
+  linksPairDataset=dsLinking, outcomeNames=c('MathStandardized'))
+
+#Step 7: Declare the names for the two outcome variables. 
+oName_1 <- "MathStandardized_1" #Stands for Outcome1
+oName_2 <- "MathStandardized_2" #Stands for Outcome2
+  
+#Step 8: Summarize the R groups and determine which groups can be estimated.
+dsGroupSummary <- RGroupSummary(dsSingle, oName_1, oName_2)
+dsGroupSummary
+
+#Step 9: Create a cleaned dataset
+dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_1, oName_2)
+
+#Step 10: Run the model
+ace <- AceLavaanGroup(dsClean)
+ace
+#Notice the `CaseCount' is 8,390 instead of 17,440.
+#  This is because (a) one pair with R=.75 was excluded, and
+#  (b) the SEM uses a single-entered dataset instead of double-entered.
+#
+#Step 11: Inspect the output further
+require(lavaan) #Load the package to access methods of the lavaan class.
+GetDetails(ace)
+#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.
+fitMeasures(GetDetails(ace)) #'fitMeasures' is defined in the lavaan package.
+
+#Examine low-level details like each group's individual parameter estimates and standard
+#  errors.  Uncomment the next line to view the entire output (which is roughly 4 pages).
+#summary(GetDetails(ace))
+@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example: Multiple Group SEM of a Simple Outcome for Gen1 Subjects}
+The example differs from the previous one in three ways.  First, Gen1 subjects are used.  Second, standardized height is used instead of math.  Third, pairs are dropped if their \emph{R} is zero; we return to this last issue after the code is run.
+
+<<eval=TRUE, echo=TRUE, tidy=FALSE, message=FALSE>>=
+### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects
+#Steps 1-5 are explained in the vignette's first example:
+require(NlsyLinks) 
+dsLinking <- subset(Links79Pair, RelationshipPath=="Gen1Housemates")
+dsOutcomes <- ExtraOutcomes79 
+#The HeightZGenderAge variable is already groomed
+
+#Step 6: Create the single entered dataset.
+dsSingle <- CreatePairLinksSingleEntered(outcomeDataset=dsOutcomes, 
+  linksPairDataset=dsLinking, outcomeNames=c('HeightZGenderAge'))
+
+#Step 7: Declare the names for the two outcome variables. 
+oName_1 <- "HeightZGenderAge_1" 
+oName_2 <- "HeightZGenderAge_2" 
+  
+#Step 8: Summarize the R groups and determine which groups can be estimated.
+dsGroupSummary <- RGroupSummary(dsSingle, oName_1, oName_2)
+rGroupsToDrop <- c( 0 )
+dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE
+dsGroupSummary
+
+#Step 9: Create a cleaned dataset
+dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_1, oName_2)
+
+#Step 10: Run the model
+ace <- AceLavaanGroup(dsClean)
+ace
+
+#Step 11: Inspect the output further (see the final step in the previous example).
+@
+
+Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.  **Joe, is there anything else you'd like to say about this here?**
+
+If you wish to exclude additional groups from the analyses, one line of code in Step 8 should change.  For instance, two exclude ambiguous sibs (in addition to $R=0$ pairs), change\\ \code{rGroupsToDrop <- c( 0 )} \\to \\ \code{rGroupsToDrop <- c( 0, .375 )}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example: Midstream data manipulation with SAS}
+The example differs from the previous one substantial way: After \R{} is used to link the related pairs, and connect them to their outcome values, the dataset is exported so that the user can further manipulate the data in SAS.  
+
+After a presentation, several audience members at the 2012 BGA meeting informed us that this vignette example would help them be more efficient.  This approach is also consistent with our feeling that analysts should use the workflow tools that are best suited to their needs and capabilities.
+
+**Should we export/import as CSVs (which would make the R code much simpler, because the \pkg{foreign} package wouldn't have to be loaded), but increase the code necessary on the SAS side? I really don't want to mess with sasbdats and xports.**
+
+\appendix
+\section{Appendix: Receiving Help for the NlsyLinks Package}
+\label{sec:ReceivingHelp} A portion of our current grant covers a small, part-time support
+staff.  If you have questions about BG research with our kinship links, or
+questions about our package, we'd like to hear from you.
+
+We provide personal support for researchers in several ways.  Perhaps the best
+place to start are the forums on R-Forge
+(\url{http://r-forge.r-project.org/forum/?group_id=1330}); there are forums for
+people using \R{}, as well as other software such as SAS.  \href{https://r-forge.r-project.org/forum/forum.php?thread_id=4537&forum_id=4266&group_id=1330}{This
+post} is a good overview of the current project is, which originally was an
+email Joe sent to previous users of our kinship links (many of them are/were SAS
+users).
+
+\section{Appendix: Creating and Saving R Scripts}
+\label{sec:RScripts} There are several options and environments for executing \R{} code.  Our current
+recommendation is \href{http://rstudio.org/}{RStudio}, because it is easy to
+install, and has features targeting beginnner and experienced \R{} users. 
+We've had good experiences with it on Windows, OS X, and Ubuntu Linux.
+
+RStudio allows you to create and save \R{} files; these are simply text files
+that have an file extension of `.R'.  RStudio will execute the commands written
+in the file.  Help documentation for RStudio can be found at
+\url{http://www.rstudio.com/ide/docs/}.
+
+\section{Appendix: Installing and Loading the NlsyLinks Package} \label{sec:InstallingPackage}
+There are three operations you'll typically do with a package: (a) install, (b) load, and (c) update.
+
+The simplest way to \textbf{install} \pkg{NlsyLinks} is to type
+\code{install.packages("NlsyLinks")}.  You may be asked to select a CRAN
+mirror to download the package from; if so, choose a close location.
+
+\R{} then will download \pkg{NlsyLinks} on your local computer.  It may
+try to save and install the package to a location that you don't have permission to
+write files in.  If so, \R{} will ask if you would like to install it to a
+better location (\emph{i.e.}, somewhere you do have permission to write files). 
+Approve this decision (which is acceptable for everyone except for some network
+administrators).
+
+For a given computer, you'll need to \emph{install} a package only once for each
+version of \R{} (new versions of \R{} are released every few months).  However, you'll need to \emph{load} a package in
+every session that you call its functions.  To \textbf{load} \pkg{NlsyLinks},
+type either \code{library(NlsyLinks)} or \code{require(NlsyLinks)}; (the
+difference between the two commands is likely irrelevant for your uses.) 
+Loading reads \pkg{NlsyLinks} information from the hard drive and places it in
+temporary memory.  Once it's loaded, you won't need to load it again until \R{}
+is closed and reopened later.
+
+Developers are continually improving their packages by adding functions and
+documentation.  These newer versions are then uploaded to the CRAN servers.  You
+may \textbf{update} all your installed packages at once by typing
+\code{update.packages()}.  The command checks a CRAN server for
+newer versions of the packages installed on your local machine.  Then they are
+automatically downloaded and installed. 
+
+The grant supporting \pkg{NlsyLinks} extends until Summer 2014.  Until then,
+we'll be including new features and documentation, as we address additional user
+needs (if you have suggestions, we'd like to hear from you).  When the NLSY periodically updates its data, we'll
+update our kinship links (embedded in \pkg{NlsyLinks}) with the newest information.
+\section{Appendix: References} \label{sec:References}
+\href{http://psych.colorado.edu/~carey/hgss/}{Carey, Gregory (2002)}. \emph{Human Genetics for the Social Sciences}. Sage.
+
+\href{http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s}{Plomin, Robert (1990)}. \emph{Nature and nurture: an introduction to human behavioral genetics}.  Brooks/Cole Publishing Company.
+
+\href{http://www.springerlink.com/content/n3x1v1q282583366}{Rodgers, Joseph Lee, \& Kohler, Hans-Peter (2005)}. Reformulating and simplifying the DF analysis model. \emph{Behavior Genetics, 35 (2)}, 211-217.
+
+\href{http://psycnet.apa.org/journals/dev/30/3/374/}{Rodgers, Joseph Lee, Rowe, David C., \& Li, Chengchang (1994)}. Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors. \emph{Developmental Psychology, 30 (3)}, 374-384. 
+
+\href{http://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC}{Neale, Michael C., \& Cardon, Lou R. (1992)}. \emph{Methodology for genetic studies of twins and families}. Norwell, MA: Kluwer Academic Publishers. (Also see Neale \& Maes: \url{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}).
+ 
+\section{Notes}
+This package's development was largely supported by the NIH Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)
+
+\section{Version Information}
+<< results='asis', echo=FALSE>>=
+toLatex(sessionInfo(), locale=T)
+@
+
+%\printindex
 \end{document}
