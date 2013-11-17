@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.23)  16 NOV 2013 19:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.23)  17 NOV 2013 12:26
 entering extended mode
 **NlsInvestigator.tex
 (D:\Projects\RDev\NlsyLinksStaging\NlsyLinks\inst\doc\NlsInvestigator.tex
@@ -70,7 +70,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(D:\Projects\RDev\NlsyLinksStaging\NlsyLinks\inst\doc\framed.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\framed\framed.sty"
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip43
 \fb@frw=\dimen105
@@ -459,8 +459,8 @@ Package rerunfilecheck Info: File `NlsInvestigator.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
  ) 
 Here is how much of TeX's memory you used:
- 5614 strings out of 493921
- 85789 string characters out of 3147284
+ 5615 strings out of 493921
+ 85818 string characters out of 3147284
  171932 words of memory out of 3000000
  8834 multiletter control sequences out of 15000+200000
  9487 words of font info for 34 fonts, out of 3000000 for 9000
@@ -477,7 +477,7 @@ cmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on NlsInvestigator.pdf (6 pages, 502445 bytes).
+Output written on NlsInvestigator.pdf (6 pages, 502394 bytes).
 PDF statistics:
  146 PDF objects out of 1000 (max. 8388607)
  21 named destinations out of 1000 (max. 500000)
