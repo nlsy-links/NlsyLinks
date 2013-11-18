@@ -50,6 +50,12 @@
   values were simplied (to one value per subject) by Kelly
   Meredith in January 2012 using the Sept 15, 2010 release
   of NLSY data.
+
+  The variables for height and weight were manipulated in R
+  files available in a
+  [repository](https://github.com/LiveOak/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes)
+  available to the public. Find the appropriate subfolder,
+  and view the HTML report for more details.
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
