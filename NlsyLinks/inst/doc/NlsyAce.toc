@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {3}Example: DF analysis with a univariate outcome from a Gen2 Extract}{5}{section.3}
 \contentsline {section}{\numberline {4}Example: Multiple Group SEM of a Simple Outcome for Gen2 Subjects}{7}{section.4}
 \contentsline {section}{\numberline {5}Example: Multiple Group SEM of a Simple Outcome for Gen1 Subjects}{9}{section.5}
-\contentsline {section}{\numberline {6}Example: Midstream data manipulation with SAS}{11}{section.6}
+\contentsline {section}{\numberline {6}Example: Midstream data manipulation with SAS}{10}{section.6}
 \contentsline {section}{\numberline {A}Appendix: Receiving Help for the NlsyLinks Package}{11}{appendix.A}
 \contentsline {section}{\numberline {B}Appendix: Creating and Saving R Scripts}{11}{appendix.B}
 \contentsline {section}{\numberline {C}Appendix: Installing and Loading the NlsyLinks Package}{11}{appendix.C}

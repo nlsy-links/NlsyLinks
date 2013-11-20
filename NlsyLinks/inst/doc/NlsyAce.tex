@@ -180,30 +180,22 @@ The steps are:
 \hlkwd{summary}\hlstd{(dsOutcomes)}
 \end{alltt}
 \begin{verbatim}
-##    SubjectTag        SubjectID         Generation   AfqtRescaled2006Gaussified
-##  Min.   :    100   Min.   :      1   Min.   :1.00   Min.   :-3                
-##  1st Qu.: 314025   1st Qu.:   5998   1st Qu.:1.00   1st Qu.:-1                
-##  Median : 620050   Median :  12000   Median :1.00   Median : 0                
-##  Mean   : 618600   Mean   : 289254   Mean   :1.48   Mean   : 0                
-##  3rd Qu.: 914501   3rd Qu.: 577403   3rd Qu.:2.00   3rd Qu.: 0                
-##  Max.   :1268600   Max.   :1267501   Max.   :2.00   Max.   : 3                
-##                                                     NA's   :12276             
-##  HeightZGender  HeightZGenderAge WeightZGender   WeightZGenderAge      Afi       
-##  Min.   :-3     Min.   :-3       Min.   :-3      Min.   :-4       Min.   : 2     
-##  1st Qu.:-1     1st Qu.:-1       1st Qu.:-1      1st Qu.:-1       1st Qu.:15     
-##  Median : 0     Median : 0       Median : 0      Median : 0       Median :17     
-##  Mean   : 0     Mean   : 0       Mean   : 0      Mean   : 0       Mean   :17     
-##  3rd Qu.: 1     3rd Qu.: 1       3rd Qu.: 0      3rd Qu.: 0       3rd Qu.:18     
-##  Max.   : 3     Max.   : 3       Max.   : 8      Max.   : 7       Max.   :27     
-##  NA's   :5029   NA's   :5030     NA's   :12104   NA's   :12105    NA's   :12740  
-##       Afm        MathStandardized
-##  Min.   : 0      Min.   : 65     
-##  1st Qu.:12      1st Qu.: 91     
-##  Median :13      Median :100     
-##  Mean   :13      Mean   :100     
-##  3rd Qu.:14      3rd Qu.:110     
-##  Max.   :19      Max.   :135     
-##  NA's   :18165   NA's   :15048
+##    SubjectTag        SubjectID         Generation   HeightZGenderAge WeightZGenderAge
+##  Min.   :    100   Min.   :      1   Min.   :1.00   Min.   :-3       Min.   :-3      
+##  1st Qu.: 314025   1st Qu.:   5998   1st Qu.:1.00   1st Qu.:-1       1st Qu.:-1      
+##  Median : 620050   Median :  12000   Median :1.00   Median : 0       Median : 0      
+##  Mean   : 618600   Mean   : 289254   Mean   :1.48   Mean   : 0       Mean   : 0      
+##  3rd Qu.: 914501   3rd Qu.: 577403   3rd Qu.:2.00   3rd Qu.: 1       3rd Qu.: 1      
+##  Max.   :1268600   Max.   :1267501   Max.   :2.00   Max.   : 3       Max.   : 5      
+##                                                     NA's   :4711     NA's   :4719    
+##  AfqtRescaled2006Gaussified      Afi             Afm        MathStandardized
+##  Min.   :-3                 Min.   : 2      Min.   : 0      Min.   : 65     
+##  1st Qu.:-1                 1st Qu.:15      1st Qu.:12      1st Qu.: 92     
+##  Median : 0                 Median :17      Median :13      Median :100     
+##  Mean   : 0                 Mean   :17      Mean   :13      Mean   :100     
+##  3rd Qu.: 1                 3rd Qu.:18      3rd Qu.:14      3rd Qu.:108     
+##  Max.   : 3                 Max.   :27      Max.   :19      Max.   :135     
+##  NA's   :12510              NA's   :12740   NA's   :18165   NA's   :15085
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 5: This step isn't necessary for this example, because Kelly Meredith already }
@@ -230,12 +222,12 @@ The steps are:
 ##                                                                     
 ##        RelationshipPath MathStandardized_S1 MathStandardized_S2
 ##  Gen1Housemates:    0   Min.   : 65         Min.   : 65        
-##  Gen2Siblings  :22176   1st Qu.: 89         1st Qu.: 89        
+##  Gen2Siblings  :22176   1st Qu.: 90         1st Qu.: 90        
 ##  Gen2Cousins   :    0   Median : 98         Median : 98        
 ##  ParentChild   :    0   Mean   : 98         Mean   : 98        
-##  AuntNiece     :    0   3rd Qu.:108         3rd Qu.:108        
+##  AuntNiece     :    0   3rd Qu.:107         3rd Qu.:107        
 ##                         Max.   :135         Max.   :135        
-##                         NA's   :3815        NA's   :3815
+##                         NA's   :3885        NA's   :3885
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 7: Estimate the ACE components with a DF Analysis }
@@ -248,7 +240,7 @@ The steps are:
 \begin{verbatim}
 ## [1] "Results of ACE estimation: [show]"
 ##  ASquared  CSquared  ESquared CaseCount 
-## 8.480e-01 4.477e-02 1.073e-01 1.678e+04
+## 7.735e-01 1.468e-01 7.968e-02 1.668e+04
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -408,17 +400,17 @@ The steps are:
 \end{alltt}
 \begin{verbatim}
 ##       R Included PairCount O1Mean O2Mean O1Variance O2Variance O1O2Covariance
-## 1 0.250     TRUE      2718  94.64  95.60      169.7      207.8          41.08
-## 2 0.375     TRUE       139  92.60  93.17      172.5      187.1          40.48
-## 3 0.500     TRUE      5511  99.89 100.18      230.5      233.0         107.37
+## 1 0.250     TRUE      2691  95.11  95.98      126.9      150.1          42.04
+## 2 0.375     TRUE       133  93.54  93.41      163.1      131.6          46.56
+## 3 0.500     TRUE      5493  99.89 100.02      168.7      172.9          90.12
 ## 4 0.750    FALSE         2 108.50 106.00      220.5       18.0          63.00
-## 5 1.000     TRUE        22  98.64  95.55      319.2      343.1         277.59
+## 5 1.000     TRUE        21  98.21  96.02      289.4      215.2         229.11
 ##   Correlation Determinant PosDefinite
-## 1      0.2188       33573        TRUE
-## 2      0.2253       30639        TRUE
-## 3      0.4633       42172        TRUE
+## 1      0.3046       17279        TRUE
+## 2      0.3179       19286        TRUE
+## 3      0.5276       21055        TRUE
 ## 4      1.0000           0       FALSE
-## 5      0.8388       32466        TRUE
+## 5      0.9179        9808        TRUE
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 9: Create a cleaned dataset}
@@ -431,7 +423,7 @@ The steps are:
 \begin{verbatim}
 ## [1] "Results of ACE estimation: [show]"
 ##  ASquared  CSquared  ESquared CaseCount 
-##    0.6673    0.1188    0.2139 8390.0000
+##    0.6211    0.2100    0.1689 8338.0000
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Notice the `CaseCount' is 8,390 instead of 17,440.}
@@ -443,25 +435,25 @@ The steps are:
 \hlkwd{GetDetails}\hlstd{(ace)}
 \end{alltt}
 \begin{verbatim}
-## lavaan (0.5-14) converged normally after  62 iterations
+## lavaan (0.5-15) converged normally after  55 iterations
 ## 
 ##   Number of observations per group         
-##   1                                               2718
-##   2                                                139
-##   3                                               5511
-##   4                                                 22
+##   1                                               2691
+##   2                                                133
+##   3                                               5493
+##   4                                                 21
 ## 
 ##   Estimator                                         ML
-##   Minimum Function Test Statistic              447.272
+##   Minimum Function Test Statistic              447.303
 ##   Degrees of freedom                                16
 ##   P-value (Chi-square)                           0.000
 ## 
 ## Chi-square for each group:
 ## 
-##   1                                            282.194
-##   2                                             32.858
-##   3                                            127.880
-##   4                                              4.339
+##   1                                            281.432
+##   2                                             31.252
+##   3                                            127.180
+##   4                                              7.439
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.}
@@ -469,23 +461,23 @@ The steps are:
 \end{alltt}
 \begin{verbatim}
 ##              fmin             chisq                df            pvalue 
-##             0.027           447.272            16.000             0.000 
+##             0.027           447.303            16.000             0.000 
 ##    baseline.chisq       baseline.df   baseline.pvalue               cfi 
-##          1499.091             4.000             0.000             0.712 
+##          2107.252             4.000             0.000             0.795 
 ##               tli              nnfi               rfi               nfi 
-##             0.928             0.928             0.925             0.702 
+##             0.949             0.949             0.947             0.788 
 ##              pnfi               ifi               rni              logl 
-##             2.807             0.709             0.712        -68369.132 
+##             3.151             0.794             0.795        -65103.976 
 ## unrestricted.logl              npar               aic               bic 
-##        -68145.496             4.000        136746.264        136774.404 
+##        -64880.324             4.000        130215.952        130244.066 
 ##            ntotal              bic2             rmsea    rmsea.ci.lower 
-##          8390.000        136761.692             0.113             0.104 
+##          8338.000        130231.355             0.114             0.105 
 ##    rmsea.ci.upper      rmsea.pvalue               rmr        rmr_nomean 
-##             0.123             0.000            13.895            17.820 
+##             0.123             0.000            10.095            12.902 
 ##              srmr       srmr_nomean             cn_05             cn_01 
-##             0.128             0.093           494.269           601.260 
+##             0.130             0.090           491.178           597.499 
 ##               gfi              agfi              pgfi               mfi 
-##             0.999             0.999             0.799             0.975
+##             0.999             0.999             0.799             0.974
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Examine low-level details like each group's individual parameter estimates and standard}
@@ -525,18 +517,18 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 \hlstd{dsGroupSummary}
 \end{alltt}
 \begin{verbatim}
-##        R Included PairCount   O1Mean    O2Mean O1Variance O2Variance O1O2Covariance
-## 1 0.0625     TRUE        37 -0.39797  0.019119     0.7872     0.9773        0.37990
-## 2 0.1250     TRUE        63 -0.15982 -0.455057     0.9499     0.9529        0.09187
-## 3 0.2500     TRUE       267  0.05476  0.006209     0.9853     1.1350        0.26929
-## 4 0.5000     TRUE      3778 -0.02323 -0.023449     0.9769     1.0194        0.44371
-## 5 1.0000     TRUE        11  0.02395  0.146080     0.2909     0.6106        0.37473
+##        R Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
+## 1 0.0625     TRUE        39 -0.41369 -0.11681     0.8379     0.8275         0.2421
+## 2 0.1250     TRUE        64 -0.18330 -0.55856     0.8123     0.9389         0.1010
+## 3 0.2500     TRUE       280  0.04830  0.05605     1.0182     1.1847         0.2656
+## 4 0.5000     TRUE      3894 -0.04987 -0.02789     0.9736     1.0194         0.4660
+## 5 1.0000     TRUE        11 -0.08652 -0.00904     0.3171     0.9518         0.3583
 ##   Correlation Determinant PosDefinite
-## 1     0.43312     0.62499        TRUE
-## 2     0.09656     0.89677        TRUE
-## 3     0.25465     1.04577        TRUE
-## 4     0.44465     0.79890        TRUE
-## 5     0.88917     0.03719        TRUE
+## 1      0.2907      0.6347        TRUE
+## 2      0.1157      0.7525        TRUE
+## 3      0.2418      1.1357        TRUE
+## 4      0.4678      0.7752        TRUE
+## 5      0.6522      0.1734        TRUE
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 9: Create a cleaned dataset}
@@ -549,7 +541,7 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 \begin{verbatim}
 ## [1] "Results of ACE estimation: [show]"
 ##  ASquared  CSquared  ESquared CaseCount 
-##    0.8834    0.0087    0.1079 4156.0000
+##    0.6870    0.1210    0.1919 4288.0000
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 11: Inspect the output further (see the final step in the previous example).}
@@ -649,10 +641,10 @@ This package's development was largely supported by the NIH Grant 1R01HD65865, \
   \item Locale: \verb|LC_COLLATE=English_United States.1252|, \verb|LC_CTYPE=English_United States.1252|, \verb|LC_MONETARY=English_United States.1252|, \verb|LC_NUMERIC=C|, \verb|LC_TIME=English_United States.1252|
   \item Base packages: base, datasets, graphics, grDevices, methods, stats,
     utils
-  \item Other packages: boot~1.3-9, knitr~1.5, lavaan~0.5-14, MASS~7.3-29,
-    mnormt~1.4-5, NlsyLinks~1.226, pbivnorm~0.5-1, quadprog~1.5-5
+  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.228
   \item Loaded via a namespace (and not attached): evaluate~0.5.1,
-    formatR~0.10, highr~0.3, stats4~3.0.2, stringr~0.6.2, tools~3.0.2
+    formatR~0.10, highr~0.3, mnormt~1.4-5, pbivnorm~0.5-1, quadprog~1.5-5,
+    stats4~3.0.2, stringr~0.6.2, tools~3.0.2
 \end{itemize}
 
 
