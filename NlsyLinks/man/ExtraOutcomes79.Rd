@@ -8,14 +8,12 @@
 \item{SubjectID}{The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).}
 \item{Generation}{The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a  \code{factor} (in constrast with data frames like
    \code{\link{Links79Pair}}).  This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a \code{factor}.}
-\item{AfqtRescaled2006Gaussified}{Armed Forces Qualification Test Score for Gen1.}
-\item{HeightZGender}{The subject's height, standardized by gender (see Details).}
 \item{HeightZGenderAge}{The subject's height, standardized by gender and age (see Details).}
-\item{WeightZGender}{The subject's weight, standardized by gender (see Details).}
 \item{WeightZGenderAge}{The subject's weight, standardized by gender and age (see Details).}
-\item{Afi}{Self-reported age of first intercourse (see Details).}
-\item{Afm}{Self-reported age of first menstration (see Details).}
-\item{MathStandardized}{\emph{not implemented yet.}  Standardized PIAT Math scores (see Details).}
+\item{AfqtRescaled2006Gaussified}{Armed Forces Qualification Test Score (Gen1 only; see Details).}
+\item{Afi}{Self-reported age of first intercourse (Gen1 only; see Details).}
+\item{Afm}{Self-reported age of first menstration (Gen1 only; see Details).}
+\item{MathStandardized}{ Standardized PIAT Math scores (Gen2 only; see Details).}
 }}
 \source{
   Gen1 information comes from the Summer 2013 release of
