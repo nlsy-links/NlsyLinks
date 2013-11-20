@@ -274,7 +274,7 @@ oName_S2 <- "HeightZGenderAge_S2"
   
 #Step 8: Summarize the R groups and determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
-rGroupsToDrop <- c( 0 )
+rGroupsToDrop <- c( 0.0625 )
 dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE
 dsGroupSummary
 
