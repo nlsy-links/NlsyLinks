@@ -93,7 +93,7 @@ This package considers both Gen1 and Gen2 subjects.  \textbf{Gen1} refers to sub
 
 Standard terminology is to refer Gen2 subjects as `children' when they are younger than age 15 (NSLY79-C), and as `young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as `NLSY79-C', `NLSY79C', `NLSY-C' or `NLSYC'. 
 
-Within our own team, weve mostly stopped using terms like `NLSY79', `NLSY79-C' and `NLSY79-YA', because we conceptualize it as one big sample containing two related generations.  It many senses, the responses collected from the second generation can be viewed as outcomes of the first generation.  Likewise, the parents in the first generation provide many responses that can be viewed as explanatory variables for the 2nd generation.  Depending on your research, there can be big advantages of using one cohort to augment the other.  There are also survey items that provide information about the 3rd generation and the 0th generation.
+Within our own team, we've mostly stopped using terms like `NLSY79', `NLSY79-C' and `NLSY79-YA', because we conceptualize it as one big sample containing two related generations.  It many senses, the responses collected from the second generation can be viewed as outcomes of the first generation.  Likewise, the parents in the first generation provide many responses that can be viewed as explanatory variables for the 2nd generation.  Depending on your research, there can be big advantages of using one cohort to augment the other.  There are also survey items that provide information about the 3rd generation and the 0th generation.
 
 The \textbf{SubjectTag}\phantomsection\label{term:SubjectTag} variable uniquely identify NLSY79 subjects when a dataset contains both generations.  For Gen2 subjects, the \code{SubjectTag} is identical to their CID (\emph{i.e.}, C00001.00 -the ID assigned in the NLSY79-Children files).  However for Gen1 subjects, the \code{SubjectTag} is their CaseID (\emph{i.e.}, R00001.00), with ``00" appended.  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The \code{SubjectTag}s of her four children remain 4301, 4302, 4303, and 4304.
 
@@ -645,7 +645,7 @@ Notice the ACE estimates are very similar to the previous version, but the numbe
 
 One of our \href{https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330}{2013 BGA presentations}  discusses these benefits in the context of the current \pkg{NlsyLinks} package.  And our 2008 article accomplishes something similar using females in both generations:
 
-Rodgers, J. L., Bard, D., Johnson, A., DOnofrio, B., & Miller, W. B. (2008). \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables}. \emph{Behavior Genetics, 38}, 567-578.
+Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., \& Miller, W. B. (2008). \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables}. \emph{Behavior Genetics, 38}, 567-578.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Midstream data manipulation with SAS}
@@ -655,6 +655,7 @@ The example differs from the previous one substantial way: After \R{} is used to
 
 After a presentation, several audience members at the 2012 BGA meeting informed us that this vignette example would help them be more efficient.  This approach is also consistent with our feeling that analysts should use the workflow tools that are best suited to their needs and capabilities.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \section{Appendix: Receiving Help for the NlsyLinks Package}
 \label{sec:ReceivingHelp} A portion of our current grant covers a small, part-time support
@@ -723,7 +724,7 @@ Carey, Gregory (2002). \href{http://psych.colorado.edu/~carey/hgss/}{\emph{Human
 
 Plomin, Robert (1990). \href{http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s}{\emph{Nature and nurture: an introduction to human behavioral genetics}}.  Brooks/Cole Publishing Company.
 
-Rodgers, J. L., Bard, D., Johnson, A., DOnofrio, B., & Miller, W. B. (2008). \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables}. \emph{Behavior Genetics, 38}, 567-578.
+Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., \& Miller, W. B. (2008). \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables}. \emph{Behavior Genetics, 38}, 567-578.
 
 Rodgers, Joseph Lee, \& Kohler, Hans-Peter (2005). \href{http://www.springerlink.com/content/n3x1v1q282583366}{Reformulating and simplifying the DF analysis model}. \emph{Behavior Genetics, 35 (2)}, 211-217.
 
@@ -740,7 +741,7 @@ This package's development was largely supported by the NIH Grant 1R01HD65865, \
   \item Locale: \verb|LC_COLLATE=English_United States.1252|, \verb|LC_CTYPE=English_United States.1252|, \verb|LC_MONETARY=English_United States.1252|, \verb|LC_NUMERIC=C|, \verb|LC_TIME=English_United States.1252|
   \item Base packages: base, datasets, graphics, grDevices, methods, stats,
     utils
-  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.231
+  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.232
   \item Loaded via a namespace (and not attached): evaluate~0.5.1,
     formatR~0.10, highr~0.3, mnormt~1.4-5, pbivnorm~0.5-1, quadprog~1.5-5,
     stats4~3.0.2, stringr~0.6.2, tools~3.0.2
