@@ -26,7 +26,7 @@
 }
 \description{
   This function uses the \pkg{lavaan} package to estimate a
-  univariate ACE model, using multiple groups.  Each group
+  univariate ACE model, using multiple groups. Each group
   has a unique value of \code{R} (i.e., the
   \emph{R}elatedness coefficient).
 }

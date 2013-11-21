@@ -27,8 +27,8 @@
 #' 
 #' @references Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). \href{http://link.springer.com/book/10.1007/978-1-4614-7618-4}{\emph{Applied Spatial Data Analysis with R.}} New York: Springer. (Especially Chapter 9.)
 #' 
+#' The \pkg{spdep} package documentation: \url{http://cran.r-project.org/web/packages/spdep/index.html}
 #' 
-#' ##David, can you please give me some of the articles/books that you used this with?
 #' @author Will Beasley and  David Bard
 #' @note Notice the British variant of 'neighbo\emph{u}rs' is used, to be consistent with the \code{spatial.neighbour} class in the  \href{http://cran.r-project.org/web/packages/spdep/index.html}{\code{spdep}} package.
 #' @examples

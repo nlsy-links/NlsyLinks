@@ -49,7 +49,7 @@ Standard terminology is to refer Gen2 subjects as `children' when they are young
 
 The \textbf{SubjectTag}\phantomsection\label{term:SubjectTag} variable uniquely identify NLSY79 subjects when a dataset contains both generations.  For Gen2 subjects, the \code{SubjectTag} is identical to their CID (\emph{i.e.}, C00001.00 -the ID assigned in the NLSY79-Children files).  However for Gen1 subjects, the \code{SubjectTag} is their CaseID (\emph{i.e.}, R00001.00), with ``00" appended.  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The \code{SubjectTag}s of her four children remain 4301, 4302, 4303, and 4304.
 
-The \textbf{expected coefficient of relatedness} of a pair of subjects is typically represented by the variable \code{R}.  Examples are: Monozygotic twins have \code{R}=1; dizygotic twins have \code{R}=0.5; full siblings (\emph{i.e.}, those who share both biological parents) have \code{R}=0.5;  half-siblings (\emph{i.e.}, those who share exactly one biological parent) have \code{R}=0.25; adopted siblings have \code{R}=0.0.  Other possibilities exist too.  The font (and hopefully their context) should distinguish the variable \code{R} from the software \R{}.
+The \textbf{expected coefficient of relatedness} of a pair of subjects is typically represented by the statistical variable \emph{R}.  Examples are: Monozygotic twins have \emph{R}=1; dizygotic twins have \emph{R}=0.5; full siblings (\emph{i.e.}, those who share both biological parents) have \emph{R}=0.5;  half-siblings (\emph{i.e.}, those who share exactly one biological parent) have \emph{R}=0.25; adopted siblings have \emph{R}=0.0.  Other uncommon possibilities are mentioned the documentation for \code{Links79Pair}.  The font (and hopefully their context) should distinguish the variable \emph{R} from the software \R{}. To make things slightly more confusing the computer variable for \emph{R} in the \code{Links79Pair} dataset is written with a monospace font: \code{R}.
 
 A subject's \code{\textbf{ExtendedID}} indicates their extended family.  Two subjects will be in the same extended family if either: [1] they are Gen1 housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (\emph{i.e.}, they have mothers who are Gen1 sisters in the NLSY79), [4] they are mother and child (in Gen1 and Gen2, respectively), or [5] they are (aunt|uncle) and (niece|nephew) (in Gen1 and Gen2, respectively).
 
@@ -58,7 +58,8 @@ An \textbf{outcome variable} is directly relevant to the applied researcher; the
 An ACE model is the basic biometrical model used by Behavior Genetic researchers, where the genetic and environmental effects are assumed to be additive. The three primary variance components are (1) the proportion of variability due to a shared genetic influence (typically represented as $a^2$, or sometimes $h^2$), (2) the proportion of variability due to shared common environmental influence (typically $c^2$), and (3) the proportion of variability due to unexplained/residual/error influence (typically $e^2$).  
 
 The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend Plomin (1990) and Carey (2003).  For more in-depth ACE model-fitting strategies, we recommend Neale \& Cardon (1992). 
-//This paragraph may get moved to the yet-to-be-written introduction that precedes the Terminology section.
+
+%%This paragraph may get moved to the yet-to-be-written introduction that precedes the Terminology section.
 
 The \textbf{NLS Investigator}\phantomsection\label{term:NlsInvestigator} (\url{http://www.nlsinfo.org/investigator/}) is the best way to obtain the NLSY79 and NLSY97 datasets.  See our vignette dedicated to the NLS Investigator by typing\\ \code{vignette("NlsInvestigator")} or by visiting \url{http://cran.r-project.org/web/packages/NlsyLinks/}.
 
@@ -68,7 +69,7 @@ any(.packages(all.available=TRUE) == "NlsyLinks") #Should evaluate to TRUE.
 require(NlsyLinks) #Load the package into the current session.
 @
 The package's documentation manual can be opened by typing \code{?NlsyLinks} in
-\R{} or RStudio.
+\R{} or RStudio's "Packages" tab (which is usually in the lower right panel).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%

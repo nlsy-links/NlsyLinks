@@ -512,23 +512,19 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 
 \hlcom{#Step 8: Summarize the R groups and determine which groups can be estimated.}
 \hlstd{dsGroupSummary} \hlkwb{<-} \hlkwd{RGroupSummary}\hlstd{(dsSingle, oName_S1, oName_S2)}
-\hlstd{rGroupsToDrop} \hlkwb{<-} \hlkwd{c}\hlstd{(} \hlnum{0} \hlstd{)}
-\hlstd{dsGroupSummary[dsGroupSummary}\hlopt{$}\hlstd{R} \hlopt{%in%} \hlstd{rGroupsToDrop,} \hlstr{"Included"}\hlstd{]} \hlkwb{<-} \hlnum{FALSE}
+\hlcom{# rGroupsToDrop <- c( 0.0625 )}
+\hlcom{# dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE}
 \hlstd{dsGroupSummary}
 \end{alltt}
 \begin{verbatim}
-##        R Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
-## 1 0.0625     TRUE        39 -0.41369 -0.11681     0.8379     0.8275         0.2421
-## 2 0.1250     TRUE        64 -0.18330 -0.55856     0.8123     0.9389         0.1010
-## 3 0.2500     TRUE       280  0.04830  0.05605     1.0182     1.1847         0.2656
-## 4 0.5000     TRUE      3894 -0.04987 -0.02789     0.9736     1.0194         0.4660
-## 5 1.0000     TRUE        11 -0.08652 -0.00904     0.3171     0.9518         0.3583
+##      R Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
+## 1 0.25     TRUE       280  0.04830  0.05605     1.0182     1.1847         0.2656
+## 2 0.50     TRUE      3894 -0.04987 -0.02789     0.9736     1.0194         0.4660
+## 3 1.00     TRUE        11 -0.08652 -0.00904     0.3171     0.9518         0.3583
 ##   Correlation Determinant PosDefinite
-## 1      0.2907      0.6347        TRUE
-## 2      0.1157      0.7525        TRUE
-## 3      0.2418      1.1357        TRUE
-## 4      0.4678      0.7752        TRUE
-## 5      0.6522      0.1734        TRUE
+## 1      0.2418      1.1357        TRUE
+## 2      0.4678      0.7752        TRUE
+## 3      0.6522      0.1734        TRUE
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 9: Create a cleaned dataset}
@@ -541,7 +537,7 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 \begin{verbatim}
 ## [1] "Results of ACE estimation: [show]"
 ##  ASquared  CSquared  ESquared CaseCount 
-##    0.6870    0.1210    0.1919 4288.0000
+##    0.7040    0.1124    0.1836 4185.0000
 \end{verbatim}
 \begin{alltt}
 \hlcom{#Step 11: Inspect the output further (see the final step in the previous example).}
@@ -550,7 +546,7 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 \end{knitrout}
 
 
-Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.  **Joe, is there anything else you'd like to say about this here?**
+Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.
 
 If you wish to exclude additional groups from the analyses, one line of code in Step 8 should change.  For instance, two exclude ambiguous sibs (in addition to $R=0$ pairs), change\\ \code{rGroupsToDrop <- c( 0 )} \\to \\ \code{rGroupsToDrop <- c( 0, .375 )}.
 
@@ -641,7 +637,7 @@ This package's development was largely supported by the NIH Grant 1R01HD65865, \
   \item Locale: \verb|LC_COLLATE=English_United States.1252|, \verb|LC_CTYPE=English_United States.1252|, \verb|LC_MONETARY=English_United States.1252|, \verb|LC_NUMERIC=C|, \verb|LC_TIME=English_United States.1252|
   \item Base packages: base, datasets, graphics, grDevices, methods, stats,
     utils
-  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.228
+  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.229
   \item Loaded via a namespace (and not attached): evaluate~0.5.1,
     formatR~0.10, highr~0.3, mnormt~1.4-5, pbivnorm~0.5-1, quadprog~1.5-5,
     stats4~3.0.2, stringr~0.6.2, tools~3.0.2

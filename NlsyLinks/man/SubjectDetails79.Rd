@@ -18,8 +18,8 @@ variables.
    \item{KidCountBio}{The number of biological children known to the NLSY (but not necessarily interviewed by the NLSY.}
    \item{KidCountInNls}{The number of children who belong to the NLSY. This is nonnull for only Gen1 subjects.}
    \item{Mob}{The subject's month of birth.  The exact day is not available to the public.  By default, we set their birthday to the 15th day of the month.}
-   \item{LastSurveyYearCompleted}{##This variable is not available yet## The year of the most recently completed survey.}
-   \item{AgeAtLastSurvey}{##This variable is not available yet## The subject's age at the most recently completed survey.}
+   \item{LastSurveyYearCompleted}{The year of the most recently completed survey.}
+   \item{AgeAtLastSurvey}{The subject's age at the most recently completed survey.}
    \item{IsDead}{##This variable is not available yet## Indicates if the subject was alive for the last attempted survey.}
    \item{DeathDate}{##This variable is not available yet## The subject's month of death.  The exact day is not available to the public. By default, we set their birthday to the 15th day of the month.}
 }}

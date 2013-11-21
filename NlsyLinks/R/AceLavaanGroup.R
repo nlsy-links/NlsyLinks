@@ -1,7 +1,8 @@
 #' A simple multiple-group ACE model with the \pkg{lavaan} package.
 #' 
 #' @export
-#' @description This function uses the \pkg{lavaan} package to estimate a univariate ACE model, using multiple groups.  Each group has a unique value of \code{R} (i.e., the \emph{R}elatedness coefficient).
+#' @description This function uses the \pkg{lavaan} package to estimate a univariate ACE model, using multiple groups.  
+#' Each group has a unique value of \code{R} (i.e., the \emph{R}elatedness coefficient).
 #' @usage AceLavaanGroup(dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE)
 #' 
 #' @param dsClean The \code{data.frame} containing complete cases for the \code{R} groups to be included in the estimation.

@@ -87,8 +87,8 @@ table(spGen2$weight)
   Spatial Data Analysis with R.}} New York: Springer.
   (Especially Chapter 9.)
 
-  ##David, can you please give me some of the
-  articles/books that you used this with?
+  The \pkg{spdep} package documentation:
+  \url{http://cran.r-project.org/web/packages/spdep/index.html}
 }
 \keyword{analysis}
 \keyword{spatial}

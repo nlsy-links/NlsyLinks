@@ -7,6 +7,6 @@
 \contentsline {section}{\numberline {A}Appendix: Receiving Help for the NlsyLinks Package}{11}{appendix.A}
 \contentsline {section}{\numberline {B}Appendix: Creating and Saving R Scripts}{11}{appendix.B}
 \contentsline {section}{\numberline {C}Appendix: Installing and Loading the NlsyLinks Package}{11}{appendix.C}
-\contentsline {section}{\numberline {D}Appendix: References}{12}{appendix.D}
+\contentsline {section}{\numberline {D}Appendix: References}{11}{appendix.D}
 \contentsline {section}{\numberline {E}Notes}{12}{appendix.E}
 \contentsline {section}{\numberline {F}Version Information}{12}{appendix.F}

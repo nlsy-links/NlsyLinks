@@ -14,7 +14,7 @@
 #' \code{CreatePairLinksSingleEntered} now by default append \code{_S1} and \code{_S2}, instead of \code{_1} and \code{_2}.  However this can be 
 #' modified using the `subject1Qualifier` and `subject2Qualifier` parameters.
 #' 
-#' @details Specifies the relatedness coefficient (ie, `\code{R}') between subjects in the
+#' @details Specifies the relatedness coefficient (ie, `\emph{R}') between subjects in the
 #' same extended family.  Each row represents a unique relationship pair.  An
 #' extended family with \eqn{k} subjects will have \eqn{k}(\eqn{k}-1)/2 rows.
 #' Typically, Subject1 is older while Subject2 is younger.
@@ -30,7 +30,7 @@
 #' variables/columns.
 #' 
 #' 
-#' The specific steps to determine the \code{R} coefficient will be described
+#' The specific steps to determine the \emph{R} coefficient will be described
 #' in an upcoming publication.  The following information may influence the
 #' decisions of an applied researcher.
 #' 
@@ -76,14 +76,14 @@
 #' \item{IsMz}{Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels \code{No}=0, \code{Yes}=1, \code{DoNotKnow}=255.} 
 #' \item{LastSurvey_S1}{The year of Subject1's most recently completed survey. This may be different that the survey's administration date.} 
 #' \item{LastSurvey_S2}{The year of Subject2's most recently completed survey. This may be different that the survey's administration date.} 
-#' \item{RImplicitPass1}{The pair's R coefficient, using only implicit information.  Interpolation was NOT used.} 
-#' \item{RImplicit}{The pair's R coefficient, using only implicit information.  Interpolation was used.}
-#' \item{RImplicit2004}{The pair's R coefficient released in our previous projects (**need reference**).  This variable is provided primarily for previous users wishing to replicate previous analyses.}
-#' \item{RExplicitPass1}{The pair's R coefficient, using only explicit information.  Interpolation was NOT used.} 
-#' \item{RExplicit}{The pair's R coefficient, using only explicit information.  Interpolation was used.} 
-#' \item{RExplicitOlderSibVersion}{The pair's R coefficient, according to the explicit item responses of the older sibling.}
-#' \item{RExplicitYoungerSibVersion}{The pair's R coefficient, according to the explicit item responses of the younger sibling.}
-#' \item{RPass1}{The pair's estimated R coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable \code{R} is identically constructed, but it did use interpolation.} 
+#' \item{RImplicitPass1}{The pair's \emph{R} coefficient, using only implicit information.  Interpolation was NOT used.} 
+#' \item{RImplicit}{The pair's \emph{R} coefficient, using only implicit information.  Interpolation was used.}
+#' \item{RImplicit2004}{The pair's \emph{R} coefficient released in our previous projects (**need reference**).  This variable is provided primarily for previous users wishing to replicate previous analyses.}
+#' \item{RExplicitPass1}{The pair's \emph{R} coefficient, using only explicit information.  Interpolation was NOT used.} 
+#' \item{RExplicit}{The pair's \emph{R} coefficient, using only explicit information.  Interpolation was used.} 
+#' \item{RExplicitOlderSibVersion}{The pair's \emph{R} coefficient, according to the explicit item responses of the older sibling.}
+#' \item{RExplicitYoungerSibVersion}{The pair's \emph{R} coefficient, according to the explicit item responses of the younger sibling.}
+#' \item{RPass1}{The pair's estimated \emph{R} coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable \code{R} is identically constructed, but it did use interpolation.} 
 #' \item{Generation_S1}{The generation of the first subject.  Values for Gen1 and Gen2 are \code{1} and \code{2}, respectively.} 
 #' \item{Generation_S2}{The generation of the second subject.  Values for Gen1 and Gen2 are \code{1} and \code{2}, respectively.} 
 #' \item{SubjectID_S1}{The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).}
