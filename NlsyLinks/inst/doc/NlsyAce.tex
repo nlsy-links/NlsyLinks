@@ -571,7 +571,28 @@ If you wish to exclude additional groups from the analyses, Step 8 should change
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Multiple Group SEM of a Simple Outcome all pairs in Gen1 and Gen2}
-The example differs from the previous one in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small \emph{R} groups that are difficult to estimate, or (b) if the value for adult height is missing.
+The example differs from the previous example in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small \emph{R} groups that are difficult to estimate, or (b) if the value for adult height is missing.  This includes all 42,773 relationships in the follow five types of NLSY79 relationships.  
+% latex table generated in R 3.0.2 by xtable 1.7-1 package
+% Thu Nov 21 11:40:34 2013
+\begin{table}[ht]
+\centering
+\begin{tabular}{rr}
+  \hline
+ & Relationship Frequency \\ 
+  \hline
+Gen1Housemates & 5,302 \\ 
+  Gen2Siblings & 11,088 \\ 
+  Gen2Cousins & 4,995 \\ 
+  ParentChild & 11,504 \\ 
+  AuntNiece & 9,884 \\ 
+   \hline
+\end{tabular}
+\caption{Number of NLSY79 relationship, by \code{RelationshipPath}.  (Recall that `AuntNiece' also contains uncles and nephews.)} 
+\end{table}
+
+
+
+In our opinion, using the intergenerational links is one of the most exciting new opportunities for NLSY researchers to pursue.  We will be happy to facilitate such research through consult or collaboration, or even by generating new data structures that may be of value.  The complete kinship linking file facilitates many different kinds of cross-generational research, using both biometrical and other kinds of modeling methods.
 
 
 \begin{knitrout}
@@ -643,15 +664,19 @@ The example differs from the previous one in one way --all possible pairs are co
 
 Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of \emph{subjects} doubles when Gen2 is added, and the number of \emph{relationship pairs} really takes off.  When an extended family's whole pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the popluation's $a^2$ is small or moderate, instead of something large like 0.7.
 
+The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs.  Our MDAN paper presents a GEE method for handling this (p. 572).  The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.
+
 One of our \href{https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330}{2013 BGA presentations}  discusses these benefits in the context of the current \pkg{NlsyLinks} package.  And our 2008 article accomplishes something similar using females in both generations:
 
 Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., \& Miller, W. B. (2008). \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables}. \emph{Behavior Genetics, 38}, 567-578.
 
+Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{\emph{Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model}}. Behavior Genetics Association 42nd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Midstream data manipulation with SAS}
-\emph{Mike Hunter is writing a separate vignette for this example.  The SAS code is written, and the surrounding text is the only thing remaining.  Contact us if you're interested in a pre-release version.  We'll post the polished version in the \href{https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330}{`other-software' location} in our \href{https://r-forge.r-project.org/forum/?group_id=1330}{forums}. }
+\emph{Mike Hunter is writing a separate vignette for this example.  The SAS code is complete, and the surrounding text is the only thing remaining.  Contact us if you're interested in a pre-release version.  We'll post the polished version in the \href{https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330}{`other-software' location} in our online \href{https://r-forge.r-project.org/forum/?group_id=1330}{forums} within the next 2-4 weeks. }
 
-The example differs from the previous one substantial way: After \R{} is used to link the related pairs, and connect them to their outcome values, the dataset is exported so that the user can further manipulate the data in SAS.  
+The example differs from the previous example  inone substantial way: After \R{} is used to link the related pairs, and connect them to their outcome values, the dataset is exported so that the user can further manipulate the data in SAS.  
 
 After a presentation, several audience members at the 2012 BGA meeting informed us that this vignette example would help them be more efficient.  This approach is also consistent with our feeling that analysts should use the workflow tools that are best suited to their needs and capabilities.
 
@@ -741,10 +766,12 @@ This package's development was largely supported by the NIH Grant 1R01HD65865, \
   \item Locale: \verb|LC_COLLATE=English_United States.1252|, \verb|LC_CTYPE=English_United States.1252|, \verb|LC_MONETARY=English_United States.1252|, \verb|LC_NUMERIC=C|, \verb|LC_TIME=English_United States.1252|
   \item Base packages: base, datasets, graphics, grDevices, methods, stats,
     utils
-  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.232
-  \item Loaded via a namespace (and not attached): evaluate~0.5.1,
-    formatR~0.10, highr~0.3, mnormt~1.4-5, pbivnorm~0.5-1, quadprog~1.5-5,
-    stats4~3.0.2, stringr~0.6.2, tools~3.0.2
+  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.300,
+    xtable~1.7-1
+  \item Loaded via a namespace (and not attached): colorspace~1.2-4,
+    dichromat~2.0-0, evaluate~0.5.1, formatR~0.10, highr~0.3, labeling~0.2,
+    mnormt~1.4-5, munsell~0.4.2, pbivnorm~0.5-1, plyr~1.8, quadprog~1.5-5,
+    RColorBrewer~1.0-5, scales~0.2.3, stats4~3.0.2, stringr~0.6.2, tools~3.0.2
 \end{itemize}
 
 

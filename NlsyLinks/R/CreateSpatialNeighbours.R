@@ -25,9 +25,17 @@
 #' 
 #' The attribue \code{n} specifies the number of unique subjects.
 #' 
-#' @references Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). \href{http://link.springer.com/book/10.1007/978-1-4614-7618-4}{\emph{Applied Spatial Data Analysis with R.}} New York: Springer. (Especially Chapter 9.)
+#' @references 
 #' 
-#' The \pkg{spdep} package documentation: \url{http://cran.r-project.org/web/packages/spdep/index.html}
+#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \emph{Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model}. Behavior Genetics Association 42nd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}] [\href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{Abstract}]
+#' 
+#' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). \href{http://link.springer.com/book/10.1007/978-1-4614-7618-4}{\emph{Applied Spatial Data Analysis with R.}} New York: Springer. (Especially Chapter 9.)
+#' 
+#' Banerjee, S., Carlin, B.P., & Gelfand, A.E. (2004). \href{http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C}{\emph{Hierarchical Modeling and Analysis for Spatial Data}}. Boca Raton: CRC Press.
+#' 
+#' Lawson, A.B (2013). \href{http://books.google.com/books?id=g7RJEZb1umwC}{\emph{Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition}}. Boca Raton: CRC Press.
+#' 
+#' The \pkg{spdep} package documentation: \href{http://cran.r-project.org/web/packages/spdep/index.html}{spdep: Spatial dependence: weighting schemes, statistics and models}.
 #' 
 #' @author Will Beasley and  David Bard
 #' @note Notice the British variant of 'neighbo\emph{u}rs' is used, to be consistent with the \code{spatial.neighbour} class in the  \href{http://cran.r-project.org/web/packages/spdep/index.html}{\code{spdep}} package.

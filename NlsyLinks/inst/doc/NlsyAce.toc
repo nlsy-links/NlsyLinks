@@ -4,10 +4,10 @@
 \contentsline {section}{\numberline {4}Example: Multiple Group SEM of a Simple Outcome for Gen2 Subjects}{7}{section.4}
 \contentsline {section}{\numberline {5}Example: Multiple Group SEM of a Simple Outcome for Gen1 Subjects}{9}{section.5}
 \contentsline {section}{\numberline {6}Example: Multiple Group SEM of a Simple Outcome all pairs in Gen1 and Gen2}{11}{section.6}
-\contentsline {section}{\numberline {7}Example: Midstream data manipulation with SAS}{12}{section.7}
-\contentsline {section}{\numberline {A}Appendix: Receiving Help for the NlsyLinks Package}{12}{appendix.A}
+\contentsline {section}{\numberline {7}Example: Midstream data manipulation with SAS}{13}{section.7}
+\contentsline {section}{\numberline {A}Appendix: Receiving Help for the NlsyLinks Package}{13}{appendix.A}
 \contentsline {section}{\numberline {B}Appendix: Creating and Saving R Scripts}{13}{appendix.B}
 \contentsline {section}{\numberline {C}Appendix: Installing and Loading the NlsyLinks Package}{13}{appendix.C}
-\contentsline {section}{\numberline {D}Appendix: References}{13}{appendix.D}
+\contentsline {section}{\numberline {D}Appendix: References}{14}{appendix.D}
 \contentsline {section}{\numberline {E}Notes}{14}{appendix.E}
 \contentsline {section}{\numberline {F}Version Information}{14}{appendix.F}

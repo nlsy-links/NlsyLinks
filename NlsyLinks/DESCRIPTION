@@ -2,7 +2,7 @@ Package: NlsyLinks
 Type: Package
 Title: Utilities and kinship information for behavior genetics and
     developmental research using the NLSY.
-Version: 1.233
+Version: 1.300
 Date: 2013-11-21
 Author: Will Beasley, Joe Rodgers, David Bard, Michael Hunter, and Kelly
     Meredith
@@ -21,8 +21,10 @@ Suggests:
     ggplot2,
     knitr,
     plyr,
+    scales,
     testit,
-    testthat
+    testthat,
+    xtable
 License: GPL
 LazyData: TRUE
 VignetteBuilder: knitr

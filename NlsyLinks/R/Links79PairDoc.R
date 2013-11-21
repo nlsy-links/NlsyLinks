@@ -50,24 +50,24 @@
 #' younger.
 #' 
 #' MZ twins have \emph{R}=1.  DZ twins and full-siblings have \emph{R}=.5.
-#' Half-siblings have \emph{R}=.25. Typical first cousins have \emph{R}=.125
+#' Half-siblings have \emph{R}=.25. Typical first cousins have \emph{R}=.125.
 #' Unrelated subjects have \emph{R}=0 (this occasionally happens for
 #' \code{Gen1Housemates}).  Other \emph{R} coefficients are possible. 
 #' 
 #' There are several other uncommon possibilities, such as half-cousins (\emph{R}=.0625) and 
-#' ambiguous aunt-nieces (\emph{R}=.125). The variable \code{R} in \code{Links79Pair} contains
+#' ambiguous aunt-nieces (\emph{R}=.125). The variable coding for genetic relatedness,\code{R}, in \code{Links79Pair} contains
 #' only the common values of \emph{R} whose groups are likely to have stable estimates.  
 #' However the variable \code{RFull} in \code{Links79PairExpanded} contains all \emph{R} values.
 #' We strongly recommend using \code{R} in this \code{data.frame}.  Move to 
 #' \code{RFull} (or some combination) only if you have a good reason, and are willing
 #' to carefully monitor a variety of validity checks.  Some of these
-#' excluded groups are too small to be estimated with stability.  
+#' excluded groups are too small to be estimated reliably.  
 #' 
-#' Furthermore, some of these groups have members who are most likely more related than their 
-#' items indicate. For instance, there are 41 Gen1 pairs who explicitly claim they are not biologically related
+#' Furthermore, some of these groups have members who are more strongly genetically related than their 
+#' items would indicate. For instance, there are 41 Gen1 pairs who explicitly claim they are not biologically related
 #' (\emph{ie}, \code{RExplicit}=0), yet their correlation for Adult Height is \emph{r}=0.24.  This is
-#' much higher than would be expected for two people sampled randomly; it is only 
-#' slightly less than the \emph{r}=0.26 for the 268 Gen1 half-sibling pairs who claim they share exactly 1
+#' much higher than would be expected for two people sampled randomly; it is nearly identical to 
+#' the \emph{r}=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
 #' biological parent.
 #' 
 #' @author Will Beasley
