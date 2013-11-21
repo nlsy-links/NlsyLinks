@@ -21,21 +21,19 @@
 #' The default determinantThreshold value is nonzero, in order to forgive slight numerical inaccuracies caused by fixed-precision arithmetic.
 #' 
 #' @return A \code{data.frame} with one row per group.  The \code{data.frame} contains the following variables:
-#' \item{ R }{The group's \code{R} value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the \code{rName} argument.}
-#' \item{ Included }{Indicates if the group should be included in a multiple-group SEM.}
-#' \item{ PairCount }{The number of pairs in the group with \emph{complete} data for \code{R} and the two outcome/manifest variables.}
+#' \item{ R }{ The group's \code{R} value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the \code{rName} argument.}
+#' \item{ Included }{ Indicates if the group should be included in a multiple-group SEM.}
+#' \item{ PairCount }{ The number of pairs in the group with \emph{complete} data for \code{R} and the two outcome/manifest variables.}
 #' \item{ O1Mean }{ The mean (of the outcome variable) among the group's first members, excluding the missing values. }
 #' \item{ O2Mean }{ The mean (of the outcome variable) among the group's second members, excluding the missing values. }
 #' \item{ O1Variance }{ The variance (of the outcome variable) among the group's first members. }
 #' \item{ O2Variance }{ The variance (of the outcome variable) among the group's second members. }
 #' \item{ O1O2Covariance }{ The covariance (of the outcome variable) across the group's first and second members.}
-#' \item{ Correlation }{The correlation (of the outcome variable) across the group's first and second members.}
+#' \item{ Correlation }{ The correlation (of the outcome variable) across the group's first and second members.}
 #' \item{ Determinant }{ The determinant of the group's covariance matrix.}
 #' \item{ PosDefinite }{ Indicates if the group's covariance matrix is positive definite.}
 #' 
-#' @references Please see ZZZ (200?) for more information about SEM with multiple groups.
-#' 
-#' TODO: refs for determinant & positive definite.
+#' @references Please see \href{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}{Neale & Maes} for more information about SEM with multiple groups.
 #' 
 #' @author Will Beasley and David Bard
 #' 
@@ -92,9 +90,7 @@ function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
   
   #ds <- subset(ds, R==.75)
   rLevelsFirstPass <- sort(unique(ds[,rName])) #Enumerate the values of R existing in the current data.frame.
-  #determinantThreshold <- 0 #The value the determinent should exceed to qualify as positive definite. TODO: Consider allowing the user to increase this value a little above zero, for extra stability.
-#   determinantThreshold <- 1e-5 #The value the determinent should exceed to qualify as positive definite. TODO: Consider allowing the user to increase this value a little above zero, for extra stability.
-  dsGroupSummary <- data.frame(
+   dsGroupSummary <- data.frame(
     R=rLevelsFirstPass, Included=F, PairCount=NA, O1Mean=NA, O2Mean=NA,
     O1Variance=NA, O2Variance=NA, O1O2Covariance=NA, Correlation=NA, 
     Determinant=NA, PosDefinite=FALSE)

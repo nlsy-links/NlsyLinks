@@ -47,6 +47,8 @@ This package considers both Gen1 and Gen2 subjects.  \textbf{Gen1} refers to sub
 
 Standard terminology is to refer Gen2 subjects as `children' when they are younger than age 15 (NSLY79-C), and as `young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as `NLSY79-C', `NLSY79C', `NLSY-C' or `NLSYC'. 
 
+Within our own team, we’ve mostly stopped using terms like `NLSY79', `NLSY79-C' and `NLSY79-YA', because we conceptualize it as one big sample containing two related generations.  It many senses, the responses collected from the second generation can be viewed as outcomes of the first generation.  Likewise, the parents in the first generation provide many responses that can be viewed as explanatory variables for the 2nd generation.  Depending on your research, there can be big advantages of using one cohort to augment the other.  There are also survey items that provide information about the 3rd generation and the 0th generation.
+
 The \textbf{SubjectTag}\phantomsection\label{term:SubjectTag} variable uniquely identify NLSY79 subjects when a dataset contains both generations.  For Gen2 subjects, the \code{SubjectTag} is identical to their CID (\emph{i.e.}, C00001.00 -the ID assigned in the NLSY79-Children files).  However for Gen1 subjects, the \code{SubjectTag} is their CaseID (\emph{i.e.}, R00001.00), with ``00" appended.  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The \code{SubjectTag}s of her four children remain 4301, 4302, 4303, and 4304.
 
 The \textbf{expected coefficient of relatedness} of a pair of subjects is typically represented by the statistical variable \emph{R}.  Examples are: Monozygotic twins have \emph{R}=1; dizygotic twins have \emph{R}=0.5; full siblings (\emph{i.e.}, those who share both biological parents) have \emph{R}=0.5;  half-siblings (\emph{i.e.}, those who share exactly one biological parent) have \emph{R}=0.25; adopted siblings have \emph{R}=0.0.  Other uncommon possibilities are mentioned the documentation for \code{Links79Pair}.  The font (and hopefully their context) should distinguish the variable \emph{R} from the software \R{}. To make things slightly more confusing the computer variable for \emph{R} in the \code{Links79Pair} dataset is written with a monospace font: \code{R}.
@@ -57,19 +59,19 @@ An \textbf{outcome variable} is directly relevant to the applied researcher; the
 
 An ACE model is the basic biometrical model used by Behavior Genetic researchers, where the genetic and environmental effects are assumed to be additive. The three primary variance components are (1) the proportion of variability due to a shared genetic influence (typically represented as $a^2$, or sometimes $h^2$), (2) the proportion of variability due to shared common environmental influence (typically $c^2$), and (3) the proportion of variability due to unexplained/residual/error influence (typically $e^2$).  
 
-The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend Plomin (1990) and Carey (2003).  For more in-depth ACE model-fitting strategies, we recommend Neale \& Cardon (1992). 
+The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend \href{http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s}{Plomin (1990)} and \href{http://psych.colorado.edu/~carey/hgss/}{Carey (2003)}.  For more in-depth ACE model-fitting strategies, we recommend \href{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}){Neale \& Maes, (1992)}. 
 
 %%This paragraph may get moved to the yet-to-be-written introduction that precedes the Terminology section.
 
 The \textbf{NLS Investigator}\phantomsection\label{term:NlsInvestigator} (\url{http://www.nlsinfo.org/investigator/}) is the best way to obtain the NLSY79 and NLSY97 datasets.  See our vignette dedicated to the NLS Investigator by typing\\ \code{vignette("NlsInvestigator")} or by visiting \url{http://cran.r-project.org/web/packages/NlsyLinks/}.
 
-Before starting the real examples, first verify that the \pkg{NlsyLinks} package is installed correctly.  If not, refer to \hyperref[sec:InstallingPackage]{Appendix \ref*{sec:InstallingPackage}}.
+Before starting the real examples, first verify that the \pkg{NlsyLinks} package is installed correctly.  If not, please refer to \hyperref[sec:InstallingPackage]{Appendix \ref*{sec:InstallingPackage}}.
 <<eval=TRUE,echo=TRUE>>=
 any(.packages(all.available=TRUE) == "NlsyLinks") #Should evaluate to TRUE.
 require(NlsyLinks) #Load the package into the current session.
 @
 The package's documentation manual can be opened by typing \code{?NlsyLinks} in
-\R{} or RStudio's "Packages" tab (which is usually in the lower right panel).
+\R{} or clicking the appropriate entry in RStudio's `Packages' tab (which is usually in the lower right panel).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,17 +112,17 @@ dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
 
 #Step 6: Create the double entered dataset.
 dsDouble <- CreatePairLinksDoubleEntered(
-  outcomeDataset=dsOutcomes, 
-  linksPairDataset=dsLinking,
-  outcomeNames=c('MathStandardized')
+  outcomeDataset   = dsOutcomes, 
+  linksPairDataset = dsLinking,
+  outcomeNames     = c('MathStandardized')
 )
 summary(dsDouble) #Notice there are 22176=(2*11088) records now (two for each unique pair).
 
 #Step 7: Estimate the ACE components with a DF Analysis 
 ace <- DeFriesFulkerMethod3(
-    dataSet=dsDouble,  
-    oName_S1="MathStandardized_S1", 
-    oName_S2="MathStandardized_S2")
+    dataSet  = dsDouble,  
+    oName_S1 = "MathStandardized_S1", 
+    oName_S2 = "MathStandardized_S2")
 ace
 @
 
@@ -170,17 +172,17 @@ dsOutcomes$BirthWeightInOunces <- pmin(dsOutcomes$BirthWeightInOunces, 200)
 
 #Step 7: Create the double entered dataset.
 dsDouble <- CreatePairLinksDoubleEntered(
-  outcomeDataset=dsOutcomes, 
-  linksPairDataset=dsLinking,
-  outcomeNames=c('BirthWeightInOunces')
+  outcomeDataset   = dsOutcomes, 
+  linksPairDataset = dsLinking,
+  outcomeNames     = c('BirthWeightInOunces')
 )
 
 #Step 8: Estimate the ACE components with a DF Analysis 
 ace <- AceUnivariate(
-  method="DeFriesFulkerMethod3",
-  dataSet=dsDouble,
-  oName_S1="BirthWeightInOunces_S1", 
-  oName_S2="BirthWeightInOunces_S2"  
+  method   = "DeFriesFulkerMethod3",
+  dataSet  = dsDouble,
+  oName_S1 = "BirthWeightInOunces_S1", 
+  oName_S2 = "BirthWeightInOunces_S2"  
 )
 ace
 @
@@ -221,8 +223,11 @@ dsOutcomes <- ExtraOutcomes79
 dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
 
 #Step 6: Create the single entered dataset.
-dsSingle <- CreatePairLinksSingleEntered(outcomeDataset=dsOutcomes, 
-  linksPairDataset=dsLinking, outcomeNames=c('MathStandardized'))
+dsSingle <- CreatePairLinksSingleEntered(
+  outcomeDataset   = dsOutcomes, 
+  linksPairDataset = dsLinking, 
+  outcomeNames     = c('MathStandardized')
+)
 
 #Step 7: Declare the names for the two outcome variables. 
 oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
@@ -275,8 +280,6 @@ oName_S2 <- "HeightZGenderAge_S2"
   
 #Step 8: Summarize the R groups and determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
-# rGroupsToDrop <- c( 0.0625 )
-# dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE
 dsGroupSummary
 
 #Step 9: Create a cleaned dataset
@@ -291,7 +294,15 @@ ace
 
 Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.
 
-If you wish to exclude additional groups from the analyses, one line of code in Step 8 should change.  For instance, two exclude ambiguous sibs (in addition to $R=0$ pairs), change\\ \code{rGroupsToDrop <- c( 0 )} \\to \\ \code{rGroupsToDrop <- c( 0, .375 )}.
+If you wish to exclude additional groups from the analyses, Step 8 should change slightly.  For instance, to MZ twins, replace the two lines in Step 8 with the following four.  This is unlikely to be useful idea in the current example, and is more likely to be useful when using the \code{RFull} variable, which includes all values of \emph{R} we were able to determine.
+
+<<eval=FALSE, echo=TRUE, tidy=FALSE>>=
+#Step 8: Summarize the R groups and determine which groups can be estimated.
+dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
+rGroupsToDrop <- c( 1 )
+dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE
+dsGroupSummary
+@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Midstream data manipulation with SAS}

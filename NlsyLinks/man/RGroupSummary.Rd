@@ -25,11 +25,11 @@
 \value{
   A \code{data.frame} with one row per group.  The
   \code{data.frame} contains the following variables:
-  \item{ R }{The group's \code{R} value.  Note the name of
+  \item{ R }{ The group's \code{R} value.  Note the name of
   this variable can be changed by the user, by specifying a
   non-default value to the \code{rName} argument.} \item{
-  Included }{Indicates if the group should be included in a
-  multiple-group SEM.} \item{ PairCount }{The number of
+  Included }{ Indicates if the group should be included in
+  a multiple-group SEM.} \item{ PairCount }{ The number of
   pairs in the group with \emph{complete} data for \code{R}
   and the two outcome/manifest variables.} \item{ O1Mean }{
   The mean (of the outcome variable) among the group's
@@ -41,8 +41,8 @@
   O2Variance }{ The variance (of the outcome variable)
   among the group's second members. } \item{ O1O2Covariance
   }{ The covariance (of the outcome variable) across the
-  group's first and second members.} \item{ Correlation
-  }{The correlation (of the outcome variable) across the
+  group's first and second members.} \item{ Correlation }{
+  The correlation (of the outcome variable) across the
   group's first and second members.} \item{ Determinant }{
   The determinant of the group's covariance matrix.} \item{
   PosDefinite }{ Indicates if the group's covariance matrix
@@ -119,10 +119,10 @@ ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
   Will Beasley and David Bard
 }
 \references{
-  Please see ZZZ (200?) for more information about SEM with
-  multiple groups.
-
-  TODO: refs for determinant & positive definite.
+  Please see
+  \href{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}{Neale
+  & Maes} for more information about SEM with multiple
+  groups.
 }
 \keyword{ACE}
 
