@@ -509,8 +509,10 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 \hlcom{#The HeightZGenderAge variable is already groomed}
 
 \hlcom{#Step 6: Create the single entered dataset.}
-\hlstd{dsSingle} \hlkwb{<-} \hlkwd{CreatePairLinksSingleEntered}\hlstd{(}\hlkwc{outcomeDataset}\hlstd{=dsOutcomes,}
-  \hlkwc{linksPairDataset}\hlstd{=dsLinking,} \hlkwc{outcomeNames}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{'HeightZGenderAge'}\hlstd{))}
+\hlstd{dsSingle} \hlkwb{<-} \hlkwd{CreatePairLinksSingleEntered}\hlstd{(}
+  \hlkwc{outcomeDataset}   \hlstd{= dsOutcomes,}
+  \hlkwc{linksPairDataset} \hlstd{= dsLinking,}
+  \hlkwc{outcomeNames}     \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{'HeightZGenderAge'}\hlstd{))}
 
 \hlcom{#Step 7: Declare the names for the two outcome variables. }
 \hlstd{oName_S1} \hlkwb{<-} \hlstr{"HeightZGenderAge_S1"}
@@ -552,7 +554,7 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 
 Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.
 
-If you wish to exclude additional groups from the analyses, Step 8 should change slightly.  For instance, to MZ twins, replace the two lines in Step 8 with the following four.  This is unlikely to be useful idea in the current example, and is more likely to be useful when using the \code{RFull} variable, which includes all values of \emph{R} we were able to determine.
+If you wish to exclude additional groups from the analyses, Step 8 should change slightly.  For instance, to MZ twins, replace the two lines in Step 8 with the following four.  This is most for demonstration.  It is unlikely to be useful idea in the current example, and is more likely to be useful when using the \code{RFull} variable, which includes all values of \emph{R} we were able to determine.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -568,12 +570,90 @@ If you wish to exclude additional groups from the analyses, Step 8 should change
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Example: Multiple Group SEM of a Simple Outcome all pairs in Gen1 and Gen2}
+The example differs from the previous one in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small \emph{R} groups that are difficult to estimate, or (b) if the value for adult height is missing.
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects}
+\hlcom{#Steps 1-5 are explained in the vignette's first example:}
+\hlkwd{require}\hlstd{(NlsyLinks)}
+\hlstd{dsLinking} \hlkwb{<-} \hlkwd{subset}\hlstd{(Links79Pair, RelationshipPath} \hlopt{%in%}
+                      \hlkwd{c}\hlstd{(}\hlstr{"Gen1Housemates"}\hlstd{,} \hlstr{"Gen2Siblings"}\hlstd{,} \hlstr{"Gen2Cousins"}\hlstd{,}
+                        \hlstr{"ParentChild"}\hlstd{,} \hlstr{"AuntNiece"}\hlstd{))}
+\hlcom{#Because all five paths are specified, the line above is equivalent to:}
+\hlcom{#dsLinking <- Links79Pair}
+
+\hlstd{dsOutcomes} \hlkwb{<-} \hlstd{ExtraOutcomes79}
+\hlcom{#The HeightZGenderAge variable is already groomed}
+
+\hlcom{#Step 6: Create the single entered dataset.}
+\hlstd{dsSingle} \hlkwb{<-} \hlkwd{CreatePairLinksSingleEntered}\hlstd{(}
+  \hlkwc{outcomeDataset}   \hlstd{= dsOutcomes,}
+  \hlkwc{linksPairDataset} \hlstd{= dsLinking,}
+  \hlkwc{outcomeNames}     \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{'HeightZGenderAge'}\hlstd{))}
+
+\hlcom{#Step 7: Declare the names for the two outcome variables. }
+\hlstd{oName_S1} \hlkwb{<-} \hlstr{"HeightZGenderAge_S1"}
+\hlstd{oName_S2} \hlkwb{<-} \hlstr{"HeightZGenderAge_S2"}
+
+\hlcom{#Step 8: Summarize the R groups and determine which groups can be estimated.}
+\hlstd{dsGroupSummary} \hlkwb{<-} \hlkwd{RGroupSummary}\hlstd{(dsSingle, oName_S1, oName_S2)}
+\hlstd{dsGroupSummary}
+\end{alltt}
+\begin{verbatim}
+##        R Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
+## 1 0.0625     TRUE       202  0.22969 -0.07575     1.0509     0.8271         0.1112
+## 2 0.1250     TRUE      2422 -0.02213  0.01503     1.0335     0.9810         0.1488
+## 3 0.2500     TRUE      7135 -0.05440 -0.03888     1.0191     1.0296         0.2721
+## 4 0.3750     TRUE        46  0.22002 -0.10598     1.0662     0.9616         0.4293
+## 5 0.5000     TRUE     14865 -0.05763 -0.01739     0.9604     0.9849         0.4146
+## 6 0.7500    FALSE         0       NA       NA         NA         NA             NA
+## 7 1.0000     TRUE        27 -0.11092 -0.12601     0.6934     0.9891         0.6864
+##   Correlation Determinant PosDefinite
+## 1      0.1193      0.8569        TRUE
+## 2      0.1477      0.9917        TRUE
+## 3      0.2657      0.9752        TRUE
+## 4      0.4240      0.8409        TRUE
+## 5      0.4263      0.7740        TRUE
+## 6          NA          NA       FALSE
+## 7      0.8288      0.2148        TRUE
+\end{verbatim}
+\begin{alltt}
+\hlcom{#Step 9: Create a cleaned dataset}
+\hlstd{dsClean} \hlkwb{<-} \hlkwd{CleanSemAceDataset}\hlstd{(}\hlkwc{dsDirty}\hlstd{=dsSingle, dsGroupSummary, oName_S1, oName_S2)}
+
+\hlcom{#Step 10: Run the model}
+\hlstd{ace} \hlkwb{<-} \hlkwd{AceLavaanGroup}\hlstd{(dsClean)}
+\hlstd{ace}
+\end{alltt}
+\begin{verbatim}
+## [1] "Results of ACE estimation: [show]"
+##  ASquared  CSquared  ESquared CaseCount 
+## 7.365e-01 6.587e-02 1.977e-01 2.470e+04
+\end{verbatim}
+\begin{alltt}
+\hlcom{#Step 11: Inspect the output further (see the final step two examples above).}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of \emph{subjects} doubles when Gen2 is added, and the number of \emph{relationship pairs} really takes off.  When an extended family's whole pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the popluation's $a^2$ is small or moderate, instead of something large like 0.7.
+
+One of our \href{https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330}{2013 BGA presentations}  discusses these benefits in the context of the current \pkg{NlsyLinks} package.  And our 2008 article accomplishes something similar using females in both generations:
+
+Rodgers, J. L., Bard, D., Johnson, A., DOnofrio, B., & Miller, W. B. (2008). \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables}. \emph{Behavior Genetics, 38}, 567-578.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Midstream data manipulation with SAS}
+\emph{Mike Hunter is writing a separate vignette for this example.  The SAS code is written, and the surrounding text is the only thing remaining.  Contact us if you're interested in a pre-release version.  We'll post the polished version in the \href{https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330}{`other-software' location} in our \href{https://r-forge.r-project.org/forum/?group_id=1330}{forums}. }
+
 The example differs from the previous one substantial way: After \R{} is used to link the related pairs, and connect them to their outcome values, the dataset is exported so that the user can further manipulate the data in SAS.  
 
 After a presentation, several audience members at the 2012 BGA meeting informed us that this vignette example would help them be more efficient.  This approach is also consistent with our feeling that analysts should use the workflow tools that are best suited to their needs and capabilities.
-
-**Should we export/import as CSVs (which would make the R code much simpler, because the \pkg{foreign} package wouldn't have to be loaded), but increase the code necessary on the SAS side? I really don't want to mess with sasbdats and xports.**
 
 \appendix
 \section{Appendix: Receiving Help for the NlsyLinks Package}
@@ -618,7 +698,7 @@ For a given computer, you'll need to \emph{install} a package only once for each
 version of \R{} (new versions of \R{} are released every few months).  However, you'll need to \emph{load} a package in
 every session that you call its functions.  To \textbf{load} \pkg{NlsyLinks},
 type either \code{library(NlsyLinks)} or \code{require(NlsyLinks)}; (the
-difference between the two commands is likely irrelevant for your uses.) 
+difference between the two commands is likely irrelevant for most uses.) 
 Loading reads \pkg{NlsyLinks} information from the hard drive and places it in
 temporary memory.  Once it's loaded, you won't need to load it again until \R{}
 is closed and reopened later.
@@ -634,16 +714,22 @@ The grant supporting \pkg{NlsyLinks} extends until Summer 2014.  Until then,
 we'll be including new features and documentation, as we address additional user
 needs (if you have suggestions, we'd like to hear from you).  When the NLSY periodically updates its data, we'll
 update our kinship links (embedded in \pkg{NlsyLinks}) with the newest information.
+
+
 \section{Appendix: References} \label{sec:References}
-\href{http://psych.colorado.edu/~carey/hgss/}{Carey, Gregory (2002)}. \emph{Human Genetics for the Social Sciences}. Sage.
+A list of some articles that have used the NLSY for behavior genetics is available at: \url{https://github.com/LiveOak/NlsyLinksDetermination/wiki/Articles}.
 
-\href{http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s}{Plomin, Robert (1990)}. \emph{Nature and nurture: an introduction to human behavioral genetics}.  Brooks/Cole Publishing Company.
+Carey, Gregory (2002). \href{http://psych.colorado.edu/~carey/hgss/}{\emph{Human Genetics for the Social Sciences}}. Sage.
 
-\href{http://www.springerlink.com/content/n3x1v1q282583366}{Rodgers, Joseph Lee, \& Kohler, Hans-Peter (2005)}. Reformulating and simplifying the DF analysis model. \emph{Behavior Genetics, 35 (2)}, 211-217.
+Plomin, Robert (1990). \href{http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s}{\emph{Nature and nurture: an introduction to human behavioral genetics}}.  Brooks/Cole Publishing Company.
 
-\href{http://psycnet.apa.org/journals/dev/30/3/374/}{Rodgers, Joseph Lee, Rowe, David C., \& Li, Chengchang (1994)}. Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors. \emph{Developmental Psychology, 30 (3)}, 374-384. 
+Rodgers, J. L., Bard, D., Johnson, A., DOnofrio, B., & Miller, W. B. (2008). \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables}. \emph{Behavior Genetics, 38}, 567-578.
 
-\href{http://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC}{Neale, Michael C., \& Cardon, Lou R. (1992)}. \emph{Methodology for genetic studies of twins and families}. Norwell, MA: Kluwer Academic Publishers. (Also see Neale \& Maes: \url{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}).
+Rodgers, Joseph Lee, \& Kohler, Hans-Peter (2005). \href{http://www.springerlink.com/content/n3x1v1q282583366}{Reformulating and simplifying the DF analysis model}. \emph{Behavior Genetics, 35 (2)}, 211-217.
+
+Rodgers, Joseph Lee, Rowe, David C., \& Li, Chengchang (1994). \href{http://psycnet.apa.org/journals/dev/30/3/374/}{Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors}. \emph{Developmental Psychology, 30 (3)}, 374-384. 
+
+Neale, Michael C., \& Cardon, Lou R. (1992). \href{http://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC}{\emph{Methodology for genetic studies of twins and families}}. Norwell, MA: Kluwer Academic Publishers. (Also see Neale \& Maes: \url{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}).
  
 \section{Notes}
 This package's development was largely supported by the NIH Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)
@@ -654,7 +740,7 @@ This package's development was largely supported by the NIH Grant 1R01HD65865, \
   \item Locale: \verb|LC_COLLATE=English_United States.1252|, \verb|LC_CTYPE=English_United States.1252|, \verb|LC_MONETARY=English_United States.1252|, \verb|LC_NUMERIC=C|, \verb|LC_TIME=English_United States.1252|
   \item Base packages: base, datasets, graphics, grDevices, methods, stats,
     utils
-  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.230
+  \item Other packages: knitr~1.5, lavaan~0.5-15, NlsyLinks~1.231
   \item Loaded via a namespace (and not attached): evaluate~0.5.1,
     formatR~0.10, highr~0.3, mnormt~1.4-5, pbivnorm~0.5-1, quadprog~1.5-5,
     stats4~3.0.2, stringr~0.6.2, tools~3.0.2
