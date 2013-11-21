@@ -573,7 +573,7 @@ If you wish to exclude additional groups from the analyses, Step 8 should change
 \section{Example: Multiple Group SEM of a Simple Outcome all pairs in Gen1 and Gen2}
 The example differs from the previous example in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small \emph{R} groups that are difficult to estimate, or (b) if the value for adult height is missing.  This includes all 42,773 relationships in the follow five types of NLSY79 relationships.  
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Thu Nov 21 11:40:34 2013
+% Thu Nov 21 12:26:12 2013
 \begin{table}[ht]
 \centering
 \begin{tabular}{rr}
@@ -662,15 +662,23 @@ In our opinion, using the intergenerational links is one of the most exciting ne
 \end{knitrout}
 
 
-Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of \emph{subjects} doubles when Gen2 is added, and the number of \emph{relationship pairs} really takes off.  When an extended family's whole pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the popluation's $a^2$ is small or moderate, instead of something large like 0.7.
+Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of \emph{subjects} doubles when Gen2 is added, and the number of \emph{relationship pairs} really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the popluation's $a^2$ is small or moderate, instead of something large like 0.7.
 
-The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs.  Our MDAN paper presents a GEE method for handling this (p. 572).  The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.
+You may notice that the analysis has 24,697 relationships instead of the entire 42,773.  This is primarily because not all subjects have a value for `adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are 42,025 pairs with a nonmissing value in \code{RFull}, meaning that 98.3\% are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+\% chance we have an \code{RFull} for it.  For a description of the \code{R} and \code{RFull} variables, please see the \code{Links79Pair} entry in the package \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual}.
 
-One of our \href{https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330}{2013 BGA presentations}  discusses these benefits in the context of the current \pkg{NlsyLinks} package.  And our 2008 article accomplishes something similar using females in both generations:
+\textbf{References:}
+
+The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs.  Our MDAN article presents a \href{http://en.wikipedia.org/wiki/Generalized_estimating_equation}{GEE} method for handling this (p. 572).  The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.
+
+One of our \href{https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330}{2013 BGA presentations}  discusses these benefits in the context of the current \pkg{NlsyLinks} package, and our 2008 MDAN article accomplishes something similar using a GEE with females in both generations.
+
+Bard, D.E., Beasley, W.H., Meredith, K., \& Rodgers, J.L. (2012). \href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{\emph{Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model}}. Behavior Genetics Association 42nd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}]
+
+Beasley, W.H., Bard, D.E., Meredith, K., Hunter, M., \&Rodgers, J.L. (2013). \href{http://link.springer.com/article/10.1007/s10519-013-9623-9}{\emph{NLSY Kinship Links:  Creating Biometrical Design Structures from Cross-Generational Data}}. Behavior Genetics Association 43rd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330}{Slides}]
 
 Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., \& Miller, W. B. (2008). \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables}. \emph{Behavior Genetics, 38}, 567-578.
 
-Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{\emph{Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model}}. Behavior Genetics Association 42nd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}]
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Midstream data manipulation with SAS}
