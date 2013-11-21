@@ -274,8 +274,8 @@ oName_S2 <- "HeightZGenderAge_S2"
   
 #Step 8: Summarize the R groups and determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
-rGroupsToDrop <- c( 0.0625 )
-dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE
+# rGroupsToDrop <- c( 0.0625 )
+# dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE
 dsGroupSummary
 
 #Step 9: Create a cleaned dataset
@@ -288,7 +288,7 @@ ace
 #Step 11: Inspect the output further (see the final step in the previous example).
 @
 
-Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.  **Joe, is there anything else you'd like to say about this here?**
+Most of them responded they were \code{Non-relative}s  to the explict items asked in 1979 (\emph{i.e.}, NLSY79 variables \code{R00001.50} through \code{R00001.59}).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.
 
 If you wish to exclude additional groups from the analyses, one line of code in Step 8 should change.  For instance, two exclude ambiguous sibs (in addition to $R=0$ pairs), change\\ \code{rGroupsToDrop <- c( 0 )} \\to \\ \code{rGroupsToDrop <- c( 0, .375 )}.
 

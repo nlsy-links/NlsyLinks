@@ -15,6 +15,7 @@
 #'    \item{ExtendedID}{see the variable of the same name in \code{\link{Links79Pair}}}
 #'    \item{Generation}{Indicates if the subject is in generation \code{1} or \code{2}.} 
 #'    \item{Gender}{Indicates if the subject is \code{Male} or \code{Female}.} 
+#'    \item{RaceCohort}{Indicates if the race cohort is \code{Hispanic}, \code{Black} or \code{Nbnh} (\emph{ie}, Non-black, non-hispanic).  This comes from the Gen1 variable \code{R02147.00} and Gen2 variable \code{C00053.00}.} 
 #'    \item{SiblingCountInNls}{The number of the subject's siblings, including himself/herself (a singleton has a value of one).  This considers only the siblings in the NLSY.  For Gen1, this can exclude anyone outside the age range.  For Gen2, this excludes anyone who doesn't share the same mother.} 
 #'    \item{BirthOrderInNls}{Indicates the subject's birth order among the NLSY siblings.}
 #'    \item{SimilarAgeCount}{The number of children who were born within roughly 30 days of the subject's birthday, including the subject (for instance, even an only child will have a value of 1).  For Gen2 subjects, this should reflect how many children the Gen1 mother gave birth to at the same time (1: singleton; 2: twins, 3: triplets).  For Gen1 subjects, this is less certain, because the individual might have been living with a similarly-aged housemate, born to a different mother.}

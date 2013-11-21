@@ -26,3 +26,5 @@ devtools::release(check=FALSE) #Careful, the last question ultimately uploads it
 
 mean(is.na(NlsyLinks::Links79PairExpanded[NlsyLinks::Links79PairExpanded$RelationshipPath=="Gen1Housemates", "RFull"]))
 sum(is.na(NlsyLinks::Links79PairExpanded[NlsyLinks::Links79PairExpanded$RelationshipPath=="Gen1Housemates", "RFull"]))
+
+# table(Links79Pair$RelationshipPath, Links79Pair$R)
