@@ -6,17 +6,17 @@ NlsyLinksDocumentationPeek.pdf
 OutsideData/
 UtilityScripts/
 
-inst/doc/Faq.log
-inst/doc/Faq.toc
-inst/doc/Faq-concordance.tex
-inst/doc/Faq.tex
+vignettes/Faq.log
+vignettes/Faq.toc
+vignettes/Faq-concordance.tex
+vignettes/Faq.tex
 
-inst/doc/NlsyAce.log
-inst/doc/NlsyAce.toc
-inst/doc/NlsyAce-concordance.tex
-inst/doc/NlsyAce.tex
+vignettes/NlsyAce.log
+vignettes/NlsyAce.toc
+vignettes/NlsyAce-concordance.tex
+vignettes/NlsyAce.tex
 
-inst/doc/NlsInvestigator.log
-inst/doc/NlsInvestigator.toc
-inst/doc/NlsInvestigator-concordance.tex
-inst/doc/NlsInvestigator.tex
+vignettes/NlsInvestigator.log
+vignettes/NlsInvestigator.toc
+vignettes/NlsInvestigator-concordance.tex
+vignettes/NlsInvestigator.tex

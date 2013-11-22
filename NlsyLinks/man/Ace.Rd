@@ -62,7 +62,7 @@ dsOutcomes <- ExtraOutcomes79
 dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,
   generation=dsOutcomes$Generation)
 dsLinks <- Links79Pair
-dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only Gen2 Siblings (ie, NLSY79-C)
+dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Only Gen2 Sibs (ie, NLSY79C)
 dsDF <- CreatePairLinksDoubleEntered(outcomeDataset=dsOutcomes, linksPairDataset=dsLinks,
   outcomeNames=c("MathStandardized", "HeightZGenderAge", "WeightZGenderAge"))
 
