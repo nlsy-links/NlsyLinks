@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Getting Started}{1}{section.1}
+\contentsline {section}{\numberline {2}Gen1 and Gen2}{1}{section.2}
+\contentsline {section}{\numberline {3}Ambiguous twins}{2}{section.3}
+\contentsline {section}{\numberline {4}Ambiguous siblings}{2}{section.4}
+\contentsline {section}{\numberline {5}Retaining vs. dropping the ambiguous twins and siblings}{3}{section.5}
+\contentsline {section}{\numberline {6}Race and Gender Variables}{4}{section.6}
+\contentsline {section}{\numberline {7}Grant support}{5}{section.7}
