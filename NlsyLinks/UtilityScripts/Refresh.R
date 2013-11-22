@@ -13,7 +13,7 @@ devtools::run_examples(); dev.off() #This overwrites the NAMESPACE file too
 # devtools::run_examples(, "Ace.Rd")
 devtools::test()
 
-devtools::build()#args="--resave-data")
+devtools::build(args="--resave-data --no-build-vignettes")#args="--resave-data")
 # system("R CMD build --resave-data")
 
 #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
