@@ -19,6 +19,7 @@ devtools::build()#args="--resave-data")
 #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
 # system("R CMD check --as-cran --no-clean D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
 devtools::check()#build_args="--resave-data")
+# devtools::check(build_args="--as-cran")
 
 devtools::revdep_check(pkg="NlsyLinks", recursive=TRUE)
 # devtools::revdep_check(pkg="Wats", recursive=TRUE)
