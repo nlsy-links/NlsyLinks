@@ -97,31 +97,31 @@ Standard terminology is to refer second generation subjects as `children' when t
 \item Browse to \url{http://www.nlsinfo.org/investigator/}.  Select the `REGISTER' link in the top right, and create a personal account.  If you have already registered, Log In and proceed to the next step.
 \item Select your desired cohort, in the dropdown box titled, ``Select the study you want to work with:''.  In the screenshot below, second generation of the NLSY79 sample is selected.
 
-\includegraphics{D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/Cohort.png}
+\includegraphics{./GraphicsNlsInvestigator/Cohort.png}
 
 \item Select the variables.  There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks.  A thorough tutorial begins on the NLS Investigator page: \url{http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html}.  To better leverage the NLSY's extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial.  However for the purposes of this vignette, we'll simply select a few easy variables.  
 
 First, in the `Variables Search' tab, select `Word in Title (enter search term)'.  Second, type ``other symptom - f'' in the textbox.  Third, clicking the `Display Variables' button should retrieve at least four NLSYC variables whose title starts with ``other symptom - f''.  Fourth, supposing we care about only their fevers, click their two corresponding checkboxes.  (If you're curious, the `XRND' value for year stands for \href{http://www.bls.gov/nls/nls138.pdf}{cross round}; XRND variables are calculated by the NLS staff, and typically come from the subject's most recent survey).
 
-\includegraphics{D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/Select.png}
+\includegraphics{./GraphicsNlsInvestigator/Select.png}
 
 \item Review your selected variables by clicking the corresponding tab.  Notice that several important variables are automatically included in every  dataset.  In real research these steps are iterated many times, as you repeated select, then review, then save, then re-select, then re-review, then...  But we'll move on, because these seven variables are good enough for an example.
 
-\includegraphics{D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/Review.png}
+\includegraphics{./GraphicsNlsInvestigator/Review.png}
 
 \item When the dataset is complete, it is time to save the tagset.  A \textbf{tagset file} is simply metadata of the desired variables.  The file identifies the variables, \emph{but does not contain actual data values}.  As your project evolves over time (because you're adding variables, or refreshing your dataset after a new survey is released), it's convenient to keep the metadata distinct from the real data.  
 
 The actual values are contained in the \textbf{data file}, which is discussed in the next two steps.  These issues are covered further in the \href{http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html}{official tutorial}.
 
-\includegraphics{D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/Tagset.png}
+\includegraphics{./GraphicsNlsInvestigator/Tagset.png}
 
 \item The first step of the download process is to create the data file on the NLS server.  Click the `Save/Download' tab, and then the `Advanced Download' tab.  As far as the \pkg{NlsyLinks} package is concerned, only the the `Comma-delimited datafile...' box needs to be checked.  Then provide a `Data filename'.  Finally, click the `Start Download' button.
 
-\includegraphics{D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/DownloadStep1.png}
+\includegraphics{./GraphicsNlsInvestigator/DownloadStep1.png}
 
 \item The second step of the download process is to transfer the zip file to your local computer.  Click the maroon `download' hyperlink.
 
-\includegraphics{D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/DownloadStep2.png}
+\includegraphics{./GraphicsNlsInvestigator/DownloadStep2.png}
 
 \item Open the zip file and extract the *.csv file to a location that the vignette examples have permission to read.  Then try some of the \code{NlsyLinks} vignette examples at \url{http://cran.r-project.org/web/packages/NlsyLinks/}. 
 
@@ -150,7 +150,7 @@ If you're importing CSV files specifically for the \pkg{NlsyLinks} package, you'
 \section{Tagset History}
 We recommend saving the tagsets on both the NLS server and your local machine.  Tagsets are not guaranteed to be retained on the NLS server more than 90 days.  Locally save when variables are added or removed from the tagset in a consistent location, and name the file to reflect the current date.  The files can be read with any simple text editor.  The directory below contains the partial evolution of four distinct tagsets (i.e., `Gen1Links', `Gen2Links', `Gen2ImplicitFather', `Gen2LinksFromGen1').
 
-\includegraphics[width=4in]{D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/TagsetBackups.png}
+\includegraphics[width=4in]{./GraphicsNlsInvestigator/TagsetBackups.png}
 
 \section{Notes}
 This package's development was largely supported by the NIH Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)\\

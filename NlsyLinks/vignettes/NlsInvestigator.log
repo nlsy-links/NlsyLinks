@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.23)  22 NOV 2013 02:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.10.23)  25 NOV 2013 11:46
 entering extended mode
 **NlsInvestigator.tex
 (D:\Projects\RDev\NlsyLinksStaging\NlsyLinks\vignettes\NlsInvestigator.tex
@@ -325,31 +325,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/
-Cohort.png, id=55, 553.06625pt x 346.29375pt>
-File: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestig
-ator/Cohort.png Graphic file (type png)
+<./GraphicsNlsInvestigator/Cohort.png, id=55, 553.06625pt x 346.29375pt>
+File: ./GraphicsNlsInvestigator/Cohort.png Graphic file (type png)
 
-<use D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestiga
-tor/Cohort.png>
-Package pdftex.def Info: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/
-GraphicsNlsInvestigator/Cohort.png used on input line 100.
+<use ./GraphicsNlsInvestigator/Cohort.png>
+Package pdftex.def Info: ./GraphicsNlsInvestigator/Cohort.png used on input lin
+e 100.
 (pdftex.def)             Requested size: 469.75502pt x 294.12914pt.
 
 Overfull \hbox (25.00003pt too wide) in paragraph at lines 100--101
 [][] 
  []
 
+<./GraphicsNlsInvestigator/Select.png, id=58, 1002.74625pt x 448.67625pt>
+File: ./GraphicsNlsInvestigator/Select.png Graphic file (type png)
 
-<D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/
-Select.png, id=58, 1002.74625pt x 448.67625pt>
-File: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestig
-ator/Select.png Graphic file (type png)
-
-<use D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestiga
-tor/Select.png>
-Package pdftex.def Info: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/
-GraphicsNlsInvestigator/Select.png used on input line 106.
+<use ./GraphicsNlsInvestigator/Select.png>
+Package pdftex.def Info: ./GraphicsNlsInvestigator/Select.png used on input lin
+e 106.
 (pdftex.def)             Requested size: 469.75502pt x 210.19324pt.
 
 Overfull \hbox (25.00003pt too wide) in paragraph at lines 106--107
@@ -358,31 +351,24 @@ Overfull \hbox (25.00003pt too wide) in paragraph at lines 106--107
 
 [2 <D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigat
 or/Cohort.png>]
-<D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/
-Review.png, id=66, 1002.74625pt x 448.67625pt>
-File: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestig
-ator/Review.png Graphic file (type png)
+<./GraphicsNlsInvestigator/Review.png, id=66, 1002.74625pt x 448.67625pt>
+File: ./GraphicsNlsInvestigator/Review.png Graphic file (type png)
 
-<use D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestiga
-tor/Review.png>
-Package pdftex.def Info: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/
-GraphicsNlsInvestigator/Review.png used on input line 110.
+<use ./GraphicsNlsInvestigator/Review.png>
+Package pdftex.def Info: ./GraphicsNlsInvestigator/Review.png used on input lin
+e 110.
 (pdftex.def)             Requested size: 469.75502pt x 210.19324pt.
 
 Overfull \hbox (25.00003pt too wide) in paragraph at lines 110--111
 [][] 
  []
 
+<./GraphicsNlsInvestigator/Tagset.png, id=68, 1002.74625pt x 357.335pt>
+File: ./GraphicsNlsInvestigator/Tagset.png Graphic file (type png)
 
-<D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/
-Tagset.png, id=68, 1002.74625pt x 357.335pt>
-File: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestig
-ator/Tagset.png Graphic file (type png)
-
-<use D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestiga
-tor/Tagset.png>
-Package pdftex.def Info: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/
-GraphicsNlsInvestigator/Tagset.png used on input line 116.
+<use ./GraphicsNlsInvestigator/Tagset.png>
+Package pdftex.def Info: ./GraphicsNlsInvestigator/Tagset.png used on input lin
+e 116.
 (pdftex.def)             Requested size: 469.75502pt x 167.40222pt.
 
 Overfull \hbox (25.00003pt too wide) in paragraph at lines 116--117
@@ -392,31 +378,23 @@ Overfull \hbox (25.00003pt too wide) in paragraph at lines 116--117
 [3 <D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigat
 or/Select.png> <D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsN
 lsInvestigator/Review.png>]
-<D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/
-DownloadStep1.png, id=75, 828.09375pt x 426.59375pt>
-File: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestig
-ator/DownloadStep1.png Graphic file (type png)
-
-<use D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestiga
-tor/DownloadStep1.png>
-Package pdftex.def Info: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/
-GraphicsNlsInvestigator/DownloadStep1.png used on input line 120.
+<./GraphicsNlsInvestigator/DownloadStep1.png, id=75, 828.09375pt x 426.59375pt>
+File: ./GraphicsNlsInvestigator/DownloadStep1.png Graphic file (type png)
+<use ./GraphicsNlsInvestigator/DownloadStep1.png>
+Package pdftex.def Info: ./GraphicsNlsInvestigator/DownloadStep1.png used on in
+put line 120.
 (pdftex.def)             Requested size: 469.75502pt x 242.0023pt.
 
 Overfull \hbox (25.00003pt too wide) in paragraph at lines 120--121
 [][] 
  []
 
+<./GraphicsNlsInvestigator/DownloadStep2.png, id=76, 835.12pt x 270.00874pt>
+File: ./GraphicsNlsInvestigator/DownloadStep2.png Graphic file (type png)
 
-<D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/
-DownloadStep2.png, id=76, 835.12pt x 270.00874pt>
-File: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestig
-ator/DownloadStep2.png Graphic file (type png)
-
-<use D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestiga
-tor/DownloadStep2.png>
-Package pdftex.def Info: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/
-GraphicsNlsInvestigator/DownloadStep2.png used on input line 124.
+<use ./GraphicsNlsInvestigator/DownloadStep2.png>
+Package pdftex.def Info: ./GraphicsNlsInvestigator/DownloadStep2.png used on in
+put line 124.
 (pdftex.def)             Requested size: 469.75502pt x 151.88365pt.
 
 Overfull \hbox (25.00003pt too wide) in paragraph at lines 124--125
@@ -431,15 +409,12 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 139.
  [5 <D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestiga
 tor/DownloadStep2.png>]
-<D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestigator/
-TagsetBackups.png, id=95, 580.1675pt x 359.3425pt>
-File: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestig
-ator/TagsetBackups.png Graphic file (type png)
+<./GraphicsNlsInvestigator/TagsetBackups.png, id=95, 580.1675pt x 359.3425pt>
+File: ./GraphicsNlsInvestigator/TagsetBackups.png Graphic file (type png)
 
-<use D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/GraphicsNlsInvestiga
-tor/TagsetBackups.png>
-Package pdftex.def Info: D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/vignettes/
-GraphicsNlsInvestigator/TagsetBackups.png used on input line 153.
+<use ./GraphicsNlsInvestigator/TagsetBackups.png>
+Package pdftex.def Info: ./GraphicsNlsInvestigator/TagsetBackups.png used on in
+put line 153.
 (pdftex.def)             Requested size: 289.07999pt x 179.05121pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 156--157
@@ -460,7 +435,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
  ) 
 Here is how much of TeX's memory you used:
  5615 strings out of 493921
- 85860 string characters out of 3147284
+ 84352 string characters out of 3147284
  171932 words of memory out of 3000000
  8834 multiletter control sequences out of 15000+200000
  9487 words of font info for 34 fonts, out of 3000000 for 9000
@@ -477,7 +452,7 @@ cmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on NlsInvestigator.pdf (6 pages, 502255 bytes).
+Output written on NlsInvestigator.pdf (6 pages, 502477 bytes).
 PDF statistics:
  146 PDF objects out of 1000 (max. 8388607)
  21 named destinations out of 1000 (max. 500000)
