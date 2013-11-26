@@ -17,19 +17,20 @@ devtools::build(args="--resave-data --no-build-vignettes")#args="--resave-data")
 # system("R CMD build --resave-data")
 
 
-system("R CMD build --resave-data --no-build-vignettes D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
-system("R CMD check  --as-cran D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/NlsyLinks_1.300.tar.gz")
+# system("R CMD build --resave-data D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
+# system("R CMD check  --as-cran D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/NlsyLinks_1.300.tar.gz")
 
 #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
 # system("R CMD check --as-cran --no-clean D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
 devtools::check()#build_args="--resave-data")
 # devtools::check(build_args="--as-cran")
 
+# devtools::build_win()
 devtools::revdep_check(pkg="NlsyLinks", recursive=TRUE)
 # devtools::revdep_check(pkg="Wats", recursive=TRUE)
 # devtools::release(check=FALSE) #Careful, the last question ultimately uploads it to CRAN, where you can't delete/reverse your decision.
 
-1mean(is.na(NlsyLinks::Links79PairExpanded[NlsyLinks::Links79PairExpanded$RelationshipPath=="Gen1Housemates", "RFull"]))
+mean(is.na(NlsyLinks::Links79PairExpanded[NlsyLinks::Links79PairExpanded$RelationshipPath=="Gen1Housemates", "RFull"]))
 sum(is.na(NlsyLinks::Links79PairExpanded[NlsyLinks::Links79PairExpanded$RelationshipPath=="Gen1Housemates", "RFull"]))
 
 # table(Links79Pair$RelationshipPath, Links79Pair$R)
