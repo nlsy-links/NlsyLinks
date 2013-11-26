@@ -17,11 +17,10 @@ devtools::build(args="--resave-data --no-build-vignettes")#args="--resave-data")
 # system("R CMD build --resave-data")
 
 
-# system("R CMD build --resave-data D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
-# system("R CMD check  --as-cran D:/Projects/RDev/NlsyLinksStaging/NlsyLinks/NlsyLinks_1.300.tar.gz")
+system("R CMD build --resave-data D:/Projects/RDev/NlsyLinksStaging/NlsyLinks") #Then move it up one directory.
+system("R CMD check --as-cran D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.300.tar.gz")
 
 #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
-# system("R CMD check --as-cran --no-clean D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.205.tar.gz") #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
 devtools::check()#build_args="--resave-data")
 # devtools::check(build_args="--as-cran")
 
