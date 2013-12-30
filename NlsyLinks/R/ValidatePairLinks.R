@@ -22,7 +22,6 @@
 ##' @param linksPair The \code{data.frame} to validate.
 ##' @return Returns \code{TRUE} if the validation passes. Returns an error (and
 ##' associated descriptive message) if it false.
-##' @author Will Beasley
 ##' @seealso \code{\link{Links79Pair}}, \code{\link{Links79PairExpanded}},
 ##' @keywords validation
 ##' @examples

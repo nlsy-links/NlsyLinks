@@ -18,13 +18,13 @@ devtools::build(args="--resave-data --no-build-vignettes")#args="--resave-data")
 
 
 system("R CMD build --resave-data D:/Projects/RDev/NlsyLinksStaging/NlsyLinks") #Then move it up one directory.
-system("R CMD check --as-cran D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.300.tar.gz")
+system("R CMD check --as-cran D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.302.tar.gz")
 
 #system("R CMD check D:/Projects/RDev/NlsyLinksStaging/NlsyLinks")
 devtools::check()#build_args="--resave-data")
 # devtools::check(build_args="--as-cran")
 
-# devtools::build_win()
+# devtools::build_win(version="R-devel") #CRAN submission policies encourage the development version
 devtools::revdep_check(pkg="NlsyLinks", recursive=TRUE)
 # devtools::revdep_check(pkg="Wats", recursive=TRUE)
 # devtools::release(check=FALSE) #Careful, the last question ultimately uploads it to CRAN, where you can't delete/reverse your decision.
