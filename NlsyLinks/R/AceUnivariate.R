@@ -4,7 +4,8 @@
 #' 
 #' @title Estimates the heritability of additive traits using a single variable.
 #' 
-#' @usage AceUnivariate(method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_S1, oName_S2, rName="R", manifestScale="Continuous")
+#' @usage AceUnivariate(method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), 
+#'   dataSet, oName_S1, oName_S2, rName="R", manifestScale="Continuous")
 #' 
 #' DeFriesFulkerMethod1(dataSet, oName_S1, oName_S2, rName="R")
 #' 

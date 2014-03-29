@@ -4,7 +4,8 @@
 #' @title Instantiate an \code{\link{AceEstimate-class}} object.
 #' @description Creates an instance of the \code{S4} class, \code{AceEstimate}  instantiating arguments set the parameter values estimated by the ACE model.
 #' 
-#' @usage CreateAceEstimate(aSquared, cSquared, eSquared, caseCount, details=list(), unityTolerance = 1e-11)
+#' @usage CreateAceEstimate(aSquared, cSquared, eSquared, caseCount, 
+#'   details=list(), unityTolerance = 1e-11)
 #' 
 #' @param aSquared The proportion of variability due to a shared genetic influence (typically represented as a^2, or sometimes h^2).
 #' @param cSquared The proportion of variability due to shared common environmental influence.

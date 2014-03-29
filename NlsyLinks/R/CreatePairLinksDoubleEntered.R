@@ -11,11 +11,16 @@
 #' \code{CreatePairLinksDoubleEnteredWithNoOutcomes} is intended to be a
 #' primarily a helper function for \code{\link{CreateSpatialNeighbours}}.
 #' 
-#' @usage CreatePairLinksDoubleEntered(outcomeDataset, linksPairDataset, outcomeNames, linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, subject1Qualifier = "_S1", subject2Qualifier = "_S2")
+#' @usage CreatePairLinksDoubleEntered(outcomeDataset, linksPairDataset, outcomeNames, 
+#'    linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, 
+#'    subject1Qualifier = "_S1", subject2Qualifier = "_S2")
 #' 
-#'  CreatePairLinksSingleEntered(outcomeDataset, linksPairDataset, outcomeNames, linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, subject1Qualifier = "_S1", subject2Qualifier = "_S2")
+#'  CreatePairLinksSingleEntered(outcomeDataset, linksPairDataset, outcomeNames, 
+#'     linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, 
+#'     subject1Qualifier = "_S1", subject2Qualifier = "_S2")
 #'  
-#'  CreatePairLinksDoubleEnteredWithNoOutcomes(linksPairDataset, linksNames = c("ExtendedID", "R", "RelationshipPath"))
+#'  CreatePairLinksDoubleEnteredWithNoOutcomes(linksPairDataset, 
+#'     linksNames = c("ExtendedID", "R", "RelationshipPath"))
 #' 
 #' @param outcomeDataset A data frame containing the outcome variable(s)
 #' @param linksPairDataset A data frame containing the \code{SubjectTag}s of
