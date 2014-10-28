@@ -1,0 +1,17 @@
+encoding: UTF-8
+
+permalink: pretty
+highlighter: rouge
+safe: false
+
+# Site details
+lang: en-US
+
+# Jekyll config
+exclude:
+  - Makefile
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+logo: ./images/favicon.png

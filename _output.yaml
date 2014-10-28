@@ -1,0 +1,18 @@
+html_document:
+  self_contained: false
+  theme: cerulean
+  highlight: textmate
+  css: include/custom.css
+  mathjax: null
+  toc: true
+  toc_depth: 2
+  lib_dir: libs
+  includes:
+    in_header: include/in_header.html
+    before_body: include/before_body.html
+    after_body: include/after_body.html
+
+md_document:
+  variant: markdown_github
+  toc: true
+  toc_depth: 2
