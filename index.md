@@ -13,3 +13,5 @@ Welcome to the Kinship files for the NLSY. This site is structured into primary 
  * **About** covers the collaborators and stakeholders involved in the 20+ year history.
 
 If you have any questions or comments, feel free to post them below. --*Joe's BG Team*
+
+[![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12425)
