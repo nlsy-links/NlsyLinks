@@ -5,6 +5,9 @@ title: "Publications involving the kinship links"
 
 **In reverse chronological order, updated October 2014**
 
+# Articles and Book Chapters
+
+## 2011 -
 Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
 
 Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (in press). Effects of multiple maternal relationship transitions on offspring antisocial behavior in childhood and adolescence: A cousin-comparison analysis. *Journal of Abnormal Child Psychology*.
@@ -34,6 +37,8 @@ Harden, K. P., Quinn, P. D., & Tucker‐Drob, E. M. (2012). [Genetically influen
 Jaffee, S., Van Hulle, C., & Rodgers, J L. (2011) . [Effects of non-maternal care in the first three years on children's academic skills and behavioral functioning in childhood and early adolescence: A sibling comparison study](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3640295/). *Child Development, 84*, 1076-1081.
 
 Meredith, K. (2011). Effects of early family environment on age at menarche in the NLSY. Masters thesis, University of Oklahoma. (NLS79).
+
+## 2001 - 2010
 
 Classen, R. (2010). [Measures of the intergenerational transmission of body mass index between mothers and their children in the United States, 1981-2004](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2821676/). *Economics and Human Biology, 8*, 30-43. (NLSY79; NLSYC/YA)
 
@@ -80,6 +85,7 @@ Rodgers, J. L., Buster, M., & Rowe, D. C. (2001) . [Genetic and environmental in
 
 Rodgers, J. L. & Doughty, D. (2001) . [Does having boys or girls run in the family?](http://www.tandfonline.com/doi/abs/10.1080/09332480.2001.10542293) _Chance, 14_, 8-13. (NLSY79)
 
+## 1994 - 2000
 Cleveland, H. H., Jacobson, K. C., Lipinski, J. J. & Rowe, D. C. (2000) . [Genetic and shared environmental contributions to the relationship between the home environment and child and adolescent achievement.](http://www.ncbi.nlm.nih.gov/pubmed/10953940) _Intelligence, 28_, 69-86. (NLSYC)
 
 Buster, M. & Rodgers, J. L.(2000) . [Genetic and environmental influences on alcohol use: DF analysis of NLSY kinship data](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=9938). _Journal of Biosocial Science, 32_, 177-189. (NLSY79)
@@ -116,7 +122,7 @@ Rodgers, J. L., Rowe, D. C., & May, K. (1994) . [DF analysis of NLSY IQ/achievem
 
 Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep: Ethnic and racial similarity in developmental processes.](http://psycnet.apa.org/journals/rev/101/3/396/) _Psychological Review, 101_, 396-413. (NLSYC)
 
-#### Recent Presentations by the Team Involving the Links
+# Recent Presentations by the Team Involving the Links
 BGA 2014
 
  * A Dynamic Mixture Biometric Model of Cognitive Development in the  NLSY Children
@@ -136,10 +142,10 @@ BGA 2014
  * The 2012 National Longitudinal Survey of Youth Kinship Links: A Discussion (by discussant Brian D'Onofrio)
 
 
-#### General NLSY Articles
+# General NLSY Articles
 A larger, searchable list of research using the NLSY datasets is maintained at [nlsinfo.org](https://nlsinfo.org/bibliography-start).
 
-#### Current documentation, vignettes, and user support
+# Current documentation, vignettes, and user support
 Package documentation: http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf
 
 Vignette of estimating ACE models with the NlsyLinks package: http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf
