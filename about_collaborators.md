@@ -9,7 +9,7 @@ title: "Collaborators"
 
 ***
 ## Vanderbilt University Psychological Sciences
-The [Psychological Sciences Dept](http://www.vanderbilt.edu/psychological_sciences/) of [Vandebilt University](http://www.vanderbilt.edu/) serve as the primary money getters zzzzzzzzzzzz.  Current members are [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) and [S. Mason Garrison](http://www.vanderbilt.edu/psychological_sciences/bio/sarah-garrison).
+The [Psychological Sciences Dept](http://www.vanderbilt.edu/psychological_sciences/) of [Vandebilt University](http://www.vanderbilt.edu/) serve as the primary money getters zzzzzzzzzzzz.  Current members are [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) and [S. Mason Garrison](http://www.smasongarrison.com).
 
 
 <a href="http://www.vanderbilt.edu/psychological_sciences/"> 
