@@ -12,11 +12,11 @@ Jodl, Jackie  (in progress).  Male educational underachievement and the role of 
 
 Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (in press). Effects of multiple maternal relationship transitions on offspring antisocial behavior in childhood and adolescence: A cousin-comparison analysis. *Journal of Abnormal Child Psychology*.
 
-Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene × Environment interactions in early externalizing behaviors: parental emotional support and socioeconomic context as moderators of genetic influences?](http://link.springer.com/article/10.1007/s10519-014-9664-8/fulltext.html) *Behavior genetics, 44*(5), 468-486.
+Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment interactions in early externalizing behaviors: parental emotional support and socioeconomic context as moderators of genetic influences?](http://link.springer.com/article/10.1007/s10519-014-9664-8/fulltext.html) *Behavior genetics, 44*(5), 468-486.
 
 Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environmental Influences on Self-Control and Delinquency: Results from a Genetically Informative Analysis of Sibling Pairs.](http://www.ncbi.nlm.nih.gov/pubmed/24142448) *Journal of Interpersonal Violence, 29*.  707-735. (NLSYC)
 
-Rodgers, J. L., Van Hulle, C., D’Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2014). [Behavior problems and timing of menarche: A developmental longitudinal biometrical analysis using the NLSY-children data](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics*, 1-20.
+Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2014). [Behavior problems and timing of menarche: A developmental longitudinal biometrical analysis using the NLSY-children data](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics*, 1-20.
 
 Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi, and Ahmed Nezar Kobeisy (2013) [Genetic and Environmental Contributions to Stability and Change in Levels of Self-Control](http://www.sciencedirect.com/science/article/pii/S004723521300069X). *Journal of Criminal Justice, 41*, 300-308. (NLSYC)
 
@@ -32,7 +32,7 @@ Dorius, C. (2012). [New approaches to measuring multipartnered fertility over th
 
 Goodnight, J. A., Lahey, B. B., Van Hulle, C. A., Rodgers, J. L., Rathouz, P. J., Waldman, I. D., & D'Onofrio, B. M. (2012). [A quasi-experimental analysis of the influence of neighborhood disadvantage on child and adolescent conduct problems](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3287068/). *Journal of Abnormal Psychology, 121*, 95-108.
 
-Harden, K. P., Quinn, P. D., & Tucker‐Drob, E. M. (2012). [Genetically influenced change in sensation seeking drives the rise of delinquent behavior during adolescence](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261521/). *Developmental science, 15*(1), 150-163.
+Harden, K. P., Quinn, P. D., & Tucker-Drob, E. M. (2012). [Genetically influenced change in sensation seeking drives the rise of delinquent behavior during adolescence](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261521/). *Developmental science, 15*(1), 150-163.
 
 Jaffee, S., Van Hulle, C., & Rodgers, J L. (2011) . [Effects of non-maternal care in the first three years on children's academic skills and behavioral functioning in childhood and early adolescence: A sibling comparison study](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3640295/). *Child Development, 84*, 1076-1081.
 
@@ -50,7 +50,7 @@ Miller, W. B., Bard, D. E., Pasta, D. J., & Rodgers, J. L. (2010) . [Biodemograp
 
 Miller, W. B., Rodgers, J. L., & Pasta, D. (2010) . [The fertility motivations of youth predict later fertility outcomes: A prospective analysis of NLSY data](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2867342/7). *Biodemography and Social Biology, 56*, 1-23. (NLSY79)
 
-Salsberry, P. J. & Reagan, P.B. (2010). [Effects of heritability, shared  environment and non-shared intrauterine conditions on child and adolescent BMI](http://onlinelibrary.wiley.com/doi/10.1038/oby.2009.485/abstract). *Obesity, 18*(9), 1775–1780. (NLSYC)
+Salsberry, P. J. & Reagan, P.B. (2010). [Effects of heritability, shared  environment and non-shared intrauterine conditions on child and adolescent BMI](http://onlinelibrary.wiley.com/doi/10.1038/oby.2009.485/abstract). *Obesity, 18*(9), 1775-1780. (NLSYC)
 
 Lahey, B. B., Van Hulle, C. A., Rathouz, P.J., Rodgers, J. L., D'Onofrio, B. M., & Waldman, I. (2009) . [Are oppositional-defiant and hyperactive-inattentive symptoms developmental precursors to conduct problems in late childhood?: Genetic and environmental links](http://link.springer.com/article/10.1007/s10802-008-9257-1). _Journal of Abnormal Child Psychology, 37_, 45-58. (NLSYC)
 

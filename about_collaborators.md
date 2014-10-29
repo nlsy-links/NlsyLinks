@@ -20,7 +20,7 @@ The [Psychological Sciences Dept](http://www.vanderbilt.edu/psychological_scienc
 ## OUHSC Pediatrics
 The [Pediatrics Dept](http://www.oumedicine.com/pediatrics) of the University of Oklahoma [Health Sciences Center](http://www.ouhsc.edu/) z.  Current investigators are members of the [BBMC](http://ouhsc.edu/BBMC/) (Biomedical and Behavioral Methodology Core) and [CCAN](http://www.oumedicine.com/pediatrics/department-sections/developmental-behavioral-pediatrics/center-on-child-abuse-and-neglect) (Center for Child Abuse and Neglect).
 
-The participating members include David Bard and Michael Hunter.
+The participating members include David Bard and [Michael Hunter](http://students.ou.edu/H/Michael.D.Hunter-1/).
 
 <a href="http://ouhsc.edu/BBMC/"> 
   <img src="./images/BbmcDistributionsBackgroundClear.png" alt="BBMC" style="width: 300px;"/> 
