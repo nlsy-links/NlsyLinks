@@ -1,16 +1,18 @@
 ---
 title: "Publications involving the kinship links"
 ---
-*Joe, do you want to say a little something here?*
 
-**In reverse chronological order, updated October 2014**
+The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links.  Note that research presentations have not been included on this list, except for those that occurred during the course of the most recent NIH grant (2011-2014).  Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list.  We have been distributing the NLSY kinship links for close to two decades, and only began collecting this  archive of articles around ten years ago.  There are likely some additional publications based on the kinship links of which we are not aware.  If you know of such papers, please bring them to our attention.
+
+
 
 # Articles and Book Chapters
+**In reverse chronological order, updated October 2014**
 
 ## 2011 -
-Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
-
 Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (in press). Effects of multiple maternal relationship transitions on offspring antisocial behavior in childhood and adolescence: A cousin-comparison analysis. *Journal of Abnormal Child Psychology*.
+
+Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
 
 Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment interactions in early externalizing behaviors: parental emotional support and socioeconomic context as moderators of genetic influences?](http://link.springer.com/article/10.1007/s10519-014-9664-8/fulltext.html) *Behavior genetics, 44*(5), 468-486.
 
