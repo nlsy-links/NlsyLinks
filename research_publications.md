@@ -83,6 +83,8 @@ Rodgers, J. L., & Kohler, Hans-Peter (2005).  [Reformulating and simplifying the
 
 Neiss, M., Rowe, D. C., & Rodgers, J. L. (2002). [Does education mediate the relationship between IQ and age of first birth? A behavior genetic analysis](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=99814). _Journal of Biosocial Science, 34_, 259-275. (NLSY79)
 
+Bard, D. E.  (2001).  Common etiology for alcohol and nicotine use:  A behavior genetic analysis of liabilities using naturally occurring kinship pairs.  Masters Thesis, University of Oklahoma.
+
 Rodgers, J. L., Buster, M., & Rowe, D. C. (2001) . [Genetic and environmental influences on delinquency: DF analysis of NLSY kinship data](http://link.springer.com/article/10.1023/A:1011097929954). _Journal of Quantitative Criminology, 17_, 145-168. (NLSY79)
 
 Rodgers, J. L. & Doughty, D. (2001) . [Does having boys or girls run in the family?](http://www.tandfonline.com/doi/abs/10.1080/09332480.2001.10542293) _Chance, 14_, 8-13. (NLSY79)
@@ -104,11 +106,15 @@ Rodgers, J. L., Rowe, D. C., & Buster, M. (1999) . [Nature, nurture, and first s
 
 van den Oord, E. J. C. G. & Rowe, D. C. (1999) . [A cousin study of associations between family demographic characteristics and children's intellectual ability](http://www.sciencedirect.com/science/article/pii/S0160289699000227). _Intelligence 27_, 251-266. (NLSYC)
 
+Buster, M. A.  (1997).  Genetic and environmental influences on alcohol use:  DF analysis of NLSY kinship data.  Doctoral Dissertation, University of Oklahoma.
+
 Rowe, D. C. & Rodgers, J. L. (1997) . [Poverty and behavior: Are environmental measures nature and nurture?](http://www.sciencedirect.com/science/article/pii/S0273229797904342) _Developmental Review, 17_, 358-375. (NLSYC)
 
 van den Oord, E. J. C. G. & Rowe, D. C. (1997) . [Continuity and change in children's maladjustment: A developmental behavior genetic study](http://psycnet.apa.org/journals/dev/33/2/319/). _Developmental Psychology, 33_, 319-332. (NLSYC)
 
 van den Oord, E. J. C. G. & Rowe, D. C. (1997) . [An examination of genotype-environment interactions for academic achievement in an U.S. national longitudinal survey](http://www.sciencedirect.com/science/article/pii/S016028969790043X). _Intelligence, 25_, 205-228. (NLSYC)
+
+Bjornsdottir, A.  (1996)  Gender differences in mathematics:  Genetic and enviornmental influences with special emphasis on high and low ability.  Doctoral Dissertation, University of Oklahoma.
 
 Rodgers, J. L. (1996) . NLSY Youth linking algorithm. Unpublished manuscript. (NLSY79)
 

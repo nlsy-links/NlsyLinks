@@ -4,14 +4,14 @@ title: "Kinship links facilitating other research"
 
 When the Rodgers/Rowe research team first developed NLSY-Children kinship links in the early 1990s (with programming support from Kim May and Chengchang Li), two other research teams also programmed their own kinship links at approximately the same time (one led by Edwin van den Oord in The Netherlands, the other led by Nazli Baydar in the U.S. and Turkey).  Those were independent developments, but we eventually collaborated extensively with van den Oord, and compared kinship links with Baydar.  As we have continued to improve and expand the NLSY kinship links through the years, we have provided those to many research teams around the world.  
 
-## Previous deployment mechanisms
+## Previous dissemination mechanisms
 There have been three primary mechanisms by which researchers have requested kinship links:
 
   1. Many scholars have contacted [CHRR at Ohio State](https://www.chrr.ohio-state.edu/) to request sibling and other kinship information, and CHRR has consistently referred those requests to our team;  
   2. Joe Rodgers has presented a "NLSY Sibling Research Workshop" during CHRR-sponsored NLSY-Children workshops several times in the past, and both students and faculty attending those workshops routinely request copies of the kinship links;  
   3. Other scholars have seen the kinship links used in published or presented research, and have requested copies of the files for themselves.
 
-## Recent deployment mechanisms
+## Recent dissemination mechanisms
 For the first several cycles of kinship links – through the release of the revised NLSYC/YA links in 2004 (developed by Joe Rodgers, Amber Johnson, and David Bard) – we have only circulated the kinship links themselves, and have considered the SAS coding associated with the linking algorithm to be proprietary.  
 
 After the most recent release of the [NLSY79 and NLSYC/YA kinship links](https://github.com/LiveOak/NlsyLinks/tree/master/NlsyLinks/OutsideData) in November, 2013 (developed by Will Beasley, Kelly Meredith, David Bard, and Joe Rodgers), we have provided the [algorithm online as open-source code](https://github.com/LiveOak/NlsyLinksDetermination), and users are welcome to adapt it to their own purposes.

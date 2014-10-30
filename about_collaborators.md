@@ -11,6 +11,7 @@ title: "Collaborators"
 ## Vanderbilt University Psychological Sciences
 The [Psychological Sciences Dept](http://www.vanderbilt.edu/psychological_sciences/) of [Vandebilt University](http://www.vanderbilt.edu/) serve as the primary money getters zzzzzzzzzzzz.  Current members are [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) and [S. Mason Garrison](http://www.smasongarrison.com).
 
+The current work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 (May 1, 2011 to December 31, 2014;  Joe Rodgers, PI).  Previous kinship linking activity was supported by two previous NIH grants, the first in the 1990s, the second in the early 2000s.
 
 <a href="http://www.vanderbilt.edu/psychological_sciences/"> 
   <img src="./images/vuheader.jpg" alt="Vanderbilt" style="width: 500px;"/> 

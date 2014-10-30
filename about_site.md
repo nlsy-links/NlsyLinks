@@ -4,7 +4,7 @@ title: "About this Website"
 ---
 
 ## Components
-This website is maintained by [Joe Rodgers'](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) Behavior Genetics Team (see the [collaborators](./about_collaborators.html) page for more details)
+This website is maintained by the [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) NLSY Sibling Research Team (see the [collaborators](./about_collaborators.html) page for more details)
 
 The website is hosted on [GitHub Pages](https://pages.github.com/).  It is built with [Jekyll](http://jekyllrb.com/) and [R Markdown](http://rmarkdown.rstudio.com/) (and heavily relied on the latter when forming the site's structure).  The majority of the static reports are created with  [knitr](http://yihui.name/knitr/), while the interactive reports are created with [Shiny](http://shiny.rstudio.com/); both use 
 [R](http://www.r-project.org/) as a foundation.
