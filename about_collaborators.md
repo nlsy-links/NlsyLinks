@@ -1,13 +1,12 @@
 ---
 title: "Collaborators"
-
 ---
 
 ***
 ***
 # Investigators
 
-To see a recent description of the current team, please see: Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*.  Pp. 59-61.
+*For a recent description of the current team, please see:* Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](./reports/Rodgers2013-InternationalInnovation.pdf).  *International Innovation*.
 
 ***
 ### Vanderbilt University, Peabody College of Education, Department of Psychology and Human Development
@@ -47,7 +46,6 @@ Howard Live Oak, LLC is a small consulting company specializing in custom softwa
 ***
 # NLSY Administrators
 
-
 ***
 ### Bureau of Labor Statistics (BLS) 
 TODO: elaborate this section.
@@ -64,7 +62,7 @@ They were the funding agency for the NLSY-Children/Young Adults.
 ### Center for Human Resources Research (CHRR)
 TODO: elaborate this section
 
-The data management arm who compiles, archives, and distributes the NLSY datasets.  CHRR has its own webpage, https://www.chrr.ohio-state.edu/https://www.chrr.ohio-state.edu/https://www.chrr.ohio-state.edu/
+The data management arm who compiles, archives, and distributes the NLSY datasets.  CHRR has its own webpage, https://www.chrr.ohio-state.edu/
 
 ***
 ### National Opinion Research Center (NORC)
