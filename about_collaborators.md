@@ -51,22 +51,38 @@ Howard Live Oak, LLC is a small consulting company specializing in custom softwa
 ### Bureau of Labor Statistics (BLS) 
 TODO: elaborate this section.
 
-The first funding agency for the NLSY79.
+The [BLS](http://www.bls.gov/) was the first funding agency for the NLSY79.
+
+<a href="http://www.bls.gov/"> 
+  <img src="./images/bls_logo.jpeg" alt="BLS" style="width: 150px;"/>
+</a>
 
 ***
 ### National Institute of Child Health and Human Development (NICHD)
 TODO: elaborate this section
 
-They were the funding agency for the NLSY-Children/Young Adults.
+The [NICHD](https://www.nichd.nih.gov/) was the funding agency for the NLSY-Children/Young Adults.
+
+<a href="https://www.nichd.nih.gov/"> 
+  <img src="./images/nichd_logo.jpeg" alt="NICHD" style="width: 200px;"/>
+</a>
 
 ***
 ### Center for Human Resources Research (CHRR)
 TODO: elaborate this section
 
-The data management arm who compiles, archives, and distributes the NLSY datasets.  CHRR has its own webpage, https://www.chrr.ohio-state.edu/
+The [CHRR](https://www.chrr.ohio-state.edu/) is the data management arm who compiles, archives, and distributes the NLSY datasets.  CHRR has its own webpage, https://www.chrr.ohio-state.edu/
+
+<a href="https://www.chrr.ohio-state.edu/"> 
+  <img src="./images/chrr_logo.jpeg" alt="CHRR" style="width: 150px;"/>
+</a>
 
 ***
 ### National Opinion Research Center (NORC)
 TODO: elaborate this section
 
-NORC from the University of Chicago collects the NLSY data.
+[NORC](http://www.norc.org/) from the University of Chicago collects the NLSY data.
+
+<a href="http://www.norc.org/"> 
+  <img src="./images/norc_logo.png" alt="NORC" style="width: 250px;"/>
+</a>
