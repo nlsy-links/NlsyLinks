@@ -5,12 +5,13 @@ title: "Collaborators"
 ***
 ***
 # Investigators
+*For a recent description of the current kinship link team (and also background and description of the overall projects), please see:* 
 
-*For a recent description of the current team, please see:* Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](./reports/Rodgers2013-InternationalInnovation.pdf).  *International Innovation*.
+Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](./reports/Rodgers2013-InternationalInnovation.pdf).  *International Innovation*.
 
 ***
 ### Vanderbilt University, Peabody College of Education, Department of Psychology and Human Development
-Vanderbilt's Peabody College, [Department of Psychology and Human Development](http://www.vanderbilt.edu/psychological_sciences/) of [Vandebilt University](http://www.vanderbilt.edu/) serve as the primary money getters zzzzzzzzzzzz.  Current members are [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) and [S. Mason Garrison](http://www.smasongarrison.com).
+The PI, [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), recently retired as George Lynn Cross Research Professor Emeritus from the [University of Oklahoma](http://www.ou.edu/) Department of [Psychology](http://www.ou.edu/cas/psychology/), and moved to Vanderbilt's [Peabody College of Education](http://peabody.vanderbilt.edu/), [Department of Psychology and Human Development](http://www.vanderbilt.edu/psychological_sciences/) to Direct the Quantitative Methods program.  For over 20 years he has been the coordinator of the NLSY Kinship Links project, and the PI on associated NIH grants.  His first Vanderbilt graduate student, [S. Mason Garrison](http://www.smasongarrison.com), is now working on the project.
 
 The current work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 (May 1, 2011 to December 31, 2014;  Joe Rodgers, PI).  Previous kinship linking activity was supported by two previous NIH grants, the first in the 1990s, the second in the early 2000s.
 
