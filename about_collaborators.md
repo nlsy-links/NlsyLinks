@@ -14,9 +14,12 @@ Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](./reports/
 The PI, [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), recently retired as George Lynn Cross Research Professor Emeritus from the [University of Oklahoma](http://www.ou.edu/) Department of [Psychology](http://www.ou.edu/cas/psychology/), and moved to Vanderbilt's [Peabody College of Education](http://peabody.vanderbilt.edu/), [Department of Psychology and Human Development](http://www.vanderbilt.edu/psychological_sciences/) to direct the Quantitative Methods program.  For over 20 years he has been the coordinator of the NLSY Kinship Links project, and the PI on associated NIH grants.  His first Vanderbilt graduate student, [S. Mason Garrison](http://www.smasongarrison.com), is now working on the project.
 
 The current work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 (May 1, 2011 to December 31, 2014;  Joe Rodgers, PI).  Previous kinship linking activity was supported by two previous NIH grants, the first in the 1990s, the second in the early 2000s.
-<!--- Can we find a better Vanderbilt Psych Logo?-->
+
+<a href="http://www.vanderbilt.edu//"> 
+  <img src="./images/vandy_logo.png" alt="Vanderbilt" style="width: 150px;"/> 
+</a>
 <a href="http://www.vanderbilt.edu/psychological_sciences/"> 
-  <img src="./images/vuheader.jpg" alt="Vanderbilt" style="width: 500px;"/> 
+  <img src="./images/vuheader.jpg" alt="Psychological Sciences" style="width: 500px;"/> 
 </a>
 
 ***
