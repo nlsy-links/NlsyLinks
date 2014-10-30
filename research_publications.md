@@ -58,13 +58,13 @@ Lahey, B. B., Van Hulle, C. A., Rathouz, P.J., Rodgers, J. L., D'Onofrio, B. M.,
 
 Levine, Stephen Z. (2009). Genetic modeling of BMIs: A national representative sample. MA Thesis, Bar Ilan University, Israel.
 
-Mendle, J., Harden, K. P., Turkheimer, E., Van Hulle, C. A., D’Onofrio, B. M., Brooks-Bunn, J., Rodgers, J. L., Emery, R. E., & Lahey. B. B. (2009) . [Associations between father absence and age of first sexual intercourse](http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8624.2009.01345.x/full). *Child Development, 80*, 1463-1480. (NLSY79)
+Mendle, J., Harden, K. P., Turkheimer, E., Van Hulle, C. A., D'Onofrio, B. M., Brooks-Bunn, J., Rodgers, J. L., Emery, R. E., & Lahey. B. B. (2009) . [Associations between father absence and age of first sexual intercourse](http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8624.2009.01345.x/full). *Child Development, 80*, 1463-1480. (NLSY79)
 
-Van Hulle, C. A., Waldman, I. D., D’Onofrio, B. M., Rodgers, J. L., Rathouz, P. J., & Lahey, B. B. (2009) . [Developmental structure of genetic influences on antisocial behavior across childhood and adolescence.](http://psycnet.apa.org/journals/abn/118/4/711/) *Journal of Abnormal Psychology, 118*, 711-721.(NLSYC)
+Van Hulle, C. A., Waldman, I. D., D'Onofrio, B. M., Rodgers, J. L., Rathouz, P. J., & Lahey, B. B. (2009) . [Developmental structure of genetic influences on antisocial behavior across childhood and adolescence.](http://psycnet.apa.org/journals/abn/118/4/711/) *Journal of Abnormal Psychology, 118*, 711-721.(NLSYC)
 
 D'Onofrio, B. M., Van Hulle, C.A., Waldman, I. D., Rodgers, J. L., Harden, K. P., Rathouz, P. J., & Lahey, B. B. (2008) .  [Smoking during pregnancy and offspring externalizing problems: An exploration of genetic and environmental confounds](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=1641968). *Development and Psychopathology, 20*, 139-164.  (NLSY79)
 
-Rodgers, J. L., Bard, D., Johnson, A., D’Onofrio, B., & Miller, W. B. (2008) . [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497) *Behavior Genetics, 38*, 567-578. (NLSYC and NLSY79)
+Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008) . [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497) *Behavior Genetics, 38*, 567-578. (NLSYC and NLSY79)
 
 D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz, P.J., & Lahey, B.B. (2007). [Causal inferences regarding prenatal alcohol exposure and childhood externalizing problems](http://www.ncbi.nlm.nih.gov/pubmed/17984398). *Archives of General
 Psychiatry, 64*, 1296-1304.
@@ -90,7 +90,7 @@ Rodgers, J. L., Buster, M., & Rowe, D. C. (2001) . [Genetic and environmental in
 Rodgers, J. L. & Doughty, D. (2001) . [Does having boys or girls run in the family?](http://www.tandfonline.com/doi/abs/10.1080/09332480.2001.10542293) _Chance, 14_, 8-13. (NLSY79)
 
 ## 1994 - 2000
-Cleveland, H. H., Jacobson, K. C., Lipinski, J. J. & Rowe, D. C. (2000) . [Genetic and shared environmental contributions to the relationship between the home environment and child and adolescent achievement.](http://www.ncbi.nlm.nih.gov/pubmed/10953940) _Intelligence, 28_, 69-86. (NLSYC)
+Cleveland, H. H., Jacobson, K. C., Lipinski, J. J. & Rowe, D. C. (2000). [Genetic and shared environmental contributions to the relationship between the home environment and child and adolescent achievement.](http://www.ncbi.nlm.nih.gov/pubmed/10953940) _Intelligence, 28_, 69-86. (NLSYC)
 
 Buster, M. & Rodgers, J. L.(2000) . [Genetic and environmental influences on alcohol use: DF analysis of NLSY kinship data](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=9938). _Journal of Biosocial Science, 32_, 177-189. (NLSY79)
 
@@ -100,7 +100,7 @@ Doughty, D. & Rodgers, J. L. (2000) . [Behavior genetic modeling of menarche in 
 
 Rodgers, J. L. & Doughty, D. (2000) . [Genetic and environmental influences on fertility expectations and outcomes using NLSY kinship data.](http://link.springer.com/chapter/10.1007%2F978-1-4615-4467-8_6) In J. L. Rodgers, D. Rowe, & W. B. Miller (Eds.) _Genetic influences on fertility and sexuality_, Boston: Kluwer Academic Press. (NLSY79)
 
-van den Oord, E.J.C.G., Rowe, D.C. (2000) . [Racial differences in birth health risk: A quantitative genetic approach](http://link.springer.com/article/10.2307/2648042). _Demography, 37_, 285–298.(NLSY79)
+van den Oord, E.J.C.G., Rowe, D.C. (2000) . [Racial differences in birth health risk: A quantitative genetic approach](http://link.springer.com/article/10.2307/2648042). _Demography, 37_, 285-298.(NLSY79)
 
 Rodgers, J. L., Rowe, D. C., & Buster, M. (1999) . [Nature, nurture, and first sexual intercourse in the USA: Fitting behavioral genetic models to NLSY kinship data.](http://www.ncbi.nlm.nih.gov/pubmed/10081235) *Journal of Biosocial Sciences, 31*. (NLSY79)
 
