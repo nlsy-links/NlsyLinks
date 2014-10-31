@@ -13,5 +13,8 @@ The website is hosted on [GitHub Pages](https://pages.github.com/).  It is built
 To increase transparency and promote reproducibility, this website is assigned a unique [DOI](http://www.doi.org/) (digital object identifier) after each substantial modification.  Each major version is archived (and [available for download indefinitely](https://zenodo.org/search?ln=en&p=MReportingPublic)) on a third-party site --where we cannot modify it.  The DOI of the current version is [10.5281/zenodo.12425](http://dx.doi.org/10.5281/zenodo.12425).  
 [![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12425)
 
+## Support Forums
+Our [support forums](https://r-forge.r-project.org/forum/?group_id=1330/) are intended to cover all aspects of this project, not just software.
+
 ## Code Collaboration
 Interested collaborators are welcome to propose changes or [submit an issue](https://github.com/LiveOak/NlsyLinks/issues) on our public [GitHub repository](https://github.com/LiveOak/NlsyLinks).  If you're new to GitHub, see the "Collaborating" section half-way down their [help site](https://help.github.com/), or post a comment to us below.

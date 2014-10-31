@@ -28,11 +28,9 @@ Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of ag
 
 Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*.  Pp. 59-61.
 
-Van Hulle, C. A., Lahey, B. B., Rathouz, P. J. (2013). [Operating characteristics of alternative statistical methods for detecting gene-by-measured environment interaction in the presence of gene-environment correlation in twin and sibling studies](http://link.springer.com/article/10.1007/s10519-012-9568-4). *Behavior Genetics, 43*, 73-84.
-
 D'Onofrio, B. M., Rickert, M. E., Långström, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. 
 
-Dorius, C. (2012). [New approaches to measuring multipartnered fertility over the life course](http://www.psc.isr.umich.edu/pubs/pdf/rr12-769.pdf). Population Studies Center Research Report 12-769. 
+Dorius, C. (2012). [New approaches to measuring multipartnered fertility over the life course](http://www.psc.isr.umich.edu/pubs/pdf/rr12-769.pdf). University of Michigan Population Studies Center Research Report 12-769. 
 
 Goodnight, J. A., Lahey, B. B., Van Hulle, C. A., Rodgers, J. L., Rathouz, P. J., Waldman, I. D., & D'Onofrio, B. M. (2012). [A quasi-experimental analysis of the influence of neighborhood disadvantage on child and adolescent conduct problems](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3287068/). *Journal of Abnormal Psychology, 121*, 95-108.
 
