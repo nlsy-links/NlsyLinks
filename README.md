@@ -12,3 +12,5 @@ The latest development version of `NlsyLinks` can be installed from [GitHub](htt
 install.packages("devtools")
 devtools::install_github(repo="LiveOak/NlsyLinks", subdir="NlsyLinks")
 ```
+
+[![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12519)
