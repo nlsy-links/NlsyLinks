@@ -10,8 +10,8 @@ We now use  [this GitHub repository](https://github.com/LiveOak/NlsyLinksStaging
 The contents of the `/NlsyLinks/` directory is maintained on the [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/).  The other folders exist only in this GitHub repository.
 
 ## Installing Development Version
-The latest development version of Wats can be installed from [GitHub](https://github.com/LiveOak/NlsyLinks/) after installing the `devtools` package.
+The latest development version of `NlsyLinks` can be installed from [GitHub](https://github.com/LiveOak/NlsyLinks/) after installing the `devtools` package.
 ```
 install.packages("devtools")
-devtools::install_github(repo="OuhscBbmc/Wats")
+devtools::install_github(repo="LiveOak/NlsyLinks", subdir="NlsyLinks")
 ```
