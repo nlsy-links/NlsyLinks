@@ -9,9 +9,6 @@ Welcome to the Kinship files for the NLSY. This site is structured into primary 
 
  * **Research** provides context for the kinship links and how they can enhance NLSY research.
  * **Datasets** contains kniship links, as well as other datasets that may be helpful to NLSY researchers.
- * **Funding** pages describe current and previous funding proposals.  A proposal is categorized under the year it was submitted.
  * **About** covers the collaborators and stakeholders involved in the 20+ year history.
 
 If you have any questions or comments, feel free to post them below. -- *JAMTTSIIR (Joe's Amazing Team That's So Interdisciplinary It's Ridiculous)*
-
-[![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12425)
