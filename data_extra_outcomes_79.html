@@ -82,7 +82,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </script>
 
 
-<link rel="stylesheet" href="include\custom.css" type="text/css" />
+<link rel="stylesheet" href="include/custom.css" type="text/css" />
 
 </head>
 
@@ -166,8 +166,121 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <h1 class="title">ExtraOutcomes79</h1>
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#formats">Formats</a></li>
+<li><a href="#data-dictionary">Data Dictionary</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#example-in-r">Example in R</a></li>
+</ul>
+</div>
 
-<p>Coming soon. See the dataset in <a href="http://cran.r-project.org/web/packages/NlsyLinks/">NlsyLinks</a> if you need this now.</p>
+<hr />
+<div id="description" class="section level1">
+<h1>Description</h1>
+<blockquote>
+<p>Extra outcome variables in the NLSY79</p>
+</blockquote>
+<p>dataset is provided primarily to facilitate documentation examples.</p>
+<hr />
+</div>
+<div id="formats" class="section level1">
+<h1>Formats</h1>
+<p>The dataset is available in the following formats:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/LiveOak/NlsyLinksDetermination/master/ForDistribution/Outcomes/ExtraOutcomes79.csv">CSV</a> is our recommendation.</li>
+<li><a href="https://github.com/LiveOak/NlsyLinks/blob/master/NlsyLinks/data/ExtraOutcomes79.rda">R Binary</a>, after navigating to the page, click on the ‘View Raw’ button to download it.</li>
+<li><em>SAS</em> (coming soon.)</li>
+</ul>
+<hr />
+</div>
+<div id="data-dictionary" class="section level1">
+<h1>Data Dictionary</h1>
+<p>A data frame with 11,495 observations on the following 6 variables. There is one row per subject.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable Name</th>
+<th align="left">Type</th>
+<th align="left">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">SubjectTag</td>
+<td align="left">integer</td>
+<td align="left">The ID value assigned by NLS to the first subject. For Gen1 Subjects, this is their “CaseID” (ie, R00001.00). For Gen2 subjects, this is their “CID” (ie, C00001.00).</td>
+</tr>
+<tr class="even">
+<td align="left">SubjectID</td>
+<td align="left">integer</td>
+<td align="left">The ID value assigned by NLS to the first subject. For Gen1 Subjects, this is their “CaseID” (ie, R00001.00). For Gen2 subjects, this is their “CID” (ie, C00001.00).</td>
+</tr>
+<tr class="odd">
+<td align="left">Generation</td>
+<td align="left">integer</td>
+<td align="left">The generation of the subject. Values are either 1 or 2, representing Gen1 and Gen2. Note that this variable is not a <code>factor</code> (in constrast with data frames like <a href="./data_links_79_pair.html"><code>Links79Pair</code></a>. This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a <code>factor</code>.</td>
+</tr>
+<tr class="even">
+<td align="left">HeightZGenderAge</td>
+<td align="left">float</td>
+<td align="left">The subject’s height, standardized by gender and age (see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">WeightZGenderAge</td>
+<td align="left">float</td>
+<td align="left">The subject’s weight, standardized by gender and age (see Details).</td>
+</tr>
+<tr class="even">
+<td align="left">AfqtRescaled2006Gaussified</td>
+<td align="left">float</td>
+<td align="left">Armed Forces Qualification Test Score (Gen1 only; see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">Afi</td>
+<td align="left">float</td>
+<td align="left">Self-reported age of first intercourse (Gen1 only; see Details).</td>
+</tr>
+<tr class="even">
+<td align="left">Afm</td>
+<td align="left">float</td>
+<td align="left">Self-reported age of first menstration (Gen1 only; see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">MathStandardized</td>
+<td align="left">float</td>
+<td align="left">Standardized PIAT Math scores (Gen2 only; see Details).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="details" class="section level1">
+<h1>Details</h1>
+<p>The <code>SubjectTag</code> variable uniquely identify subjects. For Gen2 subjects, the SubjectTag is identical to their CID (ie, C00001.00 -the SubjectID assigned in the NLSY79-Children files). However for Gen1 subjects, the SubjectTag is their CaseID (ie, R00001.00), with “00” appended. This manipulation is necessary to identify subjects uniquely in inter-generational datasets. A Gen1 subject with an ID of 43 has a <code>SubjectTag</code> of 4300. The SubjectTags of her four children remain 4301, 4302, 4303, and 4304.</p>
+<p>For Gen2, an NLSY79 variable of <code>MathStandardized</code> is C05801.00.</p>
+<p><code>Afi</code> and <code>Afm</code>, values were simplified (to one value per subject) by Kelly Meredith in Sept 2010.</p>
+<p>The variables for height and weight were manipulated in R files available in a <a href="https://github.com/LiveOak/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes">repository</a> available to the public. Find the appropriate subfolder, and view the HTML report for more details.</p>
+<hr />
+</div>
+<div id="example-in-r" class="section level1">
+<h1>Example in R</h1>
+<pre class="r"><code>library(NlsyLinks) #Load the package into the current R session.
+gen2Outcomes &lt;- subset(ExtraOutcomes79, Generation==2) #Create a dataset of only Gen2 subjects.
+                  
+#plot(ExtraOutcomes79) #Uncomment to see a large scatterplot matrix.
+summary(ExtraOutcomes79)
+
+oldPar &lt;- par(mfrow=c(3,2))
+hist(ExtraOutcomes79$Generation)
+hist(ExtraOutcomes79$MathStandardized)
+hist(ExtraOutcomes79$HeightZGenderAge)
+hist(ExtraOutcomes79$WeightZGenderAge)
+hist(ExtraOutcomes79$Afi)
+hist(ExtraOutcomes79$Afm)
+par(oldPar)</code></pre>
+</div>
 
 <!-- start of after_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
 

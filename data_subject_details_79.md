@@ -14,7 +14,7 @@ These variables are useful to many types of analyses (not just behavior genetics
 The dataset is available in the following formats:
 
  * [CSV](https://raw.githubusercontent.com/LiveOak/NlsyLinks/master/NlsyLinks/OutsideData/SubjectDetailsV85.csv) is our recommendation.
- * [R Binary](https://github.com/LiveOak/NlsyLinks/blob/master/NlsyLinks/data/Links79PairExpanded.rda), after navigating to the page, click on the 'View Raw' button to download it.
+ * [R Binary](https://github.com/LiveOak/NlsyLinks/blob/master/NlsyLinks/data/SubjectDetails79.rda), after navigating to the page, click on the 'View Raw' button to download it.
  * *SAS* (coming soon.)
 
 ***
