@@ -34,7 +34,7 @@
 #' \code{SubjectTag} of 4300.  The SubjectTags of her four children remain
 #' 4301, 4302, 4303, and 4304.
 #' 
-#' For Gen2, an NLSY79 variable of \code{MathStandardized} is C0580100.00.
+#' For Gen2, an NLSY79 variable of \code{MathStandardized} is C05801.00.
 #' 
 #' \code{Afi} and \code{Afm}, values were simplified
 #' (to one value per subject) by Kelly Meredith in Sept 2010.
