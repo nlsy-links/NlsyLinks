@@ -28,7 +28,7 @@ Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of ag
 
 Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*.  Pp. 59-61.
 
-D'Onofrio, B. M., Rickert, M. E., Långström, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. 
+D'Onofrio, B. M., Rickert, M. E., L\ångstr\öm, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. 
 
 Dorius, C. (2012). [New approaches to measuring multipartnered fertility over the life course](http://www.psc.isr.umich.edu/pubs/pdf/rr12-769.pdf). University of Michigan Population Studies Center Research Report 12-769. 
 
