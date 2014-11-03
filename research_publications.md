@@ -9,7 +9,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 
 # Articles and Book Chapters
-**In reverse chronological order, updated October 2014**
+**In reverse chronological order, updated November 2014**
 
 ## 2011 -
 Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (in press). Effects of multiple maternal relationship transitions on offspring antisocial behavior in childhood and adolescence: A cousin-comparison analysis. *Journal of Abnormal Child Psychology*.
