@@ -131,21 +131,25 @@ Rodgers, J. L., Rowe, D. C., & May, K. (1994) . [DF analysis of NLSY IQ/achievem
 Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep: Ethnic and racial similarity in developmental processes.](http://psycnet.apa.org/journals/rev/101/3/396/) _Psychological Review, 101_, 396-413. (NLSYC)
 
 # Recent Presentations by the Team Involving the Links
-SPSP 2015
+Society for Personality and Social Psychology 2015
 
 * Impact of Adolescent Conscientiousness and Intelligence on Health at Middle Age: A Sibling Comparison Approach
 
-BGA 2014
+Behavior Genetics Association 2014
 
  * A Dynamic Mixture Biometric Model of Cognitive Development in the  NLSY Children
  * Family Matters: A Multi-Level Family Study of Age of First Intercourse
  * Intelligence and Fertility in the NLSY79 Respondents: Children of Siblings and Biometrical Models
 
-[BGA 2013](https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330) *(the presentation is included as attachments in this thread*)
+Society for Adolescent Health and Medicine 2013
+
+*Psychosocial Predictors Of Adolescent Sexual Risk Behavior: A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths
+
+[Behavior Genetics Association 2013](https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330) *(the presentation is included as attachments in this thread*)
 
  * NLSY Kinship Links:  Creating Biometrical Design Structures from Cross-Generational Data
 
-[BGA 2012](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330) (*the presentations are included as attachments in this thread*)
+[Behavior Genetics Association 2012](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330) (*the presentations are included as attachments in this thread*)
 
  * The 2012 National Longitudinal Survey of Youth Kinship Links: Conducting Behavior Genetic Research Using the NLSY79 and NLSY-Children Data
  * NlsyLinks: An R Package Facilitating BG Research with the NLSY
