@@ -16,8 +16,6 @@ Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. 
 
 Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
 
-Briley, D. A., & Tucker-Drob, E. M. (2014). [Genetic and environmental continuity in personality development: A meta-analysis](http://psycnet.apa.org/doi/10.1037/a0037091). *Psychological Bulletin, 140*(5). 1303-1331.
-
 Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment interactions in early externalizing behaviors: parental emotional support and socioeconomic context as moderators of genetic influences?](http://link.springer.com/article/10.1007/s10519-014-9664-8/fulltext.html) *Behavior genetics, 44*(5), 468-486.
 
 Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environmental Influences on Self-Control and Delinquency: Results from a Genetically Informative Analysis of Sibling Pairs.](http://www.ncbi.nlm.nih.gov/pubmed/24142448) *Journal of Interpersonal Violence, 29*.  707-735. (NLSYC)
