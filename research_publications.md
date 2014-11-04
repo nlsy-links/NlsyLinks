@@ -52,7 +52,7 @@ Hart, S. A., Petrill, S. A., & Kamp Dush, C. M. (2010). [Genetic influences on l
 
 Miller, W. B., Bard, D. E., Pasta, D. J., & Rodgers, J. L. (2010) . [Biodemographic modeling of the links between fertility motivation and fertility outcomes in the NLSY79](http://link.springer.com/article/10.1353/dem.0.0107). *Demography, 47*, 393-414. (NLSY79) 
 
-Miller, W. B., Rodgers, J. L., & Pasta, D. (2010) . [The fertility motivations of youth predict later fertility outcomes: A prospective analysis of NLSY data](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2867342/7). *Biodemography and Social Biology, 56*, 1-23. (NLSY79)
+Miller, W. B., Rodgers, J. L., & Pasta, D. (2010) . [The fertility motivations of youth predict later fertility outcomes: A prospective analysis of NLSY data](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2867342). *Biodemography and Social Biology, 56*, 1-23. (NLSY79)
 
 Salsberry, P. J. & Reagan, P.B. (2010). [Effects of heritability, shared  environment and non-shared intrauterine conditions on child and adolescent BMI](http://onlinelibrary.wiley.com/doi/10.1038/oby.2009.485/abstract). *Obesity, 18*(9), 1775-1780. (NLSYC)
 
