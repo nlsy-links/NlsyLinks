@@ -145,7 +145,7 @@ Behavior Genetics Association 2014
 
 Society for Adolescent Health and Medicine 2013
 
-*Psychosocial Predictors Of Adolescent Sexual Risk Behavior: A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths
+* Psychosocial Predictors Of Adolescent Sexual Risk Behavior: A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths
 
 [Behavior Genetics Association 2013](https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330) *(the presentation is included as attachments in this thread*)
 
