@@ -36,7 +36,7 @@ Goodnight, J. A., Lahey, B. B., Van Hulle, C. A., Rodgers, J. L., Rathouz, P. J.
 
 Harden, K. P., Quinn, P. D., & Tucker-Drob, E. M. (2012). [Genetically influenced change in sensation seeking drives the rise of delinquent behavior during adolescence](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261521/). *Developmental science, 15*(1), 150-163.
 
-Jaffee, S., Van Hulle, C., & Rodgers, J L. (2011) . [Effects of non-maternal care in the first three years on children's academic skills and behavioral functioning in childhood and early adolescence: A sibling comparison study](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3640295/). *Child Development, 84*, 1076-1081.
+Jaffee, S., Van Hulle, C., & Rodgers, J L. (2011) . [Effects of non-maternal care in the first three years on children's academic skills and behavioral functioning in childhood and early adolescence: A sibling comparison study](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3640295/). *Child Development, 84*, 1076-1081. (NLSY79; NLSYC)
 
 Meredith, K. (2011). Effects of early family environment on age at menarche in the NLSY. Masters thesis, University of Oklahoma. (NLS79).
 
