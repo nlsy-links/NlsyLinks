@@ -46,7 +46,7 @@ Classen, R. (2010). [Measures of the intergenerational transmission of body mass
 
 Dorius, C. (2010). [Does serial parent harm women over the long run?:The link between multiple partner fertility and women's mental and physical health at midlife](http://www.changingamericanfamilies.com/pdfs/dorius_dissertation.pdf).  Dissertation, Pennsylvania State University. (NLSYC)
 
-Hart, S. A., Petrill, S. A., & Kamp Dush, C. M. (2010). [Genetic influences on language, reading, and mathematics skills in a national sample: An analysis using the National Longitudinal Survey of Youth](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148850/). *Language, speech, and hearing services in schools, 41*(1), 118.
+Hart, S. A., Petrill, S. A., & Kamp Dush, C. M. (2010). [Genetic influences on language, reading, and mathematics skills in a national sample: An analysis using the National Longitudinal Survey of Youth](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148850/). *Language, speech, and hearing services in schools, 41*(1), 118. (NLSY79)
 
 Miller, W. B., Bard, D. E., Pasta, D. J., & Rodgers, J. L. (2010) . [Biodemographic modeling of the links between fertility motivation and fertility outcomes in the NLSY79](http://link.springer.com/article/10.1353/dem.0.0107). *Demography, 47*, 393-414. (NLSY79) 
 
@@ -56,18 +56,18 @@ Salsberry, P. J. & Reagan, P.B. (2010). [Effects of heritability, shared  enviro
 
 Lahey, B. B., Van Hulle, C. A., Rathouz, P.J., Rodgers, J. L., D'Onofrio, B. M., & Waldman, I. (2009) . [Are oppositional-defiant and hyperactive-inattentive symptoms developmental precursors to conduct problems in late childhood?: Genetic and environmental links](http://link.springer.com/article/10.1007/s10802-008-9257-1). _Journal of Abnormal Child Psychology, 37_, 45-58. (NLSYC)
 
-Levine, Stephen Z. (2009). Genetic modeling of BMIs: A national representative sample. MA Thesis, Bar Ilan University, Israel.
+Levine, Stephen Z. (2009). Genetic modeling of BMIs: A national representative sample. MA Thesis, Bar Ilan University, Israel. (NLSY79)
 
 Mendle, J., Harden, K. P., Turkheimer, E., Van Hulle, C. A., D'Onofrio, B. M., Brooks-Bunn, J., Rodgers, J. L., Emery, R. E., & Lahey. B. B. (2009) . [Associations between father absence and age of first sexual intercourse](http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8624.2009.01345.x/full). *Child Development, 80*, 1463-1480. (NLSY79)
 
-Van Hulle, C. A., Waldman, I. D., D'Onofrio, B. M., Rodgers, J. L., Rathouz, P. J., & Lahey, B. B. (2009) . [Developmental structure of genetic influences on antisocial behavior across childhood and adolescence.](http://psycnet.apa.org/journals/abn/118/4/711/) *Journal of Abnormal Psychology, 118*, 711-721.(NLSYC)
+Van Hulle, C. A., Waldman, I. D., D'Onofrio, B. M., Rodgers, J. L., Rathouz, P. J., & Lahey, B. B. (2009) . [Developmental structure of genetic influences on antisocial behavior across childhood and adolescence.](http://psycnet.apa.org/journals/abn/118/4/711/) *Journal of Abnormal Psychology, 118*, 711-721. (NLSYC)
 
-D'Onofrio, B. M., Van Hulle, C.A., Waldman, I. D., Rodgers, J. L., Harden, K. P., Rathouz, P. J., & Lahey, B. B. (2008) .  [Smoking during pregnancy and offspring externalizing problems: An exploration of genetic and environmental confounds](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=1641968). *Development and Psychopathology, 20*, 139-164.  (NLSY79)
+D'Onofrio, B. M., Van Hulle, C.A., Waldman, I. D., Rodgers, J. L., Harden, K. P., Rathouz, P. J., & Lahey, B. B. (2008).  [Smoking during pregnancy and offspring externalizing problems: An exploration of genetic and environmental confounds](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=1641968). *Development and Psychopathology, 20*, 139-164.  (NLSY79)
 
-Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008) . [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497) *Behavior Genetics, 38*, 567-578. (NLSYC and NLSY79)
+Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008) . [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497) *Behavior Genetics, 38*, 567-578. (NLSY79; NLSYC)
 
 D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz, P.J., & Lahey, B.B. (2007). [Causal inferences regarding prenatal alcohol exposure and childhood externalizing problems](http://www.ncbi.nlm.nih.gov/pubmed/17984398). *Archives of General
-Psychiatry, 64*, 1296-1304.
+Psychiatry, 64*, 1296-1304. (NLSY79; NLSYC)
 
 McCartan, L. M. (2007). [Inevitable, influential, or unnecessary? Exploring the utility of genetic explanation for delinquent behavior.](http://www.sciencedirect.com/science/article/pii/S0047235207000220) *Journal of Criminal Justice, 35*, 219-233. (NLSYC)
 
