@@ -26,7 +26,7 @@ Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi,
 
 Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/bitstream/handle/11244/7913/Dissertation_Kelly.M.Meredith_ForDeposit.pdf). Doctoral dissertation, University of Oklahoma. (NLSY79).
 
-Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*.  59-61. <!--- Link results in an infinite loop --->
+Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*.  59-61.
 
 D'Onofrio, B. M., Rickert, M. E., L\ångstr\öm, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. (NLSY79; NLSYC/YA)
 
