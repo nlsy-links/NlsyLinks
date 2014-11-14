@@ -12,7 +12,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 **In reverse chronological order, updated November 2014**
 
 ## 2011 -
-Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (in press). Effects of multiple maternal relationship transitions on offspring antisocial behavior in childhood and adolescence: A cousin-comparison analysis. *Journal of Abnormal Child Psychology*.
+Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (in press). Effects of multiple maternal relationship transitions on offspring antisocial behavior in childhood and adolescence: A cousin-comparison analysis. *Journal of Abnormal Child Psychology*. (NLSY79; NLSYC/YA)
 
 Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
 
@@ -20,19 +20,19 @@ Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment i
 
 Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environmental Influences on Self-Control and Delinquency: Results from a Genetically Informative Analysis of Sibling Pairs.](http://www.ncbi.nlm.nih.gov/pubmed/24142448) *Journal of Interpersonal Violence, 29*.  707-735. (NLSYC)
 
-Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2014). [Behavior problems and timing of menarche: A developmental longitudinal biometrical analysis using the NLSY-children data](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics*, 1-20.
+Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2014). [Behavior problems and timing of menarche: A developmental longitudinal biometrical analysis using the NLSY-children data](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics*, 1-20. (NLSYC)
 
 Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi, and Ahmed Nezar Kobeisy (2013) [Genetic and Environmental Contributions to Stability and Change in Levels of Self-Control](http://www.sciencedirect.com/science/article/pii/S004723521300069X). *Journal of Criminal Justice, 41*, 300-308. (NLSYC)
 
 Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/bitstream/handle/11244/7913/Dissertation_Kelly.M.Meredith_ForDeposit.pdf). Doctoral dissertation, University of Oklahoma. (NLSY79).
 
-Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*.  Pp. 59-61.
+Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*.  59-61.
 
-D'Onofrio, B. M., Rickert, M. E., L\ångstr\öm, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. 
+D'Onofrio, B. M., Rickert, M. E., L\ångstr\öm, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. (NLSY79; NLSYC/YA)
 
 Dorius, C. (2012). [New approaches to measuring multipartnered fertility over the life course](http://www.psc.isr.umich.edu/pubs/pdf/rr12-769.pdf). University of Michigan Population Studies Center Research Report 12-769. 
 
-Goodnight, J. A., Lahey, B. B., Van Hulle, C. A., Rodgers, J. L., Rathouz, P. J., Waldman, I. D., & D'Onofrio, B. M. (2012). [A quasi-experimental analysis of the influence of neighborhood disadvantage on child and adolescent conduct problems](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3287068/). *Journal of Abnormal Psychology, 121*, 95-108.
+Goodnight, J. A., Lahey, B. B., Van Hulle, C. A., Rodgers, J. L., Rathouz, P. J., Waldman, I. D., & D'Onofrio, B. M. (2012). [A quasi-experimental analysis of the influence of neighborhood disadvantage on child and adolescent conduct problems](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3287068/). *Journal of Abnormal Psychology, 121*, 95-108. (NLSYC/YA)
 
 Harden, K. P., Quinn, P. D., & Tucker-Drob, E. M. (2012). [Genetically influenced change in sensation seeking drives the rise of delinquent behavior during adolescence](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261521/). *Developmental science, 15*(1), 150-163.
 
