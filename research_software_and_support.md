@@ -21,7 +21,7 @@ For beginners, the most helpful documents are:
 ## Examples for [SAS](http://en.wikipedia.org/wiki/SAS_%28software%29)
 Because the links are distributed in a variety of file formats (including as non-proprietary CSVs), the are accessible by all statistical software.  The NLSY and BG concepts and basic programming are fairly consistent across languages, so the R examples should be roughly translatable into different statistical platforms.  
 
-Here's a SAS example that covers the basics.  If you have a need for a different example, or a different language, feel free to request it in the ['other-software' section in our forums](https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330).  We would like to know what examples are platofrms are the most useful to the potential users of the links.
+Here's a SAS example that covers the basics.  If you have a need for a different example, or a different language, feel free to request it in the ['Other Software' section in our forums](https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330).  We would like to know what examples are platofrms are the most useful to the potential users of the links.
 
 * [SAS Example](https://github.com/LiveOak/NlsyLinks/blob/master/NlsyLinks/UtilityScripts/SasExample/SasExample.md)
 
@@ -33,4 +33,10 @@ The [`NlsyLinksDetermination` repository](https://github.com/LiveOak/NlsyLinksDe
 
 ***
 ## Support Forums
-Our [support forums](https://r-forge.r-project.org/forum/?group_id=1330) are intended to cover all aspects of this project, not just software.
+Our [support forums](https://r-forge.r-project.org/forum/?group_id=1330) are intended to cover all aspects of this project, not just software.  The top-level forums are:
+
+ * [Open Discussion](https://r-forge.r-project.org/forum/forum.php?forum_id=4266&group_id=1330): General discussion
+ * [Package Development](https://r-forge.r-project.org/forum/forum.php?forum_id=4268&group_id=1330): Discussion & questions about *developing* the [NlsyLinks](http://cran.r-project.org/web/packages/NlsyLinks/) package
+ * [Applied Research](https://r-forge.r-project.org/forum/forum.php?forum_id=4314&group_id=1330): BG and other applied research, including downloading kinship links
+ * [Package Usage](https://r-forge.r-project.org/forum/forum.php?forum_id=4315&group_id=1330): Discussion & questions about *using* the [NlsyLinks](http://cran.r-project.org/web/packages/NlsyLinks/) package
+ * [Other Software](https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330): Discussion of using the links in SAS, Mplus, OpenMx, etc
