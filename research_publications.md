@@ -157,19 +157,11 @@ Society for Adolescent Health and Medicine 2013
  * Multivariate Models of BMI, Intelligence, and Fertility Using the NLSY-Children Kinship Links
  * The 2012 National Longitudinal Survey of Youth Kinship Links: A Discussion (by discussant Brian D'Onofrio)
 
-
 # General NLSY Articles
 A larger, searchable list of research using the NLSY datasets is maintained at [nlsinfo.org](https://nlsinfo.org/bibliography-start).
 
 # Current documentation, vignettes, and user support
-Package documentation: http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf
+Please see the provided entries on the [Research Software and Support](research_software_and_support) page.
 
-Vignette of estimating ACE models with the NlsyLinks package: http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf
-
-Vignette for extracting NLSY data: http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsInvestigator.pdf
-
-NlsyLinks FAQ: http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf
-
-User forums: https://r-forge.r-project.org/forum/?group_id=1330
-
+------
 Compiled by [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), and [Mason Garrison](http://www.smasongarrison.com/) 

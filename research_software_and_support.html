@@ -82,7 +82,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </script>
 
 
-<link rel="stylesheet" href="include\custom.css" type="text/css" />
+<link rel="stylesheet" href="include/custom.css" type="text/css" />
 
 </head>
 
@@ -168,23 +168,40 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="TOC">
 <ul>
-<li><a href="#nlsylinks">NlsyLinks</a></li>
-<li><a href="#nlsylinksdetermination">NlsyLinksDetermination</a></li>
+<li><a href="#nlsylinks-and-examples-for-r">NlsyLinks and Examples for <a href="http://en.wikipedia.org/wiki/R_%28programming_language%29">R</a></a></li>
+<li><a href="#examples-for-sas">Examples for <a href="http://en.wikipedia.org/wiki/SAS_%28software%29">SAS</a></a></li>
+<li><a href="#nlsylinksdetermination-in-c">NlsyLinksDetermination in <a href="http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a></a></li>
 <li><a href="#support-forums">Support Forums</a></li>
 </ul>
 </div>
 
 <hr />
-<div id="nlsylinks" class="section level2">
-<h2>NlsyLinks</h2>
+<div id="nlsylinks-and-examples-for-r" class="section level2">
+<h2>NlsyLinks and Examples for <a href="http://en.wikipedia.org/wiki/R_%28programming_language%29">R</a></h2>
 <p>The <a href="http://cran.r-project.org/web/packages/NlsyLinks/"><code>NlsyLinks</code> R package</a> contains utilities and kinship information for behavior genetics and developmental research using the <a href="http://www.bls.gov/nls/">NLSY</a>. The development (and directions for installing it) are located in a <a href="https://github.com/LiveOak/NlsyLinks">GitHub</a> repository.</p>
+<p>For beginners, the most helpful documents are:</p>
+<ul>
+<li><a href="http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf">Package documentation</a></li>
+<li><a href="http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf">Vignette of estimating ACE models with the NlsyLinks package</a></li>
+<li><a href="http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsInvestigator.pdf">Vignette for extracting NLSY data</a></li>
+<li><a href="http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf">NlsyLinks FAQ</a></li>
+</ul>
 <p><a href="http://dx.doi.org/10.5281/zenodo.12519"><img src="https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png" alt="DOI" /></a> Package DOI</p>
 <p><a href="http://dx.doi.org/10.5281/zenodo.12425"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.12425.png" alt="DOI" /></a> Website DOI</p>
 <hr />
 </div>
-<div id="nlsylinksdetermination" class="section level2">
-<h2>NlsyLinksDetermination</h2>
-<p>The <a href="https://github.com/LiveOak/NlsyLinksDetermination/"><code>NlsyLinksDetermination</code> repository</a> repository contains the C# code that manipulates the NLSY data to produce the relatedness values. If you’re only interested in the R package, then you want the <code>NlsyLinks</code> package described above.</p>
+<div id="examples-for-sas" class="section level2">
+<h2>Examples for <a href="http://en.wikipedia.org/wiki/SAS_%28software%29">SAS</a></h2>
+<p>Because the links are distributed in a variety of file formats (including as non-proprietary CSVs), the are accessible by all statistical software. The NLSY and BG concepts and basic programming are fairly consistent across languages, so the R examples should be roughly translatable into different statistical platforms.</p>
+<p>Here’s a SAS example that covers the basics. If you have a need for a different example, or a different language, feel free to request it in the <a href="https://r-forge.r-project.org/forum/forum.php?forum_id=4316&amp;group_id=1330">‘other-software’ section in our forums</a>. We would like to know what examples are platofrms are the most useful to the potential users of the links.</p>
+<ul>
+<li><a href="https://github.com/LiveOak/NlsyLinks/blob/master/NlsyLinks/UtilityScripts/SasExample/SasExample.md">SAS Example</a></li>
+</ul>
+<hr />
+</div>
+<div id="nlsylinksdetermination-in-c" class="section level2">
+<h2>NlsyLinksDetermination in <a href="http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a></h2>
+<p>The <a href="https://github.com/LiveOak/NlsyLinksDetermination/"><code>NlsyLinksDetermination</code> repository</a> contains the C# code that manipulates the NLSY data to produce the relatedness values. If you’re only interested in the R package (and not how the relatedness coefficients were determined), then please see the <a href="./research_software_and_support.html#nlsylinks-and-examples-for-r"><code>NlsyLinks</code></a> package described above.</p>
 <p><a href="http://dx.doi.org/10.5281/zenodo.12518"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.12518.png" alt="DOI" /></a> Algorithm DOI</p>
 <hr />
 </div>
