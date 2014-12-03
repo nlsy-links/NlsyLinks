@@ -21,7 +21,7 @@ For beginners, the most helpful documents are:
 ## Examples for [SAS](http://en.wikipedia.org/wiki/SAS_%28software%29)
 Because the links are distributed in a variety of file formats (including as non-proprietary CSVs), the are accessible by all statistical software.  The NLSY and BG concepts and basic programming are fairly consistent across languages, so the R examples should be roughly translatable into different statistical platforms.  
 
-Here's a SAS example that covers the basics.  If you have a need for a different example, or a different language, feel free to request it in the ['Other Software' section in our forums](https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330).  We would like to know what examples are platofrms are the most useful to the potential users of the links.
+Here's a SAS example that covers the basics.  If you have a need for a different example, or a different language, feel free to request it in the ['Other Software' section in our forums](https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330).  We would like to know what examples of platforms are the most useful to the potential users of the links.
 
 * [SAS Example](https://github.com/LiveOak/NlsyLinks/blob/master/NlsyLinks/UtilityScripts/SasExample/SasExample.md)
 
