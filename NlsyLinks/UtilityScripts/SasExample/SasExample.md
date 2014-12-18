@@ -59,7 +59,7 @@ Other data manipulations in SAS could then be done, followed by saving the desir
 
 ## Import Links to SAS, Perform Data Manipulation, and DF Analysis
 
-**Mike, I think the Markdown above has all the examples you use later, except for output.  It probably makes sense to use the same code block formatting, just as if it were input code.**
+<!---**Mike, I think the Markdown above has all the examples you use later, except for output.  It probably makes sense to use the same code block formatting, just as if it were input code.** --->
 
 SAS Output:
 ```
