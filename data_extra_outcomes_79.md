@@ -14,7 +14,7 @@ title: "ExtraOutcomes79"
 The dataset is available in the following formats:
 
  * [CSV](https://raw.githubusercontent.com/LiveOak/NlsyLinksDetermination/master/ForDistribution/Outcomes/ExtraOutcomes79.csv) is our recommendation.
- * [R Binary](https://github.com/LiveOak/NlsyLinks/blob/master/NlsyLinks/data/ExtraOutcomes79.rda), after navigating to the page, click on the 'View Raw' button to download it.
+ * [R Binary](https://github.com/LiveOak/NlsyLinks/blob/master/data/ExtraOutcomes79.rda), after navigating to the page, click on the 'View Raw' button to download it.
  * *SAS* (coming soon.)
 
 ***
