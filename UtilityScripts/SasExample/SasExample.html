@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Using SAS with the NlsyLinks R Package</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Using SAS with the NlsyLinks R Package</h1>
+
+<h2>Authors</h2>
+
+<ul>
+<li><a href="http://students.ou.edu/H/Michael.D.Hunter-1/">Michael D. Hunter</a>, University of Oklahoma, Norman</li>
+<li><a href="http://scholar.google.com/citations?user=ffsJTC0AAAAJ">William Howard Beasley</a>, <a href="http://howardliveoak.com/">Howard Live Oak LLC</a>, Norman</li>
+<li><a href="http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Joseph Lee Rodgers</a>, Vanderbilt University, Nashville</li>
+<li><a href="http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041">David Bard</a>, University of Oklahoma Health Sciences Center, OKC</li>
+<li>Kelly Meredith, Oklahoma City University, OKC</li>
+</ul>
+
+<h2>Abstract</h2>
+
+<p>We describe how to use the R package <a href="http://cran.r-project.org/web/packages/NlsyLinks/"><code>NlsyLinks</code></a> with the SAS program.  This is a replication of the analyses from the <a href="http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf">ACE Models with the NLSY</a> vignette section called &ldquo;Example: DF analysis with a univariate outcome from a Gen2 Extract&rdquo;.</p>
+
+<h2>Import Links to SAS, Perform Data Manipulation, and Return to R</h2>
+
+<p>SAS Code:</p>
+
+<pre><code>/*import csv */
+DATA  LinksFromRPackage;
+  INFILE  &quot;E:/links.csv&quot; DSD LRECL=1024 DLM=&#39;,&#39; FIRSTOBS=2;
+    LENGTH RelationshipPath $14;
+    INPUT ExtendedID Subject1Tag Subject2Tag R RelationshipPath $;
+    IF RelationshipPath=&quot;Gen2Siblings&quot; THEN OUTPUT;
+RUN;
+</code></pre>
+
+<p>Note that for this to run missing values must be <code>.</code> as SAS specifies them not <code>NA</code>, the default R missing value code.  The file <code>links.csv</code> with the path <code>E:/links.csv</code> can be exported from the <a href="http://cran.r-project.org/web/packages/NlsyLinks/"><code>NlsyLinks</code></a> R package with the following R code.</p>
+
+<pre><code>### Begin R Code to export links
+ require(NlsyLinks)
+ dlink &lt;- subset(Links79Pair, RelationshipPath=&quot;Gen2Siblings&quot;)
+ fp &lt;- file.path(path.package(&quot;NlsyLinks&quot;), &quot;extdata&quot;, &quot;Gen2Birth.csv&quot;)
+ getwd() # Run this line to find out where files were saved
+ dout &lt;- ReadCsvNlsy79Gen2(fp)
+ write.csv(dout, file=&quot;outs.csv&quot;, row.names=FALSE, na=&quot;.&quot;)
+ write.csv(dlink, file=&quot;links.csv&quot;, row.names=FALSE, na=&quot;.&quot;, quote=FALSE)
+### End R code to export links
+</code></pre>
+
+<p>Once the linking file has been exported from R, the SAS code mentioned previously can be run to read the linking data into SAS.  The next few lines of SAS code read in the outcome data.  Some outcome data can be obtained from the <a href="http://cran.r-project.org/web/packages/NlsyLinks/"><code>NlsyLinks</code></a> package, but usually the NLS Investigator website will be the source of the outcome data.</p>
+
+<pre><code>DATA  OutcomesFromRPackageOrYou;
+  INFILE &quot;E:/outs.csv&quot;
+        DSD LRECL=1024 DLM=&#39;,&#39; FIRSTOBS=2;
+    INPUT SubjectTag SubjectID ExtendedID Generation SubjectTagOfMother
+        C0005300 C0005400 C0005700 C0328000 BirthWeightInOunces C0328800;
+    IF BirthWeightInOunces &lt; 0 THEN BirthWeightInOunces = .;
+    IF BirthWeightInOunces NE . AND BirthWeightInOunces &gt; 200
+        THEN BirthWeightInOunces = 200;
+RUN;
+</code></pre>
+
+<p>The user could change the <code>INFILE</code> to something like the following where these example NLSY data are stored in the R package.</p>
+
+<pre><code>INFILE  &quot;C:/Program Files/R/R-2.14.2/library/NlsyLinks/extdata/Gen2Birth.csv&quot;
+</code></pre>
+
+<p>Other data manipulations in SAS could then be done, followed by saving the desired data as csv and finally running analyses in R after reading in this new csv made from SAS.</p>
+
+<h2>Import Links to SAS, Perform Data Manipulation, and DF Analysis</h2>
+
+<p><strong>Mike, I think the Markdown above has all the examples you use later, except for output.  It probably makes sense to use the same code block formatting, just as if it were input code.</strong></p>
+
+<p>SAS Output:</p>
+
+<pre><code>                                      The SAS System       16:23 Sunday, January 19, 2014   8
+                                       Merge by ID2
+
+                                    The REG Procedure
+                                      Model: MODEL1
+                       Dependent Variable: BirthWeightInOunces_1c
+
+                  Number of Observations Read                      22176
+                  Number of Observations Used                      17440
+                  Number of Observations with Missing Values        4736
+
+
+                   NOTE: No intercept in model. R-Square is redefined.
+
+                                   Analysis of Variance
+
+                                          Sum of           Mean
+      Source                   DF        Squares         Square    F Value    Pr &gt; F
+
+      Model                     2        1349821         674911    1583.84    &lt;.0001
+      Error                 17438        7430721      426.12230
+      Uncorrected Total     17440        8780542
+
+
+                   Root MSE             20.64273    R-Square     0.1537
+                   Dependent Mean       -0.09445    Adj R-Sq     0.1536
+                   Coeff Var              -21855
+
+
+                                   Parameter Estimates
+
+                                           Parameter       Standard
+Variable                          DF       Estimate          Error    t Value    Pr &gt; |t|
+
+BirthWeightInOunces_2c             1        0.17766        0.02308       7.70      &lt;.0001
+R_times_BirthWeightInOunces_2c     1        0.50416        0.05313       9.49      &lt;.0001
+</code></pre>
+
+<p>This concludes the vignette on using the SAS with the <a href="http://cran.r-project.org/web/packages/NlsyLinks/"><code>NlsyLinks</code></a> package.</p>
+
+</body>
+
+</html>
+
