@@ -12,7 +12,7 @@ fileNameGen2 <- "Gen2Birth.csv"
   if( basename(normalizePath("."))=="NlsyLinks" ) {
     directoryForExpectedVectors <- "./inst/tests"
   }
-  else if( basename(normalizePath("."))=="tests" ) {
+  else if( basename(normalizePath("."))=="testthat" ) {
     directoryForExpectedVectors <- "."
   }
   else {
