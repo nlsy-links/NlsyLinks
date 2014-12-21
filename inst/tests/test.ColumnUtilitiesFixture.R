@@ -92,7 +92,7 @@ test_that("Nlsy79Gen2", {
   expectedIndex <- 0
   for( expectedColumnName in expectedColumNames ) {
     expectedIndex <- expectedIndex + 1
-    expect_equal(VerifyColumnExists(ds, expectedColumnName), expected=expectedIndex, paste("The column '", expectedColumnName, "' should be found."))
+    expect_equal(VerifyColumnExists(ds, expectedColumnName), expected=expectedIndex, info=paste("The column '", expectedColumnName, "' should be found."))
   }
 })
 
