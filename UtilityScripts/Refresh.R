@@ -16,17 +16,17 @@ devtools::build_vignettes()
 # devtools::build(args="--resave-data --no-build-vignettes")#args="--resave-data")
 
 # system("R CMD build --resave-data .") #Then move it up one directory.
-# tarBallPattern <- "^REDCapR_.+\\.tar\\.gz$"
+# tarBallPattern <- "^NlsyLinks_.+\\.tar\\.gz$"
 # file.copy(from=list.files(pattern=tarBallPattern), to="../", overwrite=TRUE)
 # system(paste("R CMD check --as-cran", list.files(pattern=tarBallPattern, path="..//", full.names=TRUE)))
 # unlink(list.files(pattern=tarBallPattern))
 # unlink(list.files(pattern=tarBallPattern, path="..//", full.names=TRUE))
-# unlink("REDCapR.Rcheck", recursive=T)
+# unlink("NlsyLinks.Rcheck", recursive=T)
 # system("R CMD check --as-cran D:/Projects/RDev/NlsyLinksStaging/NlsyLinks_1.300.tar.gz")
 
 # devtools::check(force_suggests = FALSE)
 # devtools::build_win(version="R-devel") #CRAN submission policies encourage the development version
-# devtools::revdep_check(pkg="REDCapR", recursive=TRUE)
+# devtools::revdep_check(pkg="NlsyLinks", recursive=TRUE)
 # devtools::release(check=FALSE) #Careful, the last question ultimately uploads it to CRAN, where you can't delete/reverse your decision.
 
 mean(is.na(NlsyLinks::Links79PairExpanded[NlsyLinks::Links79PairExpanded$RelationshipPath=="Gen1Housemates", "RFull"]))
