@@ -3,8 +3,9 @@ title: "Software and Support"
 ---
 
 ***
-## NlsyLinks and Examples for [R](http://en.wikipedia.org/wiki/R_%28programming_language%29)
-The [`NlsyLinks` R package](http://cran.r-project.org/web/packages/NlsyLinks/) contains utilities and kinship information for behavior genetics and developmental research using the [NLSY](http://www.bls.gov/nls/).  The development (and directions for installing it) are located in a [GitHub](https://github.com/LiveOak/NlsyLinks) repository.
+## NlsyLinks and Examples for R
+
+The [`NlsyLinks`](http://cran.r-project.org/web/packages/NlsyLinks/) [R](http://en.wikipedia.org/wiki/R_%28programming_language%29) package contains utilities and kinship information for behavior genetics and developmental research using the [NLSY](http://www.bls.gov/nls/).  The development (and directions for installing it) are located in a [GitHub](https://github.com/LiveOak/NlsyLinks) repository.
 
 For beginners, the most helpful documents are:
 
@@ -26,8 +27,8 @@ Here's a SAS example that covers the basics.  If you have a need for a different
 * [SAS Example](https://github.com/LiveOak/NlsyLinks/blob/master/NlsyLinks/UtilityScripts/SasExample/SasExample.md)
 
 ***
-## NlsyLinksDetermination in [C#](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29)
-The [`NlsyLinksDetermination` repository](https://github.com/LiveOak/NlsyLinksDetermination/) contains the C# code that manipulates the NLSY data to produce the relatedness values.  If you're only interested in the R package (and not how the relatedness coefficients were determined), then please see the [`NlsyLinks`](./research_software_and_support.html#nlsylinks-and-examples-for-r) package described above.
+## NlsyLinksDetermination in C\#
+The [`NlsyLinksDetermination` repository](https://github.com/LiveOak/NlsyLinksDetermination/) contains the [C#](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29) code that manipulates the NLSY data to produce the relatedness values.  If you're only interested in the R package (and not how the relatedness coefficients were determined), then please see the [`NlsyLinks`](./research_software_and_support.html#nlsylinks-and-examples-for-r) package described above.
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.12518.png)](http://dx.doi.org/10.5281/zenodo.12518) Algorithm DOI
 
