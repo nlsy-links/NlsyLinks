@@ -1,7 +1,6 @@
 ---
 title: "Kinship links for the NLSY"
 ---
-**(This site currently works only on desktops/laptops.  In future versions, the site will be fully functional on mobile devices.)**
 
 ### Welcome
 
@@ -12,3 +11,10 @@ Welcome to the Kinship files for the NLSY. This site is structured into primary 
  * **About** covers the collaborators and stakeholders involved in the 20+ year history.
 
 If you have any questions or comments, feel free to post them below. -- *JAMTTSIIR (Joe's Amazing Team That's So Interdisciplinary It's Ridiculous)*
+
+<div class="well">
+  [![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12519)
+  <a class="btn btn-info btn-xs" href="https://github.com/LiveOak/NlsyLinks">
+    <i class="fa fa-github"></i> Source Code
+  </a>
+</div>
