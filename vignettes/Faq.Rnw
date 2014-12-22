@@ -39,7 +39,7 @@ Welcome to the \code{NlsyLinks} package, which facilitates research with the \hr
 
 The current \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ} and the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette} provide overview, and the \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual} describe the package's syntax and functions; the documents are available on \href{http://cran.r-project.org/web/packages/NlsyLinks/}{CRAN}.  
 
-Literature targeting general behavior genetics is listed in the appendix of the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette}.  Furthermore, \href{https://github.com/LiveOak/NlsyLinksDetermination/wiki/Articles}{the articles and books involving the NLSY kinship links} provide more specialized information.
+Literature targeting general behavior genetics is listed in the appendix of the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette}.  Furthermore, \href{http://liveoak.github.io/NlsyLinks/research_publications.html}{the articles and books involving the NLSY kinship links} provide more specialized information.
 
 \section{Gen1 and Gen2}
 \textsf{What does ``Gen1'' and ``Gen2'' mean?}\\ \\

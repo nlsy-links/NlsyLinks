@@ -444,7 +444,7 @@ update our kinship links (embedded in \pkg{NlsyLinks}) with the newest informati
 
 
 \section{Appendix: References} \label{sec:References}
-A list of some articles that have used the NLSY for behavior genetics is available at: \url{https://github.com/LiveOak/NlsyLinksDetermination/wiki/Articles}.
+A list of some articles that have used the NLSY for behavior genetics is available at: \url{http://liveoak.github.io/NlsyLinks/research_publications.html}.
 
 Carey, Gregory (2002). \href{http://psych.colorado.edu/~carey/hgss/}{\emph{Human Genetics for the Social Sciences}}. Sage.
 
