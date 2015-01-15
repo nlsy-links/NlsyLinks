@@ -33,13 +33,14 @@
 #' }
 #'
 ReadCsvNlsy79Gen1 <- function( filePath, dsExtract=read.csv(filePath) ) {
+  d <- NlsyLinks::SubjectDetails79
   if( !("R0000100" %in% colnames(dsExtract)) ) stop("The NLSY variable 'R0000100' should be present, but was not found.")
     
   colnames(dsExtract)[colnames(dsExtract)=='R0000100'] <- "SubjectID"
   dsExtract$Generation <- 1
   dsExtract$SubjectTag <- CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
   
-  dsWithExtended <- SubjectDetails79[SubjectDetails79$Generation==1, c("SubjectTag", "ExtendedID")]
+  dsWithExtended <- d[d$Generation==1, c("SubjectTag", "ExtendedID")]
   ds <- merge(x=dsExtract, y=dsWithExtended, by="SubjectTag", all.x=TRUE, all.y=FALSE)
   
   firstColumns <- c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
@@ -49,6 +50,7 @@ ReadCsvNlsy79Gen1 <- function( filePath, dsExtract=read.csv(filePath) ) {
   return( ds )   
 }
 ReadCsvNlsy79Gen2 <- function( filePath, dsExtract=read.csv(filePath) ) {
+  d <- NlsyLinks::SubjectDetails79
   #   dsExtract <- read.csv(filePath)
   if( !("C0000100" %in% colnames(dsExtract)) ) stop("The NLSY variable 'C0000100' should be present, but was not found.")
   if( !("C0000200" %in% colnames(dsExtract)) ) stop("The NLSY variable 'C0000200' should be present, but was not found.")
@@ -59,7 +61,7 @@ ReadCsvNlsy79Gen2 <- function( filePath, dsExtract=read.csv(filePath) ) {
   dsExtract$Generation <- 2
   dsExtract$SubjectTag <- dsExtract$SubjectID #CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
   
-  dsWithExtended <- SubjectDetails79[SubjectDetails79$Generation==2, c("SubjectTag", "ExtendedID")]
+  dsWithExtended <- d[d$Generation==2, c("SubjectTag", "ExtendedID")]
   ds <- merge(x=dsExtract, y=dsWithExtended, by="SubjectTag", all.x=TRUE, all.y=FALSE)
   
   firstColumns <- c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
