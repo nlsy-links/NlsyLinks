@@ -1,7 +1,6 @@
 Package: NlsyLinks
 Type: Package
-Title: Utilities and kinship information for behavior genetics and
-    developmental research using the NLSY.
+Title: Utilities and kinship information for research with the NLSY
 Version: 1.404
 Date: 2015-01-15
 Author: Will Beasley, Joe Rodgers, David Bard, Michael Hunter, and Kelly
@@ -9,7 +8,7 @@ Author: Will Beasley, Joe Rodgers, David Bard, Michael Hunter, and Kelly
 Maintainer: Will Beasley <wibeasley@hotmail.com>
 Description: Utilities and kinship information for behavior genetics and
     developmental research using the National Longitudinal Survey of Youth
-    (NLSY; http://www.bls.gov/nls/)
+    (NLSY; http://www.bls.gov/nls/).
 URL: https://r-forge.r-project.org/projects/nlsylinks/
 Depends:
     R (>= 3.0.0),

@@ -1,4 +1,11 @@
-﻿Version 1.300 (2013-11-21)
+﻿Version 1.4005 (2015-01-15)
+------------------------------------------------------------------------------
+Updates:
+* Small updates to vignettes and documentation.
+* Small updates to meet newer CRAN guidelines about title & description format.
+* Checked with R Tools 3.2.
+
+Version 1.300 (2013-11-21)
 ------------------------------------------------------------------------------
 New Features:
 * A more complete version of the Gen1 links are included.  95% of all Gen1 Housemates have been linked.
