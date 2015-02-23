@@ -133,6 +133,10 @@ Rodgers, J. L., Rowe, D. C., & May, K. (1994) . [DF analysis of NLSY IQ/achievem
 Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep: Ethnic and racial similarity in developmental processes.](http://psycnet.apa.org/journals/rev/101/3/396/) _Psychological Review, 101_, 396-413. (NLSYC)
 
 # Recent Presentations by the Team Involving the Links
+Association for Research in Personality Conference 2015
+
+* Additive effects of maternal conscientiousness and general ability on infant health.
+
 Society for Personality and Social Psychology 2015
 
 * Impact of Adolescent Conscientiousness and Intelligence on Health at Middle Age: A Sibling Comparison Approach
