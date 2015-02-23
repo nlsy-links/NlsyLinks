@@ -9,20 +9,20 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 
 # Articles and Book Chapters
-**In reverse chronological order, updated November 2014**
+**In reverse chronological order, updated February 2015**
 
 ## 2011 -
-Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (in press). Effects of multiple maternal relationship transitions on offspring antisocial behavior in childhood and adolescence: A cousin-comparison analysis. *Journal of Abnormal Child Psychology*. (NLSY79; NLSYC/YA)
-
 Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
+
+Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2015). [Behavior Problems and Timing of Menarche: A Developmental Longitudinal Biometrical Analysis Using the NLSY-Children Data.](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics, 45*, 51-70. (NLSYC)
 
 Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment interactions in early externalizing behaviors: parental emotional support and socioeconomic context as moderators of genetic influences?](http://link.springer.com/article/10.1007/s10519-014-9664-8/fulltext.html) *Behavior genetics, 44*(5), 468-486. (NLSYC)
 
 Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environmental Influences on Self-Control and Delinquency: Results from a Genetically Informative Analysis of Sibling Pairs.](http://www.ncbi.nlm.nih.gov/pubmed/24142448) *Journal of Interpersonal Violence, 29*.  707-735. (NLSYC)
 
-Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2014). [Behavior problems and timing of menarche: A developmental longitudinal biometrical analysis using the NLSY-children data](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics*, 1-20. (NLSYC)
-
 Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi, and Ahmed Nezar Kobeisy (2013) [Genetic and Environmental Contributions to Stability and Change in Levels of Self-Control](http://www.sciencedirect.com/science/article/pii/S004723521300069X). *Journal of Criminal Justice, 41*, 300-308. (NLSYC)
+
+Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (2013). [Effects of Multiple Maternal Relationship Transitions on Offspring Antisocial Behavior in Childhood and Adolescence: A Cousin-Comparison Analysis.](http://link.springer.com/article/10.1007%2Fs10802-012-9667-y) *Journal of Abnormal Child Psychology, 41*(2),185-198. (NLSY79; NLSYC/YA)
 
 Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/bitstream/handle/11244/7913/Dissertation_Kelly.M.Meredith_ForDeposit.pdf). Doctoral dissertation, University of Oklahoma. (NLSY79).
 
