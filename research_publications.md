@@ -20,11 +20,13 @@ Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment i
 
 Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environmental Influences on Self-Control and Delinquency: Results from a Genetically Informative Analysis of Sibling Pairs.](http://www.ncbi.nlm.nih.gov/pubmed/24142448) *Journal of Interpersonal Violence, 29*.  707-735. (NLSYC)
 
+Edwards, M. D.  (2014).  State Space Dynamic Mixture Modeling:  Finding People with Similar Patterns of Change.  Doctoral Dissertation, University of Oklahoma.
+
 Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi, and Ahmed Nezar Kobeisy (2013) [Genetic and Environmental Contributions to Stability and Change in Levels of Self-Control](http://www.sciencedirect.com/science/article/pii/S004723521300069X). *Journal of Criminal Justice, 41*, 300-308. (NLSYC)
 
 Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (2013). [Effects of Multiple Maternal Relationship Transitions on Offspring Antisocial Behavior in Childhood and Adolescence: A Cousin-Comparison Analysis.](http://link.springer.com/article/10.1007%2Fs10802-012-9667-y) *Journal of Abnormal Child Psychology, 41*(2),185-198. (NLSY79; NLSYC/YA)
 
-Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/bitstream/handle/11244/7913/Dissertation_Kelly.M.Meredith_ForDeposit.pdf). Doctoral dissertation, University of Oklahoma. (NLSY79).
+Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/bitstream/handle/11244/7913/Dissertation_Kelly.M.Meredith_ForDeposit.pdf). Doctoral dissertation, University of Oklahoma. (NLSY79)
 
 Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*.  59-61.
 
