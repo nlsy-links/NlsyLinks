@@ -9,7 +9,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 
 # Articles and Book Chapters
-**In reverse chronological order, updated February 2015**
+**In reverse chronological order, updated April 2015**
 
 ## 2011 -
 Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
@@ -21,6 +21,8 @@ Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment i
 Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environmental Influences on Self-Control and Delinquency: Results from a Genetically Informative Analysis of Sibling Pairs.](http://www.ncbi.nlm.nih.gov/pubmed/24142448) *Journal of Interpersonal Violence, 29*.  707-735. (NLSYC)
 
 Hunter, Michael D.  (2014).  [State Space Dynamic Mixture Modeling:  Finding People with Similar Patterns of Change.](https://shareok.org/handle/11244/13885)  Doctoral Dissertation, University of Oklahoma. (NLSYC)
+
+Lahey, B. B., D’Onofrio, B. M., Van Hulle, C. A., & Rathouz, P. J. (2014). [Prospective association of childhood receptive vocabulary and conduct problems with self-reported adolescent delinquency: tests of mediation and moderation in sibling-comparison analyses.](http://www.ncbi.nlm.nih.gov/pubmed/24736982) *Journal of abnormal child psychology, 42*(8), 1341-1351.(NLSYC)
 
 Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi, and Ahmed Nezar Kobeisy (2013) [Genetic and Environmental Contributions to Stability and Change in Levels of Self-Control](http://www.sciencedirect.com/science/article/pii/S004723521300069X). *Journal of Criminal Justice, 41*, 300-308. (NLSYC)
 
