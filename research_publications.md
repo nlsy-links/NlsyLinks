@@ -22,7 +22,7 @@ Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environ
 
 Hunter, Michael D.  (2014).  [State Space Dynamic Mixture Modeling:  Finding People with Similar Patterns of Change.](https://shareok.org/handle/11244/13885)  Doctoral Dissertation, University of Oklahoma. (NLSYC)
 
-Lahey, B. B., D’Onofrio, B. M., Van Hulle, C. A., & Rathouz, P. J. (2014). [Prospective association of childhood receptive vocabulary and conduct problems with self-reported adolescent delinquency: tests of mediation and moderation in sibling-comparison analyses.](http://www.ncbi.nlm.nih.gov/pubmed/24736982) *Journal of abnormal child psychology, 42*(8), 1341-1351.(NLSYC)
+Lahey, B. B., D'Onofrio, B. M., Van Hulle, C. A., & Rathouz, P. J. (2014). [Prospective association of childhood receptive vocabulary and conduct problems with self-reported adolescent delinquency: tests of mediation and moderation in sibling-comparison analyses.](http://www.ncbi.nlm.nih.gov/pubmed/24736982) *Journal of abnormal child psychology, 42*(8), 1341-1351.(NLSYC)
 
 Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi, and Ahmed Nezar Kobeisy (2013) [Genetic and Environmental Contributions to Stability and Change in Levels of Self-Control](http://www.sciencedirect.com/science/article/pii/S004723521300069X). *Journal of Criminal Justice, 41*, 300-308. (NLSYC)
 
