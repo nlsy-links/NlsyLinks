@@ -83,8 +83,6 @@ Classen, R. (2006). Essays on the intergenerational transmission of obesity and 
 
 Rodgers, J. L., Johnson, A., & Bard, D. E. (2005) . NLSY-Children/Young Adult (1986-2002) Kinship Linking Algorithm. Unpublished manuscript. 
 
-Rodgers, J. L., & Kohler, Hans-Peter (2005).  [Reformulating and simplifying the DF analysis model.](http://www.springerlink.com/content/n3x1v1q282583366) *Behavior Genetics, 35* (2), 211-217.
-
 Neiss, M., Rowe, D. C., & Rodgers, J. L. (2002). [Does education mediate the relationship between IQ and age of first birth? A behavior genetic analysis](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=99814). _Journal of Biosocial Science, 34_, 259-275. (NLSY79)
 
 Bard, D. E.  (2001).  Common etiology for alcohol and nicotine use:  A behavior genetic analysis of liabilities using naturally occurring kinship pairs.  Masters Thesis, University of Oklahoma.
