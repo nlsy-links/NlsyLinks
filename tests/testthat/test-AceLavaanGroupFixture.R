@@ -16,9 +16,9 @@ test_that("AceLavaanGroup -MathStandardized", {
   
   ace <- AceLavaanGroup(dsClean)
   
-  expectedASquared <- 0.621097480948363
-  expectedCSquared  <- 0.21003564057019
-  expectedESquared <- 0.168866878481447
+  expectedASquared <- 0.621097662459077
+  expectedCSquared  <- 0.210035603916836
+  expectedESquared <- 0.168866733624087
   expectedCaseCount <- 8338 #8292
     
   expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1)
@@ -41,9 +41,9 @@ test_that("AceLavaanGroup -HeightZGenderAge", {
   
   ace <- AceLavaanGroup(dsClean)
   
-  expectedASquared <- 0.785694185958244
-  expectedCSquared  <- 0.032079608460182
-  expectedESquared <- 0.182226205581574
+  expectedASquared <- 0.785694103632885
+  expectedCSquared  <- 0.0320796445782708
+  expectedESquared <- 0.182226251788844
   expectedCaseCount <- 5884
   
   expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1)
