@@ -14,6 +14,8 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 ## 2011 -
 Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
 
+Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of youth and adolescence*, 1-15. (NLSYC)
+
 Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2015). [Behavior Problems and Timing of Menarche: A Developmental Longitudinal Biometrical Analysis Using the NLSY-Children Data.](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics, 45*, 51-70. (NLSYC)
 
 Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment interactions in early externalizing behaviors: parental emotional support and socioeconomic context as moderators of genetic influences?](http://link.springer.com/article/10.1007/s10519-014-9664-8/fulltext.html) *Behavior genetics, 44*(5), 468-486. (NLSYC)
