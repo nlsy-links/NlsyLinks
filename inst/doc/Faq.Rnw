@@ -109,7 +109,7 @@ The \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf
 
 For Gen1, create a string variable that points to your extract\\(\emph{e.g.}, \code{filePathOutcomes <- "C:/BGResearch/NlsExtracts/Gen2Birth.csv"}).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
 <<echo=TRUE>>=
-require(NlsyLinks)
+library(NlsyLinks)
 filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen1LifeCourse.csv")
 @
 

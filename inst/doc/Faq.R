@@ -23,7 +23,7 @@ subset(Links79Pair, RelationshipPath=='Gen2Siblings' & R==.75)
 #       dsLinks$RExplicitYoungerSibVersion==.375), ]
 
 ## ----echo=TRUE----------------------------------------------------------------
-require(NlsyLinks)
+library(NlsyLinks)
 filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen1LifeCourse.csv")
 
 ## ----echo=TRUE----------------------------------------------------------------
