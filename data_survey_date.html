@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>SurveyDate</title>
+
+<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.1/css/cerulean.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+<!-- adding icons with troubleshooting with Andriy Koval https://github.com/andkov -->
+<link rel="icon" href="./images/favicon.png" type="image/png"/>
+<link rel="shortcut icon" href="./images/favicon.ico"/>
+
+<!-- start of in-header material from RMarkdown example http://rmarkdown.rstudio.com/ -->
+<style type="text/css">
+
+/* padding for bootstrap navbar */
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h2 {
+  padding-top: 52px;
+  margin-top: -52px;
+}
+.section h3 {
+  padding-top: 52px;
+  margin-top: -52px;
+}
+
+/* don't use link color in navbar */
+.dropdown-menu>li>a {
+  color: black;
+}
+
+/* some padding for disqus */
+#disqus_thread {
+  margin-top: 45px;
+}
+</style>
+
+<link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
+<!-- end of in-header material from RMarkdown example http://rmarkdown.rstudio.com/ -->
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="libs/highlight/textmate.css"
+      type="text/css" />
+<script src="libs/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+<link rel="stylesheet" href="include\custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+<!-- start of before_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="/NlsyLinks/">NlsyLinks</a>
+    </div>
+    
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+      
+        <li class="dropdown">
+          <a href="description" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+               <li><a href="research_publications.html">Publications</a></li>
+               <li><a href="research_facilitating.html">Facilitating Research</a></li>
+               <li><a href="research_software_and_support.html">Software and Support</a></li>
+               <!-- <li><a href="research_history.html">Development History</a></li> -->
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="datasets" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Datasets<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+
+            <li class="dropdown-header">Kinship</li>
+            <li><a href="data_links_79_pair.html">Links79Pair</a></li>
+            <li class="divider"/>
+            <li class="dropdown-header">Nongenetic</li>
+            <li><a href="data_subject_details_79.html">SubjectDetails79</a></li>
+            <li><a href="data_extra_outcomes_79.html">ExtraOutcomes79</a></li>
+
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+        <a href="about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="about_collaborators.html">Collaborators</a></li>
+            <li><a href="about_site.html">This Site</a></li>
+          </ul>
+        </li>
+              
+      </ul>    
+
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<!-- end of before_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
+
+<!--
+      <ul class="nav pull-right">
+        <a class="btn btn-primary" href="https://github.com/OuhscBbmc/MReportingPublic/tree/gh-pages">
+        <i class="fa fa-github" margin-top="200px"></i>
+          Source Code
+        </a>
+      </ul>
+
+-->
+
+<div id="header">
+<h1 class="title">SurveyDate</h1>
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#formats">Formats</a></li>
+<li><a href="#data-dictionary">Data Dictionary</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#example-in-r">Example in R</a></li>
+</ul>
+</div>
+
+<hr />
+<div id="description" class="section level1">
+<h1>Description</h1>
+<blockquote>
+<p>Dataset describing each survey for each subject.</p>
+</blockquote>
+<p>This dataset has one row per subject per year. It indicates their age, and which survey contains the subject’s response (ie, the Gen1 survey, the Gen2 Child survey, or the Gen2 Young Adult survey), This very general dataset can be useful to any BG or non-BG project.</p>
+<hr />
+</div>
+<div id="formats" class="section level1">
+<h1>Formats</h1>
+<p>The dataset is available in the following formats:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/LiveOak/NlsyLinksDetermination/master/ForDistribution/Outcomes/ExtraOutcomes79.csv">CSV</a> is our recommendation.</li>
+<li><a href="https://github.com/LiveOak/NlsyLinks/blob/master/data/ExtraOutcomes79.rda">R Binary</a>, after navigating to the page, click on the ‘View Raw’ button to download it.</li>
+<li><em>SAS</em> (coming soon.)</li>
+</ul>
+<hr />
+</div>
+<div id="data-dictionary" class="section level1">
+<h1>Data Dictionary</h1>
+<p>A data frame with 11,495 observations on the following 6 variables. There is one row per subject.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable Name</th>
+<th align="left">Type</th>
+<th align="left">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">SubjectTag</td>
+<td align="left">integer</td>
+<td align="left">The ID value assigned by NLS to the first subject. For Gen1 Subjects, this is their “CaseID” (ie, R00001.00). For Gen2 subjects, this is their “CID” (ie, C00001.00).</td>
+</tr>
+<tr class="even">
+<td align="left">SubjectID</td>
+<td align="left">integer</td>
+<td align="left">The ID value assigned by NLS to the first subject. For Gen1 Subjects, this is their “CaseID” (ie, R00001.00). For Gen2 subjects, this is their “CID” (ie, C00001.00).</td>
+</tr>
+<tr class="odd">
+<td align="left">Generation</td>
+<td align="left">integer</td>
+<td align="left">The generation of the subject. Values are either 1 or 2, representing Gen1 and Gen2. Note that this variable is not a <code>factor</code> (in constrast with data frames like <a href="./data_links_79_pair.html"><code>Links79Pair</code></a>. This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a <code>factor</code>.</td>
+</tr>
+<tr class="even">
+<td align="left">HeightZGenderAge</td>
+<td align="left">float</td>
+<td align="left">The subject’s height, standardized by gender and age (see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">WeightZGenderAge</td>
+<td align="left">float</td>
+<td align="left">The subject’s weight, standardized by gender and age (see Details).</td>
+</tr>
+<tr class="even">
+<td align="left">AfqtRescaled2006Gaussified</td>
+<td align="left">float</td>
+<td align="left">Armed Forces Qualification Test Score (Gen1 only; see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">Afi</td>
+<td align="left">float</td>
+<td align="left">Self-reported age of first intercourse (Gen1 only; see Details).</td>
+</tr>
+<tr class="even">
+<td align="left">Afm</td>
+<td align="left">float</td>
+<td align="left">Self-reported age of first menstration (Gen1 only; see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">MathStandardized</td>
+<td align="left">float</td>
+<td align="left">Standardized PIAT Math scores (Gen2 only; see Details).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="details" class="section level1">
+<h1>Details</h1>
+<p>The <code>SubjectTag</code> variable uniquely identify subjects. For Gen2 subjects, the SubjectTag is identical to their CID (ie, C00001.00 -the SubjectID assigned in the NLSY79-Children files). However for Gen1 subjects, the SubjectTag is their CaseID (ie, R00001.00), with “00” appended. This manipulation is necessary to identify subjects uniquely in inter-generational datasets. A Gen1 subject with an ID of 43 has a <code>SubjectTag</code> of 4300. The SubjectTags of her four children remain 4301, 4302, 4303, and 4304.</p>
+<p>For Gen2, an NLSY79 variable of <code>MathStandardized</code> is C05801.00.</p>
+<p><code>Afi</code> and <code>Afm</code>, values were simplified (to one value per subject) by Kelly Meredith in Sept 2010.</p>
+<p>The variables for height and weight were manipulated in R files available in a <a href="https://github.com/LiveOak/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes">repository</a> available to the public. Find the appropriate subfolder, and view the HTML report for more details.</p>
+<hr />
+</div>
+<div id="example-in-r" class="section level1">
+<h1>Example in R</h1>
+<pre class="r"><code>library(NlsyLinks) #Load the package into the current R session.
+gen2Outcomes &lt;- subset(ExtraOutcomes79, Generation==2) #Create a dataset of only Gen2 subjects.
+                  
+#plot(ExtraOutcomes79) #Uncomment to see a large scatterplot matrix.
+summary(ExtraOutcomes79)
+
+oldPar &lt;- par(mfrow=c(3,2))
+hist(ExtraOutcomes79$Generation)
+hist(ExtraOutcomes79$MathStandardized)
+hist(ExtraOutcomes79$HeightZGenderAge)
+hist(ExtraOutcomes79$WeightZGenderAge)
+hist(ExtraOutcomes79$Afi)
+hist(ExtraOutcomes79$Afm)
+par(oldPar)</code></pre>
+</div>
+
+<!-- start of after_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
+
+<!-- some extra javascript for older browsers -->
+<script type="text/javascript" src="libs/polyfill.js"></script>
+
+<script>
+
+// manage active state of menu based on current page
+$(document).ready(function () {
+
+    // active menu
+    href = window.location.pathname
+    href = href.substr(href.lastIndexOf('/') + 1)
+    $('a[href="' + href + '"]').parent().addClass('active');
+
+    // manage active menu header
+    if (href.startsWith('authoring_'))
+      $('a[href="' + 'authoring' + '"]').parent().addClass('active');
+    else if (href.endsWith('_format.html'))
+      $('a[href="' + 'formats' + '"]').parent().addClass('active');
+    else if (href.startsWith('developer_'))
+      $('a[href="' + 'developer' + '"]').parent().addClass('active');
+
+});
+
+</script>
+
+<!-- disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'nlsylinks'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+<!-- end of after_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+
+</body>
+</html>
