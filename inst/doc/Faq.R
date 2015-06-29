@@ -1,6 +1,6 @@
 ## ----preliminaries, echo=FALSE, message=FALSE---------------------------------
 options(width=80, continue=" ")
-require(NlsyLinks)
+library(NlsyLinks)
 
 ## ----echo=TRUE----------------------------------------------------------------
 subset(Links79Pair, RelationshipPath=='Gen2Siblings' & R==.75)
@@ -36,15 +36,15 @@ dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214800", "Gender")
 
 ## ----echo=TRUE, tidy=FALSE----------------------------------------------------
 #The official documentation calls this last level "NON-BLACK, NON-HISPANIC"
-dsDemographics$Race <- factor(x=dsDemographics$Race, 
-                          levels=1:3, 
-                          labels=c("Hispanic", "Black", "NBNH")) 
-dsDemographics$Gender <- factor(x=dsDemographics$Gender, 
-                          levels=1:2, 
-                          labels=c("Male", "Female")) 
+dsDemographics$Race <- factor(x=dsDemographics$Race,
+                          levels=1:3,
+                          labels=c("Hispanic", "Black", "NBNH"))
+dsDemographics$Gender <- factor(x=dsDemographics$Gender,
+                          levels=1:2,
+                          labels=c("Male", "Female"))
 
 ## ----echo=TRUE, tidy=FALSE----------------------------------------------------
-require(NlsyLinks)
+library(NlsyLinks)
 filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
 dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is for Gen2.
 # summary(dsDemographics) #Uncomment to see the summary
@@ -52,12 +52,12 @@ dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is 
 dsDemographics <- RenameNlsyColumn(dsDemographics, "C0005300", "Race")
 dsDemographics <- RenameNlsyColumn(dsDemographics, "C0005400", "Gender")
 
-dsDemographics$Race <- factor(x=dsDemographics$Race, 
-                          levels=1:3, 
-                          labels=c("Hispanic", "Black", "NBNH")) 
-dsDemographics$Gender <- factor(x=dsDemographics$Gender, 
-                          levels=1:2, 
-                          labels=c("Male", "Female")) 
+dsDemographics$Race <- factor(x=dsDemographics$Race,
+                          levels=1:3,
+                          labels=c("Hispanic", "Black", "NBNH"))
+dsDemographics$Gender <- factor(x=dsDemographics$Gender,
+                          levels=1:2,
+                          labels=c("Male", "Female"))
 
 ## ----echo=TRUE, eval=FALSE, tidy=FALSE----------------------------------------
 #  dsCombined <- merge(x=dsDemographics, y=dsOutcomes, by="SubjectTag", all=TRUE)

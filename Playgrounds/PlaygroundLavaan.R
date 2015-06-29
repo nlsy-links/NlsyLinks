@@ -1,9 +1,9 @@
 rm(list=ls(all=TRUE))
 #install.packages("NlsyLinks", repos="http://R-Forge.R-project.org")
 #install.packages("lavaan", repos="http://www.da.ugent.be", type="source")
-require(NlsyLinks)
-require(lavaan)
-require(stringr) #Necessary for the 'str_c' function
+library(NlsyLinks)
+library(lavaan)
+library(stringr) #Necessary for the 'str_c' function
 #require(ggplot2) #Necessary only for the diagnostic plots at the end.
 
 estimateA <- T #Should the user estimate the 'A' variance component (ie, the genetic source)
@@ -122,7 +122,7 @@ e2 <- est[est$label=="e2", "est"]
 # plot(dsGroupSummary$R, dsGroupSummary$Covariance, pch=(4-3*dsGroupSummary$Included))
 # plot(dsGroupSummary$R, dsGroupSummary$Correlation, pch=(4-3*dsGroupSummary$Included))
 # text(dsGroupSummary$PairCount, x=dsGroupSummary$R, y=dsGroupSummary$Correlation)
-# 
+#
 # ggplot(data=dsGroupSummary, aes(x=R, y=Correlation, label=PairCount, color=Included)) + #substitute(N == b, list(b=dsGroupSummary$PairCount)) )) + #geom_line()
 #   layer(geom="line") + layer(geom="text") + scale_x_reverse(limits=c(1,0)) + scale_y_continuous(limits=c(0,1))
 # ggplot(data=dsGroupSummary, aes(x=R, y=Covariance, label=PairCount, color=Included)) + #substitute(N == b, list(b=dsGroupSummary$PairCount)) )) + #geom_line()

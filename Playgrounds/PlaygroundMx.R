@@ -1,6 +1,6 @@
 rm(list=ls(all=TRUE))
-require(NlsyLinks)
-require(OpenMx)
+library(NlsyLinks)
+library(OpenMx)
 
 ds <- Links79PairExpanded
 # ds$Group <- NA

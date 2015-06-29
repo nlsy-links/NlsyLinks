@@ -1,6 +1,6 @@
 rm(list=ls(all=TRUE))
 #install.packages("NlsyLinks", repos="http://R-Forge.R-project.org")
-require(NlsyLinks)
+library(NlsyLinks)
 
 startTime <- Sys.time()
 dsLinks <- Links79PairExpanded
@@ -25,4 +25,4 @@ dsInspect <- dsInspect[ order(dsInspect$Subject1Tag, dsInspect$Subject2Tag), ]
 
 
 #Verify that the Gen1 moms of Gen2Cousins (342801, 342901) are actually MZs
-#dsLinks[dsLinks$Subject1Tag==342800 & dsLinks$Subject2Tag==342900, ] 
+#dsLinks[dsLinks$Subject1Tag==342800 & dsLinks$Subject2Tag==342900, ]

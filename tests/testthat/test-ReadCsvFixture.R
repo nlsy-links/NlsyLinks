@@ -1,4 +1,4 @@
-require(devtools)
+library(devtools)
 # filePathGen2 <- "./../extdata/Gen2Birth.csv" #"./Datasets/Gen2Birth.csv"
 # fileNameGen2 <- "Gen2Birth.csv"
 

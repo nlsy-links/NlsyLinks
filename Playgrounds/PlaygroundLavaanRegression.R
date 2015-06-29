@@ -1,6 +1,6 @@
 rm(list=ls(all=TRUE))
-require(NlsyLinks)
-require(lavaan)
+library(NlsyLinks)
+library(lavaan)
 
 model <-"
 W =~ NA*MathStandardized_1 + NA*MathStandardized_2 + NA*WeightStandardizedForAge19To25_1

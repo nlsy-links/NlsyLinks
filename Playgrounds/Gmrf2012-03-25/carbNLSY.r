@@ -1,5 +1,5 @@
 rm(list=ls(all=TRUE))
-require(NlsyLinks)  #?NlsyLinks
+library(NlsyLinks)  #?NlsyLinks
 library(Matrix)
 library(rjags)
 library(spdep)
@@ -14,20 +14,20 @@ unqSTags <- sort(unique(c(Links79PairExpanded$Subject1Tag,Links79PairExpanded$Su
 probIDs <- list()
 piCount <- 0
 for(unqID in unqSTags){
-	famMat <- subset(Links79PairExpanded,Subject1Tag==unqID | Subject2Tag==unqID)	
+	famMat <- subset(Links79PairExpanded,Subject1Tag==unqID | Subject2Tag==unqID)
 	if(sum(is.na(famMat$R))==nrow(famMat)) { piCount <- piCount+1
 		probIDs[[piCount]] <- unqID}
 	#if(any(nrow(famMat)==1)) print(famMat$MotherID)
 }
 
 dsSingleEntered <- subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & !(Subject1Tag %in% unlist(probIDs)) & !(Subject2Tag %in% unlist(probIDs)))
-#dsSingleEntered <- subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & !is.na(R) & 
+#dsSingleEntered <- subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & !is.na(R) &
 #				(!is.na(WeightStandardizedForAge19To25_1) | !is.na(WeightStandardizedForAge19To25_2)))
 #colMeans(dsSingleEntered[,c("WeightStandardizedForAge19To25_1","WeightStandardizedForAge19To25_2")])
 #sum(is.na(dsSingleEntered[,c("WeightStandardizedForAge19To25_1","WeightStandardizedForAge19To25_2")]))
 dsSingleEntered$MotherID <- floor(dsSingleEntered$Subject1Tag/100)
 motherIDs <- sort(unique(dsSingleEntered$MotherID))
-matReducedFamilies <- list() 
+matReducedFamilies <- list()
 dsIndicesForMatrix <- list()
 
 mIDs <- sort(unique(dsSingleEntered$MotherID))
@@ -38,7 +38,7 @@ for(mID in mIDs){
 	if(any(famMat$R==1) & nrow(famMat)==1) { pmiCount <- pmiCount+1
 		probMIDs[[pmiCount]] <- mID
 	}
-	#print(famMat$MotherID)	
+	#print(famMat$MotherID)
 	#if(any(nrow(famMat)==1)) print(famMat$MotherID)
 }
 probMIDs
@@ -54,7 +54,7 @@ mzMID <- unique(subset(dsWithSingletonMZs,subset=R==1)[,famIDs])
 		dsFamilyPairs <- subset(dsWithSingletonMZs, MotherID==motherID)
 		dsMZs <- subset(dsFamilyPairs, R==1) #If double entered: & Subject1Tag < Subject2Tag)
 		#LINE ABOVE ASSUMES NO FAMILY HAS MORE THAN ONE SET OF MZs
-		subjectTagsOfYoungerMZs <- sort(unique(dsMZs$Subject2Tag)) #This might include two kids in a triplet.  
+		subjectTagsOfYoungerMZs <- sort(unique(dsMZs$Subject2Tag)) #This might include two kids in a triplet.
 		dsFamilyWithoutYoungerMZs <- subset(dsFamilyPairs, !(Subject1Tag %in% subjectTagsOfYoungerMZs | Subject2Tag %in% subjectTagsOfYoungerMZs))
 		if(nrow(dsFamilyWithoutYoungerMZs)==0){
 			fsCount <- fsCount+1
@@ -72,10 +72,10 @@ mzMID <- unique(subset(dsWithSingletonMZs,subset=R==1)[,famIDs])
 				dsFamilyWithoutYoungerMZs[2:3,c("GenerationSubject2")] <- 2
 				dsFamilyWithoutYoungerMZs[2:3,c("Subject1ID")] <- c(dsFamilyPairs$Subject1Tag,dsFamilyPairs$Subject2Tag)
 				dsFamilyWithoutYoungerMZs[2:3,c("Subject2ID")] <- dsFamilyPairs$Subject1Tag+50
-			}			
-			fakeSibs[[fsCount]] <- dsFamilyWithoutYoungerMZs[2:3,]			
+			}
+			fakeSibs[[fsCount]] <- dsFamilyWithoutYoungerMZs[2:3,]
 		}
-	} 
+	}
 	#browser()
 	newDataset <- rbind(dsWithSingletonMZs,do.call("rbind",fakeSibs))
 	newDataset <- newDataset[order(newDataset$Subject1Tag,newDataset$Subject2Tag),]
@@ -86,9 +86,9 @@ dsSingleEntered <- addFakeSibs(dsWithSingletonMZs=dsSingleEntered, famIDs="Mothe
 #dsSingleEntered[dsSingleEntered$MotherID %in% probMIDs,]
 
 #familiesToExcludeBecauseMzSingleton <- unlist(probMIDs) #c(3924, 6854, 9536) #731, 3151, 3922,
-#dsSingleEntered <- subset(dsSingleEntered, !(MotherID %in% familiesToExcludeBecauseMzSingleton)) 
-dsSingleEntered[dsSingleEntered$R==1,] 
-dsSingleEntered[dsSingleEntered$ExtendedID==774,] 
+#dsSingleEntered <- subset(dsSingleEntered, !(MotherID %in% familiesToExcludeBecauseMzSingleton))
+dsSingleEntered[dsSingleEntered$R==1,]
+dsSingleEntered[dsSingleEntered$ExtendedID==774,]
 #matDummy <- matrix(NA, ncol=2, nrow=2)
 
 
@@ -96,27 +96,27 @@ ExtractFullFamily <- function( dsFamilyPairs ) {
   subjectTags <- sort(unique(c(dsFamilyPairs$Subject1Tag, dsFamilyPairs$Subject2Tag)))
   subjectCount <- length(subjectTags)
   if( subjectCount <= 1 ) stop("Only families with at least two siblings should get here.")
-  
+
   dsMZs <- subset(dsFamilyPairs, R==1) #If double entered: & Subject1Tag < Subject2Tag)
   #LINE ABOVE ASSUMES NO FAMILY HAS MORE THAN ONE SET OF MZs
-  subjectTagsOfYoungerMZs <- sort(unique(dsMZs$Subject2Tag)) #This might include two kids in a triplet.  
+  subjectTagsOfYoungerMZs <- sort(unique(dsMZs$Subject2Tag)) #This might include two kids in a triplet.
   dsFamilyWithoutYoungerMZs <- subset(dsFamilyPairs, !(Subject1Tag %in% subjectTagsOfYoungerMZs | Subject2Tag %in% subjectTagsOfYoungerMZs))
 
   subjectTagsWithoutYoungerMZs <- sort(unique(c(dsFamilyWithoutYoungerMZs$Subject1Tag, dsFamilyWithoutYoungerMZs$Subject2Tag)))
   subjectCountWithoutYoungerMZs <- length(subjectTagsWithoutYoungerMZs)
-    
+
   matReduced <- matrix(NA, nrow=subjectCountWithoutYoungerMZs, ncol=subjectCountWithoutYoungerMZs)
   diag(matReduced) <- 1
   for( index1 in 1:(subjectCountWithoutYoungerMZs-1) ) {
     for( index2 in (index1+1):subjectCountWithoutYoungerMZs ) {
       subject1Tag <- subjectTagsWithoutYoungerMZs[index1]
-      subject2Tag <- subjectTagsWithoutYoungerMZs[index2]      
+      subject2Tag <- subjectTagsWithoutYoungerMZs[index2]
       dsPair <- subset(dsFamilyPairs, Subject1Tag==subject1Tag & Subject2Tag==subject2Tag)
-      if( nrow(dsPair)!=1 ) { #browser() 
+      if( nrow(dsPair)!=1 ) { #browser()
 		  stop("The subset should contain exactly one row.") }
       matReduced[index1, index2] <- dsPair$R
       matReduced[index2, index1] <- dsPair$R
-      if( !is.na(dsPair$R) && dsPair$R == 1 ) { #browser() 
+      if( !is.na(dsPair$R) && dsPair$R == 1 ) { #browser()
 		  stop("MZ reached.  None should have gotten here.")
 	  }
     }
@@ -137,7 +137,7 @@ ExtractFullFamily <- function( dsFamilyPairs ) {
     }
   }
   if( length(unique(dsIndex$RowID)) != nrow(matReduced) ) stop("The number of uniqueAComponents should be consistent across matReduced and dsIndex")
-  
+
   #if( max(dsFamilyPairs$R) >= .8 ) stop("MZ reached")
   return( list(MatReduced=matReduced, DsIndex=dsIndex) )
 }
@@ -162,7 +162,7 @@ ExtractFullFamily <- function( dsFamilyPairs ) {
 #     dsIndicesForMatrix[[multipleKidFamilyCount]] <- extract$DsIndex
 #   }
 # }
-# 
+#
 # if( length(matReducedFamilies)!=1781 ) stop("The number of nuculear families with multiple siblings should be correct.")
 multipleSibFamilyCount <- 1
 for( motherID in motherIDs ) {
@@ -172,8 +172,8 @@ for( motherID in motherIDs ) {
     extract <- ExtractFullFamily(dsFamilyPairs)
     matReducedFamilies[[multipleSibFamilyCount]] <- extract$MatReduced
     dsIndicesForMatrix[[multipleSibFamilyCount]] <- extract$DsIndex
-    multipleSibFamilyCount <- multipleSibFamilyCount + 1 
-  }  
+    multipleSibFamilyCount <- multipleSibFamilyCount + 1
+  }
 }
 #if( length(matReducedFamilies) != 3745 ) stop("The number of nuculear families with multiple siblings should be correct.")
 if( length(matReducedFamilies) != 3617 ) stop("The number of nuculear families with multiple siblings should be correct.")
@@ -188,7 +188,7 @@ dsIndicesForMatrix[motherIDs %in% probMIDs]
 #all(dsFamilyPairs$R==1)
 
 #Drop any nuclear families with any missingness
-#   TODO: revise this so it drops only the minimum number of members in a family.  
+#   TODO: revise this so it drops only the minimum number of members in a family.
 #   Families will be dropped only if it contains zero nonmissing pairs
 runningCompleteCount <- 0
 matNonmissingFamilies <- list()
@@ -199,12 +199,12 @@ for( familyIndex in seq_along(matReducedFamilies) ) {
     runningCompleteCount <- runningCompleteCount + 1
     matNonmissingFamilies[[runningCompleteCount]] <- matReducedFamilies[[familyIndex]]
     dsIndicesForMatrixForNonmissingFamilies[[runningCompleteCount]] <- dsIndicesForMatrix[[familyIndex]]
-  }  
+  }
 }
 #if( length(matNonmissingFamilies) != 3489 ) stop("The number of nuculear families with NO missing pairs should be correct.")
 if( length(matNonmissingFamilies) != 3535 ) stop("The number of nuculear families with NO missing pairs should be correct.")
 
-#Apparently, there aren't any families with only an MZ birth, and no other siblings.  
+#Apparently, there aren't any families with only an MZ birth, and no other siblings.
 #   (This may change when the families with missingness aren't entirely chunked out the window.)
 for( familyIndex in seq_along(matNonmissingFamilies) ) {
   if( all(matNonmissingFamilies[[familyIndex]]==1) ) stop("MZ singleton family")
@@ -244,10 +244,10 @@ for( familyIndex in seq_along(matNonmissingFamilies) ) {
   #if( sum(Bmat) != ???? ) stop("The elements of beta matrix should equal ????.")
   #if( sum(Dmat) != ???? ) stop("The elements of dogma matrix should equal ????.")
   #print(sum(Bmat))
-  
+
   #cov2cor(sigMVN)
   matBetaFamilies[[familyIndex]] <- Bmat
-  matDogmaFamilies[[familyIndex]] <- Dmat  
+  matDogmaFamilies[[familyIndex]] <- Dmat
   matPrecFamilies[[familyIndex]] <- solve(Dmat) %*% (Imat - Bmat)
 }
 
@@ -264,13 +264,13 @@ for( familyIndex in seq_along(matBetaFamilies) ) {
   #print(familyIndex)
   matBeta <- matBetaFamilies[[familyIndex]]
   matDogma <- matDogmaFamilies[[familyIndex]]
-  matPrec <- matPrecFamilies[[familyIndex]] 
-  dsFamilyIndices <- dsIndicesForMatrixForNonmissingFamilies[[familyIndex]]  
+  matPrec <- matPrecFamilies[[familyIndex]]
+  dsFamilyIndices <- dsIndicesForMatrixForNonmissingFamilies[[familyIndex]]
 #  matBetaFamilies[[1]]
 #  matDogmaFamilies[[1]]
-#  dsIndicesForMatrixForNonmissingFamilies[[1]]  
+#  dsIndicesForMatrixForNonmissingFamilies[[1]]
   if( length(unique(dsFamilyIndices$RowID)) != nrow(matBeta) ) stop("The number of uniqueAComponents should be consistent across matReduced and dsIndex")
-  
+
   kidCount <- nrow(dsFamilyIndices)
   for( subject1Index in 1:kidCount ) {
     rowID1 <- dsFamilyIndices$RowID[subject1Index]
@@ -279,19 +279,19 @@ for( familyIndex in seq_along(matBetaFamilies) ) {
       if( subject1Index != subject2Index ) {
         rowID2 <- dsFamilyIndices$RowID[subject2Index]
         subject2Tag <- dsFamilyIndices$SubjectTag[subject2Index]
-        
+
         weight <- matBeta[rowID1, rowID2]
-		dval <- matDogma[rowID1,rowID1]	
+		dval <- matDogma[rowID1,rowID1]
 		precWeight <- matPrec[rowID1,rowID2]
 		precDiag <- matPrec[rowID1,rowID1]
         selectedIndex <- which(dsDoubleEntered$Subject1Tag==subject1Tag & dsDoubleEntered$Subject2Tag==subject2Tag)
         which(dsDoubleEntered$Subject1Tag==201 & dsDoubleEntered$Subject2Tag==202)
         dsDoubleEntered[selectedIndex , 'weight'] <- weight
-		dsDoubleEntered[selectedIndex , 'dval'] <- dval		
+		dsDoubleEntered[selectedIndex , 'dval'] <- dval
 		dsDoubleEntered[selectedIndex, 'precWeight'] <- precWeight
 		dsDoubleEntered[selectedIndex, 'precDiag'] <- precDiag
       }
-    }    
+    }
   }
 }
 
@@ -304,7 +304,7 @@ dsDoubleEntered[dsDoubleEntered$Subject1Tag==392451 | dsDoubleEntered$Subject2Ta
 
 matBetaFamilies[[2]]
 matDogmaFamilies[[2]]
-dsIndicesForMatrixForNonmissingFamilies[[2]] 
+dsIndicesForMatrixForNonmissingFamilies[[2]]
 
 dsDoubleEntered[dsDoubleEntered$weight>90,]
 
@@ -346,11 +346,11 @@ for(unqMID in unique(dsNeighbors$MotherID)){
 	famBlock <- famBlock[order(famBlock$Subject1Tag,famBlock$Subject2Tag),]
 	storeMZids <- subset(famBlock,subset=R==1,select=Subject1Tag)
 	if(nrow(storeMZids)>0){
-		mzCount <- mzCount+1 
+		mzCount <- mzCount+1
 		MzIDlist[[mzCount]] <- unname(unlist(storeMZids))
 		dsNeighbors$tempS1Tag <- ifelse(dsNeighbors$tempS1Tag %in% storeMZids[2,],rep(storeMZids[1,],nrow(dsNeighbors)),dsNeighbors$tempS1Tag)
 		dsNeighbors$tempS2Tag <- ifelse(dsNeighbors$tempS2Tag %in% storeMZids[2,],rep(storeMZids[1,],nrow(dsNeighbors)),dsNeighbors$tempS2Tag)
-	}	
+	}
 }
 
 dsNeighbors2 <- subset(dsNeighbors,subset= tempS1Tag != tempS2Tag)
@@ -376,9 +376,9 @@ tempDat2$SubjectTag <- tempDat2$SubjectID
 unqTD2ID <- unique(tempDat2$SubjectTag)
 addFIDs <- unqTDID[!unqTDID %in% unqTD2ID]
 totRows <- nrow(tempDat2)
-tempDat2[(totRows+1):(totRows+length(addFIDs)), "SubjectTag"] <- addFIDs 
+tempDat2[(totRows+1):(totRows+length(addFIDs)), "SubjectTag"] <- addFIDs
 tempDat2[(totRows+1):(totRows+length(addFIDs)), "SubjectID"] <- addFIDs
-tempDat2[(totRows+1):(totRows+length(addFIDs)), "Generation"] <- 2 
+tempDat2[(totRows+1):(totRows+length(addFIDs)), "Generation"] <- 2
 colnames(tempDat2)
 dsSingleEntered2 <- subset(CreatePairLinksDoubleEntered(outcomeDataset=tempDat2,linksPairDataset=tempDat,
 				outcomeNames=c("WeightStandardizedForAge19To25"),validateOutcomeDataset=TRUE))#,
@@ -412,13 +412,13 @@ wbWMats <- createWBmat(dsNeighbors4=dsNeighbors4)
 wbWMat <- wbWMats$wbWMat
 #will use this following object for R-INLA analyses
 	#this neighborhood object actual contains the contents of the joint density precision matrix in the weights slot
-wbPWMats <- createWBmat(dsNeighbors4=dsNeighbors5) 
+wbPWMats <- createWBmat(dsNeighbors4=dsNeighbors5)
 wbPWMat <- wbPWMats$wbWMat
 
 #prepare the CARB BUGS model
 NlsyCarb <- NlsyCarb[order(NlsyCarb$from),]
 NlsyCarb$MotherID <- floor(NlsyCarb$Subject1Tag/100)
-NlsyCarb$cID <- as.integer(ordered(NlsyCarb$MotherID)) 
+NlsyCarb$cID <- as.integer(ordered(NlsyCarb$MotherID))
 Na <- length(unique(NlsyCarb$from)) #should equal length(wbWMat$num)
 Nc <- length(unique(NlsyCarb$cID))
 NN <- length(wbWMat$weights)
@@ -428,7 +428,7 @@ wgts <- wbWMat$weights
 adj <- wbWMat$adj
 loc <- wbWMat$nbLocator
 y <- NlsyCarb$WeightStandardizedForAge19To25_1
-d <- dsNeighbors3$d[!duplicated(dsNeighbors3$from)] 
+d <- dsNeighbors3$d[!duplicated(dsNeighbors3$from)]
 #d2 <- simDatLinked$d[!duplicated(simDatLinked$from)][order(simDatLinked$from[!duplicated(simDatLinked$from)])]
 Ns <- nrow(NlsyCarb)
 
@@ -443,7 +443,7 @@ CARB.inits <- function(){list(#mu=rnorm(n=Ns),
 			std.e=runif(n=1,.01,100),s=rnorm(n=Na),
 			c=rnorm(n=Nc),#S=rnorm(n=Na),#tau.s=runif(n=1,.01,100),#Ws=rnorm(n=NN),
 			std.a=runif(n=1,.01,100),#tau.a=runif(n=1,.01,100),
-			alpha=rnorm(n=1), 
+			alpha=rnorm(n=1),
 			std.c=runif(n=1,.001,.01)
 			#std.c=runif(n=1,.01,100)#tau.c=runif(n=1,.01,100)
 			)}
@@ -466,16 +466,16 @@ CARB.parameters <- c("std.a","std.c","std.e","var.a","var.c","var.e","alpha.adj"
 #plot(gbResult)
 #gelman.diag(gbResult)
 
-start.time1 <- Sys.time() 
+start.time1 <- Sys.time()
 carb.nlsy <- bugs(data=CARB.data, inits=CARB.inits, parameters.to.save=CARB.parameters,
 		model.file="P:\\SAS\\Rodgers\\GMRF\\GMRF\\carBG2.odc", n.chains=2, n.iter=20000,n.thin=20,
 		n.burnin=5000, debug=F, bugs.directory="C:\\Program Files\\winbugs14\\WinBUGS14\\", codaPkg=F,save.history=F)
-#you COULD use the following code to essentially get new updates on the initial bugs object, BUT you would have 
+#you COULD use the following code to essentially get new updates on the initial bugs object, BUT you would have
 	#to track all parameters in the initial object run (ugh!)  Looks like openBUGS and BRugs is a better option.
 #lv <- carb.nlsy$last.values
 #carb.nlsy2 <- bugs(data=CARB.data, inits=lv, parameters.to.save=CARB.parameters,
 #		model.file="P:\\SAS\\Rodgers\\GMRF\\GMRF\\carBG2.odc", n.chains=2, n.iter=1000,n.thin=10,
-#		n.burnin=10, debug=F, bugs.directory="C:\\Program Files\\winbugs14\\WinBUGS14\\", codaPkg=F) 
+#		n.burnin=10, debug=F, bugs.directory="C:\\Program Files\\winbugs14\\WinBUGS14\\", codaPkg=F)
 stop.time1 <- Sys.time()
 diff.time1 <- stop.time1 - start.time1
 print(carb.nlsy, digits=4)
@@ -508,7 +508,7 @@ library("INLA")
 #inla.doc("generic")
 NlsyCarb <- NlsyCarb[order(NlsyCarb$from),]
 NlsyCarb$MotherID <- floor(NlsyCarb$Subject1Tag/100)
-NlsyCarb$cID <- as.integer(ordered(NlsyCarb$MotherID)) 
+NlsyCarb$cID <- as.integer(ordered(NlsyCarb$MotherID))
 Na <- length(unique(NlsyCarb$from)) #should equal length(wbWMat$num)
 Nc <- length(unique(NlsyCarb$cID))
 NN <- length(wbWMat$weights)
@@ -518,7 +518,7 @@ wgts <- wbWMat$weights
 adj <- wbWMat$adj
 loc <- wbWMat$nbLocator
 y <- NlsyCarb$WeightStandardizedForAge19To25_1
-d <- dsNeighbors3$d[!duplicated(dsNeighbors3$from)] 
+d <- dsNeighbors3$d[!duplicated(dsNeighbors3$from)]
 #d2 <- simDatLinked$d[!duplicated(simDatLinked$from)][order(simDatLinked$from[!duplicated(simDatLinked$from)])]
 Ns <- nrow(NlsyCarb)
 Ns==length(cID)
@@ -546,7 +546,7 @@ colnames(varComps) <- c("e2","c2","a2")
 round(varComps[3:1],2)
 
 #BUGS model does not want to converge.  Check out the Mplus model for possible clues of why.
-mpDat <- subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings') 
+mpDat <- subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings')
 colnames(mpDat) <- c("s1tag","s2tag","eid","rpath","R","mbirths","ismz","s1last","s2last","Rimp1","Rimp","Rimp04",
 		"Rexp","Rexp1","Rpass1","RexpOSV","RexpYSV","gens1","gens2","s1id","s2id","math1","wgt1","math2","wgt2")
 unique(mpDat$R)
@@ -574,7 +574,3 @@ h2 <- A[1]**2/totVar
 c2 <- C[1]**2/totVar
 e2 <- E[1]**2/totVar
 cat(paste("H^2 =", round(h2,2),"\nC^2 =",round(c2,2),"\nE^2 =",round(e2,2)),"\n")
-
-
-
-

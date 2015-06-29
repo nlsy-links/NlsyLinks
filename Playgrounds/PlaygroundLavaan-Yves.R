@@ -1,7 +1,7 @@
 rm(list=ls(all=TRUE))
 #install.packages("NlsyLinks", repos="http://R-Forge.R-project.org")
-require(NlsyLinks)
-require(lavaan)
+library(NlsyLinks)
+library(lavaan)
 
 ds <- Links79PairExpanded
 ds$Group <- NA
@@ -17,7 +17,7 @@ ds$M2 <- ds$MathStandardized_2 #Stands for Manifest2
 
 ds <- subset(ds,  !is.na(Group) & !is.na(M1) & !is.na(M2)) #It's necessary to drop the missing Groups, but not M1 & M2
 
-model <- ' 
+model <- '
   # latents
   A1 =~ c(a,a,a,a)*M1
   A2 =~ c(a,a,a,a)*M2
@@ -49,22 +49,20 @@ model <- '
   a2 := a*a
   c2 := c*c
   e2 := e*e
-  
+
 '
 
 # FIML
 #fit <- lavaan(model, data=ds, group="Group", missing="ml")
 
-# listwise deletion 
+# listwise deletion
 fit <- lavaan(model, data=ds, group="Group", missing="listwise", information="observed")
 summary(fit)
 
-#Will Beasley added this: 
+#Will Beasley added this:
 #Extract the UNSCALED ACE components.
 est <- parameterEstimates(fit)
 a2 <- est[est$label=="a2", "est"]
 c2 <- est[est$label=="c2", "est"]
 e2 <- est[est$label=="e2", "est"]
 print(cbind(a2, c2, e2)[1,] / (a2 + c2 + e2)) #Print the unity-SCALED ace components.
-
-           

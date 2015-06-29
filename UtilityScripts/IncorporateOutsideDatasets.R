@@ -1,9 +1,9 @@
-#This isn't part of the build process.  They should be executed infrequently, not for every build.  
+#This isn't part of the build process.  They should be executed infrequently, not for every build.
 #   Run it when there's a chance the extract data is different, or there's been a new version frrom NlsyLinksDetermination
 rm(list=ls(all=TRUE))
 if( any(search()=="package:NlsyLinks") ) detach("package:NlsyLinks") #So the lazy-loaded datasets aren't available
 # if( any(.packages(all.available=TRUE) == "NlsyLinks") ) remove.packages("NlsyLinks") #system("R CMD REMOVE NlsyLinks") #This shouldn't be necesary.
-require(RODBC)
+library(RODBC)
 # require(NlsyLinks) #Don't load' the lazy-loaded datasets shouldn't be accessible
 
 ###############################################################
@@ -32,7 +32,7 @@ sapply(ExtraOutcomes79, class)
 save(ExtraOutcomes79, file=pathOutputExtraOutcomes, compress="xz")
 
 ###############################################################
-###  Links79PairExpanded and Links79Pair 
+###  Links79PairExpanded and Links79Pair
 dsLinks79PairWithoutOutcomes <- read.csv(pathInputLinks, stringsAsFactors=FALSE)
 
 pairVariablesToDrop <- c("MultipleBirthIfSameSex", "RImplicitSubject", "RImplicitMother")
@@ -45,9 +45,9 @@ ExtraOutcomes79$SubjectTag <- NlsyLinks::CreateSubjectTag(subjectID=ExtraOutcome
 firstNames <- c("SubjectTag_S1", "SubjectTag_S2")
 remaining <- setdiff(colnames(dsLinks79PairWithoutOutcomes), firstNames)
 Links79PairExpanded <- NlsyLinks::CreatePairLinksSingleEntered(
-  outcomeNames=c("MathStandardized", "HeightZGenderAge"), 
-  outcomeDataset=ExtraOutcomes79, 
-  linksPairDataset=dsLinks79PairWithoutOutcomes, 
+  outcomeNames=c("MathStandardized", "HeightZGenderAge"),
+  outcomeDataset=ExtraOutcomes79,
+  linksPairDataset=dsLinks79PairWithoutOutcomes,
   linksNames=remaining)
 Links79PairExpanded <- Links79PairExpanded[Links79PairExpanded$SubjectTag_S1 < Links79PairExpanded$SubjectTag_S2, ]
 

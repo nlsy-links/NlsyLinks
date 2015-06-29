@@ -1,14 +1,14 @@
 rm(list=ls(all=TRUE))
-require(NlsyLinks)  #?NlsyLinks
+library(NlsyLinks)  #?NlsyLinks
 library(Matrix)
 
 dsSingleEntered <- subset(Links79Pair, RelationshipPath=='Gen2Siblings')
 dsSingleEntered$MotherID <- floor(dsSingleEntered$Subject1Tag/100)
 motherIDs <- sort(unique(dsSingleEntered$MotherID))
 if( length(motherIDs) != 3749 ) stop("The number of mothers of Gen2 siblings should be correct.") #Implied is that she has to have MORE than one kid.
-matReducedFamilies <- list() 
-dsIndicesForMatrix <- list() 
-  
+matReducedFamilies <- list()
+dsIndicesForMatrix <- list()
+
 familiesToExcludeBecauseMzSingleton <- c(3922, 6854, 9536)
 dsSingleEntered <- subset(dsSingleEntered, !(ExtendedID %in% familiesToExcludeBecauseMzSingleton))
 
@@ -16,25 +16,25 @@ ExtractFullFamily <- function( dsFamilyPairs ) {
   subjectTags <- sort(unique(c(dsFamilyPairs$Subject1Tag, dsFamilyPairs$Subject2Tag)))
   subjectCount <- length(subjectTags)
   if( subjectCount <= 1 ) stop("Only families with at least two siblings should get here.")
-  
+
   dsMZs <- subset(dsFamilyPairs, R==1) #If double entered: & Subject1Tag < Subject2Tag)
   subjectTagsOfYoungerMZs <- sort(unique(dsMZs$Subject2)) #This might include two kids in a triplet.
   dsFamilyWithoutYoungerMZs <- subset(dsFamilyPairs, !(Subject1Tag %in% subjectTagsOfYoungerMZs | Subject2Tag %in% subjectTagsOfYoungerMZs))
-  
+
   subjectTagsWithoutYoungerMZs <- sort(unique(c(dsFamilyWithoutYoungerMZs$Subject1Tag, dsFamilyWithoutYoungerMZs$Subject2Tag)))
   subjectCountWithoutYoungerMZs <- length(subjectTagsWithoutYoungerMZs)
-    
+
   matReduced <- matrix(NA, nrow=subjectCountWithoutYoungerMZs, ncol=subjectCountWithoutYoungerMZs)
   diag(matReduced) <- 1
   for( index1 in 1:(subjectCountWithoutYoungerMZs-1) ) {
     for( index2 in (index1+1):subjectCountWithoutYoungerMZs ) {
       subject1Tag <- subjectTagsWithoutYoungerMZs[index1]
-      subject2Tag <- subjectTagsWithoutYoungerMZs[index2]      
+      subject2Tag <- subjectTagsWithoutYoungerMZs[index2]
       dsPair <- subset(dsFamilyPairs, Subject1Tag==subject1Tag & Subject2Tag==subject2Tag)
       if( nrow(dsPair)!=1 ) stop("The subset should contain exactly one row.")
       matReduced[index1, index2] <- dsPair$R
       matReduced[index2, index1] <- dsPair$R
-      if( !is.na(dsPair$R) && dsPair$R == 1 ) stop("MZ reached.  None should have gotten here.")      
+      if( !is.na(dsPair$R) && dsPair$R == 1 ) stop("MZ reached.  None should have gotten here.")
     }
   }
 
@@ -53,7 +53,7 @@ ExtractFullFamily <- function( dsFamilyPairs ) {
     }
   }
   if( length(unique(dsIndex$RowID)) != nrow(matReduced) ) stop("The number of uniqueAComponents should be consistent across matReduced and dsIndex")
-  
+
   #if( max(dsFamilyPairs$R) >= .8 ) stop("MZ reached")
   return( list(MatReduced=matReduced, DsIndex=dsIndex) )
 }
@@ -66,13 +66,13 @@ for( motherID in motherIDs ) {
     extract <- ExtractFullFamily(dsFamilyPairs)
     matReducedFamilies[[multipleSibFamilyCount]] <- extract$MatReduced
     dsIndicesForMatrix[[multipleSibFamilyCount]] <- extract$DsIndex
-    multipleSibFamilyCount <- multipleSibFamilyCount + 1 
-  }  
+    multipleSibFamilyCount <- multipleSibFamilyCount + 1
+  }
 }
 if( length(matReducedFamilies) != 3745 ) stop("The number of nuculear families with multiple siblings should be correct.")
 
 #Drop any nuclear families with any missingness
-#   TODO: revise this so it drops only the minimum number of members in a family.  
+#   TODO: revise this so it drops only the minimum number of members in a family.
 #   Families will be dropped only if it contains zero nonmissing pairs
 runningCompleteCount <- 0
 matNonmissingFamilies <- list()
@@ -83,11 +83,11 @@ for( familyIndex in seq_along(matReducedFamilies) ) {
     runningCompleteCount <- runningCompleteCount + 1
     matNonmissingFamilies[[runningCompleteCount]] <- matReducedFamilies[[familyIndex]]
     dsIndicesForMatrixForNonmissingFamilies[[runningCompleteCount]] <- dsIndicesForMatrix[[familyIndex]]
-  }  
+  }
 }
 if( length(matNonmissingFamilies) != 3489 ) stop("The number of nuculear families with NO missing pairs should be correct.")
 
-#Check that there aren't any families left with only an MZ birth, and no other siblings.  
+#Check that there aren't any families left with only an MZ birth, and no other siblings.
 #   (This may change when the families with missingness aren't entirely chunked out the window.)
 for( familyIndex in seq_along(matNonmissingFamilies) ) {
   if( all(matNonmissingFamilies[[familyIndex]]==1) ) stop("MZ singleton family")
@@ -126,10 +126,10 @@ for( familyIndex in seq_along(matNonmissingFamilies) ) {
   #if( sum(Bmat) != ???? ) stop("The elements of beta matrix should equal ????.")
   #if( sum(Dmat) != ???? ) stop("The elements of dogma matrix should equal ????.")
   #print(sum(Bmat))
-  
+
   #cov2cor(sigMVN)
   matBetaFamilies[[familyIndex]] <- Bmat
-  matDogmaFamilies[[familyIndex]] <- Dmat  
+  matDogmaFamilies[[familyIndex]] <- Dmat
 }
 
 #Transfer the beta weights back into the sparse matrix
@@ -141,7 +141,7 @@ for( familyIndex in seq_along(matBetaFamilies) ) {
   matBeta <- matBetaFamilies[[familyIndex]]
   dsFamilyIndices <- dsIndicesForMatrixForNonmissingFamilies[[familyIndex]]
   if( length(unique(dsFamilyIndices$RowID)) != nrow(matBeta) ) stop("The number of uniqueAComponents should be consistent across matReduced and dsIndex")
-  
+
   kidCount <- nrow(dsFamilyIndices)
   for( subject1Index in 1:kidCount ) {
     rowID1 <- dsFamilyIndices$RowID[subject1Index]
@@ -149,16 +149,16 @@ for( familyIndex in seq_along(matBetaFamilies) ) {
     for( subject2Index in 1:kidCount ) {
       rowID2 <- dsFamilyIndices$RowID[subject2Index]
       subject2Tag <- dsFamilyIndices$SubjectTag[subject2Index]
-      
+
       if( subject1Index != subject2Index ) {
         weight <- matBeta[rowID1, rowID2]
         selectedIndex <- which(dsDoubleEntered$Subject1Tag==subject1Tag & dsDoubleEntered$Subject2Tag==subject2Tag)
         if( length(selectedIndex) != 1 ) stop("Exactly one row should be retrieved to add the spatial weight.")
-        
-        dsDoubleEntered[selectedIndex , 'weight'] <- weight        
+
+        dsDoubleEntered[selectedIndex , 'weight'] <- weight
         if( is.na(dsDoubleEntered[selectedIndex , 'weight']) ) stop("The assigned weight should not be NA.")
-      }      
-    }    
+      }
+    }
   }
 }
 
@@ -177,7 +177,7 @@ dsNeighbors <- dsDoubleEntered
 dsNeighbors$from <- as.integer(ordered(dsNeighbors$Subject1Tag))
 dsNeighbors$to <- as.integer(ordered(dsNeighbors$Subject2Tag))
 summary(dsNeighbors)
- 
+
 class(dsNeighbors) <- c("spatial.neighbour", class(dsNeighbors))
 attr(dsNeighbors, "region.id") <- unique(dsNeighbors$from)
 attr(dsNeighbors, "n") <- length(unique(dsNeighbors$from))

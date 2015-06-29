@@ -1,7 +1,7 @@
 rm(list=ls(all=TRUE))
 #install.packages("NlsyLinks", repos="http://R-Forge.R-project.org")
-require(NlsyLinks)
-require(sem)
+library(NlsyLinks)
+library(sem)
 
 ds <- Links79PairExpanded
 ds$Group <- NA
@@ -26,7 +26,7 @@ C1 =~ label('c') * M1
 C2 =~ equal('c') * M2
 E1 =~ label('e') * M1
 E2 =~ equal('e') * M2
- 
+
 A1 ~~ c(1, .5, .375, .25) * A2 #+ label('rr')*A2
 A1 ~~ 1 * A1
 A2 ~~ 1 * A2
@@ -43,7 +43,7 @@ M1 ~~ 0*M2
 M1 ~~ 0*M1 #All the error should be coming through E1
 M2 ~~ 0*M2 #All the error should be coming through E2
 
-M1 ~ label('int') * 1 
+M1 ~ label('int') * 1
 M2 ~ equal('int') * 1
 
 a2 := a*a
@@ -59,7 +59,7 @@ e2 := e*e
 #E1 ~~ label('ve') * E1
 #E2 ~~ equal('ve') * E2
 #One =~ label('int') * M1 + equal('int') * M2
-#M1 ~ 0 * 1 
+#M1 ~ 0 * 1
 #M2 ~ 0 * 1
 
 "
@@ -67,9 +67,9 @@ e2 := e*e
 #fit <- lavaan(model, data=ds, group="Group", group.equal=c("loadings", "intercepts"), group.partial=c("A1~~A2"))
 #fit <- lavaan(model, data=ds, group="Group", group.equal=c("loadings", "intercepts", "means", "residuals"), group.partial=c("rr"))
 #fit <- lavaan(model, data=ds, group="Group", group.equal=c("loadings", "intercepts", "means", "residuals"), group.partial=c("A1~~A2"))
-fit <- lavaan(model, data=ds, group="Group", 
+fit <- lavaan(model, data=ds, group="Group",
   estimator="ML", #"WLS"GLS MLM MLF MLR #The LSes didn't converge; the MLs were all about the same.
-  group.equal=c("loadings", "intercepts", "means", "residuals", "residual.covariances", "lv.variances", "lv.covariances", "regressions"), 
+  group.equal=c("loadings", "intercepts", "means", "residuals", "residual.covariances", "lv.variances", "lv.covariances", "regressions"),
   group.partial=c("A1~~A2"))
 summary(fit)
 fitMeasures(fit)

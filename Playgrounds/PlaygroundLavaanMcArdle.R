@@ -1,7 +1,7 @@
 rm(list=ls(all=TRUE))
 #install.packages("NlsyLinks", repos="http://R-Forge.R-project.org")
-require(NlsyLinks)
-require(lavaan)
+library(NlsyLinks)
+library(lavaan)
 
 ds <- Links79PairExpanded
 ds$Group <- NA
@@ -35,22 +35,22 @@ model <-"
               AM ~~ a2*AM
 
               C ~~ c2*C
-              
+
               E1 ~~ 0 * E2
               E1 ~~ e2 * E1
               E2 ~~ e2 * E2
 
-              M1 ~~ 0*M1 
-              M2 ~~ 0*M2 
-              
-              M1 ~ int* 1 
+              M1 ~~ 0*M1
+              M2 ~~ 0*M2
+
+              M1 ~ int* 1
               M2 ~ int* 1
-              
+
               "
 
-fit <- lavaan(model, data=ds, group="Group", 
+fit <- lavaan(model, data=ds, group="Group",
               estimator="MLR", #"WLS"GLS MLM MLF MLR #The LSes didn't converge; the MLs were all about the same.
-              group.equal=c("loadings", "intercepts", "means", "residuals", "residual.covariances", "lv.variances", "lv.covariances", "regressions"), 
+              group.equal=c("loadings", "intercepts", "means", "residuals", "residual.covariances", "lv.variances", "lv.covariances", "regressions"),
               group.partial=c("AC=~M1","AC=~M2","AU1=~M1","AU2=~M2","AM=~M1","AM=~M2"))
 
 summary(fit)

@@ -1,5 +1,5 @@
 % \VignetteIndexEntry{FAQ for NLSYLinks}
-% \VignetteEngine{knitr::knitr} 
+% \VignetteEngine{knitr::knitr}
 \documentclass{article}
 
 \usepackage{color}
@@ -31,13 +31,13 @@
 
 <<preliminaries, echo=FALSE, message=FALSE>>=
 options(width=80, continue=" ")
-require(NlsyLinks)
+library(NlsyLinks)
 @
 \section{Getting Started}
 \textsf{Where is a good place to start?}\\ \\
 Welcome to the \code{NlsyLinks} package, which facilitates research with the \href{http://www.bls.gov/nls/home.htm}{NLSY}.  The initial focus of the package was to assist behavior genetics, but it has been expanded to help with NLSY research in general.
 
-The current \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ} and the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette} provide overview, and the \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual} describe the package's syntax and functions; the documents are available on \href{http://cran.r-project.org/web/packages/NlsyLinks/}{CRAN}.  
+The current \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ} and the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette} provide overview, and the \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual} describe the package's syntax and functions; the documents are available on \href{http://cran.r-project.org/web/packages/NlsyLinks/}{CRAN}.
 
 Literature targeting general behavior genetics is listed in the appendix of the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette}.  Furthermore, \href{http://liveoak.github.io/NlsyLinks/research_publications.html}{the articles and books involving the NLSY kinship links} provide more specialized information.
 
@@ -49,7 +49,7 @@ Standard terminology is to refer second generation subjects as `children' when t
 
 \section{Ambiguous twins}
 \textsf{What are ``ambiguous twins"?}\\ \\
-MZ twins share all of the genetic information (\emph{i.e.}, $R=1$), while DZ twins on average share half (\emph{i.e.}, $R=0.5$).  Sometimes a sibling pair doesn't have enough information for us to classify comfortably as either MZ or DZ.  We assign these ``ambiguous twins" $R=.75$.  Currently there are \Sexpr{sum(Links79Pair$RelationshipPath=='Gen2Siblings' & Links79Pair$R==.75) } ambiguous twins in the NLSY79C sample.  
+MZ twins share all of the genetic information (\emph{i.e.}, $R=1$), while DZ twins on average share half (\emph{i.e.}, $R=0.5$).  Sometimes a sibling pair doesn't have enough information for us to classify comfortably as either MZ or DZ.  We assign these ``ambiguous twins" $R=.75$.  Currently there are \Sexpr{sum(Links79Pair$RelationshipPath=='Gen2Siblings' & Links79Pair$R==.75) } ambiguous twins in the NLSY79C sample.
 
 Of these 13 pairs, all had close birthdays and were the same gender.  12 pairs are ambiguous because the mother didn't complete an NLSY survey since 1993; the first twin items were presented in 1994 (\emph{e.g.}, \code{R48257.00}, and \code{R48260.00}).  The mother of the 13th pair (\emph{i.e.}, subjects 864902 and 864903) simply avoided responding to the twin survey items.
 
@@ -62,21 +62,21 @@ subset(Links79Pair, RelationshipPath=='Gen2Siblings' & R==.75)
 % The \Sexpr{nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & MultipleBirth != 'No')) } Gen2 siblings who are potentially twins or triplets can be similarly viewed with: \begin{Sinput}
 % subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & MultipleBirth != 'No')
 % \end{Sinput}
-% 
+%
 
 \section{Ambiguous siblings}
 \textsf{What are ``ambiguous siblings''?}\\ \\
-Similar to ambiguous twins, ambiguous siblings are sibling pairs that we cannot comfortably classify as either full-siblings ($R=.5$) or half-siblings ($R=.25$).  All siblings in the NLSY79-C/YA dataset share the same biological mother, so for these pairs, the problem is reduced to determining if they share the same biological father.  There are two typical reasons for classifying siblings as ambiguous: (a) the relevant items are missing responses, or (b) the existing responses conflict with each other.  
+Similar to ambiguous twins, ambiguous siblings are sibling pairs that we cannot comfortably classify as either full-siblings ($R=.5$) or half-siblings ($R=.25$).  All siblings in the NLSY79-C/YA dataset share the same biological mother, so for these pairs, the problem is reduced to determining if they share the same biological father.  There are two typical reasons for classifying siblings as ambiguous: (a) the relevant items are missing responses, or (b) the existing responses conflict with each other.
 
-For instance, there are at least \Sexpr{nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & ((RExplicitOlderSibVersion==.5 & RExplicitYoungerSibVersion==.25) | (RExplicitOlderSibVersion==.25 & RExplicitYoungerSibVersion==.5))))} Gen2 pairs where one sibling explicitly reported they shared a biological father, while the other sibling explicitly reported they did not.  These subjects can be viewed with: 
+For instance, there are at least \Sexpr{nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & ((RExplicitOlderSibVersion==.5 & RExplicitYoungerSibVersion==.25) | (RExplicitOlderSibVersion==.25 & RExplicitYoungerSibVersion==.5))))} Gen2 pairs where one sibling explicitly reported they shared a biological father, while the other sibling explicitly reported they did not.  These subjects can be viewed with:
 <<eval=FALSE, echo=TRUE, tidy=FALSE>>=
 dsLinks <- Links79PairExpanded
 isGen2Sib <- dsLinks$RelationshipPath=='Gen2Siblings'
 
-olderFullYoungerHalf <- (dsLinks$RExplicitOlderSibVersion==.5 &                            
-                           dsLinks$RExplicitYoungerSibVersion==.25)  
+olderFullYoungerHalf <- (dsLinks$RExplicitOlderSibVersion==.5 &
+                           dsLinks$RExplicitYoungerSibVersion==.25)
 
-olderHalfYoungerFull <- (dsLinks$RExplicitOlderSibVersion==.25 &                            
+olderHalfYoungerFull <- (dsLinks$RExplicitOlderSibVersion==.25 &
                            dsLinks$RExplicitYoungerSibVersion==.5)
 
 
@@ -84,7 +84,7 @@ dsLinks[isGen2Sib & (olderFullYoungerHalf | olderHalfYoungerFull), ]
 @
 Another example occurs when a subject reports they are unsure or if their own responses are inconsistent over the years.  These \Sexpr{nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & (RExplicitOlderSibVersion==.375 | RExplicitYoungerSibVersion==.375)))} Gen2 pairs can be viewed with:
 <<eval=FALSE, echo=TRUE, tidy=FALSE>>=
-dsLinks[ isGen2Sib & (dsLinks$RExplicitOlderSibVersion==.375 | 
+dsLinks[ isGen2Sib & (dsLinks$RExplicitOlderSibVersion==.375 |
      dsLinks$RExplicitYoungerSibVersion==.375), ]
 @
 When the one perspective provided inconclusive evidence of $R$, we looked at other perspectives to resolve their relationship.
@@ -99,7 +99,7 @@ Our advice to include/exclude an $R$ group also depends on the kind of analysis.
 
 We don't recommend blindly dropping the ambiguous twins and siblings in every analysis.  For each scenario, the group sizes and phenotypic measurement issues should be considered.
 
-We do recommend running a casual sensitivity test, at the very least.  Run different models that include and exclude the small $R$ groups.  Hopefully the estimates change in expected ways (\emph{e.g.,}, including ambiguous siblings makes only a small difference)  and you don't have to dig deeper.  For all analyses, inspect each $R$ group's covariance matrix, especially with for the MZs, which typically is the smallest group. 
+We do recommend running a casual sensitivity test, at the very least.  Run different models that include and exclude the small $R$ groups.  Hopefully the estimates change in expected ways (\emph{e.g.,}, including ambiguous siblings makes only a small difference)  and you don't have to dig deeper.  For all analyses, inspect each $R$ group's covariance matrix, especially with for the MZs, which typically is the smallest group.
 
 \section{Race and Gender Variables}
 \textsf{Where are the race and gender variables?}\\ \\
@@ -128,17 +128,17 @@ dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214800", "Gender")
 Finally, consider converting the numeric variables to \href{http://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html}{factor} variables so your code will be more readable.
 <<echo=TRUE, tidy=FALSE>>=
 #The official documentation calls this last level "NON-BLACK, NON-HISPANIC"
-dsDemographics$Race <- factor(x=dsDemographics$Race, 
-                          levels=1:3, 
-                          labels=c("Hispanic", "Black", "NBNH")) 
-dsDemographics$Gender <- factor(x=dsDemographics$Gender, 
-                          levels=1:2, 
-                          labels=c("Male", "Female")) 
+dsDemographics$Race <- factor(x=dsDemographics$Race,
+                          levels=1:3,
+                          labels=c("Hispanic", "Black", "NBNH"))
+dsDemographics$Gender <- factor(x=dsDemographics$Gender,
+                          levels=1:2,
+                          labels=c("Male", "Female"))
 @
 
 For Gen2, race and gender can be incorporated with a similar approach.  Remember to change \code{filePathOutcomes} to your desired location.
 <<echo=TRUE, tidy=FALSE>>=
-require(NlsyLinks)
+library(NlsyLinks)
 filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
 dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is for Gen2.
 # summary(dsDemographics) #Uncomment to see the summary
@@ -146,15 +146,15 @@ dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is 
 dsDemographics <- RenameNlsyColumn(dsDemographics, "C0005300", "Race")
 dsDemographics <- RenameNlsyColumn(dsDemographics, "C0005400", "Gender")
 
-dsDemographics$Race <- factor(x=dsDemographics$Race, 
-                          levels=1:3, 
-                          labels=c("Hispanic", "Black", "NBNH")) 
-dsDemographics$Gender <- factor(x=dsDemographics$Gender, 
-                          levels=1:2, 
-                          labels=c("Male", "Female")) 
+dsDemographics$Race <- factor(x=dsDemographics$Race,
+                          levels=1:3,
+                          labels=c("Hispanic", "Black", "NBNH"))
+dsDemographics$Gender <- factor(x=dsDemographics$Gender,
+                          levels=1:2,
+                          labels=c("Male", "Female"))
 @
 
-If you have another \code{data.frame} that needs to be merged with the demographic dataset, use \code{SubjectTag} as the key, because this variable is guaranteed to be unique when the subjects in both generations are in the same dataset.  Supposed your other dataset is called \code{dsOutcomes}, the merging code would be 
+If you have another \code{data.frame} that needs to be merged with the demographic dataset, use \code{SubjectTag} as the key, because this variable is guaranteed to be unique when the subjects in both generations are in the same dataset.  Supposed your other dataset is called \code{dsOutcomes}, the merging code would be
 <<echo=TRUE, eval=FALSE, tidy=FALSE>>=
 dsCombined <- merge(x=dsDemographics, y=dsOutcomes, by="SubjectTag", all=TRUE)
 @
