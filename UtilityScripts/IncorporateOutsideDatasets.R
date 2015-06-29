@@ -15,15 +15,16 @@ algorithmVersion <- 85L
 
 pathInputLinks <- file.path(directoryDatasetsCsv, paste0("Links2011V", algorithmVersion, ".csv"))
 pathInputSubjectDetails <- file.path(directoryDatasetsCsv, paste0("SubjectDetailsV", algorithmVersion, ".csv"))
+pathInputSurveyDate <- file.path(directoryDatasetsCsv, paste0("SurveyTime.csv"))
 
 pathOutputExtraOutcomes <- file.path(directoryDatasetsRda, "ExtraOutcomes79.rda")
 pathOutputLinkTrim <- file.path(directoryDatasetsRda, "Links79Pair.rda")
 pathOutputLinkExpanded <- file.path(directoryDatasetsRda, "Links79PairExpanded.rda")
 pathOutputSubjectDetails <- file.path(directoryDatasetsRda, "SubjectDetails79.rda")
+pathOutputSurveyDate <- file.path(directoryDatasetsRda, "SurveyDate.rda")
 
 ###############################################################
 ###  ExtraOutcomes79
-###############################################################
 ExtraOutcomes79 <- read.csv(file.path(directoryDatasetsCsv, "ExtraOutcomes79.csv"))
 # ExtraOutcomes79$SubjectTag <- as.integer(round(ExtraOutcomes79$SubjectTag))
 
@@ -32,8 +33,8 @@ save(ExtraOutcomes79, file=pathOutputExtraOutcomes, compress="xz")
 
 ###############################################################
 ###  Links79PairExpanded and Links79Pair 
-###############################################################
 dsLinks79PairWithoutOutcomes <- read.csv(pathInputLinks, stringsAsFactors=FALSE)
+
 pairVariablesToDrop <- c("MultipleBirthIfSameSex", "RImplicitSubject", "RImplicitMother")
 dsLinks79PairWithoutOutcomes <- dsLinks79PairWithoutOutcomes[, !(colnames(dsLinks79PairWithoutOutcomes) %in% pairVariablesToDrop)]
 
@@ -70,8 +71,8 @@ save(Links79PairExpanded, file=pathOutputLinkExpanded, compress="xz")
 
 ###############################################################
 ###  SubjectDetails
-###############################################################
 SubjectDetails79 <- read.csv(pathInputSubjectDetails, stringsAsFactors=TRUE)
+
 SubjectDetails79$Gender <- factor(SubjectDetails79$Gender, levels=1:2, labels=c("Male", "Female"))
 SubjectDetails79$RaceCohort <- factor(SubjectDetails79$RaceCohort, levels=1:3, labels=c("Hispanic", "Black", "Nbnh")) #R02147.00 $ C00053.00
 
@@ -84,3 +85,14 @@ SubjectDetails79$DeathDate <- NA #This isn't finished yet.
 
 sapply(SubjectDetails79, class)
 save(SubjectDetails79, file=pathOutputSubjectDetails, compress="xz")
+
+###############################################################
+###  SurveyDate
+SurveyDate <- read.csv(pathInputSurveyDate, stringsAsFactors=FALSE)
+
+SurveyDate$SurveySource <- factor(SurveyDate$SurveySource, levels=0:3, labels=c("NoInterview", "Gen1", "Gen2C", "Gen2YA"))
+SurveyDate$SurveyDate <- as.Date(SurveyDate$SurveyDate)
+SurveyDate$Age <- ifelse(!is.na(SurveyDate$AgeCalculateYears), SurveyDate$AgeCalculateYears, SurveyDate$AgeSelfReportYears)
+
+sapply(SurveyDate, class)
+save(SurveyDate, file=pathOutputSurveyDate, compress="xz")
