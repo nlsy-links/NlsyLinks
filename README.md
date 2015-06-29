@@ -1,10 +1,16 @@
+<!-- rmarkdown v1 -->
+
 NlsyLinks
 ================
 
-Travis-CI on Ubuntu 12.04 LTS: [![Build Status](https://travis-ci.org/LiveOak/NlsyLinks.svg?branch=master)](https://travis-ci.org/LiveOak/NlsyLinks);
-AppVeyor on Windows Server 2012: [![Build status](https://ci.appveyor.com/api/projects/status/fo1oeqn9734dhhmu/branch/master?svg=true)](https://ci.appveyor.com/project/wibeasley/nlsylinks/branch/master)
+| [GitHub](https://github.com/LiveOak/NlsyLinks) | [Travis-CI](https://travis-ci.org/LiveOak/NlsyLinks/builds) | [AppVeyor](https://ci.appveyor.com/project/wibeasley/nlsylinks/history) | [Wercker](https://app.wercker.com/project/bykey/8010c64ba8d5d36495614496c9dff4a8) | [Coveralls](https://coveralls.io/r/LiveOak/NlsyLinks) | [Codecov](https://codecov.io/github/LiveOak/NlsyLinks)
+| :----- | :---------------------------: | :------------: | :-------: | :-------: | :-------: | 
+| [Master](https://github.com/LiveOak/NlsyLinks/tree/master) |  [![Travis-CI Build Status](https://travis-ci.org/LiveOak/NlsyLinks.png?branch=master)](https://travis-ci.org/LiveOak/NlsyLinks) | [![Build status](https://ci.appveyor.com/api/projects/status/fo1oeqn9734dhhmu/branch/master?svg=true)](https://ci.appveyor.com/project/wibeasley/nlsylinks/branch/master) |  |  [![Coverage Status](https://coveralls.io/repos/LiveOak/NlsyLinks/badge.svg?branch=master)](https://coveralls.io/r/LiveOak/NlsyLinks?branch=master) |  | 
+| [Dev](https://github.com/LiveOak/NlsyLinks/tree/dev) | [![Travis-CI Build Status](https://travis-ci.org/LiveOak/NlsyLinks.png?branch=dev)](https://travis-ci.org/LiveOak/NlsyLinks) | [![Build status](https://ci.appveyor.com/api/projects/status/fo1oeqn9734dhhmu/branch/dev?svg=true)](https://ci.appveyor.com/project/wibeasley/nlsylinks/branch/dev) |  | [![Coverage Status](https://coveralls.io/repos/LiveOak/NlsyLinks/badge.svg?branch=dev)](https://coveralls.io/r/LiveOak/NlsyLinks?branch=dev) |  |
+| | *Ubuntu 12.04 LTS* | *Windows Server 2012* | *Docker* | *Travis Tests* | *Wercker Tests* |
 
-Independently-hosted Archive: [![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12519). Coveralls: [![Coverage Status](https://coveralls.io/repos/LiveOak/NlsyLinks/badge.svg?branch=master)](https://coveralls.io/r/LiveOak/NlsyLinks?branch=master)
+
+Independently-hosted Archive: [![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12519). 
 
 ## Description
 

@@ -6,6 +6,7 @@ RForge/
 Vignettes/cache/
 NlsyLinks.Rcheck/
 vignettes/*.tex
+README.html
 
 #################
 ## Eclipse
