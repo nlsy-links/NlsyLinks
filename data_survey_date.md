@@ -3,6 +3,24 @@ title: "SurveyDate"
 ---
 
 ***
+# Description
+
+> Dataset containing survey details for each subject, for each year.
+
+Each row represents a survey that a subject completed (or didn't complete).  The `SurveySource` indicates where to look for their responses.  While the Age variables can help to align other response variables across subjects.
+
+These variables are useful to many types of analyses (not just behavior genetics), and are provided to save users time. 
+
+ 
+***
+# Formats
+The dataset is available in the following formats:
+
+ * [CSV](https://github.com/LiveOak/NlsyLinks/blob/master/OutsideData/SurveyTime.csv) is our recommendation.  After navigating to the page, click on the 'View Raw' button to download it.
+ * [R Binary](https://github.com/LiveOak/NlsyLinks/blob/master/data/SurveyDate.rda), after navigating to the page, click on the 'View Raw' button to download it.
+ * *SAS* (coming soon.)
+
+***
 # Data Dictionary
 
 A data frame with 580,752 observations on the following 7 variables. There is one row per subject per year.  
