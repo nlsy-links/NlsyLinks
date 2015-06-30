@@ -1,10 +1,14 @@
 #' @name SurveyDate
 #' @docType data
 
-#' @title Dataset containing further details of the Gen1 and Gen2 subjects.
+#' @title Dataset containing survey details for each subject, for each year
 #' 
-#' @description These variables are useful to many types of analyses (not just behavior genetics), and are provided to save users time.
+#' @description Each row represents a survey that a subject completed (or didn't complete).  
+#' The `SurveySource` indicates where to look for their responses.  While the Age variables 
+#' can help to align other response variables across subjects.
 #' 
+#' These variables are useful to many types of analyses (not just behavior genetics), and are
+#' provided to save users time.
 #' 
 #' @name SurveyDate
 #' @docType data
