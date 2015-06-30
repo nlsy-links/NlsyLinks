@@ -4,8 +4,10 @@
 #' @title Dataset containing survey details for each subject, for each year
 #' 
 #' @description Each row represents a survey that a subject completed (or didn't complete).  
-#' The `SurveySource` indicates where to look for their responses.  While the Age variables 
-#' can help to align other response variables across subjects.
+#' It can be very helpful when restructuring the NLS investigator extracts into a 
+#' longitudinal dataset that's aligned by age (instead of by survey wave).
+#' The Age variables can help to align other response variables across subjects.
+#' While the `SurveySource` indicates where to look for their responses.  
 #' 
 #' These variables are useful to many types of analyses (not just behavior genetics), and are
 #' provided to save users time.

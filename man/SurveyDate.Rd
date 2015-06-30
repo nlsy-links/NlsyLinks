@@ -3,7 +3,7 @@
 \docType{data}
 \name{SurveyDate}
 \alias{SurveyDate}
-\title{Dataset containing further details of the Gen1 and Gen2 subjects.}
+\title{Dataset containing survey details for each subject, for each year}
 \format{A data frame with 580,752 observations on the following 6 variables.
 \describe{
    \item{SubjectTag}{see the variable of the same name in \code{\link{Links79Pair}}}
@@ -21,7 +21,14 @@ comes from the January 2015 release of the
 (\url{https://www.nlsinfo.org/investigator/}).
 }
 \description{
-These variables are useful to many types of analyses (not just behavior genetics), and are provided to save users time.
+Each row represents a survey that a subject completed (or didn't complete).
+It can be very helpful when restructuring the NLS investigator extracts into a
+longitudinal dataset that's aligned by age (instead of by survey wave).
+The Age variables can help to align other response variables across subjects.
+While the `SurveySource` indicates where to look for their responses.
+
+These variables are useful to many types of analyses (not just behavior genetics), and are
+provided to save users time.
 }
 \details{
 The \code{AgeSelfReportYears} and \code{AgeCalculateYears} variables usually agree, but not always.  The \code{Age} variable uses \code{AgeCalculateYears} (or \code{AgeSelfReportYears} when \code{AgeCalculateYears} is missing).
