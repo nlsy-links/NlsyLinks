@@ -74,7 +74,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </script>
 
 
-<link rel="stylesheet" href="include/custom.css" type="text/css" />
+<link rel="stylesheet" href="include\custom.css" type="text/css" />
 
 </head>
 
@@ -259,23 +259,28 @@ img {
 </div>
 <div id="example-in-r" class="section level1">
 <h1>Example in R</h1>
-<pre class="r"><code>library(NlsyLinks) #Load the package into the current R session.
+<pre class="r"><code>library(NlsyLinks) #Load the package into the current R session. #Update with `devtools::install_github(&quot;LiveOak/NlsyLinks&quot;)`
 
 summary(SurveyDate)
 table(SurveyDate$SurveyYear, SurveyDate$SurveySource)
 table(is.na(SurveyDate$AgeSelfReportYears), is.na(SurveyDate$AgeCalculateYears))
 
-ggplot(dsSourceYear, aes(x=SurveyYear, y=freq, color=SurveySource)) +
-  geom_line(size=2) +
-  geom_point(size=5, shape=21) +
-  scale_color_brewer(palette = &quot;Dark2&quot;) +
-  theme_bw() +
-  theme(legend.position=c(0,0), legend.justification=c(0,0))
+if( require(ggplot2) &amp; require(plyr) ) {
+  dsSourceYear &lt;- plyr::count(SurveyDate, c(&quot;SurveyYear&quot;, &quot;SurveySource&quot;))
+  dsSourceYear &lt;- dsSourceYear[dsSourceYear$SurveySource != &quot;NoInterview&quot;, ]
   
-ggplot(SurveyDate, aes(x=AgeSelfReportYears, y=AgeCalculateYears)) +
-  geom_abline() +
-  geom_point(shape=21) +
-  theme_bw() </code></pre>
+  ggplot(dsSourceYear, aes(x=SurveyYear, y=freq, color=SurveySource)) +
+    geom_line(size=2) +
+    geom_point(size=5, shape=21) +
+    scale_color_brewer(palette = &quot;Dark2&quot;) +
+    theme_bw() +
+    theme(legend.position=c(0,0), legend.justification=c(0,0))
+    
+  ggplot(SurveyDate, aes(x=AgeSelfReportYears, y=AgeCalculateYears)) +
+    geom_abline() +
+    geom_point(shape=21) +
+    theme_bw()
+}</code></pre>
 </div>
 
 <!-- start of after_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->

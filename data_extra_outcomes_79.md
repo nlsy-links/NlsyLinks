@@ -58,7 +58,7 @@ Find the appropriate subfolder, and view the HTML report for more details.
 ***
 # Example in R
 ```r
-library(NlsyLinks) #Load the package into the current R session.
+library(NlsyLinks) #Load the package into the current R session. #Update with `devtools::install_github("LiveOak/NlsyLinks")`
 gen2Outcomes <- subset(ExtraOutcomes79, Generation==2) #Create a dataset of only Gen2 subjects.
                   
 #plot(ExtraOutcomes79) #Uncomment to see a large scatterplot matrix.

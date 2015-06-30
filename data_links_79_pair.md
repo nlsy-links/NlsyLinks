@@ -146,7 +146,7 @@ more concise and accessible.
 ***
 ### Example in R
 ```r
-library(NlsyLinks) #Load the package into the current R session.
+library(NlsyLinks) #Load the package into the current R session. #Update with `devtools::install_github("LiveOak/NlsyLinks")`
 summary(Links79Pair)  #Summarize the five variables.
 hist(Links79Pair$R)  #Display a histogram of the Relatedness coefficients.
 table(Links79Pair$R)  #Create a table of the Relatedness coefficients for the whole sample.

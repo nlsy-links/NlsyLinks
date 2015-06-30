@@ -49,7 +49,7 @@ Gen1 information comes from the Summer 2013 release of the [NLSY79](http://www.b
 ***
 # Example in R
 ```r
-library(NlsyLinks) #Load the package into the current R session.
+library(NlsyLinks) #Load the package into the current R session. #Update with `devtools::install_github("LiveOak/NlsyLinks")`
 
 summary(SubjectDetails79)
 

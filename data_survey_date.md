@@ -53,21 +53,26 @@ In the Gen2 Child dataset, self-reported age is stated by month (eg, the child i
 ***
 # Example in R
 ```r
-library(NlsyLinks) #Load the package into the current R session.
+library(NlsyLinks) #Load the package into the current R session. #Update with `devtools::install_github("LiveOak/NlsyLinks")`
 
 summary(SurveyDate)
 table(SurveyDate$SurveyYear, SurveyDate$SurveySource)
 table(is.na(SurveyDate$AgeSelfReportYears), is.na(SurveyDate$AgeCalculateYears))
 
-ggplot(dsSourceYear, aes(x=SurveyYear, y=freq, color=SurveySource)) +
-  geom_line(size=2) +
-  geom_point(size=5, shape=21) +
-  scale_color_brewer(palette = "Dark2") +
-  theme_bw() +
-  theme(legend.position=c(0,0), legend.justification=c(0,0))
+if( require(ggplot2) & require(plyr) ) {
+  dsSourceYear <- plyr::count(SurveyDate, c("SurveyYear", "SurveySource"))
+  dsSourceYear <- dsSourceYear[dsSourceYear$SurveySource != "NoInterview", ]
   
-ggplot(SurveyDate, aes(x=AgeSelfReportYears, y=AgeCalculateYears)) +
-  geom_abline() +
-  geom_point(shape=21) +
-  theme_bw() 
+  ggplot(dsSourceYear, aes(x=SurveyYear, y=freq, color=SurveySource)) +
+    geom_line(size=2) +
+    geom_point(size=5, shape=21) +
+    scale_color_brewer(palette = "Dark2") +
+    theme_bw() +
+    theme(legend.position=c(0,0), legend.justification=c(0,0))
+    
+  ggplot(SurveyDate, aes(x=AgeSelfReportYears, y=AgeCalculateYears)) +
+    geom_abline() +
+    geom_point(shape=21) +
+    theme_bw()
+}
 ```
