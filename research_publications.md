@@ -6,8 +6,6 @@ The following publication list includes research products that used the NLSY79 o
 
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this  archive of articles around ten years ago.  There are likely some additional publications based on the kinship links of which we are not aware.  If you know of such papers, please bring them to our attention.
 
-
-
 # Articles and Book Chapters
 **In reverse chronological order, updated April 2015**
 
@@ -135,35 +133,36 @@ Rodgers, J. L., Rowe, D. C., & May, K. (1994) . [DF analysis of NLSY IQ/achievem
 Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep: Ethnic and racial similarity in developmental processes.](http://psycnet.apa.org/journals/rev/101/3/396/) _Psychological Review, 101_, 396-413. (NLSYC)
 
 # Recent Presentations by the Team Involving the Links
-Association for Research in Personality Conference 2015
+
+**2015: Association for Research in Personality Conference**
 
 * Additive effects of maternal conscientiousness and general ability on infant health.
 
-Society for Personality and Social Psychology 2015
+**2015: Society for Personality and Social Psychology**
 
 * Impact of Adolescent Conscientiousness and Intelligence on Health at Middle Age: A Sibling Comparison Approach
 
-Behavior Genetics Association 2014
+**2014: Behavior Genetics Association**
 
  * A Dynamic Mixture Biometric Model of Cognitive Development in the  NLSY Children
  * Family Matters: A Multi-Level Family Study of Age of First Intercourse
- * Intelligence and Fertility in the NLSY79 Respondents: Children of Siblings and Biometrical Models
+ * [Intelligence and Fertility in the NLSY79 Respondents](./publications/2014/rodgers-bga-2014.pptx): Children of Siblings and Biometrical Models
 
-Society for Adolescent Health and Medicine 2013
+**2013: Society for Adolescent Health and Medicine**
 
 * Psychosocial Predictors Of Adolescent Sexual Risk Behavior: A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths
 
-[Behavior Genetics Association 2013](https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330) *(the presentation is included as attachments in this thread*)
+**2013: Behavior Genetics Association**
 
- * NLSY Kinship Links:  Creating Biometrical Design Structures from Cross-Generational Data
+ * [NLSY Kinship Links](./publications/2013/beasley-bga-2013.pptx):  Creating Biometrical Design Structures from Cross-Generational Data
 
-[Behavior Genetics Association 2012](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330) (*the presentations are included as attachments in this thread*)
+**2012: Behavior Genetics Association**
 
- * The 2012 National Longitudinal Survey of Youth Kinship Links: Conducting Behavior Genetic Research Using the NLSY79 and NLSY-Children Data
- * NlsyLinks: An R Package Facilitating BG Research with the NLSY
- * Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model
- * Multivariate Models of BMI, Intelligence, and Fertility Using the NLSY-Children Kinship Links
- * The 2012 National Longitudinal Survey of Youth Kinship Links: A Discussion (by discussant Brian D'Onofrio)
+ * [The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/rodgers-bga-2012.pptx): Conducting Behavior Genetic Research Using the NLSY79 and NLSY-Children Data
+ * [NlsyLinks](./publications/2012/beasley-bga-2012.pptx): An R Package Facilitating BG Research with the NLSY
+ * [Biometric Analysis of Complex NLSY Pedigrees](./publications/2012/bard-bga-2012): Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model
+ * [Multivariate Models of BMI, Intelligence, and Fertility](./publications/2012/meredith-bga-2012.pptx) Using the NLSY-Children Kinship Links
+ * [The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/donofrio-bga-2012.pptx): A Discussion (by discussant Brian D'Onofrio)
 
 # General NLSY Articles
 A larger, searchable list of research using the NLSY datasets is maintained at [nlsinfo.org](https://nlsinfo.org/bibliography-start).
