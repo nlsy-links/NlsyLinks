@@ -132,19 +132,19 @@ Rodgers, J. L., Rowe, D. C., & May, K. (1994) . [DF analysis of NLSY IQ/achievem
 
 Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep: Ethnic and racial similarity in developmental processes.](http://psycnet.apa.org/journals/rev/101/3/396/) _Psychological Review, 101_, 396-413. (NLSYC)
 
-# Recent Presentations by the Team Involving the Links
+# Recent Presentations by the Team
 
 **2015: Association for Research in Personality Conference**
 
-* Additive effects of maternal conscientiousness and general ability on infant health.  Mason Garrison.
+* [Additive Effects of Maternal Conscientiousness and General Ability on Infant Health.](./publications/2015/garrison-arp-2015.pdf)  Mason Garrison.
 
 **2015: Society for Personality and Social Psychology**
 
-* Impact of Adolescent Conscientiousness and Intelligence on Health at Middle Age: A Sibling Comparison Approach.  Mason Garrison.
+* [Impact of Adolescent Conscientiousness and Intelligence on Health at Middle Age](./publications/2015/garrison-spsp-2015.pdf): A Sibling Comparison Approach.  Mason Garrison.
 
 **2014: Behavior Genetics Association**
 
-* A Dynamic Mixture Biometric Model of Cognitive Development in the  NLSY Children.  Mike Hunter.
+* [A Dynamic Mixture Biometric Model of Cognitive Development](./publications/2014/hunter-bga-2014.pdf) in the  NLSY Children.  Mike Hunter.
 * Family Matters: A Multi-Level Family Study of Age of First Intercourse.  David Bard.
 * [Intelligence and Fertility in the NLSY79 Respondents](./publications/2014/rodgers-bga-2014.pptx): Children of Siblings and Biometrical Models.  Joe Rodgers.
 
@@ -167,7 +167,7 @@ Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep:
 # General NLSY Articles
 A larger, searchable list of research using the NLSY datasets is maintained at [nlsinfo.org](https://nlsinfo.org/bibliography-start).
 
-# Current documentation, vignettes, and user support
+# Current Documentation, Vignettes, and User Support
 Please see the provided entries on the [Research Software and Support](research_software_and_support) page.
 
 ------
