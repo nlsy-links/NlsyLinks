@@ -136,33 +136,33 @@ Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep:
 
 **2015: Association for Research in Personality Conference**
 
-* Additive effects of maternal conscientiousness and general ability on infant health.
+* Additive effects of maternal conscientiousness and general ability on infant health.  Mason Garrison.
 
 **2015: Society for Personality and Social Psychology**
 
-* Impact of Adolescent Conscientiousness and Intelligence on Health at Middle Age: A Sibling Comparison Approach
+* Impact of Adolescent Conscientiousness and Intelligence on Health at Middle Age: A Sibling Comparison Approach.  Mason Garrison.
 
 **2014: Behavior Genetics Association**
 
- * A Dynamic Mixture Biometric Model of Cognitive Development in the  NLSY Children
- * Family Matters: A Multi-Level Family Study of Age of First Intercourse
- * [Intelligence and Fertility in the NLSY79 Respondents](./publications/2014/rodgers-bga-2014.pptx): Children of Siblings and Biometrical Models
+* A Dynamic Mixture Biometric Model of Cognitive Development in the  NLSY Children.  Mike Hunter.
+* Family Matters: A Multi-Level Family Study of Age of First Intercourse.  David Bard.
+* [Intelligence and Fertility in the NLSY79 Respondents](./publications/2014/rodgers-bga-2014.pptx): Children of Siblings and Biometrical Models.  Joe Rodgers.
 
 **2013: Society for Adolescent Health and Medicine**
 
-* Psychosocial Predictors Of Adolescent Sexual Risk Behavior: A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths
+* Psychosocial Predictors Of Adolescent Sexual Risk Behavior: A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths.
 
 **2013: Behavior Genetics Association**
 
- * [NLSY Kinship Links](./publications/2013/beasley-bga-2013.pptx):  Creating Biometrical Design Structures from Cross-Generational Data
+* [NLSY Kinship Links](./publications/2013/beasley-bga-2013.pptx):  Creating Biometrical Design Structures from Cross-Generational Data.  Will Beasley.
 
 **2012: Behavior Genetics Association**
 
- * [The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/rodgers-bga-2012.pptx): Conducting Behavior Genetic Research Using the NLSY79 and NLSY-Children Data
- * [NlsyLinks](./publications/2012/beasley-bga-2012.pptx): An R Package Facilitating BG Research with the NLSY
- * [Biometric Analysis of Complex NLSY Pedigrees](./publications/2012/bard-bga-2012): Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model
- * [Multivariate Models of BMI, Intelligence, and Fertility](./publications/2012/meredith-bga-2012.pptx) Using the NLSY-Children Kinship Links
- * [The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/donofrio-bga-2012.pptx): A Discussion (by discussant Brian D'Onofrio)
+* [The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/rodgers-bga-2012.pptx): Conducting Behavior Genetic Research Using the NLSY79 and NLSY-Children Data.  Joe Rodgers.
+* [NlsyLinks](./publications/2012/beasley-bga-2012.pptx): An R Package Facilitating BG Research with the NLSY.  Will Beasley.
+* [Biometric Analysis of Complex NLSY Pedigrees](./publications/2012/bard-bga-2012): Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model.  David Bard.
+* [Multivariate Models of BMI, Intelligence, and Fertility](./publications/2012/meredith-bga-2012.pptx) Using the NLSY-Children Kinship Links.  Kelly Meredith.
+* [The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/donofrio-bga-2012.pptx): A Discussion.  Brian D'Onofrio.
 
 # General NLSY Articles
 A larger, searchable list of research using the NLSY datasets is maintained at [nlsinfo.org](https://nlsinfo.org/bibliography-start).
