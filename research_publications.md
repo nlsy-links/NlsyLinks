@@ -150,7 +150,7 @@ Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep:
 
 **2013: Society for Adolescent Health and Medicine**
 
-* Psychosocial Predictors Of Adolescent Sexual Risk Behavior: A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths.
+* [Psychosocial Predictors Of Adolescent Sexual Risk Behavior](https://www.researchgate.net/publication/260010468_Psychosocial_Predictors_of_Adolescent_Sexual_Risk_Behavior_A_Quasi-Experimental_Analysis_in_a_Nationally_Representative_Sample_of_American_Youths): A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths.  Kelly Donahue, Carol Van Hulle, Joe Rodgers, Brian D'Onofrio.
 
 **2013: Behavior Genetics Association**
 
