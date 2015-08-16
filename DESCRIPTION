@@ -15,12 +15,12 @@ Depends:
     R (>= 3.0.0),
     stats
 Imports:
-    lavaan
+    lavaan,
+    methods
 Suggests:
     devtools,
     ggplot2,
     knitr,
-    methods,
     plyr,
     scales,
     testit,
