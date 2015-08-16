@@ -6,9 +6,7 @@
 \alias{ReadCsvNlsy79Gen2}
 \title{Read a CSV file downloaded from the NLS Investigator}
 \usage{
-ReadCsvNlsy79Gen1(filePath, dsExtract=read.csv(filePath))
-
-ReadCsvNlsy79Gen2(filePath, dsExtract=read.csv(filePath))
+ReadCsvNlsy79Gen1(filePath, dsExtract = utils::read.csv(filePath))
 }
 \arguments{
 \item{filePath}{A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or Linux.}

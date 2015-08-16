@@ -7,7 +7,7 @@
 ##' initialize,AceEstimate-method print,AceEstimate-method
 ##' show,AceEstimate-method GetDetails,AceEstimate-method
 ##' @docType class
-
+##' 
 ##' @note The contents of the \code{Details} list depends on the underlying
 ##' estimation routine.  For example, when the ACE model is estimated with a DF
 ##' analysis, the output is an \code{lm} object, because the \code{lm} function
@@ -63,9 +63,6 @@ methods::setMethod( f="initialize",
   }
 )
 
-
-
-
 CreateAceEstimate <- function( aSquared, cSquared, eSquared, caseCount, details=list(), unityTolerance=1e-11 ) {
   componentSum <- aSquared + cSquared + eSquared
   #print(class(caseCount))
@@ -80,20 +77,30 @@ CreateAceEstimate <- function( aSquared, cSquared, eSquared, caseCount, details=
 
 methods::setMethod(f="print", "AceEstimate", function( x, ... ) {
   #print("ACE Estimates: [print]")#\n")
-  #aceDisplay <- matrix(c("ASquared", "CSquared", "ESquared", slot(x, "ASquared"), slot(x, "CSquared"), slot(x, "ESquared")), byrow=T, nrow=2)
+  #aceDisplay <- matrix(c("ASquared", "CSquared", "ESquared", methods::slot(x, "ASquared"), methods::slot(x, "CSquared"), methods::slot(x, "ESquared")), byrow=T, nrow=2)
   #cat(aceDisplay, "\n")
   #print(aceDisplay)
-  #print(c(ASquared=slot(x, "ASquared"), CSquared=slot(x, "CSquared"), ESquared=slot(x, "ESquared"), CaseCount=slot(x,"CaseCount")))
+  #print(c(ASquared=methods::slot(x, "ASquared"), CSquared=methods::slot(x, "CSquared"), ESquared=methods::slot(x, "ESquared"), CaseCount=methods::slot(x,"CaseCount")))
   #print(c(a=33, d=43))
   cat("Results of ACE estimation: [print]\n",
-      c(ASquared=slot(x, "ASquared"), CSquared=slot(x, "CSquared"), ESquared=slot(x, "ESquared"), CaseCount=slot(x,"CaseCount")))
+      c(
+        ASquared=methods::slot(x, "ASquared"), 
+        CSquared=methods::slot(x, "CSquared"), 
+        ESquared=methods::slot(x, "ESquared"), 
+        CaseCount=methods::slot(x,"CaseCount")
+      ))
 })
 
 methods::setMethod(f="show", "AceEstimate", function( object ) {
   print("Results of ACE estimation: [show]")#\n")
-  #print(c(GetEstimate(object), CaseCount=slot(object, "CaseCount")))
-  print(c(ASquared=slot(object, "ASquared"), CSquared=slot(object, "CSquared"), ESquared=slot(object, "ESquared"), CaseCount=round(slot(object,"CaseCount"))))
-  #cat(c(ASquared=slot(object, "ASquared"), CSquared=slot(object, "CSquared"), ESquared=slot(object, "ESquared"), CaseCount=round(slot(object,"CaseCount"))))
+  #print(c(GetEstimate(object), CaseCount=methods::slot(object, "CaseCount")))
+  print(c(
+    ASquared=methods::slot(object, "ASquared"), 
+    CSquared=methods::slot(object, "CSquared"), 
+    ESquared=methods::slot(object, "ESquared"), 
+    CaseCount=base::round(methods::slot(object,"CaseCount"))
+  ))
+  #cat(c(ASquared=methods::slot(object, "ASquared"), CSquared=methods::slot(object, "CSquared"), ESquared=methods::slot(object, "ESquared"), CaseCount=round(methods::slot(object,"CaseCount"))))
 })
 
 methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetails") })
@@ -117,25 +124,17 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 methods::setMethod(f="GetDetails", "AceEstimate", 
   definition=function( object ) {
     #print(str(object))
-    return( slot(object, "Details")[[1]] )
+    return( methods::slot(object, "Details")[[1]] )
   }
 )
-
-
-
-
 # setMethod("summary", "Ace", function(x, ...) {
 #   cat("Results of ACE estimation:\n")
-#   #aceDisplay <- matrix(c("ASquared", "CSquared", "ESquared", slot(x, "ASquared"), slot(x, "CSquared"), slot(x, "ESquared")), byrow=T, nrow=2)
+#   #aceDisplay <- matrix(c("ASquared", "CSquared", "ESquared", methods::slot(x, "ASquared"), methods::slot(x, "CSquared"), methods::slot(x, "ESquared")), byrow=T, nrow=2)
 #   #cat(aceDisplay, "\n")
 #   #print(aceDisplay)
-#   print(c(ASquared=slot(x, "ASquared"), CSquared=slot(x, "CSquared"), ESquared=slot(x, "ESquared"), CaseCount=slot(x,"CaseCount")))
+#   print(c(ASquared=methods::slot(x, "ASquared"), CSquared=methods::slot(x, "CSquared"), ESquared=methods::slot(x, "ESquared"), CaseCount=methods::slot(x,"CaseCount")))
 #   print(c(a=33, d=43))
 # })
-
-
-
-
 ## ' Generic function for returning the contents from an \code{AceEstimate}
 ## ' class.
 ## ' 
@@ -155,6 +154,6 @@ methods::setMethod(f="GetDetails", "AceEstimate",
 # setMethod(f="GetEstimate", "AceEstimate", 
 #           definition=function( object ) {
 #             #print(str(object))
-#             return( c(ASquared=slot(object, "ASquared"), CSquared=slot(object, "CSquared"), ESquared=slot(object, "ESquared")) )
+#             return( c(ASquared=methods::slot(object, "ASquared"), CSquared=methods::slot(object, "CSquared"), ESquared=methods::slot(object, "ESquared")) )
 #           }
 #           )

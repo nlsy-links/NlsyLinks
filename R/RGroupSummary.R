@@ -89,8 +89,8 @@ function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
 #   rName <- "RRR"
   
   #ds <- subset(ds, R==.75)
-  rLevelsFirstPass <- sort(unique(ds[,rName])) #Enumerate the values of R existing in the current data.frame.
-   dsGroupSummary <- data.frame(
+  rLevelsFirstPass <- base::sort(base::unique(ds[, rName])) #Enumerate the values of R existing in the current data.frame.
+   dsGroupSummary <- base::data.frame(
     R=rLevelsFirstPass, Included=F, PairCount=NA, O1Mean=NA, O2Mean=NA,
     O1Variance=NA, O2Variance=NA, O1O2Covariance=NA, Correlation=NA, 
     Determinant=NA, PosDefinite=FALSE)
@@ -102,26 +102,26 @@ function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
   #TODO: Consider rewriting with plyr.  It's small, so there won't be a performance benefit.  It will add another dependency to the package.
   for( rLevel in rLevelsFirstPass ) {
     #print(rLevel)
-    dsGroupSlice <- ds[!is.na(ds[,rName]) & ds[,rName]==rLevel & !is.na(ds[, oName_S1]) & !is.na(ds[, oName_S2]), c(oName_S1, oName_S2)]
+    dsGroupSlice <- ds[!is.na(ds[, rName]) & ds[, rName]==rLevel & !is.na(ds[, oName_S1]) & !is.na(ds[, oName_S2]), c(oName_S1, oName_S2)]
     
     if( nrow(dsGroupSlice) > 0 ) {
-      o1Mean <- mean(dsGroupSlice[, oName_S1], na.rm=TRUE)
-      o2Mean <- mean(dsGroupSlice[, oName_S2], na.rm=TRUE)
-      groupCovarianceMatrix <- cov(dsGroupSlice)#, use="complete.obs") 
-      determinant <- det(groupCovarianceMatrix)
+      o1Mean <- base::mean(dsGroupSlice[, oName_S1], na.rm=TRUE)
+      o2Mean <- base::mean(dsGroupSlice[, oName_S2], na.rm=TRUE)
+      groupCovarianceMatrix <- stats::cov(dsGroupSlice)#, use="complete.obs") 
+      determinant <- base::det(groupCovarianceMatrix)
       isPositiveDefinite <- (determinant > determinantThreshold)
-      correlation <- cor(dsGroupSlice[, oName_S1], dsGroupSlice[, oName_S2])
+      correlation <- stats::cor(dsGroupSlice[, oName_S1], dsGroupSlice[, oName_S2])
     }
     else {
       o1Mean <- NA
       o2Mean <- NA
-      groupCovarianceMatrix <- matrix(NA, ncol=2, nrow=2)
+      groupCovarianceMatrix <- base::matrix(NA, ncol=2, nrow=2)
       determinant <- NA
       isPositiveDefinite <- F
       correlation <- NA
     }
     
-    dsGroupSummary[dsGroupSummary[,rName]==rLevel, c("PairCount", "O1Mean", "O2Mean", "O1Variance", "O2Variance", "O1O2Covariance", "Correlation", "Determinant", "PosDefinite")] <- c(
+    dsGroupSummary[dsGroupSummary[, rName]==rLevel, c("PairCount", "O1Mean", "O2Mean", "O1Variance", "O2Variance", "O1O2Covariance", "Correlation", "Determinant", "PosDefinite")] <- c(
       nrow(dsGroupSlice),
       o1Mean,
       o2Mean,
@@ -134,7 +134,7 @@ function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
       )    
     #dsGroupSummary[dsGroupSummary[,rName]==rLevel, "Included"] <- isPositiveDefinite  
   }
-  dsGroupSummary$PosDefinite <- as.logical(dsGroupSummary$PosDefinite) #I do not know how this variable was ever coerced from logical to numeric.
+  dsGroupSummary$PosDefinite <- base::as.logical(dsGroupSummary$PosDefinite) #I do not know how this variable was ever coerced from logical to numeric.
   dsGroupSummary[, "Included"] <- dsGroupSummary$PosDefinite #Maybe later there will be another criterion to include/exclude a group.
   
   return( dsGroupSummary )
