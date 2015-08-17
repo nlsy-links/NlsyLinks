@@ -1,4 +1,10 @@
-﻿Version 1.4005 (2015-01-15)
+Version 2.0.1 (2015-08-16)
+------------------------------------------------------------------------------
+Updates:
+* SurveyDate datset contains survey details for each subject, for each year.
+* Small updates to meet newer CRAN guidelines.
+
+Version 1.4005 (2015-01-15)
 ------------------------------------------------------------------------------
 Updates:
 * Small updates to vignettes and documentation.

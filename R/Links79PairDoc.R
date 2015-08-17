@@ -23,7 +23,7 @@
 #' the original NLSY79 sample (\url{http://www.bls.gov/nls/nlsy79.htm}).
 #' "Gen2" subjects are the biological children of the Gen1 females -ie, those
 #' in the NLSY79 Children and Young Adults sample
-#' (\url{http://www.bls.gov/nls/nlsy79ch.htm)}.
+#' (\url{http://www.bls.gov/nls/nlsy79ch.htm}).
 #' 
 #' Subjects will be in the same extended family if either: [1] they are Gen1
 #' housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (ie, they
