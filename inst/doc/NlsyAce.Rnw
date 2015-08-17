@@ -64,7 +64,7 @@ The variables are scaled so that they account for all observed variability in th
 
 %%This paragraph may get moved to the yet-to-be-written introduction that precedes the Terminology section.
 
-The \textbf{NLS Investigator}\phantomsection\label{term:NlsInvestigator} (\url{http://www.nlsinfo.org/investigator/}) is the best way to obtain the NLSY79 and NLSY97 datasets.  See our vignette dedicated to the NLS Investigator by typing\\ \code{vignette("NlsInvestigator")} or by visiting \url{http://cran.r-project.org/web/packages/NlsyLinks/}.
+The \textbf{NLS Investigator}\phantomsection\label{term:NlsInvestigator} (\url{http://www.nlsinfo.org/investigator/}) is the best way to obtain the NLSY79 and NLSY97 datasets.  See our vignette dedicated to the NLS Investigator by typing\\ \code{vignette("NlsInvestigator")} or by visiting \url{http://cran.r-project.org/package=NlsyLinks}.
 
 Before starting the real examples, first verify that the \pkg{NlsyLinks} package is installed correctly.  If not, please refer to \hyperref[sec:InstallingPackage]{Appendix \ref*{sec:InstallingPackage}}.
 <<eval=TRUE,echo=TRUE>>=

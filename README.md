@@ -20,7 +20,7 @@ developmental research using the National Longitudinal Survey of Youth
 
 ## Installing 
 
-The *release* version of `NlsyLinks` can be installed from [CRAN](http://cran.r-project.org/web/packages/NlsyLinks/).
+The *release* version of `NlsyLinks` can be installed from [CRAN](http://cran.r-project.org/package=NlsyLinks).
 
 ```r
 install.packages("NlsyLinks")
@@ -35,7 +35,7 @@ devtools::install_github(repo="LiveOak/NlsyLinks")
 
 ## Locations for Help and Development
 
-This repository contains the code used in the [NlsyLinks](http://cran.r-project.org/web/packages/NlsyLinks/) R package.  For additional information about the package and using it in NLSY research, please see http://liveoak.github.io/NlsyLinks/
+This repository contains the code used in the [NlsyLinks]http://cran.r-project.org/package=NlsyLinks) R package.  For additional information about the package and using it in NLSY research, please see http://liveoak.github.io/NlsyLinks/
 
 We now use  [this GitHub repository](https://github.com/LiveOak/NlsyLinksStaging) as our primary way of managing, tracking, and build-checking versions of the source code.  We continue to use the [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/) to make sure the most recent version builds on the different OS platforms, and passes the associated checks.  The stable releases (intended for most researchers) is available on the package's  [CRAN site](http://cran.r-project.org/web/packages/NlsyLinks/).
 

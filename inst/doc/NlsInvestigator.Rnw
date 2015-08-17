@@ -30,7 +30,7 @@
 \tableofcontents
 
 \begin{abstract}
-This vignette will be useful to behavior genetic researchers interested in using the National Longitudinal Survey of Youth (NLSY79) or Children (NLSYC) data.  To fit biometrical models to the NLSY or NLSYC requires that the data be extracted from the appropriate online NLSY database into a usable file format.  The extracting software is called the \href{https://www.nlsinfo.org/investigator/pages/login.jsp}{NLS Investigator}.  We describe how to use the NLS Investigator to select and download variables.   In \href{http://cran.r-project.org/web/packages/NlsyLinks/}{subsequent vignettes}, we show how to reformat the data into file structures that accommodate behavior genetic research, and how to fit biometrical models.  The following steps are not specific to \R{}, but rather precede the use of any analytic statistical software.
+This vignette will be useful to behavior genetic researchers interested in using the National Longitudinal Survey of Youth (NLSY79) or Children (NLSYC) data.  To fit biometrical models to the NLSY or NLSYC requires that the data be extracted from the appropriate online NLSY database into a usable file format.  The extracting software is called the \href{https://www.nlsinfo.org/investigator/pages/login.jsp}{NLS Investigator}.  We describe how to use the NLS Investigator to select and download variables.   In \href{http://cran.r-project.org/package=NlsyLinks}{subsequent vignettes}, we show how to reformat the data into file structures that accommodate behavior genetic research, and how to fit biometrical models.  The following steps are not specific to \R{}, but rather precede the use of any analytic statistical software.
 \end{abstract}
 
 <<preliminaries,echo=FALSE>>=
@@ -74,7 +74,7 @@ The actual values are contained in the \textbf{data file}, which is discussed in
 
 \includegraphics{./GraphicsNlsInvestigator/DownloadStep2.png}
 
-\item Open the zip file and extract the *.csv file to a location that the vignette examples have permission to read.  Then try some of the \code{NlsyLinks} vignette examples at \url{http://cran.r-project.org/web/packages/NlsyLinks/}. 
+\item Open the zip file and extract the *.csv file to a location that the vignette examples have permission to read.  Then try some of the \code{NlsyLinks} vignette examples at \url{http://cran.r-project.org/package=NlsyLinks}. 
 
 \end{enumerate}
 \section{Using Multiple Tagsets}

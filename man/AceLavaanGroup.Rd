@@ -65,13 +65,13 @@ Will Beasley
 }
 \references{
 The \pkg{lavaan} package is developed by Yves Rosseel at Ghent University.
-Three good starting points are the package home page (\url{http://lavaan.ugent.be/}), the documentation (\url{http://cran.r-project.org/web/packages/lavaan/})
+Three good starting points are the package home page (\url{http://lavaan.ugent.be/}), the documentation (\url{http://cran.r-project.org/package=lavaan})
 and the JSS paper.
 
 Rosseel, Yves (2012), \href{http://www.jstatsoft.org/v48/i02/}{lavaan: An R Package for Structural Equation Modeling}. \emph{Journal of Statistical Software, 48}, (2), 1-36.
 }
 \seealso{
-\code{\link{CleanSemAceDataset}}.  Further ACE model details are discussed in our package's \href{http://cran.r-project.org/web/packages/NlsyLinks/}{vignettes}.
+\code{\link{CleanSemAceDataset}}.  Further ACE model details are discussed in our package's \href{http://cran.r-project.org/package=NlsyLinks}{vignettes}.
 }
 \keyword{ACE}
 
