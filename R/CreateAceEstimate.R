@@ -1,5 +1,6 @@
 #' @name CreateAceEstimate
 #' @export
+#' @importFrom methods new
 #' 
 #' @title Instantiate an \code{\link{AceEstimate-class}} object.
 #' @description Creates an instance of the \code{S4} class, \code{AceEstimate}  instantiating arguments set the parameter values estimated by the ACE model.
