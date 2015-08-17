@@ -79,8 +79,7 @@
 #' 
 #' @keywords ACE 
 
-RGroupSummary <-
-function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
+RGroupSummary <- function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
 #     ds <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
 #     oName_S1 <- "MathStandardized_S1" #Stands for Manifest1
 #     oName_S2 <- "MathStandardized_S2" #Stands for Manifest2
@@ -96,7 +95,7 @@ function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
     Determinant=NA, PosDefinite=FALSE)
     
   index <- VerifyColumnExists(dataFrame=dsGroupSummary, columnName="R")
-  colnames(dsGroupSummary)[index] <- rName
+  base::colnames(dsGroupSummary)[index] <- rName
   
   #The primary goal of this loop is to identify the R groups whose covariance matrix isn't positive definite.
   #TODO: Consider rewriting with plyr.  It's small, so there won't be a performance benefit.  It will add another dependency to the package.
@@ -104,7 +103,7 @@ function( ds, oName_S1, oName_S2, rName="R", determinantThreshold=1e-5) {
     #print(rLevel)
     dsGroupSlice <- ds[!is.na(ds[, rName]) & ds[, rName]==rLevel & !is.na(ds[, oName_S1]) & !is.na(ds[, oName_S2]), c(oName_S1, oName_S2)]
     
-    if( nrow(dsGroupSlice) > 0 ) {
+    if( base::nrow(dsGroupSlice) > 0 ) {
       o1Mean <- base::mean(dsGroupSlice[, oName_S1], na.rm=TRUE)
       o2Mean <- base::mean(dsGroupSlice[, oName_S2], na.rm=TRUE)
       groupCovarianceMatrix <- stats::cov(dsGroupSlice)#, use="complete.obs") 

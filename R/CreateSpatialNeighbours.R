@@ -63,18 +63,17 @@
 #' #3442   610  6997    12    27 
 #' @keywords spatial analysis
 #' 
-CreateSpatialNeighbours <-
-function( linksPairsDoubleEntered )  {
+CreateSpatialNeighbours <- function( linksPairsDoubleEntered )  {
   ValidatePairLinks(linksPairsDoubleEntered)
   
-  ds <- subset(linksPairsDoubleEntered, select=c("SubjectTag_S1", "SubjectTag_S2", "R"))
-  colnames(ds)[colnames(ds) == "SubjectTag_S1"] <- "from"
-  colnames(ds)[colnames(ds) == "SubjectTag_S2"] <- "to"
-  colnames(ds)[colnames(ds) == "R"] <- "weight"
-#   summary(ds)
+  ds <- base::subset(linksPairsDoubleEntered, select=c("SubjectTag_S1", "SubjectTag_S2", "R"))
+  base::colnames(ds)[base::colnames(ds) == "SubjectTag_S1"] <- "from"
+  base::colnames(ds)[base::colnames(ds) == "SubjectTag_S2"] <- "to"
+  base::colnames(ds)[base::colnames(ds) == "R"] <- "weight"
+  # summary(ds)
   
-  class(ds) <- c("spatial.neighbour", class(ds))
-  attr(ds, "region.id") <- unique(ds$from)
-  attr(ds, "n") <- length(unique(ds$from)) 
+  base::class(ds) <- c("spatial.neighbour", base::class(ds))
+  base::attr(ds, "region.id") <- base::unique(ds$from)
+  base::attr(ds, "n") <- base::length(base::unique(ds$from)) 
   return( ds )
 }

@@ -48,20 +48,19 @@
 ##' ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
 ##' 
 
-ValidatePairLinks <-
-function( linksPair ) {
-  if(!nrow(linksPair) > 0 ) stop("The linksPair data frame should have at least one row, but does not.")
+ValidatePairLinks <- function( linksPair ) {
+  if(!base::nrow(linksPair) > 0 ) stop("The linksPair data frame should have at least one row, but does not.")
   
-  columnNames <- colnames(linksPair)
-  if( !any(columnNames=="SubjectTag_S1") ) stop("The column 'SubjectTag_S1' should exist in the linksPair file, but does not.")
-  if( !any(columnNames=="SubjectTag_S2") ) stop("The column 'SubjectTag_S2' should exist in the linksPair file, but does not.")
-  if( !any(columnNames=="R") ) stop("The column 'R' should exist in the linksPair file, but does not.")
-#   if( !any(columnNames=="MultipleBirth") ) stop("The column 'MultipleBirth' should exist in the linksPair file, but does not.")
+  columnNames <- base::colnames(linksPair)
+  if( !base::any(columnNames=="SubjectTag_S1") ) base::stop("The column 'SubjectTag_S1' should exist in the linksPair file, but does not.")
+  if( !base::any(columnNames=="SubjectTag_S2") ) base::stop("The column 'SubjectTag_S2' should exist in the linksPair file, but does not.")
+  if( !base::any(columnNames=="R") ) base::stop("The column 'R' should exist in the linksPair file, but does not.")
+  # if( !base::any(columnNames=="MultipleBirth") ) stop("The column 'MultipleBirth' should exist in the linksPair file, but does not.")
   
-  if( mode(linksPair$SubjectTag_S1) != 'numeric' ) stop("The column 'SubjectTag_S1' should have a 'numeric' mode, but does not.")
-  if( mode(linksPair$SubjectTag_S2) != 'numeric' ) stop("The column 'SubjectTag_S2' should have a 'numeric' mode, but does not.")
-  if( mode(linksPair$R) != 'numeric' ) stop("The column 'R' should have a 'numeric' mode, but does not.")
-#   if( mode(linksPair$MultipleBirth) != 'numeric' ) stop("The column 'MultipleBirth' should have a 'numeric' mode, but does not.")
+  if( base::mode(linksPair$SubjectTag_S1) != 'numeric' ) base::stop("The column 'SubjectTag_S1' should have a 'numeric' mode, but does not.")
+  if( base::mode(linksPair$SubjectTag_S2) != 'numeric' ) base::stop("The column 'SubjectTag_S2' should have a 'numeric' mode, but does not.")
+  if( base::mode(linksPair$R) != 'numeric' ) base::stop("The column 'R' should have a 'numeric' mode, but does not.")
+  # if( base::mode(linksPair$MultipleBirth) != 'numeric' ) base::stop("The column 'MultipleBirth' should have a 'numeric' mode, but does not.")
   
   return( TRUE )
 }

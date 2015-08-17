@@ -57,21 +57,21 @@
 
 AceLavaanGroup <-
 function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
-#   require(lavaan)
-#   require(stringr)
+  # library(lavaan)
+  # library(stringr)
  
-  rLevels <- sort(unique(dsClean$R))
+  rLevels <- base::sort(base::unique(dsClean$R))
   #These five lines enumerate the path coefficient labels to be inserted into the model statement.
   #rString <- stringr::str_c(rLevels, collapse=", ") #The output is typically "1, 0.5, 0.375, 0.25"
-  rString <- paste(rLevels, collapse=", ") #The output is typically "1, 0.5, 0.375, 0.25"
+  rString <- base::paste(rLevels, collapse=", ") #The output is typically "1, 0.5, 0.375, 0.25"
   # aString <- str_c(rep("a", length(rLevels)), collapse=",") #The output is typically "a,a,a,a"
   # cString <- str_c(rep("c", length(rLevels)), collapse=",") #The output is typically "c,c,c,c"
   # eString <- str_c(rep("e", length(rLevels)), collapse=",") #The output is typically "e,e,e,e"
   # intString <- str_c(rep("int", length(rLevels)), collapse=",") #The output is typically "int,int,int,int"
-  groupCount <- length(rLevels)
+  groupCount <- base::length(rLevels)
   
   #Generate the model statements that will exist in all models (ie, ACE, AE, AC, & E)
-  modelBase <- paste("
+  modelBase <- base::paste("
     O1 ~~ 0 * O2                          #The manifest variables are uncorrelated.
     O1 + O2 ~ rep('int',", groupCount, ") * 1           #The manifest variables are fed the same intercept (for all groups).
     
@@ -86,7 +86,7 @@ function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
   
 
   #Generate the model statements that will exist in all models estimating the A component.
-  modelA <- paste("
+  modelA <- base::paste("
     A1 =~ rep('a',", groupCount,") * O1   #Declare the contributions of A to Subject1 (for all groups).
     A2 =~ rep('a',", groupCount,") * O2   #Declare the contributions of A to Subject2 (for all groups).
     A1 ~~ c(", rString, ") * A2           #Declare the genetic relatedness between Subject1 and Subject2. This coefficient differs for all groups.
@@ -95,11 +95,9 @@ function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
     A2 ~~ 1 * A2
     a2 := a * a                           #Declare a^2 for easy point and variance estimation.
   ")
-  
 
-  
   #Generate the model statements that will exist in all models estimating the C component.
-  modelC <- paste("
+  modelC <- base::paste("
     C1 =~ rep('c',", groupCount,") * O1   #Declare the contributions of C to Subject1 (for all groups).
     C2 =~ rep('c',", groupCount,") * O2   #Declare the contributions of C to Subject2 (for all groups).
     
@@ -113,7 +111,7 @@ function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
   if( !estimateA ) modelA <- "\n a2 := 0 \n"
   if( !estimateC ) modelC <- "\n c2 := 0 \n"
   
-  model <- paste(modelBase, modelA, modelC) #Assemble the three parts of the model.
+  model <- base::paste(modelBase, modelA, modelC) #Assemble the three parts of the model.
   
   #Run the model and review the results
   fit <- lavaan::lavaan(model, data=dsClean, group="GroupID", missing="listwise", information="observed")
@@ -143,11 +141,17 @@ function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
   # ggplot(data=dsGroupSummary, aes(x=R, y=Covariance, label=PairCount, color=Included)) + #substitute(N == b, list(b=dsGroupSummary$PairCount)) )) + #geom_line()
   #   layer(geom="line") + layer(geom="text") + scale_x_reverse(limits=c(1,0))
   
-  components <- as.numeric(cbind(a2, c2, e2)[1,] / (a2 + c2 + e2)) #The 'as.numeric' gets rid of the vector labels.
-  if( printOutput ) print(components) #Print the unity-SCALED ace components.
-  caseCount <- nrow(dsClean)
-  details <- list(lavaan=fit)
+  components <- base::as.numeric(base::cbind(a2, c2, e2)[1,] / (a2 + c2 + e2)) #The 'as.numeric' gets rid of the vector labels.
+  if( printOutput ) base::print(components) #Print the unity-SCALED ace components.
+  caseCount <- base::nrow(dsClean)
+  details <- base::list(lavaan=fit)
   #print(paste("R Levels excluded:",  stringr::str_c(rLevelsToExclude, collapse=", "), "; R Levels retained:", rString)) #Print the dropped & retained groups.
-  ace <- NlsyLinks::CreateAceEstimate(aSquared=components[1], cSquared=components[2], eSquared=components[3], caseCount=caseCount, details=details)
+  ace <- NlsyLinks::CreateAceEstimate(
+    aSquared  = components[1], 
+    cSquared  = components[2], 
+    eSquared  = components[3], 
+    caseCount = caseCount, 
+    details   = details
+  )
   return( ace )
 }

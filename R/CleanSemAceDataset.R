@@ -53,12 +53,18 @@ CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rNa
   #It's necessary to drop the missing Groups & unnecessary columns.  Missing O1s & O2s are dropped for the sake of memory space.
   oldColumnNames <- c(rName, oName_S1, oName_S2)
   newColumnNames <- c("R", "O1", "O2")
-  selectedRows <- (!is.na(dsDirty[, rName])) & (dsDirty[, rName] %in%  rLevelsToInclude) & (!is.na(dsDirty[, oName_S1])) & (!is.na(dsDirty[, oName_S2]))
+  selectedRows <- (
+    (!base::is.na(dsDirty[, rName])) & 
+    (dsDirty[, rName] %in% rLevelsToInclude) & 
+    (!base::is.na(dsDirty[, oName_S1])) & 
+    (!base::is.na(dsDirty[, oName_S2]))
+  )
+  
   dsClean <- dsDirty[selectedRows, oldColumnNames] 
   
   colnames(dsClean) <- newColumnNames
   
-  dsClean <- dsClean[order(dsClean$R), ] #TODO: Rewrite overall code so this statement is not longer necessary anyomre.
+  dsClean <- dsClean[base::order(dsClean$R), ] #TODO: Rewrite overall code so this statement is not longer necessary anyomre.
   
   #This helper function allows for slight imprecision from floating-point arithmetic.
   EqualApprox <- function( target, current, toleranceAbsolute=1e-8) {  
@@ -71,7 +77,7 @@ CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rNa
   dsClean$GroupID <- NA
   for( groupIndex in seq_along(rLevelsToInclude) ) {
     r <- rLevelsToInclude[groupIndex]
-    memberIndices <- sapply(dsClean$R, EqualApprox, r)
+    memberIndices <- base::sapply(dsClean$R, EqualApprox, r)
     dsClean$GroupID[memberIndices] <- groupIndex
   }
   

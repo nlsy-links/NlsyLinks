@@ -60,44 +60,44 @@
 #' ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
 #' 
 #' 
-CreatePairLinksDoubleEntered <-
-function( outcomeDataset, linksPairDataset, outcomeNames, 
-          linksNames=c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset=TRUE,
-          subject1Qualifier="_S1", subject2Qualifier="_S2" ) {
+CreatePairLinksDoubleEntered <- function( 
+  outcomeDataset, linksPairDataset, outcomeNames, 
+  linksNames=c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset=TRUE,
+  subject1Qualifier="_S1", subject2Qualifier="_S2" ) {
   
   ValidatePairLinks(linksPairDataset)
   if(validateOutcomeDataset) ValidateOutcomeDataset(dsOutcome=outcomeDataset, outcomeNames=outcomeNames)
   
-  dsLinksLeftHand <- subset(linksPairDataset, select=c("SubjectTag_S1","SubjectTag_S2", linksNames)) #'Lefthand' is my slang for Subjec1Tag is less than the SubjectTag_S2
-  dsLinksRightHand <- subset(linksPairDataset, select=c("SubjectTag_S1", "SubjectTag_S2", linksNames))
+  dsLinksLeftHand <- base::subset(linksPairDataset, select=c("SubjectTag_S1","SubjectTag_S2", linksNames)) #'Lefthand' is my slang for Subjec1Tag is less than the SubjectTag_S2
+  dsLinksRightHand <- base::subset(linksPairDataset, select=c("SubjectTag_S1", "SubjectTag_S2", linksNames))
   
-  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="SubjectTag_S1"] <- "SubjectTempTag"
-  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="SubjectTag_S2"] <- "SubjectTag_S1"
-  colnames(dsLinksRightHand)[colnames(dsLinksRightHand)=="SubjectTempTag"] <- "SubjectTag_S2"
+  base::colnames(dsLinksRightHand)[base::colnames(dsLinksRightHand)=="SubjectTag_S1"] <- "SubjectTempTag"
+  base::colnames(dsLinksRightHand)[base::colnames(dsLinksRightHand)=="SubjectTag_S2"] <- "SubjectTag_S1"
+  base::colnames(dsLinksRightHand)[base::colnames(dsLinksRightHand)=="SubjectTempTag"] <- "SubjectTag_S2"
   
-  dsOutcomeSubject1 <- subset(outcomeDataset, select=c("SubjectTag", outcomeNames))
-  dsOutcomeSubject2 <- subset(outcomeDataset, select=c("SubjectTag", outcomeNames))
+  dsOutcomeSubject1 <- base::subset(outcomeDataset, select=c("SubjectTag", outcomeNames))
+  dsOutcomeSubject2 <- base::subset(outcomeDataset, select=c("SubjectTag", outcomeNames))
   
   for( j in 1:ncol(dsOutcomeSubject1) ) {
-    columnName <- colnames(dsOutcomeSubject1)[j]
+    columnName <- base::colnames(dsOutcomeSubject1)[j]
     if( columnName %in% outcomeNames ) {
-      colnames(dsOutcomeSubject1)[colnames(dsOutcomeSubject1) == columnName] <- paste0(columnName, subject1Qualifier)
-      colnames(dsOutcomeSubject2)[colnames(dsOutcomeSubject2) == columnName] <- paste0(columnName, subject2Qualifier)      
+      base::colnames(dsOutcomeSubject1)[colnames(dsOutcomeSubject1) == columnName] <- base::paste0(columnName, subject1Qualifier)
+      base::colnames(dsOutcomeSubject2)[colnames(dsOutcomeSubject2) == columnName] <- base::paste0(columnName, subject2Qualifier)      
     }
   }
   
-  dsLeftHand <- merge(x=dsLinksLeftHand, y=dsOutcomeSubject1, by.x="SubjectTag_S1", by.y="SubjectTag", all.x=TRUE)
-  dsLeftHand <- merge(x=dsLeftHand, y=dsOutcomeSubject2, by.x="SubjectTag_S2", by.y="SubjectTag", all.x=TRUE)
+  dsLeftHand <- base::merge(x=dsLinksLeftHand, y=dsOutcomeSubject1, by.x="SubjectTag_S1", by.y="SubjectTag", all.x=TRUE)
+  dsLeftHand <- base::merge(x=dsLeftHand, y=dsOutcomeSubject2, by.x="SubjectTag_S2", by.y="SubjectTag", all.x=TRUE)
   
-  dsRightHand <- merge(x=dsLinksRightHand, y=dsOutcomeSubject2, by.x="SubjectTag_S2", by.y="SubjectTag", all.x=TRUE)
-  dsRightHand <- merge(x=dsRightHand, y=dsOutcomeSubject1, by.x="SubjectTag_S1", by.y="SubjectTag", all.x=TRUE)
+  dsRightHand <- base::merge(x=dsLinksRightHand, y=dsOutcomeSubject2, by.x="SubjectTag_S2", by.y="SubjectTag", all.x=TRUE)
+  dsRightHand <- base::merge(x=dsRightHand, y=dsOutcomeSubject1, by.x="SubjectTag_S1", by.y="SubjectTag", all.x=TRUE)
   
-  rm(dsLinksLeftHand, dsLinksRightHand, dsOutcomeSubject1, dsOutcomeSubject2)
+  base::rm(dsLinksLeftHand, dsLinksRightHand, dsOutcomeSubject1, dsOutcomeSubject2)
   
-  ds <- rbind(dsLeftHand, dsRightHand) #'RowBind' the two datasets
+  ds <- base::rbind(dsLeftHand, dsRightHand) #'RowBind' the two datasets
   
   firstTwoNames <- c("SubjectTag_S1", "SubjectTag_S2")
-  remaining <- setdiff(colnames(ds), firstTwoNames)
+  remaining <- base::setdiff(colnames(ds), firstTwoNames)
   ds <- ds[, c(firstTwoNames, remaining)]
   
   return( ds )

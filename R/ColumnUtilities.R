@@ -31,14 +31,14 @@
 
 
 VerifyColumnExists <- function( dataFrame, columnName ) {
-  indices <- match(columnName, colnames(dataFrame))
-  if( length(indices) != 1 ) stop(paste("Exactly 1 matching column name should be found, but", length(indices), "were found."))
+  indices <- base::match(columnName, colnames(dataFrame))
+  if( length(indices) != 1 ) base::stop(paste("Exactly 1 matching column name should be found, but", length(indices), "were found."))
   return( indices )
 }
 
 RenameColumn <- function( dataFrame, oldColumnName, newColumnName ) {
   index <- VerifyColumnExists(dataFrame=dataFrame, columnName=oldColumnName)
-  colnames(dataFrame)[index] <- newColumnName
+  base::colnames(dataFrame)[index] <- newColumnName
   return( dataFrame )
 }
 

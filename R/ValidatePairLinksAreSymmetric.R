@@ -42,10 +42,9 @@
 #' ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
 #' 
 #' 
-ValidatePairLinksAreSymmetric <-
-function( linksPair ) {
+ValidatePairLinksAreSymmetric <- function( linksPair ) {
   ValidatePairLinks(linksPair)
-  for( rowIndex in seq_along(nrow(linksPair)) ) {
+  for( rowIndex in base::seq_along(base::nrow(linksPair)) ) {
 #     tag1 <- linksPair$SubjectTag_S1[rowIndex]
 #     tag2 <- linksPair$SubjectTag_S2[rowIndex]    
 #     r <- linksPair$R[rowIndex]    
@@ -54,10 +53,10 @@ function( linksPair ) {
     tag2 <- linksPair[rowIndex, 'SubjectTag_S2']    
     r <- linksPair[rowIndex, 'R']    
     path <- linksPair[rowIndex, 'RelationshipPath']    
-    #oppositeCount <- nrow(subset(linksPair, SubjectTag_S1==tag2 & SubjectTag_S2==tag1 & R==r & RelationshipPath==path))
-    oppositeCount <- nrow(linksPair[linksPair$SubjectTag_S1==tag2 & linksPair$SubjectTag_S2==tag1 & linksPair$R==r & linksPair$RelationshipPath==path, ])
+    #oppositeCount <- base::nrow(subset(linksPair, SubjectTag_S1==tag2 & SubjectTag_S2==tag1 & R==r & RelationshipPath==path))
+    oppositeCount <- base::nrow(linksPair[linksPair$SubjectTag_S1==tag2 & linksPair$SubjectTag_S2==tag1 & linksPair$R==r & linksPair$RelationshipPath==path, ])
     if( oppositeCount != 1 ) {
-      stop(paste0("The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (SubjectTag_S1, SubjectTag_S2, R)=(",
+      base::stop(paste0("The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (SubjectTag_S1, SubjectTag_S2, R)=(",
                  tag1, ", ", tag2, ", ", r, ") was found ", oppositeCount, " time(s)."))
     }
   }  
