@@ -28,7 +28,7 @@ For some reason, that wasn't caught by the five remote test machines.  I'm open 
 
 ## Test environments
 * Local Win8, R 3.2.2 patched
-* [win-builder (version="R-devel")](http://win-builder.r-project.org/2iJJ9Mu3J0cr)
+* [win-builder (version="R-devel")](http://win-builder.r-project.org/pOA6nv528n9r)
 * [Travis CI, Ubuntu 12.04 LTS](https://travis-ci.org/LiveOak/NlsyLinks/)
 * [AppVeyor, Windows Server 2012](https://ci.appveyor.com/project/wibeasley/nlsylinks)
 * [Werker, Docker](https://app.wercker.com/#applications/5590d20a4fea05eb7a02e590)

@@ -29,6 +29,15 @@ library(NlsyLinks) #Load the package into the current R session.
 summary(Links79Pair)  #Summarize the five variables.
 hist(Links79Pair$R)  #Display a histogram of the Relatedness values.
 table(Links79Pair$R)  #Create a table of the Relatedness values for the whole sample.
+
+\dontrun{
+# Install/update NlsyLinks with the release version from CRAN.
+install.packages('NlsyLinks')
+
+# Install/update NlsyLinks with the development version from GitHub
+#install.packages('devtools') #Uncomment if `devtools` isn't installed already.
+devtools::install_github('LiveOak/NlsyLinks')
+}
 }
 \author{
 \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)
