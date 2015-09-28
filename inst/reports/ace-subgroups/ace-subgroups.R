@@ -1,8 +1,8 @@
 rm(list=ls(all=TRUE)) #Clear variables from previous runs.
 
-# load_sources ------------------------------------------------------------
+# @knitr load_sources ------------------------------------------------------------
 
-# load_packages -----------------------------------------------------------
+# @knitr load_packages -----------------------------------------------------------
 library(NlsyLinks)
 library(magrittr)
 library(knitr)
@@ -11,15 +11,14 @@ requireNamespace("dplyr", quietly=T)
 requireNamespace("plyr", quietly=T)
 requireNamespace("scales", quietly=T)
 
-# define_globals ----------------------------------------------------------
+# @knitr define_globals ----------------------------------------------------------
 oName <- "HeightZGenderAge" # o' stands for outcomes
 # oName <- "WeightZGenderAge"
 
-relationshipPaths <- c(1)
+relationshipPaths <- c(2)
 # relationshipPaths <- c(1, 2, 3, 4, 5)
 
-rVersions <- c("R", "RFull", "RExplicit", "RImplicit",  "RImplicit2004") #"RImplicitPass1",
-# rVersions <- c("R", "RFull", "RPass1", "RImplicit", "RExplicit", "RExplicitPass1", "RImplicit2004")
+rVersions <- c("R", "RFull", "RExplicit", "RImplicit",  "RImplicit2004")
 
 dropIfHousematesAreNotSameGeneration <- FALSE
 
@@ -58,12 +57,14 @@ suppressGroupTables <- TRUE
 #       )"
 # )
 
-# load_data ---------------------------------------------------------------
+# @knitr load_data ---------------------------------------------------------------
 dsPair <- NlsyLinks::Links79PairExpanded
 dsOutcomes <- NlsyLinks::ExtraOutcomes79
 
 
-# tweak_data --------------------------------------------------------------
+# @knitr tweak_data --------------------------------------------------------------
+dsPair <- dsPair[as.integer(dsPair$RelationshipPath) %in% relationshipPaths, ]
+
 oName_1 <- paste0(oName, "_S1")
 oName_2 <- paste0(oName, "_S2")
 relationshipPathsString <- paste0("(", paste(relationshipPaths, collapse=","), ")")
@@ -89,10 +90,8 @@ dsDirty <- CreatePairLinksSingleEntered(
 # mean(!is.na(dsDirty$RFull)) 
 # mean(!is.na(dsDirty[!is.na(dsDirty[, oName_1]) & !is.na(dsDirty[, oName_2]), "RFull"])) 
 
-# evaluate_groups ---------------------------------------------------------
-
-
-groupDatasets <- list() # rep(NA_character_, 2*length(rVersions))
+# @knitr evaluate_groups ---------------------------------------------------------
+groupDatasets <- list() 
 dsAce <- data.frame(Version=rVersions, ASq=NA_real_, CSq=NA_real_, ESq=NA_real_, N=NA_integer_)
 for( i in seq_along(rVersions) ) {
   rVersion <-  rVersions[i] # rVersion <- "RFull"
@@ -110,7 +109,6 @@ for( i in seq_along(rVersions) ) {
 # dsAce
 # groupDatasets[[1]]
 
-
 PrintGroupSummary <- function( dsSummary, title="Group Summary"  ) {
   colnames(dsSummary)[colnames(dsSummary)=="Included"] <- "Included in SEM"
   colnames(dsSummary)[colnames(dsSummary)=="PairCount"] <- "$N_{Pairs}$"
@@ -125,7 +123,7 @@ PrintGroupSummary <- function( dsSummary, title="Group Summary"  ) {
   textTable <- xtable(dsSummary, caption=title, digits=digitsFormat)
   print(textTable, include.rownames=F, sanitize.text.function = function(x) {x}) # size="large", size="small",
 }
-PrintGroupSummary(dsSummary=dsGroupSummary)
+# PrintGroupSummary(dsSummary=dsGroupSummary)
 
 for( i in seq_along(rVersions) ) {
   rVersion <- rVersions[i]
@@ -135,14 +133,7 @@ for( i in seq_along(rVersions) ) {
   PrintGroupSummary(groupDatasets[[(i-1)*2 + 1]], title=rVersion)
 }
 
-# mean(!is.na(dsDirtyNewer$RFull)) 
-# mean(!is.na(dsDirtyNewer[!is.na(dsDirtyNewer[, oName_1]) & !is.na(dsDirtyNewer[, oName_2]), "RFull"])) 
-
-## @knitr EvalAndPrintAce
-
-# evaluate_ace ------------------------------------------------------------
-
-
+# @knitr evaluate_ace ------------------------------------------------------------
 PrintAces <- function( ) {
   dsT <- dsAce
   dsT <- cbind(dsT[, 1], plyr::numcolwise(round)(dsT,digits=2))
