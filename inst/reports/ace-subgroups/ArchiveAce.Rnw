@@ -1,0 +1,77 @@
+\documentclass{article}%\documentclass{scrartcl}
+\usepackage[margin=.5in]{geometry}
+% \usepackage[float]
+\usepackage[section]{placeins} %This silently puts a \FloatBarrier command before each section. http://robjhyndman.com/researchtips/latex-floats/
+\usepackage{titling}
+\setlength{\droptitle}{-4em} %Reduce the space before the title
+\posttitle{\par\end{center}\vspace{-2em}} %Reduce the space between the title and Author
+
+
+\title{Comparison of Versions of Kinship Links}
+\author{Joe Rodger's BG Team}
+\begin{document}
+\maketitle
+% \raggedbottom
+\setcounter{totalnumber}{8} %maximum number of floats on a page; http://robjhyndman.com/researchtips/latex-floats/
+% \restylefloat{figure}
+
+\setlength{\parindent}{0pt}%http://tex.stackexchange.com/questions/49188/how-to-insert-vertical-space-between-paragraphs
+
+
+<<echo=FALSE>>=
+#Set the chunks' working directory to the repository's base directory; this assumes the report is nested inside of two directories.
+opts_knit$set(root.dir='../../')  #Don't combine this call with any other chunk -espeically one that uses file paths.
+@
+
+<<echo=FALSE>>=
+library(stringr)
+read_chunk("./MicroscopicViews/VersionComparison/ArchiveAce.R")
+@
+
+<<Setup, echo=FALSE, tidy=TRUE>>=
+@
+
+\textbf{Outcome}: \Sexpr{oName};\\
+\textbf{Relationship Paths}: \Sexpr{paste0(relationshipPathsPretty, " [IDs:", relationshipPathsString, "]")};\\
+\textbf{Newer Links Version}: \Sexpr{newerVersionNumber};
+\textbf{Older Links Version}: \Sexpr{olderVersionNumber};
+
+<<echo=FALSE, comment=NA>>=
+cat(str_wrap(paste("Newer Links:", newerDescription), width=80))
+cat(str_wrap(paste("Older Links:", olderDescription), width=80))
+cat("R Groups specifically excluded: {", paste(rGroupsToDrop, collapse=", "), "}")
+cat("Drop pair if housemates are not confirmed in the same generation:", dropIfHousematesAreNotSameGeneration)
+@
+
+<<EvalGroup, echo=FALSE, results='asis'>>=
+@
+
+\section{Ace - Comparison of $R$ Variants} 
+(See the final table for an explanation of the different $R$ variants.)
+<<EvalAndPrintAce, echo=FALSE, results='asis'>>=
+@
+<<PrintGroups, echo=FALSE, results='asis'>>=
+@
+%rVersions <- c("R", "RPass1", "RImplicit", "RImplicitPass1", "RExplicit", "RExplicitPass1", "RImplicit2004")
+\section{Explanation of $R$ Variants}
+\begin{tabular}{l l}
+\textbf{Variant} & \textbf{Explanation} \\
+\hline
+$R$ & We recommend researchers typical use this version. \\
+$R_{Full}$ & The most complete version we have; doesn't exclude groups like $R$=0. \\
+$R_{Pass1}$ & Supposed to be fooled only by errors in the subject's/mother's knowledge \\
+\hline
+$RImplicit$ & Uses only implicit items \\
+$RImplicit_{Pass1}$ & Uses only implicit items \& supposed to be fooled only by knowledge errors \\
+$RImplicit_{Mother}$ & Uses only mother's implicit items (exists only for Gen2)\\
+$RImplicit_{Subject}$ & Uses only subject's implicit items\\
+$RImplicit_{2004}$ & The state of the links in 2004.  Rodgers \& Rowe for Gen1; Rodgers, Johnson \& Bard for Gen2 \\
+\hline
+$RExplicit$ & Uses only explicit items \\
+$RExplicit_{Pass1}$ & Uses only explicit items \& supposed to be fooled only by knowledge errors \\
+
+\hline
+\end{tabular}
+
+
+\end{document}
