@@ -15,7 +15,7 @@ requireNamespace("scales", quietly=T)
 oName <- "HeightZGenderAge" # o' stands for outcomes
 # oName <- "WeightZGenderAge"
 
-relationshipPaths <- c(1)
+relationshipPaths <- 1
 # relationshipPaths <- c(1, 2, 3, 4, 5)
 
 rVersions <- c("R", "RFull", "RExplicit", "RImplicit",  "RImplicit2004")
@@ -92,9 +92,8 @@ rm(dsSubject, dsPair)
 #   | dsDirty$Gender_S1 == "Female"   & dsDirty$Gender_S2 == "Male", ]
 
 # dsDirty <- dsDirty[dsDirty$RaceCohort_S1 == "Nbnh"   & dsDirty$RaceCohort_S1 == "Nbnh", ]
-#  dsDirty <- dsDirty[dsDirty$RaceCohort_S1 == "Black"   & dsDirty$RaceCohort_S1 == "Black", ]
-#  dsDirty <- dsDirty[dsDirty$RaceCohort_S1 == "Hispanic"   & dsDirty$RaceCohort_S1 == "Hispanic", ]
-
+# dsDirty <- dsDirty[dsDirty$RaceCohort_S1 == "Black"   & dsDirty$RaceCohort_S1 == "Black", ]
+# dsDirty <- dsDirty[dsDirty$RaceCohort_S1 == "Hispanic"   & dsDirty$RaceCohort_S1 == "Hispanic", ]
 
 # table(dsDirty$RFull)
 # mean(!is.na(dsDirty$RFull)) 
