@@ -56,8 +56,8 @@ suppressGroupTables <- TRUE
 
 # @knitr load_data ---------------------------------------------------------------
 dsPair <- NlsyLinks::Links79PairExpanded
-dsOutcomes <- NlsyLinks::ExtraOutcomes79
-
+dsOutcomes <- NlsyLinks::ExtraOutcomes79[, c("SubjectTag", oName)]
+dsDetails <- NlsyLinks::SubjectDetails79[, c("SubjectTag", "Gender", "RaceCohort")]
 
 # @knitr tweak_data --------------------------------------------------------------
 dsPair <- dsPair[as.integer(dsPair$RelationshipPath) %in% relationshipPaths, ]
@@ -67,8 +67,10 @@ oName_2 <- paste0(oName, "_S2")
 relationshipPathsString <- paste0("(", paste(relationshipPaths, collapse=","), ")")
 relationshipPathsPretty <- paste0("(", paste(levels(dsPair$RelationshipPath)[relationshipPaths], collapse=", "), ")")
 
-dsOutcomes$RandomFakeOutcome <- rnorm(n=nrow(dsOutcomes))
-dsOutcomes <- dsOutcomes[, c("SubjectTag", oName)]
+# dsOutcomes$RandomFakeOutcome <- rnorm(n=nrow(dsOutcomes))
+dsSubject <- dsOutcomes %>%
+  dplyr::left_join(dsDetails, by="SubjectTag")
+rm(dsOutcomes, dsDetails)
 
 if( dropIfHousematesAreNotSameGeneration ) {
   dsRaw <- dsRaw[dsRaw$SameGeneration==1L, ]
@@ -76,12 +78,12 @@ if( dropIfHousematesAreNotSameGeneration ) {
 
 #They're called 'dirty' because the final cleaning stage hasn't occurred yet (ie, removing unwanted R groups)
 dsDirty <- NlsyLinks::CreatePairLinksSingleEntered(
-  outcomeDataset   = dsOutcomes, 
+  outcomeDataset   = dsSubject, 
   linksPairDataset = dsPair, 
   linksNames       = rVersions, 
-  outcomeNames     = oName
+  outcomeNames     = c(oName, "Gender", "RaceCohort")
 )
-# rm(dsOutcomes, dsPair)
+# rm(dsSubject, dsPair)
 
 # table(dsDirty$RFull)
 # mean(!is.na(dsDirty$RFull)) 
