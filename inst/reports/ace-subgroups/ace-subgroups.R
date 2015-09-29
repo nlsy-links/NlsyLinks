@@ -83,7 +83,18 @@ dsDirty <- NlsyLinks::CreatePairLinksSingleEntered(
   linksNames       = rVersions, 
   outcomeNames     = c(oName, "Gender", "RaceCohort")
 )
-# rm(dsSubject, dsPair)
+rm(dsSubject, dsPair)
+
+# dsDirty <- dsDirty[dsDirty$Gender_S1 == "Male"   & dsDirty$Gender_S2 == "Male", ]
+# dsDirty <- dsDirty[dsDirty$Gender_S1 == "Female" & dsDirty$Gender_S2 == "Female", ]
+# dsDirty <- dsDirty[
+#   (dsDirty$Gender_S1 == "Male"   & dsDirty$Gender_S2 == "Female")
+#   | dsDirty$Gender_S1 == "Female"   & dsDirty$Gender_S2 == "Male", ]
+
+# dsDirty <- dsDirty[dsDirty$RaceCohort_S1 == "Nbnh"   & dsDirty$RaceCohort_S1 == "Nbnh", ]
+#  dsDirty <- dsDirty[dsDirty$RaceCohort_S1 == "Black"   & dsDirty$RaceCohort_S1 == "Black", ]
+#  dsDirty <- dsDirty[dsDirty$RaceCohort_S1 == "Hispanic"   & dsDirty$RaceCohort_S1 == "Hispanic", ]
+
 
 # table(dsDirty$RFull)
 # mean(!is.na(dsDirty$RFull)) 
