@@ -8,13 +8,14 @@ library(knitr)
 requireNamespace("NlsyLinks", quietly=T)
 requireNamespace("xtable", quietly=T)
 requireNamespace("dplyr", quietly=T)
+requireNamespace("plyr", quietly=T)
 requireNamespace("scales", quietly=T)
 
 # @knitr define_globals ----------------------------------------------------------
 oName <- "HeightZGenderAge" # o' stands for outcomes
 # oName <- "WeightZGenderAge"
 
-relationshipPaths <- c(2)
+relationshipPaths <- c(1)
 # relationshipPaths <- c(1, 2, 3, 4, 5)
 
 rVersions <- c("R", "RFull", "RExplicit", "RImplicit",  "RImplicit2004")
@@ -88,7 +89,12 @@ dsDirty <- NlsyLinks::CreatePairLinksSingleEntered(
 
 # @knitr evaluate_groups ---------------------------------------------------------
 groupDatasets <- list() 
-dsAce <- data.frame(Version=rVersions, ASq=NA_real_, CSq=NA_real_, ESq=NA_real_, N=NA_integer_)
+dsAce <- data.frame(
+  Version=rVersions, 
+  ASq=NA_real_, CSq=NA_real_, ESq=NA_real_, 
+  ASqSE=NA_real_, CSqSE=NA_real_, ESqSE=NA_real_, 
+  N=NA_integer_
+)
 for( i in seq_along(rVersions) ) {
   rVersion <-  rVersions[i] # rVersion <- "RFull"
 #  print(rVersion)
@@ -100,7 +106,16 @@ for( i in seq_along(rVersions) ) {
   dsClean <- NlsyLinks::CleanSemAceDataset(dsDirty=dsDirty, dsGroupSummary, oName_1, oName_2, rName=rVersion)
   
   ace <- NlsyLinks::AceLavaanGroup(dsClean)
-  dsAce[i, 2:5] <- c(ace@ASquared, ace@CSquared, ace@ESquared, ace@CaseCount)
+  est <- lavaan::parameterEstimates(ace@Details$lavaan)
+  aSqSE <- est[est$label=="a2", "se"]
+  cSqSE <- est[est$label=="c2", "se"]
+  eSqSE <- est[est$label=="e2", "se"]
+  
+  dsAce[i, 2:8] <- c(
+    ace@ASquared, ace@CSquared, ace@ESquared, 
+    aSqSE, cSqSE, eSqSE, 
+    ace@CaseCount
+  )
 }
 # dsAce
 # groupDatasets[[1]]
@@ -138,7 +153,10 @@ PrintAces <- function( ) {
     "$R$ Variant" = "Version", 
     "$a^2$"       = "ASq", 
     "$c^2$"       = "CSq", 
-    "$e^2$"       = "ESq", 
+    "$e^2$"       = "ESq",  
+    "$se_{a^2}$"   = "ASqSE", 
+    "$se_{c^2}$"   = "CSqSE", 
+    "$se_{e^2}$"   = "ESqSE", 
     "$N$"         = "N"
   )
   
@@ -148,7 +166,7 @@ PrintAces <- function( ) {
   dAcePretty <- t(apply(dAcePretty, 1, function(x) gsub("^0.", ".", x)))
   
   digitsFormat <- 2# c(0,1,3,3,3,3,3,3) #Include a dummy at the beginning, for the row.names.
-  alignnment <- "ll|rrrr" #Include an initial dummy for the (suppressed) row names.
+  alignnment <- "ll|rrr|rrr|r" #Include an initial dummy for the (suppressed) row names.
   textTable <- xtable::xtable(dAcePretty, caption="Comparison of R Variants (by rows) and of Links Versions (left vs right side).", digits=digitsFormat, align=alignnment)
   xtable:::print.xtable(textTable, include.rownames=F, size="large", sanitize.text.function = function(x) {x}, floating=T)
 }
