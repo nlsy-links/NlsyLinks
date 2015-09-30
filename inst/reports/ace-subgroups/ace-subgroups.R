@@ -15,12 +15,13 @@ requireNamespace("scales", quietly=T)
 oName <- "HeightZGenderAge" # o' stands for outcomes
 # oName <- "WeightZGenderAge"
 
-relationshipPaths <- 1
+relationshipPaths <- 2
 # relationshipPaths <- c(1, 2, 3, 4, 5)
 
 rVersions <- c("R", "RFull", "RExplicit", "RImplicit",  "RImplicit2004")
 dropIfHousematesAreNotSameGeneration <- FALSE
-rGroupsToDrop <- c()
+# rGroupsToDrop <- c()
+rGroupsToDrop <- c(.375)
 suppressGroupTables <- TRUE
 # determinantThreshold <- 1e-5
 
