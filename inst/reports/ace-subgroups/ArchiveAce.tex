@@ -1,0 +1,224 @@
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}%\documentclass{scrartcl}
+\usepackage[margin=.5in]{geometry}
+% \usepackage[float]
+\usepackage[section]{placeins} %This silently puts a \FloatBarrier command before each section. http://robjhyndman.com/researchtips/latex-floats/
+\usepackage{titling}
+\setlength{\droptitle}{-4em} %Reduce the space before the title
+\posttitle{\par\end{center}\vspace{-2em}} %Reduce the space between the title and Author
+
+\title{Comparison of Versions of Kinship Links}
+\author{Joe Rodger's BG Team}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+\maketitle
+% \raggedbottom
+\setcounter{totalnumber}{8} %maximum number of floats on a page; http://robjhyndman.com/researchtips/latex-floats/
+% \restylefloat{figure}
+
+\setlength{\parindent}{0pt}%http://tex.stackexchange.com/questions/49188/how-to-insert-vertical-space-between-paragraphs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Outcome}: HeightZGenderAge;\\
+\textbf{Relationship Paths}: (Gen2Siblings) [IDs:(2)];\\
+%\textbf{Links Version}: versionNumber;
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+R Groups specifically excluded: { 0.375 }
+Drop pair if housemates are not confirmed in the same generation: FALSE
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\section{Subgroups --  R }% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Tue Sep 29 13:57:07 2015
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrrrrrrl}
+  \hline
+R & Included in SEM & $N_{Pairs}$ & $\bar{x}_1$ & $\bar{x}_2$ & $s_1^2$ & $s_2^2$ & $s_{1,2}$ & $r$ & Determinant & PosDefinite \\ 
+  \hline
+0.250 & TRUE & 1862 & -0.07 & -0.08 & 1.04 & 1.04 & 0.27 & 0.26 & 1.0 & TRUE \\ 
+  0.375 & FALSE & 46 & 0.22 & -0.11 & 1.07 & 0.96 & 0.43 & 0.42 & 0.8 & TRUE \\ 
+  0.500 & TRUE & 3960 & -0.01 & -0.04 & 0.97 & 0.96 & 0.39 & 0.41 & 0.8 & TRUE \\ 
+  0.750 & FALSE & 0 &  &  &  &  &  &  &  & FALSE \\ 
+  1.000 & TRUE & 16 & -0.13 & -0.21 & 0.99 & 1.06 & 0.95 & 0.92 & 0.2 & TRUE \\ 
+   \hline
+\end{tabular}
+\caption{R} 
+\end{table}
+\section{Subgroups --  RFull }% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Tue Sep 29 13:57:07 2015
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrrrrrrl}
+  \hline
+RFull & Included in SEM & $N_{Pairs}$ & $\bar{x}_1$ & $\bar{x}_2$ & $s_1^2$ & $s_2^2$ & $s_{1,2}$ & $r$ & Determinant & PosDefinite \\ 
+  \hline
+0.250 & TRUE & 1862 & -0.07 & -0.08 & 1.04 & 1.04 & 0.27 & 0.26 & 1.0 & TRUE \\ 
+  0.375 & FALSE & 46 & 0.22 & -0.11 & 1.07 & 0.96 & 0.43 & 0.42 & 0.8 & TRUE \\ 
+  0.500 & TRUE & 3960 & -0.01 & -0.04 & 0.97 & 0.96 & 0.39 & 0.41 & 0.8 & TRUE \\ 
+  0.750 & FALSE & 0 &  &  &  &  &  &  &  & FALSE \\ 
+  1.000 & TRUE & 16 & -0.13 & -0.21 & 0.99 & 1.06 & 0.95 & 0.92 & 0.2 & TRUE \\ 
+   \hline
+\end{tabular}
+\caption{RFull} 
+\end{table}
+\section{Subgroups --  RExplicit }% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Tue Sep 29 13:57:07 2015
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrrrrrrl}
+  \hline
+RExplicit & Included in SEM & $N_{Pairs}$ & $\bar{x}_1$ & $\bar{x}_2$ & $s_1^2$ & $s_2^2$ & $s_{1,2}$ & $r$ & Determinant & PosDefinite \\ 
+  \hline
+0.250 & TRUE & 1767 & -0.07 & -0.09 & 1.05 & 1.03 & 0.29 & 0.28 & 1.0 & TRUE \\ 
+  0.375 & FALSE & 180 & 0.06 & 0.01 & 0.90 & 1.16 & 0.14 & 0.14 & 1.0 & TRUE \\ 
+  0.500 & TRUE & 3882 & -0.01 & -0.04 & 0.98 & 0.96 & 0.39 & 0.41 & 0.8 & TRUE \\ 
+  1.000 & TRUE & 16 & -0.13 & -0.21 & 0.99 & 1.06 & 0.95 & 0.92 & 0.2 & TRUE \\ 
+   \hline
+\end{tabular}
+\caption{RExplicit} 
+\end{table}
+\section{Subgroups --  RImplicit }% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Tue Sep 29 13:57:07 2015
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrrrrrrl}
+  \hline
+RImplicit & Included in SEM & $N_{Pairs}$ & $\bar{x}_1$ & $\bar{x}_2$ & $s_1^2$ & $s_2^2$ & $s_{1,2}$ & $r$ & Determinant & PosDefinite \\ 
+  \hline
+0.250 & TRUE & 1743 & -0.07 & -0.10 & 1.05 & 1.04 & 0.27 & 0.26 & 1.0 & TRUE \\ 
+  0.500 & TRUE & 3859 & -0.01 & -0.03 & 0.98 & 0.97 & 0.40 & 0.41 & 0.8 & TRUE \\ 
+  0.750 & FALSE & 0 &  &  &  &  &  &  &  & FALSE \\ 
+  1.000 & TRUE & 16 & -0.13 & -0.21 & 0.99 & 1.06 & 0.95 & 0.92 & 0.2 & TRUE \\ 
+   \hline
+\end{tabular}
+\caption{RImplicit} 
+\end{table}
+\section{Subgroups --  RImplicit2004 }% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Tue Sep 29 13:57:07 2015
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrrrrrrl}
+  \hline
+RImplicit2004 & Included in SEM & $N_{Pairs}$ & $\bar{x}_1$ & $\bar{x}_2$ & $s_1^2$ & $s_2^2$ & $s_{1,2}$ & $r$ & Determinant & PosDefinite \\ 
+  \hline
+0.250 & TRUE & 1466 & -0.08 & -0.10 & 1.01 & 1.03 & 0.26 & 0.26 & 1.0 & TRUE \\ 
+  0.375 & FALSE & 962 & -0.07 & -0.07 & 1.00 & 0.92 & 0.30 & 0.32 & 0.8 & TRUE \\ 
+  0.500 & TRUE & 3401 & 0.01 & -0.02 & 0.98 & 0.98 & 0.40 & 0.41 & 0.8 & TRUE \\ 
+  1.000 & TRUE & 15 & -0.07 & -0.19 & 1.01 & 1.13 & 1.00 & 0.93 & 0.2 & TRUE \\ 
+   \hline
+\end{tabular}
+\caption{RImplicit2004} 
+\end{table}
+
+
+\section{Ace - Comparison of $R$ Variants} 
+(See the final table for an explanation of the different $R$ variants.)
+
+% latex table generated in R 3.2.2 by xtable 1.7-4 package
+% Tue Sep 29 13:57:07 2015
+\begin{table}[ht]
+\centering
+{\large
+\begin{tabular}{l|rrr|rrr|r}
+  \hline
+dAcePretty[, 1] & $a^2$ & $c^2$ & $e^2$ & $se_{a^2}$ & $se_{c^2}$ & $se_{e^2}$ & $N$ \\ 
+  \hline
+R & .79 & .03 & .18 & .10 & .05 & .06 & 5,838 \\ 
+  RFull & .79 & .03 & .18 & .10 & .05 & .06 & 5,838 \\ 
+  RExplicit & .70 & .07 & .22 & .11 & .05 & .06 & 5,665 \\ 
+  RImplicit & .79 & .03 & .18 & .11 & .05 & .06 & 5,618 \\ 
+  RImplicit2004 & .81 & .02 & .17 & .11 & .05 & .06 & 4,882 \\ 
+   \hline
+\end{tabular}
+}
+\caption{Comparison of R Variants (by rows) and of Links Versions (left vs right side).} 
+\end{table}
+
+
+\section{Explanation of $R$ Variants}
+\begin{tabular}{l l}
+\textbf{Variant} & \textbf{Explanation} \\
+\hline
+$R$ & We recommend researchers typical use this version. \\
+$R_{Full}$ & The most complete version we have; doesn't exclude groups like $R$=0. \\
+$R_{Pass1}$ & Supposed to be fooled only by errors in the subject's/mother's knowledge \\
+\hline
+$RImplicit$ & Uses only implicit items \\
+$RImplicit_{Pass1}$ & Uses only implicit items \& supposed to be fooled only by knowledge errors \\
+$RImplicit_{Mother}$ & Uses only mother's implicit items (exists only for Gen2)\\
+$RImplicit_{Subject}$ & Uses only subject's implicit items\\
+$RImplicit_{2004}$ & The state of the links in 2004.  Rodgers \& Rowe for Gen1; Rodgers, Johnson \& Bard for Gen2 \\
+\hline
+$RExplicit$ & Uses only explicit items \\
+$RExplicit_{Pass1}$ & Uses only explicit items \& supposed to be fooled only by knowledge errors \\
+
+\hline
+\end{tabular}
+
+
+\end{document}
