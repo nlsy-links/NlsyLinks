@@ -1,6 +1,5 @@
 #' @name CreateSubjectTag
 #' @export
-#' 
 #' @title Creates a \code{SubjectTag}.  This value uniquely identifies subjects, when both generations are included in the same dataset.
 #' @description A \code{SubjectTag} uniquely identify subjects.  For Gen2 subjects, the SubjectTag is identical to their CID (ie, C00001.00 -the SubjectID assigned in the NLSY79-Children files).  However for Gen1 subjects, the SubjectTag is their CaseID (ie, R00001.00), with "00" appended.  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The SubjectTags of her four children remain 4301, 4302, 4303, and 4304.
 #'

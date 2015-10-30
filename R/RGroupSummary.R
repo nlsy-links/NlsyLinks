@@ -1,6 +1,5 @@
 #' @name RGroupSummary
 #' @export
-#' 
 #' @title Calculates summary statistics for each \emph{R}elatedness Group in the sample.
 #' 
 #' @description Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.  
@@ -33,7 +32,7 @@
 #' \item{ Determinant }{ The determinant of the group's covariance matrix.}
 #' \item{ PosDefinite }{ Indicates if the group's covariance matrix is positive definite.}
 #' 
-#' @references Please see \href{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}{Neale & Maes} for more information about SEM with multiple groups.
+#' @references Please see \href{http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf}{Neale & Maes} for more information about SEM with multiple groups.
 #' 
 #' @author Will Beasley and David Bard
 #' 

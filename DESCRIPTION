@@ -3,13 +3,14 @@ Type: Package
 Title: Utilities and Kinship Information for Research with the NLSY
 Version: 2.0.4
 Date: 2015-09-29
-Author: Will Beasley, Joe Rodgers, David Bard, Michael Hunter, S. Mason Garrison, and Kelly
-    Meredith
+Author: Will Beasley, Joe Rodgers, David Bard, Michael Hunter, S. Mason
+    Garrison, and Kelly Meredith
 Maintainer: Will Beasley <wibeasley@hotmail.com>
 Description: Utilities and kinship information for behavior genetics and
     developmental research using the National Longitudinal Survey of Youth
     (NLSY; <http://www.bls.gov/nls/>).
-URL: http://liveoak.github.io/NlsyLinks, https://github.com/LiveOak/NlsyLinks, https://r-forge.r-project.org/projects/nlsylinks
+URL: http://liveoak.github.io/NlsyLinks, https://github.com/LiveOak/NlsyLinks,
+    https://r-forge.r-project.org/projects/nlsylinks
 BugReports: https://github.com/LiveOak/NlsyLinks/issues
 Depends:
     R (>= 3.0.0),
@@ -29,3 +30,4 @@ Suggests:
 License: GPL
 LazyData: TRUE
 VignetteBuilder: knitr
+RoxygenNote: 5.0.0

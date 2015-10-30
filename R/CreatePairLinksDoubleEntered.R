@@ -2,7 +2,6 @@
 #' @aliases CreatePairLinksSingleEntered CreatePairLinksDoubleEntered
 #' CreatePairLinksDoubleEnteredWithNoOutcomes
 #' @export CreatePairLinksSingleEntered CreatePairLinksDoubleEntered CreatePairLinksDoubleEnteredWithNoOutcomes
-#' 
 #' @title Creates a pairs linking file.
 #' @description Creates a linking file for BG designs using this file structure (e.g., DF analysis, other ACE modeling).
 #' A DF analysis requires a double-entered file that contains the \code{R}

@@ -1,6 +1,5 @@
 #' @name CreateSpatialNeighbours
 #' @export
-#' 
 #' @title Distances between related family members, formated for spatial analysis.
 #' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a \code{\link{data.frame}}) to represent neigbours.
 #' @usage  CreateSpatialNeighbours(linksPairsDoubleEntered)

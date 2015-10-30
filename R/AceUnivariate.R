@@ -1,7 +1,6 @@
 #' @name Ace
 #' @aliases AceUnivariate DeFriesFulkerMethod1 DeFriesFulkerMethod3
 #' @export AceUnivariate DeFriesFulkerMethod1 DeFriesFulkerMethod3
-#' 
 #' @title Estimates the heritability of additive traits using a single variable.
 #' 
 #' @usage AceUnivariate(method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), 

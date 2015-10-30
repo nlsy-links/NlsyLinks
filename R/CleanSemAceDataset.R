@@ -1,6 +1,5 @@
 #' @name CleanSemAceDataset
 #' @export
-#' 
 #' @title Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.
 #' 
 #' @description This function takes a `GroupSummary' \code{data.frame} (which is created by the \code{RGroupSummary} function) and returns a \code{data.frame} that is used by the \code{Ace} function.

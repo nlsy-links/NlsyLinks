@@ -1,7 +1,5 @@
-
 ##' @name ValidatePairLinks
 ##' @export
-##' 
 ##' @title Validates the schema of a links for pairs of relatives
 ##' 
 ##' @description A helper function that verifies the linking dataset contains (A) the

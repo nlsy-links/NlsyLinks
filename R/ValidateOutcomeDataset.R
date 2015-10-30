@@ -1,6 +1,5 @@
 #' @name ValidateOutcomeDataset
 #' @export
-#' 
 #' @title Validates the schema of datasets containing outcome variables.
 #' @description The \pkg{NlsyLinks} handles a lot of the plumbing code needed to transform extracted NLSY datasets into a format that statistical routines can interpret.  In some cases, a dataset of measured variables is needed, with one row per subject.  This function validates the measured/outcome dataset, to ensure it posses an interpretable schema.  For a specific list of the requirements, see \code{Details} below.
 #' 
