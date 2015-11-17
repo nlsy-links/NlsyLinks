@@ -7,12 +7,14 @@ The following publication list includes research products that used the NLSY79 o
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this  archive of articles around ten years ago.  There are likely some additional publications based on the kinship links of which we are not aware.  If you know of such papers, please bring them to our attention.
 
 # Articles and Book Chapters
-**In reverse chronological order, updated April 2015**
+**In reverse chronological order, updated November 2015**
 
 ## 2011 -
-Jodl, Jackie  (in progress).  Male educational underachievement and the role of noncognitive ability. Dissertation in progress (October, 2014), Columbia University.
+Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene–Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*
 
 Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of youth and adolescence*, 1-15. (NLSYC)
+
+Jodl, Jacqueline  (2015).  [Differential Effects of Family Context on Noncognitive Ability and School Performance during Adolescence.](https://academiccommons.columbia.edu/download/fedora_content/download/ac:187098/CONTENT/Jodl_columbia_0054D_12697.pdf) Dissertation, Columbia University.
 
 Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2015). [Behavior Problems and Timing of Menarche: A Developmental Longitudinal Biometrical Analysis Using the NLSY-Children Data.](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics, 45*, 51-70. (NLSYC)
 
