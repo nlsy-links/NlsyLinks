@@ -33,7 +33,7 @@
 #' \item{ Determinant }{ The determinant of the group's covariance matrix.}
 #' \item{ PosDefinite }{ Indicates if the group's covariance matrix is positive definite.}
 #' 
-#' @references Please see \href{http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf}{Neale & Maes} for more information about SEM with multiple groups.
+#' @references Please see \href{http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf}{Neale & Maes} for more information about SEM with multiple groups.
 #' 
 #' @author Will Beasley and David Bard
 #' 
