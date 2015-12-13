@@ -21,9 +21,9 @@ provided to save users time.
 # Formats
 The dataset is available in the following formats:
 
- * [CSV](https://github.com/LiveOak/NlsyLinks/blob/master/OutsideData/SurveyTime.csv) is our recommendation.  After navigating to the page, click on the 'View Raw' button to download it.
- * [R Binary](https://github.com/LiveOak/NlsyLinks/blob/master/data/SurveyDate.rda), after navigating to the page, click on the 'View Raw' button to download it.
- * *SAS* (coming soon.)
+ * [CSV](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/ForDistribution/SurveyTime/SurveyTimeV85.csv?raw=true) (our recommendation).
+ * [R Binary](https://github.com/LiveOak/NlsyLinks/raw/master/data/SurveyDate.rda).
+ * [SAS](https://github.com/LiveOak/NlsyLinksDetermination/raw/master/ForDistribution/ConvertedToSas/V85/surveytime.sas7bdat).
 
 ***
 # Data Dictionary

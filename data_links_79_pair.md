@@ -13,9 +13,9 @@ This dataset specifies the relatedness coefficient `R` between subjects in the s
 # Formats
 The dataset is available in the following formats:
 
- * [CSV](https://raw.githubusercontent.com/LiveOak/NlsyLinks/master/OutsideData/Links2011VLatest.csv) is our recommendation.
- * [R Binary](https://github.com/LiveOak/NlsyLinks/blob/master/data/Links79PairExpanded.rda), after navigating to the page, click on the 'View Raw' button to download it.
- * *SAS* (coming soon.)
+ * [CSV](https://github.com/LiveOak/NlsyLinksDetermination/raw/master/ForDistribution/Links/Links2011V85.csv) (our recommendation).
+ * [R Binary](https://github.com/LiveOak/NlsyLinks/raw/master/data/Links79PairExpanded.rda).
+ * [SAS](https://github.com/LiveOak/NlsyLinksDetermination/raw/master/ForDistribution/ConvertedToSas/V85/links2011v85.sas7bdat?raw=true).
 
 ***
 # Data Dictionary
