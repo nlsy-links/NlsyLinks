@@ -10,9 +10,12 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 **In reverse chronological order, updated November 2015**
 
 ## 2011 -
+
 Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene–Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*
 
 Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of youth and adolescence*, 1-15. (NLSYC)
+
+Vaughan, E. B., Van Hulle, C. A., Beasley, W. H., Rodgers, J. L., & D'Onofrio, B. M. (2015).  [Clarifying the associations between age at menarche and adolescent emotional and behavioral problems.](http://www.ncbi.nlm.nih.gov/pubmed/25687264)  *Journal of Youth and Adolescence, 44*(4), 922-39. doi: 10.1007/s10964-015-0255-7.
 
 Jodl, Jacqueline  (2015).  [Differential Effects of Family Context on Noncognitive Ability and School Performance during Adolescence.](https://academiccommons.columbia.edu/download/fedora_content/download/ac:187098/CONTENT/Jodl_columbia_0054D_12697.pdf) Dissertation, Columbia University.
 
@@ -94,6 +97,7 @@ Rodgers, J. L., Buster, M., & Rowe, D. C. (2001) . [Genetic and environmental in
 Rodgers, J. L. & Doughty, D. (2001) . [Does having boys or girls run in the family?](http://www.tandfonline.com/doi/abs/10.1080/09332480.2001.10542293) _Chance, 14_, 8-13. (NLSY79)
 
 ## 1994 - 2000
+
 Cleveland, H. H., Jacobson, K. C., Lipinski, J. J. & Rowe, D. C. (2000). [Genetic and shared environmental contributions to the relationship between the home environment and child and adolescent achievement.](http://www.ncbi.nlm.nih.gov/pubmed/10953940) _Intelligence, 28_, 69-86. (NLSYC)
 
 Buster, M. & Rodgers, J. L.(2000) . [Genetic and environmental influences on alcohol use: DF analysis of NLSY kinship data](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=9938). _Journal of Biosocial Science, 32_, 177-189. (NLSY79)
