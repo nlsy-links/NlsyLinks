@@ -7,27 +7,27 @@ The following publication list includes research products that used the NLSY79 o
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this  archive of articles around ten years ago.  There are likely some additional publications based on the kinship links of which we are not aware.  If you know of such papers, please bring them to our attention.
 
 # Articles and Book Chapters
-**In reverse chronological order, updated November 2015**
+**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research_publications.md) December 2015**
 
 ## 2011 -
 
 <cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene–Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*</cite>
 
-<cite>Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of youth and adolescence*, 1-15. (NLSYC)</cite>
+<cite>Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of Youth and Adolescence*, 1-15. (NLSYC)</cite>
 
 <cite>Vaughan, E. B., Van Hulle, C. A., Beasley, W. H., Rodgers, J. L., & D'Onofrio, B. M. (2015).  [Clarifying the associations between age at menarche and adolescent emotional and behavioral problems.](http://www.ncbi.nlm.nih.gov/pubmed/25687264)  *Journal of Youth and Adolescence, 44*(4), 922-39. doi: 10.1007/s10964-015-0255-7.</cite>
 
 <cite>Jodl, Jacqueline  (2015).  [Differential Effects of Family Context on Noncognitive Ability and School Performance during Adolescence.](https://academiccommons.columbia.edu/download/fedora_content/download/ac:187098/CONTENT/Jodl_columbia_0054D_12697.pdf) Dissertation, Columbia University.</cite>
 
-<cite>Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2015). [Behavior Problems and Timing of Menarche: A Developmental Longitudinal Biometrical Analysis Using the NLSY-Children Data.](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior genetics, 45*, 51-70. (NLSYC)</cite>
+<cite>Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2015). [Behavior Problems and Timing of Menarche: A Developmental Longitudinal Biometrical Analysis Using the NLSY-Children Data.](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior Genetics, 45*, 51-70. (NLSYC)</cite>
 
-<cite>Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment interactions in early externalizing behaviors: parental emotional support and socioeconomic context as moderators of genetic influences?](http://link.springer.com/article/10.1007/s10519-014-9664-8/fulltext.html) *Behavior genetics, 44*(5), 468-486. (NLSYC)</cite>
+<cite>Cheung, A. K., Harden, K. P., & Tucker-Drob, E. M. (2014). [Gene x Environment interactions in early externalizing behaviors: parental emotional support and socioeconomic context as moderators of genetic influences?](http://link.springer.com/article/10.1007/s10519-014-9664-8/fulltext.html) *Behavior Genetics, 44*(5), 468-486. (NLSYC)</cite>
 
-<cite>Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environmental Influences on Self-Control and Delinquency: Results from a Genetically Informative Analysis of Sibling Pairs.](http://www.ncbi.nlm.nih.gov/pubmed/24142448) *Journal of Interpersonal Violence, 29*.  707-735. (NLSYC)</cite>
+<cite>Connolly, Eric J. and Kevin M. Beaver  (2014) [Examining the Genetic and Environmental Influences on Self-Control and Delinquency: Results from a Genetically Informative Analysis of Sibling Pairs.](http://www.ncbi.nlm.nih.gov/pubmed/24142448) *Journal of Interpersonal Violence, 29*, 707-735. (NLSYC)</cite>
 
 <cite>Hunter, Michael D.  (2014).  [State Space Dynamic Mixture Modeling:  Finding People with Similar Patterns of Change.](https://shareok.org/handle/11244/13885)  Doctoral Dissertation, University of Oklahoma. (NLSYC)</cite>
 
-<cite>Lahey, B. B., D'Onofrio, B. M., Van Hulle, C. A., & Rathouz, P. J. (2014). [Prospective association of childhood receptive vocabulary and conduct problems with self-reported adolescent delinquency: tests of mediation and moderation in sibling-comparison analyses.](http://www.ncbi.nlm.nih.gov/pubmed/24736982) *Journal of abnormal child psychology, 42*(8), 1341-1351.(NLSYC)</cite>
+<cite>Lahey, B. B., D'Onofrio, B. M., Van Hulle, C. A., & Rathouz, P. J. (2014). [Prospective association of childhood receptive vocabulary and conduct problems with self-reported adolescent delinquency: tests of mediation and moderation in sibling-comparison analyses.](http://www.ncbi.nlm.nih.gov/pubmed/24736982) *Journal of Abnormal Child Psychology, 42*(8), 1341-1351.(NLSYC)</cite>
 
 <cite>Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi, and Ahmed Nezar Kobeisy (2013) [Genetic and Environmental Contributions to Stability and Change in Levels of Self-Control](http://www.sciencedirect.com/science/article/pii/S004723521300069X). *Journal of Criminal Justice, 41*, 300-308. (NLSYC)</cite>
 
