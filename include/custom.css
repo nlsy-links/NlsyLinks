@@ -7,6 +7,10 @@ a:hover,
 a:focus {
   color: #2fa4e7;
 }
+
+cite { /*Keep the cited text from defaulting to italics*/
+  font-style: normal;
+}
   
 /*  
 .navbar-inverse .navbar-brand {
