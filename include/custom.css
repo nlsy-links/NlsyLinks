@@ -11,7 +11,12 @@ a:focus {
 cite { /*Keep the cited text from defaulting to italics*/
   font-style: normal;
 }
-  
+
+.doi {
+  color: #b8a49b; /* http://colrd.com/image-dna/24367/ */
+  text-decoration: none;
+  font-style: normal;
+}
 /*  
 .navbar-inverse .navbar-brand {
   background-color: #ffaaaa;

@@ -11,11 +11,11 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 ## 2011 -
 
-1. <cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. DOI: 10.1016/j.jcrimjus.2015.11.001.</cite>
+1. <cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <em class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</em></cite>
 
 1. <cite>Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of Youth and Adolescence*, 1-15.</cite> (NLSYC)
 
-1. <cite>Vaughan, E. B., Van Hulle, C. A., Beasley, W. H., Rodgers, J. L., & D'Onofrio, B. M. (2015).  [Clarifying the associations between age at menarche and adolescent emotional and behavioral problems.](http://www.ncbi.nlm.nih.gov/pubmed/25687264)  *Journal of Youth and Adolescence, 44*(4), 922-39. doi: 10.1007/s10964-015-0255-7.</cite>
+1. <cite>Vaughan, E. B., Van Hulle, C. A., Beasley, W. H., Rodgers, J. L., & D'Onofrio, B. M. (2015).  [Clarifying the associations between age at menarche and adolescent emotional and behavioral problems.](http://www.ncbi.nlm.nih.gov/pubmed/25687264)  *Journal of Youth and Adolescence, 44*(4), 922-39. <em class="doi">doi: 10.1007/s10964-015-0255-7.</em></cite>
 
 1. <cite>Jodl, Jacqueline  (2015).  [Differential Effects of Family Context on Noncognitive Ability and School Performance during Adolescence.](https://academiccommons.columbia.edu/download/fedora_content/download/ac:187098/CONTENT/Jodl_columbia_0054D_12697.pdf) Dissertation, Columbia University.</cite>
 
