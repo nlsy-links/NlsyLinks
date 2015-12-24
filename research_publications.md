@@ -11,7 +11,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 ## 2011 -
 
-1. <cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene–Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*</cite>
+1. <cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. DOI: 10.1016/j.jcrimjus.2015.11.001.</cite>
 
 1. <cite>Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of Youth and Adolescence*, 1-15. (NLSYC)</cite>
 
@@ -45,7 +45,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 1. <cite>Harden, K. P., Quinn, P. D., & Tucker-Drob, E. M. (2012). [Genetically influenced change in sensation seeking drives the rise of delinquent behavior during adolescence](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261521/). *Developmental science, 15*(1), 150-163.</cite>
 
-1. <cite>Jaffee, S., Van Hulle, C., & Rodgers, J L. (2011) . [Effects of non-maternal care in the first three years on children's academic skills and behavioral functioning in childhood and early adolescence: A sibling comparison study](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3640295/). *Child Development, 84*, 1076-1081. (NLSY79; NLSYC)</cite>
+1. <cite>Jaffee, S., Van Hulle, C., & Rodgers, J L. (2011). [Effects of non-maternal care in the first three years on children's academic skills and behavioral functioning in childhood and early adolescence: A sibling comparison study](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3640295/). *Child Development, 84*, 1076-1081. (NLSY79; NLSYC)</cite>
 
 1. <cite>Meredith, K. (2011). Effects of early family environment on age at menarche in the NLSY. Masters thesis, University of Oklahoma. (NLS79).</cite>
 
@@ -57,86 +57,86 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 1. <cite>Hart, S. A., Petrill, S. A., & Kamp Dush, C. M. (2010). [Genetic influences on language, reading, and mathematics skills in a national sample: An analysis using the National Longitudinal Survey of Youth](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148850/). *Language, speech, and hearing services in schools, 41*(1), 118. (NLSY79)</cite>
 
-1. <cite>Miller, W. B., Bard, D. E., Pasta, D. J., & Rodgers, J. L. (2010) . [Biodemographic modeling of the links between fertility motivation and fertility outcomes in the NLSY79](http://link.springer.com/article/10.1353/dem.0.0107). *Demography, 47*, 393-414. (NLSY79)</cite>
+1. <cite>Miller, W. B., Bard, D. E., Pasta, D. J., & Rodgers, J. L. (2010). [Biodemographic modeling of the links between fertility motivation and fertility outcomes in the NLSY79](http://link.springer.com/article/10.1353/dem.0.0107). *Demography, 47*, 393-414. (NLSY79)</cite>
 
-1. <cite>Miller, W. B., Rodgers, J. L., & Pasta, D. (2010) . [The fertility motivations of youth predict later fertility outcomes: A prospective analysis of NLSY data](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2867342). *Biodemography and Social Biology, 56*, 1-23. (NLSY79)</cite>
+1. <cite>Miller, W. B., Rodgers, J. L., & Pasta, D. (2010). [The fertility motivations of youth predict later fertility outcomes: A prospective analysis of NLSY data](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2867342). *Biodemography and Social Biology, 56*, 1-23. (NLSY79)</cite>
 
 1. <cite>Salsberry, P. J. & Reagan, P.B. (2010). [Effects of heritability, shared  environment and non-shared intrauterine conditions on child and adolescent BMI](http://onlinelibrary.wiley.com/doi/10.1038/oby.2009.485/abstract). *Obesity, 18*(9), 1775-1780. (NLSYC)</cite>
 
-1. <cite>Lahey, B. B., Van Hulle, C. A., Rathouz, P.J., Rodgers, J. L., D'Onofrio, B. M., & Waldman, I. (2009) . [Are oppositional-defiant and hyperactive-inattentive symptoms developmental precursors to conduct problems in late childhood?: Genetic and environmental links](http://link.springer.com/article/10.1007/s10802-008-9257-1). _Journal of Abnormal Child Psychology, 37_, 45-58. (NLSYC)</cite>
+1. <cite>Lahey, B. B., Van Hulle, C. A., Rathouz, P.J., Rodgers, J. L., D'Onofrio, B. M., & Waldman, I. (2009). [Are oppositional-defiant and hyperactive-inattentive symptoms developmental precursors to conduct problems in late childhood?: Genetic and environmental links](http://link.springer.com/article/10.1007/s10802-008-9257-1). *Journal of Abnormal Child Psychology, 37*, 45-58. (NLSYC)</cite>
 
 1. <cite>Levine, Stephen Z. (2009). Genetic modeling of BMIs: A national representative sample. MA Thesis, Bar Ilan University, Israel. (NLSY79)</cite>
 
-1. <cite>Mendle, J., Harden, K. P., Turkheimer, E., Van Hulle, C. A., D'Onofrio, B. M., Brooks-Bunn, J., Rodgers, J. L., Emery, R. E., & Lahey. B. B. (2009) . [Associations between father absence and age of first sexual intercourse](http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8624.2009.01345.x/full). *Child Development, 80*, 1463-1480. (NLSY79)</cite>
+1. <cite>Mendle, J., Harden, K. P., Turkheimer, E., Van Hulle, C. A., D'Onofrio, B. M., Brooks-Bunn, J., Rodgers, J. L., Emery, R. E., & Lahey. B. B. (2009). [Associations between father absence and age of first sexual intercourse](http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8624.2009.01345.x/full). *Child Development, 80*, 1463-1480. (NLSY79)</cite>
 
-1. <cite>Van Hulle, C. A., Waldman, I. D., D'Onofrio, B. M., Rodgers, J. L., Rathouz, P. J., & Lahey, B. B. (2009) . [Developmental structure of genetic influences on antisocial behavior across childhood and adolescence.](http://psycnet.apa.org/journals/abn/118/4/711/) *Journal of Abnormal Psychology, 118*, 711-721. (NLSYC)</cite>
+1. <cite>Van Hulle, C. A., Waldman, I. D., D'Onofrio, B. M., Rodgers, J. L., Rathouz, P. J., & Lahey, B. B. (2009). [Developmental structure of genetic influences on antisocial behavior across childhood and adolescence.](http://psycnet.apa.org/journals/abn/118/4/711/) *Journal of Abnormal Psychology, 118*, 711-721. (NLSYC)</cite>
 
 1. <cite>D'Onofrio, B. M., Van Hulle, C.A., Waldman, I. D., Rodgers, J. L., Harden, K. P., Rathouz, P. J., & Lahey, B. B. (2008).  [Smoking during pregnancy and offspring externalizing problems: An exploration of genetic and environmental confounds](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=1641968). *Development and Psychopathology, 20*, 139-164.  (NLSY79)</cite>
 
-1. <cite>Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008) . [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497) *Behavior Genetics, 38*, 567-578. (NLSY79; NLSYC)</cite>
+1. <cite>Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008). [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497) *Behavior Genetics, 38*, 567-578. (NLSY79; NLSYC)</cite>
 
 1. <cite>D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz, P.J., & Lahey, B.B. (2007). [Causal inferences regarding prenatal alcohol exposure and childhood externalizing problems](http://www.ncbi.nlm.nih.gov/pubmed/17984398). *Archives of General
 Psychiatry, 64*, 1296-1304. (NLSY79; NLSYC)</cite>
 
 1. <cite>McCartan, L. M. (2007). [Inevitable, influential, or unnecessary? Exploring the utility of genetic explanation for delinquent behavior.](http://www.sciencedirect.com/science/article/pii/S0047235207000220) *Journal of Criminal Justice, 35*, 219-233. (NLSYC)</cite>
 
-1. <cite>Rodgers, J. L., Bard, D. E., & Miller, W. B. (2007) . [Multivariate cholesky models of human female fertility patterns in the NLSY](http://link.springer.com/article/10.1007/s10519-006-9137-9). *Behavior Genetics, 37*, 345-361. (NLSY79)</cite>
+1. <cite>Rodgers, J. L., Bard, D. E., & Miller, W. B. (2007). [Multivariate cholesky models of human female fertility patterns in the NLSY](http://link.springer.com/article/10.1007/s10519-006-9137-9). *Behavior Genetics, 37*, 345-361. (NLSY79)</cite>
 
-1. <cite>Van Hulle, C. A., Rodgers, J. L., D'Onofrio, B. M., Waldman, I. D., & Lahey, B. B. (2007) . [Sex differences in the causes of self-reported adolescent delinquency](http://psycnet.apa.org/psycinfo/2007-06673-002). *Journal of Abnormal Psychology, 116*, 236-248. (NLSYC)</cite>
+1. <cite>Van Hulle, C. A., Rodgers, J. L., D'Onofrio, B. M., Waldman, I. D., & Lahey, B. B. (2007). [Sex differences in the causes of self-reported adolescent delinquency](http://psycnet.apa.org/psycinfo/2007-06673-002). *Journal of Abnormal Psychology, 116*, 236-248. (NLSYC)</cite>
 
 1. <cite>Classen, R. (2006). Essays on the intergenerational transmission of obesity and human capital. Ph.D. Dissertation, University of Wisconsin, Department of Economics.</cite>
 
-1. <cite>Rodgers, J. L., Johnson, A., & Bard, D. E. (2005) . NLSY-Children/Young Adult (1986-2002) Kinship Linking Algorithm. Unpublished manuscript.</cite>
+1. <cite>Rodgers, J. L., Johnson, A., & Bard, D. E. (2005). NLSY-Children/Young Adult (1986-2002) Kinship Linking Algorithm. Unpublished manuscript.</cite>
 
-1. <cite>Neiss, M., Rowe, D. C., & Rodgers, J. L. (2002). [Does education mediate the relationship between IQ and age of first birth? A behavior genetic analysis](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=99814). _Journal of Biosocial Science, 34_, 259-275. (NLSY79)</cite>
+1. <cite>Neiss, M., Rowe, D. C., & Rodgers, J. L. (2002). [Does education mediate the relationship between IQ and age of first birth? A behavior genetic analysis](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=99814). *Journal of Biosocial Science, 34*, 259-275. (NLSY79)</cite>
 
 1. <cite>Bard, D. E.  (2001).  Common etiology for alcohol and nicotine use:  A behavior genetic analysis of liabilities using naturally occurring kinship pairs.  Masters Thesis, University of Oklahoma.</cite>
 
-1. <cite>Rodgers, J. L., Buster, M., & Rowe, D. C. (2001) . [Genetic and environmental influences on delinquency: DF analysis of NLSY kinship data](http://link.springer.com/article/10.1023/A:1011097929954). _Journal of Quantitative Criminology, 17_, 145-168. (NLSY79)</cite>
+1. <cite>Rodgers, J. L., Buster, M., & Rowe, D. C. (2001). [Genetic and environmental influences on delinquency: DF analysis of NLSY kinship data](http://link.springer.com/article/10.1023/A:1011097929954). *Journal of Quantitative Criminology, 17*, 145-168. (NLSY79)</cite>
 
-1. <cite>Rodgers, J. L. & Doughty, D. (2001) . [Does having boys or girls run in the family?](http://www.tandfonline.com/doi/abs/10.1080/09332480.2001.10542293) _Chance, 14_, 8-13. (NLSY79)</cite>
+1. <cite>Rodgers, J. L. & Doughty, D. (2001). [Does having boys or girls run in the family?](http://www.tandfonline.com/doi/abs/10.1080/09332480.2001.10542293) *Chance, 14*, 8-13. (NLSY79)</cite>
 
 ## 1994 - 2000
 
-1. <cite>Cleveland, H. H., Jacobson, K. C., Lipinski, J. J. & Rowe, D. C. (2000). [Genetic and shared environmental contributions to the relationship between the home environment and child and adolescent achievement.](http://www.ncbi.nlm.nih.gov/pubmed/10953940) _Intelligence, 28_, 69-86. (NLSYC)</cite>
+1. <cite>Cleveland, H. H., Jacobson, K. C., Lipinski, J. J. & Rowe, D. C. (2000). [Genetic and shared environmental contributions to the relationship between the home environment and child and adolescent achievement.](http://www.ncbi.nlm.nih.gov/pubmed/10953940) *Intelligence, 28*, 69-86. (NLSYC)</cite>
 
-1. <cite>Buster, M. & Rodgers, J. L.(2000) . [Genetic and environmental influences on alcohol use: DF analysis of NLSY kinship data](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=9938). _Journal of Biosocial Science, 32_, 177-189. (NLSY79)</cite>
+1. <cite>Buster, M. & Rodgers, J. L.(2000). [Genetic and environmental influences on alcohol use: DF analysis of NLSY kinship data](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=9938). *Journal of Biosocial Science, 32*, 177-189. (NLSY79)</cite>
 
-1. <cite>Cleveland, H. H., Wiebe, R. P., van den Oord, E. J. C. G., & Rowe, D. C. (2000) . [Behavior problems among children from different family structures: The influence of genetic self-selection](http://onlinelibrary.wiley.com/doi/10.1111/1467-8624.00182/abstract). _Child Development, 71_,733-751.(NLSYC)</cite>
+1. <cite>Cleveland, H. H., Wiebe, R. P., van den Oord, E. J. C. G., & Rowe, D. C. (2000). [Behavior problems among children from different family structures: The influence of genetic self-selection](http://onlinelibrary.wiley.com/doi/10.1111/1467-8624.00182/abstract). *Child Development, 71*,733-751.(NLSYC)</cite>
 
-1. <cite>Doughty, D. & Rodgers, J. L. (2000) . [Behavior genetic modeling of menarche in U.S. females](http://link.springer.com/chapter/10.1007/978-1-4615-4467-8_11). In J. L. Rodgers, D. Rowe, & W. B. Miller (Eds.) _Genetic influences on fertility and sexuality_, Boston: Kluwer Academic Press. (NLSY79)</cite>
+1. <cite>Doughty, D. & Rodgers, J. L. (2000). [Behavior genetic modeling of menarche in U.S. females](http://link.springer.com/chapter/10.1007/978-1-4615-4467-8_11). In J. L. Rodgers, D. Rowe, & W. B. Miller (Eds.) *Genetic influences on fertility and sexuality*, Boston: Kluwer Academic Press. (NLSY79)</cite>
 
-1. <cite>Rodgers, J. L. & Doughty, D. (2000) . [Genetic and environmental influences on fertility expectations and outcomes using NLSY kinship data.](http://link.springer.com/chapter/10.1007%2F978-1-4615-4467-8_6) In J. L. Rodgers, D. Rowe, & W. B. Miller (Eds.) _Genetic influences on fertility and sexuality_, Boston: Kluwer Academic Press. (NLSY79)</cite>
+1. <cite>Rodgers, J. L. & Doughty, D. (2000). [Genetic and environmental influences on fertility expectations and outcomes using NLSY kinship data.](http://link.springer.com/chapter/10.1007%2F978-1-4615-4467-8_6) In J. L. Rodgers, D. Rowe, & W. B. Miller (Eds.) *Genetic influences on fertility and sexuality*, Boston: Kluwer Academic Press. (NLSY79)</cite>
 
-1. <cite>van den Oord, E.J.C.G., Rowe, D.C. (2000) . [Racial differences in birth health risk: A quantitative genetic approach](http://link.springer.com/article/10.2307/2648042). _Demography, 37_, 285-298.(NLSY79)</cite>
+1. <cite>van den Oord, E.J.C.G., Rowe, D.C. (2000). [Racial differences in birth health risk: A quantitative genetic approach](http://link.springer.com/article/10.2307/2648042). *Demography, 37*, 285-298. (NLSY79)</cite>
 
-1. <cite>Rodgers, J. L., Rowe, D. C., & Buster, M. (1999) . [Nature, nurture, and first sexual intercourse in the USA: Fitting behavioral genetic models to NLSY kinship data.](http://www.ncbi.nlm.nih.gov/pubmed/10081235) *Journal of Biosocial Sciences, 31*. (NLSY79)</cite>
+1. <cite>Rodgers, J. L., Rowe, D. C., & Buster, M. (1999). [Nature, nurture, and first sexual intercourse in the USA: Fitting behavioral genetic models to NLSY kinship data.](http://www.ncbi.nlm.nih.gov/pubmed/10081235) *Journal of Biosocial Sciences, 31*. (NLSY79)</cite>
 
-1. <cite>van den Oord, E. J. C. G. & Rowe, D. C. (1999) . [A cousin study of associations between family demographic characteristics and children's intellectual ability](http://www.sciencedirect.com/science/article/pii/S0160289699000227). _Intelligence 27_, 251-266. (NLSYC)</cite>
+1. <cite>van den Oord, E. J. C. G. & Rowe, D. C. (1999). [A cousin study of associations between family demographic characteristics and children's intellectual ability](http://www.sciencedirect.com/science/article/pii/S0160289699000227). *Intelligence 27*, 251-266. (NLSYC)</cite>
 
 1. <cite>Buster, M. A.  (1997).  Genetic and environmental influences on alcohol use:  DF analysis of NLSY kinship data.  Doctoral Dissertation, University of Oklahoma.</cite>
 
-1. <cite>Rowe, D. C. & Rodgers, J. L. (1997) . [Poverty and behavior: Are environmental measures nature and nurture?](http://www.sciencedirect.com/science/article/pii/S0273229797904342) _Developmental Review, 17_, 358-375. (NLSYC)</cite>
+1. <cite>Rowe, D. C. & Rodgers, J. L. (1997). [Poverty and behavior: Are environmental measures nature and nurture?](http://www.sciencedirect.com/science/article/pii/S0273229797904342) *Developmental Review, 17*, 358-375. (NLSYC)</cite>
 
-1. <cite>van den Oord, E. J. C. G. & Rowe, D. C. (1997) . [Continuity and change in children's maladjustment: A developmental behavior genetic study](http://psycnet.apa.org/journals/dev/33/2/319/). _Developmental Psychology, 33_, 319-332. (NLSYC)</cite>
+1. <cite>van den Oord, E. J. C. G. & Rowe, D. C. (1997). [Continuity and change in children's maladjustment: A developmental behavior genetic study](http://psycnet.apa.org/journals/dev/33/2/319/). *Developmental Psychology, 33*, 319-332. (NLSYC)</cite>
 
-1. <cite>van den Oord, E. J. C. G. & Rowe, D. C. (1997) . [An examination of genotype-environment interactions for academic achievement in an U.S. national longitudinal survey](http://www.sciencedirect.com/science/article/pii/S016028969790043X). _Intelligence, 25_, 205-228. (NLSYC)</cite>
+1. <cite>van den Oord, E. J. C. G. & Rowe, D. C. (1997). [An examination of genotype-environment interactions for academic achievement in an U.S. national longitudinal survey](http://www.sciencedirect.com/science/article/pii/S016028969790043X). *Intelligence, 25*, 205-228. (NLSYC)</cite>
 
-1. <cite>Bjornsdottir, A.  (1996)  Gender differences in mathematics:  Genetic and enviornmental influences with special emphasis on high and low ability.  Doctoral Dissertation, University of Oklahoma.</cite>
+1. <cite>Bjornsdottir, A.  (1996).  Gender differences in mathematics:  Genetic and enviornmental influences with special emphasis on high and low ability.  Doctoral Dissertation, University of Oklahoma.</cite>
 
-1. <cite>Rodgers, J. L. (1996) . NLSY Youth linking algorithm. Unpublished manuscript. (NLSY79)</cite>
+1. <cite>Rodgers, J. L. (1996). NLSY Youth linking algorithm. Unpublished manuscript. (NLSY79)</cite>
 
-1. <cite>Rowe, D. C. & Cleveland, H. H. (1996) . [Academic achievement in African -Americans and Whites: Are the developmental processes similar?](http://www.sciencedirect.com/science/article/pii/S0160289696900045) _Intelligence, 23_, 205-228. (NLSYC)</cite>
+1. <cite>Rowe, D. C. & Cleveland, H. H. (1996). [Academic achievement in African -Americans and Whites: Are the developmental processes similar?](http://www.sciencedirect.com/science/article/pii/S0160289696900045) *Intelligence, 23*, 205-228. (NLSYC)</cite>
 
-1. <cite>Rowe, D. C., Linver, M. R., & Rodgers, J. L. (1996) . [Delinquency and IQ: Using siblings to find sources of variation](http://psycnet.apa.org/psycinfo/1996-97237-007). Pp. 147-171 in G. Brody (Ed.) _Sibling Relationships: Their Causes and Consequences_. Norwood, NJ: Ablex. (NLSYC)</cite>
+1. <cite>Rowe, D. C., Linver, M. R., & Rodgers, J. L. (1996). [Delinquency and IQ: Using siblings to find sources of variation](http://psycnet.apa.org/psycinfo/1996-97237-007). Pp. 147-171 in G. Brody (Ed.) *Sibling Relationships: Their Causes and Consequences*. Norwood, NJ: Ablex. (NLSYC)</cite>
 
-1. <cite>Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1995) . [Ethnic and racial similarity in developmental process: A study of academic achievement.](http://pss.sagepub.com/content/6/1/33.short) _Psychological Science, 6_, 33-38. (NLSYC)</cite>
+1. <cite>Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1995). [Ethnic and racial similarity in developmental process: A study of academic achievement.](http://pss.sagepub.com/content/6/1/33.short) *Psychological Science, 6*, 33-38. (NLSYC)</cite>
 
-1. <cite>Rodgers, J. L., Rowe, D. C., & Li, C. (1994) . [Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors.](http://psycnet.apa.org/journals/dev/30/3/374/) _Developmental Psychology, 30_, 374-384. (NLSYC)</cite>
+1. <cite>Rodgers, J. L., Rowe, D. C., & Li, C. (1994). [Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors.](http://psycnet.apa.org/journals/dev/30/3/374/) *Developmental Psychology, 30*, 374-384. (NLSYC)</cite>
 
-1. <cite>Rodgers, J. L., Rowe, D. C., & May, K. (1994) . [DF analysis of NLSY IQ/achievement data: Nonshared environmental influences.](http://www.sciencedirect.com/science/article/pii/0160289694900116) _Intelligence, 19_, 157-177. (NLSYC)</cite>
+1. <cite>Rodgers, J. L., Rowe, D. C., & May, K. (1994). [DF analysis of NLSY IQ/achievement data: Nonshared environmental influences.](http://www.sciencedirect.com/science/article/pii/0160289694900116) *Intelligence, 19*, 157-177. (NLSYC)</cite>
 
-1. <cite>Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994) . [No more than skin deep: Ethnic and racial similarity in developmental processes.](http://psycnet.apa.org/journals/rev/101/3/396/) _Psychological Review, 101_, 396-413. (NLSYC)</cite>
+1. <cite>Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994). [No more than skin deep: Ethnic and racial similarity in developmental processes.](http://psycnet.apa.org/journals/rev/101/3/396/) *Psychological Review, 101*, 396-413. (NLSYC)</cite>
 
 # Recent Presentations by the Team
 
