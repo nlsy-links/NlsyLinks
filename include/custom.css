@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Beasley thought the link text was a little too faint, so switched its color with the hover & focus color */
 a {
   color: #157ab5;
@@ -17,19 +19,6 @@ cite { /*Keep the cited text from defaulting to italics*/
   text-decoration: none;
   font-style: normal;
 }
-
-/*
-ol {
-  counter-reset: c 65;
-  list-style: none;
-}
-li {
-  counter-increment: c -1;
-}
-li:before {
-  content: counter(c) ". ";
-}
-*/
 
 /*  
 .navbar-inverse .navbar-brand {
