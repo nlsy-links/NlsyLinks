@@ -45,9 +45,9 @@ The dataset indicates a county's characteristics, with the following fields:
 | Generation_S2 | integer | The generation of the second subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively. |
 | SubjectID_S1 | integer | The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00). |
 | SubjectID_S2 | integer | The ID value assigned by NLS to the second subject. |
-| MathStandardized_S1 | float | The PIAT-Math score for Subject1.  See [`ExtraOutcomes79`](./data_extra_outcomes_79.html) for more information about its source. |
+| MathStandardized_S1 | float | The PIAT-Math score for Subject1.  See [`ExtraOutcomes79`](./data-extra-outcomes-79.html) for more information about its source. |
 | MathStandardized_S2 | float | The PIAT-Math score for Subject2. |
-| HeightZGenderAge_S1 | float | The early adult height for Subject1.  See [`ExtraOutcomes79`](./data_extra_outcomes_79.html) for more information about its source. |
+| HeightZGenderAge_S1 | float | The early adult height for Subject1.  See [`ExtraOutcomes79`](./data-extra-outcomes-79.html) for more information about its source. |
 | HeightZGenderAge_S2 | float | The early adult height for Subject2. |
 
 ***
@@ -140,7 +140,7 @@ determinations, then we can interpolate/infer that 102 and 103 are
 full-siblings as well.
 
 The math and height scores are duplicated from
-[`ExtraOutcomes79`](./data_extra_outcomes_79.html), but are included here to make some examples
+[`ExtraOutcomes79`](./data-extra-outcomes-79.html), but are included here to make some examples
 more concise and accessible.
 
 ***

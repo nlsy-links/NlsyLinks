@@ -32,7 +32,7 @@ A data frame with 580,752 observations on the following 7 variables. There is on
 
 | Variable Name | Type | Variable Description |
 | :------------ | :--- | :------------------- |
-| SubjectTag | integer | see the variable of the same name in [`Links79Pair`](./data_links_79_pair.html) |
+| SubjectTag | integer | see the variable of the same name in [`Links79Pair`](./data-links-79-pair.html) |
 | SurveySource | factor | The location of that subject's survey responses that year.  Values are `NoInterview`, `Gen1`, `Gen2C` or `Gen2YA`. |
 | SurveyYear | integer |The year/wave of the survey. |
 | SurveyDate | date |The exact date of the administered survey. |

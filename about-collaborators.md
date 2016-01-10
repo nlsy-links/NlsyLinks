@@ -7,7 +7,7 @@ title: "Collaborators"
 # Investigators
 *For a recent description of the current kinship link team (and also background and description of the overall projects), please see:* 
 
-Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](./reports/Rodgers2013-InternationalInnovation.pdf).  *International Innovation*.
+Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](./publications/2013/rodgers-2013-international-innovation.pdf).  *International Innovation*.
 
 ***
 ### Vanderbilt University, Peabody College of Education, Department of Psychology and Human Development

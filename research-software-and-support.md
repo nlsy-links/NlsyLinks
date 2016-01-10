@@ -28,7 +28,7 @@ Here's a SAS example that covers the basics.  If you have a need for a different
 
 ***
 ## NlsyLinksDetermination in C\#
-The [`NlsyLinksDetermination` repository](https://github.com/LiveOak/NlsyLinksDetermination/) contains the [C#](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29) code that manipulates the NLSY data to produce the relatedness values.  If you're only interested in the R package (and not how the relatedness coefficients were determined), then please see the [`NlsyLinks`](./research_software_and_support.html#nlsylinks-and-examples-for-r) package described above.
+The [`NlsyLinksDetermination` repository](https://github.com/LiveOak/NlsyLinksDetermination/) contains the [C#](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29) code that manipulates the NLSY data to produce the relatedness values.  If you're only interested in the R package (and not how the relatedness coefficients were determined), then please see the [`NlsyLinks`](./research-software-and-support.html#nlsylinks-and-examples-for-r) package described above.
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.12518.png)](http://dx.doi.org/10.5281/zenodo.12518) Algorithm DOI
 

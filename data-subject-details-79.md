@@ -24,8 +24,8 @@ A data frame with 24,181 observations on the following 12 variables.
 
 | Variable Name | Type | Variable Description |
 | :------------ | :--- | :------------------- |
-| SubjectTag | integer | see the variable of the same name in [Links79Pair](./data_subject_details_79.html) |
-| ExtendedID | integer | see the variable of the same name in [Links79Pair](./data_subject_details_79.html) |
+| SubjectTag | integer | see the variable of the same name in [Links79Pair](./data-subject-details-79.html) |
+| ExtendedID | integer | see the variable of the same name in [Links79Pair](./data-subject-details-79.html) |
 | Generation | integer | Indicates if the subject is in generation `1` or `2`. | 
 | Gender | integer | Indicates if the subject is `Male`=1 or `Female`=2. |
 | RaceCohort | integer | Indicates if the race cohort is `Hispanic`=1, `Black`=2, or `Nbnh`=3 (*ie*, Non-black, non-hispanic).  This comes from the Gen1 variable `R02147.00` and Gen2 variable `C00053.00`. |

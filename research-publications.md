@@ -7,7 +7,7 @@ The following publication list includes research products that used the NLSY79 o
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this  archive of articles around ten years ago.  There are likely some additional publications based on the kinship links of which we are not aware.  If you know of such papers, please bring them to our attention.
 
 # Articles and Book Chapters
-**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research_publications.md) December 2015**
+**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) December 2015**
 
 ## 2011 -
 
@@ -36,7 +36,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
   <li value=50><cite>Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/handle/11244/7913). Doctoral dissertation, University of Oklahoma.</cite> (NLSY79)</li>
 
-  <li value=49><cite>Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Publications/2013InternationalInnovation/Rodgers2013-InternationalInnovation.pdf?raw=true).  *International Innovation*, 59-61.</cite></li>
+  <li value=49><cite>Research Media Ltd.  (November, 2013).  [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/publications/2013/rodgers-2013-international-innovation.pdf?raw=true).  *International Innovation*, 59-61.</cite></li>
 
   <li value=48><cite>D'Onofrio, B. M., Rickert, M. E., L&aring;ngstr&ouml;m, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. </cite> (NLSY79; NLSYC/YA)</li>
 
@@ -179,7 +179,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 A larger, searchable list of research using the NLSY datasets is maintained at [nlsinfo.org](https://nlsinfo.org/bibliography-start).
 
 # Current Documentation, Vignettes, and User Support
-Please see the provided entries on the [Research Software and Support](research_software_and_support) page.
+Please see the provided entries on the [Research Software and Support](research-software-and-support.html) page.
 
 ------
 Compiled by [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), and [Mason Garrison](http://www.smasongarrison.com/)

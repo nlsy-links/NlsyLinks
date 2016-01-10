@@ -26,7 +26,7 @@ A data frame with 11,495 observations on the following 6 variables. There is one
 | :------------ | :--- | :------------------- |
 | SubjectTag | integer | The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00). |
 | SubjectID | integer | The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00). |
-| Generation | integer | The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a  `factor` (in constrast with data frames like [`Links79Pair`](./data_links_79_pair.html).  This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a `factor`. |
+| Generation | integer | The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a  `factor` (in constrast with data frames like [`Links79Pair`](./data-links-79-pair.html).  This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a `factor`. |
 | HeightZGenderAge | float | The subject's height, standardized by gender and age (see Details). |
 | WeightZGenderAge | float | The subject's weight, standardized by gender and age (see Details). |
 | AfqtRescaled2006Gaussified | float | Armed Forces Qualification Test Score (Gen1 only; see Details). |
