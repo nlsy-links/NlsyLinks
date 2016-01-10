@@ -10,7 +10,7 @@
 
 
 
-<title>History of the kinship links development</title>
+<title>ExtraOutcomes79</title>
 
 <script src="libs/jquery-1.11.0/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -87,7 +87,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </script>
 
 
-<link rel="stylesheet" href="include\custom.css" type="text/css" />
+<link rel="stylesheet" href="include/custom.css" type="text/css" />
 
 </head>
 
@@ -110,7 +110,7 @@ img {
 </style>
 <div class="container-fluid main-container">
 
-<!-- start of before_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
+<!-- start of before-body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -122,50 +122,50 @@ img {
       </button>
     <a class="navbar-brand" href="/NlsyLinks/">NlsyLinks</a>
     </div>
-    
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-      
+
         <li class="dropdown">
           <a href="description" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-               <li><a href="research_publications.html">Publications</a></li>
-               <li><a href="research_facilitating.html">Facilitating Research</a></li>
-               <li><a href="research_software_and_support.html">Software and Support</a></li>
-               <!-- <li><a href="research_history.html">Development History</a></li> -->
+               <li><a href="research-publications.html">Publications</a></li>
+               <li><a href="research-facilitating.html">Facilitating Research</a></li>
+               <li><a href="research-software-and-support.html">Software and Support</a></li>
+               <!-- <li><a href="research-history.html">Development History</a></li> -->
           </ul>
         </li>
-        
+
         <li class="dropdown">
           <a href="datasets" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Datasets<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
 
             <li class="dropdown-header">Kinship</li>
-            <li><a href="data_links_79_pair.html">Links79Pair</a></li>
+            <li><a href="data-links-79-pair.html">Links79Pair</a></li>
             <li class="divider"/>
             <li class="dropdown-header">Nongenetic</li>
-            <li><a href="data_subject_details_79.html">SubjectDetails79</a></li>
-            <li><a href="data_extra_outcomes_79.html">ExtraOutcomes79</a></li>
-            <li><a href="data_survey_date.html">SurveyDate</a></li>
+            <li><a href="data-subject-details-79.html">SubjectDetails79</a></li>
+            <li><a href="data-extra-outcomes-79.html">ExtraOutcomes79</a></li>
+            <li><a href="data-survey-date.html">SurveyDate</a></li>
 
           </ul>
         </li>
-        
+
         <li class="dropdown">
         <a href="about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="about_collaborators.html">Collaborators</a></li>
-            <li><a href="about_site.html">This Site</a></li>
+            <li><a href="about-collaborators.html">Collaborators</a></li>
+            <li><a href="about-site.html">This Site</a></li>
           </ul>
         </li>
-              
-      </ul>    
+
+      </ul>
 
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<!-- end of before_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
+<!-- end of before-body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
 
 <!--
       <ul class="nav pull-right">
@@ -178,11 +178,124 @@ img {
 -->
 
 <div id="header">
-<h1 class="title">History of the kinship links development</h1>
+<h1 class="title">ExtraOutcomes79</h1>
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#formats">Formats</a></li>
+<li><a href="#data-dictionary">Data Dictionary</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#example-in-r">Example in R</a></li>
+</ul>
+</div>
 
-<p><em>Joe, I was thinking you’d want a few paragraphs about the history. Just a suggestion.</em></p>
+<hr />
+<div id="description" class="section level1">
+<h1>Description</h1>
+<blockquote>
+<p>Extra outcome variables in the NLSY79</p>
+</blockquote>
+<p>dataset is provided primarily to facilitate documentation examples.</p>
+<hr />
+</div>
+<div id="formats" class="section level1">
+<h1>Formats</h1>
+<p>The dataset is available in the following formats:</p>
+<ul>
+<li><a href="https://github.com/LiveOak/NlsyLinksDetermination/raw/master/ForDistribution/Outcomes/ExtraOutcomes79V85.csv">CSV</a> (our recommendation).</li>
+<li><a href="https://github.com/LiveOak/NlsyLinks/raw/master/data/ExtraOutcomes79.rda">R Binary</a>.</li>
+<li><a href="https://github.com/LiveOak/NlsyLinksDetermination/raw/master/ForDistribution/ConvertedToSas/V85/extraoutcomes79v85.sas7bdat">SAS</a>.</li>
+</ul>
+<hr />
+</div>
+<div id="data-dictionary" class="section level1">
+<h1>Data Dictionary</h1>
+<p>A data frame with 11,495 observations on the following 6 variables. There is one row per subject.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable Name</th>
+<th align="left">Type</th>
+<th align="left">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">SubjectTag</td>
+<td align="left">integer</td>
+<td align="left">The ID value assigned by NLS to the first subject. For Gen1 Subjects, this is their “CaseID” (ie, R00001.00). For Gen2 subjects, this is their “CID” (ie, C00001.00).</td>
+</tr>
+<tr class="even">
+<td align="left">SubjectID</td>
+<td align="left">integer</td>
+<td align="left">The ID value assigned by NLS to the first subject. For Gen1 Subjects, this is their “CaseID” (ie, R00001.00). For Gen2 subjects, this is their “CID” (ie, C00001.00).</td>
+</tr>
+<tr class="odd">
+<td align="left">Generation</td>
+<td align="left">integer</td>
+<td align="left">The generation of the subject. Values are either 1 or 2, representing Gen1 and Gen2. Note that this variable is not a <code>factor</code> (in constrast with data frames like <a href="./data_links_79_pair.html"><code>Links79Pair</code></a>. This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a <code>factor</code>.</td>
+</tr>
+<tr class="even">
+<td align="left">HeightZGenderAge</td>
+<td align="left">float</td>
+<td align="left">The subject’s height, standardized by gender and age (see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">WeightZGenderAge</td>
+<td align="left">float</td>
+<td align="left">The subject’s weight, standardized by gender and age (see Details).</td>
+</tr>
+<tr class="even">
+<td align="left">AfqtRescaled2006Gaussified</td>
+<td align="left">float</td>
+<td align="left">Armed Forces Qualification Test Score (Gen1 only; see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">Afi</td>
+<td align="left">float</td>
+<td align="left">Self-reported age of first intercourse (Gen1 only; see Details).</td>
+</tr>
+<tr class="even">
+<td align="left">Afm</td>
+<td align="left">float</td>
+<td align="left">Self-reported age of first menstration (Gen1 only; see Details).</td>
+</tr>
+<tr class="odd">
+<td align="left">MathStandardized</td>
+<td align="left">float</td>
+<td align="left">Standardized PIAT Math scores (Gen2 only; see Details).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="details" class="section level1">
+<h1>Details</h1>
+<p>The <code>SubjectTag</code> variable uniquely identify subjects. For Gen2 subjects, the SubjectTag is identical to their CID (ie, C00001.00 -the SubjectID assigned in the NLSY79-Children files). However for Gen1 subjects, the SubjectTag is their CaseID (ie, R00001.00), with “00” appended. This manipulation is necessary to identify subjects uniquely in inter-generational datasets. A Gen1 subject with an ID of 43 has a <code>SubjectTag</code> of 4300. The SubjectTags of her four children remain 4301, 4302, 4303, and 4304.</p>
+<p>For Gen2, an NLSY79 variable of <code>MathStandardized</code> is C05801.00.</p>
+<p><code>Afi</code> and <code>Afm</code>, values were simplified (to one value per subject) by Kelly Meredith in Sept 2010.</p>
+<p>The variables for height and weight were manipulated in R files available in a <a href="https://github.com/LiveOak/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes">repository</a> available to the public. Find the appropriate subfolder, and view the HTML report for more details.</p>
+<hr />
+</div>
+<div id="example-in-r" class="section level1">
+<h1>Example in R</h1>
+<pre class="r"><code>library(NlsyLinks) #Load the package into the current R session. #Update with `devtools::install_github(&quot;LiveOak/NlsyLinks&quot;)`
+gen2Outcomes &lt;- subset(ExtraOutcomes79, Generation==2) #Create a dataset of only Gen2 subjects.
+                  
+#plot(ExtraOutcomes79) #Uncomment to see a large scatterplot matrix.
+summary(ExtraOutcomes79)
+
+oldPar &lt;- par(mfrow=c(3,2))
+hist(ExtraOutcomes79$Generation)
+hist(ExtraOutcomes79$MathStandardized)
+hist(ExtraOutcomes79$HeightZGenderAge)
+hist(ExtraOutcomes79$WeightZGenderAge)
+hist(ExtraOutcomes79$Afi)
+hist(ExtraOutcomes79$Afm)
+par(oldPar)</code></pre>
+</div>
 
 <!-- start of after_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
 
