@@ -1,11 +1,11 @@
 # Using SAS with the NlsyLinks R Package
 
 ## Authors
- * [Michael D. Hunter](http://students.ou.edu/H/Michael.D.Hunter-1/), University of Oklahoma, Norman
+ * [Michael D. Hunter](http://students.ou.edu/H/Michael.D.Hunter-1/), University of Oklahoma Health Sciences Center, OKC
  * [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ), [Howard Live Oak LLC](http://howardliveoak.com/), Norman
  * [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), Vanderbilt University, Nashville
  * [David Bard](http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041), University of Oklahoma Health Sciences Center, OKC
- * Kelly Meredith, Oklahoma City University, OKC
+ * [Kelly Meredith](http://www.okcu.edu/admin/academic-affairs/staff/bio/item-id-77), Oklahoma City University, OKC
  
 ## Abstract
 We describe how to use the R package [`NlsyLinks`](http://cran.r-project.org/package=NlsyLinks) with the SAS program.  This is a replication of the analyses from the [ACE Models with the NLSY](http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf) vignette section called "Example: DF analysis with a univariate outcome from a Gen2 Extract".
@@ -16,17 +16,17 @@ SAS Code:
 /*import csv */
 DATA  LinksFromRPackage;
   INFILE  "E:/links.csv" DSD LRECL=1024 DLM=',' FIRSTOBS=2;
-	LENGTH RelationshipPath $14;
-	INPUT ExtendedID Subject1Tag Subject2Tag R RelationshipPath $;
-	IF RelationshipPath="Gen2Siblings" THEN OUTPUT;
+    LENGTH RelationshipPath $14;
+    INPUT ExtendedID Subject1Tag Subject2Tag R RelationshipPath $;
+    IF RelationshipPath="Gen2Siblings" THEN OUTPUT;
 RUN;
 ```
 
-Note that for this to run missing values must be `.` as SAS specifies them not `NA`, the default R missing value code.  The file `links.csv` with the path `E:/links.csv` can be downloaded from [Github](https://github.com/LiveOak/NlsyLinks/raw/master/UtilityScripts/SasExample/links.csv) or exported from the [`NlsyLinks`]http://cran.r-project.org/package=NlsyLinks) R package with the following R code.
+Note that for this to run missing values must be `.` as SAS specifies them not `NA`, the default R missing value code.  The file `links.csv` with the path `E:/links.csv` can be downloaded from [GitHub](https://github.com/LiveOak/NlsyLinks/raw/master/UtilityScripts/SasExample/links.csv) or exported from the [`NlsyLinks`](http://cran.r-project.org/package=NlsyLinks) R package with the following R code.
 
 ```
 ### Begin R Code to export links
- require(NlsyLinks)
+ library(NlsyLinks)
  dlink <- subset(Links79Pair, RelationshipPath="Gen2Siblings")
  fp <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
  getwd() # Run this line to find out where files were saved
