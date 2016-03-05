@@ -9,13 +9,13 @@ library(RODBC)
 ###############################################################
 ###  Declare Paths
 ###############################################################
-directoryDatasetsCsv <- "./OutsideData" #These CSVs are in the repository, but not in the build.
+directoryDatasetsCsv <- "./outside-data" #These CSVs are in the repository, but not in the build.
 directoryDatasetsRda <- "./data" #These RDAs are derived from the CSV, and included in the build as compressed binaries.
 algorithmVersion <- 85L
 
-pathInputLinks <- file.path(directoryDatasetsCsv, paste0("Links2011V", algorithmVersion, ".csv"))
-pathInputSubjectDetails <- file.path(directoryDatasetsCsv, paste0("SubjectDetailsV", algorithmVersion, ".csv"))
-pathInputSurveyDate <- file.path(directoryDatasetsCsv, paste0("SurveyTime.csv"))
+pathInputLinks <- file.path(directoryDatasetsCsv, paste0("links-2011-v", algorithmVersion, ".csv"))
+pathInputSubjectDetails <- file.path(directoryDatasetsCsv, paste0("subject-details-v", algorithmVersion, ".csv"))
+pathInputSurveyDate <- file.path(directoryDatasetsCsv, paste0("survey-time.csv"))
 
 pathOutputExtraOutcomes <- file.path(directoryDatasetsRda, "ExtraOutcomes79.rda")
 pathOutputLinkTrim <- file.path(directoryDatasetsRda, "Links79Pair.rda")
@@ -25,7 +25,7 @@ pathOutputSurveyDate <- file.path(directoryDatasetsRda, "SurveyDate.rda")
 
 ###############################################################
 ###  ExtraOutcomes79
-ExtraOutcomes79 <- read.csv(file.path(directoryDatasetsCsv, "ExtraOutcomes79.csv"))
+ExtraOutcomes79 <- read.csv(file.path(directoryDatasetsCsv, "extra-outcomes-79.csv"))
 # ExtraOutcomes79$SubjectTag <- as.integer(round(ExtraOutcomes79$SubjectTag))
 
 sapply(ExtraOutcomes79, class)

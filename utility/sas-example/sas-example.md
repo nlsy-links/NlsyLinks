@@ -28,7 +28,7 @@ Note that for this to run missing values must be `.` as SAS specifies them not `
 ### Begin R Code to export links
  library(NlsyLinks)
  dlink <- subset(Links79Pair, RelationshipPath="Gen2Siblings")
- fp <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
+ fp <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
  getwd() # Run this line to find out where files were saved
  dout <- ReadCsvNlsy79Gen2(fp)
  write.csv(dout, file="outs.csv", row.names=FALSE, na=".")
@@ -53,7 +53,7 @@ RUN;
 The user could change the `INFILE` to something like the following where these example NLSY data are stored in the R package.
 
 ```
-INFILE  "C:/Program Files/R/R-2.14.2/library/NlsyLinks/extdata/Gen2Birth.csv"
+INFILE  "C:/Program Files/R/R-2.14.2/library/NlsyLinks/extdata/gen2-birth.csv"
 ```
 Other data manipulations in SAS could then be done, followed by saving the desired data as csv and finally running analyses in R after reading in this new csv made from SAS.
 

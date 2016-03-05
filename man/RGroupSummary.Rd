@@ -79,7 +79,7 @@ dsLinks$Dummy <- 1
 ### ReadCsvNlsy79
 ###
 \dontrun{
-filePathGen2 <- "~/Nlsy/Datasets/Gen2Birth.csv"
+filePathGen2 <- "~/Nlsy/Datasets/gen2-birth.csv"
 ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 }
 

@@ -51,8 +51,8 @@ library(NlsyLinks)
 dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
 
 #Step 4: Load the outcomes dataset from the hard drive and then examine the summary.
-#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/Gen2Birth.csv'
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
+#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/gen2-birth.csv'
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
 dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
 summary(dsOutcomes)
 

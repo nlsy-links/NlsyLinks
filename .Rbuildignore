@@ -14,7 +14,7 @@ README.html$
 documentation-peek.pdf
 article/
 playgrounds/
-data-outside/
+outside-data/
 utility/
 ^.*\.o$
 

@@ -107,10 +107,10 @@ Any NLSY dataset extracted using the \href{http://cran.r-project.org/web/package
 
 The \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NlsyAce vignette} describes how to incorporate extracts into \R{} for manipulation and analysis (\emph{e.g.}, ``DF analysis with a univariate outcome from a Gen2 Extract'').  Those vignette example focused on incorporating outcomes.  The FAQ entry focuses on race and gender.
 
-For Gen1, create a string variable that points to your extract\\(\emph{e.g.}, \code{filePathOutcomes <- "C:/BGResearch/NlsExtracts/Gen2Birth.csv"}).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
+For Gen1, create a string variable that points to your extract\\(\emph{e.g.}, \code{filePathOutcomes <- "C:/BGResearch/NlsExtracts/gen2-birth.csv"}).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
 <<echo=TRUE>>=
 library(NlsyLinks)
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen1LifeCourse.csv")
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen1-life-course.csv")
 @
 
 Next, pass that path to the \code{ReadCsvNlsy79Gen1()} function, which converts that CSV into an \R{} \code{data.frame} and adds a few extra columns that will make NLSY research easier.
@@ -139,7 +139,7 @@ dsDemographics$Gender <- factor(x=dsDemographics$Gender,
 For Gen2, race and gender can be incorporated with a similar approach.  Remember to change \code{filePathOutcomes} to your desired location.
 <<echo=TRUE, tidy=FALSE>>=
 library(NlsyLinks)
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
 dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is for Gen2.
 # summary(dsDemographics) #Uncomment to see the summary
 

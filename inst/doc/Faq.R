@@ -24,7 +24,7 @@ subset(Links79Pair, RelationshipPath=='Gen2Siblings' & R==.75)
 
 ## ----echo=TRUE----------------------------------------------------------------
 library(NlsyLinks)
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen1LifeCourse.csv")
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen1-life-course.csv")
 
 ## ----echo=TRUE----------------------------------------------------------------
 dsDemographics <- ReadCsvNlsy79Gen1(filePathOutcomes)
@@ -45,7 +45,7 @@ dsDemographics$Gender <- factor(x=dsDemographics$Gender,
 
 ## ----echo=TRUE, tidy=FALSE----------------------------------------------------
 library(NlsyLinks)
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
 dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is for Gen2.
 # summary(dsDemographics) #Uncomment to see the summary
 
