@@ -55,7 +55,7 @@ test_that("SubjectTag -NA values", {
   ds <- LoadOutcomeFile()
   ds$SubjectTag <- CreateSubjectTag(ds$SubjectID, ds$Generation)
   ds$SubjectTag[333] <- NA
-  expect_error(ValidateOutcomeDataset(dsOutcome=ds, outcomeNames=LoadDefaultOutcomeNames()), "The column 'SubjectTag' should contain only positive values, but does not.")
+  expect_error(ValidateOutcomeDataset(dsOutcome=ds, outcomeNames=LoadDefaultOutcomeNames()), "The column 'SubjectTag' should not contain any NA values, but it does.")
 })
 
 test_that("SubjectTag -duplicate values -scenario 1", {

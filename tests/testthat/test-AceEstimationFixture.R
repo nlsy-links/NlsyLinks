@@ -64,11 +64,6 @@ test_that("print AceEstimate shows something", {
   expect_that(print(est), prints_text(regexp="[:alnum:]"))
 })
 
-test_that("show AceEstimate shows something", {
-  est <- CreateAceEstimate(aSquared=.5, cSquared= .2, eSquared= .1, caseCount=4)
-  expect_that(est, prints_text(regexp="[:alnum:]"))
-})
-
 # 
 # aSquared <- .5
 # cSquared  <- .2
