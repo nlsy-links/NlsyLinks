@@ -155,8 +155,8 @@ library(NlsyLinks)
 dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
 
 #Step 4: Load the outcomes dataset from the hard drive and then examine the summary.
-#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/Gen2Birth.csv'
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
+#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/gen2-birth.csv'
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
 dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
 summary(dsOutcomes)
 
@@ -188,7 +188,7 @@ ace <- AceUnivariate(
 ace
 @
 
-For another example of incorporating CSVs downloaded from the NLS Investigator, please see the ``Race and Gender Variables'' entry in the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ}.
+For another example of incorporating CSVs downloaded from the NLS Investigator, please see the ``Race and Gender Variables'' entry in the \href{hhttp://cran.r-project.org/package=NlsyLinks/vignettes/Faq.pdf}{FAQ}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Example: Multiple Group SEM of a Simple Outcome for Gen2 Subjects}
@@ -358,7 +358,7 @@ ace
 
 Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of \emph{subjects} doubles when Gen2 is added, and the number of \emph{relationship pairs} really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the popluation's $a^2$ is small or moderate, instead of something large like 0.7.
 
-You may notice that the analysis has \Sexpr{scales::comma(ace@CaseCount)} relationships instead of the entire \Sexpr{scales::comma(nrow(Links79Pair))}.  This is primarily because not all subjects have a value for `adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are \Sexpr{scales::comma(sum(!is.na(Links79PairExpanded$RFull)))} pairs with a nonmissing value in \code{RFull}, meaning that \Sexpr{round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)}\% are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+\% chance we have an \code{RFull} for it.  For a description of the \code{R} and \code{RFull} variables, please see the \code{Links79Pair} entry in the package \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual}.
+You may notice that the analysis has \Sexpr{scales::comma(ace@CaseCount)} relationships instead of the entire \Sexpr{scales::comma(nrow(Links79Pair))}.  This is primarily because not all subjects have a value for `adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are \Sexpr{scales::comma(sum(!is.na(Links79PairExpanded$RFull)))} pairs with a nonmissing value in \code{RFull}, meaning that \Sexpr{round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)}\% are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+\% chance we have an \code{RFull} for it.  For a description of the \code{R} and \code{RFull} variables, please see the \code{Links79Pair} entry in the package \href{http://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf}{reference manual}.
 
 \textbf{References:}
 

@@ -37,9 +37,9 @@ library(NlsyLinks)
 \textsf{Where is a good place to start?}\\ \\
 Welcome to the \code{NlsyLinks} package, which facilitates research with the \href{http://www.bls.gov/nls/home.htm}{NLSY}.  The initial focus of the package was to assist behavior genetics, but it has been expanded to help with NLSY research in general.
 
-The current \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf}{FAQ} and the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette} provide overview, and the \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual} describe the package's syntax and functions; the documents are available on \href{http://cran.r-project.org/web/packages/NlsyLinks/}{CRAN}.
+fThe current \href{http://cran.r-project.org/package=NlsyLinks/vignettes/Faq.pdf}{FAQ} and the \href{http://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette} provide overview, and the \href{http://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf}{reference manual} describe the package's syntax and functions; the documents are available on \href{http://cran.r-project.org/package=NlsyLinks}{CRAN}.
 
-Literature targeting general behavior genetics is listed in the appendix of the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette}.  Furthermore, \href{http://liveoak.github.io/NlsyLinks/research_publications.html}{the articles and books involving the NLSY kinship links} provide more specialized information.
+Literature targeting general behavior genetics is listed in the appendix of the \href{http://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf}{NLSY ACE vignette}.  Furthermore, \href{http://liveoak.github.io/NlsyLinks/research_publications.html}{the articles and books involving the NLSY kinship links} provide more specialized information.
 
 \section{Gen1 and Gen2}
 \textsf{What does ``Gen1'' and ``Gen2'' mean?}\\ \\
@@ -103,14 +103,14 @@ We do recommend running a casual sensitivity test, at the very least.  Run diffe
 
 \section{Race and Gender Variables}
 \textsf{Where are the race and gender variables?}\\ \\
-Any NLSY dataset extracted using the \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsInvestigator.pdf}{NLS Investigator} will include some mandatory fields, including race and gender.  For Gen1, these are the \code{R02147.00} and \code{R02148.00} variables; for Gen2, they are the \code{C00053.00} and \code{C00054.00} variables.
+Any NLSY dataset extracted using the \href{http://cran.r-project.org/package=NlsyLinks/vignettes/NlsInvestigator.pdf}{NLS Investigator} will include some mandatory fields, including race and gender.  For Gen1, these are the \code{R02147.00} and \code{R02148.00} variables; for Gen2, they are the \code{C00053.00} and \code{C00054.00} variables.
 
-The \href{http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf}{NlsyAce vignette} describes how to incorporate extracts into \R{} for manipulation and analysis (\emph{e.g.}, ``DF analysis with a univariate outcome from a Gen2 Extract'').  Those vignette example focused on incorporating outcomes.  The FAQ entry focuses on race and gender.
+The \href{http://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf}{NlsyAce vignette} describes how to incorporate extracts into \R{} for manipulation and analysis (\emph{e.g.}, ``DF analysis with a univariate outcome from a Gen2 Extract'').  Those vignette example focused on incorporating outcomes.  The FAQ entry focuses on race and gender.
 
-For Gen1, create a string variable that points to your extract\\(\emph{e.g.}, \code{filePathOutcomes <- "C:/BGResearch/NlsExtracts/Gen2Birth.csv"}).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
+For Gen1, create a string variable that points to your extract\\(\emph{e.g.}, \code{filePathOutcomes <- "C:/BGResearch/NlsExtracts/gen2-birth.csv"}).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
 <<echo=TRUE>>=
 library(NlsyLinks)
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen1LifeCourse.csv")
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen1-life-course.csv")
 @
 
 Next, pass that path to the \code{ReadCsvNlsy79Gen1()} function, which converts that CSV into an \R{} \code{data.frame} and adds a few extra columns that will make NLSY research easier.
@@ -139,7 +139,7 @@ dsDemographics$Gender <- factor(x=dsDemographics$Gender,
 For Gen2, race and gender can be incorporated with a similar approach.  Remember to change \code{filePathOutcomes} to your desired location.
 <<echo=TRUE, tidy=FALSE>>=
 library(NlsyLinks)
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "Gen2Birth.csv")
+filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
 dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is for Gen2.
 # summary(dsDemographics) #Uncomment to see the summary
 
@@ -158,7 +158,7 @@ If you have another \code{data.frame} that needs to be merged with the demograph
 <<echo=TRUE, eval=FALSE, tidy=FALSE>>=
 dsCombined <- merge(x=dsDemographics, y=dsOutcomes, by="SubjectTag", all=TRUE)
 @
-Make sure that \code{dsOutcomes} also has the \code{SubjectTag} variable; this will happen automatically if it was read into \R{} using the \code{ReadCsvNlsy79Gen1()} or \code{ReadCsvNlsy79Gen2()} functions.  For more information about \code{SubjectTag}, please see the \code{Links79Pair} entry in the \href{http://cran.r-project.org/web/packages/NlsyLinks/NlsyLinks.pdf}{reference manual}.
+Make sure that \code{dsOutcomes} also has the \code{SubjectTag} variable; this will happen automatically if it was read into \R{} using the \code{ReadCsvNlsy79Gen1()} or \code{ReadCsvNlsy79Gen2()} functions.  For more information about \code{SubjectTag}, please see the \code{Links79Pair} entry in the \href{http://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf}{reference manual}.
 
 \section{Grant support}
 This package's development was largely supported by the NIH Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers; Vignette Construction by Will Beasley)
