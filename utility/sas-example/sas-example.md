@@ -8,7 +8,7 @@
  * [Kelly Meredith](http://www.okcu.edu/admin/academic-affairs/staff/bio/item-id-77), Oklahoma City University, OKC
  
 ## Abstract
-We describe how to use the R package [`NlsyLinks`](http://cran.r-project.org/package=NlsyLinks) with the SAS program.  This is a replication of the analyses from the [ACE Models with the NLSY](http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsyAce.pdf) vignette section called "Example: DF analysis with a univariate outcome from a Gen2 Extract".
+We describe how to use the R package [`NlsyLinks`](http://cran.r-project.org/package=NlsyLinks) with the SAS program.  This is a replication of the analyses from the [ACE Models with the NLSY](http://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) vignette section called "Example: DF analysis with a univariate outcome from a Gen2 Extract".
 
 ## Import Links to SAS, Perform Data Manipulation, and Return to R
 SAS Code:
