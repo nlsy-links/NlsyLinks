@@ -10,11 +10,16 @@
 ^revdep$
 ^cran-comments\.md$
 README.html$
-^ShortcutLucky1404\.lnk$
+
+documentation-peek.pdf
+article/
+playgrounds/
+data-outside/
+utility/
+^.*\.o$
 
 DocumentationPeek.pdf
 Article/
 Playgrounds/
 OutsideData/
 UtilityScripts/
-^.*\.o$
