@@ -12,13 +12,13 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 ## 2011 -
 
 <ol>
-  <li value=61><cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <em class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</em></cite></li>
+  <li value=61><cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <em class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</em></cite>(NLSYC)</li>
 
   <li value=60><cite>Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of Youth and Adolescence*, 1-15.</cite> (NLSYC)</li>
 
-  <li value=59><cite>Vaughan, E. B., Van Hulle, C. A., Beasley, W. H., Rodgers, J. L., & D'Onofrio, B. M. (2015).  [Clarifying the associations between age at menarche and adolescent emotional and behavioral problems.](http://www.ncbi.nlm.nih.gov/pubmed/25687264)  *Journal of Youth and Adolescence, 44*(4), 922-39. <em class="doi">doi: 10.1007/s10964-015-0255-7.</em></cite></li>
+  <li value=59><cite>Vaughan, E. B., Van Hulle, C. A., Beasley, W. H., Rodgers, J. L., & D'Onofrio, B. M. (2015).  [Clarifying the associations between age at menarche and adolescent emotional and behavioral problems.](http://www.ncbi.nlm.nih.gov/pubmed/25687264)  *Journal of Youth and Adolescence, 44*(4), 922-39. <em class="doi">doi: 10.1007/s10964-015-0255-7.</em></cite>(NLSY79; NLSYC)</li>
 
-  <li value=58><cite>Jodl, Jacqueline  (2015).  [Differential Effects of Family Context on Noncognitive Ability and School Performance during Adolescence.](https://academiccommons.columbia.edu/download/fedora_content/download/ac:187098/CONTENT/Jodl_columbia_0054D_12697.pdf) Dissertation, Columbia University.</cite></li>
+  <li value=58><cite>Jodl, Jacqueline  (2015).  [Differential Effects of Family Context on Noncognitive Ability and School Performance during Adolescence.](https://academiccommons.columbia.edu/download/fedora_content/download/ac:187098/CONTENT/Jodl_columbia_0054D_12697.pdf) Dissertation, Columbia University.</cite> (NLSYC)</li>
 
   <li value=57><cite>Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2015). [Behavior Problems and Timing of Menarche: A Developmental Longitudinal Biometrical Analysis Using the NLSY-Children Data.](http://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior Genetics, 45*, 51-70.</cite> (NLSYC)</li>
 
