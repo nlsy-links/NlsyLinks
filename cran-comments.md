@@ -1,5 +1,13 @@
 ## Description
-This submission corresponds to the new version of testthat.  One of the tests catching a failing condition needed to change.  -Will Beasley
+This submission is a continuation of yesterday's submission (which corresponded to the new version of testthat --one of the tests catching a failing condition needed to change). 
+
+Kurt asked, "Would it be possible to put some of the data sets into a separate package which changes less frequently than code and docs?" I'll gladly defer to your judgment and recommendations, but I see two reasons to retain a united package.  
+
+First, our primary target audience is Behavior Genetics researchers, who typically are much less familar with R than other fields.  There have been at least 3 BG researchers who have requested SAS data files, because they weren't even comfortable reading vanilla CSV files into SAS.  I'd like to avoid another step/package for them to consider, even if the dataset-only package was a dependency.  
+
+Second, assuming our grant proposal is funded, the datasets won't stay stagnant.  The NLSY has three cohorts that are surveyed every two years.  This will be only the [second CRAN submission since Dec 2013](https://cran.rstudio.com/src/contrib/Archive/NlsyLinks/), and most of those changes [were to stay current updated CRAN policies](https://cran.rstudio.com/web/packages/NlsyLinks/NEWS).  The dataset-package would have needed to change too, and therefore increase the demands on CRAN maintainers (because both packages might required updates).
+
+However, I'm happy to split this package if that's what you feel is best for CRAN and R users.  -Will Beasley
 
 Test environments
 -----------------------------------------------

@@ -1,5 +1,3 @@
-<!-- rmarkdown v1 -->
-
 NlsyLinks
 ================
 
@@ -17,9 +15,9 @@ developmental research using the National Longitudinal Survey of Youth
 
 ## Installing 
 
-| [CRAN](http://cran.rstudio.com/) | [Version](http://cran.r-project.org/package=NlsyLinks) | [Rate](http://cranlogs.r-pkg.org/) | [Zenodo](https://zenodo.org/search?ln=en&p=nlsylinks) | 
+| [CRAN](http://cran.r-project.org/) | [Version](http://cran.r-project.org/package=NlsyLinks) | [Rate](http://cranlogs.r-pkg.org/) | [Zenodo](https://zenodo.org/search?ln=en&p=nlsylinks) | 
 |  :---- | :----: | :----: | :----: |
-| [Latest](http://cran.r-project.org/package=NlsyLinks) | [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/NlsyLinks)](http://cran.r-project.org/package=NlsyLinks) | ![CRANPace](http://cranlogs.r-pkg.org/badges/NlsyLinks) | [![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.svg)](https://zenodo.org/badge/latestdoi/4971/LiveOak/NlsyLinks) |
+| [Latest](http://cran.r-project.org/package=NlsyLinks) | [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/NlsyLinks)](http://cran.r-project.org/package=NlsyLinks) | ![CRANPace](http://cranlogs.r-pkg.org/badges/NlsyLinks) | [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.49941.svg)](http://dx.doi.org/10.5281/zenodo.49941) |
 |   | *Latest CRAN version* | *CRAN Downloads* | *Independently-hosted Archive* |
 
 The *release* version of `NlsyLinks` can be installed from [CRAN](http://cran.r-project.org/package=NlsyLinks).
