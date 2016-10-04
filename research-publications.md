@@ -7,11 +7,20 @@ The following publication list includes research products that used the NLSY79 o
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this  archive of articles around ten years ago.  There are likely some additional publications based on the kinship links of which we are not aware.  If you know of such papers, please bring them to our attention.
 
 # Articles and Book Chapters
-**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) December 2015**
+**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) October 2016**
 
 ## 2011 -
 
 <ol>
+
+  <li value=65><cite>Garrison, S. M., Rodgers, J. L. (in press) Casting doubt on the causal link between intelligence and age at first intercourse:  A cross-generational sibling comparison design using the NLSY. *Intelligence*. <em class="doi">doi: XXXXXXX</em></cite>(NLSY79; NLSYC)</li>
+
+  <li value=64><cite>Brauer, J. R.  (2016) [Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.](http://dx.doi.org/10.1111/jora.12283) *Journal of Research on Adolescence*. <em class="doi">doi: 10.1111/jora.12283</em></cite>(NLSYC)</li>
+  
+  <li value=63><cite>Rodgers,  J.  L.,  Beasley,  W.  H.,  Bard,  D.  E.,  Meredith,  K.  M.,  Hunter,  M.,  Johnson,  A.  B.,  Buster,  M.,  Li,C.,  May,  K.  O.,Garrison,  S.  M.,  Miller,  W.  M.,  van  den  Oord,  E.,  &  Rowe,  D.  C.  (2016) [The  NLSYkinship links:  Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <em class="doi">doi: 10.1007/s10519-016-9785-3</em></cite>(NLSY79; NLSYC)</li>   
+  
+<li value=62><cite>Garrison, S. Mason  (2016)  Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters, Vanderbilt University.</cite> (NLSY79)</li>
+
   <li value=61><cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <em class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</em></cite>(NLSYC)</li>
 
   <li value=60><cite>Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](http://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of Youth and Adolescence*, 1-15.</cite> (NLSYC)</li>
