@@ -9,7 +9,7 @@ Proposed Structure for manuscript (possibly submitted to JSS)
 * Michael D. Hunter (University of Oklahoma Health Sciences Center, OKC)
 * David Bard (University of Oklahoma Health Sciences Center, OKC)
 * Kelly Meredith (Oklahoma City University, OKC)
-* Sarah Mason Garrison (Vanderbilt University, Nashville)
+* S. Mason Garrison (Vanderbilt University, Nashville)
 * Joseph Lee Rodgers (Vanderbilt University, Nashville)
 
 ----------------------------------------------------
