@@ -153,8 +153,15 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 </ol>
 
 # Recent Presentations by the Team
+**2016: Developmental Methods**
 
-**2015: Association for Research in Personality Conference**
+* <cite>[Advances in discordant sibling designs from the NLSY,illustrated with SES and health.](./publications/2015/garrison-devmeth-2016.pdf)  Mason Garrison.</cite>
+
+**2015: International Society for Intelligence Research**
+
+* <cite>[Do  intelligent  girls  delay  age  at  first  intercourse?: Different results within-families versus between-families.](./publications/2015/rodgers-ISIR-2015.pptx)  Joe Rodgers.</cite>
+
+**2015: Association for Research in Personality**
 
 * <cite>[Additive Effects of Maternal Conscientiousness and General Ability on Infant Health.](./publications/2015/garrison-arp-2015.pdf)  Mason Garrison.</cite>
 
