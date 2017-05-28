@@ -1,7 +1,7 @@
 # Using SAS with the NlsyLinks R Package
 
 ## Authors
- * [Michael D. Hunter](http://students.ou.edu/H/Michael.D.Hunter-1/), University of Oklahoma Health Sciences Center, OKC
+ * [Michael D. Hunter](http://mhuntero.com/), University of Oklahoma Health Sciences Center, OKC
  * [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ), [Howard Live Oak LLC](http://howardliveoak.com/), Norman
  * [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), Vanderbilt University, Nashville
  * [David Bard](http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041), University of Oklahoma Health Sciences Center, OKC

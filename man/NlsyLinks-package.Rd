@@ -85,7 +85,7 @@ DF analysis of nonshared influences on problem behaviors.}
  
  Kelly Meredith (Oklahoma City University, OKC)
  
- \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
+ \href{http://mhuntero.com/}{Michael D. Hunter} (University of Oklahoma, Norman)
 
 Maintainer: Will Beasley <wibeasley@hotmail.com>
 }

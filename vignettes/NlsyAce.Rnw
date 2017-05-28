@@ -17,7 +17,7 @@
   \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)\\
   \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)\\
   Kelly Meredith (Oklahoma City University, OKC)\\
-  \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
+  \href{http://mhuntero.com/}{Michael D. Hunter} (University of Oklahoma, Norman)
 }
 \begin{document}
 
