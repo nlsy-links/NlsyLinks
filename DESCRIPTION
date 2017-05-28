@@ -1,8 +1,8 @@
 Package: NlsyLinks
 Type: Package
 Title: Utilities and Kinship Information for Research with the NLSY
-Version: 2.0.6
-Date: 2016-04-18
+Version: 2.0.7.9000
+Date: 2017-05-26
 Author: Will Beasley, Joe Rodgers, David Bard, Michael Hunter, S. Mason
     Garrison, and Kelly Meredith
 Maintainer: Will Beasley <wibeasley@hotmail.com>
@@ -30,4 +30,4 @@ Suggests:
 License: GPL
 LazyData: TRUE
 VignetteBuilder: knitr
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

@@ -2,8 +2,8 @@
 % Please edit documentation in R/nlsy-links.R
 \docType{package}
 \name{NlsyLinks-package}
-\alias{NlsyLinks}
 \alias{NlsyLinks-package}
+\alias{NlsyLinks}
 \title{Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.}
 \description{
 Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
@@ -15,11 +15,11 @@ subjects in the original NLSY79 sample
 biological children of the Gen1 females -ie, those in the NLSY79 Children
 and Young Adults sample (\url{http://www.bls.gov/nls/nlsy79ch.htm}).
 
-The release version is available through \href{https://cran.r-project.org/package=NlsyLinks}{CRAN} by   
-running \code{install.packages('NlsyLinks')}.  
-The most recent development version is available through \href{https://github.com/LiveOak/NlsyLinks}{GitHub} by   
-running 
-\code{devtools::install_github} \code{(repo = 'LiveOak/NlsyLinks')}   
+The release version is available through \href{https://cran.r-project.org/package=NlsyLinks}{CRAN} by
+running \code{install.packages('NlsyLinks')}.
+The most recent development version is available through \href{https://github.com/LiveOak/NlsyLinks}{GitHub} by
+running
+\code{devtools::install_github} \code{(repo = 'LiveOak/NlsyLinks')}
 (make sure \href{https://cran.r-project.org/package=devtools}{devtools} is already installed).
 If you're having trouble with the package, please install the development version.  If this doesn't solve
 your problem, please create a \href{https://github.com/LiveOak/NlsyLinks/issues}{new issue}, or email Will.
@@ -39,19 +39,6 @@ install.packages('NlsyLinks')
 #install.packages('devtools') #Uncomment if `devtools` isn't installed already.
 devtools::install_github('LiveOak/NlsyLinks')
 }
-}
-\author{
-\href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)
-  
- \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
- 
- \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
- 
- Kelly Meredith (Oklahoma City University, OKC)
- 
- \href{http://students.ou.edu/H/Michael.D.Hunter-1/}{Michael D. Hunter} (University of Oklahoma, Norman)
-
-Maintainer: Will Beasley <wibeasley@hotmail.com>
 }
 \references{
 This package's development was largely supported by the NIH
@@ -89,5 +76,17 @@ Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{http://psycnet.apa.org/journal
 DF analysis of nonshared influences on problem behaviors.}
 \emph{Developmental Psychology, 30}, 374-384.
 }
-\keyword{package}
+\author{
+\href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)
 
+ \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
+
+ \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
+
+ Kelly Meredith (Oklahoma City University, OKC)
+
+ \href{http://mhuntero.com/}{Michael D. Hunter} (University of Oklahoma, Norman)
+
+Maintainer: Will Beasley <wibeasley@hotmail.com>
+}
+\keyword{package}

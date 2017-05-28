@@ -3,8 +3,8 @@
 \name{CreatePairLinks}
 \alias{CreatePairLinks}
 \alias{CreatePairLinksDoubleEntered}
-\alias{CreatePairLinksDoubleEnteredWithNoOutcomes}
 \alias{CreatePairLinksSingleEntered}
+\alias{CreatePairLinksDoubleEnteredWithNoOutcomes}
 \title{Creates a pairs linking file.}
 \usage{
 CreatePairLinksDoubleEntered(outcomeDataset, linksPairDataset, outcomeNames, 
@@ -69,12 +69,11 @@ ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
 
 
 }
-\author{
-Will Beasley
-}
 \references{
 For more information about a DF analysis, see Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
 \emph{Behavior Genetics, 35} (2), 211-217.
 }
-
+\author{
+Will Beasley
+}

@@ -57,4 +57,3 @@ ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
 \code{\link{Links79Pair}}, \code{\link{Links79PairExpanded}},
 }
 \keyword{validation}
-

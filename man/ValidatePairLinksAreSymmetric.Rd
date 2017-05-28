@@ -48,11 +48,10 @@ ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
 
 
 }
-\author{
-Will Beasley
-}
 \seealso{
 \code{\link{CreatePairLinksDoubleEntered}}
 }
+\author{
+Will Beasley
+}
 \keyword{validation}
-

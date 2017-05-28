@@ -15,12 +15,12 @@ developmental research using the National Longitudinal Survey of Youth
 
 ## Installing 
 
-| [CRAN](http://cran.r-project.org/) | [Version](http://cran.r-project.org/package=NlsyLinks) | [Rate](http://cranlogs.r-pkg.org/) | [Zenodo](https://zenodo.org/search?ln=en&p=nlsylinks) | 
+| [CRAN](https://cran.r-project.org/) | [Version](https://cran.r-project.org/package=NlsyLinks) | [Rate](http://cranlogs.r-pkg.org/) | [Zenodo](https://zenodo.org/search?ln=en&p=nlsylinks) | 
 |  :---- | :----: | :----: | :----: |
-| [Latest](http://cran.r-project.org/package=NlsyLinks) | [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/NlsyLinks)](http://cran.r-project.org/package=NlsyLinks) | ![CRANPace](http://cranlogs.r-pkg.org/badges/NlsyLinks) | [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.49941.svg)](http://dx.doi.org/10.5281/zenodo.49941) |
+| [Latest](https://cran.r-project.org/package=NlsyLinks) | [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/NlsyLinks)](https://cran.r-project.org/package=NlsyLinks) | ![CRANPace](http://cranlogs.r-pkg.org/badges/NlsyLinks) | [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.49941.svg)](http://dx.doi.org/10.5281/zenodo.49941) |
 |   | *Latest CRAN version* | *CRAN Downloads* | *Independently-hosted Archive* |
 
-The *release* version of `NlsyLinks` can be installed from [CRAN](http://cran.r-project.org/package=NlsyLinks).
+The *release* version of `NlsyLinks` can be installed from [CRAN](https://cran.r-project.org/package=NlsyLinks).
 
 ```r
 install.packages("NlsyLinks")
@@ -35,9 +35,9 @@ devtools::install_github(repo="LiveOak/NlsyLinks")
 
 ## Locations for Help and Development
 
-This repository contains the code used in the [NlsyLinks](http://cran.r-project.org/package=NlsyLinks) R package.  For additional information about the package and using it in NLSY research, please see http://liveoak.github.io/NlsyLinks/
+This repository contains the code used in the [NlsyLinks](https://cran.r-project.org/package=NlsyLinks) R package.  For additional information about the package and using it in NLSY research, please see http://liveoak.github.io/NlsyLinks/
 
-We now use  [this GitHub repository](https://github.com/LiveOak/NlsyLinksStaging) as our primary way of managing, tracking, and build-checking versions of the source code.  We're no longer using our [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/) to check builds.  The stable releases (intended for most researchers) is available on the package's  [CRAN site](http://cran.r-project.org/package=NlsyLinks).
+We now use  [this GitHub repository](https://github.com/LiveOak/NlsyLinksStaging) as our primary way of managing, tracking, and build-checking versions of the source code.  We're no longer using our [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/) to check builds.  The stable releases (intended for most researchers) is available on the package's  [CRAN site](https://cran.r-project.org/package=NlsyLinks).
 
 The help forums remain on the package's [R-Forge](https://r-forge.r-project.org/forum/?group_id=1330).  
 

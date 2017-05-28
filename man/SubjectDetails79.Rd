@@ -68,4 +68,3 @@ par(oldPar)
 Will Beasley
 }
 \keyword{datasets}
-

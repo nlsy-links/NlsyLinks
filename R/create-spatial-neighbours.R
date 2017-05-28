@@ -35,10 +35,10 @@
 #' 
 #' Lawson, A.B (2013). \href{http://books.google.com/books?id=g7RJEZb1umwC}{\emph{Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition}}. Boca Raton: CRC Press.
 #' 
-#' The \pkg{spdep} package documentation: \href{http://cran.r-project.org/package=spdep}{spdep: Spatial dependence: weighting schemes, statistics and models}.
+#' The \pkg{spdep} package documentation: \href{https://cran.r-project.org/package=spdep}{spdep: Spatial dependence: weighting schemes, statistics and models}.
 #' 
 #' @author Will Beasley and  David Bard
-#' @note Notice the British variant of 'neighbo\emph{u}rs' is used, to be consistent with the \code{spatial.neighbour} class in the  \href{http://cran.r-project.org/package=spdep}{\code{spdep}} package.
+#' @note Notice the British variant of 'neighbo\emph{u}rs' is used, to be consistent with the \code{spatial.neighbour} class in the  \href{https://cran.r-project.org/package=spdep}{\code{spdep}} package.
 #' @examples
 #' dsLinksAll <- Links79Pair
 #' dsLinksGen1Housemates <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen1Housemates", ]

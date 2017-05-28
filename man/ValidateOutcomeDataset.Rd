@@ -47,4 +47,3 @@ outcomeNamesBad <- c("MathMisspelled", "WeightZGenderAge")
 Will Beasley
 }
 \keyword{validation}
-

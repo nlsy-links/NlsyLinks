@@ -76,12 +76,11 @@ summary(GetDetails(estimatedMath))
 
 
 }
-\author{
-Will Beasley
-}
 \references{
 Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
 \emph{Behavior Genetics, 35} (2), 211-217.
 }
-
+\author{
+Will Beasley
+}

@@ -93,9 +93,6 @@ gen2Siblings <- subset(Links79Pair, RelationshipPath=='Gen2Siblings')
 table(gen2Siblings$R)  #Create a table of the Relatedness coefficients for the Gen2 sibs.
 
 }
-\author{
-Will Beasley
-}
 \references{
 The NLSY79 variable HHID (ie, R00001.49) is the source for the
 \code{ExtendedID} variable.  This is discussed at
@@ -127,5 +124,7 @@ where \code{"C:/BGDirectory/"} is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
 path \code{"C:\BGDirectory\Links79Pair.csv"} can be misinterpreted.
 }
+\author{
+Will Beasley
+}
 \keyword{datasets}
-
