@@ -41,4 +41,3 @@ ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 \author{
 Will Beasley
 }
-

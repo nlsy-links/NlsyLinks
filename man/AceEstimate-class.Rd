@@ -3,11 +3,11 @@
 \docType{class}
 \name{AceEstimate-class}
 \alias{AceEstimate-class}
-\alias{GetDetails,AceEstimate-method}
 \alias{getEstimate,AceEstimate-method}
 \alias{initialize,AceEstimate-method}
 \alias{print,AceEstimate-method}
 \alias{show,AceEstimate-method}
+\alias{GetDetails,AceEstimate-method}
 \title{Class \code{"AceEstimate"}}
 \description{
 A class containing information about a single univariate ACE model.
@@ -27,6 +27,7 @@ form:
 \code{new("AceEstimate", aSquared, cSquared, eSquared, caseCount, unity,
 withinBounds, details, ...)}
 }
+
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
 
@@ -37,4 +38,3 @@ print(est)
 }
 \keyword{ACE}
 \keyword{classes}
-

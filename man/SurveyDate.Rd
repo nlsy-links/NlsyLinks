@@ -69,4 +69,3 @@ if( require(ggplot2) & require(plyr) ) {
 Will Beasley
 }
 \keyword{datasets}
-

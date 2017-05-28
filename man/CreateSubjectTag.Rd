@@ -37,10 +37,9 @@ ExtraOutcomes79$SubjectTag <- CreateSubjectTag(
 )
 
 }
-\author{
-Will Beasley
-}
 \seealso{
 \code{\link{Links79Pair}}
 }
-
+\author{
+Will Beasley
+}

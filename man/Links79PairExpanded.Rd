@@ -114,4 +114,3 @@ ftable(youngerR, olderR, dnn=c("Younger's Version", "Older's Version")) #A forma
 Will Beasley
 }
 \keyword{datasets}
-

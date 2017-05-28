@@ -57,4 +57,3 @@ plot(jitter(dsClean$R), dsClean$AbsDifference, col="gray70")
 Will Beasley
 }
 \keyword{ACE}
-

@@ -84,11 +84,10 @@ ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 }
 
 }
-\author{
-Will Beasley and David Bard
-}
 \references{
 Please see \href{http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf}{Neale & Maes} for more information about SEM with multiple groups.
 }
+\author{
+Will Beasley and David Bard
+}
 \keyword{ACE}
-

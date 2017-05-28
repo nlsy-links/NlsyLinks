@@ -2,9 +2,9 @@
 % Please edit documentation in R/column-utilities.R
 \name{ColumnUtilities}
 \alias{ColumnUtilities}
+\alias{VerifyColumnExists}
 \alias{RenameColumn}
 \alias{RenameNlsyColumn}
-\alias{VerifyColumnExists}
 \title{A collection of functions that helps data management \code{data.frame}s, particularly those derived from NLSY Extracts.}
 \usage{
 VerifyColumnExists( dataFrame, columnName )
@@ -40,4 +40,3 @@ In the NLS Investigator, a decimal is present in the RNumber (eg, R00001.00).  W
 \author{
 Will Beasley
 }
-

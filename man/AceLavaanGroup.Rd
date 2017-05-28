@@ -60,9 +60,6 @@ summary(GetDetails(ace))
 inspect(GetDetails(ace), what="converged") #The lavaan package defines 'inspect'.
 inspect(GetDetails(ace), what="coef")
 }
-\author{
-Will Beasley
-}
 \references{
 The \pkg{lavaan} package is developed by Yves Rosseel at Ghent University.  
 Three good starting points are the package home page (\url{http://lavaan.ugent.be/}), the documentation (\url{http://cran.r-project.org/package=lavaan}) 
@@ -73,5 +70,7 @@ Rosseel, Yves (2012), \href{http://www.jstatsoft.org/v48/i02/}{lavaan: An R Pack
 \seealso{
 \code{\link{CleanSemAceDataset}}.  Further ACE model details are discussed in our package's \href{http://cran.r-project.org/package=NlsyLinks}{vignettes}.
 }
+\author{
+Will Beasley
+}
 \keyword{ACE}
-

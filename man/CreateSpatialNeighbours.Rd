@@ -58,9 +58,6 @@ table(spGen2$weight)
 #0.25 0.375   0.5  0.75     1 
 #3442   610  6997    12    27 
 }
-\author{
-Will Beasley and  David Bard
-}
 \references{
 Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{\emph{Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model}}. Behavior Genetics Association 42nd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}]
 
@@ -72,6 +69,8 @@ Lawson, A.B (2013). \href{http://books.google.com/books?id=g7RJEZb1umwC}{\emph{B
 
 The \pkg{spdep} package documentation: \href{http://cran.r-project.org/package=spdep}{spdep: Spatial dependence: weighting schemes, statistics and models}.
 }
+\author{
+Will Beasley and  David Bard
+}
 \keyword{analysis}
 \keyword{spatial}
-

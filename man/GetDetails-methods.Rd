@@ -2,9 +2,9 @@
 % Please edit documentation in R/ace-estimate.R
 \docType{methods}
 \name{GetDetails-methods}
-\alias{AceEstimate-method}
-\alias{GetDetails}
 \alias{GetDetails-methods}
+\alias{GetDetails}
+\alias{AceEstimate-method}
 \title{A generic function for extracting the \code{Details} slot of an object.}
 \description{
 A generic function for extracting the \code{Details} slot of an \code{AceEstimation} object.
@@ -13,4 +13,3 @@ A generic function for extracting the \code{Details} slot of an \code{AceEstimat
 Will Beasley
 }
 \keyword{methods}
-

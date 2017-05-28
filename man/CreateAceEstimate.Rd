@@ -33,4 +33,3 @@ The contents of the \code{details} list depends on the underlying estimation rou
 Will Beasley
 }
 \keyword{ACE}
-
