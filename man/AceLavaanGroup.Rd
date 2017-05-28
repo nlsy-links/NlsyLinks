@@ -68,7 +68,7 @@ and the JSS paper.
 Rosseel, Yves (2012), \href{http://www.jstatsoft.org/v48/i02/}{lavaan: An R Package for Structural Equation Modeling}. \emph{Journal of Statistical Software, 48}, (2), 1-36.
 }
 \seealso{
-\code{\link{CleanSemAceDataset}}.  Further ACE model details are discussed in our package's \href{http://cran.r-project.org/package=NlsyLinks}{vignettes}.
+\code{\link{CleanSemAceDataset}}.  Further ACE model details are discussed in our package's \href{https://cran.r-project.org/package=NlsyLinks}{vignettes}.
 }
 \author{
 Will Beasley

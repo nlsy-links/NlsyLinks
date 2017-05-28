@@ -8,7 +8,7 @@
  * [Kelly Meredith](http://www.okcu.edu/admin/academic-affairs/staff/bio/item-id-77), Oklahoma City University, OKC
  
 ## Abstract
-We describe how to use the R package [`NlsyLinks`](http://cran.r-project.org/package=NlsyLinks) with the SAS program.  This is a replication of the analyses from the [ACE Models with the NLSY](http://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) vignette section called "Example: DF analysis with a univariate outcome from a Gen2 Extract".
+We describe how to use the R package [`NlsyLinks`](https://cran.r-project.org/package=NlsyLinks) with the SAS program.  This is a replication of the analyses from the [ACE Models with the NLSY](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) vignette section called "Example: DF analysis with a univariate outcome from a Gen2 Extract".
 
 ## Import Links to SAS, Perform Data Manipulation, and Return to R
 SAS Code:
@@ -22,7 +22,7 @@ DATA  LinksFromRPackage;
 RUN;
 ```
 
-Note that for this to run missing values must be `.` as SAS specifies them not `NA`, the default R missing value code.  The file `links.csv` with the path `E:/links.csv` can be downloaded from [GitHub](https://github.com/LiveOak/NlsyLinks/raw/master/UtilityScripts/SasExample/links.csv) or exported from the [`NlsyLinks`](http://cran.r-project.org/package=NlsyLinks) R package with the following R code.
+Note that for this to run missing values must be `.` as SAS specifies them not `NA`, the default R missing value code.  The file `links.csv` with the path `E:/links.csv` can be downloaded from [GitHub](https://github.com/LiveOak/NlsyLinks/raw/master/UtilityScripts/SasExample/links.csv) or exported from the [`NlsyLinks`](https://cran.r-project.org/package=NlsyLinks) R package with the following R code.
 
 ```
 ### Begin R Code to export links
@@ -36,7 +36,7 @@ Note that for this to run missing values must be `.` as SAS specifies them not `
 ### End R code to export links
 ```
 
-Once the linking file has been exported from R, the SAS code mentioned previously can be run to read the linking data into SAS.  The next few lines of SAS code read in the outcome data.  Some outcome data can be obtained from the [`NlsyLinks`](http://cran.r-project.org/package=NlsyLinks) package, but usually the NLS Investigator website will be the source of the outcome data.
+Once the linking file has been exported from R, the SAS code mentioned previously can be run to read the linking data into SAS.  The next few lines of SAS code read in the outcome data.  Some outcome data can be obtained from the [`NlsyLinks`](https://cran.r-project.org/package=NlsyLinks) package, but usually the NLS Investigator website will be the source of the outcome data.
 
 ```
 DATA  OutcomesFromRPackageOrYou;
@@ -100,4 +100,4 @@ Variable                          DF       Estimate          Error    t Value   
 BirthWeightInOunces_2c             1        0.17766        0.02308       7.70      <.0001
 R_times_BirthWeightInOunces_2c     1        0.50416        0.05313       9.49      <.0001
 ```
-This concludes the vignette on using the SAS with the [`NlsyLinks`](http://cran.r-project.org/package=NlsyLinks) package.
+This concludes the vignette on using the SAS with the [`NlsyLinks`](https://cran.r-project.org/package=NlsyLinks) package.

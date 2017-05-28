@@ -75,7 +75,7 @@ img {
 </div>
 <div id="abstract" class="section level2">
 <h2>Abstract</h2>
-<p>We describe how to use the R package <a href="http://cran.r-project.org/package=NlsyLinks"><code>NlsyLinks</code></a> with the SAS program. This is a replication of the analyses from the <a href="http://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf">ACE Models with the NLSY</a> vignette section called “Example: DF analysis with a univariate outcome from a Gen2 Extract”.</p>
+<p>We describe how to use the R package <a href="https://cran.r-project.org/package=NlsyLinks"><code>NlsyLinks</code></a> with the SAS program. This is a replication of the analyses from the <a href="https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf">ACE Models with the NLSY</a> vignette section called “Example: DF analysis with a univariate outcome from a Gen2 Extract”.</p>
 </div>
 <div id="import-links-to-sas-perform-data-manipulation-and-return-to-r" class="section level2">
 <h2>Import Links to SAS, Perform Data Manipulation, and Return to R</h2>
@@ -87,7 +87,7 @@ DATA  LinksFromRPackage;
     INPUT ExtendedID Subject1Tag Subject2Tag R RelationshipPath $;
     IF RelationshipPath=&quot;Gen2Siblings&quot; THEN OUTPUT;
 RUN;</code></pre>
-<p>Note that for this to run missing values must be <code>.</code> as SAS specifies them not <code>NA</code>, the default R missing value code. The file <code>links.csv</code> with the path <code>E:/links.csv</code> can be downloaded from <a href="https://github.com/LiveOak/NlsyLinks/raw/master/UtilityScripts/SasExample/links.csv">GitHub</a> or exported from the <a href="http://cran.r-project.org/package=NlsyLinks"><code>NlsyLinks</code></a> R package with the following R code.</p>
+<p>Note that for this to run missing values must be <code>.</code> as SAS specifies them not <code>NA</code>, the default R missing value code. The file <code>links.csv</code> with the path <code>E:/links.csv</code> can be downloaded from <a href="https://github.com/LiveOak/NlsyLinks/raw/master/UtilityScripts/SasExample/links.csv">GitHub</a> or exported from the <a href="https://cran.r-project.org/package=NlsyLinks"><code>NlsyLinks</code></a> R package with the following R code.</p>
 <pre><code>### Begin R Code to export links
  library(NlsyLinks)
  dlink &lt;- subset(Links79Pair, RelationshipPath=&quot;Gen2Siblings&quot;)
@@ -97,7 +97,7 @@ RUN;</code></pre>
  write.csv(dout, file=&quot;outs.csv&quot;, row.names=FALSE, na=&quot;.&quot;)
  write.csv(dlink, file=&quot;links.csv&quot;, row.names=FALSE, na=&quot;.&quot;, quote=FALSE)
 ### End R code to export links</code></pre>
-<p>Once the linking file has been exported from R, the SAS code mentioned previously can be run to read the linking data into SAS. The next few lines of SAS code read in the outcome data. Some outcome data can be obtained from the <a href="http://cran.r-project.org/package=NlsyLinks"><code>NlsyLinks</code></a> package, but usually the NLS Investigator website will be the source of the outcome data.</p>
+<p>Once the linking file has been exported from R, the SAS code mentioned previously can be run to read the linking data into SAS. The next few lines of SAS code read in the outcome data. Some outcome data can be obtained from the <a href="https://cran.r-project.org/package=NlsyLinks"><code>NlsyLinks</code></a> package, but usually the NLS Investigator website will be the source of the outcome data.</p>
 <pre><code>DATA  OutcomesFromRPackageOrYou;
   INFILE &quot;E:/outs.csv&quot;
         DSD LRECL=1024 DLM=',' FIRSTOBS=2;
@@ -151,7 +151,7 @@ Variable                          DF       Estimate          Error    t Value   
 
 BirthWeightInOunces_2c             1        0.17766        0.02308       7.70      &lt;.0001
 R_times_BirthWeightInOunces_2c     1        0.50416        0.05313       9.49      &lt;.0001</code></pre>
-<p>This concludes the vignette on using the SAS with the <a href="http://cran.r-project.org/package=NlsyLinks"><code>NlsyLinks</code></a> package.</p>
+<p>This concludes the vignette on using the SAS with the <a href="https://cran.r-project.org/package=NlsyLinks"><code>NlsyLinks</code></a> package.</p>
 </div>
 </div>
 
