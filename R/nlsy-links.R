@@ -34,7 +34,7 @@
 #' Maintainer: Will Beasley <wibeasley@@hotmail.com>
 #'
 #' @references This package's development was largely supported by the NIH
-#' Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{``NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers).  A more complete list of research articles
+#' Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{"NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers).  A more complete list of research articles
 #' using NLSY Kinship Links is maintained on our \href{http://liveoak.github.io/NlsyLinks/research-publications.html}{package's website}.
 #'
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and
@@ -80,7 +80,7 @@
 #' install.packages('NlsyLinks')
 #'
 #' # Install/update NlsyLinks with the development version from GitHub
-#' #install.packages('devtools') #Uncomment if `devtools` isn't installed already.
+#' #install.packages('devtools') #Uncomment if 'devtools' isn't installed already.
 #' devtools::install_github('LiveOak/NlsyLinks')
 #' }
 NULL

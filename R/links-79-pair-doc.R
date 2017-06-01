@@ -3,7 +3,7 @@
 
 #' @title Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults
 #' 
-#' @description This dataset specifies the relatedness coefficient (ie, `\code{R}') between
+#' @description This dataset specifies the relatedness coefficient (ie, '\code{R}') between
 #' subjects in the same extended family.  Each row represents a unique
 #' relationship pair.  
 #' 

@@ -6,7 +6,7 @@
 #' @description The function accepts a (file path to) CSV file and creates a \code{data.frame}.  The \code{data.frame} is modified and augmented with columns to assist later routines.
 #' 
 #' @param filePath A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or Linux.
-#' @param dsExtract A `data.frame` (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.
+#' @param dsExtract A 'data.frame' (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.
 #' 
 #' @return A \code{data.frame} to facililate biometric analysis.
 #' 

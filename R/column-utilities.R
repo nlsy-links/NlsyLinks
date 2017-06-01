@@ -18,7 +18,7 @@
 #' @param oldColumnName The name of the column to change. 
 #' @param newColumnName The desired name of the column.
 #' 
-#' @details The RNumber assigned by the NLS has a pattern.  In the Nlsy79 Gen1 dataset, the names start with a `R' or `T' and are followed by seven digits (eg, R0000100).  In the Nlsy79 Gen2 dataset, the names start with `C' or `Y' and are followed by seven digits (eg, C0007030, Y1994600).
+#' @details The RNumber assigned by the NLS has a pattern.  In the Nlsy79 Gen1 dataset, the names start with a 'R' or 'T' and are followed by seven digits (eg, R0000100).  In the Nlsy79 Gen2 dataset, the names start with 'C' or 'Y' and are followed by seven digits (eg, C0007030, Y1994600).
 #' 
 #' In the NLS Investigator, a decimal is present in the RNumber (eg, R00001.00).  When the Investigator saves the dataset as a CSV, the decimal is removed (eg, R0000100).
 #' @return *IMPORTANT* The \code{RenameColumn} and \code{RenameNlsyColumn} functions do not use side-effects to rename the \code{data.frame}.  Instead, it returns a new \code{data.frame}.  In the example below, notice the assignment to \code{ds}: \code{ds <- RenameNlsyColumn(...)}.

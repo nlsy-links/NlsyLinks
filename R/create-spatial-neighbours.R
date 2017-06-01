@@ -15,11 +15,11 @@
 #' 
 #' @return An S3 \code{spatial.neighbours} object to work with functions in the \pkg{spdep} package. 
 #' 
-#' \code{SubjectTag_S1} is renamed `\code{from}'. 
+#' \code{SubjectTag_S1} is renamed '\code{from}'. 
 #' 
-#' \code{SubjectTag_S2} is renamed `\code{to}'. 
+#' \code{SubjectTag_S2} is renamed '\code{to}'. 
 #' 
-#' \code{R} is renamed `\code{weight}'.
+#' \code{R} is renamed '\code{weight}'.
 #' 
 #' The attribute \code{region.id} specifies each unique SubjectTag.
 #' 

@@ -12,9 +12,9 @@
 #' appended to it.  For instance, the variables \code{LastSurvey_S1} and \code{LastSurvey_S2} correspond to the last surveys completed 
 #' by the pair's first and second subject, respectively.  Similarly, the functions \code{CreatePairLinksDoubleEntered} and 
 #' \code{CreatePairLinksSingleEntered} now by default append \code{_S1} and \code{_S2}, instead of \code{_1} and \code{_2}.  However this can be 
-#' modified using the `subject1Qualifier` and `subject2Qualifier` parameters.
+#' modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters.
 #' 
-#' @details Specifies the relatedness coefficient (ie, `*R*') between subjects in the
+#' @details Specifies the relatedness coefficient (ie, '*R*') between subjects in the
 #' same extended family.  Each row represents a unique relationship pair.  An
 #' extended family with \eqn{k} subjects will have \eqn{k}(\eqn{k}-1)/2 rows.
 #' Typically, Subject1 is older while Subject2 is younger.
@@ -35,7 +35,7 @@
 #' decisions of an applied researcher.
 #' 
 #' 
-#' A distinction is made between `Explicit' and `Implicit' information.
+#' A distinction is made between 'Explicit' and 'Implicit' information.
 #' Explicit information comes from survey items that directly address the
 #' subject's relationships.  For instance in 2006, surveys asked if the
 #' sibling pair share the same biological father (eg, Y19940.00 and
@@ -46,7 +46,7 @@
 #' to assume they share the same biological father.
 #' 
 #' 
-#' `Interpolation' is our lingo when other siblings are used to leverage
+#' 'Interpolation' is our lingo when other siblings are used to leverage
 #' insight into the current pair.  For example, assume Subject 101, 102, and
 #' 103 have the same mother.  Further assume 101 and 102 report they share a
 #' biological father, and that 101 and 103 share one too.  Finally, assume
