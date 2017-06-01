@@ -20,10 +20,10 @@
 #' }
 #'
 #' @details The dataset contains Gen1 and Gen2 subjects.  "Gen1" refers to subjects in
-#' the original NLSY79 sample (\url{http://www.bls.gov/nls/nlsy79.htm}).
+#' the original NLSY79 sample (http://www.bls.gov/nls/nlsy79.htm).
 #' "Gen2" subjects are the biological children of the Gen1 females -ie, those
 #' in the NLSY79 Children and Young Adults sample
-#' (\url{http://www.bls.gov/nls/nlsy79ch.htm}).
+#' (http://www.bls.gov/nls/nlsy79ch.htm).
 #'
 #' Subjects will be in the same extended family if either: [1] they are Gen1
 #' housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (ie, they
@@ -76,7 +76,7 @@
 #' further information that might be useful in more complicated BG analyses.
 #'
 #' A tutorial that produces a similar dataset is
-#' \url{http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html}.
+#' http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html.
 #' It provides examples in SAS, SPSS, and STATA.
 #'
 #' The current dataset (ie, `Links79Pair`) can be saved as a CSV file
@@ -93,19 +93,19 @@
 #'
 #' @references The NLSY79 variable HHID (ie, R00001.49) is the source for the
 #' `ExtendedID` variable.  This is discussed at
-#' \url{http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm}.
+#' http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm.
 #'
 #' For more information on *R* (*ie*, the Relatedness coefficient), please see
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
-#' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
+#' [Reformulating and simplifying the DF analysis model.](http://www.springerlink.com/content/n3x1v1q282583366/)
 #' *Behavior Genetics, 35* (2), 211-217.
 #'
 #' @source Gen1 information comes from the Summer 2013 release of the
-#' \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
+#' [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information
 #' comes from the Summer 2013 release of the
 #' \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults
 #' sample}.  Data were extracted with the NLS Investigator
-#' (\url{https://www.nlsinfo.org/investigator/}).
+#' (https://www.nlsinfo.org/investigator/).
 #'
 #' The internal version for the links is `Links2011V84`.
 #' @keywords datasets

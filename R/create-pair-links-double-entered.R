@@ -34,7 +34,7 @@
 #' @param subject2Qualifier Indicates how the outcome variable for the pair's second subject is distinguished from the other subject.  The default is `_S2`.
 #' @author Will Beasley
 #' @references For more information about a DF analysis, see Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
-#' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
+#' [Reformulating and simplifying the DF analysis model.](http://www.springerlink.com/content/n3x1v1q282583366/)
 #' *Behavior Genetics, 35* (2), 211-217.
 #' @examples
 #'

@@ -27,15 +27,15 @@
 #'
 #' @references
 #'
-#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*}. Behavior Genetics Association 42nd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}]
+#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](http://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [[Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330)]
 #'
-#' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). \href{http://link.springer.com/book/10.1007/978-1-4614-7618-4}{*Applied Spatial Data Analysis with R.*} New York: Springer. (Especially Chapter 9.)
+#' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). [*Applied Spatial Data Analysis with R.*](http://link.springer.com/book/10.1007/978-1-4614-7618-4) New York: Springer. (Especially Chapter 9.)
 #'
-#' Banerjee, S., Carlin, B.P., & Gelfand, A.E. (2004). \href{http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C}{*Hierarchical Modeling and Analysis for Spatial Data*}. Boca Raton: CRC Press.
+#' Banerjee, S., Carlin, B.P., & Gelfand, A.E. (2004). [*Hierarchical Modeling and Analysis for Spatial Data*](http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C). Boca Raton: CRC Press.
 #'
-#' Lawson, A.B (2013). \href{http://books.google.com/books?id=g7RJEZb1umwC}{*Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition*}. Boca Raton: CRC Press.
+#' Lawson, A.B (2013). [*Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition*](http://books.google.com/books?id=g7RJEZb1umwC). Boca Raton: CRC Press.
 #'
-#' The \pkg{spdep} package documentation: \href{https://cran.r-project.org/package=spdep}{spdep: Spatial dependence: weighting schemes, statistics and models}.
+#' The \pkg{spdep} package documentation: [spdep: Spatial dependence: weighting schemes, statistics and models](https://cran.r-project.org/package=spdep).
 #'
 #' @author Will Beasley and  David Bard
 #' @note Notice the British variant of 'neighbo*u*rs' is used, to be consistent with the [spdep::spatial.neighbour] class.

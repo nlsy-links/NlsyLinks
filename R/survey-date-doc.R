@@ -35,10 +35,10 @@
 #' Gen1 datasets, self-reported age is stated by year (eg, the subject is 52 years old); a constant of 0.5 years has been added.
 #' 
 #' @author Will Beasley
-#' @source Gen1 information comes from the Summer 2013 release of the \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
+#' @source Gen1 information comes from the Summer 2013 release of the [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information
 #' comes from the January 2015 release of the
-#' \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
-#' (\url{https://www.nlsinfo.org/investigator/}).
+#' [NLSY79 Children and Young Adults sample](http://www.bls.gov/nls/nlsy79ch.htm).  Data were extracted with the NLS Investigator
+#' (https://www.nlsinfo.org/investigator/).
 #' @keywords datasets
 #' @examples 
 #' library(NlsyLinks) #Load the package into the current R session.

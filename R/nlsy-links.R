@@ -7,35 +7,35 @@
 #' @aliases NlsyLinks
 #' @note This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 #' subjects in the original NLSY79 sample
-#' (\url{http://www.bls.gov/nls/nlsy79.htm}).  "Gen2" subjects are the
+#' (http://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
 #' biological children of the Gen1 females -ie, those in the NLSY79 Children
-#' and Young Adults sample (\url{http://www.bls.gov/nls/nlsy79ch.htm}).
+#' and Young Adults sample (http://www.bls.gov/nls/nlsy79ch.htm).
 #'
-#' The release version is available through \href{https://cran.r-project.org/package=NlsyLinks}{CRAN} by
+#' The release version is available through [CRAN](https://cran.r-project.org/package=NlsyLinks) by
 #' running `install.packages('NlsyLinks')`.
-#' The most recent development version is available through \href{https://github.com/LiveOak/NlsyLinks}{GitHub} by
+#' The most recent development version is available through [GitHub](https://github.com/LiveOak/NlsyLinks) by
 #' running
 #' `devtools::install_github` `(repo = 'LiveOak/NlsyLinks')`
-#' (make sure \href{https://cran.r-project.org/package=devtools}{devtools} is already installed).
+#' (make sure [devtools](https://cran.r-project.org/package=devtools) is already installed).
 #' If you're having trouble with the package, please install the development version.  If this doesn't solve
-#' your problem, please create a \href{https://github.com/LiveOak/NlsyLinks/issues}{new issue}, or email Will.
+#' your problem, please create a [new issue](https://github.com/LiveOak/NlsyLinks/issues), or email Will.
 #'
 #' @author
-#'   \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)
+#'   [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](http://howardliveoak.com/), Norman)
 #'
-#'  \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
+#'  [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 #'
-#'  \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
+#'  [David Bard](http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041) (University of Oklahoma Health Sciences Center, OKC)
 #'
 #'  Kelly Meredith (Oklahoma City University, OKC)
 #'
-#'  \href{http://mhuntero.com/}{Michael D. Hunter} (University of Oklahoma, Norman)
+#'  [Michael D. Hunter](http://mhuntero.com/) (University of Oklahoma, Norman)
 #'
 #' Maintainer: Will Beasley <wibeasley@@hotmail.com>
 #'
 #' @references This package's development was largely supported by the NIH
-#' Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{"NLSY Kinship Links: Reliable and Valid Sibling Identification"} (PI: Joe Rodgers).  A more complete list of research articles
-#' using NLSY Kinship Links is maintained on our \href{http://liveoak.github.io/NlsyLinks/research-publications.html}{package's website}.
+#' Grant 1R01HD65865, ["NLSY Kinship Links: Reliable and Valid Sibling Identification"](http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50) (PI: Joe Rodgers).  A more complete list of research articles
+#' using NLSY Kinship Links is maintained on our [package's website](http://liveoak.github.io/NlsyLinks/research-publications.html).
 #'
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and
 #' simplifying the DF analysis model.}
