@@ -1,25 +1,24 @@
+# RStudio temp files to ignore during build process
 ^.*\.Rproj$
 ^\.Rproj\.user$
+
+# Files to ignore during build process
+^_pkgdown\.yml$
 ^\.gitignore$
 ^\.travis\.yml$
 ^appveyor\.yml$
-^wercker\.yml$
+^cran-comments\.md$
+^documentation-peek\.pdf$
+^README\.html$
 ^shim_package\.sh$
 ^unshim_package\.sh$
-^\.lintr$
-^revdep$
-^cran-comments\.md$
-README.html$
+^wercker\.yml$
 
-documentation-peek.pdf
-article/
-playgrounds/
-outside-data/
-utility/
-^.*\.o$
-DocumentationPeek.pdf
-Article/
-Playgrounds/
-OutsideData/
-UtilityScripts/
+# Directories to ignore during build process
+^article$
 ^docs$
+^\.lintr$
+^outside-data$
+^playgrounds$
+^revdep$
+^utility$
