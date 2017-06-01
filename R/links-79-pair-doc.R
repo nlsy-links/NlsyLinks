@@ -72,7 +72,7 @@
 #' 
 #' @author Will Beasley
 #' @seealso The \code{LinksPair79} dataset contains columns necessary for a
-#' basic BG analysis.  The \code{\link{Links79PairExpanded}} dataset contains
+#' basic BG analysis.  The [Links79PairExpanded()] dataset contains
 #' further information that might be useful in more complicated BG analyses.
 #' 
 #' A tutorial that produces a similar dataset is

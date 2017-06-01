@@ -19,7 +19,7 @@
 #' Rosseel, Yves (2012), \href{http://www.jstatsoft.org/v48/i02/}{lavaan: An R Package for Structural Equation Modeling}. *Journal of Statistical Software, 48*, (2), 1-36.
 #' @author Will Beasley
 #' @note Currently, the variables in \code{dsClean} must be named \code{O1}, \code{O2} and \code{R}; the letter 'O' stands for *O*utcome.  This may not be as restrictive as it initially seems, because \code{dsClean} is intented to be produced by \code{CleanSemAceDataset}.  If this is too restrictive for your uses, we'd like to here about it (*please email wibeasley at hotmail period com*).
-#' @seealso \code{\link{CleanSemAceDataset}}.  Further ACE model details are discussed in our package's \href{https://cran.r-project.org/package=NlsyLinks}{vignettes}.
+#' @seealso [CleanSemAceDataset()].  Further ACE model details are discussed in our package's \href{https://cran.r-project.org/package=NlsyLinks}{vignettes}.
 #' @keywords ACE
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.

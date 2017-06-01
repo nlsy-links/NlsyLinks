@@ -2,7 +2,7 @@
 #' @export
 #' @importFrom methods new
 #' 
-#' @title Instantiate an \code{\link{AceEstimate-class}} object.
+#' @title Instantiate an [AceEstimate-class()] object.
 #' @description Creates an instance of the \code{S4} class, \code{AceEstimate}  instantiating arguments set the parameter values estimated by the ACE model.
 #' 
 #' @usage CreateAceEstimate(aSquared, cSquared, eSquared, caseCount, 
@@ -17,7 +17,7 @@
 #' 
 #' @details The contents of the \code{details} list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is an \code{lm} object, because the \code{lm} function was used (ie, the basical general linear model).  Alternatively, if the user specified the \code{lavaan} package should estimate that ACE model, the output is a \code{lavaan} object.
 #' 
-#' @return An S4 object of \code{\link{AceEstimate-class}}.
+#' @return An S4 object of [AceEstimate-class()].
 #' @author Will Beasley
 #' @keywords ACE
 

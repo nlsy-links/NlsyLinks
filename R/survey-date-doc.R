@@ -16,7 +16,7 @@
 #' @docType data
 #' @format A data frame with 580,752 observations on the following 6 variables.  
 #' \describe{ 
-#'    \item{SubjectTag}{see the variable of the same name in \code{\link{Links79Pair}}} 
+#'    \item{SubjectTag}{see the variable of the same name in [Links79Pair()]} 
 #'    \item{SurveySource}{The location of that subject's survey responses that year.  Values are \code{NoInterview}, \code{Gen1}, \code{Gen2C} or \code{Gen2YA}.}
 #'    \item{SurveyYear}{The year/wave of the survey.} 
 #'    \item{SurveyDate}{The exact date of the administered survey.} 

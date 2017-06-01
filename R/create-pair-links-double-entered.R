@@ -9,7 +9,7 @@
 #' value for the pair, and their two outcome variable values.
 #' 
 #' \code{CreatePairLinksDoubleEnteredWithNoOutcomes} is intended to be a
-#' primarily a helper function for \code{\link{CreateSpatialNeighbours}}.
+#' primarily a helper function for [CreateSpatialNeighbours()].
 #' 
 #' @usage CreatePairLinksDoubleEntered(outcomeDataset, linksPairDataset, outcomeNames, 
 #'    linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, 

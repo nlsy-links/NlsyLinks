@@ -11,8 +11,8 @@
 #' @format A data frame with 24,181 observations on the following 12
 #' variables.  
 #' \describe{ 
-#'    \item{SubjectTag}{see the variable of the same name in \code{\link{Links79Pair}}} 
-#'    \item{ExtendedID}{see the variable of the same name in \code{\link{Links79Pair}}}
+#'    \item{SubjectTag}{see the variable of the same name in [Links79Pair()]} 
+#'    \item{ExtendedID}{see the variable of the same name in [Links79Pair()]}
 #'    \item{Generation}{Indicates if the subject is in generation \code{1} or \code{2}.} 
 #'    \item{Gender}{Indicates if the subject is \code{Male} or \code{Female}.} 
 #'    \item{RaceCohort}{Indicates if the race cohort is \code{Hispanic}, \code{Black} or \code{Nbnh} (*ie*, Non-black, non-hispanic).  This comes from the Gen1 variable \code{R02147.00} and Gen2 variable \code{C00053.00}.} 
