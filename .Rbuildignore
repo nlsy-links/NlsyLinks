@@ -17,9 +17,9 @@ playgrounds/
 outside-data/
 utility/
 ^.*\.o$
-
 DocumentationPeek.pdf
 Article/
 Playgrounds/
 OutsideData/
 UtilityScripts/
+^docs$
