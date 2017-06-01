@@ -17,18 +17,18 @@
 #' @format A data frame with 580,752 observations on the following 6 variables.  
 #' \describe{ 
 #'    \item{SubjectTag}{see the variable of the same name in [Links79Pair()]} 
-#'    \item{SurveySource}{The location of that subject's survey responses that year.  Values are \code{NoInterview}, \code{Gen1}, \code{Gen2C} or \code{Gen2YA}.}
+#'    \item{SurveySource}{The location of that subject's survey responses that year.  Values are `NoInterview`, `Gen1`, `Gen2C` or `Gen2YA`.}
 #'    \item{SurveyYear}{The year/wave of the survey.} 
 #'    \item{SurveyDate}{The exact date of the administered survey.} 
 #'    \item{AgeSelfReportYears}{The subject's age, according to a their own response, or their mother's response.} 
 #'    \item{AgeCalculateYears}{The subject's age, calculated from subtracting their birthday from the interview date.} 
-#'    \item{Age}{The subject's age, which uses \code{AgeCalculateYears} or \code{AgeSelfReportYears} if it's not available.} 
+#'    \item{Age}{The subject's age, which uses `AgeCalculateYears` or `AgeSelfReportYears` if it's not available.} 
 #' }
 #' 
-#' @details The \code{AgeSelfReportYears} and \code{AgeCalculateYears} variables usually agree, but not always.  The \code{Age} variable uses \code{AgeCalculateYears} (or \code{AgeSelfReportYears} when \code{AgeCalculateYears} is missing).
+#' @details The `AgeSelfReportYears` and `AgeCalculateYears` variables usually agree, but not always.  The `Age` variable uses `AgeCalculateYears` (or `AgeSelfReportYears` when `AgeCalculateYears` is missing).
 #' 
 #' The exact *date* of birth isn't public (only the subject's *month* of birth).  To balance the downward bias of two weeks,
-#' theri birthday is set to the 15th day of the month to produce \code{AgeCalculateYears}.  
+#' theri birthday is set to the 15th day of the month to produce `AgeCalculateYears`.  
 #' 
 #' In the Gen2 Child dataset, self-reported age is
 #' stated by month (eg, the child is 38 months old); a constant of 0.5 months has been added to balance the downward bias.  In the Gen2 YA and

@@ -8,10 +8,10 @@
 #' variables/columns.
 #'
 #' NOTE: In Nov 2013, the variable naming scheme changed in order to be more consistent across variables.  For variables
-#' that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an \code{_S1} or \code{_S2}
-#' appended to it.  For instance, the variables \code{LastSurvey_S1} and \code{LastSurvey_S2} correspond to the last surveys completed
+#' that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an `_S1` or `_S2`
+#' appended to it.  For instance, the variables `LastSurvey_S1` and `LastSurvey_S2` correspond to the last surveys completed
 #' by the pair's first and second subject, respectively.  Similarly, the functions [CreatePairLinksDoubleEntered()] and
-#' [CreatePairLinksSingleEntered()] now by default append \code{_S1} and \code{_S2}, instead of \code{_1} and \code{_2}.  However this can be
+#' [CreatePairLinksSingleEntered()] now by default append `_S1` and `_S2`, instead of `_1` and `_2`.  However this can be
 #' modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters.
 #'
 #' @details Specifies the relatedness coefficient (ie, '*R*') between subjects in the
@@ -19,7 +19,7 @@
 #' extended family with \eqn{k} subjects will have \eqn{k}(\eqn{k}-1)/2 rows.
 #' Typically, Subject1 is older while Subject2 is younger.
 #'
-#' \code{RelationshipPath} variable.  Code written using this dataset should
+#' `RelationshipPath` variable.  Code written using this dataset should
 #' NOT assume it contains only Gen2 sibiling pairs.  See an example of
 #' filtering the relationship category in the in [Links79Pair()]
 #' documentation.
@@ -67,13 +67,13 @@
 #' \item{SubjectTag_S1}{see the variable of the same name in [Links79Pair()]}
 #' \item{SubjectTag_S2}{see the variable of the same name in [Links79Pair()]}
 #' \item{R}{see the variable of the same name in [Links79Pair()]}
-#' \item{RFull}{This is a superset of \code{R}.  This includes all the *R* values we estimated, while \code{R} (i.e., the variable above) excludes values like *R*=0 for \code{Gen1Housemates}, and the associated relationships based on this *R* value (i.e., \code{Gen2Cousin}s and \code{AuntNiece}s).}
+#' \item{RFull}{This is a superset of `R`.  This includes all the *R* values we estimated, while `R` (i.e., the variable above) excludes values like *R*=0 for `Gen1Housemates`, and the associated relationships based on this *R* value (i.e., `Gen2Cousin`s and `AuntNiece`s).}
 #' \item{RelationshipPath}{see the variable of the same name in [Links79Pair()]}
-#' \item{EverSharedHouse}{Indicate if the pair likely live in the same house.  This is \code{TRUE} for \code{Gen1Housemates}, \code{Gen2Siblings}, and \code{ParentChild}. This is \code{FALSE} for \code{AuntNiece} and \code{Gen2Cousins}}
+#' \item{EverSharedHouse}{Indicate if the pair likely live in the same house.  This is `TRUE` for `Gen1Housemates`, `Gen2Siblings`, and `ParentChild`. This is `FALSE` for `AuntNiece` and `Gen2Cousins`}
 
-#####  ' %\item{\code{MultipleBirth}}{Indicates if the pair are twins (or triplets). This variable is a factor, with levels \code{No}=0, \code{Twin}=2, \code{Triplet}=3, \code{DoNotKnow}=255.}
+#####  ' %\item{`MultipleBirth`}{Indicates if the pair are twins (or triplets). This variable is a factor, with levels `No`=0, `Twin`=2, `Triplet`=3, `DoNotKnow`=255.}
 
-#' \item{IsMz}{Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels \code{No}=0, \code{Yes}=1, \code{DoNotKnow}=255.}
+#' \item{IsMz}{Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels `No`=0, `Yes`=1, `DoNotKnow`=255.}
 #' \item{LastSurvey_S1}{The year of Subject1's most recently completed survey. This may be different that the survey's administration date.}
 #' \item{LastSurvey_S2}{The year of Subject2's most recently completed survey. This may be different that the survey's administration date.}
 #' \item{RImplicitPass1}{The pair's *R* coefficient, using only implicit information.  Interpolation was NOT used.}
@@ -83,9 +83,9 @@
 #' \item{RExplicit}{The pair's *R* coefficient, using only explicit information.  Interpolation was used.}
 #' \item{RExplicitOlderSibVersion}{The pair's *R* coefficient, according to the explicit item responses of the older sibling.}
 #' \item{RExplicitYoungerSibVersion}{The pair's *R* coefficient, according to the explicit item responses of the younger sibling.}
-#' \item{RPass1}{The pair's estimated *R* coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable \code{R} is identically constructed, but it did use interpolation.}
-#' \item{Generation_S1}{The generation of the first subject.  Values for Gen1 and Gen2 are \code{1} and \code{2}, respectively.}
-#' \item{Generation_S2}{The generation of the second subject.  Values for Gen1 and Gen2 are \code{1} and \code{2}, respectively.}
+#' \item{RPass1}{The pair's estimated *R* coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable `R` is identically constructed, but it did use interpolation.}
+#' \item{Generation_S1}{The generation of the first subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively.}
+#' \item{Generation_S2}{The generation of the second subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively.}
 #' \item{SubjectID_S1}{The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).}
 #' \item{SubjectID_S2}{The ID value assigned by NLS to the second subject.}
 #' \item{MathStandardized_S1}{The PIAT-Math score for Subject1.  See [ExtraOutcomes79()] for more information about its source.}

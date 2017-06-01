@@ -2,14 +2,14 @@
 #' @export
 #' 
 #' @title Validates the schema of datasets containing outcome variables.
-#' @description The \pkg{NlsyLinks} handles a lot of the plumbing code needed to transform extracted NLSY datasets into a format that statistical routines can interpret.  In some cases, a dataset of measured variables is needed, with one row per subject.  This function validates the measured/outcome dataset, to ensure it posses an interpretable schema.  For a specific list of the requirements, see \code{Details} below.
+#' @description The \pkg{NlsyLinks} handles a lot of the plumbing code needed to transform extracted NLSY datasets into a format that statistical routines can interpret.  In some cases, a dataset of measured variables is needed, with one row per subject.  This function validates the measured/outcome dataset, to ensure it posses an interpretable schema.  For a specific list of the requirements, see `Details` below.
 #' 
 #' @usage ValidateOutcomeDataset(dsOutcome, outcomeNames)
 #' 
 #' @param dsOutcome A [base::data.frame()] with the measured variables
 #' @param outcomeNames The column names of the measure variables that eventually will be used by a statistical procedure.
 #' 
-#' @details The \code{dsOutcome} parameter must:
+#' @details The `dsOutcome` parameter must:
 #' \enumerate{
 #'    \item Have a non-missing value.
 #'    \item Contain at least one row.
@@ -18,14 +18,14 @@
 #'    \item Have the SubjectTag column where all values are unique (ie, two rows/subjects cannot have the same value).
 #' }
 #' 
-#' The \code{outcomeNames} parameter must:
+#' The `outcomeNames` parameter must:
 #' \enumerate{
 #'    \item Have a non-missing value
-#'    \item Contain only column names that are present in the \code{dsOutcome} data frame.
+#'    \item Contain only column names that are present in the `dsOutcome` data frame.
 #' }
 #' 
 #' @return
-#' Returns \code{TRUE} if the validation passes.
+#' Returns `TRUE` if the validation passes.
 #' Returns an error (and associated descriptive message) if it false.
 #' @author Will Beasley
 #' 

@@ -4,8 +4,8 @@
 #'
 #' @description For certain analyses, the pairs links (which can be considered a type of
 #' sparse matrix) need to be symmetric. For instance, if there is a row for
-#' Subjects 201 and 202 with \code{R}=0.5, there should be a second row for
-#' Subjects 202 and 201 with \code{R}=0.5.
+#' Subjects 201 and 202 with `R`=0.5, there should be a second row for
+#' Subjects 202 and 201 with `R`=0.5.
 #'
 #' This validation function is useful to some types of DF methods and some
 #' spatially-inspired methods.
@@ -13,7 +13,7 @@
 #'
 #' @param linksPair The [base::data.frame()] object that should be
 #' symmetric
-#' @return Returns \code{TRUE} if symmetric.  Throw an error with
+#' @return Returns `TRUE` if symmetric.  Throw an error with
 #' [base::stop()] if asymmetric.
 #' @author Will Beasley
 #' @seealso [CreatePairLinksDoubleEntered()]

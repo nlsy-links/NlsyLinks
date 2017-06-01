@@ -12,10 +12,10 @@
 #' and Young Adults sample (\url{http://www.bls.gov/nls/nlsy79ch.htm}).
 #'
 #' The release version is available through \href{https://cran.r-project.org/package=NlsyLinks}{CRAN} by
-#' running \code{install.packages('NlsyLinks')}.
+#' running `install.packages('NlsyLinks')`.
 #' The most recent development version is available through \href{https://github.com/LiveOak/NlsyLinks}{GitHub} by
 #' running
-#' \code{devtools::install_github} \code{(repo = 'LiveOak/NlsyLinks')}
+#' `devtools::install_github` `(repo = 'LiveOak/NlsyLinks')`
 #' (make sure \href{https://cran.r-project.org/package=devtools}{devtools} is already installed).
 #' If you're having trouble with the package, please install the development version.  If this doesn't solve
 #' your problem, please create a \href{https://github.com/LiveOak/NlsyLinks/issues}{new issue}, or email Will.

@@ -8,22 +8,22 @@
 #'
 #' @param dsDirty This is the [base::data.frame()] to be cleaned.
 #' @param dsGroupSummary The [base::data.frame()] containing information about which groups should be included in the analyses.  It should be created by the [RGroupSummary()] function.
-#' @param oName_S1 The name of the manifest variable (in \code{dsDirty}) for the first subject in each pair.
-#' @param oName_S2 The name of the manifest variable (in \code{dsDirty}) for the second subject in each pair.
-#' @param rName The name of the variable (in \code{dsDirty}) indicating the pair's relatedness coefficient.
+#' @param oName_S1 The name of the manifest variable (in `dsDirty`) for the first subject in each pair.
+#' @param oName_S2 The name of the manifest variable (in `dsDirty`) for the second subject in each pair.
+#' @param rName The name of the variable (in `dsDirty`) indicating the pair's relatedness coefficient.
 #'
-#' @details The function takes \code{dsDirty} and produces a new [base::data.frame()] with the following features:
+#' @details The function takes `dsDirty` and produces a new [base::data.frame()] with the following features:
 #'
-#' [A] Only three existing columns are retained: \code{O1}, \code{O2}, and \code{R}.  They are assigned these names.
+#' [A] Only three existing columns are retained: `O1`, `O2`, and `R`.  They are assigned these names.
 #'
-#' [B] A new column called \code{GroupID} is created to reflect their group membership (which is based on the \code{R} value).  These valuesa re sequential integers, starting at 1.  The group with the weakest \code{R} is 1.  The group with the strongest \code{R} has the largest \code{GroupID} (this is typically the MZ tiwns).
+#' [B] A new column called `GroupID` is created to reflect their group membership (which is based on the `R` value).  These valuesa re sequential integers, starting at 1.  The group with the weakest `R` is 1.  The group with the strongest `R` has the largest `GroupID` (this is typically the MZ tiwns).
 #'
-#' [C] Any row is excluded if it has a missing data point for \code{O1}, \code{O2}, or \code{R}.
+#' [C] Any row is excluded if it has a missing data point for `O1`, `O2`, or `R`.
 #'
-#' [D] The [base::data.frame()] is sorted by the \code{R} value.  This helps program against the multiple-group SEM API sometimes.
+#' [D] The [base::data.frame()] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
 #'
 #'@return A [base::data.frame()] with one row per subject pair.  The [base::data.frame()] contains the following variables (which can NOT be changed by the user through optional parameters):
-#' \item{R}{The pair's \code{R} value.}
+#' \item{R}{The pair's `R` value.}
 #' \item{O1}{The outcome variable for the first subject in each pair.}
 #' \item{O2}{The outcome variable for the second subject in each pair.}
 #' \item{GroupID}{ Indicates the pair's group membership.}

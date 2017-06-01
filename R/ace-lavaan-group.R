@@ -2,15 +2,15 @@
 #'
 #' @export
 #' @description This function uses the \pkg{lavaan} package to estimate a univariate ACE model, using multiple groups.
-#' Each group has a unique value of \code{R} (i.e., the *R*elatedness coefficient).
+#' Each group has a unique value of `R` (i.e., the *R*elatedness coefficient).
 #' @usage AceLavaanGroup(dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE)
 #'
-#' @param dsClean The [base::data.frame()] containing complete cases for the \code{R} groups to be included in the estimation.
+#' @param dsClean The [base::data.frame()] containing complete cases for the `R` groups to be included in the estimation.
 #' @param estimateA Should the *A* variance component be estimated?  A^2 represents the proportion of variability due to a shared genetic influence.
 #' @param estimateC Should the *C* variance component be estimated?  C^2 represents the proportion of variability due to a shared environmental influence.
 #' @param printOutput Indicates if the estimated parameters and fit statistics are printed to the console.
 #'
-#' @details The variance component for *E* is always estimated, while the *A* and *C* estimates can be fixed to zero (when \code{estimateA} and/or *estimateC* are set to \code{FALSE}).
+#' @details The variance component for *E* is always estimated, while the *A* and *C* estimates can be fixed to zero (when `estimateA` and/or *estimateC* are set to `FALSE`).
 #' @return An [AceEstimate] object.
 #' @references The \pkg{lavaan} package is developed by Yves Rosseel at Ghent University.
 #' Three good starting points are the package home page (\url{http://lavaan.ugent.be/}), the documentation (\url{https://cran.r-project.org/package=lavaan})
@@ -18,7 +18,7 @@
 #'
 #' Rosseel, Yves (2012), \href{http://www.jstatsoft.org/v48/i02/}{lavaan: An R Package for Structural Equation Modeling}. *Journal of Statistical Software, 48*, (2), 1-36.
 #' @author Will Beasley
-#' @note Currently, the variables in \code{dsClean} must be named \code{O1}, \code{O2} and \code{R}; the letter 'O' stands for *O*utcome.  This may not be as restrictive as it initially seems, because \code{dsClean} is intented to be produced by [CleanSemAceDataset()].  If this is too restrictive for your uses, we'd like to here about it (*please email wibeasley at hotmail period com*).
+#' @note Currently, the variables in `dsClean` must be named `O1`, `O2` and `R`; the letter 'O' stands for *O*utcome.  This may not be as restrictive as it initially seems, because `dsClean` is intented to be produced by [CleanSemAceDataset()].  If this is too restrictive for your uses, we'd like to here about it (*please email wibeasley at hotmail period com*).
 #' @seealso [CleanSemAceDataset()].  Further ACE model details are discussed in our package's \href{https://cran.r-project.org/package=NlsyLinks}{vignettes}.
 #' @keywords ACE
 #' @examples

@@ -17,20 +17,20 @@
 #'
 #' @param method The specific estimation technique.
 #' @param dataSet The [base::data.frame()] that contains the two outcome
-#' variables and the relatedness coefficient (corresponding to \code{oName_S1},
-#' \code{oName_S2}, and \code{rName})
+#' variables and the relatedness coefficient (corresponding to `oName_S1`,
+#' `oName_S2`, and `rName`)
 #' @param oName_S1 The name of the outcome variable corresponding to the first
-#' subject in the pair. This should be a \code{character} value.
+#' subject in the pair. This should be a `character` value.
 #' @param oName_S2 The name of theoutcome variable corresponding to the second
-#' subject in the pair. This should be a \code{character} value.
+#' subject in the pair. This should be a `character` value.
 #' @param rName The name of the relatedness coefficient for the pair (this is
-#' typically abbreviated as \code{R}). This should be a \code{character}
+#' typically abbreviated as `R`). This should be a `character`
 #' value.
 #' @param manifestScale Currently, only *continuous* manifest/outcome variables
 #' are supported.
-#' @return Currently, a list is returned with the arguments \code{ASquared},
-#' \code{CSquared}, \code{ESquared}, and \code{RowCount}.  In the future, this
-#' may be changed to an \code{S4} class.
+#' @return Currently, a list is returned with the arguments `ASquared`,
+#' `CSquared`, `ESquared`, and `RowCount`.  In the future, this
+#' may be changed to an `S4` class.
 #'
 #' @details
 #' The [AceUnivariate()] function is a wrapper that calls

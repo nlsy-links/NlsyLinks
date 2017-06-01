@@ -13,12 +13,12 @@
 #' @details The function does seven things.
 #' \enumerate{
 #'  \item Reads the CSV into a [base::data.frame()].
-#'  \item Checks that the NLSY variables \code{C00001.00} and \code{C00002.00} exist in the [base::data.frame()].
-#'  \item The NLSY variable \code{C00001.00} is renamed \code{SubjectID}.
-#'  \item A variable named \code{Generation} is given a value of 2 for all subjects.
-#'  \item The \code{SubjectTag} variable is created.
-#'  \item The NLSY variable \code{C00002.00} is multiplied by 100 and renamed \code{SubjectTagOfMother}.
-#'  \item The NLSY variable \code{R00001.49} (ie, their Mother's \code{HHID} is attached to each Gen2 record).
+#'  \item Checks that the NLSY variables `C00001.00` and `C00002.00` exist in the [base::data.frame()].
+#'  \item The NLSY variable `C00001.00` is renamed `SubjectID`.
+#'  \item A variable named `Generation` is given a value of 2 for all subjects.
+#'  \item The `SubjectTag` variable is created.
+#'  \item The NLSY variable `C00002.00` is multiplied by 100 and renamed `SubjectTagOfMother`.
+#'  \item The NLSY variable `R00001.49` (ie, their Mother's `HHID` is attached to each Gen2 record).
 #' }
 #' 
 #' @author Will Beasley

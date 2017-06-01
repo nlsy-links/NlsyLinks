@@ -5,7 +5,7 @@
 #'
 #' @title Creates a pairs linking file.
 #' @description Creates a linking file for BG designs using this file structure (e.g., DF analysis, other ACE modeling).
-#' A DF analysis requires a double-entered file that contains the \code{R}
+#' A DF analysis requires a double-entered file that contains the `R`
 #' value for the pair, and their two outcome variable values.
 #'
 #' [CreatePairLinksDoubleEnteredWithNoOutcomes()] is intended to be a
@@ -23,15 +23,15 @@
 #'     linksNames = c("ExtendedID", "R", "RelationshipPath"))
 #'
 #' @param outcomeDataset A data frame containing the outcome variable(s)
-#' @param linksPairDataset A data frame containing the \code{SubjectTag}s of
-#' each subject in the pair and their \code{R} coefficient.
+#' @param linksPairDataset A data frame containing the `SubjectTag`s of
+#' each subject in the pair and their `R` coefficient.
 #' @param outcomeNames The column names of the outcome variable(s)
 #' @param linksNames The column names desired to be prseent in the newly
-#' created data frame.  \code{SubjectTag_S1} and \code{SubjectTag_S2} are included
+#' created data frame.  `SubjectTag_S1` and `SubjectTag_S2` are included
 #' automatically.
 #' @param validateOutcomeDataset Indicates if characteristics of the outcomeDataset should be validated.
-#' @param subject1Qualifier Indicates how the outcome variable for the pair's first subject is distinguished from the other subject.  The default is \code{_S1}.
-#' @param subject2Qualifier Indicates how the outcome variable for the pair's second subject is distinguished from the other subject.  The default is \code{_S2}.
+#' @param subject1Qualifier Indicates how the outcome variable for the pair's first subject is distinguished from the other subject.  The default is `_S1`.
+#' @param subject2Qualifier Indicates how the outcome variable for the pair's second subject is distinguished from the other subject.  The default is `_S2`.
 #' @author Will Beasley
 #' @references For more information about a DF analysis, see Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}

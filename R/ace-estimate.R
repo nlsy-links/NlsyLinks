@@ -8,7 +8,7 @@
 #' show,AceEstimate-method GetDetails,AceEstimate-method
 #' @docType class
 #'
-#' @note The contents of the \code{Details} list depends on the underlying
+#' @note The contents of the `Details` list depends on the underlying
 #' estimation routine.  For example, when the ACE model is estimated with a DF
 #' analysis, the output is an [stats::lm()] object, because the [stats::lm()] function
 #' was used (ie, the basical general linear model).  Alternatively, if the
@@ -110,14 +110,14 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 #' @export GetDetails
 #' @exportMethod GetDetails
 #' @docType methods
-#' @title A generic function for extracting the \code{Details} slot of an object.
+#' @title A generic function for extracting the `Details` slot of an object.
 #'
-#' @description A generic function for extracting the \code{Details} slot of an [AceEstimation] object.
+#' @description A generic function for extracting the `Details` slot of an [AceEstimation] object.
 # '
 #For examples see https://r-forge.r-project.org/scm/viewvc.php/pkg/lme4/man/lmList-class.Rd?view=markup&revision=2&root=lme4&pathrev=452
 # ' @section Methods
 # '  \describe{
-# '   \item{GetDetails}{\code{signature(object="AceEstimate")}: Extracts the \code{Details} slot of an [AceEstimation] object.}
+# '   \item{GetDetails}{`signature(object="AceEstimate")`: Extracts the `Details` slot of an [AceEstimation] object.}
 # '  }
 #' @author Will Beasley
 #' @keywords methods

@@ -11,19 +11,19 @@
 #'
 #' @details There is one row per unique pair of subjects, *respecting order*.  This has twice as many rows as [Links79Pair()] and [Links79PairExpanded()] (which have one row per unique pair of subjects, *irrespective of order*).
 #'
-#' [CreateSpatialNeighbours()] accepts any paired relationships in a [base::data.frame()], as long as it contains the columns \code{SubjectTag_S1}, \code{SubjectTag_S2}, and \code{R}.  See [Links79Pair()] for more details about these columns.
+#' [CreateSpatialNeighbours()] accepts any paired relationships in a [base::data.frame()], as long as it contains the columns `SubjectTag_S1`, `SubjectTag_S2`, and `R`.  See [Links79Pair()] for more details about these columns.
 #'
 #' @return An S3 [spdep::spatial.neighbours] object to work with functions in the \pkg{spdep} package.
 #'
-#' \code{SubjectTag_S1} is renamed '\code{from}'.
+#' `SubjectTag_S1` is renamed '`from`'.
 #'
-#' \code{SubjectTag_S2} is renamed '\code{to}'.
+#' `SubjectTag_S2` is renamed '`to`'.
 #'
-#' \code{R} is renamed '\code{weight}'.
+#' `R` is renamed '`weight`'.
 #'
-#' The attribute \code{region.id} specifies each unique SubjectTag.
+#' The attribute `region.id` specifies each unique SubjectTag.
 #'
-#' The attribue \code{n} specifies the number of unique subjects.
+#' The attribue `n` specifies the number of unique subjects.
 #'
 #' @references
 #'

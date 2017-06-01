@@ -9,8 +9,8 @@
 #' \describe{ 
 #' \item{SubjectTag}{The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).} 
 #' \item{SubjectID}{The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).}
-#' \item{Generation}{The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a  \code{factor} (in constrast with data frames like
-#'    [Links79Pair()]).  This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a \code{factor}.} 
+#' \item{Generation}{The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a  `factor` (in constrast with data frames like
+#'    [Links79Pair()]).  This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a `factor`.} 
 #' \item{HeightZGenderAge}{The subject's height, standardized by gender and age (see Details).} 
 #' \item{WeightZGenderAge}{The subject's weight, standardized by gender and age (see Details).} 
 #' \item{AfqtRescaled2006Gaussified}{Armed Forces Qualification Test Score (Gen1 only; see Details).} 
@@ -25,18 +25,18 @@
 #' (\url{https://www.nlsinfo.org/investigator/}).
 #' 
 #' @details 
-#' The \code{SubjectTag} variable uniquely identify subjects.  For Gen2
+#' The `SubjectTag` variable uniquely identify subjects.  For Gen2
 #' subjects, the SubjectTag is identical to their CID (ie, C00001.00 -the
 #' SubjectID assigned in the NLSY79-Children files).  However for Gen1
 #' subjects, the SubjectTag is their CaseID (ie, R00001.00), with "00"
 #' appended.  This manipulation is necessary to identify subjects uniquely in
 #' inter-generational datasets.  A Gen1 subject with an ID of 43 has a
-#' \code{SubjectTag} of 4300.  The SubjectTags of her four children remain
+#' `SubjectTag` of 4300.  The SubjectTags of her four children remain
 #' 4301, 4302, 4303, and 4304.
 #' 
-#' For Gen2, an NLSY79 variable of \code{MathStandardized} is C05801.00.
+#' For Gen2, an NLSY79 variable of `MathStandardized` is C05801.00.
 #' 
-#' \code{Afi} and \code{Afm}, values were simplified
+#' `Afi` and `Afm`, values were simplified
 #' (to one value per subject) by Kelly Meredith in Sept 2010.
 #' 
 #' The variables for height and weight were manipulated in R files available in a 

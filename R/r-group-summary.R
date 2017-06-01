@@ -11,19 +11,19 @@
 #' @param ds The [base::data.frame()] containing the following variables:
 #' @param oName_S1 The name of the outcome variable corresponding to the first subject in the pair.
 #' @param oName_S2 The name of the outcome variable corresponding to the first subject in the pair.
-#' @param rName The name of the variable specifying the pair's \code{Relatedness} coefficient.
+#' @param rName The name of the variable specifying the pair's `Relatedness` coefficient.
 #' @param determinantThreshold The minimum value the covariance matrix's determinant (for the group) should exceed to be considered Positive Definite.
 #' 
-#' @details This function isn't specific to an ACE model and groups defined by \code{R}.  It could be applied to any multiple-group SEM with two manifest/outcome variables.  In the future, we may generalize it beyond two manifest variables.
+#' @details This function isn't specific to an ACE model and groups defined by `R`.  It could be applied to any multiple-group SEM with two manifest/outcome variables.  In the future, we may generalize it beyond two manifest variables.
 #' 
 #' To get summary stats for the entire sample, create a dummy indicator variable that assigns everyone to the same group.  See the second example below.
 #' 
 #' The default determinantThreshold value is nonzero, in order to forgive slight numerical inaccuracies caused by fixed-precision arithmetic.
 #' 
 #' @return A [base::data.frame()] with one row per group.  The [base::data.frame()] contains the following variables:
-#' \item{ R }{ The group's \code{R} value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the \code{rName} argument.}
+#' \item{ R }{ The group's `R` value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the `rName` argument.}
 #' \item{ Included }{ Indicates if the group should be included in a multiple-group SEM.}
-#' \item{ PairCount }{ The number of pairs in the group with *complete* data for \code{R} and the two outcome/manifest variables.}
+#' \item{ PairCount }{ The number of pairs in the group with *complete* data for `R` and the two outcome/manifest variables.}
 #' \item{ O1Mean }{ The mean (of the outcome variable) among the group's first members, excluding the missing values. }
 #' \item{ O2Mean }{ The mean (of the outcome variable) among the group's second members, excluding the missing values. }
 #' \item{ O1Variance }{ The variance (of the outcome variable) among the group's first members. }
