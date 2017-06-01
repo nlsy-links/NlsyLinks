@@ -19,7 +19,7 @@
 ##' \code{Subect2Tag}, (3) \code{R}, and (4) \code{MultipleBirth}.  They must
 ##' have a \code{numeric} mode/datatype.
 ##' 
-##' @param linksPair The \code{data.frame} to validate.
+##' @param linksPair The [base::data.frame()] to validate.
 ##' @return Returns \code{TRUE} if the validation passes. Returns an error (and
 ##' associated descriptive message) if it false.
 ##' @seealso [Links79Pair()], [Links79PairExpanded()],

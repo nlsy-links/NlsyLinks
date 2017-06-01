@@ -5,15 +5,15 @@
 #' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a [base::data.frame()]) to represent neigbours.
 #' @usage  CreateSpatialNeighbours(linksPairsDoubleEntered)
 ## CreateSpatialNeighbours79Gen2()
-#' @param linksPairsDoubleEntered A \code{data.frame} containing the links, preferably created by a function like
+#' @param linksPairsDoubleEntered A [base::data.frame()] containing the links, preferably created by a function like
 #'
 #' [CreatePairLinksDoubleEntered()].
 #'
 #' @details There is one row per unique pair of subjects, *respecting order*.  This has twice as many rows as [Links79Pair()] and [Links79PairExpanded()] (which have one row per unique pair of subjects, *irrespective of order*).
 #'
-#' \code{CreateSpatialNeighbours} accepts any paired relationships in a \code{data.frame}, as long as it contains the columns \code{SubjectTag_S1}, \code{SubjectTag_S2}, and \code{R}.  See [Links79Pair()] for more details about these columns.
+#' [CreateSpatialNeighbours()] accepts any paired relationships in a [base::data.frame()], as long as it contains the columns \code{SubjectTag_S1}, \code{SubjectTag_S2}, and \code{R}.  See [Links79Pair()] for more details about these columns.
 #'
-#' @return An S3 \code{spatial.neighbours} object to work with functions in the \pkg{spdep} package.
+#' @return An S3 [spdep::spatial.neighbours] object to work with functions in the \pkg{spdep} package.
 #'
 #' \code{SubjectTag_S1} is renamed '\code{from}'.
 #'
@@ -38,7 +38,7 @@
 #' The \pkg{spdep} package documentation: \href{https://cran.r-project.org/package=spdep}{spdep: Spatial dependence: weighting schemes, statistics and models}.
 #'
 #' @author Will Beasley and  David Bard
-#' @note Notice the British variant of 'neighbo*u*rs' is used, to be consistent with the \code{spatial.neighbour} class in the  \href{https://cran.r-project.org/package=spdep}{\code{spdep}} package.
+#' @note Notice the British variant of 'neighbo*u*rs' is used, to be consistent with the [spdep::spatial.neighbour] class.
 #' @examples
 #' dsLinksAll <- Links79Pair
 #' dsLinksGen1Housemates <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen1Housemates", ]

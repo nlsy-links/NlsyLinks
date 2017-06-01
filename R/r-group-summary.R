@@ -8,7 +8,7 @@
 #' If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM. 
 #' @usage RGroupSummary(ds, oName_S1, oName_S2, rName, determinantThreshold=1e-5)
 #' 
-#' @param ds The \code{data.frame} containing the following variables:
+#' @param ds The [base::data.frame()] containing the following variables:
 #' @param oName_S1 The name of the outcome variable corresponding to the first subject in the pair.
 #' @param oName_S2 The name of the outcome variable corresponding to the first subject in the pair.
 #' @param rName The name of the variable specifying the pair's \code{Relatedness} coefficient.
@@ -20,7 +20,7 @@
 #' 
 #' The default determinantThreshold value is nonzero, in order to forgive slight numerical inaccuracies caused by fixed-precision arithmetic.
 #' 
-#' @return A \code{data.frame} with one row per group.  The \code{data.frame} contains the following variables:
+#' @return A [base::data.frame()] with one row per group.  The [base::data.frame()] contains the following variables:
 #' \item{ R }{ The group's \code{R} value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the \code{rName} argument.}
 #' \item{ Included }{ Indicates if the group should be included in a multiple-group SEM.}
 #' \item{ PairCount }{ The number of pairs in the group with *complete* data for \code{R} and the two outcome/manifest variables.}

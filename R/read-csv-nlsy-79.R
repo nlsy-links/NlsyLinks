@@ -3,17 +3,17 @@
 #' @export ReadCsvNlsy79Gen1 ReadCsvNlsy79Gen2
 #' 
 #' @title Read a CSV file downloaded from the NLS Investigator
-#' @description The function accepts a (file path to) CSV file and creates a \code{data.frame}.  The \code{data.frame} is modified and augmented with columns to assist later routines.
+#' @description The function accepts a (file path to) CSV file and creates a [base::data.frame()].  The [base::data.frame()] is modified and augmented with columns to assist later routines.
 #' 
 #' @param filePath A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or Linux.
 #' @param dsExtract A 'data.frame' (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.
 #' 
-#' @return A \code{data.frame} to facililate biometric analysis.
+#' @return A [base::data.frame()] to facililate biometric analysis.
 #' 
 #' @details The function does seven things.
 #' \enumerate{
-#'  \item Reads the CSV into a \code{data.frame}.
-#'  \item Checks that the NLSY variables \code{C00001.00} and \code{C00002.00} exist in the \code{data.frame}.
+#'  \item Reads the CSV into a [base::data.frame()].
+#'  \item Checks that the NLSY variables \code{C00001.00} and \code{C00002.00} exist in the [base::data.frame()].
 #'  \item The NLSY variable \code{C00001.00} is renamed \code{SubjectID}.
 #'  \item A variable named \code{Generation} is given a value of 2 for all subjects.
 #'  \item The \code{SubjectTag} variable is created.
