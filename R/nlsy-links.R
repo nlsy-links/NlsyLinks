@@ -39,7 +39,7 @@
 #'
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and
 #' simplifying the DF analysis model.}
-#' \emph{Behavior Genetics, 35} (2), 211-217.
+#' *Behavior Genetics, 35* (2), 211-217.
 #'
 #' Rodgers, J.L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W.B. (2008).
 #' \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing
@@ -58,15 +58,15 @@
 #'
 #' Cleveland, H.H., Wiebe, R.P., van den Oord, E.J.C.G., & Rowe, D.C. (2000).
 #' \href{http://www.ncbi.nlm.nih.gov/pubmed/10953940}{Behavior problems among children from different family structures: The
-#' influence of genetic self-selection.} \emph{Child Development, 71}, 733-751.
+#' influence of genetic self-selection.} *Child Development, 71*, 733-751.
 #'
 #' Rodgers, J.L., Rowe, D.C., & Buster, M. (1999). \href{http://www.ncbi.nlm.nih.gov/pubmed/10081235}{Nature, nurture, and first
 #' sexual intercourse in the USA: Fitting behavioural genetic models to NLSY
-#' kinship data.} \emph{Journal of Biosocial Sciences, 31}.
+#' kinship data.} *Journal of Biosocial Sciences, 31*.
 #'
 #' Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{http://psycnet.apa.org/journals/dev/30/3/374/}{Beyond nature versus nurture:
 #' DF analysis of nonshared influences on problem behaviors.}
-#' \emph{Developmental Psychology, 30}, 374-384.
+#' *Developmental Psychology, 30*, 374-384.
 #' @keywords package
 #' @examples
 #'

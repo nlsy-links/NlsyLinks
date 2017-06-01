@@ -49,15 +49,15 @@
 #' \eqn{k}(\eqn{k}-1)/2 rows.  Typically, Subject1 is older while Subject2 is
 #' younger.
 #' 
-#' MZ twins have \emph{R}=1.  DZ twins and full-siblings have \emph{R}=.5.
-#' Half-siblings have \emph{R}=.25. Typical first cousins have \emph{R}=.125.
-#' Unrelated subjects have \emph{R}=0 (this occasionally happens for
-#' \code{Gen1Housemates}).  Other \emph{R} coefficients are possible. 
+#' MZ twins have *R*=1.  DZ twins and full-siblings have *R*=.5.
+#' Half-siblings have *R*=.25. Typical first cousins have *R*=.125.
+#' Unrelated subjects have *R*=0 (this occasionally happens for
+#' \code{Gen1Housemates}).  Other *R* coefficients are possible. 
 #' 
-#' There are several other uncommon possibilities, such as half-cousins (\emph{R}=.0625) and 
-#' ambiguous aunt-nieces (\emph{R}=.125). The variable coding for genetic relatedness,\code{R}, in \code{Links79Pair} contains
-#' only the common values of \emph{R} whose groups are likely to have stable estimates.  
-#' However the variable \code{RFull} in \code{Links79PairExpanded} contains all \emph{R} values.
+#' There are several other uncommon possibilities, such as half-cousins (*R*=.0625) and 
+#' ambiguous aunt-nieces (*R*=.125). The variable coding for genetic relatedness,\code{R}, in \code{Links79Pair} contains
+#' only the common values of *R* whose groups are likely to have stable estimates.  
+#' However the variable \code{RFull} in \code{Links79PairExpanded} contains all *R* values.
 #' We strongly recommend using \code{R} in this \code{data.frame}.  Move to 
 #' \code{RFull} (or some combination) only if you have a good reason, and are willing
 #' to carefully monitor a variety of validity checks.  Some of these
@@ -65,9 +65,9 @@
 #' 
 #' Furthermore, some of these groups have members who are more strongly genetically related than their 
 #' items would indicate. For instance, there are 41 Gen1 pairs who explicitly claim they are not biologically related
-#' (\emph{ie}, \code{RExplicit}=0), yet their correlation for Adult Height is \emph{r}=0.24.  This is
+#' (*ie*, \code{RExplicit}=0), yet their correlation for Adult Height is *r*=0.24.  This is
 #' much higher than would be expected for two people sampled randomly; it is nearly identical to 
-#' the \emph{r}=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
+#' the *r*=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
 #' biological parent.
 #' 
 #' @author Will Beasley
@@ -95,10 +95,10 @@
 #' \code{ExtendedID} variable.  This is discussed at
 #' \url{http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm}. 
 #' 
-#' For more information on \emph{R} (\emph{ie}, the Relatedness coefficient), please see 
+#' For more information on *R* (*ie*, the Relatedness coefficient), please see 
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005). 
 #' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
-#' \emph{Behavior Genetics, 35} (2), 211-217.
+#' *Behavior Genetics, 35* (2), 211-217.
 #' 
 #' @source Gen1 information comes from the Summer 2013 release of the
 #' \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information

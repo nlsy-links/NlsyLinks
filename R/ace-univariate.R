@@ -12,8 +12,8 @@
 #' DeFriesFulkerMethod3(dataSet, oName_S1, oName_S2, rName="R")
 #' 
 #' @description An ACE model is the foundation of most behavior genetic research.  It
-#' estimates the additive heritability (with \emph{a}), common environment
-#' (with \emph{c}) and unshared heritability/environment (with \emph{e}).
+#' estimates the additive heritability (with *a*), common environment
+#' (with *c*) and unshared heritability/environment (with *e*).
 #' 
 #' @param method The specific estimation technique.
 #' @param dataSet The \code{data.frame} that contains the two outcome
@@ -26,7 +26,7 @@
 #' @param rName The name of the relatedness coefficient for the pair (this is
 #' typically abbreviated as \code{R}). This should be a \code{character}
 #' value.
-#' @param manifestScale Currently, only \emph{continuous} manifest/outcome variables
+#' @param manifestScale Currently, only *continuous* manifest/outcome variables
 #' are supported.
 #' @return Currently, a list is returned with the arguments \code{ASquared},
 #' \code{CSquared}, \code{ESquared}, and \code{RowCount}.  In the future, this
@@ -40,7 +40,7 @@
 #' @author Will Beasley
 #' @references Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
-#' \emph{Behavior Genetics, 35} (2), 211-217.
+#' *Behavior Genetics, 35* (2), 211-217.
 #' @examples 
 #' library(NlsyLinks) #Load the package into the current R session.
 #' dsOutcomes <- ExtraOutcomes79

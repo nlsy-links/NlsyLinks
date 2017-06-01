@@ -1,7 +1,7 @@
 #' @name RGroupSummary
 #' @export
 #' 
-#' @title Calculates summary statistics for each \emph{R}elatedness Group in the sample.
+#' @title Calculates summary statistics for each *R*elatedness Group in the sample.
 #' 
 #' @description Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.  
 #' 
@@ -23,7 +23,7 @@
 #' @return A \code{data.frame} with one row per group.  The \code{data.frame} contains the following variables:
 #' \item{ R }{ The group's \code{R} value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the \code{rName} argument.}
 #' \item{ Included }{ Indicates if the group should be included in a multiple-group SEM.}
-#' \item{ PairCount }{ The number of pairs in the group with \emph{complete} data for \code{R} and the two outcome/manifest variables.}
+#' \item{ PairCount }{ The number of pairs in the group with *complete* data for \code{R} and the two outcome/manifest variables.}
 #' \item{ O1Mean }{ The mean (of the outcome variable) among the group's first members, excluding the missing values. }
 #' \item{ O2Mean }{ The mean (of the outcome variable) among the group's second members, excluding the missing values. }
 #' \item{ O1Variance }{ The variance (of the outcome variable) among the group's first members. }

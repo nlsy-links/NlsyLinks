@@ -9,7 +9,7 @@
 #' 
 #' \code{\link{CreatePairLinksDoubleEntered}}.
 #' 
-#' @details There is one row per unique pair of subjects, \emph{respecting order}.  This has twice as many rows as \code{\link{Links79Pair}} and \code{\link{Links79PairExpanded}} (which have one row per unique pair of subjects, \emph{irrespective of order}).
+#' @details There is one row per unique pair of subjects, *respecting order*.  This has twice as many rows as \code{\link{Links79Pair}} and \code{\link{Links79PairExpanded}} (which have one row per unique pair of subjects, *irrespective of order*).
 #' 
 #' \code{CreateSpatialNeighbours} accepts any paired relationships in a \code{data.frame}, as long as it contains the columns \code{SubjectTag_S1}, \code{SubjectTag_S2}, and \code{R}.  See \code{\link{Links79Pair}} for more details about these columns.
 #' 
@@ -27,18 +27,18 @@
 #' 
 #' @references 
 #' 
-#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{\emph{Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model}}. Behavior Genetics Association 42nd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}]
+#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*}. Behavior Genetics Association 42nd Annual Meeting. [\href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}]
 #' 
-#' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). \href{http://link.springer.com/book/10.1007/978-1-4614-7618-4}{\emph{Applied Spatial Data Analysis with R.}} New York: Springer. (Especially Chapter 9.)
+#' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). \href{http://link.springer.com/book/10.1007/978-1-4614-7618-4}{*Applied Spatial Data Analysis with R.*} New York: Springer. (Especially Chapter 9.)
 #' 
-#' Banerjee, S., Carlin, B.P., & Gelfand, A.E. (2004). \href{http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C}{\emph{Hierarchical Modeling and Analysis for Spatial Data}}. Boca Raton: CRC Press.
+#' Banerjee, S., Carlin, B.P., & Gelfand, A.E. (2004). \href{http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C}{*Hierarchical Modeling and Analysis for Spatial Data*}. Boca Raton: CRC Press.
 #' 
-#' Lawson, A.B (2013). \href{http://books.google.com/books?id=g7RJEZb1umwC}{\emph{Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition}}. Boca Raton: CRC Press.
+#' Lawson, A.B (2013). \href{http://books.google.com/books?id=g7RJEZb1umwC}{*Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition*}. Boca Raton: CRC Press.
 #' 
 #' The \pkg{spdep} package documentation: \href{https://cran.r-project.org/package=spdep}{spdep: Spatial dependence: weighting schemes, statistics and models}.
 #' 
 #' @author Will Beasley and  David Bard
-#' @note Notice the British variant of 'neighbo\emph{u}rs' is used, to be consistent with the \code{spatial.neighbour} class in the  \href{https://cran.r-project.org/package=spdep}{\code{spdep}} package.
+#' @note Notice the British variant of 'neighbo*u*rs' is used, to be consistent with the \code{spatial.neighbour} class in the  \href{https://cran.r-project.org/package=spdep}{\code{spdep}} package.
 #' @examples
 #' dsLinksAll <- Links79Pair
 #' dsLinksGen1Housemates <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen1Housemates", ]
