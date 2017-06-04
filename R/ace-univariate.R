@@ -1,5 +1,7 @@
 #' @name Ace
+#' 
 #' @aliases AceUnivariate DeFriesFulkerMethod1 DeFriesFulkerMethod3
+#' 
 #' @export AceUnivariate DeFriesFulkerMethod1 DeFriesFulkerMethod3
 #'
 #' @title Estimates the heritability of additive traits using a single variable.
@@ -28,6 +30,7 @@
 #' value.
 #' @param manifestScale Currently, only *continuous* manifest/outcome variables
 #' are supported.
+#' 
 #' @return Currently, a list is returned with the arguments `ASquared`,
 #' `CSquared`, `ESquared`, and `RowCount`.  In the future, this
 #' may be changed to an `S4` class.
@@ -38,9 +41,11 @@
 #' versions will incorporate methods that use latent variable models.
 #'
 #' @author Will Beasley
+#' 
 #' @references Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' [Reformulating and simplifying the DF analysis model.](http://www.springerlink.com/content/n3x1v1q282583366/)
 #' *Behavior Genetics, 35* (2), 211-217.
+#' 
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
 #' dsOutcomes <- ExtraOutcomes79
@@ -66,7 +71,7 @@
 #' class(GetDetails(estimatedMath))
 #' summary(GetDetails(estimatedMath))
 #'
-#'
+
 AceUnivariate <-
 function( method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_S1, oName_S2, rName="R", manifestScale="Continuous" ) {
   #print( length(method) )

@@ -1,4 +1,5 @@
 #' @name ValidatePairLinks
+#'
 #' @export
 #'
 #' @title Validates the schema of a links for pairs of relatives
@@ -19,12 +20,14 @@
 #' have a `numeric` mode/datatype.
 #'
 #' @param linksPair The [base::data.frame] to validate.
-#' @return Returns `TRUE` if the validation passes. Returns an error (and
-#' associated descriptive message) if it false.
+#' 
+#' @return Returns `TRUE` if the validation passes. Returns an error (and associated descriptive message) if it false.
+#' 
 #' @seealso [Links79Pair], [Links79PairExpanded],
+#' 
 #' @keywords validation
+#' 
 #' @examples
-#'
 #' dsSingleLinks <- data.frame(
 #'   ExtendedID=c(1, 1, 1, 2),
 #'   SubjectTag_S1=c(101, 101, 102, 201),
@@ -45,7 +48,6 @@
 #' summary(dsDouble) #Summarize the variables
 #'
 #' ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
-#'
 
 ValidatePairLinks <- function( linksPair ) {
   if(!base::nrow(linksPair) > 0 ) stop("The linksPair data frame should have at least one row, but does not.")

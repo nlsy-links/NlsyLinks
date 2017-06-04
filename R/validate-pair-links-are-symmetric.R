@@ -1,5 +1,7 @@
 #' @name ValidatePairLinksAreSymmetric
+#' 
 #' @export
+#' 
 #' @title Verifies that the pair relationships are symmetric.
 #'
 #' @description For certain analyses, the pairs links (which can be considered a type of
@@ -10,16 +12,17 @@
 #' This validation function is useful to some types of DF methods and some
 #' spatially-inspired methods.
 #'
-#'
-#' @param linksPair The [base::data.frame] object that should be
-#' symmetric
-#' @return Returns `TRUE` if symmetric.  Throw an error with
-#' [base::stop()] if asymmetric.
+#' @param linksPair The [base::data.frame] object that should be symmetric
+#' 
+#' @return Returns `TRUE` if symmetric.  Throw an error with [base::stop()] if asymmetric.
+#' 
 #' @author Will Beasley
+#' 
 #' @seealso [CreatePairLinksDoubleEntered()]
+#' 
 #' @keywords validation
+#' 
 #' @examples
-#'
 #' dsSingleLinks <- data.frame(
 #'   ExtendedID=c(1, 1, 1, 2),
 #'   SubjectTag_S1=c(101, 101, 102, 201),
@@ -40,8 +43,8 @@
 #' summary(dsDouble) #Summarize the variables
 #'
 #' ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
-#'
-#'
+#' 
+
 ValidatePairLinksAreSymmetric <- function( linksPair ) {
   ValidatePairLinks(linksPair)
   for( rowIndex in base::seq_along(base::nrow(linksPair)) ) {

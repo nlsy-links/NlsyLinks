@@ -1,8 +1,11 @@
 #' @name ReadCsvNlsy79
+#' 
 #' @aliases ReadCsvNlsy79Gen1 ReadCsvNlsy79Gen2
+#' 
 #' @export ReadCsvNlsy79Gen1 ReadCsvNlsy79Gen2
 #'
 #' @title Read a CSV file downloaded from the NLS Investigator
+#' 
 #' @description The function accepts a (file path to) CSV file and creates a [base::data.frame].  The [base::data.frame] is modified and augmented with columns to assist later routines.
 #'
 #' @param filePath A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or Linux.
@@ -20,12 +23,13 @@
 #' 1. The NLSY variable `R00001.49` (ie, their Mother's `HHID` is attached to each Gen2 record).
 #'
 #' @author Will Beasley
+#' 
 #' @examples
 #' \dontrun{
 #' filePathGen2 <- "~/Nlsy/Datasets/gen2-birth.csv"
 #' ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 #' }
-#'
+
 ReadCsvNlsy79Gen1 <- function( filePath, dsExtract=utils::read.csv(filePath) ) {
   d <- NlsyLinks::SubjectDetails79
   if( !("R0000100" %in% colnames(dsExtract)) ) stop("The NLSY variable 'R0000100' should be present, but was not found.")

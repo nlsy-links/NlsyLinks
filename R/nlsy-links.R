@@ -3,8 +3,11 @@
 #' @description Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 #'
 #' @docType package
+#' 
 #' @name NlsyLinks-package
+#' 
 #' @aliases NlsyLinks
+#' 
 #' @note This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 #' subjects in the original NLSY79 sample
 #' (http://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
@@ -67,9 +70,10 @@
 #' Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{http://psycnet.apa.org/journals/dev/30/3/374/}{Beyond nature versus nurture:
 #' DF analysis of nonshared influences on problem behaviors.}
 #' *Developmental Psychology, 30*, 374-384.
+#' 
 #' @keywords package
+#' 
 #' @examples
-#'
 #' library(NlsyLinks) #Load the package into the current R session.
 #' summary(Links79Pair)  #Summarize the five variables.
 #' hist(Links79Pair$R)  #Display a histogram of the Relatedness values.
