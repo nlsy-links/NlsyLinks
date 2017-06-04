@@ -2,8 +2,8 @@
 #' @export
 #' @importFrom methods new
 #'
-#' @title Instantiate an [AceEstimate-class()] object.
-#' @description Creates an instance of the `S4` class, `AceEstimate` instantiating arguments set the parameter values estimated by the ACE model.
+#' @title Instantiate an [AceEstimate-class] object.
+#' @description Creates an instance of the `S4` class, [AceEstimate-class] instantiating arguments set the parameter values estimated by the ACE model.
 #'
 #' @usage CreateAceEstimate(aSquared, cSquared, eSquared, caseCount,
 #'   details=list(), unityTolerance = 1e-11)
@@ -17,7 +17,7 @@
 #'
 #' @details The contents of the `details` list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a [stats::lm] object, because the [stats::lm] function was used (ie, the basical general linear model).  Alternatively, if the user specified the `lavaan` package should estimate that ACE model, the output is a [lavaan::lavaan] object.
 #'
-#' @return An S4 object of [AceEstimate-class()].
+#' @return An S4 object of [AceEstimate-class].
 #' @author Will Beasley
 #' @keywords ACE
 

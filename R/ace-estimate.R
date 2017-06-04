@@ -135,7 +135,7 @@ methods::setMethod(f="GetDetails", "AceEstimate",
 #   print(c(ASquared=methods::slot(x, "ASquared"), CSquared=methods::slot(x, "CSquared"), ESquared=methods::slot(x, "ESquared"), CaseCount=methods::slot(x,"CaseCount")))
 #   print(c(a=33, d=43))
 # })
-## ' Generic function for returning the contents from an `AceEstimate` class.
+## ' Generic function for returning the contents from an [AceEstimate-class] class.
 ## '
 ## ' Extract the values
 ## '
