@@ -5,7 +5,7 @@
 #' Each group has a unique value of `R` (i.e., the *R*elatedness coefficient).
 #' @usage AceLavaanGroup(dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE)
 #'
-#' @param dsClean The [base::data.frame()] containing complete cases for the `R` groups to be included in the estimation.
+#' @param dsClean The [base::data.frame] containing complete cases for the `R` groups to be included in the estimation.
 #' @param estimateA Should the *A* variance component be estimated?  A^2 represents the proportion of variability due to a shared genetic influence.
 #' @param estimateC Should the *C* variance component be estimated?  C^2 represents the proportion of variability due to a shared environmental influence.
 #' @param printOutput Indicates if the estimated parameters and fit statistics are printed to the console.

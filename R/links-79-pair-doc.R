@@ -58,7 +58,7 @@
 #' ambiguous aunt-nieces (*R*=.125). The variable coding for genetic relatedness,`R`, in [`Links79Pair`] contains
 #' only the common values of *R* whose groups are likely to have stable estimates.
 #' However the variable `RFull` in [`Links79PairExpanded`] contains all *R* values.
-#' We strongly recommend using `R` in this [base::data.frame()].  Move to
+#' We strongly recommend using `R` in this [base::data.frame].  Move to
 #' `RFull` (or some combination) only if you have a good reason, and are willing
 #' to carefully monitor a variety of validity checks.  Some of these
 #' excluded groups are too small to be estimated reliably.

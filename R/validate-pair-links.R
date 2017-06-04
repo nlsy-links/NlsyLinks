@@ -19,7 +19,7 @@
 ##' `Subect2Tag`, (3) `R`, and (4) `MultipleBirth`.  They must
 ##' have a `numeric` mode/datatype.
 ##' 
-##' @param linksPair The [base::data.frame()] to validate.
+##' @param linksPair The [base::data.frame] to validate.
 ##' @return Returns `TRUE` if the validation passes. Returns an error (and
 ##' associated descriptive message) if it false.
 ##' @seealso [Links79Pair()], [Links79PairExpanded()],

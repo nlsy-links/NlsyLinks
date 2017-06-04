@@ -2,16 +2,16 @@
 #' @export
 #'
 #' @title Distances between related family members, formated for spatial analysis.
-#' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a [base::data.frame()]) to represent neigbours.
+#' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a [base::data.frame]) to represent neigbours.
 #' @usage  CreateSpatialNeighbours(linksPairsDoubleEntered)
 ## CreateSpatialNeighbours79Gen2()
-#' @param linksPairsDoubleEntered A [base::data.frame()] containing the links, preferably created by a function like
+#' @param linksPairsDoubleEntered A [base::data.frame] containing the links, preferably created by a function like
 #'
 #' [CreatePairLinksDoubleEntered()].
 #'
 #' @details There is one row per unique pair of subjects, *respecting order*.  This has twice as many rows as [Links79Pair()] and [Links79PairExpanded()] (which have one row per unique pair of subjects, *irrespective of order*).
 #'
-#' [CreateSpatialNeighbours()] accepts any paired relationships in a [base::data.frame()], as long as it contains the columns `SubjectTag_S1`, `SubjectTag_S2`, and `R`.  See [Links79Pair()] for more details about these columns.
+#' [CreateSpatialNeighbours()] accepts any paired relationships in a [base::data.frame], as long as it contains the columns `SubjectTag_S1`, `SubjectTag_S2`, and `R`.  See [Links79Pair()] for more details about these columns.
 #'
 #' @return An S3 `spdep::spatial.neighbours` object to work with functions in the \pkg{spdep} package.
 #'

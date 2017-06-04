@@ -3,16 +3,16 @@
 #'
 #' @title Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.
 #'
-#' @description This function takes a 'GroupSummary' [base::data.frame()] (which is created by the [RGroupSummary()] function) and returns a [base::data.frame()] that is used by the [Ace()] function.
+#' @description This function takes a 'GroupSummary' [base::data.frame] (which is created by the [RGroupSummary()] function) and returns a [base::data.frame] that is used by the [Ace()] function.
 #' @usage CleanSemAceDataset(dsDirty, dsGroupSummary, oName_S1, oName_S2, rName = "R")
 #'
-#' @param dsDirty This is the [base::data.frame()] to be cleaned.
-#' @param dsGroupSummary The [base::data.frame()] containing information about which groups should be included in the analyses.  It should be created by the [RGroupSummary()] function.
+#' @param dsDirty This is the [base::data.frame] to be cleaned.
+#' @param dsGroupSummary The [base::data.frame] containing information about which groups should be included in the analyses.  It should be created by the [RGroupSummary()] function.
 #' @param oName_S1 The name of the manifest variable (in `dsDirty`) for the first subject in each pair.
 #' @param oName_S2 The name of the manifest variable (in `dsDirty`) for the second subject in each pair.
 #' @param rName The name of the variable (in `dsDirty`) indicating the pair's relatedness coefficient.
 #'
-#' @details The function takes `dsDirty` and produces a new [base::data.frame()] with the following features:
+#' @details The function takes `dsDirty` and produces a new [base::data.frame] with the following features:
 #'
 #' 1. Only three existing columns are retained: `O1`, `O2`, and `R`.  They are assigned these names.
 #'
@@ -20,9 +20,9 @@
 #'
 #' 1. Any row is excluded if it has a missing data point for `O1`, `O2`, or `R`.
 #'
-#' 1. The [base::data.frame()] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
+#' 1. The [base::data.frame] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
 #'
-#'@return A [base::data.frame()] with one row per subject pair.  The [base::data.frame()] contains the following variables (which can NOT be changed by the user through optional parameters):
+#'@return A [base::data.frame] with one row per subject pair.  The [base::data.frame] contains the following variables (which can NOT be changed by the user through optional parameters):
 #' * **R** The pair's `R` value.
 #' * **O1** The outcome variable for the first subject in each pair.
 #' * **O2** The outcome variable for the second subject in each pair.

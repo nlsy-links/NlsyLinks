@@ -11,7 +11,7 @@
 #' spatially-inspired methods.
 #'
 #'
-#' @param linksPair The [base::data.frame()] object that should be
+#' @param linksPair The [base::data.frame] object that should be
 #' symmetric
 #' @return Returns `TRUE` if symmetric.  Throw an error with
 #' [base::stop()] if asymmetric.

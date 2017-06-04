@@ -3,16 +3,16 @@
 #' @export ReadCsvNlsy79Gen1 ReadCsvNlsy79Gen2
 #'
 #' @title Read a CSV file downloaded from the NLS Investigator
-#' @description The function accepts a (file path to) CSV file and creates a [base::data.frame()].  The [base::data.frame()] is modified and augmented with columns to assist later routines.
+#' @description The function accepts a (file path to) CSV file and creates a [base::data.frame].  The [base::data.frame] is modified and augmented with columns to assist later routines.
 #'
 #' @param filePath A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or Linux.
 #' @param dsExtract A 'data.frame' (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.
 #'
-#' @return A [base::data.frame()] to facililate biometric analysis.
+#' @return A [base::data.frame] to facililate biometric analysis.
 #'
 #' @details The function does seven things.
-#' 1. Reads the CSV into a [base::data.frame()].
-#' 1. Checks that the NLSY variables `C00001.00` and `C00002.00` exist in the [base::data.frame()].
+#' 1. Reads the CSV into a [base::data.frame].
+#' 1. Checks that the NLSY variables `C00001.00` and `C00002.00` exist in the [base::data.frame].
 #' 1. The NLSY variable `C00001.00` is renamed `SubjectID`.
 #' 1. A variable named `Generation` is given a value of 2 for all subjects.
 #' 1. The `SubjectTag` variable is created.

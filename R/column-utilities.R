@@ -2,8 +2,8 @@
 #' @aliases VerifyColumnExists RenameColumn RenameNlsyColumn
 #' @export VerifyColumnExists RenameColumn RenameNlsyColumn
 
-#' @title  A collection of functions that helps data management [base::data.frame()]s, particularly those derived from NLSY Extracts.
-#' @description  A collection of functions that helps data management [base::data.frame()]s, particularly those derived from NLSY Extracts.
+#' @title  A collection of functions that helps data management [base::data.frame]s, particularly those derived from NLSY Extracts.
+#' @description  A collection of functions that helps data management [base::data.frame]s, particularly those derived from NLSY Extracts.
 #'
 
 #' @usage VerifyColumnExists( dataFrame, columnName )
@@ -12,8 +12,8 @@
 #'
 #' RenameNlsyColumn( dataFrame, nlsyRNumber, newColumnName )
 #'
-#' @param dataFrame The [base::data.frame()] whose columns are to be verified or renamed.
-#' @param columnName The name of the column to verify is present in the [base::data.frame()].
+#' @param dataFrame The [base::data.frame] whose columns are to be verified or renamed.
+#' @param columnName The name of the column to verify is present in the [base::data.frame].
 #' @param nlsyRNumber The name of the column to change.
 #' @param oldColumnName The name of the column to change.
 #' @param newColumnName The desired name of the column.
@@ -21,7 +21,7 @@
 #' @details The RNumber assigned by the NLS has a pattern.  In the Nlsy79 Gen1 dataset, the names start with a 'R' or 'T' and are followed by seven digits (eg, R0000100).  In the Nlsy79 Gen2 dataset, the names start with 'C' or 'Y' and are followed by seven digits (eg, C0007030, Y1994600).
 #'
 #' In the NLS Investigator, a decimal is present in the RNumber (eg, R00001.00).  When the Investigator saves the dataset as a CSV, the decimal is removed (eg, R0000100).
-#' @return *IMPORTANT* The [RenameColumn()] and [RenameNlsyColumn()] functions do not use side-effects to rename the [base::data.frame()].  Instead, it returns a new [base::data.frame()].  In the example below, notice the assignment to `ds`: `ds <- RenameNlsyColumn(...)`.
+#' @return *IMPORTANT* The [RenameColumn()] and [RenameNlsyColumn()] functions do not use side-effects to rename the [base::data.frame].  Instead, it returns a new [base::data.frame].  In the example below, notice the assignment to `ds`: `ds <- RenameNlsyColumn(...)`.
 #'
 #' The [VerifyColumnExists()] function check that exactly one column exists with the specified `columnName`.  If so, the index of the column is returned.  If not, an exception is thrown.
 #'

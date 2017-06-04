@@ -16,7 +16,7 @@
 #' (with *c*) and unshared heritability/environment (with *e*).
 #'
 #' @param method The specific estimation technique.
-#' @param dataSet The [base::data.frame()] that contains the two outcome
+#' @param dataSet The [base::data.frame] that contains the two outcome
 #' variables and the relatedness coefficient (corresponding to `oName_S1`,
 #' `oName_S2`, and `rName`)
 #' @param oName_S1 The name of the outcome variable corresponding to the first
