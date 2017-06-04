@@ -6,8 +6,15 @@
 #'
 #' @title Estimates the heritability of additive traits using a single variable.
 #'
-#' @usage AceUnivariate(method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"),
-#'   dataSet, oName_S1, oName_S2, rName="R", manifestScale="Continuous")
+#' @usage 
+#' AceUnivariate(
+#'   method         = c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"),
+#'   dataSet, 
+#'   oName_S1, 
+#'   oName_S2, 
+#'   rName          = "R", 
+#'   manifestScale  = "Continuous"
+#' )
 #'
 #' DeFriesFulkerMethod1(dataSet, oName_S1, oName_S2, rName="R")
 #'
@@ -26,14 +33,11 @@
 #' @param oName_S2 The name of theoutcome variable corresponding to the second
 #' subject in the pair. This should be a `character` value.
 #' @param rName The name of the relatedness coefficient for the pair (this is
-#' typically abbreviated as `R`). This should be a `character`
-#' value.
-#' @param manifestScale Currently, only *continuous* manifest/outcome variables
-#' are supported.
+#' typically abbreviated as `R`). This should be a `character` value.
+#' @param manifestScale Currently, only *continuous* manifest/outcome variables are supported.
 #' 
-#' @return Currently, a list is returned with the arguments `ASquared`,
-#' `CSquared`, `ESquared`, and `RowCount`.  In the future, this
-#' may be changed to an `S4` class.
+#' @return Currently, a list is returned with the arguments `ASquared`, `CSquared`, `ESquared`, and `RowCount`.  
+#' In the future, this may be changed to an `S4` class.
 #'
 #' @details
 #' The [AceUnivariate()] function is a wrapper that calls
@@ -70,7 +74,6 @@
 #'
 #' class(GetDetails(estimatedMath))
 #' summary(GetDetails(estimatedMath))
-#'
 
 AceUnivariate <-
 function( method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_S1, oName_S2, rName="R", manifestScale="Continuous" ) {

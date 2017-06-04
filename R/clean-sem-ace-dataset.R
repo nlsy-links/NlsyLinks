@@ -4,7 +4,6 @@
 #' @title Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.
 #'
 #' @description This function takes a 'GroupSummary' [base::data.frame] (which is created by the [RGroupSummary()] function) and returns a [base::data.frame] that is used by the [Ace()] function.
-#' @usage CleanSemAceDataset(dsDirty, dsGroupSummary, oName_S1, oName_S2, rName = "R")
 #'
 #' @param dsDirty This is the [base::data.frame] to be cleaned.
 #' @param dsGroupSummary The [base::data.frame] containing information about which groups should be included in the analyses.  It should be created by the [RGroupSummary()] function.

@@ -5,9 +5,6 @@
 #' @title Instantiate an [AceEstimate-class] object.
 #' @description Creates an instance of the `S4` class, [AceEstimate-class] instantiating arguments set the parameter values estimated by the ACE model.
 #'
-#' @usage CreateAceEstimate(aSquared, cSquared, eSquared, caseCount,
-#'   details=list(), unityTolerance = 1e-11)
-#'
 #' @param aSquared The proportion of variability due to a shared genetic influence (typically represented as a^2, or sometimes h^2).
 #' @param cSquared The proportion of variability due to shared common environmental influence.
 #' @param eSquared The proportion of variability due to unexplained/residual/error influence.

@@ -6,7 +6,6 @@
 #' @description Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.
 #'
 #' If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM.
-#' @usage RGroupSummary(ds, oName_S1, oName_S2, rName, determinantThreshold=1e-5)
 #'
 #' @param ds The [base::data.frame] containing the following variables:
 #' @param oName_S1 The name of the outcome variable corresponding to the first subject in the pair.
