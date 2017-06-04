@@ -112,7 +112,7 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 #' @docType methods
 #' @title A generic function for extracting the `Details` slot of an object.
 #'
-#' @description A generic function for extracting the `Details` slot of an [AceEstimation] object.
+#' @description A generic function for extracting the `Details` slot of an AceEstimation object.
 # '
 #For examples see https://r-forge.r-project.org/scm/viewvc.php/pkg/lme4/man/lmList-class.Rd?view=markup&revision=2&root=lme4&pathrev=452
 # ' @section Methods
@@ -135,7 +135,7 @@ methods::setMethod(f="GetDetails", "AceEstimate",
 #   print(c(ASquared=methods::slot(x, "ASquared"), CSquared=methods::slot(x, "CSquared"), ESquared=methods::slot(x, "ESquared"), CaseCount=methods::slot(x,"CaseCount")))
 #   print(c(a=33, d=43))
 # })
-## ' Generic function for returning the contents from an [AceEstimate] class.
+## ' Generic function for returning the contents from an `AceEstimate` class.
 ## '
 ## ' Extract the values
 ## '

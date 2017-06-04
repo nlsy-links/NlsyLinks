@@ -11,7 +11,7 @@
 #' @param printOutput Indicates if the estimated parameters and fit statistics are printed to the console.
 #'
 #' @details The variance component for *E* is always estimated, while the *A* and *C* estimates can be fixed to zero (when `estimateA` and/or *estimateC* are set to `FALSE`).
-#' @return An [AceEstimate] object.
+#' @return An AceEstimate object.
 #' @references The \pkg{lavaan} package is developed by Yves Rosseel at Ghent University.
 #' Three good starting points are the package website (http://lavaan.ugent.be/), the package documentation (https://cran.r-project.org/package=lavaan)
 #' and the JSS paper.

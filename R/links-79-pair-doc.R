@@ -25,11 +25,12 @@
 #' in the NLSY79 Children and Young Adults sample
 #' (http://www.bls.gov/nls/nlsy79ch.htm).
 #'
-#' Subjects will be in the same extended family if either: [1] they are Gen1
-#' housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (ie, they
-#' have mothers who are Gen1 sisters in the NLSY79, [4] they are mother and
-#' child (in Gen1 and Gen2, respectively), or [5] they are aunt|uncle and
-#' niece|nephew (in Gen1 and Gen2, respectively).
+#' Subjects will be in the same extended family if either:
+#' 1. they are Gen1 housemates,
+#' 1. they are Gen2 siblings,
+#' 1. they are Gen2 cousins (ie, they have mothers who are Gen1 sisters in the NLSY79,
+#' 1. they are mother and child (in Gen1 and Gen2, respectively), or
+#' 1. they are aunt|uncle and niece|nephew (in Gen1 and Gen2, respectively).
 #'
 #' The variables `SubjectTag_S1` and `SubjectTag_S2` uniquely identify
 #' subjects.  For Gen2 subjects, the SubjectTag is identical to their CID (ie,

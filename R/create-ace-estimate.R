@@ -3,7 +3,7 @@
 #' @importFrom methods new
 #'
 #' @title Instantiate an [AceEstimate-class()] object.
-#' @description Creates an instance of the `S4` class, [AceEstimate]  instantiating arguments set the parameter values estimated by the ACE model.
+#' @description Creates an instance of the `S4` class, `AceEstimate` instantiating arguments set the parameter values estimated by the ACE model.
 #'
 #' @usage CreateAceEstimate(aSquared, cSquared, eSquared, caseCount,
 #'   details=list(), unityTolerance = 1e-11)

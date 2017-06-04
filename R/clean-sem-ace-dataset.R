@@ -14,13 +14,13 @@
 #'
 #' @details The function takes `dsDirty` and produces a new [base::data.frame()] with the following features:
 #'
-#' [A] Only three existing columns are retained: `O1`, `O2`, and `R`.  They are assigned these names.
+#' 1. Only three existing columns are retained: `O1`, `O2`, and `R`.  They are assigned these names.
 #'
-#' [B] A new column called `GroupID` is created to reflect their group membership (which is based on the `R` value).  These valuesa re sequential integers, starting at 1.  The group with the weakest `R` is 1.  The group with the strongest `R` has the largest `GroupID` (this is typically the MZ tiwns).
+#' 1. A new column called `GroupID` is created to reflect their group membership (which is based on the `R` value).  These valuesa re sequential integers, starting at 1.  The group with the weakest `R` is 1.  The group with the strongest `R` has the largest `GroupID` (this is typically the MZ tiwns).
 #'
-#' [C] Any row is excluded if it has a missing data point for `O1`, `O2`, or `R`.
+#' 1. Any row is excluded if it has a missing data point for `O1`, `O2`, or `R`.
 #'
-#' [D] The [base::data.frame()] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
+#' 1. The [base::data.frame()] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
 #'
 #'@return A [base::data.frame()] with one row per subject pair.  The [base::data.frame()] contains the following variables (which can NOT be changed by the user through optional parameters):
 #' \item{R}{The pair's `R` value.}

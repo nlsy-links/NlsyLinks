@@ -13,7 +13,7 @@
 #'
 #' [CreateSpatialNeighbours()] accepts any paired relationships in a [base::data.frame()], as long as it contains the columns `SubjectTag_S1`, `SubjectTag_S2`, and `R`.  See [Links79Pair()] for more details about these columns.
 #'
-#' @return An S3 [spdep::spatial.neighbours] object to work with functions in the \pkg{spdep} package.
+#' @return An S3 `spdep::spatial.neighbours` object to work with functions in the \pkg{spdep} package.
 #'
 #' `SubjectTag_S1` is renamed '`from`'.
 #'
@@ -27,7 +27,7 @@
 #'
 #' @references
 #'
-#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](http://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [[Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330)]
+#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](http://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330).
 #'
 #' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). [*Applied Spatial Data Analysis with R.*](http://link.springer.com/book/10.1007/978-1-4614-7618-4) New York: Springer. (Especially Chapter 9.)
 #'
@@ -38,7 +38,7 @@
 #' The \pkg{spdep} package documentation: [spdep: Spatial dependence: weighting schemes, statistics and models](https://cran.r-project.org/package=spdep).
 #'
 #' @author Will Beasley and  David Bard
-#' @note Notice the British variant of 'neighbo*u*rs' is used, to be consistent with the [spdep::spatial.neighbour] class.
+#' @note Notice the British variant of 'neighbo*u*rs' is used, to be consistent with the `spdep::spatial.neighbour` class.
 #' @examples
 #' dsLinksAll <- Links79Pair
 #' dsLinksGen1Housemates <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen1Housemates", ]
