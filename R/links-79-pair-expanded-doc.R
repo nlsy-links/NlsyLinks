@@ -1,6 +1,6 @@
 #' @name Links79PairExpanded
 #' @docType data
-#
+#'
 #' @title Kinship linking file for pairs of relatives.  It builds upon the [Links79Pair()] dataset.
 #'
 #' @description Please first read the documentation for [Links79Pair()].  That

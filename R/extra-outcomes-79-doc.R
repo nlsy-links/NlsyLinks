@@ -1,6 +1,6 @@
 #' @name ExtraOutcomes79
 #' @docType data
-
+#'
 #' @title Extra outcome variables in the NLSY79
 #'
 #' @description This dataset is provided primarily to facilitate documentation examples.

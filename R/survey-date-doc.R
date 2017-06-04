@@ -1,6 +1,6 @@
 #' @name SurveyDate
 #' @docType data
-
+#'
 #' @title Dataset containing survey details for each subject, for each year
 #'
 #' @description Each row represents a survey that a subject completed (or didn't complete).
@@ -23,7 +23,7 @@
 #' * **AgeSelfReportYears** The subject's age, according to a their own response, or their mother's response.
 #' * **AgeCalculateYears** The subject's age, calculated from subtracting their birthday from the interview date.
 #' * **Age** The subject's age, which uses `AgeCalculateYears` or `AgeSelfReportYears` if it's not available.
-#' 
+#'
 #' @details The `AgeSelfReportYears` and `AgeCalculateYears` variables usually agree, but not always.  The `Age` variable uses `AgeCalculateYears` (or `AgeSelfReportYears` when `AgeCalculateYears` is missing).
 #'
 #' The exact *date* of birth isn't public (only the subject's *month* of birth).  To balance the downward bias of two weeks,

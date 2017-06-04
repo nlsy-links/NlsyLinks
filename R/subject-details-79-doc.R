@@ -1,6 +1,6 @@
 #' @name SubjectDetails79
 #' @docType data
-
+#'
 #' @title Dataset containing further details of the Gen1 and Gen2 subjects.
 #'
 #' @description These variables are useful to many types of analyses (not just behavior genetics), and are provided to save users time.
@@ -28,7 +28,7 @@
 #' * **AgeAtLastSurvey** The subject's age at the most recently completed survey.
 #' * **IsDead** ##This variable is not available yet## Indicates if the subject was alive for the last attempted survey.
 #' * **DeathDate** ##This variable is not available yet## The subject's month of death.  The exact day is not available to the public. By default, we set their birthday to the 15th day of the month.
-#' 
+#'
 #' @author Will Beasley
 #' @source Gen1 information comes from the Summer 2013 release of the [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information
 #' comes from the Summer 2013 release of the

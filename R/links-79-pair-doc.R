@@ -1,6 +1,6 @@
 #' @name Links79Pair
 #' @docType data
-
+#'
 #' @title Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults
 #'
 #' @description This dataset specifies the relatedness coefficient (ie, '`R`') between

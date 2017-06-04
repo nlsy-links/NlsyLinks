@@ -29,7 +29,6 @@
 #'
 #'
 
-
 VerifyColumnExists <- function( dataFrame, columnName ) {
   indices <- base::match(columnName, colnames(dataFrame))
   if( length(indices) != 1 ) base::stop(paste("Exactly 1 matching column name should be found, but", length(indices), "were found."))

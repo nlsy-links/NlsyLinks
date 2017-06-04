@@ -18,7 +18,7 @@
 #' 1. The `SubjectTag` variable is created.
 #' 1. The NLSY variable `C00002.00` is multiplied by 100 and renamed `SubjectTagOfMother`.
 #' 1. The NLSY variable `R00001.49` (ie, their Mother's `HHID` is attached to each Gen2 record).
-#' 
+#'
 #' @author Will Beasley
 #' @examples
 #' \dontrun{
