@@ -11,8 +11,8 @@
 #' @format A data frame with 24,181 observations on the following 12
 #' variables.
 #'
-#' * **SubjectTag** see the variable of the same name in [Links79Pair()]
-#' * **ExtendedID** see the variable of the same name in [Links79Pair()]
+#' * **SubjectTag** see the variable of the same name in [Links79Pair]
+#' * **ExtendedID** see the variable of the same name in [Links79Pair]
 #' * **Generation** Indicates if the subject is in generation `1` or `2`.
 #' * **Gender** Indicates if the subject is `Male` or `Female`.
 #' * **RaceCohort** Indicates if the race cohort is `Hispanic`, `Black` or `Nbnh` (*ie*, Non-black, non-hispanic).  This comes from the Gen1 variable `R02147.00` and Gen2 variable `C00053.00`.

@@ -9,7 +9,7 @@
 #'
 #' Typical use of \pkg{NlsyLinks} will not require this function, since a
 #' valid paired links are supplied for each supported sample (ie,
-#' [Links79Pair()]).
+#' [Links79Pair]).
 #'
 #' The \pkg{NlsyLinks} uses several types of linking schemas.  This function
 #' validates the type where each relative subject has their own row.
@@ -21,7 +21,7 @@
 #' @param linksPair The [base::data.frame] to validate.
 #' @return Returns `TRUE` if the validation passes. Returns an error (and
 #' associated descriptive message) if it false.
-#' @seealso [Links79Pair()], [Links79PairExpanded()],
+#' @seealso [Links79Pair], [Links79PairExpanded],
 #' @keywords validation
 #' @examples
 #'

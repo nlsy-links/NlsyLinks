@@ -21,15 +21,15 @@
 #' your problem, please create a [new issue](https://github.com/LiveOak/NlsyLinks/issues), or email Will.
 #'
 #' @author
-#'   [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](http://howardliveoak.com/), Norman)
+#' [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](http://howardliveoak.com/), Norman)
 #'
-#'  [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
+#' [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 #'
-#'  [David Bard](http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041) (University of Oklahoma Health Sciences Center, OKC)
+#' [David Bard](http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041) (University of Oklahoma Health Sciences Center, OKC)
 #'
-#'  Kelly Meredith (Oklahoma City University, OKC)
+#' Kelly Meredith (Oklahoma City University, OKC)
 #'
-#'  [Michael D. Hunter](http://mhuntero.com/) (University of Oklahoma, Norman)
+#' [Michael D. Hunter](http://mhuntero.com/) (University of Oklahoma, Norman)
 #'
 #' Maintainer: Will Beasley <wibeasley@@hotmail.com>
 #'

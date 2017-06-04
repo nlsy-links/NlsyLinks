@@ -9,9 +9,9 @@
 #'
 #' [CreatePairLinksDoubleEntered()].
 #'
-#' @details There is one row per unique pair of subjects, *respecting order*.  This has twice as many rows as [Links79Pair()] and [Links79PairExpanded()] (which have one row per unique pair of subjects, *irrespective of order*).
+#' @details There is one row per unique pair of subjects, *respecting order*.  This has twice as many rows as [Links79Pair] and [Links79PairExpanded] (which have one row per unique pair of subjects, *irrespective of order*).
 #'
-#' [CreateSpatialNeighbours()] accepts any paired relationships in a [base::data.frame], as long as it contains the columns `SubjectTag_S1`, `SubjectTag_S2`, and `R`.  See [Links79Pair()] for more details about these columns.
+#' [CreateSpatialNeighbours()] accepts any paired relationships in a [base::data.frame], as long as it contains the columns `SubjectTag_S1`, `SubjectTag_S2`, and `R`.  See [Links79Pair] for more details about these columns.
 #'
 #' @return An S3 `spdep::spatial.neighbours` object to work with functions in the \pkg{spdep} package.
 #'

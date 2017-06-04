@@ -1,9 +1,9 @@
 #' @name Links79PairExpanded
 #' @docType data
 #'
-#' @title Kinship linking file for pairs of relatives.  It builds upon the [Links79Pair()] dataset.
+#' @title Kinship linking file for pairs of relatives.  It builds upon the [Links79Pair] dataset.
 #'
-#' @description Please first read the documentation for [Links79Pair()].  That
+#' @description Please first read the documentation for [Links79Pair].  That
 #' dataset contains the same pairs/rows, but only a subset of the
 #' variables/columns.
 #'
@@ -21,11 +21,11 @@
 #'
 #' `RelationshipPath` variable.  Code written using this dataset should
 #' NOT assume it contains only Gen2 sibiling pairs.  See an example of
-#' filtering the relationship category in the in [Links79Pair()]
+#' filtering the relationship category in the in [Links79Pair]
 #' documentation.
 #'
 #'
-#' Please first read the documentation for [Links79Pair()].  That
+#' Please first read the documentation for [Links79Pair].  That
 #' dataset contains the same pairs/rows, but only a subset of the
 #' variables/columns.
 #'
@@ -56,19 +56,19 @@
 #' full-siblings as well.
 #'
 #' The math and height scores are duplicated from
-#' [ExtraOutcomes79()], but are included here to make some examples
+#' [ExtraOutcomes79], but are included here to make some examples
 #' more concise and accessible.
 #'
 #' @format A data frame with 11,075 observations on the following 22
 #' variables.  There is one row per unique pair of subjects, irrespective of
 #' order.
 #'
-#' * **ExtendedID** see the variable of the same name in [Links79Pair()]
-#' * **SubjectTag_S1** see the variable of the same name in [Links79Pair()]
-#' * **SubjectTag_S2** see the variable of the same name in [Links79Pair()]
-#' * **R** see the variable of the same name in [Links79Pair()]
+#' * **ExtendedID** see the variable of the same name in [Links79Pair]
+#' * **SubjectTag_S1** see the variable of the same name in [Links79Pair]
+#' * **SubjectTag_S2** see the variable of the same name in [Links79Pair]
+#' * **R** see the variable of the same name in [Links79Pair]
 #' * **RFull** This is a superset of `R`.  This includes all the *R* values we estimated, while `R` (i.e., the variable above) excludes values like *R*=0 for `Gen1Housemates`, and the associated relationships based on this *R* value (i.e., `Gen2Cousin`s and `AuntNiece`s).
-#' * **RelationshipPath** see the variable of the same name in [Links79Pair()]
+#' * **RelationshipPath** see the variable of the same name in [Links79Pair]
 #' * **EverSharedHouse** Indicate if the pair likely live in the same house.  This is `TRUE` for `Gen1Housemates`, `Gen2Siblings`, and `ParentChild`. This is `FALSE` for `AuntNiece` and `Gen2Cousins`
 
 #####  ' %\item{`MultipleBirth`}{Indicates if the pair are twins (or triplets). This variable is a factor, with levels `No`=0, `Twin`=2, `Triplet`=3, `DoNotKnow`=255.}
@@ -88,13 +88,13 @@
 #' * **Generation_S2** The generation of the second subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively.
 #' * **SubjectID_S1** The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).
 #' * **SubjectID_S2** The ID value assigned by NLS to the second subject.
-#' * **MathStandardized_S1** The PIAT-Math score for Subject1.  See [ExtraOutcomes79()] for more information about its source.
+#' * **MathStandardized_S1** The PIAT-Math score for Subject1.  See [ExtraOutcomes79] for more information about its source.
 #' * **MathStandardized_S2** The PIAT-Math score for Subject2.
-#' * **HeightZGenderAge_S1** The early adult height for Subject1.  See [ExtraOutcomes79()] for more information about its source.
+#' * **HeightZGenderAge_S1** The early adult height for Subject1.  See [ExtraOutcomes79] for more information about its source.
 #' * **HeightZGenderAge_S2** The early adult height for Subject2.
 #'
 #' @author Will Beasley
-#' @source See [Links79Pair()].
+#' @source See [Links79Pair].
 #' @keywords datasets
 #' @examples
 #'

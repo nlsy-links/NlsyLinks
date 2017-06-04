@@ -8,11 +8,11 @@
 #' @param subjectID The ID assigned by the NLSY.  For Gen1 subjects, this will be their CaseID (ie, R00001.00).  For Gen2 subjects, this will be their CID (ie, C00001.00).
 #' @param generation The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.
 #'
-#' @details For a fuller explanation of `SubjectTag` in context, see the [Links79Pair()] dataset documentation.
+#' @details For a fuller explanation of `SubjectTag` in context, see the [Links79Pair] dataset documentation.
 #'
 #' @return A integer value under normal circumstances. An error is thrown if the vectors `subjectID` and `generation` are different lengths. If either input vector has NA values, the respective output element(s) will be NA too.
 #' @author Will Beasley
-#' @seealso [Links79Pair()]
+#' @seealso [Links79Pair]
 #'
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
