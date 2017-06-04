@@ -62,37 +62,37 @@
 #' @format A data frame with 11,075 observations on the following 22
 #' variables.  There is one row per unique pair of subjects, irrespective of
 #' order.
-#' \describe{
-#' \item{ExtendedID}{see the variable of the same name in [Links79Pair()]}
-#' \item{SubjectTag_S1}{see the variable of the same name in [Links79Pair()]}
-#' \item{SubjectTag_S2}{see the variable of the same name in [Links79Pair()]}
-#' \item{R}{see the variable of the same name in [Links79Pair()]}
-#' \item{RFull}{This is a superset of `R`.  This includes all the *R* values we estimated, while `R` (i.e., the variable above) excludes values like *R*=0 for `Gen1Housemates`, and the associated relationships based on this *R* value (i.e., `Gen2Cousin`s and `AuntNiece`s).}
-#' \item{RelationshipPath}{see the variable of the same name in [Links79Pair()]}
-#' \item{EverSharedHouse}{Indicate if the pair likely live in the same house.  This is `TRUE` for `Gen1Housemates`, `Gen2Siblings`, and `ParentChild`. This is `FALSE` for `AuntNiece` and `Gen2Cousins`}
+#'
+#' * **ExtendedID** see the variable of the same name in [Links79Pair()]
+#' * **SubjectTag_S1** see the variable of the same name in [Links79Pair()]
+#' * **SubjectTag_S2** see the variable of the same name in [Links79Pair()]
+#' * **R** see the variable of the same name in [Links79Pair()]
+#' * **RFull** This is a superset of `R`.  This includes all the *R* values we estimated, while `R` (i.e., the variable above) excludes values like *R*=0 for `Gen1Housemates`, and the associated relationships based on this *R* value (i.e., `Gen2Cousin`s and `AuntNiece`s).
+#' * **RelationshipPath** see the variable of the same name in [Links79Pair()]
+#' * **EverSharedHouse** Indicate if the pair likely live in the same house.  This is `TRUE` for `Gen1Housemates`, `Gen2Siblings`, and `ParentChild`. This is `FALSE` for `AuntNiece` and `Gen2Cousins`
 
 #####  ' %\item{`MultipleBirth`}{Indicates if the pair are twins (or triplets). This variable is a factor, with levels `No`=0, `Twin`=2, `Triplet`=3, `DoNotKnow`=255.}
 
-#' \item{IsMz}{Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels `No`=0, `Yes`=1, `DoNotKnow`=255.}
-#' \item{LastSurvey_S1}{The year of Subject1's most recently completed survey. This may be different that the survey's administration date.}
-#' \item{LastSurvey_S2}{The year of Subject2's most recently completed survey. This may be different that the survey's administration date.}
-#' \item{RImplicitPass1}{The pair's *R* coefficient, using only implicit information.  Interpolation was NOT used.}
-#' \item{RImplicit}{The pair's *R* coefficient, using only implicit information.  Interpolation was used.}
-#' \item{RImplicit2004}{The pair's *R* coefficient released in our previous projects (**need reference**).  This variable is provided primarily for previous users wishing to replicate previous analyses.}
-#' \item{RExplicitPass1}{The pair's *R* coefficient, using only explicit information.  Interpolation was NOT used.}
-#' \item{RExplicit}{The pair's *R* coefficient, using only explicit information.  Interpolation was used.}
-#' \item{RExplicitOlderSibVersion}{The pair's *R* coefficient, according to the explicit item responses of the older sibling.}
-#' \item{RExplicitYoungerSibVersion}{The pair's *R* coefficient, according to the explicit item responses of the younger sibling.}
-#' \item{RPass1}{The pair's estimated *R* coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable `R` is identically constructed, but it did use interpolation.}
-#' \item{Generation_S1}{The generation of the first subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively.}
-#' \item{Generation_S2}{The generation of the second subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively.}
-#' \item{SubjectID_S1}{The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).}
-#' \item{SubjectID_S2}{The ID value assigned by NLS to the second subject.}
-#' \item{MathStandardized_S1}{The PIAT-Math score for Subject1.  See [ExtraOutcomes79()] for more information about its source.}
-#' \item{MathStandardized_S2}{The PIAT-Math score for Subject2.}
-#' \item{HeightZGenderAge_S1}{The early adult height for Subject1.  See [ExtraOutcomes79()] for more information about its source.}
-#' \item{HeightZGenderAge_S2}{The early adult height for Subject2.}
-#' }
+#' * **IsMz** Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels `No`=0, `Yes`=1, `DoNotKnow`=255.
+#' * **LastSurvey_S1** The year of Subject1's most recently completed survey. This may be different that the survey's administration date.
+#' * **LastSurvey_S2** The year of Subject2's most recently completed survey. This may be different that the survey's administration date.
+#' * **RImplicitPass1** The pair's *R* coefficient, using only implicit information.  Interpolation was NOT used.
+#' * **RImplicit** The pair's *R* coefficient, using only implicit information.  Interpolation was used.
+#' * **RImplicit2004** The pair's *R* coefficient released in our previous projects (**need reference**).  This variable is provided primarily for previous users wishing to replicate previous analyses.
+#' * **RExplicitPass1** The pair's *R* coefficient, using only explicit information.  Interpolation was NOT used.
+#' * **RExplicit** The pair's *R* coefficient, using only explicit information.  Interpolation was used.
+#' * **RExplicitOlderSibVersion** The pair's *R* coefficient, according to the explicit item responses of the older sibling.
+#' * **RExplicitYoungerSibVersion** The pair's *R* coefficient, according to the explicit item responses of the younger sibling.
+#' * **RPass1** The pair's estimated *R* coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable `R` is identically constructed, but it did use interpolation.
+#' * **Generation_S1** The generation of the first subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively.
+#' * **Generation_S2** The generation of the second subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively.
+#' * **SubjectID_S1** The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).
+#' * **SubjectID_S2** The ID value assigned by NLS to the second subject.
+#' * **MathStandardized_S1** The PIAT-Math score for Subject1.  See [ExtraOutcomes79()] for more information about its source.
+#' * **MathStandardized_S2** The PIAT-Math score for Subject2.
+#' * **HeightZGenderAge_S1** The early adult height for Subject1.  See [ExtraOutcomes79()] for more information about its source.
+#' * **HeightZGenderAge_S2** The early adult height for Subject2.
+#'
 #' @author Will Beasley
 #' @source See [Links79Pair()].
 #' @keywords datasets

@@ -23,10 +23,10 @@
 #' 1. The [base::data.frame()] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
 #'
 #'@return A [base::data.frame()] with one row per subject pair.  The [base::data.frame()] contains the following variables (which can NOT be changed by the user through optional parameters):
-#' \item{R}{The pair's `R` value.}
-#' \item{O1}{The outcome variable for the first subject in each pair.}
-#' \item{O2}{The outcome variable for the second subject in each pair.}
-#' \item{GroupID}{ Indicates the pair's group membership.}
+#' * **R** The pair's `R` value.
+#' * **O1** The outcome variable for the first subject in each pair.
+#' * **O2** The outcome variable for the second subject in each pair.
+#' * **GroupID** Indicates the pair's group membership.
 #'
 #' @author Will Beasley
 #'

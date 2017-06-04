@@ -11,13 +11,12 @@
 #'
 #' @format A data frame with 42,773 observations on the following 5 variables.
 #' There is one row per unique pair of subjects, irrespective of order.
-#' \describe{
-#'    \item{ExtendedID}{Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.}
-#'    \item{SubjectTag_S1}{Identity of the pair's first subject.  See Details below.}
-#'    \item{SubjectTag_S2}{Identity of the pair's second subject.  See Details below.}
-#'    \item{R}{The pair's Relatedness coefficient.  See Details below.}
-#'    \item{RelationshipPath}{Specifies the relationship category of the pair.  This variable is a factor, with levels `Gen1Housemates`=1, `Gen2Siblings`=2, `Gen2Cousins`=3, `ParentChild`=4, `AuntNiece`=5.}
-#' }
+#'
+#' * **ExtendedID** Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.
+#' * **SubjectTag_S1** Identity of the pair's first subject.  See Details below.
+#' * **SubjectTag_S2** Identity of the pair's second subject.  See Details below.
+#' * **R** The pair's Relatedness coefficient.  See Details below.
+#' * **RelationshipPath** Specifies the relationship category of the pair.  This variable is a factor, with levels `Gen1Housemates`=1, `Gen2Siblings`=2, `Gen2Cousins`=3, `ParentChild`=4, `AuntNiece`=5.
 #'
 #' @details The dataset contains Gen1 and Gen2 subjects.  "Gen1" refers to subjects in
 #' the original NLSY79 sample (http://www.bls.gov/nls/nlsy79.htm).
