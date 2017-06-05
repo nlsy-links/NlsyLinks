@@ -3,11 +3,11 @@
 #' @description Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 #'
 #' @docType package
-#' 
+#'
 #' @name NlsyLinks-package
-#' 
+#'
 #' @aliases NlsyLinks
-#' 
+#'
 #' @note This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 #' subjects in the original NLSY79 sample
 #' (http://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
@@ -40,39 +40,41 @@
 #' Grant 1R01HD65865, ["NLSY Kinship Links: Reliable and Valid Sibling Identification"](http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50) (PI: Joe Rodgers).  A more complete list of research articles
 #' using NLSY Kinship Links is maintained on our [package's website](http://liveoak.github.io/NlsyLinks/research-publications.html).
 #'
-#' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).  \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and
-#' simplifying the DF analysis model.}
+#' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
+#' [Reformulating and simplifying the DF analysis model](http://www.springerlink.com/content/n3x1v1q282583366/).
 #' *Behavior Genetics, 35* (2), 211-217.
 #'
 #' Rodgers, J.L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W.B. (2008).
-#' \href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing
-#' Validity of the MDAN Design with NLSY Fertility Variables.} \emph{Behavior
-#' Genetics, 38}, 567-578.
+#' [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing
+#' Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497).
+#' \emph{Behavior Genetics, 38}, 567-578.
 #'
 #' D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz,
-#' P.J., & Lahey, B.B. (2007). \href{http://www.ncbi.nlm.nih.gov/pubmed/17984398}{Causal inferences regarding prenatal alcohol
-#' exposure and childhood externalizing problems.} \emph{Archives of General
-#' Psychiatry, 64}, 1296-1304.
+#' P.J., & Lahey, B.B. (2007). [Causal inferences regarding prenatal alcohol
+#' exposure and childhood externalizing problems.](http://www.ncbi.nlm.nih.gov/pubmed/17984398).
+#' \emph{Archives of General Psychiatry, 64}, 1296-1304.
 #'
-#' Rodgers, J.L. & Doughty, D. (2000).  \href{http://link.springer.com/chapter/10.1007\%2F978-1-4615-4467-8_6}{Genetic and environmental influences
-#' on fertility expectations and outcomes using NLSY kinship data.}  In J.L.
-#' Rodgers, D. Rowe, & W.B. Miller (Eds.) \emph{Genetic influences on
-#' fertility and sexuality.} Boston: Kluwer Academic Press.
+#' Rodgers, J.L. & Doughty, D. (2000).  [Genetic and environmental influences
+#' on fertility expectations and outcomes using NLSY kinship data.](http://link.springer.com/chapter/10.1007\%2F978-1-4615-4467-8_6)
+#' In J.L. Rodgers, D. Rowe, & W.B. Miller (Eds.)
+#' \emph{Genetic influences on fertility and sexuality.} Boston: Kluwer Academic Press.
 #'
 #' Cleveland, H.H., Wiebe, R.P., van den Oord, E.J.C.G., & Rowe, D.C. (2000).
-#' \href{http://www.ncbi.nlm.nih.gov/pubmed/10953940}{Behavior problems among children from different family structures: The
-#' influence of genetic self-selection.} *Child Development, 71*, 733-751.
+#' [Behavior problems among children from different family structures: The
+#' influence of genetic self-selection.](http://www.ncbi.nlm.nih.gov/pubmed/10953940)
+#' *Child Development, 71*, 733-751.
 #'
-#' Rodgers, J.L., Rowe, D.C., & Buster, M. (1999). \href{http://www.ncbi.nlm.nih.gov/pubmed/10081235}{Nature, nurture, and first
+#' Rodgers, J.L., Rowe, D.C., & Buster, M. (1999). [Nature, nurture, and first
 #' sexual intercourse in the USA: Fitting behavioural genetic models to NLSY
-#' kinship data.} *Journal of Biosocial Sciences, 31*.
+#' kinship data](http://www.ncbi.nlm.nih.gov/pubmed/10081235).
+#' *Journal of Biosocial Sciences, 31*.
 #'
-#' Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{http://psycnet.apa.org/journals/dev/30/3/374/}{Beyond nature versus nurture:
-#' DF analysis of nonshared influences on problem behaviors.}
+#' Rodgers, J.L., Rowe, D.C., & Li, C. (1994). [Beyond nature versus nurture:
+#' DF analysis of nonshared influences on problem behaviors.](http://psycnet.apa.org/journals/dev/30/3/374/)
 #' *Developmental Psychology, 30*, 374-384.
-#' 
+#'
 #' @keywords package
-#' 
+#'
 #' @examples
 #' library(NlsyLinks)    # Load the package into the current R session.
 #' summary(Links79Pair)  # Summarize the five variables.

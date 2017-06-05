@@ -1,5 +1,5 @@
 #' @name Links79Pair
-#' 
+#'
 #' @docType data
 #'
 #' @title Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults
@@ -104,13 +104,13 @@
 #' @source Gen1 information comes from the Summer 2013 release of the
 #' [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information
 #' comes from the Summer 2013 release of the
-#' \href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults
-#' sample}.  Data were extracted with the NLS Investigator
+#' [NLSY79 Children and Young Adults](http://www.bls.gov/nls/nlsy79ch.htm).
+#' Data were extracted with the NLS Investigator
 #' (https://www.nlsinfo.org/investigator/).
 #'
 #' The internal version for the links is `Links2011V84`.
 #' @keywords datasets
-#' 
+#'
 #' @examples
 #' library(NlsyLinks)     # Load the package into the current R session.
 #' summary(Links79Pair)   # Summarize the five variables.
