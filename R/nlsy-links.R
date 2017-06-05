@@ -37,8 +37,11 @@
 #' Maintainer: Will Beasley <wibeasley@@hotmail.com>
 #'
 #' @references This package's development was largely supported by the NIH
-#' Grant 1R01HD65865, ["NLSY Kinship Links: Reliable and Valid Sibling Identification"](http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50) (PI: Joe Rodgers).  A more complete list of research articles
-#' using NLSY Kinship Links is maintained on our [package's website](http://liveoak.github.io/NlsyLinks/research-publications.html).
+#' Grant 1R01HD65865, ["NLSY Kinship Links: Reliable and Valid Sibling
+#' Identification"](http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50)
+#' (PI: Joe Rodgers).  A more complete list of research articles
+#' using NLSY Kinship Links is maintained on our [package's
+#' website](http://liveoak.github.io/NlsyLinks/research-publications.html).
 #'
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' [Reformulating and simplifying the DF analysis model](http://www.springerlink.com/content/n3x1v1q282583366/).
@@ -47,17 +50,17 @@
 #' Rodgers, J.L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W.B. (2008).
 #' [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing
 #' Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497).
-#' \emph{Behavior Genetics, 38}, 567-578.
+#' *Behavior Genetics, 38*, 567-578.
 #'
 #' D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz,
 #' P.J., & Lahey, B.B. (2007). [Causal inferences regarding prenatal alcohol
 #' exposure and childhood externalizing problems.](http://www.ncbi.nlm.nih.gov/pubmed/17984398).
-#' \emph{Archives of General Psychiatry, 64}, 1296-1304.
+#' *Archives of General Psychiatry, 64*, 1296-1304.
 #'
 #' Rodgers, J.L. & Doughty, D. (2000).  [Genetic and environmental influences
 #' on fertility expectations and outcomes using NLSY kinship data.](http://link.springer.com/chapter/10.1007\%2F978-1-4615-4467-8_6)
 #' In J.L. Rodgers, D. Rowe, & W.B. Miller (Eds.)
-#' \emph{Genetic influences on fertility and sexuality.} Boston: Kluwer Academic Press.
+#' *Genetic influences on fertility and sexuality.* Boston: Kluwer Academic Press.
 #'
 #' Cleveland, H.H., Wiebe, R.P., van den Oord, E.J.C.G., & Rowe, D.C. (2000).
 #' [Behavior problems among children from different family structures: The
