@@ -3,9 +3,11 @@ Type: Package
 Title: Utilities and Kinship Information for Research with the NLSY
 Version: 2.0.7.9000
 Date: 2017-05-26
-Author: Will Beasley, Joe Rodgers, David Bard, Michael Hunter, S. Mason
-    Garrison, and Kelly Meredith
-Maintainer: Will Beasley <wibeasley@hotmail.com>
+Authors@R: c(person("Will", "Beasley", role = c("aut", "cre"), email =
+    "wibeasley@hotmail.com"), person("David", "Bard", role = "ctb"),
+    person("Michael", "Hunter", role = "ctb"), person(given="S. Mason",
+    family="Garrison", role = "ctb"), 
+    person("Kelly", "Meredith", role = "ctb"))
 Description: Utilities and kinship information for behavior genetics and
     developmental research using the National Longitudinal Survey of Youth
     (NLSY; <http://www.bls.gov/nls/>).
@@ -31,3 +33,4 @@ License: GPL
 LazyData: TRUE
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
+Roxygen: list(markdown = TRUE)

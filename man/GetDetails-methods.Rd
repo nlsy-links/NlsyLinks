@@ -7,7 +7,7 @@
 \alias{AceEstimate-method}
 \title{A generic function for extracting the \code{Details} slot of an object.}
 \description{
-A generic function for extracting the \code{Details} slot of an \code{AceEstimation} object.
+A generic function for extracting the \code{Details} slot of an AceEstimation object.
 }
 \author{
 Will Beasley

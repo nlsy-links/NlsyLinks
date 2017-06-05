@@ -12,6 +12,7 @@ devtools::run_examples(); dev.off() #This overwrites the NAMESPACE file too
 test_results_checked <- devtools::test()
 # test_results_not_checked <- testthat::test_dir("./tests/manual/")
 devtools::build_vignettes()
+pkgdown::build_site()
 
 # devtools::build(args="--resave-data --no-build-vignettes")#args="--resave-data")
 

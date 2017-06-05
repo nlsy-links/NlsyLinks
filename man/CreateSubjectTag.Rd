@@ -18,27 +18,26 @@ A integer value under normal circumstances. An error is thrown if the vectors \c
 A \code{SubjectTag} uniquely identify subjects.  For Gen2 subjects, the SubjectTag is identical to their CID (ie, C00001.00 -the SubjectID assigned in the NLSY79-Children files).  However for Gen1 subjects, the SubjectTag is their CaseID (ie, R00001.00), with "00" appended.  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The SubjectTags of her four children remain 4301, 4302, 4303, and 4304.
 }
 \details{
-For a fuller explanation of \code{SubjectTag} in context, see the \code{\link{Links79Pair}} dataset documentation.
+For a fuller explanation of \code{SubjectTag} in context, see the \link{Links79Pair} dataset documentation.
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
-  
+
 #Typically these two vectors will come from a data frame.
 subjectIDs <- c(71:82, 10001:10012)
 generation <- c(rep(1, 12), rep(2, 12))
-  
+
 CreateSubjectTag(subjectIDs, generation)
 #Returns 7100, ..., 8200, 10001, ..., 10012
-  
-#Use the ExtraOutcomes79 dataset, with numeric variables 'SubjectID' and 'Generation'.
+
+# Use the ExtraOutcomes79 dataset, with numeric variables 'SubjectID' and 'Generation'.
 ExtraOutcomes79$SubjectTag <- CreateSubjectTag(
-   subjectID=ExtraOutcomes79$SubjectID, 
+   subjectID=ExtraOutcomes79$SubjectID,
    generation=ExtraOutcomes79$Generation
 )
-
 }
 \seealso{
-\code{\link{Links79Pair}}
+\link{Links79Pair}
 }
 \author{
 Will Beasley

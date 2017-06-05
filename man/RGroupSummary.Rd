@@ -4,10 +4,11 @@
 \alias{RGroupSummary}
 \title{Calculates summary statistics for each \emph{R}elatedness Group in the sample.}
 \usage{
-RGroupSummary(ds, oName_S1, oName_S2, rName, determinantThreshold=1e-5)
+RGroupSummary(ds, oName_S1, oName_S2, rName = "R",
+  determinantThreshold = 1e-05)
 }
 \arguments{
-\item{ds}{The \code{data.frame} containing the following variables:}
+\item{ds}{The \link[base:data.frame]{base::data.frame} containing the following variables:}
 
 \item{oName_S1}{The name of the outcome variable corresponding to the first subject in the pair.}
 
@@ -18,21 +19,23 @@ RGroupSummary(ds, oName_S1, oName_S2, rName, determinantThreshold=1e-5)
 \item{determinantThreshold}{The minimum value the covariance matrix's determinant (for the group) should exceed to be considered Positive Definite.}
 }
 \value{
-A \code{data.frame} with one row per group.  The \code{data.frame} contains the following variables:
-\item{ R }{ The group's \code{R} value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the \code{rName} argument.}
-\item{ Included }{ Indicates if the group should be included in a multiple-group SEM.}
-\item{ PairCount }{ The number of pairs in the group with \emph{complete} data for \code{R} and the two outcome/manifest variables.}
-\item{ O1Mean }{ The mean (of the outcome variable) among the group's first members, excluding the missing values. }
-\item{ O2Mean }{ The mean (of the outcome variable) among the group's second members, excluding the missing values. }
-\item{ O1Variance }{ The variance (of the outcome variable) among the group's first members. }
-\item{ O2Variance }{ The variance (of the outcome variable) among the group's second members. }
-\item{ O1O2Covariance }{ The covariance (of the outcome variable) across the group's first and second members.}
-\item{ Correlation }{ The correlation (of the outcome variable) across the group's first and second members.}
-\item{ Determinant }{ The determinant of the group's covariance matrix.}
-\item{ PosDefinite }{ Indicates if the group's covariance matrix is positive definite.}
+A \link[base:data.frame]{base::data.frame} with one row per group.  The \link[base:data.frame]{base::data.frame} contains the following variables:
+\itemize{
+\item \strong{R} The group's \code{R} value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the \code{rName} argument.
+\item \strong{Included} Indicates if the group should be included in a multiple-group SEM.
+\item \strong{PairCount} The number of pairs in the group with \emph{complete} data for \code{R} and the two outcome/manifest variables.
+\item \strong{O1Mean} The mean (of the outcome variable) among the group's first members, excluding the missing values.
+\item \strong{O2Mean} The mean (of the outcome variable) among the group's second members, excluding the missing values.
+\item \strong{O1Variance} The variance (of the outcome variable) among the group's first members.
+\item \strong{O2Variance} The variance (of the outcome variable) among the group's second members.
+\item \strong{O1O2Covariance} The covariance (of the outcome variable) across the group's first and second members.
+\item \strong{Correlation} The correlation (of the outcome variable) across the group's first and second members.
+\item \strong{Determinant} The determinant of the group's covariance matrix.
+\item \strong{PosDefinite} Indicates if the group's covariance matrix is positive definite.
+}
 }
 \description{
-Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.  
+Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.
 
 If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM.
 }
@@ -45,14 +48,14 @@ The default determinantThreshold value is nonzero, in order to forgive slight nu
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.
-dsLinks <- Links79PairExpanded  #Load the dataset from the NlsyLinks package.
-dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
-oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
-oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+dsLinks        <- Links79PairExpanded   # Load the dataset from the NlsyLinks package.
+dsLinks        <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
+oName_S1       <- "MathStandardized_S1" # Stands for Outcome1
+oName_S2       <- "MathStandardized_S2" # Stands for Outcome2
 dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
 dsGroupSummary
 
-#Should return: 
+#Should return:
 #      R Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance Correlation
 #1 0.250     TRUE      2718  94.6439  95.5990    169.650    207.842        41.0783    0.218761
 #2 0.375     TRUE       139  92.6043  93.1655    172.531    187.081        40.4790    0.225311
@@ -69,7 +72,7 @@ dsGroupSummary
 #To get summary stats for the whole sample, create one large inclusive group.
 dsLinks$Dummy <- 1
 (dsSampleSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2, rName="Dummy"))
-                     
+
 #Should return:
 #  Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
 #1     1     TRUE      8392 98.07162 98.56864    216.466   229.2988       90.90266
