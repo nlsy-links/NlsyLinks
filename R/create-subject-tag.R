@@ -27,7 +27,7 @@
 #' CreateSubjectTag(subjectIDs, generation)
 #' #Returns 7100, ..., 8200, 10001, ..., 10012
 #'
-#' #Use the ExtraOutcomes79 dataset, with numeric variables 'SubjectID' and 'Generation'.
+#' # Use the ExtraOutcomes79 dataset, with numeric variables 'SubjectID' and 'Generation'.
 #' ExtraOutcomes79$SubjectTag <- CreateSubjectTag(
 #'    subjectID=ExtraOutcomes79$SubjectID,
 #'    generation=ExtraOutcomes79$Generation

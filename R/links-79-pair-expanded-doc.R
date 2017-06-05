@@ -59,9 +59,9 @@
 #' [ExtraOutcomes79], but are included here to make some examples
 #' more concise and accessible.
 #'
-#' @format A data frame with 11,075 observations on the following 22
-#' variables.  There is one row per unique pair of subjects, irrespective of
-#' order.
+#' @format 
+#' A data frame with 11,075 observations on the following 22 variables.  
+#' There is one row per unique pair of subjects, irrespective of order.
 #'
 #' * **ExtendedID** see the variable of the same name in [Links79Pair]
 #' * **SubjectTag_S1** see the variable of the same name in [Links79Pair]
@@ -94,19 +94,24 @@
 #' * **HeightZGenderAge_S2** The early adult height for Subject2.
 #'
 #' @author Will Beasley
+#' 
 #' @source See [Links79Pair].
+#' 
 #' @keywords datasets
+#' 
 #' @examples
+#' library(NlsyLinks) # Load the package into the current R session.
+#' olderR   <- Links79PairExpanded$RExplicitOlderSibVersion   # Declare a concise variable name.
+#' youngerR <- Links79PairExpanded$RExplicitYoungerSibVersion # Declare a concise variable name.
 #'
-#' library(NlsyLinks) #Load the package into the current R session.
-#' olderR <- Links79PairExpanded$RExplicitOlderSibVersion  #Declare a concise variable name.
-#' youngerR <- Links79PairExpanded$RExplicitYoungerSibVersion  #Declare a concise variable name.
+#' plot(jitter(olderR), jitter(youngerR))  # Scatterplot the siblings' responses.
+#' table( youngerR, olderR)  # Table of the relationship between the siblings' responses.
+#' ftable(youngerR, olderR, dnn=c("Younger's Version", "Older's Version")) # A formatted table.
 #'
-#' plot(jitter(olderR), jitter(youngerR))  #Scatterplot the siblings' responses.
-#' table(youngerR, olderR)  #Table of the relationship between the siblings' responses.
-#' ftable(youngerR, olderR, dnn=c("Younger's Version", "Older's Version")) #A formatted table.
-#'
-#' #write.csv(Links79PairExpanded, file='~/NlsyLinksStaging/Links79PairExpanded.csv',
-#' #  row.names=FALSE)
+#' # write.csv(
+#' #   Links79PairExpanded, 
+#' #   file      ='~/NlsyLinksStaging/Links79PairExpanded.csv',
+#' #   row.names = FALSE
+#' # )
 #'
 NULL

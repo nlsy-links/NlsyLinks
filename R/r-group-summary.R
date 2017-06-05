@@ -38,10 +38,10 @@
 #'
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
-#' dsLinks <- Links79PairExpanded  #Load the dataset from the NlsyLinks package.
-#' dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
-#' oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
-#' oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+#' dsLinks        <- Links79PairExpanded   # Load the dataset from the NlsyLinks package.
+#' dsLinks        <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
+#' oName_S1       <- "MathStandardized_S1" # Stands for Outcome1
+#' oName_S2       <- "MathStandardized_S2" # Stands for Outcome2
 #' dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
 #' dsGroupSummary
 #'

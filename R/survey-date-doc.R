@@ -1,4 +1,5 @@
 #' @name SurveyDate
+#' 
 #' @docType data
 #'
 #' @title Dataset containing survey details for each subject, for each year
@@ -13,9 +14,10 @@
 #' provided to save users time.
 #'
 #' @name SurveyDate
+#' 
 #' @docType data
+#' 
 #' @format A data frame with 580,752 observations on the following 6 variables.
-#'
 #' * **SubjectTag** see the variable of the same name in [Links79Pair]
 #' * **SurveySource** The location of that subject's survey responses that year.  Values are `NoInterview`, `Gen1`, `Gen2C` or `Gen2YA`.
 #' * **SurveyYear** The year/wave of the survey.
@@ -34,11 +36,14 @@
 #' Gen1 datasets, self-reported age is stated by year (eg, the subject is 52 years old); a constant of 0.5 years has been added.
 #'
 #' @author Will Beasley
+#' 
 #' @source Gen1 information comes from the Summer 2013 release of the [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information
 #' comes from the January 2015 release of the
 #' [NLSY79 Children and Young Adults sample](http://www.bls.gov/nls/nlsy79ch.htm).  Data were extracted with the NLS Investigator
 #' (https://www.nlsinfo.org/investigator/).
+#' 
 #' @keywords datasets
+#' 
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
 #'

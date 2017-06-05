@@ -1,4 +1,5 @@
 #' @name ExtraOutcomes79
+#' 
 #' @docType data
 #'
 #' @title Extra outcome variables in the NLSY79

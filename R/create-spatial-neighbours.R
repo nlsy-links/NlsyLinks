@@ -1,11 +1,11 @@
 #' @name CreateSpatialNeighbours
-
+#' 
 #' @export
 #'
 #' @title Distances between related family members, formated for spatial analysis.
-
+#' 
 #' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a [base::data.frame]) to represent neigbours.
-
+#' 
 #' @usage  CreateSpatialNeighbours(linksPairsDoubleEntered)
 ## CreateSpatialNeighbours79Gen2()
 #'
@@ -28,7 +28,6 @@
 #' The attribue `n` specifies the number of unique subjects.
 #'
 #' @references
-#'
 #' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](http://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330).
 #'
 #' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). [*Applied Spatial Data Analysis with R.*](http://link.springer.com/book/10.1007/978-1-4614-7618-4) New York: Springer. (Especially Chapter 9.)
@@ -40,11 +39,13 @@
 #' The \pkg{spdep} package documentation: [spdep: Spatial dependence: weighting schemes, statistics and models](https://cran.r-project.org/package=spdep).
 #'
 #' @author Will Beasley and  David Bard
+#' 
 #' @note Notice the British variant of 'neighbo*u*rs' is used, to be consistent with the `spdep::spatial.neighbour` class.
+#' 
 #' @examples
-#' dsLinksAll <- Links79Pair
-#' dsLinksGen1Housemates <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen1Housemates", ]
-#' dsLinksGen2Siblings <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen2Siblings", ]
+#' dsLinksAll             <- Links79Pair
+#' dsLinksGen1Housemates  <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen1Housemates", ]
+#' dsLinksGen2Siblings    <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen2Siblings", ]
 #'
 #' spGen1 <- CreateSpatialNeighbours(dsLinksGen1Housemates)
 #' spGen2 <- CreateSpatialNeighbours(dsLinksGen2Siblings)
@@ -52,10 +53,10 @@
 #' head(spGen2)
 #' #Returns:
 #' #   from  to weight
-#' #3   201 202   0.50
-#' #6   301 302   0.50
-#' #7   301 303   0.50
-#' #9   302 303   0.50
+#' # 3  201 202   0.50
+#' # 6  301 302   0.50
+#' # 7  301 303   0.50
+#' # 9  302 303   0.50
 #' #24  401 403   0.25
 #' #28  801 802   0.50
 #'

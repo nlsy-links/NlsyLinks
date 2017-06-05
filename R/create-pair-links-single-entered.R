@@ -1,3 +1,5 @@
+# Roxygen comments in CreatePairLinks file.
+
 CreatePairLinksSingleEntered <- function( outcomeDataset, linksPairDataset, outcomeNames,
   linksNames=c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset=TRUE,
   subject1Qualifier="_S1", subject2Qualifier="_S2") {

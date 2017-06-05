@@ -74,10 +74,10 @@
 #' @keywords package
 #' 
 #' @examples
-#' library(NlsyLinks) #Load the package into the current R session.
-#' summary(Links79Pair)  #Summarize the five variables.
-#' hist(Links79Pair$R)  #Display a histogram of the Relatedness values.
-#' table(Links79Pair$R)  #Create a table of the Relatedness values for the whole sample.
+#' library(NlsyLinks)    # Load the package into the current R session.
+#' summary(Links79Pair)  # Summarize the five variables.
+#' hist(Links79Pair$R)   # Display a histogram of the Relatedness values.
+#' table(Links79Pair$R)  # Create a table of the Relatedness values for the whole sample.
 #'
 #' \dontrun{
 #' # Install/update NlsyLinks with the release version from CRAN.

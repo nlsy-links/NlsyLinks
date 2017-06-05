@@ -12,13 +12,9 @@
 #' @param rName The name of the variable (in `dsDirty`) indicating the pair's relatedness coefficient.
 #'
 #' @details The function takes `dsDirty` and produces a new [base::data.frame] with the following features:
-#'
 #' 1. Only three existing columns are retained: `O1`, `O2`, and `R`.  They are assigned these names.
-#'
 #' 1. A new column called `GroupID` is created to reflect their group membership (which is based on the `R` value).  These valuesa re sequential integers, starting at 1.  The group with the weakest `R` is 1.  The group with the strongest `R` has the largest `GroupID` (this is typically the MZ tiwns).
-#'
 #' 1. Any row is excluded if it has a missing data point for `O1`, `O2`, or `R`.
-#'
 #' 1. The [base::data.frame] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
 #'
 #'@return A [base::data.frame] with one row per subject pair.  The [base::data.frame] contains the following variables (which can NOT be changed by the user through optional parameters):
@@ -31,11 +27,11 @@
 #'
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
-#' dsLinks <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-#' dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only NLSY79-C siblings
+#' dsLinks        <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
+#' dsLinks        <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only NLSY79-C siblings
 #'
-#' oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
-#' oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+#' oName_S1       <- "MathStandardized_S1" #Stands for Outcome1
+#' oName_S2       <- "MathStandardized_S2" #Stands for Outcome2
 #' dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
 #'
 #' dsClean <- CleanSemAceDataset( dsDirty=dsLinks, dsGroupSummary, oName_S1, oName_S2, rName="R" )
@@ -43,8 +39,8 @@
 #'
 #' dsClean$AbsDifference <- abs(dsClean$O1 - dsClean$O2)
 #' plot(jitter(dsClean$R), dsClean$AbsDifference, col="gray70")
+#' 
 #' @keywords ACE
-
 
 CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rName="R" ) {
   rLevelsToInclude <- dsGroupSummary[dsGroupSummary$Included, rName]

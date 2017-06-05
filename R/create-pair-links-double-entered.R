@@ -1,9 +1,11 @@
 #' @name CreatePairLinks
 #' 
-#' @aliases CreatePairLinksSingleEntered CreatePairLinksDoubleEntered
+#' @aliases 
+#' CreatePairLinksSingleEntered 
+#' CreatePairLinksDoubleEntered
 #' CreatePairLinksDoubleEnteredWithNoOutcomes
 #' 
-#' @export CreatePairLinksSingleEntered CreatePairLinksDoubleEntered CreatePairLinksDoubleEnteredWithNoOutcomes
+#' @export CreatePairLinksSingleEntered  CreatePairLinksDoubleEntered CreatePairLinksDoubleEnteredWithNoOutcomes
 #'
 #' @title Creates a pairs linking file.
 #' 
@@ -14,16 +16,32 @@
 #' [CreatePairLinksDoubleEnteredWithNoOutcomes()] is intended to be a
 #' primarily a helper function for [CreateSpatialNeighbours()].
 #'
-#' @usage CreatePairLinksDoubleEntered(outcomeDataset, linksPairDataset, outcomeNames,
-#'    linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE,
-#'    subject1Qualifier = "_S1", subject2Qualifier = "_S2")
+#' @usage 
+#' 
+#' CreatePairLinksDoubleEntered(
+#'   outcomeDataset, 
+#'   linksPairDataset, 
+#'   outcomeNames,
+#'   linksNames             = c("ExtendedID", "R", "RelationshipPath"), 
+#'   validateOutcomeDataset = TRUE,
+#'   subject1Qualifier      = "_S1", 
+#'   subject2Qualifier      = "_S2"
+#' )
 #'
-#'  CreatePairLinksSingleEntered(outcomeDataset, linksPairDataset, outcomeNames,
-#'     linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE,
-#'     subject1Qualifier = "_S1", subject2Qualifier = "_S2")
+#' CreatePairLinksSingleEntered(
+#'   outcomeDataset, 
+#'   linksPairDataset, 
+#'   outcomeNames,
+#'   linksNames             = c("ExtendedID", "R", "RelationshipPath"), 
+#'   validateOutcomeDataset = TRUE,
+#'   subject1Qualifier      = "_S1", 
+#'   subject2Qualifier      = "_S2"
+#' )
 #'
-#'  CreatePairLinksDoubleEnteredWithNoOutcomes(linksPairDataset,
-#'     linksNames = c("ExtendedID", "R", "RelationshipPath"))
+#' CreatePairLinksDoubleEnteredWithNoOutcomes(
+#'   linksPairDataset,
+#'   linksNames = c("ExtendedID", "R", "RelationshipPath")
+#' )
 #'
 #' @param outcomeDataset A data frame containing the outcome variable(s)
 #' @param linksPairDataset A data frame containing the `SubjectTag`s of
@@ -51,14 +69,16 @@
 #'   RelationshipPath=rep("Gen2Siblings", 4)
 #' )
 #' dsSingleOutcomes <- data.frame(
-#'   SubjectTag=c(101, 102, 103, 201, 202),
-#'   DV1=c(11, 12, 13, 41, 42),
-#'   DV2=c(21, 22, 23, 51, 52))
+#'   SubjectTag = c(101, 102, 103, 201, 202),
+#'   DV1        = c( 11,  12,  13,  41,  42),
+#'   DV2        = c( 21,  22,  23,  51,  52)
+#' )
 #' dsDouble <- CreatePairLinksDoubleEntered(
-#'   outcomeDataset=dsSingleOutcomes,
-#'   linksPairDataset=dsSingleLinks,
-#'   outcomeNames=c("DV1", "DV2"),
-#'   validateOutcomeDataset=TRUE)
+#'   outcomeDataset         = dsSingleOutcomes,
+#'   linksPairDataset       = dsSingleLinks,
+#'   outcomeNames           = c("DV1", "DV2"),
+#'   validateOutcomeDataset = TRUE
+#' )
 #' dsDouble #Show the 8 rows in the double-entered pair links
 #' summary(dsDouble) #Summarize the variables
 #'
