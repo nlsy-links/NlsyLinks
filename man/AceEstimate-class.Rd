@@ -8,24 +8,22 @@
 \alias{print,AceEstimate-method}
 \alias{show,AceEstimate-method}
 \alias{GetDetails,AceEstimate-method}
-\title{Class \code{"AceEstimate"}}
+\title{Class AceEstimate}
 \description{
 A class containing information about a single univariate ACE model.
 }
 \note{
 The contents of the \code{Details} list depends on the underlying
 estimation routine.  For example, when the ACE model is estimated with a DF
-analysis, the output is an \code{lm} object, because the \code{lm} function
+analysis, the output is an \code{\link[stats:lm]{stats::lm()}} object, because the \code{\link[stats:lm]{stats::lm()}} function
 was used (ie, the basical general linear model).  Alternatively, if the
-user specified the \code{lavaan} package should estimate that ACE model,
-the output is a \code{lavaan} object.
+user specified the \code{\link[lavaan:lavaan]{lavaan::lavaan()}} package should estimate that ACE model,
+the output is a \code{\link[lavaan:lavaan]{lavaan::lavaan()}} object.
 }
 \section{Objects from the Class}{
  Objects can be created by calls of the
 form:
-
-\code{new("AceEstimate", aSquared, cSquared, eSquared, caseCount, unity,
-withinBounds, details, ...)}
+\code{new("AceEstimate", aSquared, cSquared, eSquared, caseCount, unity, withinBounds, details, ...)}
 }
 
 \examples{
@@ -33,7 +31,7 @@ library(NlsyLinks) #Load the package into the current R session.
 
 showClass("AceEstimate")
 est <- CreateAceEstimate(.5, .2, .3, 40)
-est 
+est
 print(est)
 }
 \keyword{ACE}

@@ -7,16 +7,30 @@
 \alias{CreatePairLinksDoubleEnteredWithNoOutcomes}
 \title{Creates a pairs linking file.}
 \usage{
-CreatePairLinksDoubleEntered(outcomeDataset, linksPairDataset, outcomeNames, 
-   linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, 
-   subject1Qualifier = "_S1", subject2Qualifier = "_S2")
+CreatePairLinksDoubleEntered(
+  outcomeDataset, 
+  linksPairDataset, 
+  outcomeNames,
+  linksNames             = c("ExtendedID", "R", "RelationshipPath"), 
+  validateOutcomeDataset = TRUE,
+  subject1Qualifier      = "_S1", 
+  subject2Qualifier      = "_S2"
+)
 
- CreatePairLinksSingleEntered(outcomeDataset, linksPairDataset, outcomeNames, 
-    linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE, 
-    subject1Qualifier = "_S1", subject2Qualifier = "_S2")
- 
- CreatePairLinksDoubleEnteredWithNoOutcomes(linksPairDataset, 
-    linksNames = c("ExtendedID", "R", "RelationshipPath"))
+CreatePairLinksSingleEntered(
+  outcomeDataset, 
+  linksPairDataset, 
+  outcomeNames,
+  linksNames             = c("ExtendedID", "R", "RelationshipPath"), 
+  validateOutcomeDataset = TRUE,
+  subject1Qualifier      = "_S1", 
+  subject2Qualifier      = "_S2"
+)
+
+CreatePairLinksDoubleEnteredWithNoOutcomes(
+  linksPairDataset,
+  linksNames = c("ExtendedID", "R", "RelationshipPath")
+)
 }
 \arguments{
 \item{outcomeDataset}{A data frame containing the outcome variable(s)}
@@ -41,33 +55,32 @@ Creates a linking file for BG designs using this file structure (e.g., DF analys
 A DF analysis requires a double-entered file that contains the \code{R}
 value for the pair, and their two outcome variable values.
 
-\code{CreatePairLinksDoubleEnteredWithNoOutcomes} is intended to be a
-primarily a helper function for \code{\link{CreateSpatialNeighbours}}.
+\code{\link[=CreatePairLinksDoubleEnteredWithNoOutcomes]{CreatePairLinksDoubleEnteredWithNoOutcomes()}} is intended to be a
+primarily a helper function for \code{\link[=CreateSpatialNeighbours]{CreateSpatialNeighbours()}}.
 }
 \examples{
-
 dsSingleLinks <- data.frame(
-  ExtendedID=c(1, 1, 1, 2), 
-  SubjectTag_S1=c(101, 101, 102, 201), 
-  SubjectTag_S2=c(102, 103, 103, 202), 
-  R=c(.5, .25, .25, .5), 
+  ExtendedID=c(1, 1, 1, 2),
+  SubjectTag_S1=c(101, 101, 102, 201),
+  SubjectTag_S2=c(102, 103, 103, 202),
+  R=c(.5, .25, .25, .5),
   RelationshipPath=rep("Gen2Siblings", 4)
 )
 dsSingleOutcomes <- data.frame(
-  SubjectTag=c(101, 102, 103, 201, 202), 
-  DV1=c(11, 12, 13, 41, 42), 
-  DV2=c(21, 22, 23, 51, 52))
+  SubjectTag = c(101, 102, 103, 201, 202),
+  DV1        = c( 11,  12,  13,  41,  42),
+  DV2        = c( 21,  22,  23,  51,  52)
+)
 dsDouble <- CreatePairLinksDoubleEntered(
-  outcomeDataset=dsSingleOutcomes, 
-  linksPairDataset=dsSingleLinks, 
-  outcomeNames=c("DV1", "DV2"), 
-  validateOutcomeDataset=TRUE)
+  outcomeDataset         = dsSingleOutcomes,
+  linksPairDataset       = dsSingleLinks,
+  outcomeNames           = c("DV1", "DV2"),
+  validateOutcomeDataset = TRUE
+)
 dsDouble #Show the 8 rows in the double-entered pair links
 summary(dsDouble) #Summarize the variables
 
 ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
-
-
 }
 \references{
 For more information about a DF analysis, see Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).

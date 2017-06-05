@@ -2,10 +2,10 @@
 % Please edit documentation in R/create-ace-estimate.R
 \name{CreateAceEstimate}
 \alias{CreateAceEstimate}
-\title{Instantiate an \code{\link{AceEstimate-class}} object.}
+\title{Instantiate an \linkS4class{AceEstimate} object.}
 \usage{
-CreateAceEstimate(aSquared, cSquared, eSquared, caseCount, 
-  details=list(), unityTolerance = 1e-11)
+CreateAceEstimate(aSquared, cSquared, eSquared, caseCount, details = list(),
+  unityTolerance = 1e-11)
 }
 \arguments{
 \item{aSquared}{The proportion of variability due to a shared genetic influence (typically represented as a^2, or sometimes h^2).}
@@ -21,13 +21,13 @@ CreateAceEstimate(aSquared, cSquared, eSquared, caseCount,
 \item{unityTolerance}{Specifies how close the the sum of the ACE components should be to one, to be considered properly scaled to one.}
 }
 \value{
-An S4 object of \code{\link{AceEstimate-class}}.
+An S4 object of \linkS4class{AceEstimate}.
 }
 \description{
-Creates an instance of the \code{S4} class, \code{AceEstimate}  instantiating arguments set the parameter values estimated by the ACE model.
+Creates an instance of the \code{S4} class, \linkS4class{AceEstimate} instantiating arguments set the parameter values estimated by the ACE model.
 }
 \details{
-The contents of the \code{details} list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is an \code{lm} object, because the \code{lm} function was used (ie, the basical general linear model).  Alternatively, if the user specified the \code{lavaan} package should estimate that ACE model, the output is a \code{lavaan} object.
+The contents of the \code{details} list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a \link[stats:lm]{stats::lm} object, because the \link[stats:lm]{stats::lm} function was used (ie, the basical general linear model).  Alternatively, if the user specified the \code{lavaan} package should estimate that ACE model, the output is a \link[lavaan:lavaan]{lavaan::lavaan} object.
 }
 \author{
 Will Beasley

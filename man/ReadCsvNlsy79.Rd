@@ -11,24 +11,24 @@ ReadCsvNlsy79Gen1(filePath, dsExtract = utils::read.csv(filePath))
 \arguments{
 \item{filePath}{A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or Linux.}
 
-\item{dsExtract}{A `data.frame` (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.}
+\item{dsExtract}{A 'data.frame' (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.}
 }
 \value{
-A \code{data.frame} to facililate biometric analysis.
+A \link[base:data.frame]{base::data.frame} to facililate biometric analysis.
 }
 \description{
-The function accepts a (file path to) CSV file and creates a \code{data.frame}.  The \code{data.frame} is modified and augmented with columns to assist later routines.
+The function accepts a (file path to) CSV file and creates a \link[base:data.frame]{base::data.frame}.  The \link[base:data.frame]{base::data.frame} is modified and augmented with columns to assist later routines.
 }
 \details{
 The function does seven things.
 \enumerate{
- \item Reads the CSV into a \code{data.frame}.
- \item Checks that the NLSY variables \code{C00001.00} and \code{C00002.00} exist in the \code{data.frame}.
- \item The NLSY variable \code{C00001.00} is renamed \code{SubjectID}.
- \item A variable named \code{Generation} is given a value of 2 for all subjects.
- \item The \code{SubjectTag} variable is created.
- \item The NLSY variable \code{C00002.00} is multiplied by 100 and renamed \code{SubjectTagOfMother}.
- \item The NLSY variable \code{R00001.49} (ie, their Mother's \code{HHID} is attached to each Gen2 record).
+\item Reads the CSV into a \link[base:data.frame]{base::data.frame}.
+\item Checks that the NLSY variables \code{C00001.00} and \code{C00002.00} exist in the \link[base:data.frame]{base::data.frame}.
+\item The NLSY variable \code{C00001.00} is renamed \code{SubjectID}.
+\item A variable named \code{Generation} is given a value of 2 for all subjects.
+\item The \code{SubjectTag} variable is created.
+\item The NLSY variable \code{C00002.00} is multiplied by 100 and renamed \code{SubjectTagOfMother}.
+\item The NLSY variable \code{R00001.49} (ie, their Mother's \code{HHID} is attached to each Gen2 record).
 }
 }
 \examples{
@@ -36,7 +36,6 @@ The function does seven things.
 filePathGen2 <- "~/Nlsy/Datasets/gen2-birth.csv"
 ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 }
-
 }
 \author{
 Will Beasley

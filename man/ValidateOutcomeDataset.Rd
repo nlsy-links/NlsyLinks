@@ -7,7 +7,7 @@
 ValidateOutcomeDataset(dsOutcome, outcomeNames)
 }
 \arguments{
-\item{dsOutcome}{A \code{data.frame} with the measured variables}
+\item{dsOutcome}{A \link[base:data.frame]{base::data.frame} with the measured variables}
 
 \item{outcomeNames}{The column names of the measure variables that eventually will be used by a statistical procedure.}
 }
@@ -21,17 +21,17 @@ The \pkg{NlsyLinks} handles a lot of the plumbing code needed to transform extra
 \details{
 The \code{dsOutcome} parameter must:
 \enumerate{
-   \item Have a non-missing value.
-   \item Contain at least one row.
-   \item Contain a column called 'SubjectTag' (case sensitive).
-   \item Have the SubjectTag column containing only positive numbers.
-   \item Have the SubjectTag column where all values are unique (ie, two rows/subjects cannot have the same value).
+\item Have a non-missing value.
+\item Contain at least one row.
+\item Contain a column called 'SubjectTag' (case sensitive).
+\item Have the SubjectTag column containing only positive numbers.
+\item Have the SubjectTag column where all values are unique (ie, two rows/subjects cannot have the same value).
 }
 
 The \code{outcomeNames} parameter must:
 \enumerate{
-   \item Have a non-missing value
-   \item Contain only column names that are present in the \code{dsOutcome} data frame.
+\item Have a non-missing value
+\item Contain only column names that are present in the \code{dsOutcome} data frame.
 }
 }
 \examples{
