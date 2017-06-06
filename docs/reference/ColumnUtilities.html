@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A collection of functions that helps data management <code>data.frame</code>s, particularly those derived from NLSY Extracts. — ColumnUtilities • NlsyLinks</title>
+<title>A collection of functions that helps data management data.frames, particularly those derived from NLSY Extracts. — ColumnUtilities • NlsyLinks</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -76,11 +76,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A collection of functions that helps data management <code>data.frame</code>s, particularly those derived from NLSY Extracts.</h1>
+    <h1>A collection of functions that helps data management data.frames, particularly those derived from NLSY Extracts.</h1>
     </div>
 
     
-    <p>A collection of functions that helps data management <code>data.frame</code>s, particularly those derived from NLSY Extracts.</p>
+    <p>A collection of functions that helps data management <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>s, particularly those derived from NLSY Extracts.</p>
     
 
     <pre class="usage"><span class='fu'>VerifyColumnExists</span>( <span class='no'>dataFrame</span>, <span class='no'>columnName</span> )
@@ -94,11 +94,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dataFrame</th>
-      <td><p>The <code>data.frame</code> whose columns are to be verified or renamed.</p></td>
+      <td><p>The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> whose columns are to be verified or renamed.</p></td>
     </tr>
     <tr>
       <th>columnName</th>
-      <td><p>The name of the column to verify is present in the <code>data.frame</code>.</p></td>
+      <td><p>The name of the column to verify is present in the <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.</p></td>
     </tr>
     <tr>
       <th>nlsyRNumber</th>
@@ -116,12 +116,12 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>*IMPORTANT* The <code>RenameColumn</code> and <code>RenameNlsyColumn</code> functions do not use side-effects to rename the <code>data.frame</code>.  Instead, it returns a new <code>data.frame</code>.  In the example below, notice the assignment to <code>ds</code>: <code>ds &lt;- RenameNlsyColumn(...)</code>.</p>
-<p>The <code>VerifyColumnExists</code> function check that exactly one column exists with the specified <code>columnName</code>.  If so, the index of the column is returned.  If not, an exception is thrown.</p>
+    <p><em>IMPORTANT</em> The <code>RenameColumn()</code> and <code>RenameNlsyColumn()</code> functions do not use side-effects to rename the <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.  Instead, it returns a new <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.  In the example below, notice the assignment to <code>ds</code>: <code>ds &lt;- RenameNlsyColumn(...)</code>.</p>
+<p>The <code>VerifyColumnExists()</code> function check that exactly one column exists with the specified <code>columnName</code>.  If so, the index of the column is returned.  If not, an exception is thrown.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The RNumber assigned by the NLS has a pattern.  In the Nlsy79 Gen1 dataset, the names start with a `R' or `T' and are followed by seven digits (eg, R0000100).  In the Nlsy79 Gen2 dataset, the names start with `C' or `Y' and are followed by seven digits (eg, C0007030, Y1994600).</p>
+    <p>The RNumber assigned by the NLS has a pattern.  In the Nlsy79 Gen1 dataset, the names start with a 'R' or 'T' and are followed by seven digits (eg, R0000100).  In the Nlsy79 Gen2 dataset, the names start with 'C' or 'Y' and are followed by seven digits (eg, C0007030, Y1994600).</p>
 <p>In the NLS Investigator, a decimal is present in the RNumber (eg, R00001.00).  When the Investigator saves the dataset as a CSV, the decimal is removed (eg, R0000100).</p>
     
 

@@ -4,7 +4,7 @@
 #'
 #' @export VerifyColumnExists RenameColumn RenameNlsyColumn
 #'
-#' @title  A collection of functions that helps data management [base::data.frame]s, particularly those derived from NLSY Extracts.
+#' @title  A collection of functions that helps data management data.frames, particularly those derived from NLSY Extracts.
 #'
 #' @description  A collection of functions that helps data management [base::data.frame]s, particularly those derived from NLSY Extracts.
 #'

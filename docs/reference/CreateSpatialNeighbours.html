@@ -80,7 +80,7 @@
     </div>
 
     
-    <p>This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The <span class="pkg">spdep</span> (Spatial Dependence) uses a sparse matrix (actually a <code>data.frame</code>) to represent neigbours.</p>
+    <p>This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The <span class="pkg">spdep</span> (Spatial Dependence) uses a sparse matrix (actually a <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>) to represent neigbours.</p>
     
 
     <pre class="usage"><span class='fu'>CreateSpatialNeighbours</span>(<span class='no'>linksPairsDoubleEntered</span>)</pre>
@@ -90,46 +90,44 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>linksPairsDoubleEntered</th>
-      <td><p>A <code>data.frame</code> containing the links, preferably created by a function like 
-
-<code><a href='CreatePairLinks.html'>CreatePairLinksDoubleEntered</a></code>.</p></td>
+      <td><p>A <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> containing the links, preferably created by a function like <code><a href='CreatePairLinks.html'>CreatePairLinksDoubleEntered()</a></code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An S3 <code>spatial.neighbours</code> object to work with functions in the <span class="pkg">spdep</span> package. 
+    <p>An S3 <code>spdep::spatial.neighbours</code> object to work with functions in the <span class="pkg">spdep</span> package.
 
-<code>SubjectTag_S1</code> is renamed `<code>from</code>'. 
+<code>SubjectTag_S1</code> is renamed '<code>from</code>'.
 
-<code>SubjectTag_S2</code> is renamed `<code>to</code>'. 
+<code>SubjectTag_S2</code> is renamed '<code>to</code>'.
 
-<code>R</code> is renamed `<code>weight</code>'.</p>
+<code>R</code> is renamed '<code>weight</code>'.</p>
 <p>The attribute <code>region.id</code> specifies each unique SubjectTag.</p>
 <p>The attribue <code>n</code> specifies the number of unique subjects.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>There is one row per unique pair of subjects, <em>respecting order</em>.  This has twice as many rows as <code><a href='Links79Pair.html'>Links79Pair</a></code> and <code><a href='Links79PairExpanded.html'>Links79PairExpanded</a></code> (which have one row per unique pair of subjects, <em>irrespective of order</em>).
-    <code>CreateSpatialNeighbours</code> accepts any paired relationships in a <code>data.frame</code>, as long as it contains the columns <code>SubjectTag_S1</code>, <code>SubjectTag_S2</code>, and <code>R</code>.  See <code><a href='Links79Pair.html'>Links79Pair</a></code> for more details about these columns.</p>
+    <p>There is one row per unique pair of subjects, <em>respecting order</em>.  This has twice as many rows as <a href='Links79Pair.html'>Links79Pair</a> and <a href='Links79PairExpanded.html'>Links79PairExpanded</a> (which have one row per unique pair of subjects, <em>irrespective of order</em>).
+    <code>CreateSpatialNeighbours()</code> accepts any paired relationships in a <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>, as long as it contains the columns <code>SubjectTag_S1</code>, <code>SubjectTag_S2</code>, and <code>R</code>.  See <a href='Links79Pair.html'>Links79Pair</a> for more details about these columns.</p>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Notice the British variant of 'neighbo<em>u</em>rs' is used, to be consistent with the <code>spatial.neighbour</code> class in the  <a href = 'https://cran.r-project.org/package=spdep'><code>spdep</code></a> package.</p>
+    <p>Notice the British variant of 'neighbo<em>u</em>rs' is used, to be consistent with the <code>spdep::spatial.neighbour</code> class.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Bard, D.E., Beasley, W.H., Meredith, K., &amp; Rodgers, J.L. (2012). <a href = 'http://link.springer.com/article/10.1007/s10519-012-9566-6'><em>Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model</em></a>. Behavior Genetics Association 42nd Annual Meeting. [<a href = 'https://r-forge.r-project.org/forum/forum.php?thread_id=4761&amp;forum_id=4266&amp;group_id=1330'>Slides</a>]</p>
-<p>Bivand, R., Pebesma, E., &amp; Gomez-Rubio, V. (2013). <a href = 'http://link.springer.com/book/10.1007/978-1-4614-7618-4'><em>Applied Spatial Data Analysis with R.</em></a> New York: Springer. (Especially Chapter 9.)</p>
-<p>Banerjee, S., Carlin, B.P., &amp; Gelfand, A.E. (2004). <a href = 'http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C'><em>Hierarchical Modeling and Analysis for Spatial Data</em></a>. Boca Raton: CRC Press.</p>
-<p>Lawson, A.B (2013). <a href = 'http://books.google.com/books?id=g7RJEZb1umwC'><em>Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition</em></a>. Boca Raton: CRC Press.</p>
+    <p>Bard, D.E., Beasley, W.H., Meredith, K., &amp; Rodgers, J.L. (2012). <a href = 'http://link.springer.com/article/10.1007/s10519-012-9566-6'>Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model</a>. Behavior Genetics Association 42nd Annual Meeting. <a href = 'https://r-forge.r-project.org/forum/forum.php?thread_id=4761&amp;forum_id=4266&amp;group_id=1330'>Slides</a>.</p>
+<p>Bivand, R., Pebesma, E., &amp; Gomez-Rubio, V. (2013). <a href = 'http://link.springer.com/book/10.1007/978-1-4614-7618-4'>Applied Spatial Data Analysis with R.</a> New York: Springer. (Especially Chapter 9.)</p>
+<p>Banerjee, S., Carlin, B.P., &amp; Gelfand, A.E. (2004). <a href = 'http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C'>Hierarchical Modeling and Analysis for Spatial Data</a>. Boca Raton: CRC Press.</p>
+<p>Lawson, A.B (2013). <a href = 'http://books.google.com/books?id=g7RJEZb1umwC'>Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition</a>. Boca Raton: CRC Press.</p>
 <p>The <span class="pkg">spdep</span> package documentation: <a href = 'https://cran.r-project.org/package=spdep'>spdep: Spatial dependence: weighting schemes, statistics and models</a>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>dsLinksAll</span> <span class='kw'>&lt;-</span> <span class='no'>Links79Pair</span>
-<span class='no'>dsLinksGen1Housemates</span> <span class='kw'>&lt;-</span> <span class='no'>dsLinksAll</span>[<span class='no'>dsLinksAll</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>"Gen1Housemates"</span>, ]
-<span class='no'>dsLinksGen2Siblings</span> <span class='kw'>&lt;-</span> <span class='no'>dsLinksAll</span>[<span class='no'>dsLinksAll</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>"Gen2Siblings"</span>, ]
+    <pre class="examples"><div class='input'><span class='no'>dsLinksAll</span>             <span class='kw'>&lt;-</span> <span class='no'>Links79Pair</span>
+<span class='no'>dsLinksGen1Housemates</span>  <span class='kw'>&lt;-</span> <span class='no'>dsLinksAll</span>[<span class='no'>dsLinksAll</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>"Gen1Housemates"</span>, ]
+<span class='no'>dsLinksGen2Siblings</span>    <span class='kw'>&lt;-</span> <span class='no'>dsLinksAll</span>[<span class='no'>dsLinksAll</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>"Gen2Siblings"</span>, ]
 
 <span class='no'>spGen1</span> <span class='kw'>&lt;-</span> <span class='fu'>CreateSpatialNeighbours</span>(<span class='no'>dsLinksGen1Housemates</span>)
 <span class='no'>spGen2</span> <span class='kw'>&lt;-</span> <span class='fu'>CreateSpatialNeighbours</span>(<span class='no'>dsLinksGen2Siblings</span>)
@@ -140,20 +138,20 @@
 #&gt; 7   301 303   0.50
 #&gt; 9   302 303   0.50
 #&gt; 24  401 403   0.25
-#&gt; 28  801 802   0.50</div><div class='input'><span class='co'>#Returns: </span>
+#&gt; 28  801 802   0.50</div><div class='input'><span class='co'>#Returns:</span>
 <span class='co'>#   from  to weight</span>
-<span class='co'>#3   201 202   0.50</span>
-<span class='co'>#6   301 302   0.50</span>
-<span class='co'>#7   301 303   0.50</span>
-<span class='co'>#9   302 303   0.50</span>
+<span class='co'># 3  201 202   0.50</span>
+<span class='co'># 6  301 302   0.50</span>
+<span class='co'># 7  301 303   0.50</span>
+<span class='co'># 9  302 303   0.50</span>
 <span class='co'>#24  401 403   0.25</span>
 <span class='co'>#28  801 802   0.50</span>
 
 <span class='fu'>table</span>(<span class='no'>spGen2</span>$<span class='no'>weight</span>)</div><div class='output co'>#&gt; 
 #&gt;  0.25 0.375   0.5  0.75     1 
 #&gt;  3442   610  6997    12    27 </div><div class='input'><span class='co'>#Returns:</span>
-<span class='co'>#0.25 0.375   0.5  0.75     1 </span>
-<span class='co'>#3442   610  6997    12    27 </span></div></pre>
+<span class='co'>#0.25 0.375   0.5  0.75     1</span>
+<span class='co'>#3442   610  6997    12    27</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

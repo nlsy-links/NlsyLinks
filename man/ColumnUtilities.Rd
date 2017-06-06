@@ -5,7 +5,7 @@
 \alias{VerifyColumnExists}
 \alias{RenameColumn}
 \alias{RenameNlsyColumn}
-\title{A collection of functions that helps data management \link[base:data.frame]{base::data.frame}s, particularly those derived from NLSY Extracts.}
+\title{A collection of functions that helps data management data.frames, particularly those derived from NLSY Extracts.}
 \usage{
 VerifyColumnExists( dataFrame, columnName )
 

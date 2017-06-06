@@ -2,7 +2,7 @@
 % Please edit documentation in R/create-subject-tag.R
 \name{CreateSubjectTag}
 \alias{CreateSubjectTag}
-\title{Creates a \code{SubjectTag}.  This value uniquely identifies subjects, when both generations are included in the same dataset.}
+\title{Creates a SubjectTag.  This value uniquely identifies subjects, when both generations are included in the same dataset.}
 \usage{
 CreateSubjectTag(subjectID, generation)
 }

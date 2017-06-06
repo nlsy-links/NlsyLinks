@@ -84,14 +84,15 @@
 <p>If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM.</p>
     
 
-    <pre class="usage"><span class='fu'>RGroupSummary</span>(<span class='no'>ds</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>, <span class='no'>rName</span>, <span class='kw'>determinantThreshold</span><span class='kw'>=</span><span class='fl'>1e-5</span>)</pre>
+    <pre class="usage"><span class='fu'>RGroupSummary</span>(<span class='no'>ds</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>, <span class='kw'>rName</span> <span class='kw'>=</span> <span class='st'>"R"</span>,
+  <span class='kw'>determinantThreshold</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>ds</th>
-      <td><p>The <code>data.frame</code> containing the following variables:</p></td>
+      <td><p>The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> containing the following variables:</p></td>
     </tr>
     <tr>
       <th>oName_S1</th>
@@ -113,18 +114,19 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>data.frame</code> with one row per group.  The <code>data.frame</code> contains the following variables:</p>
-<dt> R </dt><dd><p>The group's <code>R</code> value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the <code>rName</code> argument.</p></dd>
-<dt> Included </dt><dd><p>Indicates if the group should be included in a multiple-group SEM.</p></dd>
-<dt> PairCount </dt><dd><p>The number of pairs in the group with <em>complete</em> data for <code>R</code> and the two outcome/manifest variables.</p></dd>
-<dt> O1Mean </dt><dd><p>The mean (of the outcome variable) among the group's first members, excluding the missing values.</p></dd>
-<dt> O2Mean </dt><dd><p>The mean (of the outcome variable) among the group's second members, excluding the missing values.</p></dd>
-<dt> O1Variance </dt><dd><p>The variance (of the outcome variable) among the group's first members.</p></dd>
-<dt> O2Variance </dt><dd><p>The variance (of the outcome variable) among the group's second members.</p></dd>
-<dt> O1O2Covariance </dt><dd><p>The covariance (of the outcome variable) across the group's first and second members.</p></dd>
-<dt> Correlation </dt><dd><p>The correlation (of the outcome variable) across the group's first and second members.</p></dd>
-<dt> Determinant </dt><dd><p>The determinant of the group's covariance matrix.</p></dd>
-<dt> PosDefinite </dt><dd><p>Indicates if the group's covariance matrix is positive definite.</p></dd>
+    <p>A <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> with one row per group.  The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> contains the following variables:</p><ul>
+<li><p><strong>R</strong> The group's <code>R</code> value.  Note the name of this variable can be changed by the user, by specifying a non-default value to the <code>rName</code> argument.</p></li>
+<li><p><strong>Included</strong> Indicates if the group should be included in a multiple-group SEM.</p></li>
+<li><p><strong>PairCount</strong> The number of pairs in the group with <em>complete</em> data for <code>R</code> and the two outcome/manifest variables.</p></li>
+<li><p><strong>O1Mean</strong> The mean (of the outcome variable) among the group's first members, excluding the missing values.</p></li>
+<li><p><strong>O2Mean</strong> The mean (of the outcome variable) among the group's second members, excluding the missing values.</p></li>
+<li><p><strong>O1Variance</strong> The variance (of the outcome variable) among the group's first members.</p></li>
+<li><p><strong>O2Variance</strong> The variance (of the outcome variable) among the group's second members.</p></li>
+<li><p><strong>O1O2Covariance</strong> The covariance (of the outcome variable) across the group's first and second members.</p></li>
+<li><p><strong>Correlation</strong> The correlation (of the outcome variable) across the group's first and second members.</p></li>
+<li><p><strong>Determinant</strong> The determinant of the group's covariance matrix.</p></li>
+<li><p><strong>PosDefinite</strong> Indicates if the group's covariance matrix is positive definite.</p></li>
+</ul>
 
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -140,10 +142,10 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>NlsyLinks</span>) <span class='co'>#Load the package into the current R session.</span>
-<span class='no'>dsLinks</span> <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>  <span class='co'>#Load the dataset from the NlsyLinks package.</span>
-<span class='no'>dsLinks</span> <span class='kw'>&lt;-</span> <span class='no'>dsLinks</span>[<span class='no'>dsLinks</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>, ]
-<span class='no'>oName_S1</span> <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'>#Stands for Outcome1</span>
-<span class='no'>oName_S2</span> <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'>#Stands for Outcome2</span>
+<span class='no'>dsLinks</span>        <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>   <span class='co'># Load the dataset from the NlsyLinks package.</span>
+<span class='no'>dsLinks</span>        <span class='kw'>&lt;-</span> <span class='no'>dsLinks</span>[<span class='no'>dsLinks</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>, ]
+<span class='no'>oName_S1</span>       <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'># Stands for Outcome1</span>
+<span class='no'>oName_S2</span>       <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'># Stands for Outcome2</span>
 <span class='no'>dsGroupSummary</span> <span class='kw'>&lt;-</span> <span class='fu'>RGroupSummary</span>(<span class='no'>dsLinks</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>)
 <span class='no'>dsGroupSummary</span></div><div class='output co'>#&gt;       R Included PairCount    O1Mean    O2Mean O1Variance O2Variance
 #&gt; 1 0.250     TRUE      2691  95.11427  95.98105   126.8906   150.1054
@@ -157,7 +159,7 @@
 #&gt; 3       90.12465   0.5276218   21054.625        TRUE
 #&gt; 4       63.00000   1.0000000       0.000       FALSE
 #&gt; 5      229.10714   0.9179130    9807.933        TRUE</div><div class='input'>
-<span class='co'>#Should return: </span>
+<span class='co'>#Should return:</span>
 <span class='co'>#      R Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance Correlation</span>
 <span class='co'>#1 0.250     TRUE      2718  94.6439  95.5990    169.650    207.842        41.0783    0.218761</span>
 <span class='co'>#2 0.375     TRUE       139  92.6043  93.1655    172.531    187.081        40.4790    0.225311</span>

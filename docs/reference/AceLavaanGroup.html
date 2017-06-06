@@ -80,18 +80,19 @@
     </div>
 
     
-    <p>This function uses the <span class="pkg">lavaan</span> package to estimate a univariate ACE model, using multiple groups.  
+    <p>This function uses the <span class="pkg">lavaan</span> package to estimate a univariate ACE model, using multiple groups.
 Each group has a unique value of <code>R</code> (i.e., the <em>R</em>elatedness coefficient).</p>
     
 
-    <pre class="usage"><span class='fu'>AceLavaanGroup</span>(<span class='no'>dsClean</span>, <span class='kw'>estimateA</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>estimateC</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>printOutput</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>AceLavaanGroup</span>(<span class='no'>dsClean</span>, <span class='kw'>estimateA</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>estimateC</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>printOutput</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dsClean</th>
-      <td><p>The <code>data.frame</code> containing complete cases for the <code>R</code> groups to be included in the estimation.</p></td>
+      <td><p>The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> containing complete cases for the <code>R</code> groups to be included in the estimation.</p></td>
     </tr>
     <tr>
       <th>estimateA</th>
@@ -109,7 +110,7 @@ Each group has a unique value of <code>R</code> (i.e., the <em>R</em>elatedness 
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An <code>AceEstimate</code> object.</p>
+    <p>An AceEstimate object.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -117,24 +118,24 @@ Each group has a unique value of <code>R</code> (i.e., the <em>R</em>elatedness 
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Currently, the variables in <code>dsClean</code> must be named <code>O1</code>, <code>O2</code> and <code>R</code>; the letter `O' stands for <em>O</em>utcome.  This may not be as restrictive as it initially seems, because <code>dsClean</code> is intented to be produced by <code>CleanSemAceDataset</code>.  If this is too restrictive for your uses, we'd like to here about it (<em>please email wibeasley at hotmail period com</em>).</p>
+    <p>Currently, the variables in <code>dsClean</code> must be named <code>O1</code>, <code>O2</code> and <code>R</code>; the letter 'O' stands for <em>O</em>utcome.  This may not be as restrictive as it initially seems, because <code>dsClean</code> is intented to be produced by <code><a href='CleanSemAceDataset.html'>CleanSemAceDataset()</a></code>.  If this is too restrictive for your uses, we'd like to here about it (<em>please email wibeasley at hotmail period com</em>).</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The <span class="pkg">lavaan</span> package is developed by Yves Rosseel at Ghent University.  
-Three good starting points are the package home page (<a href = 'http://lavaan.ugent.be/'>http://lavaan.ugent.be/</a>), the documentation (<a href = 'https://cran.r-project.org/package=lavaan'>https://cran.r-project.org/package=lavaan</a>) 
+    <p>The <span class="pkg">lavaan</span> package is developed by Yves Rosseel at Ghent University.
+Three good starting points are the package website (http://lavaan.ugent.be/), the package documentation (https://cran.r-project.org/package=lavaan)
 and the JSS paper.</p>
 <p>Rosseel, Yves (2012), <a href = 'http://www.jstatsoft.org/v48/i02/'>lavaan: An R Package for Structural Equation Modeling</a>. <em>Journal of Statistical Software, 48</em>, (2), 1-36.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='CleanSemAceDataset.html'>CleanSemAceDataset</a></code>.  Further ACE model details are discussed in our package's <a href = 'https://cran.r-project.org/package=NlsyLinks'>vignettes</a>.</p>
+    <p><code><a href='CleanSemAceDataset.html'>CleanSemAceDataset()</a></code>.  Further ACE model details are discussed in our package's <a href = 'https://cran.r-project.org/package=NlsyLinks'>vignettes</a>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>NlsyLinks</span>) <span class='co'>#Load the package into the current R session.</span>
-<span class='no'>dsLinks</span> <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span> <span class='co'>#Start with the built-in data.frame in NlsyLinks</span>
-<span class='no'>dsLinks</span> <span class='kw'>&lt;-</span> <span class='no'>dsLinks</span>[<span class='no'>dsLinks</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>, ] <span class='co'>#Use only Gen2 Siblings (NLSY79-C)</span>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>NlsyLinks</span>) <span class='co'># Load the package into the current R session.</span>
+<span class='no'>dsLinks</span>  <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span> <span class='co'>#Start with the built-in data.frame in NlsyLinks</span>
+<span class='no'>dsLinks</span>  <span class='kw'>&lt;-</span> <span class='no'>dsLinks</span>[<span class='no'>dsLinks</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>, ] <span class='co'># Use only Gen2 Siblings (NLSY79-C)</span>
 
 <span class='no'>oName_S1</span> <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'>#Stands for Outcome1</span>
 <span class='no'>oName_S2</span> <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'>#Stands for Outcome2</span>
@@ -148,8 +149,8 @@ and the JSS paper.</p>
 #&gt;    0.6210977    0.2100356    0.1688667 8338.0000000 </div><div class='input'>
 <span class='co'>#Should produce:</span>
 <span class='co'># [1] "Results of ACE estimation: [show]"</span>
-<span class='co'>#     ASquared     CSquared     ESquared    CaseCount </span>
-<span class='co'>#    0.6681874    0.1181227    0.2136900 8390.0000000 </span>
+<span class='co'>#     ASquared     CSquared     ESquared    CaseCount</span>
+<span class='co'>#    0.6681874    0.1181227    0.2136900 8390.0000000</span>
 
 <span class='fu'>library</span>(<span class='no'>lavaan</span>) <span class='co'>#Load the package to access methods of the lavaan class.</span>
 <span class='fu'><a href='GetDetails-methods.html'>GetDetails</a></span>(<span class='no'>ace</span>)</div><div class='output co'>#&gt; lavaan (0.5-23.1097) converged normally after  54 iterations

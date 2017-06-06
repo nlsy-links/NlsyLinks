@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kinship linking file for pairs of relatives.  It builds upon the <code>Links79Pair</code> dataset. — Links79PairExpanded • NlsyLinks</title>
+<title>Kinship linking file for pairs of relatives.  It builds upon the Links79Pair dataset. — Links79PairExpanded • NlsyLinks</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -76,76 +76,75 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Kinship linking file for pairs of relatives.  It builds upon the <code>Links79Pair</code> dataset.</h1>
+    <h1>Kinship linking file for pairs of relatives.  It builds upon the Links79Pair dataset.</h1>
     </div>
 
     
-    <p>Please first read the documentation for <code><a href='Links79Pair.html'>Links79Pair</a></code>.  That
+    <p>Please first read the documentation for <a href='Links79Pair.html'>Links79Pair</a>.  That
 dataset contains the same pairs/rows, but only a subset of the
 variables/columns.</p>
-<p>NOTE: In Nov 2013, the variable naming scheme changed in order to be more consistent across variables.  For variables 
-that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an <code>_S1</code> or <code>_S2</code> 
-appended to it.  For instance, the variables <code>LastSurvey_S1</code> and <code>LastSurvey_S2</code> correspond to the last surveys completed 
-by the pair's first and second subject, respectively.  Similarly, the functions <code>CreatePairLinksDoubleEntered</code> and 
-<code>CreatePairLinksSingleEntered</code> now by default append <code>_S1</code> and <code>_S2</code>, instead of <code>_1</code> and <code>_2</code>.  However this can be 
-modified using the `subject1Qualifier` and `subject2Qualifier` parameters.</p>
+<p>NOTE: In Nov 2013, the variable naming scheme changed in order to be more consistent across variables.  For variables
+that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an <code>_S1</code> or <code>_S2</code>
+appended to it.  For instance, the variables <code>LastSurvey_S1</code> and <code>LastSurvey_S2</code> correspond to the last surveys completed
+by the pair's first and second subject, respectively.  Similarly, the functions <code><a href='CreatePairLinks.html'>CreatePairLinksDoubleEntered()</a></code> and
+<code><a href='CreatePairLinks.html'>CreatePairLinksSingleEntered()</a></code> now by default append <code>_S1</code> and <code>_S2</code>, instead of <code>_1</code> and <code>_2</code>.  However this can be
+modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters.</p>
     
 
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 11,075 observations on the following 22
-variables.  There is one row per unique pair of subjects, irrespective of
-order.</p><dl class='dl-horizontal'>
-<dt>ExtendedID</dt><dd><p>see the variable of the same name in <code><a href='Links79Pair.html'>Links79Pair</a></code></p></dd> 
-<dt>SubjectTag_S1</dt><dd><p>see the variable of the same name in <code><a href='Links79Pair.html'>Links79Pair</a></code></p></dd> 
-<dt>SubjectTag_S2</dt><dd><p>see the variable of the same name in <code><a href='Links79Pair.html'>Links79Pair</a></code></p></dd>
-<dt>R</dt><dd><p>see the variable of the same name in <code><a href='Links79Pair.html'>Links79Pair</a></code></p></dd> 
-<dt>RFull</dt><dd><p>This is a superset of <code>R</code>.  This includes all the <em>R</em> values we estimated, while <code>R</code> (i.e., the variable above) excludes values like <em>R</em>=0 for <code>Gen1Housemates</code>, and the associated relationships based on this <em>R</em> value (i.e., <code>Gen2Cousin</code>s and <code>AuntNiece</code>s).</p></dd>
-<dt>RelationshipPath</dt><dd><p>see the variable of the same name in <code><a href='Links79Pair.html'>Links79Pair</a></code></p></dd> 
-<dt>EverSharedHouse</dt><dd><p>Indicate if the pair likely live in the same house.  This is <code>TRUE</code> for <code>Gen1Housemates</code>, <code>Gen2Siblings</code>, and <code>ParentChild</code>. This is <code>FALSE</code> for <code>AuntNiece</code> and <code>Gen2Cousins</code></p></dd>
-<dt>IsMz</dt><dd><p>Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels <code>No</code>=0, <code>Yes</code>=1, <code>DoNotKnow</code>=255.</p></dd> 
-<dt>LastSurvey_S1</dt><dd><p>The year of Subject1's most recently completed survey. This may be different that the survey's administration date.</p></dd> 
-<dt>LastSurvey_S2</dt><dd><p>The year of Subject2's most recently completed survey. This may be different that the survey's administration date.</p></dd> 
-<dt>RImplicitPass1</dt><dd><p>The pair's <em>R</em> coefficient, using only implicit information.  Interpolation was NOT used.</p></dd> 
-<dt>RImplicit</dt><dd><p>The pair's <em>R</em> coefficient, using only implicit information.  Interpolation was used.</p></dd>
-<dt>RImplicit2004</dt><dd><p>The pair's <em>R</em> coefficient released in our previous projects (**need reference**).  This variable is provided primarily for previous users wishing to replicate previous analyses.</p></dd>
-<dt>RExplicitPass1</dt><dd><p>The pair's <em>R</em> coefficient, using only explicit information.  Interpolation was NOT used.</p></dd> 
-<dt>RExplicit</dt><dd><p>The pair's <em>R</em> coefficient, using only explicit information.  Interpolation was used.</p></dd> 
-<dt>RExplicitOlderSibVersion</dt><dd><p>The pair's <em>R</em> coefficient, according to the explicit item responses of the older sibling.</p></dd>
-<dt>RExplicitYoungerSibVersion</dt><dd><p>The pair's <em>R</em> coefficient, according to the explicit item responses of the younger sibling.</p></dd>
-<dt>RPass1</dt><dd><p>The pair's estimated <em>R</em> coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable <code>R</code> is identically constructed, but it did use interpolation.</p></dd> 
-<dt>Generation_S1</dt><dd><p>The generation of the first subject.  Values for Gen1 and Gen2 are <code>1</code> and <code>2</code>, respectively.</p></dd> 
-<dt>Generation_S2</dt><dd><p>The generation of the second subject.  Values for Gen1 and Gen2 are <code>1</code> and <code>2</code>, respectively.</p></dd> 
-<dt>SubjectID_S1</dt><dd><p>The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).</p></dd>
-<dt>SubjectID_S2</dt><dd><p>The ID value assigned by NLS to the second subject.</p></dd> 
-<dt>MathStandardized_S1</dt><dd><p>The PIAT-Math score for Subject1.  See <code><a href='ExtraOutcomes79.html'>ExtraOutcomes79</a></code> for more information about its source.</p></dd> 
-<dt>MathStandardized_S2</dt><dd><p>The PIAT-Math score for Subject2.</p></dd> 
-<dt>HeightZGenderAge_S1</dt><dd><p>The early adult height for Subject1.  See <code><a href='ExtraOutcomes79.html'>ExtraOutcomes79</a></code> for more information about its source.</p></dd> 
-<dt>HeightZGenderAge_S2</dt><dd><p>The early adult height for Subject2.</p></dd> 
-</dl>
+    <p>A data frame with 11,075 observations on the following 22 variables.
+There is one row per unique pair of subjects, irrespective of order.</p><ul>
+<li><p><strong>ExtendedID</strong> see the variable of the same name in <a href='Links79Pair.html'>Links79Pair</a></p></li>
+<li><p><strong>SubjectTag_S1</strong> see the variable of the same name in <a href='Links79Pair.html'>Links79Pair</a></p></li>
+<li><p><strong>SubjectTag_S2</strong> see the variable of the same name in <a href='Links79Pair.html'>Links79Pair</a></p></li>
+<li><p><strong>R</strong> see the variable of the same name in <a href='Links79Pair.html'>Links79Pair</a></p></li>
+<li><p><strong>RFull</strong> This is a superset of <code>R</code>.  This includes all the <em>R</em> values we estimated, while <code>R</code> (i.e., the variable above) excludes values like <em>R</em>=0 for <code>Gen1Housemates</code>, and the associated relationships based on this <em>R</em> value (i.e., <code>Gen2Cousin</code>s and <code>AuntNiece</code>s).</p></li>
+<li><p><strong>RelationshipPath</strong> see the variable of the same name in <a href='Links79Pair.html'>Links79Pair</a></p></li>
+<li><p><strong>EverSharedHouse</strong> Indicate if the pair likely live in the same house.  This is <code>TRUE</code> for <code>Gen1Housemates</code>, <code>Gen2Siblings</code>, and <code>ParentChild</code>. This is <code>FALSE</code> for <code>AuntNiece</code> and <code>Gen2Cousins</code></p></li>
+<li><p><strong>IsMz</strong> Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels <code>No</code>=0, <code>Yes</code>=1, <code>DoNotKnow</code>=255.</p></li>
+<li><p><strong>LastSurvey_S1</strong> The year of Subject1's most recently completed survey. This may be different that the survey's administration date.</p></li>
+<li><p><strong>LastSurvey_S2</strong> The year of Subject2's most recently completed survey. This may be different that the survey's administration date.</p></li>
+<li><p><strong>RImplicitPass1</strong> The pair's <em>R</em> coefficient, using only implicit information.  Interpolation was NOT used.</p></li>
+<li><p><strong>RImplicit</strong> The pair's <em>R</em> coefficient, using only implicit information.  Interpolation was used.</p></li>
+<li><p><strong>RImplicit2004</strong> The pair's <em>R</em> coefficient released in our previous projects (<strong>need reference</strong>).  This variable is provided primarily for previous users wishing to replicate previous analyses.</p></li>
+<li><p><strong>RExplicitPass1</strong> The pair's <em>R</em> coefficient, using only explicit information.  Interpolation was NOT used.</p></li>
+<li><p><strong>RExplicit</strong> The pair's <em>R</em> coefficient, using only explicit information.  Interpolation was used.</p></li>
+<li><p><strong>RExplicitOlderSibVersion</strong> The pair's <em>R</em> coefficient, according to the explicit item responses of the older sibling.</p></li>
+<li><p><strong>RExplicitYoungerSibVersion</strong> The pair's <em>R</em> coefficient, according to the explicit item responses of the younger sibling.</p></li>
+<li><p><strong>RPass1</strong> The pair's estimated <em>R</em> coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable <code>R</code> is identically constructed, but it did use interpolation.</p></li>
+<li><p><strong>Generation_S1</strong> The generation of the first subject.  Values for Gen1 and Gen2 are <code>1</code> and <code>2</code>, respectively.</p></li>
+<li><p><strong>Generation_S2</strong> The generation of the second subject.  Values for Gen1 and Gen2 are <code>1</code> and <code>2</code>, respectively.</p></li>
+<li><p><strong>SubjectID_S1</strong> The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).</p></li>
+<li><p><strong>SubjectID_S2</strong> The ID value assigned by NLS to the second subject.</p></li>
+<li><p><strong>MathStandardized_S1</strong> The PIAT-Math score for Subject1.  See <a href='ExtraOutcomes79.html'>ExtraOutcomes79</a> for more information about its source.</p></li>
+<li><p><strong>MathStandardized_S2</strong> The PIAT-Math score for Subject2.</p></li>
+<li><p><strong>HeightZGenderAge_S1</strong> The early adult height for Subject1.  See <a href='ExtraOutcomes79.html'>ExtraOutcomes79</a> for more information about its source.</p></li>
+<li><p><strong>HeightZGenderAge_S2</strong> The early adult height for Subject2.</p></li>
+</ul>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>See <code><a href='Links79Pair.html'>Links79Pair</a></code>.</p>
+    <p>See <a href='Links79Pair.html'>Links79Pair</a>.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Specifies the relatedness coefficient (ie, `<em>R</em>') between subjects in the
+    <p>Specifies the relatedness coefficient (ie, '<em>R</em>') between subjects in the
 same extended family.  Each row represents a unique relationship pair.  An
 extended family with \(k\) subjects will have \(k\)(\(k\)-1)/2 rows.
 Typically, Subject1 is older while Subject2 is younger.
     <code>RelationshipPath</code> variable.  Code written using this dataset should
 NOT assume it contains only Gen2 sibiling pairs.  See an example of
-filtering the relationship category in the in <code><a href='Links79Pair.html'>Links79Pair</a></code>
+filtering the relationship category in the in <a href='Links79Pair.html'>Links79Pair</a>
 documentation.</p>
-    <p>Please first read the documentation for <code><a href='Links79Pair.html'>Links79Pair</a></code>.  That
+<p>Please first read the documentation for <a href='Links79Pair.html'>Links79Pair</a>.  That
 dataset contains the same pairs/rows, but only a subset of the
 variables/columns.</p>
-    <p>The specific steps to determine the <em>R</em> coefficient will be described
+<p>The specific steps to determine the <em>R</em> coefficient will be described
 in an upcoming publication.  The following information may influence the
 decisions of an applied researcher.</p>
-    <p>A distinction is made between `Explicit' and `Implicit' information.
+<p>A distinction is made between 'Explicit' and 'Implicit' information.
 Explicit information comes from survey items that directly address the
 subject's relationships.  For instance in 2006, surveys asked if the
 sibling pair share the same biological father (eg, Y19940.00 and
@@ -154,7 +153,7 @@ typically isn't aware that their responses may be used to determine genetic
 relatedness.  For instance, if two siblings have biological fathers with
 the same month of death (eg, R37722.00 and R37723.00), it may be reasonable
 to assume they share the same biological father.</p>
-    <p>`Interpolation' is our lingo when other siblings are used to leverage
+<p>'Interpolation' is our lingo when other siblings are used to leverage
 insight into the current pair.  For example, assume Subject 101, 102, and
 103 have the same mother.  Further assume 101 and 102 report they share a
 biological father, and that 101 and 103 share one too.  Finally, assume
@@ -163,27 +162,29 @@ If we are comfortable with our level of uncertainty of these
 determinations, then we can interpolate/infer that 102 and 103 are
 full-siblings as well.</p>
 <p>The math and height scores are duplicated from
-<code><a href='ExtraOutcomes79.html'>ExtraOutcomes79</a></code>, but are included here to make some examples
+<a href='ExtraOutcomes79.html'>ExtraOutcomes79</a>, but are included here to make some examples
 more concise and accessible.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'>library</span>(<span class='no'>NlsyLinks</span>) <span class='co'>#Load the package into the current R session.</span>
-<span class='no'>olderR</span> <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>$<span class='no'>RExplicitOlderSibVersion</span>  <span class='co'>#Declare a concise variable name.</span>
-<span class='no'>youngerR</span> <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>$<span class='no'>RExplicitYoungerSibVersion</span>  <span class='co'>#Declare a concise variable name.</span>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>NlsyLinks</span>) <span class='co'># Load the package into the current R session.</span>
+<span class='no'>olderR</span>   <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>$<span class='no'>RExplicitOlderSibVersion</span>   <span class='co'># Declare a concise variable name.</span>
+<span class='no'>youngerR</span> <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>$<span class='no'>RExplicitYoungerSibVersion</span> <span class='co'># Declare a concise variable name.</span>
 
-<span class='fu'>plot</span>(<span class='fu'>jitter</span>(<span class='no'>olderR</span>), <span class='fu'>jitter</span>(<span class='no'>youngerR</span>))  <span class='co'>#Scatterplot the siblings' responses.</span></div><img src='Links79PairExpanded-2.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>table</span>(<span class='no'>youngerR</span>, <span class='no'>olderR</span>)  <span class='co'>#Table of the relationship between the siblings' responses.</span></div><div class='output co'>#&gt;         olderR
+<span class='fu'>plot</span>(<span class='fu'>jitter</span>(<span class='no'>olderR</span>), <span class='fu'>jitter</span>(<span class='no'>youngerR</span>))  <span class='co'># Scatterplot the siblings' responses.</span></div><img src='Links79PairExpanded-2.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>table</span>( <span class='no'>youngerR</span>, <span class='no'>olderR</span>)  <span class='co'># Table of the relationship between the siblings' responses.</span></div><div class='output co'>#&gt;         olderR
 #&gt; youngerR 0.25 0.375  0.5
 #&gt;    0.25  1904     2  105
 #&gt;    0.375   15     3    8
-#&gt;    0.5    136     5 6338</div><div class='input'><span class='fu'>ftable</span>(<span class='no'>youngerR</span>, <span class='no'>olderR</span>, <span class='kw'>dnn</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"Younger's Version"</span>, <span class='st'>"Older's Version"</span>)) <span class='co'>#A formatted table.</span></div><div class='output co'>#&gt;                   Older's Version 0.25 0.375  0.5
+#&gt;    0.5    136     5 6338</div><div class='input'><span class='fu'>ftable</span>(<span class='no'>youngerR</span>, <span class='no'>olderR</span>, <span class='kw'>dnn</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"Younger's Version"</span>, <span class='st'>"Older's Version"</span>)) <span class='co'># A formatted table.</span></div><div class='output co'>#&gt;                   Older's Version 0.25 0.375  0.5
 #&gt; Younger's Version                                
 #&gt; 0.25                              1904     2  105
 #&gt; 0.375                               15     3    8
 #&gt; 0.5                                136     5 6338</div><div class='input'>
-<span class='co'>#write.csv(Links79PairExpanded, file='~/NlsyLinksStaging/Links79PairExpanded.csv', </span>
-<span class='co'>#  row.names=FALSE)</span></div></pre>
+<span class='co'># write.csv(</span>
+<span class='co'>#   Links79PairExpanded, </span>
+<span class='co'>#   file      ='~/NlsyLinksStaging/Links79PairExpanded.csv',</span>
+<span class='co'>#   row.names = FALSE</span>
+<span class='co'># )</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
