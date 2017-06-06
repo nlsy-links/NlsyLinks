@@ -81,11 +81,9 @@
 
     
     <p>A helper function that verifies the linking dataset contains (A) the
-essential columns exist, and (B) at least one row.  It is called by
-<code>CreatePairLinks</code>.</p>
+essential columns exist, and (B) at least one row.  It is called by <code>CreatePairLinks</code>.</p>
 <p>Typical use of <span class="pkg">NlsyLinks</span> will not require this function, since a
-valid paired links are supplied for each supported sample (ie,
-<code><a href='Links79Pair.html'>Links79Pair</a></code>).</p>
+valid paired links are supplied for each supported sample (ie, <a href='Links79Pair.html'>Links79Pair</a>).</p>
 <p>The <span class="pkg">NlsyLinks</span> uses several types of linking schemas.  This function
 validates the type where each relative subject has their own row.</p>
 <p>The following four columns must be present: (1) <code>Subect1Tag</code>, (2)
@@ -100,38 +98,38 @@ have a <code>numeric</code> mode/datatype.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>linksPair</th>
-      <td><p>The <code>data.frame</code> to validate.</p></td>
+      <td><p>The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> to validate.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns <code>TRUE</code> if the validation passes. Returns an error (and
-associated descriptive message) if it false.</p>
+    <p>Returns <code>TRUE</code> if the validation passes. Returns an error (and associated descriptive message) if it false.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='Links79Pair.html'>Links79Pair</a></code>, <code><a href='Links79PairExpanded.html'>Links79PairExpanded</a></code>,</p>
+    <p><a href='Links79Pair.html'>Links79Pair</a>, <a href='Links79PairExpanded.html'>Links79PairExpanded</a>,</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='no'>dsSingleLinks</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
-  <span class='kw'>ExtendedID</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>2</span>),
-  <span class='kw'>SubjectTag_S1</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>101</span>, <span class='fl'>101</span>, <span class='fl'>102</span>, <span class='fl'>201</span>),
-  <span class='kw'>SubjectTag_S2</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>102</span>, <span class='fl'>103</span>, <span class='fl'>103</span>, <span class='fl'>202</span>),
-  <span class='kw'>R</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>.5</span>, <span class='fl'>.25</span>, <span class='fl'>.25</span>, <span class='fl'>.5</span>),
-  <span class='kw'>RelationshipPath</span><span class='kw'>=</span><span class='fu'>rep</span>(<span class='st'>"Gen2Siblings"</span>, <span class='fl'>4</span>)
+    <pre class="examples"><div class='input'><span class='no'>dsSingleLinks</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
+  <span class='kw'>ExtendedID</span>        <span class='kw'>=</span> <span class='fu'>c</span>(  <span class='fl'>1</span>  , <span class='fl'>1</span>,   <span class='fl'>1</span>  , <span class='fl'>2</span>),
+  <span class='kw'>SubjectTag_S1</span>     <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>101</span>, <span class='fl'>101</span>, <span class='fl'>102</span>, <span class='fl'>201</span>),
+  <span class='kw'>SubjectTag_S2</span>     <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>102</span>, <span class='fl'>103</span>, <span class='fl'>103</span>, <span class='fl'>202</span>),
+  <span class='kw'>R</span>                 <span class='kw'>=</span> <span class='fu'>c</span>( <span class='fl'>.5</span>, <span class='fl'>.25</span>, <span class='fl'>.25</span>,  <span class='fl'>.5</span>),
+  <span class='kw'>RelationshipPath</span>  <span class='kw'>=</span> <span class='fu'>rep</span>(<span class='st'>"Gen2Siblings"</span>, <span class='fl'>4</span>)
 )
 <span class='no'>dsSingleOutcomes</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
-  <span class='kw'>SubjectTag</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>101</span>, <span class='fl'>102</span>, <span class='fl'>103</span>, <span class='fl'>201</span>, <span class='fl'>202</span>),
-  <span class='kw'>DV1</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>11</span>, <span class='fl'>12</span>, <span class='fl'>13</span>, <span class='fl'>41</span>, <span class='fl'>42</span>),
-  <span class='kw'>DV2</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>21</span>, <span class='fl'>22</span>, <span class='fl'>23</span>, <span class='fl'>51</span>, <span class='fl'>52</span>))
+  <span class='kw'>SubjectTag</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>101</span>, <span class='fl'>102</span>, <span class='fl'>103</span>, <span class='fl'>201</span>, <span class='fl'>202</span>),
+  <span class='kw'>DV1</span>        <span class='kw'>=</span> <span class='fu'>c</span>( <span class='fl'>11</span>,  <span class='fl'>12</span>,  <span class='fl'>13</span>,  <span class='fl'>41</span>,  <span class='fl'>42</span>),
+  <span class='kw'>DV2</span>        <span class='kw'>=</span> <span class='fu'>c</span>( <span class='fl'>21</span>,  <span class='fl'>22</span>,  <span class='fl'>23</span>,  <span class='fl'>51</span>,  <span class='fl'>52</span>)
+)
 <span class='no'>dsDouble</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CreatePairLinks.html'>CreatePairLinksDoubleEntered</a></span>(
-  <span class='kw'>outcomeDataset</span><span class='kw'>=</span><span class='no'>dsSingleOutcomes</span>,
-  <span class='kw'>linksPairDataset</span><span class='kw'>=</span><span class='no'>dsSingleLinks</span>,
-  <span class='kw'>outcomeNames</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"DV1"</span>, <span class='st'>"DV2"</span>),
-  <span class='kw'>validateOutcomeDataset</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
+  <span class='kw'>outcomeDataset</span>         <span class='kw'>=</span> <span class='no'>dsSingleOutcomes</span>,
+  <span class='kw'>linksPairDataset</span>       <span class='kw'>=</span> <span class='no'>dsSingleLinks</span>,
+  <span class='kw'>outcomeNames</span>           <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"DV1"</span>, <span class='st'>"DV2"</span>),
+  <span class='kw'>validateOutcomeDataset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)
 <span class='no'>dsDouble</span> <span class='co'>#Show the 8 rows in the double-entered pair links</span></div><div class='output co'>#&gt;   SubjectTag_S1 SubjectTag_S2 ExtendedID    R RelationshipPath DV1_S1 DV2_S1
 #&gt; 1           101           102          1 0.50     Gen2Siblings     11     21
 #&gt; 2           101           103          1 0.25     Gen2Siblings     11     21
@@ -170,8 +168,7 @@ associated descriptive message) if it false.</p>
 #&gt;  Mean   :29.38  
 #&gt;  3rd Qu.:30.00  
 #&gt;  Max.   :52.00  </div><div class='input'>
-<span class='fu'><a href='ValidatePairLinksAreSymmetric.html'>ValidatePairLinksAreSymmetric</a></span>(<span class='no'>dsDouble</span>) <span class='co'>#Should return TRUE.</span></div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-</div></pre>
+<span class='fu'><a href='ValidatePairLinksAreSymmetric.html'>ValidatePairLinksAreSymmetric</a></span>(<span class='no'>dsDouble</span>) <span class='co'>#Should return TRUE.</span></div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

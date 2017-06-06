@@ -87,32 +87,32 @@
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>A data frame with 24,181 observations on the following 12
-variables.</p><dl class='dl-horizontal'>
-   <dt>SubjectTag</dt><dd><p>see the variable of the same name in <code><a href='Links79Pair.html'>Links79Pair</a></code></p></dd> 
-   <dt>ExtendedID</dt><dd><p>see the variable of the same name in <code><a href='Links79Pair.html'>Links79Pair</a></code></p></dd>
-   <dt>Generation</dt><dd><p>Indicates if the subject is in generation <code>1</code> or <code>2</code>.</p></dd> 
-   <dt>Gender</dt><dd><p>Indicates if the subject is <code>Male</code> or <code>Female</code>.</p></dd> 
-   <dt>RaceCohort</dt><dd><p>Indicates if the race cohort is <code>Hispanic</code>, <code>Black</code> or <code>Nbnh</code> (<em>ie</em>, Non-black, non-hispanic).  This comes from the Gen1 variable <code>R02147.00</code> and Gen2 variable <code>C00053.00</code>.</p></dd> 
-   <dt>SiblingCountInNls</dt><dd><p>The number of the subject's siblings, including himself/herself (a singleton has a value of one).  This considers only the siblings in the NLSY.  For Gen1, this can exclude anyone outside the age range.  For Gen2, this excludes anyone who doesn't share the same mother.</p></dd> 
-   <dt>BirthOrderInNls</dt><dd><p>Indicates the subject's birth order among the NLSY siblings.</p></dd>
-   <dt>SimilarAgeCount</dt><dd><p>The number of children who were born within roughly 30 days of the subject's birthday, including the subject (for instance, even an only child will have a value of 1).  For Gen2 subjects, this should reflect how many children the Gen1 mother gave birth to at the same time (1: singleton; 2: twins, 3: triplets).  For Gen1 subjects, this is less certain, because the individual might have been living with a similarly-aged housemate, born to a different mother.</p></dd>
-   <dt>HasMzPossibly</dt><dd><p>Indicates if the subject <em>might</em> be a member of an MZ twin/triplet. This will be true if there is a sibling with a DOB within a month, and they are the same gender.</p></dd>
-   <dt>IsMz</dt><dd><p>Indicates if the subject has been identified as a member of an MZ twin/triplet.</p></dd>
-   <dt>KidCountBio</dt><dd><p>The number of biological children known to the NLSY (but not necessarily interviewed by the NLSY.</p></dd>
-   <dt>KidCountInNls</dt><dd><p>The number of children who belong to the NLSY. This is nonnull for only Gen1 subjects.</p></dd> 
-   <dt>Mob</dt><dd><p>The subject's month of birth.  The exact day is not available to the public.  By default, we set their birthday to the 15th day of the month.</p></dd>
-   <dt>LastSurveyYearCompleted</dt><dd><p>The year of the most recently completed survey.</p></dd>
-   <dt>AgeAtLastSurvey</dt><dd><p>The subject's age at the most recently completed survey.</p></dd>
-   <dt>IsDead</dt><dd><p>##This variable is not available yet## Indicates if the subject was alive for the last attempted survey.</p></dd>
-   <dt>DeathDate</dt><dd><p>##This variable is not available yet## The subject's month of death.  The exact day is not available to the public. By default, we set their birthday to the 15th day of the month.</p></dd> 
-</dl>
+variables.</p><ul>
+<li><p><strong>SubjectTag</strong> see the variable of the same name in <a href='Links79Pair.html'>Links79Pair</a></p></li>
+<li><p><strong>ExtendedID</strong> see the variable of the same name in <a href='Links79Pair.html'>Links79Pair</a></p></li>
+<li><p><strong>Generation</strong> Indicates if the subject is in generation <code>1</code> or <code>2</code>.</p></li>
+<li><p><strong>Gender</strong> Indicates if the subject is <code>Male</code> or <code>Female</code>.</p></li>
+<li><p><strong>RaceCohort</strong> Indicates if the race cohort is <code>Hispanic</code>, <code>Black</code> or <code>Nbnh</code> (<em>ie</em>, Non-black, non-hispanic).  This comes from the Gen1 variable <code>R02147.00</code> and Gen2 variable <code>C00053.00</code>.</p></li>
+<li><p><strong>SiblingCountInNls</strong> The number of the subject's siblings, including himself/herself (a singleton has a value of one).  This considers only the siblings in the NLSY.  For Gen1, this can exclude anyone outside the age range.  For Gen2, this excludes anyone who doesn't share the same mother.</p></li>
+<li><p><strong>BirthOrderInNls</strong> Indicates the subject's birth order among the NLSY siblings.</p></li>
+<li><p><strong>SimilarAgeCount</strong> The number of children who were born within roughly 30 days of the subject's birthday, including the subject (for instance, even an only child will have a value of 1).  For Gen2 subjects, this should reflect how many children the Gen1 mother gave birth to at the same time (1: singleton; 2: twins, 3: triplets).  For Gen1 subjects, this is less certain, because the individual might have been living with a similarly-aged housemate, born to a different mother.</p></li>
+<li><p><strong>HasMzPossibly</strong> Indicates if the subject <em>might</em> be a member of an MZ twin/triplet. This will be true if there is a sibling with a DOB within a month, and they are the same gender.</p></li>
+<li><p><strong>IsMz</strong> Indicates if the subject has been identified as a member of an MZ twin/triplet.</p></li>
+<li><p><strong>KidCountBio</strong> The number of biological children known to the NLSY (but not necessarily interviewed by the NLSY.</p></li>
+<li><p><strong>KidCountInNls</strong> The number of children who belong to the NLSY. This is nonnull for only Gen1 subjects.</p></li>
+<li><p><strong>Mob</strong> The subject's month of birth.  The exact day is not available to the public.  By default, we set their birthday to the 15th day of the month.</p></li>
+<li><p><strong>LastSurveyYearCompleted</strong> The year of the most recently completed survey.</p></li>
+<li><p><strong>AgeAtLastSurvey</strong> The subject's age at the most recently completed survey.</p></li>
+<li><p><strong>IsDead</strong> ##This variable is not available yet## Indicates if the subject was alive for the last attempted survey.</p></li>
+<li><p><strong>DeathDate</strong> ##This variable is not available yet## The subject's month of death.  The exact day is not available to the public. By default, we set their birthday to the 15th day of the month.</p></li>
+</ul>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Gen1 information comes from the Summer 2013 release of the <a href = 'http://www.bls.gov/nls/nlsy79.htm'>NLSY79 sample</a>.  Gen2 information
 comes from the Summer 2013 release of the
 <a href = 'http://www.bls.gov/nls/nlsy79ch.htm'>NLSY79 Children and Young Adults sample</a>.  Data were extracted with the NLS Investigator
-(<a href = 'https://www.nlsinfo.org/investigator/'>https://www.nlsinfo.org/investigator/</a>).</p>
+(https://www.nlsinfo.org/investigator/).</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -159,25 +159,35 @@ comes from the Summer 2013 release of the
 #&gt;                 
 #&gt;                 </div><div class='input'>
 <span class='no'>oldPar</span> <span class='kw'>&lt;-</span> <span class='fu'>par</span>(<span class='kw'>mfrow</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>3</span>,<span class='fl'>2</span>), <span class='kw'>mar</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>1</span>,<span class='fl'>.5</span>), <span class='kw'>tcl</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>mgp</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>0</span>,<span class='fl'>0</span>))
-<span class='fu'>hist</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>SiblingCountInNls</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>""</span>,
-     <span class='kw'>breaks</span><span class='kw'>=</span><span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>SiblingCountInNls</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
+<span class='fu'>hist</span>(
+  <span class='no'>SubjectDetails79</span>$<span class='no'>SiblingCountInNls</span>,
+  <span class='kw'>main</span>   <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>breaks</span> <span class='kw'>=</span><span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>SiblingCountInNls</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
 )
-<span class='fu'>hist</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>BirthOrderInNls</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>""</span>,
-     <span class='kw'>breaks</span><span class='kw'>=</span><span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>BirthOrderInNls</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
+<span class='fu'>hist</span>(
+  <span class='no'>SubjectDetails79</span>$<span class='no'>BirthOrderInNls</span>,
+  <span class='kw'>main</span>   <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>breaks</span> <span class='kw'>=</span> <span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>BirthOrderInNls</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
 )
-<span class='fu'>hist</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>SimilarAgeCount</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>""</span>,
-     <span class='kw'>breaks</span><span class='kw'>=</span><span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>SimilarAgeCount</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
+<span class='fu'>hist</span>(
+  <span class='no'>SubjectDetails79</span>$<span class='no'>SimilarAgeCount</span>,
+  <span class='kw'>main</span>   <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>breaks</span> <span class='kw'>=</span> <span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>SimilarAgeCount</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
 )
-<span class='fu'>hist</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>KidCountBio</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>""</span>,
-     <span class='kw'>breaks</span><span class='kw'>=</span><span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>KidCountBio</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
+<span class='fu'>hist</span>(
+  <span class='no'>SubjectDetails79</span>$<span class='no'>KidCountBio</span>,
+  <span class='kw'>main</span>   <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>breaks</span> <span class='kw'>=</span> <span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>KidCountBio</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
 )
-<span class='fu'>hist</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>KidCountInNls</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>""</span>,
-     <span class='kw'>breaks</span><span class='kw'>=</span><span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>KidCountInNls</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
+<span class='fu'>hist</span>(
+  <span class='no'>SubjectDetails79</span>$<span class='no'>KidCountInNls</span>,
+  <span class='kw'>main</span>   <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>breaks</span> <span class='kw'>=</span> <span class='fu'>seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>0</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='fu'>max</span>(<span class='no'>SubjectDetails79</span>$<span class='no'>KidCountInNls</span>, <span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>), <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)
 )
-<span class='co'>#hist(SubjectDetails79$Mob, main="", </span>
+<span class='co'>#hist(SubjectDetails79$Mob, main="",</span>
 <span class='co'>#     breaks=seq.Date(</span>
-<span class='co'>#       from=min(SubjectDetails79$Mob, na.rm=TRUE), </span>
-<span class='co'>#       to=max(SubjectDetails79$Mob, na.rm=TRUE), </span>
+<span class='co'>#       from=min(SubjectDetails79$Mob, na.rm=TRUE),</span>
+<span class='co'>#       to=max(SubjectDetails79$Mob, na.rm=TRUE),</span>
 <span class='co'>#       by="year")</span>
 <span class='co'>#)</span>
 <span class='fu'>par</span>(<span class='no'>oldPar</span>)</div><img src='SubjectDetails79-4.png' alt='' width='540' height='400' /><div class='input'>

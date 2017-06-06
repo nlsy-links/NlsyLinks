@@ -84,20 +84,34 @@
 A DF analysis requires a double-entered file that contains the <code>R</code>
 value for the pair, and their two outcome variable values.
 
-    <code>CreatePairLinksDoubleEnteredWithNoOutcomes</code> is intended to be a
-primarily a helper function for <code><a href='CreateSpatialNeighbours.html'>CreateSpatialNeighbours</a></code>.</p>
+    <code>CreatePairLinksDoubleEnteredWithNoOutcomes()</code> is intended to be a
+primarily a helper function for <code><a href='CreateSpatialNeighbours.html'>CreateSpatialNeighbours()</a></code>.</p>
     
 
-    <pre class="usage"><span class='fu'>CreatePairLinksDoubleEntered</span>(<span class='no'>outcomeDataset</span>, <span class='no'>linksPairDataset</span>, <span class='no'>outcomeNames</span>,
-   <span class='kw'>linksNames</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"ExtendedID"</span>, <span class='st'>"R"</span>, <span class='st'>"RelationshipPath"</span>), <span class='kw'>validateOutcomeDataset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-   <span class='kw'>subject1Qualifier</span> <span class='kw'>=</span> <span class='st'>"_S1"</span>, <span class='kw'>subject2Qualifier</span> <span class='kw'>=</span> <span class='st'>"_S2"</span>)
+    <pre class="usage"><span class='fu'>CreatePairLinksDoubleEntered</span>(
+  <span class='no'>outcomeDataset</span>,
+  <span class='no'>linksPairDataset</span>,
+  <span class='no'>outcomeNames</span>,
+  <span class='kw'>linksNames</span>             <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"ExtendedID"</span>, <span class='st'>"R"</span>, <span class='st'>"RelationshipPath"</span>),
+  <span class='kw'>validateOutcomeDataset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>subject1Qualifier</span>      <span class='kw'>=</span> <span class='st'>"_S1"</span>,
+  <span class='kw'>subject2Qualifier</span>      <span class='kw'>=</span> <span class='st'>"_S2"</span>
+)
 
- <span class='fu'>CreatePairLinksSingleEntered</span>(<span class='no'>outcomeDataset</span>, <span class='no'>linksPairDataset</span>, <span class='no'>outcomeNames</span>,
-    <span class='kw'>linksNames</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"ExtendedID"</span>, <span class='st'>"R"</span>, <span class='st'>"RelationshipPath"</span>), <span class='kw'>validateOutcomeDataset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-    <span class='kw'>subject1Qualifier</span> <span class='kw'>=</span> <span class='st'>"_S1"</span>, <span class='kw'>subject2Qualifier</span> <span class='kw'>=</span> <span class='st'>"_S2"</span>)
+<span class='fu'>CreatePairLinksSingleEntered</span>(
+  <span class='no'>outcomeDataset</span>,
+  <span class='no'>linksPairDataset</span>,
+  <span class='no'>outcomeNames</span>,
+  <span class='kw'>linksNames</span>             <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"ExtendedID"</span>, <span class='st'>"R"</span>, <span class='st'>"RelationshipPath"</span>),
+  <span class='kw'>validateOutcomeDataset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>subject1Qualifier</span>      <span class='kw'>=</span> <span class='st'>"_S1"</span>,
+  <span class='kw'>subject2Qualifier</span>      <span class='kw'>=</span> <span class='st'>"_S2"</span>
+)
 
- <span class='fu'>CreatePairLinksDoubleEnteredWithNoOutcomes</span>(<span class='no'>linksPairDataset</span>,
-    <span class='kw'>linksNames</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"ExtendedID"</span>, <span class='st'>"R"</span>, <span class='st'>"RelationshipPath"</span>))</pre>
+<span class='fu'>CreatePairLinksDoubleEnteredWithNoOutcomes</span>(
+  <span class='no'>linksPairDataset</span>,
+  <span class='kw'>linksNames</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"ExtendedID"</span>, <span class='st'>"R"</span>, <span class='st'>"RelationshipPath"</span>)
+)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -143,8 +157,7 @@ automatically.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='no'>dsSingleLinks</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
+    <pre class="examples"><div class='input'><span class='no'>dsSingleLinks</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
   <span class='kw'>ExtendedID</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>2</span>),
   <span class='kw'>SubjectTag_S1</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>101</span>, <span class='fl'>101</span>, <span class='fl'>102</span>, <span class='fl'>201</span>),
   <span class='kw'>SubjectTag_S2</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>102</span>, <span class='fl'>103</span>, <span class='fl'>103</span>, <span class='fl'>202</span>),
@@ -152,14 +165,16 @@ automatically.</p></td>
   <span class='kw'>RelationshipPath</span><span class='kw'>=</span><span class='fu'>rep</span>(<span class='st'>"Gen2Siblings"</span>, <span class='fl'>4</span>)
 )
 <span class='no'>dsSingleOutcomes</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
-  <span class='kw'>SubjectTag</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>101</span>, <span class='fl'>102</span>, <span class='fl'>103</span>, <span class='fl'>201</span>, <span class='fl'>202</span>),
-  <span class='kw'>DV1</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>11</span>, <span class='fl'>12</span>, <span class='fl'>13</span>, <span class='fl'>41</span>, <span class='fl'>42</span>),
-  <span class='kw'>DV2</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>21</span>, <span class='fl'>22</span>, <span class='fl'>23</span>, <span class='fl'>51</span>, <span class='fl'>52</span>))
+  <span class='kw'>SubjectTag</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>101</span>, <span class='fl'>102</span>, <span class='fl'>103</span>, <span class='fl'>201</span>, <span class='fl'>202</span>),
+  <span class='kw'>DV1</span>        <span class='kw'>=</span> <span class='fu'>c</span>( <span class='fl'>11</span>,  <span class='fl'>12</span>,  <span class='fl'>13</span>,  <span class='fl'>41</span>,  <span class='fl'>42</span>),
+  <span class='kw'>DV2</span>        <span class='kw'>=</span> <span class='fu'>c</span>( <span class='fl'>21</span>,  <span class='fl'>22</span>,  <span class='fl'>23</span>,  <span class='fl'>51</span>,  <span class='fl'>52</span>)
+)
 <span class='no'>dsDouble</span> <span class='kw'>&lt;-</span> <span class='fu'>CreatePairLinksDoubleEntered</span>(
-  <span class='kw'>outcomeDataset</span><span class='kw'>=</span><span class='no'>dsSingleOutcomes</span>,
-  <span class='kw'>linksPairDataset</span><span class='kw'>=</span><span class='no'>dsSingleLinks</span>,
-  <span class='kw'>outcomeNames</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"DV1"</span>, <span class='st'>"DV2"</span>),
-  <span class='kw'>validateOutcomeDataset</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
+  <span class='kw'>outcomeDataset</span>         <span class='kw'>=</span> <span class='no'>dsSingleOutcomes</span>,
+  <span class='kw'>linksPairDataset</span>       <span class='kw'>=</span> <span class='no'>dsSingleLinks</span>,
+  <span class='kw'>outcomeNames</span>           <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"DV1"</span>, <span class='st'>"DV2"</span>),
+  <span class='kw'>validateOutcomeDataset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)
 <span class='no'>dsDouble</span> <span class='co'>#Show the 8 rows in the double-entered pair links</span></div><div class='output co'>#&gt;   SubjectTag_S1 SubjectTag_S2 ExtendedID    R RelationshipPath DV1_S1 DV2_S1
 #&gt; 1           101           102          1 0.50     Gen2Siblings     11     21
 #&gt; 2           101           103          1 0.25     Gen2Siblings     11     21
@@ -198,9 +213,7 @@ automatically.</p></td>
 #&gt;  Mean   :29.38  
 #&gt;  3rd Qu.:30.00  
 #&gt;  Max.   :52.00  </div><div class='input'>
-<span class='fu'><a href='ValidatePairLinksAreSymmetric.html'>ValidatePairLinksAreSymmetric</a></span>(<span class='no'>dsDouble</span>) <span class='co'>#Should return TRUE.</span></div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-
-</div></pre>
+<span class='fu'><a href='ValidatePairLinksAreSymmetric.html'>ValidatePairLinksAreSymmetric</a></span>(<span class='no'>dsDouble</span>) <span class='co'>#Should return TRUE.</span></div><div class='output co'>#&gt; [1] TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

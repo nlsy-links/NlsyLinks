@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Instantiate an <code>AceEstimate-class</code> object. — CreateAceEstimate • NlsyLinks</title>
+<title>Instantiate an AceEstimate object. — CreateAceEstimate • NlsyLinks</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -76,15 +76,15 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Instantiate an <code>AceEstimate-class</code> object.</h1>
+    <h1>Instantiate an AceEstimate object.</h1>
     </div>
 
     
-    <p>Creates an instance of the <code>S4</code> class, <code>AceEstimate</code>  instantiating arguments set the parameter values estimated by the ACE model.</p>
+    <p>Creates an instance of the <code>S4</code> class, <a href='AceEstimate-class.html'>AceEstimate</a> instantiating arguments set the parameter values estimated by the ACE model.</p>
     
 
-    <pre class="usage"><span class='fu'>CreateAceEstimate</span>(<span class='no'>aSquared</span>, <span class='no'>cSquared</span>, <span class='no'>eSquared</span>, <span class='no'>caseCount</span>,
-  <span class='kw'>details</span><span class='kw'>=</span><span class='fu'>list</span>(), <span class='kw'>unityTolerance</span> <span class='kw'>=</span> <span class='fl'>1e-11</span>)</pre>
+    <pre class="usage"><span class='fu'>CreateAceEstimate</span>(<span class='no'>aSquared</span>, <span class='no'>cSquared</span>, <span class='no'>eSquared</span>, <span class='no'>caseCount</span>, <span class='kw'>details</span> <span class='kw'>=</span> <span class='fu'>list</span>(),
+  <span class='kw'>unityTolerance</span> <span class='kw'>=</span> <span class='fl'>1e-11</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -117,11 +117,11 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An S4 object of <code><a href='AceEstimate-class.html'>AceEstimate-class</a></code>.</p>
+    <p>An S4 object of <a href='AceEstimate-class.html'>AceEstimate</a>.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The contents of the <code>details</code> list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is an <code>lm</code> object, because the <code>lm</code> function was used (ie, the basical general linear model).  Alternatively, if the user specified the <code>lavaan</code> package should estimate that ACE model, the output is a <code>lavaan</code> object.</p>
+    <p>The contents of the <code>details</code> list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a <a href='http://www.rdocumentation.org/packages/stats/topics/lm'>stats::lm</a> object, because the <a href='http://www.rdocumentation.org/packages/stats/topics/lm'>stats::lm</a> function was used (ie, the basical general linear model).  Alternatively, if the user specified the <code>lavaan</code> package should estimate that ACE model, the output is a <a href='http://www.rdocumentation.org/packages/lavaan/topics/lavaan'>lavaan::lavaan</a> object.</p>
     
 
   </div>

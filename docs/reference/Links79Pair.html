@@ -80,7 +80,7 @@
     </div>
 
     
-    <p>This dataset specifies the relatedness coefficient (ie, `<code>R</code>') between
+    <p>This dataset specifies the relatedness coefficient (ie, '<code>R</code>') between
 subjects in the same extended family.  Each row represents a unique
 relationship pair.</p>
 <p>NOTE: Two variable names changed in November 2013. <code>Subject1Tag</code> and <code>Subject2Tag</code> became <code>SubjectTag_S1</code> and <code>SubjectTag_S2</code>.</p>
@@ -90,37 +90,39 @@ relationship pair.</p>
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>A data frame with 42,773 observations on the following 5 variables.
-There is one row per unique pair of subjects, irrespective of order.</p><dl class='dl-horizontal'>
-   <dt>ExtendedID</dt><dd><p>Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.</p></dd>
-   <dt>SubjectTag_S1</dt><dd><p>Identity of the pair's first subject.  See Details below.</p></dd> 
-   <dt>SubjectTag_S2</dt><dd><p>Identity of the pair's second subject.  See Details below.</p></dd>
-   <dt>R</dt><dd><p>The pair's Relatedness coefficient.  See Details below.</p></dd> 
-   <dt>RelationshipPath</dt><dd><p>Specifies the relationship category of the pair.  This variable is a factor, with levels <code>Gen1Housemates</code>=1, <code>Gen2Siblings</code>=2, <code>Gen2Cousins</code>=3, <code>ParentChild</code>=4, <code>AuntNiece</code>=5.</p></dd> 
-</dl>
+There is one row per unique pair of subjects, irrespective of order.</p><ul>
+<li><p><strong>ExtendedID</strong> Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.</p></li>
+<li><p><strong>SubjectTag_S1</strong> Identity of the pair's first subject.  See Details below.</p></li>
+<li><p><strong>SubjectTag_S2</strong> Identity of the pair's second subject.  See Details below.</p></li>
+<li><p><strong>R</strong> The pair's Relatedness coefficient.  See Details below.</p></li>
+<li><p><strong>RelationshipPath</strong> Specifies the relationship category of the pair.  This variable is a factor, with levels <code>Gen1Housemates</code>=1, <code>Gen2Siblings</code>=2, <code>Gen2Cousins</code>=3, <code>ParentChild</code>=4, <code>AuntNiece</code>=5.</p></li>
+</ul>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Gen1 information comes from the Summer 2013 release of the
 <a href = 'http://www.bls.gov/nls/nlsy79.htm'>NLSY79 sample</a>.  Gen2 information
 comes from the Summer 2013 release of the
-<a href = 'http://www.bls.gov/nls/nlsy79ch.htm'>NLSY79 Children and Young Adults
-sample</a>.  Data were extracted with the NLS Investigator
-(<a href = 'https://www.nlsinfo.org/investigator/'>https://www.nlsinfo.org/investigator/</a>).</p>
+<a href = 'http://www.bls.gov/nls/nlsy79ch.htm'>NLSY79 Children and Young Adults</a>.
+Data were extracted with the NLS Investigator
+(https://www.nlsinfo.org/investigator/).</p>
 <p>The internal version for the links is <code>Links2011V84</code>.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The dataset contains Gen1 and Gen2 subjects.  "Gen1" refers to subjects in
-the original NLSY79 sample (<a href = 'http://www.bls.gov/nls/nlsy79.htm'>http://www.bls.gov/nls/nlsy79.htm</a>).
+the original NLSY79 sample (http://www.bls.gov/nls/nlsy79.htm).
 "Gen2" subjects are the biological children of the Gen1 females -ie, those
 in the NLSY79 Children and Young Adults sample
-(<a href = 'http://www.bls.gov/nls/nlsy79ch.htm'>http://www.bls.gov/nls/nlsy79ch.htm</a>).</p>
-<p>Subjects will be in the same extended family if either: [1] they are Gen1
-housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (ie, they
-have mothers who are Gen1 sisters in the NLSY79, [4] they are mother and
-child (in Gen1 and Gen2, respectively), or [5] they are aunt|uncle and
-niece|nephew (in Gen1 and Gen2, respectively).</p>
-<p>The variables <code>SubjectTag_S1</code> and <code>SubjectTag_S2</code> uniquely identify
+(http://www.bls.gov/nls/nlsy79ch.htm).</p>
+<p>Subjects will be in the same extended family if either:</p><ol>
+<li><p>they are Gen1 housemates,</p></li>
+<li><p>they are Gen2 siblings,</p></li>
+<li><p>they are Gen2 cousins (ie, they have mothers who are Gen1 sisters in the NLSY79,</p></li>
+<li><p>they are mother and child (in Gen1 and Gen2, respectively), or</p></li>
+<li><p>they are aunt|uncle and niece|nephew (in Gen1 and Gen2, respectively).</p></li>
+</ol>
+    <p>The variables <code>SubjectTag_S1</code> and <code>SubjectTag_S2</code> uniquely identify
 subjects.  For Gen2 subjects, the SubjectTag is identical to their CID (ie,
 C00001.00 -the SubjectID assigned in the NLSY79-Children files).  However
 for Gen1 subjects, the SubjectTag is their CaseID (ie, R00001.00), with
@@ -139,18 +141,18 @@ younger.</p>
 Half-siblings have <em>R</em>=.25. Typical first cousins have <em>R</em>=.125.
 Unrelated subjects have <em>R</em>=0 (this occasionally happens for
 <code>Gen1Housemates</code>).  Other <em>R</em> coefficients are possible.</p>
-<p>There are several other uncommon possibilities, such as half-cousins (<em>R</em>=.0625) and 
+<p>There are several other uncommon possibilities, such as half-cousins (<em>R</em>=.0625) and
 ambiguous aunt-nieces (<em>R</em>=.125). The variable coding for genetic relatedness,<code>R</code>, in <code>Links79Pair</code> contains
-only the common values of <em>R</em> whose groups are likely to have stable estimates.  
-However the variable <code>RFull</code> in <code>Links79PairExpanded</code> contains all <em>R</em> values.
-We strongly recommend using <code>R</code> in this <code>data.frame</code>.  Move to 
+only the common values of <em>R</em> whose groups are likely to have stable estimates.
+However the variable <code>RFull</code> in <code><a href='Links79PairExpanded.html'>Links79PairExpanded</a></code> contains all <em>R</em> values.
+We strongly recommend using <code>R</code> in this <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.  Move to
 <code>RFull</code> (or some combination) only if you have a good reason, and are willing
 to carefully monitor a variety of validity checks.  Some of these
 excluded groups are too small to be estimated reliably.</p>
-<p>Furthermore, some of these groups have members who are more strongly genetically related than their 
+<p>Furthermore, some of these groups have members who are more strongly genetically related than their
 items would indicate. For instance, there are 41 Gen1 pairs who explicitly claim they are not biologically related
 (<em>ie</em>, <code>RExplicit</code>=0), yet their correlation for Adult Height is <em>r</em>=0.24.  This is
-much higher than would be expected for two people sampled randomly; it is nearly identical to 
+much higher than would be expected for two people sampled randomly; it is nearly identical to
 the <em>r</em>=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
 biological parent.</p>
     
@@ -158,19 +160,19 @@ biological parent.</p>
 
     <p>The NLSY79 variable HHID (ie, R00001.49) is the source for the
 <code>ExtendedID</code> variable.  This is discussed at
-<a href = 'http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm'>http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm</a>.</p>
-<p>For more information on <em>R</em> (<em>ie</em>, the Relatedness coefficient), please see 
-Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005). 
+http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm.</p>
+<p>For more information on <em>R</em> (<em>ie</em>, the Relatedness coefficient), please see
+Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005).
 <a href = 'http://www.springerlink.com/content/n3x1v1q282583366/'>Reformulating and simplifying the DF analysis model.</a>
 <em>Behavior Genetics, 35</em> (2), 211-217.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <p>The <code>LinksPair79</code> dataset contains columns necessary for a
-basic BG analysis.  The <code><a href='Links79PairExpanded.html'>Links79PairExpanded</a></code> dataset contains
+basic BG analysis.  The <a href='Links79PairExpanded.html'>Links79PairExpanded</a> dataset contains
 further information that might be useful in more complicated BG analyses.</p>
 <p>A tutorial that produces a similar dataset is
-<a href = 'http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html'>http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html</a>.
+http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html.
 It provides examples in SAS, SPSS, and STATA.</p>
 <p>The current dataset (ie, <code>Links79Pair</code>) can be saved as a CSV file
 (comma-separated file) and imported into in other programs and languages.
@@ -183,8 +185,8 @@ path <code>"C:\BGDirectory\Links79Pair.csv"</code> can be misinterpreted.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>NlsyLinks</span>) <span class='co'>#Load the package into the current R session.</span>
-<span class='fu'>summary</span>(<span class='no'>Links79Pair</span>)  <span class='co'>#Summarize the five variables.</span></div><div class='output co'>#&gt;    ExtendedID    SubjectTag_S1     SubjectTag_S2           R        
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>NlsyLinks</span>)     <span class='co'># Load the package into the current R session.</span>
+<span class='fu'>summary</span>(<span class='no'>Links79Pair</span>)   <span class='co'># Summarize the five variables.</span></div><div class='output co'>#&gt;    ExtendedID    SubjectTag_S1     SubjectTag_S2           R        
 #&gt;  Min.   :    2   Min.   :    200   Min.   :    201   Min.   :0.062  
 #&gt;  1st Qu.: 3045   1st Qu.: 304500   1st Qu.: 304504   1st Qu.:0.250  
 #&gt;  Median : 5976   Median : 597602   Median : 598001   Median :0.500  
@@ -199,12 +201,12 @@ path <code>"C:\BGDirectory\Links79Pair.csv"</code> can be misinterpreted.</p>
 #&gt;  ParentChild   :11504  
 #&gt;  AuntNiece     : 9884  
 #&gt;                        
-#&gt;                        </div><div class='input'><span class='fu'>hist</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)  <span class='co'>#Display a histogram of the Relatedness coefficients.</span></div><img src='Links79Pair-4.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>table</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)  <span class='co'>#Create a table of the Relatedness coefficients for the whole sample.</span></div><div class='output co'>#&gt; 
+#&gt;                        </div><div class='input'><span class='fu'>hist</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)    <span class='co'># Display a histogram of the Relatedness coefficients.</span></div><img src='Links79Pair-4.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>table</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)   <span class='co'># Create a table of the Relatedness coefficients for the whole sample.</span></div><div class='output co'>#&gt; 
 #&gt; 0.0625  0.125   0.25  0.375    0.5   0.75      1 
 #&gt;    309   4465  11183    610  22482     12     38 </div><div class='input'>
 <span class='co'>#Create a dataset of only Gen2 sibs, and display the distribution of R.</span>
 <span class='no'>gen2Siblings</span> <span class='kw'>&lt;-</span> <span class='fu'>subset</span>(<span class='no'>Links79Pair</span>, <span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>)
-<span class='fu'>table</span>(<span class='no'>gen2Siblings</span>$<span class='no'>R</span>)  <span class='co'>#Create a table of the Relatedness coefficients for the Gen2 sibs.</span></div><div class='output co'>#&gt; 
+<span class='fu'>table</span>(<span class='no'>gen2Siblings</span>$<span class='no'>R</span>)  <span class='co'># Create a table of the Relatedness coefficients for the Gen2 sibs.</span></div><div class='output co'>#&gt; 
 #&gt;  0.25 0.375   0.5  0.75     1 
 #&gt;  3442   610  6997    12    27 </div><div class='input'>
 </div></pre>

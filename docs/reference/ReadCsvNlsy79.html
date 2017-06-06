@@ -80,7 +80,7 @@
     </div>
 
     
-    <p>The function accepts a (file path to) CSV file and creates a <code>data.frame</code>.  The <code>data.frame</code> is modified and augmented with columns to assist later routines.</p>
+    <p>The function accepts a (file path to) CSV file and creates a <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.  The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> is modified and augmented with columns to assist later routines.</p>
     
 
     <pre class="usage"><span class='fu'>ReadCsvNlsy79Gen1</span>(<span class='no'>filePath</span>, <span class='kw'>dsExtract</span> <span class='kw'>=</span> <span class='kw'>utils</span><span class='kw'>::</span><span class='fu'>read.csv</span>(<span class='no'>filePath</span>))</pre>
@@ -94,19 +94,19 @@
     </tr>
     <tr>
       <th>dsExtract</th>
-      <td><p>A `data.frame` (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.</p></td>
+      <td><p>A 'data.frame' (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>data.frame</code> to facililate biometric analysis.</p>
+    <p>A <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> to facililate biometric analysis.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The function does seven things.</p><ol>
-<li><p>Reads the CSV into a <code>data.frame</code>.</p></li>
-<li><p>Checks that the NLSY variables <code>C00001.00</code> and <code>C00002.00</code> exist in the <code>data.frame</code>.</p></li>
+<li><p>Reads the CSV into a <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.</p></li>
+<li><p>Checks that the NLSY variables <code>C00001.00</code> and <code>C00002.00</code> exist in the <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.</p></li>
 <li><p>The NLSY variable <code>C00001.00</code> is renamed <code>SubjectID</code>.</p></li>
 <li><p>A variable named <code>Generation</code> is given a value of 2 for all subjects.</p></li>
 <li><p>The <code>SubjectTag</code> variable is created.</p></li>

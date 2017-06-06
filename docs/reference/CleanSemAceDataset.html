@@ -80,7 +80,7 @@
     </div>
 
     
-    <p>This function takes a `GroupSummary' <code>data.frame</code> (which is created by the <code>RGroupSummary</code> function) and returns a <code>data.frame</code> that is used by the <code>Ace</code> function.</p>
+    <p>This function takes a 'GroupSummary' <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> (which is created by the <code><a href='RGroupSummary.html'>RGroupSummary()</a></code> function) and returns a <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> that is used by the <code><a href='Ace.html'>Ace()</a></code> function.</p>
     
 
     <pre class="usage"><span class='fu'>CleanSemAceDataset</span>(<span class='no'>dsDirty</span>, <span class='no'>dsGroupSummary</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>, <span class='kw'>rName</span> <span class='kw'>=</span> <span class='st'>"R"</span>)</pre>
@@ -90,11 +90,11 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dsDirty</th>
-      <td><p>This is the <code>data.frame</code> to be cleaned.</p></td>
+      <td><p>This is the <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> to be cleaned.</p></td>
     </tr>
     <tr>
       <th>dsGroupSummary</th>
-      <td><p>The <code>data.frame</code> containing information about which groups should be included in the analyses.  It should be created by the <code>RGroupSummary</code> function.</p></td>
+      <td><p>The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> containing information about which groups should be included in the analyses.  It should be created by the <code><a href='RGroupSummary.html'>RGroupSummary()</a></code> function.</p></td>
     </tr>
     <tr>
       <th>oName_S1</th>
@@ -112,29 +112,31 @@
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>data.frame</code> with one row per subject pair.  The <code>data.frame</code> contains the following variables (which can NOT be changed by the user through optional parameters):</p>
-<dt>R</dt><dd><p>The pair's <code>R</code> value.</p></dd>
-<dt>O1</dt><dd><p>The outcome variable for the first subject in each pair.</p></dd>
-<dt>O2</dt><dd><p>The outcome variable for the second subject in each pair.</p></dd>
-<dt>GroupID</dt><dd><p>Indicates the pair's group membership.</p></dd>
+    <p>A <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> with one row per subject pair.  The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> contains the following variables (which can NOT be changed by the user through optional parameters):</p><ul>
+<li><p><strong>R</strong> The pair's <code>R</code> value.</p></li>
+<li><p><strong>O1</strong> The outcome variable for the first subject in each pair.</p></li>
+<li><p><strong>O2</strong> The outcome variable for the second subject in each pair.</p></li>
+<li><p><strong>GroupID</strong> Indicates the pair's group membership.</p></li>
+</ul>
 
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The function takes <code>dsDirty</code> and produces a new <code>data.frame</code> with the following features:</p>
-<p>[A] Only three existing columns are retained: <code>O1</code>, <code>O2</code>, and <code>R</code>.  They are assigned these names.</p>
-<p>[B] A new column called <code>GroupID</code> is created to reflect their group membership (which is based on the <code>R</code> value).  These valuesa re sequential integers, starting at 1.  The group with the weakest <code>R</code> is 1.  The group with the strongest <code>R</code> has the largest <code>GroupID</code> (this is typically the MZ tiwns).</p>
-<p>[C] Any row is excluded if it has a missing data point for <code>O1</code>, <code>O2</code>, or <code>R</code>.</p>
-<p>[D] The <code>data.frame</code> is sorted by the <code>R</code> value.  This helps program against the multiple-group SEM API sometimes.</p>
+    <p>The function takes <code>dsDirty</code> and produces a new <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> with the following features:</p><ol>
+<li><p>Only three existing columns are retained: <code>O1</code>, <code>O2</code>, and <code>R</code>.  They are assigned these names.</p></li>
+<li><p>A new column called <code>GroupID</code> is created to reflect their group membership (which is based on the <code>R</code> value).  These valuesa re sequential integers, starting at 1.  The group with the weakest <code>R</code> is 1.  The group with the strongest <code>R</code> has the largest <code>GroupID</code> (this is typically the MZ tiwns).</p></li>
+<li><p>Any row is excluded if it has a missing data point for <code>O1</code>, <code>O2</code>, or <code>R</code>.</p></li>
+<li><p>The <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a> is sorted by the <code>R</code> value.  This helps program against the multiple-group SEM API sometimes.</p></li>
+</ol>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>NlsyLinks</span>) <span class='co'>#Load the package into the current R session.</span>
-<span class='no'>dsLinks</span> <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span> <span class='co'>#Start with the built-in data.frame in NlsyLinks</span>
-<span class='no'>dsLinks</span> <span class='kw'>&lt;-</span> <span class='no'>dsLinks</span>[<span class='no'>dsLinks</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>, ] <span class='co'>#Use only NLSY79-C siblings</span>
+<span class='no'>dsLinks</span>        <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span> <span class='co'>#Start with the built-in data.frame in NlsyLinks</span>
+<span class='no'>dsLinks</span>        <span class='kw'>&lt;-</span> <span class='no'>dsLinks</span>[<span class='no'>dsLinks</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>, ] <span class='co'>#Use only NLSY79-C siblings</span>
 
-<span class='no'>oName_S1</span> <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'>#Stands for Outcome1</span>
-<span class='no'>oName_S2</span> <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'>#Stands for Outcome2</span>
+<span class='no'>oName_S1</span>       <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'>#Stands for Outcome1</span>
+<span class='no'>oName_S2</span>       <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'>#Stands for Outcome2</span>
 <span class='no'>dsGroupSummary</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='RGroupSummary.html'>RGroupSummary</a></span>(<span class='no'>dsLinks</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>)
 
 <span class='no'>dsClean</span> <span class='kw'>&lt;-</span> <span class='fu'>CleanSemAceDataset</span>( <span class='kw'>dsDirty</span><span class='kw'>=</span><span class='no'>dsLinks</span>, <span class='no'>dsGroupSummary</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>, <span class='kw'>rName</span><span class='kw'>=</span><span class='st'>"R"</span> )
@@ -146,7 +148,8 @@
 #&gt;  3rd Qu.:0.5000   3rd Qu.:107.00   3rd Qu.:107.0   3rd Qu.:3.000  
 #&gt;  Max.   :1.0000   Max.   :135.00   Max.   :135.0   Max.   :4.000  </div><div class='input'>
 <span class='no'>dsClean</span>$<span class='no'>AbsDifference</span> <span class='kw'>&lt;-</span> <span class='fu'>abs</span>(<span class='no'>dsClean</span>$<span class='no'>O1</span> - <span class='no'>dsClean</span>$<span class='no'>O2</span>)
-<span class='fu'>plot</span>(<span class='fu'>jitter</span>(<span class='no'>dsClean</span>$<span class='no'>R</span>), <span class='no'>dsClean</span>$<span class='no'>AbsDifference</span>, <span class='kw'>col</span><span class='kw'>=</span><span class='st'>"gray70"</span>)</div><img src='CleanSemAceDataset-4.png' alt='' width='540' height='400' /></pre>
+<span class='fu'>plot</span>(<span class='fu'>jitter</span>(<span class='no'>dsClean</span>$<span class='no'>R</span>), <span class='no'>dsClean</span>$<span class='no'>AbsDifference</span>, <span class='kw'>col</span><span class='kw'>=</span><span class='st'>"gray70"</span>)</div><img src='CleanSemAceDataset-4.png' alt='' width='540' height='400' /><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
