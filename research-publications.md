@@ -13,7 +13,9 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 <ol>
 
- <li value=65><cite>Garrison, S. M., Rodgers, J. L. (in press) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence*. <em class="doi">doi: XXXXXXX</em></cite>(NLSY79; NLSYC)</li>
+<li value=66><cite>Garrison, S. M., Rodgers, J. L. (2017) .Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *MBR*. <em class="doi">doi:XXXXXX</em></cite>(NLSY79)</li>
+ 
+<li value=65><cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence*. <em class="doi">doi:Intelligence,59,139-156.doi:10.1016/j.intell.2016.08.008</em></cite>(NLSY79; NLSYC)</li>
 
  <li value=64><cite>Brauer, J. R. (2016) [Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.](http://dx.doi.org/10.1111/jora.12283) *Journal of Research on Adolescence*. <em class="doi">doi: 10.1111/jora.12283</em></cite>(NLSYC)</li>
  
