@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -19,6 +19,9 @@
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="libs/highlightjs-1.1/highlight.js"></script>
 <!-- adding icons with troubleshooting with Andriy Koval https://github.com/andkov -->
 <link rel="icon" href="./images/favicon.png" type="image/png"/>
 <link rel="shortcut icon" href="./images/favicon.ico"/>
@@ -70,10 +73,6 @@ body {
 </script>
 
 <style type="text/css">code{white-space: pre;}</style>
-<link rel="stylesheet"
-      href="libs/highlight/textmate.css"
-      type="text/css" />
-<script src="libs/highlight/highlight.js"></script>
 <style type="text/css">
   pre:not([class]) {
     background-color: white;
@@ -145,10 +144,10 @@ button.code-folding-btn:focus {
 </style>
 
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script src="libs/navigation-1.1/tabsets.js"></script>
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
@@ -253,12 +252,15 @@ $(document).ready(function () {
 <p>We have been distributing the NLSY kinship links for close to two decades, and only began collecting this archive of articles around ten years ago. There are likely some additional publications based on the kinship links of which we are not aware. If you know of such papers, please bring them to our attention.</p>
 <div id="articles-and-book-chapters" class="section level1">
 <h1>Articles and Book Chapters</h1>
-<p><strong>In reverse chronological order, <a href="https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md">updated</a> October 2016</strong></p>
+<p><strong>In reverse chronological order, <a href="https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md">updated</a> August 2017</strong></p>
 <div id="section" class="section level2">
 <h2>2011 -</h2>
 <ol>
+<li value="66">
+<cite>Garrison, S. M., Rodgers, J. L. (2017) .Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. <em>MBR</em>. <em class="doi"><a href="doi:XXXXXX" class="uri">doi:XXXXXX</a></em></cite>(NLSY79)
+</li>
 <li value="65">
-<cite>Garrison, S. M., Rodgers, J. L. (in press) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. <em>Intelligence</em>. <em class="doi">doi: XXXXXXX</em></cite>(NLSY79; NLSYC)
+<cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. <em>Intelligence</em>. <em class="doi"><a href="doi:Intelligence,59,139-156.doi:10.1016/j.intell.2016.08.008" class="uri">doi:Intelligence,59,139-156.doi:10.1016/j.intell.2016.08.008</a></em></cite>(NLSY79; NLSYC)
 </li>
 <li value="64">
 <cite>Brauer, J. R. (2016) <a href="http://dx.doi.org/10.1111/jora.12283">Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.</a> <em>Journal of Research on Adolescence</em>. <em class="doi">doi: 10.1111/jora.12283</em></cite>(NLSYC)
@@ -568,9 +570,13 @@ $(document).ready(function () {
 <script>
 
 // add bootstrap table styles to pandoc tables
-$(document).ready(function () {
+function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
 });
+
 
 </script>
 

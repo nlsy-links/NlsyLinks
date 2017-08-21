@@ -7,7 +7,7 @@ The following publication list includes research products that used the NLSY79 o
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this archive of articles around ten years ago. There are likely some additional publications based on the kinship links of which we are not aware. If you know of such papers, please bring them to our attention.
 
 # Articles and Book Chapters
-**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) October 2016**
+**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) August 2017**
 
 ## 2011 -
 
