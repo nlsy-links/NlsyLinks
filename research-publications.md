@@ -12,12 +12,13 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 ## 2011 -
 
 <ol>
+<li value=66><cite>Kavish, N. A., Connolly, E. J., & Boutwell, B. B. (2017). Additive genetic and environmental contributions to the longitudinal association between violent victimization and depression. *bioRxiv*. <em class="doi">doi: 10.1101/164194</em></cite>(NLSYC)</li>
 
-<li value=66><cite>Garrison, S. M., Rodgers, J. L. (2017) .Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *MBR*. <em class="doi">doi:XXXXXX</em></cite>(NLSY79)</li>
+<li value=66><cite>Boutwell, B. B., Connolly, E. J., Barbaro, N., Shackelford, T. K., Petkovsek, M., & Beaver, K. M. (2017). On the genetic and environmental reasons why intelligence correlates with criminal victimization. *Intelligence*. <em class="doi">doi: 10.1016/j.intell.2017.04.003</em></cite>(NLSYC)</li>
+
+<li value=65><cite>Garrison, S. M., Rodgers, J. L. (2017) .Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *MBR*. <em class="doi">doi:XXXXXX</em></cite>(NLSY79)</li>
  
-<li value=65><cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence*. <em class="doi">doi:Intelligence,59,139-156.doi:10.1016/j.intell.2016.08.008</em></cite>(NLSY79; NLSYC)</li>
-
- <li value=64><cite>Brauer, J. R. (2016) [Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.](http://dx.doi.org/10.1111/jora.12283) *Journal of Research on Adolescence*. <em class="doi">doi: 10.1111/jora.12283</em></cite>(NLSYC)</li>
+<li value=64><cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence*. <em class="doi">doi:Intelligence,59,139-156.doi:10.1016/j.intell.2016.08.008</em></cite>(NLSY79; NLSYC)</li>
  
  <li value=63><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <em class="doi">doi: 10.1007/s10519-016-9785-3</em></cite>(NLSY79; NLSYC)</li> 
  
