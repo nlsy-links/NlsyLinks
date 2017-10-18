@@ -12,7 +12,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 
 
-```{r message=FALSE,echo=FALSE, warning=FALSE,include=FALSE}
+```{r message=FALSE,echo=FALSE, warning=FALSE,include=TRUE}
 if (!require("DT")) install.packages('DT')
 if (!require("plyr")) install.packages('plyr')
 library(DT)
