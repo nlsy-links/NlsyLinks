@@ -1,7 +1,7 @@
 encoding: UTF-8
 
 permalink: pretty
-highlighter: pygments
+highlighter: rouge # changed to rouge to suppress warning from github, pygments
 safe: false
 
 # Site details
