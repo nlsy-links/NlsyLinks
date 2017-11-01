@@ -1,0 +1,78 @@
+---
+title: "Publications involving the kinship links"
+output: html_document
+---
+
+The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links. Note that research presentations have not been included on this list, except for those that occurred during the course of the most recent NIH grant (2011-2014). Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list. 
+
+We have been distributing the NLSY kinship links for close to two decades, and only began collecting this archive of articles around ten years ago. There are likely some additional publications based on the kinship links of which we are not aware. If you know of such papers, please bring them to our attention.
+
+# Articles and Book Chapters
+**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) `r format(Sys.time(), '%d %B, %Y')`**
+
+
+
+```{r message=FALSE,echo=FALSE, warning=FALSE,include=TRUE}
+if (!require("DT")) install.packages('DT')
+if (!require("plyr")) install.packages('plyr')
+library(DT)
+
+d<-read.csv("publications/ArticlesChapters.csv", stringsAsFactors=FALSE, header=TRUE)
+x<-arrange(d,Year,desc(Number))
+x$Link[x$Link==""]=NA
+x$Citation[!is.na(x$Link)]=paste0("<a href='",x$Link[!is.na(x$Link)],"'>",x$Citation[!is.na(x$Link)],"</a>")
+
+m = matrix(as.matrix(x),ncol=6)
+
+colnames(m) = c('Number','Citation','Year','NLSY79','NLSYC','URL')
+
+datatable(m[,1:5], escape = FALSE)
+```
+
+# Recent Presentations by the Team
+**2016: Developmental Methods**
+
+* <cite>[Advances in discordant sibling designs from the NLSY,illustrated with SES and health.](./publications/2015/garrison-devmeth-2016.pdf) Mason Garrison.</cite>
+
+**2015: International Society for Intelligence Research**
+
+* <cite>[Do intelligent girls delay age at first intercourse?: Different results within-families versus between-families.](./publications/2015/rodgers-ISIR-2015.pptx) Joe Rodgers.</cite>
+
+**2015: Association for Research in Personality**
+
+* <cite>[Additive Effects of Maternal Conscientiousness and General Ability on Infant Health.](./publications/2015/garrison-arp-2015.pdf) Mason Garrison.</cite>
+
+**2015: Society for Personality and Social Psychology**
+
+* <cite>[Impact of Adolescent Conscientiousness and Intelligence on Health at Middle Age](./publications/2015/garrison-spsp-2015.pdf): A Sibling Comparison Approach. Mason Garrison.</cite>
+
+**2014: Behavior Genetics Association**
+
+* <cite>[A Dynamic Mixture Biometric Model of Cognitive Development](./publications/2014/hunter-bga-2014.pdf) in the NLSY Children. Mike Hunter.</cite>
+* <cite>Family Matters: A Multi-Level Family Study of Age of First Intercourse. David Bard.</cite>
+* <cite>[Intelligence and Fertility in the NLSY79 Respondents](./publications/2014/rodgers-bga-2014.pptx): Children of Siblings and Biometrical Models. Joe Rodgers.</cite>
+
+**2013: Society for Adolescent Health and Medicine**
+
+* <cite>[Psychosocial Predictors Of Adolescent Sexual Risk Behavior](https://www.researchgate.net/publication/260010468_Psychosocial_Predictors_of_Adolescent_Sexual_Risk_Behavior_A_Quasi-Experimental_Analysis_in_a_Nationally_Representative_Sample_of_American_Youths): A Quasi-experimental Analysis In A Nationally Representative Sample Of American Youths. Kelly Donahue, Carol Van Hulle, Joe Rodgers, Brian D'Onofrio.</cite>
+
+**2013: Behavior Genetics Association**
+
+* <cite>[NLSY Kinship Links](./publications/2013/beasley-bga-2013.pptx): Creating Biometrical Design Structures from Cross-Generational Data. Will Beasley.</cite>
+
+**2012: Behavior Genetics Association**
+
+* <cite>[The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/rodgers-bga-2012.pptx): Conducting Behavior Genetic Research Using the NLSY79 and NLSY-Children Data. Joe Rodgers.</cite>
+* <cite>[NlsyLinks](./publications/2012/beasley-bga-2012.pptx): An R Package Facilitating BG Research with the NLSY. Will Beasley.</cite>
+* <cite>[Biometric Analysis of Complex NLSY Pedigrees](./publications/2012/bard-bga-2012): Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model. David Bard.</cite>
+* <cite>[Multivariate Models of BMI, Intelligence, and Fertility](./publications/2012/meredith-bga-2012.pptx) Using the NLSY-Children Kinship Links. Kelly Meredith.</cite>
+* <cite>[The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/donofrio-bga-2012.pptx): A Discussion. Brian D'Onofrio.</cite>
+
+# General NLSY Articles
+A larger, searchable list of research using the NLSY datasets is maintained at [nlsinfo.org](https://nlsinfo.org/bibliography-start).
+
+# Current Documentation, Vignettes, and User Support
+Please see the provided entries on the [Research Software and Support](research-software-and-support.html) page.
+
+------
+Compiled by [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), [S. Mason Garrison](http://www.smasongarrison.com/), and Patrick O'Keefe.
