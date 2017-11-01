@@ -13,7 +13,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 <ol>
 
-<li value=70><cite>Garrison, S. M., Rodgers, J. L. (2017) .Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *MBR*. <em class="doi">doi:XXXXXX</em></cite>(NLSY79)</li>
+<li value=70><cite>Garrison, S. M., & Rodgers, J. L. (2017). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *Multivariate Behavioral Research*, 52(1), 118-119", https://osf.io/xbkja/. </cite>(NLSY79)</li>
 
 <li value=69><cite>Kavish, N. A., Connolly, E. J., & Boutwell, B. B. (2017). Additive genetic and environmental contributions to the longitudinal association between violent victimization and depression.  *bioRxiv*. <em class="doi">doi:10.1101/164194  </em></cite>(NLSYC)</li>
 
@@ -21,7 +21,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 <li value=67><cite>Hadd, A. R. & Rodgers, J. L. (2017). Intelligence, income, and education as potential influences on a child's home environment: A (maternal) sibling-comparison design. *Developmental Psychology*. <em class="doi">doi:10.1037/dev0000320 </em></cite>(NLSY79; NLSYC)</li>
 
-<li value=66><cite>Goodnight, J. A., Donahue, K. L., Waldman, I. D., Van Hulle, C. A., Rathouz, P. J., Lahey, B. B., & D’Onofrio, B. M. (2016). Genetic and environmental contributions to associations between infant fussy temperament and antisocial behavior in childhood and adolescence. *Behavior genetics*. <em class="doi">doi:10.1007/s10519-016-9794-2</em></cite>(NLSY79; NLSYC)</li>
+<li value=66><cite>Goodnight, J. A., Donahue, K. L., Waldman, I. D., Van Hulle, C. A., Rathouz, P. J., Lahey, B. B., & D'Onofrio, B. M. (2016). Genetic and environmental contributions to associations between infant fussy temperament and antisocial behavior in childhood and adolescence. *Behavior genetics*. <em class="doi">doi:10.1007/s10519-016-9794-2</em></cite>(NLSY79; NLSYC)</li>
 
 <li value=65><cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence*. <em class="doi">doi:Intelligence,59,139-156.doi:10.1016/j.intell.2016.08.008</em></cite>(NLSY79; NLSYC)</li>
 
