@@ -18,7 +18,7 @@ if (!require("plyr")) install.packages('plyr')
 library(DT)
 
 d<-read.csv("publications/ArticlesChapters.csv", stringsAsFactors=FALSE, header=TRUE)
-x<-arrange(d,Year,desc(Number))
+x<-arrange(d,desc(Number),Year)
 x$Link[x$Link==""]=NA
 x$Citation[!is.na(x$Link)]=paste0("<a href='",x$Link[!is.na(x$Link)],"'>",x$Citation[!is.na(x$Link)],"</a>")
 
