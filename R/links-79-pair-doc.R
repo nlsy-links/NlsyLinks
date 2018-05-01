@@ -53,10 +53,12 @@
 #' MZ twins have *R*=1.  DZ twins and full-siblings have *R*=.5.
 #' Half-siblings have *R*=.25. Typical first cousins have *R*=.125.
 #' Unrelated subjects have *R*=0 (this occasionally happens for
-#' `Gen1Housemates`).  Other *R* coefficients are possible.
+#' `Gen1Housemates`, but never for the other paths).  
+#' Other *R* coefficients are possible.
 #'
 #' There are several other uncommon possibilities, such as half-cousins (*R*=.0625) and
-#' ambiguous aunt-nieces (*R*=.125). The variable coding for genetic relatedness,`R`, in [`Links79Pair`] contains
+#' ambiguous aunt-nieces (*R*=.125, which is an average of 1/4 and 0/4). 
+#' The variable coding for genetic relatedness,`R`, in [`Links79Pair`] contains
 #' only the common values of *R* whose groups are likely to have stable estimates.
 #' However the variable `RFull` in [`Links79PairExpanded`] contains all *R* values.
 #' We strongly recommend using `R` in this [base::data.frame].  Move to
