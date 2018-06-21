@@ -3,9 +3,11 @@ title: "Publications involving the kinship links"
 output: html_document
 ---
 
-The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links. Note that research presentations have not been included on this list, except for those that occurred during the course of the most recent NIH grant (2011-2014). Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list. 
+The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links. Note that research presentations have not been included on this list, except for those that occurred during the course of the most recent NIH grant (2011-2014). Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list.
 
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this archive of articles around ten years ago. There are likely some additional publications based on the kinship links of which we are not aware. If you know of such papers, please bring them to our attention.
+
+Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
 # Articles and Book Chapters
 **In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) `r format(Sys.time(), '%d %B, %Y')`**
@@ -35,9 +37,9 @@ datatable(m, escape = FALSE)
 <li value=65><cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence*,59,139-156.<em class="doi">doi:10.1016/j.intell.2016.08.008</em></cite>(NLSY79; NLSYC)</li>
 
  <li value=64><cite>Brauer, J. R. (2016) [Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.](http://dx.doi.org/10.1111/jora.12283) *Journal of Research on Adolescence*. <em class="doi">doi: 10.1111/jora.12283</em></cite>(NLSYC)</li>
- 
- <li value=63><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <em class="doi">doi: 10.1007/s10519-016-9785-3</em></cite>(NLSY79; NLSYC)</li> 
- 
+
+ <li value=63><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <em class="doi">doi: 10.1007/s10519-016-9785-3</em></cite>(NLSY79; NLSYC)</li>
+
 <li value=62><cite>Garrison, S. Mason (2016) Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters, Vanderbilt University.</cite> (NLSY79)</li>
 
  <li value=61><cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <em class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</em></cite>(NLSYC)</li>
