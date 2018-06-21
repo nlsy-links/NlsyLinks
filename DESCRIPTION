@@ -1,8 +1,8 @@
 Package: NlsyLinks
 Type: Package
 Title: Utilities and Kinship Information for Research with the NLSY
-Version: 2.0.7.9000
-Date: 2017-05-26
+Version: 2.0.8.9000
+Date: 2018-06-21
 Authors@R: c(person("Will", "Beasley", role = c("aut", "cre"), email =
     "wibeasley@hotmail.com"), person("David", "Bard", role = "ctb"),
     person("Michael", "Hunter", role = "ctb"), person(given="S. Mason",
