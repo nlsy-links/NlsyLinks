@@ -39,7 +39,6 @@ dsLinks79PairWithoutOutcomes <- pathInputLinks %>%
   dplyr::select(-MultipleBirthIfSameSex, -RImplicitSubject, -RImplicitMother)
 
 
-
 ExtraOutcomes79$SubjectTag <- NlsyLinks::CreateSubjectTag(subjectID=ExtraOutcomes79$SubjectID, generation=ExtraOutcomes79$Generation)
 # colnames(dsLinks79PairWithoutOutcomes)
 remaining           <- setdiff(colnames(dsLinks79PairWithoutOutcomes),  c("SubjectTag_S1", "SubjectTag_S2"))
@@ -77,17 +76,20 @@ save(Links79PairExpanded, file=pathOutputLinkExpanded, compress="xz")
 ###  SubjectDetails
 SubjectDetails79 <- read.csv(pathInputSubjectDetails, stringsAsFactors=TRUE)
 
-SubjectDetails79$Gender <- factor(SubjectDetails79$Gender, levels=1:2, labels=c("Male", "Female"))
-SubjectDetails79$RaceCohort <- factor(SubjectDetails79$RaceCohort, levels=1:3, labels=c("Hispanic", "Black", "Nbnh")) #R02147.00 $ C00053.00
-
 vectorOfTwins <- sort(unique(unlist(Links79PairExpanded[Links79PairExpanded$IsMz=="Yes", c("SubjectTag_S1", "SubjectTag_S2")])))
-SubjectDetails79$IsMz <- (SubjectDetails79$SubjectTag %in% vectorOfTwins)
 
-SubjectDetails79$Mob <- as.Date(as.character(SubjectDetails79$Mob))
-SubjectDetails79$IsDead <- NA #This isn't finished yet.
-SubjectDetails79$DeathDate <- NA #This isn't finished yet.
+SubjectDetails79 <- SubjectDetails79 %>% 
+  dplyr::mutate(
+    Gender          = factor(Gender, levels=1:2, labels=c("Male", "Female")),
+    RaceCohort      = factor(RaceCohort, levels=1:3, labels=c("Hispanic", "Black", "Nbnh")), #R02147.00 $ C00053.00
+    IsMz            = (SubjectTag %in% vectorOfTwins),
+    Mob             = as.Date(as.character(Mob))
+  ) %>% 
+  dplyr::select(
+    -IsDead,          #This isn't finished yet.
+    -DeathDate        #This isn't finished yet.
+  )
 
-sapply(SubjectDetails79, class)
 save(SubjectDetails79, file=pathOutputSubjectDetails, compress="xz")
 
 ###############################################################
