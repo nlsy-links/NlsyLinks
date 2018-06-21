@@ -67,10 +67,12 @@ younger.
 MZ twins have \emph{R}=1.  DZ twins and full-siblings have \emph{R}=.5.
 Half-siblings have \emph{R}=.25. Typical first cousins have \emph{R}=.125.
 Unrelated subjects have \emph{R}=0 (this occasionally happens for
-\code{Gen1Housemates}).  Other \emph{R} coefficients are possible.
+\code{Gen1Housemates}, but never for the other paths).
+Other \emph{R} coefficients are possible.
 
 There are several other uncommon possibilities, such as half-cousins (\emph{R}=.0625) and
-ambiguous aunt-nieces (\emph{R}=.125). The variable coding for genetic relatedness,\code{R}, in \code{\link{Links79Pair}} contains
+ambiguous aunt-nieces (\emph{R}=.125, which is an average of 1/4 and 0/4).
+The variable coding for genetic relatedness,\code{R}, in \code{\link{Links79Pair}} contains
 only the common values of \emph{R} whose groups are likely to have stable estimates.
 However the variable \code{RFull} in \code{\link{Links79PairExpanded}} contains all \emph{R} values.
 We strongly recommend using \code{R} in this \link[base:data.frame]{base::data.frame}.  Move to
