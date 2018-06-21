@@ -7,7 +7,7 @@ DeFriesFulkerMethod1 <- function( dataSet, oName_S1, oName_S2, rName="R" ) {
       dataSet[, rName] +
       dataSet[, oName_S2]*dataSet[, rName]
   )
-  
+
   brief <- base::summary(lmDetails)
   coeficients <- stats::coef(brief)
   nDouble <- base::length(brief$residuals)

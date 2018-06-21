@@ -41,27 +41,27 @@ summary(SubjectDetails79)
 
 oldPar <- par(mfrow=c(3,2), mar=c(2,2,1,.5), tcl=0, mgp=c(1,0,0))
 hist(
-  SubjectDetails79$SiblingCountInNls, 
+  SubjectDetails79$SiblingCountInNls,
   main   = "",
   breaks =seq(from=0, to=max(SubjectDetails79$SiblingCountInNls, na.rm=TRUE), by=1)
 )
 hist(
-  SubjectDetails79$BirthOrderInNls, 
+  SubjectDetails79$BirthOrderInNls,
   main   = "",
   breaks = seq(from=0, to=max(SubjectDetails79$BirthOrderInNls, na.rm=TRUE), by=1)
 )
 hist(
-  SubjectDetails79$SimilarAgeCount, 
+  SubjectDetails79$SimilarAgeCount,
   main   = "",
   breaks = seq(from=0, to=max(SubjectDetails79$SimilarAgeCount, na.rm=TRUE), by=1)
 )
 hist(
-  SubjectDetails79$KidCountBio, 
+  SubjectDetails79$KidCountBio,
   main   = "",
   breaks = seq(from=0, to=max(SubjectDetails79$KidCountBio, na.rm=TRUE), by=1)
 )
 hist(
-  SubjectDetails79$KidCountInNls, 
+  SubjectDetails79$KidCountInNls,
   main   = "",
   breaks = seq(from=0, to=max(SubjectDetails79$KidCountInNls, na.rm=TRUE), by=1)
 )

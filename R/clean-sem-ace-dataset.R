@@ -39,7 +39,7 @@
 #'
 #' dsClean$AbsDifference <- abs(dsClean$O1 - dsClean$O2)
 #' plot(jitter(dsClean$R), dsClean$AbsDifference, col="gray70")
-#' 
+#'
 #' @keywords ACE
 
 CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rName="R" ) {

@@ -1,7 +1,7 @@
 #' @name ValidatePairLinksAreSymmetric
-#' 
+#'
 #' @export
-#' 
+#'
 #' @title Verifies that the pair relationships are symmetric.
 #'
 #' @description For certain analyses, the pairs links (which can be considered a type of
@@ -13,15 +13,15 @@
 #' spatially-inspired methods.
 #'
 #' @param linksPair The [base::data.frame] object that should be symmetric
-#' 
+#'
 #' @return Returns `TRUE` if symmetric.  Throw an error with [base::stop()] if asymmetric.
-#' 
+#'
 #' @author Will Beasley
-#' 
+#'
 #' @seealso [CreatePairLinksDoubleEntered()]
-#' 
+#'
 #' @keywords validation
-#' 
+#'
 #' @examples
 #' dsSingleLinks <- data.frame(
 #'   ExtendedID       = c(  1,   1,   1  , 2),

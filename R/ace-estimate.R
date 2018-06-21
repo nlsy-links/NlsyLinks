@@ -3,11 +3,11 @@
 #' @description A class containing information about a single univariate ACE model.
 #'
 #' @name AceEstimate-class
-#' 
+#'
 #' @aliases AceEstimate-class getEstimate,AceEstimate-method
 #' initialize,AceEstimate-method print,AceEstimate-method
 #' show,AceEstimate-method GetDetails,AceEstimate-method
-#' 
+#'
 #' @docType class
 #'
 #' @note The contents of the `Details` list depends on the underlying
@@ -16,13 +16,13 @@
 #' was used (ie, the basical general linear model).  Alternatively, if the
 #' user specified the [lavaan::lavaan()] package should estimate that ACE model,
 #' the output is a [lavaan::lavaan()] object.
-#' 
+#'
 #' @section Objects from the Class: Objects can be created by calls of the
 #' form:
 #' `new("AceEstimate", aSquared, cSquared, eSquared, caseCount, unity, withinBounds, details, ...)`
-#' 
+#'
 #' @keywords classes ACE
-#' 
+#'
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
 #'

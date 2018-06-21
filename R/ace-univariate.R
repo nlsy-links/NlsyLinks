@@ -1,18 +1,18 @@
 #' @name Ace
-#' 
+#'
 #' @aliases AceUnivariate DeFriesFulkerMethod1 DeFriesFulkerMethod3
-#' 
+#'
 #' @export AceUnivariate DeFriesFulkerMethod1 DeFriesFulkerMethod3
 #'
 #' @title Estimates the heritability of additive traits using a single variable.
 #'
-#' @usage 
+#' @usage
 #' AceUnivariate(
 #'   method         = c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"),
-#'   dataSet, 
-#'   oName_S1, 
-#'   oName_S2, 
-#'   rName          = "R", 
+#'   dataSet,
+#'   oName_S1,
+#'   oName_S2,
+#'   rName          = "R",
 #'   manifestScale  = "Continuous"
 #' )
 #'
@@ -35,8 +35,8 @@
 #' @param rName The name of the relatedness coefficient for the pair (this is
 #' typically abbreviated as `R`). This should be a `character` value.
 #' @param manifestScale Currently, only *continuous* manifest/outcome variables are supported.
-#' 
-#' @return Currently, a list is returned with the arguments `ASquared`, `CSquared`, `ESquared`, and `RowCount`.  
+#'
+#' @return Currently, a list is returned with the arguments `ASquared`, `CSquared`, `ESquared`, and `RowCount`.
 #' In the future, this may be changed to an `S4` class.
 #'
 #' @details
@@ -45,11 +45,11 @@
 #' versions will incorporate methods that use latent variable models.
 #'
 #' @author Will Beasley
-#' 
+#'
 #' @references Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' [Reformulating and simplifying the DF analysis model.](http://www.springerlink.com/content/n3x1v1q282583366/)
 #' *Behavior Genetics, 35* (2), 211-217.
-#' 
+#'
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
 #' dsOutcomes <- ExtraOutcomes79
@@ -60,7 +60,7 @@
 #' dsLinks  <- Links79Pair
 #' dsLinks  <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Only Gen2 Sibs (ie, NLSY79C)
 #' dsDF     <- CreatePairLinksDoubleEntered(
-#'   outcomeDataset     = dsOutcomes, 
+#'   outcomeDataset     = dsOutcomes,
 #'   linksPairDataset   = dsLinks,
 #'   outcomeNames       = c("MathStandardized", "HeightZGenderAge", "WeightZGenderAge")
 #' )

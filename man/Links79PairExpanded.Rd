@@ -101,7 +101,7 @@ table( youngerR, olderR)  # Table of the relationship between the siblings' resp
 ftable(youngerR, olderR, dnn=c("Younger's Version", "Older's Version")) # A formatted table.
 
 # write.csv(
-#   Links79PairExpanded, 
+#   Links79PairExpanded,
 #   file      ='~/NlsyLinksStaging/Links79PairExpanded.csv',
 #   row.names = FALSE
 # )
