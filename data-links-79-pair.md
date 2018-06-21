@@ -13,7 +13,7 @@ This dataset specifies the relatedness coefficient `R` between subjects in the s
 # Formats
 The dataset is available in the following formats:
 
- * [CSV](https://github.com/LiveOak/NlsyLinksDetermination/raw/master/ForDistribution/Links/Links2011V85.csv) (our recommendation).
+ * [CSV](https://github.com/LiveOak/NlsyLinks/blob/master/outside-data/links-2011-v85.csv?raw=true) (our recommendation).
  * [R Binary](https://github.com/LiveOak/NlsyLinks/raw/master/data/Links79PairExpanded.rda).
  * [SAS](https://github.com/LiveOak/NlsyLinksDetermination/raw/master/ForDistribution/ConvertedToSas/V85/links2011v85.sas7bdat?raw=true).
 
@@ -84,21 +84,21 @@ younger.
 MZ twins have *R*=1.  DZ twins and full-siblings have *R*=.5.
 Half-siblings have *R*=.25. Typical first cousins have *R*=.125.
 Unrelated subjects have *R*=0 (this occasionally happens for
-`Gen1Housemates`).  Other *R* coefficients are possible. 
+`Gen1Housemates`).  Other *R* coefficients are possible.
 
-There are several other uncommon possibilities, such as half-cousins (*R*=.0625) and 
+There are several other uncommon possibilities, such as half-cousins (*R*=.0625) and
 ambiguous aunt-nieces (*R*=.125). The variable coding for genetic relatedness, `R`, in `Links79Pair` contains
 only the common values of *R* whose groups are likely to have stable estimates.
 However the variable `RFull` contains all *R* values.
-We strongly recommend using `R` in this dataset.  Move to 
+We strongly recommend using `R` in this dataset.  Move to
 `RFull` (or some combination) only if you have a good reason, and are willing
 to carefully monitor a variety of validity checks.  Some of these
 excluded groups are too small to be estimated reliably.  
 
-Furthermore, some of these groups have members who are more strongly genetically related than their 
+Furthermore, some of these groups have members who are more strongly genetically related than their
 items would indicate. For instance, there are 41 Gen1 pairs who explicitly claim they are not biologically related
 (*ie*, `RExplicit`=0), yet their correlation for Adult Height is *R*=0.24.  This is
-much higher than would be expected for two people sampled randomly; it is nearly identical to 
+much higher than would be expected for two people sampled randomly; it is nearly identical to
 the *R*=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
 biological parent.
 
