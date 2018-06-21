@@ -60,10 +60,6 @@ NOT assume it contains only Gen2 sibiling pairs.  See an example of
 filtering the relationship category in the in \link{Links79Pair}
 documentation.
 
-Please first read the documentation for \link{Links79Pair}.  That
-dataset contains the same pairs/rows, but only a subset of the
-variables/columns.
-
 The specific steps to determine the \emph{R} coefficient will be described
 in an upcoming publication.  The following information may influence the
 decisions of an applied researcher.

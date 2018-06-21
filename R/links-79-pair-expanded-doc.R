@@ -25,11 +25,6 @@
 #' documentation.
 #'
 #'
-#' Please first read the documentation for [Links79Pair].  That
-#' dataset contains the same pairs/rows, but only a subset of the
-#' variables/columns.
-#'
-#'
 #' The specific steps to determine the *R* coefficient will be described
 #' in an upcoming publication.  The following information may influence the
 #' decisions of an applied researcher.
