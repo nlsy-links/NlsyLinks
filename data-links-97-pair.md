@@ -9,7 +9,8 @@ title: "Links97Pair"
 
 This dataset specifies the relatedness coefficient `R` between subjects in the same extended family.  Each row represents a unique relationship pair.
 
-This is a pre-release version.  The structure of the existing variables should remain unchanged (although cells will be updated).
+**This is a pre-release version.  The structure of the existing variables should remain unchanged (although cells will be updated).**
+
 
 ***
 # Formats
@@ -24,25 +25,19 @@ The dataset indicates a county's characteristics, with the following fields:
 
 | Variable Name | Type | Variable Description |
 | :------------ | :--- | :------------------- |
-| ExtendedID | integer | Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below. |
+| ExtendedID | integer | Identity of the extended family of the pair; it corresponds to the [`[SIDCODE]`](https://www.nlsinfo.org/investigator/pages/search.jsp#R11930.00). See Details below. |
 | SubjectTag_S1 | integer | Identity of the pair's first subject.  See Details below. |
 | SubjectTag_S2 | integer | Identity of the pair's second subject.  See Details below. |
-| RelationshipPath | integer | Specifies the relationship category of the pair.  This variable is a factor, with levels `Gen1Housemates`=1, `Gen2Siblings`=2, `Gen2Cousins`=3, `ParentChild`=4, `AuntNiece`=5. |
+| RelationshipPath | integer | Specifies the relationship category of the pair.  This variable is a factor, with level `Housemates`=1. |
 | R | float | The pair's Relatedness coefficient.  See Details below. |
 | RFull | float | This is a superset of `R`.  This includes all the *R* values we estimated, while *R* (i.e., the variable above) excludes values like *R*=0 for `Gen1Housemates`, and the associated relationships based on this *R* value (i.e., `Gen2Cousin`s and `AuntNiece`s).
-| EverSharedHouse | integer | Indicate if the pair likely live in the same house.  This is `TRUE` for `Gen1Housemates`, `Gen2Siblings`, and `ParentChild`. This is `FALSE` for `AuntNiece` and `Gen2Cousins`
+| EverSharedHouse | logical | Indicate if the pair likely live in the same house.  This is `TRUE` for all pairs in this NLSY97 dataset. |
 | IsMz | integer | Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels `No`=0, `Yes`=1, `DoNotKnow`=255. |
 | LastSurvey_S1 | integer | The year of Subject1's most recently completed survey. This may be different that the survey's administration date. |
 | LastSurvey_S2 | integer | The year of Subject2's most recently completed survey. This may be different that the survey's administration date. |
 | RPass1 | float | The pair's estimated *R* coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable `R` is identically constructed, but it did use interpolation. |
-| Generation_S1 | integer | The generation of the first subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively. |
-| Generation_S2 | integer | The generation of the second subject.  Values for Gen1 and Gen2 are `1` and `2`, respectively. |
-| SubjectID_S1 | integer | The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00). |
-| SubjectID_S2 | integer | The ID value assigned by NLS to the second subject. |
-| MathStandardized_S1 | float | The PIAT-Math score for Subject1.  See [`ExtraOutcomes79`](./data-extra-outcomes-79.html) for more information about its source. |
-| MathStandardized_S2 | float | The PIAT-Math score for Subject2. |
-| HeightZGenderAge_S1 | float | The early adult height for Subject1.  See [`ExtraOutcomes79`](./data-extra-outcomes-79.html) for more information about its source. |
-| HeightZGenderAge_S2 | float | The early adult height for Subject2. |
+| SubjectID_S1 | integer | The ID value assigned by NLS to the first subject, see [`[PUBID]`](https://www.nlsinfo.org/investigator/pages/search.jsp#R00001.00). |
+| SubjectID_S2 | integer | The ID value assigned by NLS to the second subject, see [`[PUBID]`](https://www.nlsinfo.org/investigator/pages/search.jsp#R00001.00). |
 
 
 ***
@@ -58,10 +53,6 @@ subjects.  It corresponds to the NLSY97 variable `[PUBID]`,
 
 The `RelationshipPath` variable is not useful with this dataset,
 but is included to be consistent with the [Links97Pair] dataset.
-
-An extended family with \eqn{k} subjects will have
-\eqn{k}(\eqn{k}-1)/2 rows.  Typically, Subject1 is older while Subject2 is
-younger.
 
 MZ twins have *R*=1.  DZ twins and full-siblings have *R*=.5.
 Half-siblings have *R*=.25. Typical first cousins have *R*=.125.
@@ -93,9 +84,10 @@ The current dataset (ie, `Links97Pair`) can be saved as a CSV file
 (comma-separated file) and imported into in other programs and languages.
 In the R console, type the following two lines of code:
 
-`library(NlsyLinks)`
-
-`write.csv(Links97Pair, "C:/BGDirectory/Links97Pair.csv")`
+```r
+library(NlsyLinks)
+write.csv(Links97Pair, "C:/BGDirectory/Links97Pair.csv")
+```
 
 where `"C:/BGDirectory/"` is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
@@ -105,6 +97,7 @@ path `"C:\BGDirectory\Links97Pair.csv"` can be misinterpreted.
 # References
 
 For more information on *R* (*ie*, the Relatedness coefficient), please see
+
 Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 [Reformulating and simplifying the DF analysis model.](http://www.springerlink.com/content/n3x1v1q282583366/)
 *Behavior Genetics, 35* (2), 211-217.

@@ -261,7 +261,7 @@ $(document).ready(function () {
 <p>Kinship linking file for pairs of relatives in the NLSY97</p>
 </blockquote>
 <p>This dataset specifies the relatedness coefficient <code>R</code> between subjects in the same extended family. Each row represents a unique relationship pair.</p>
-<p>This is a pre-release version. The structure of the existing variables should remain unchanged (although cells will be updated).</p>
+<p><strong>This is a pre-release version. The structure of the existing variables should remain unchanged (although cells will be updated).</strong></p>
 <hr />
 </div>
 <div id="formats" class="section level1">
@@ -293,7 +293,7 @@ $(document).ready(function () {
 <tr class="odd">
 <td align="left">ExtendedID</td>
 <td align="left">integer</td>
-<td align="left">Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79. See References below.</td>
+<td align="left">Identity of the extended family of the pair; it corresponds to the <a href="https://www.nlsinfo.org/investigator/pages/search.jsp#R11930.00"><code>[SIDCODE]</code></a>. See Details below.</td>
 </tr>
 <tr class="even">
 <td align="left">SubjectTag_S1</td>
@@ -308,7 +308,7 @@ $(document).ready(function () {
 <tr class="even">
 <td align="left">RelationshipPath</td>
 <td align="left">integer</td>
-<td align="left">Specifies the relationship category of the pair. This variable is a factor, with levels <code>Gen1Housemates</code>=1, <code>Gen2Siblings</code>=2, <code>Gen2Cousins</code>=3, <code>ParentChild</code>=4, <code>AuntNiece</code>=5.</td>
+<td align="left">Specifies the relationship category of the pair. This variable is a factor, with level <code>Housemates</code>=1.</td>
 </tr>
 <tr class="odd">
 <td align="left">R</td>
@@ -322,8 +322,8 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td align="left">EverSharedHouse</td>
-<td align="left">integer</td>
-<td align="left">Indicate if the pair likely live in the same house. This is <code>TRUE</code> for <code>Gen1Housemates</code>, <code>Gen2Siblings</code>, and <code>ParentChild</code>. This is <code>FALSE</code> for <code>AuntNiece</code> and <code>Gen2Cousins</code></td>
+<td align="left">logical</td>
+<td align="left">Indicate if the pair likely live in the same house. This is <code>TRUE</code> for all pairs in this NLSY97 dataset.</td>
 </tr>
 <tr class="even">
 <td align="left">IsMz</td>
@@ -346,44 +346,14 @@ $(document).ready(function () {
 <td align="left">The pair’s estimated <em>R</em> coefficient, using both implicit and explicit information. Interpolation was NOT used. The variable <code>R</code> is identically constructed, but it did use interpolation.</td>
 </tr>
 <tr class="even">
-<td align="left">Generation_S1</td>
-<td align="left">integer</td>
-<td align="left">The generation of the first subject. Values for Gen1 and Gen2 are <code>1</code> and <code>2</code>, respectively.</td>
-</tr>
-<tr class="odd">
-<td align="left">Generation_S2</td>
-<td align="left">integer</td>
-<td align="left">The generation of the second subject. Values for Gen1 and Gen2 are <code>1</code> and <code>2</code>, respectively.</td>
-</tr>
-<tr class="even">
 <td align="left">SubjectID_S1</td>
 <td align="left">integer</td>
-<td align="left">The ID value assigned by NLS to the first subject. For Gen1 Subjects, this is their “CaseID” (ie, R00001.00). For Gen2 subjects, this is their “CID” (ie, C00001.00).</td>
+<td align="left">The ID value assigned by NLS to the first subject, see <a href="https://www.nlsinfo.org/investigator/pages/search.jsp#R00001.00"><code>[PUBID]</code></a>.</td>
 </tr>
 <tr class="odd">
 <td align="left">SubjectID_S2</td>
 <td align="left">integer</td>
-<td align="left">The ID value assigned by NLS to the second subject.</td>
-</tr>
-<tr class="even">
-<td align="left">MathStandardized_S1</td>
-<td align="left">float</td>
-<td align="left">The PIAT-Math score for Subject1. See <a href="./data-extra-outcomes-79.html"><code>ExtraOutcomes79</code></a> for more information about its source.</td>
-</tr>
-<tr class="odd">
-<td align="left">MathStandardized_S2</td>
-<td align="left">float</td>
-<td align="left">The PIAT-Math score for Subject2.</td>
-</tr>
-<tr class="even">
-<td align="left">HeightZGenderAge_S1</td>
-<td align="left">float</td>
-<td align="left">The early adult height for Subject1. See <a href="./data-extra-outcomes-79.html"><code>ExtraOutcomes79</code></a> for more information about its source.</td>
-</tr>
-<tr class="odd">
-<td align="left">HeightZGenderAge_S2</td>
-<td align="left">float</td>
-<td align="left">The early adult height for Subject2.</td>
+<td align="left">The ID value assigned by NLS to the second subject, see <a href="https://www.nlsinfo.org/investigator/pages/search.jsp#R00001.00"><code>[PUBID]</code></a>.</td>
 </tr>
 </tbody>
 </table>
@@ -394,7 +364,6 @@ $(document).ready(function () {
 <p>The variable <code>ExtendedID</code> corresponds to the NLSY97 variable <code>[SIDCODE]</code> (<em>e.g.</em>, <a href="https://www.nlsinfo.org/investigator/pages/search.jsp#R11930.00">R11930.00</a>), which uniquely identifies a <em>household</em> that may contain multiple NLSY97 subjects.</p>
 <p>The variables <code>SubjectTag_S1</code> and <code>SubjectTag_S2</code> uniquely identify subjects. It corresponds to the NLSY97 variable <code>[PUBID]</code>, (<em>e.g.</em>, <a href="https://www.nlsinfo.org/investigator/pages/search.jsp#R00001.00">R00001.00</a>).</p>
 <p>The <code>RelationshipPath</code> variable is not useful with this dataset, but is included to be consistent with the [Links97Pair] dataset.</p>
-<p>An extended family with  subjects will have (-1)/2 rows. Typically, Subject1 is older while Subject2 is younger.</p>
 <p>MZ twins have <em>R</em>=1. DZ twins and full-siblings have <em>R</em>=.5. Half-siblings have <em>R</em>=.25. Typical first cousins have <em>R</em>=.125. Unrelated subjects have <em>R</em>=0 (this occasionally happens for <code>Housemates</code>, but never for the other paths). Other <em>R</em> coefficients are possible.</p>
 <p>There are several other uncommon possibilities, such as half-cousins (<em>R</em>=.0625) and ambiguous aunt-nieces (<em>R</em>=.125, which is an average of 1/4 and 0/4). The variable coding for genetic relatedness,<code>R</code>, in [<code>Links79Pair</code>] contains only the common values of <em>R</em> whose groups are likely to have stable estimates. However the variable <code>RFull</code> in [<code>Links79PairExpanded</code>] contains all <em>R</em> values. We strongly recommend using <code>R</code> in this [base::data.frame]. Move to <code>RFull</code> (or some combination) only if you have a good reason, and are willing to carefully monitor a variety of validity checks. Some of these excluded groups are too small to be estimated reliably.</p>
 <hr />
@@ -404,14 +373,15 @@ $(document).ready(function () {
 <p>The <code>LinksPair97</code> dataset contains columns necessary for a basic BG analysis. The [Links97PairExpanded] dataset contains further information that might be useful in more complicated BG analyses.</p>
 <p>A tutorial that produces a similar dataset is <a href="http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html" class="uri">http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html</a>. It provides examples in SAS, SPSS, and STATA.</p>
 <p>The current dataset (ie, <code>Links97Pair</code>) can be saved as a CSV file (comma-separated file) and imported into in other programs and languages. In the R console, type the following two lines of code:</p>
-<p><code>library(NlsyLinks)</code></p>
-<p><code>write.csv(Links97Pair, &quot;C:/BGDirectory/Links97Pair.csv&quot;)</code></p>
+<pre class="r"><code>library(NlsyLinks)
+write.csv(Links97Pair, &quot;C:/BGDirectory/Links97Pair.csv&quot;)</code></pre>
 <p>where <code>&quot;C:/BGDirectory/&quot;</code> is replaced by your preferred directory. Remember to use forward slashes instead of backslashes; for instance, the path <code>&quot;C:\BGDirectory\Links97Pair.csv&quot;</code> can be misinterpreted.</p>
 <hr />
 </div>
 <div id="references" class="section level1">
 <h1>References</h1>
-<p>For more information on <em>R</em> (<em>ie</em>, the Relatedness coefficient), please see Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005). <a href="http://www.springerlink.com/content/n3x1v1q282583366/">Reformulating and simplifying the DF analysis model.</a> <em>Behavior Genetics, 35</em> (2), 211-217.</p>
+<p>For more information on <em>R</em> (<em>ie</em>, the Relatedness coefficient), please see</p>
+<p>Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005). <a href="http://www.springerlink.com/content/n3x1v1q282583366/">Reformulating and simplifying the DF analysis model.</a> <em>Behavior Genetics, 35</em> (2), 211-217.</p>
 <hr />
 </div>
 <div id="source" class="section level1">
