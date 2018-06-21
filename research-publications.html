@@ -20,8 +20,8 @@
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="libs/highlightjs-1.1/highlight.js"></script>
+<link href="libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="libs/highlightjs-9.12.0/highlight.js"></script>
 <!-- adding icons with troubleshooting with Andriy Koval https://github.com/andkov -->
 <link rel="icon" href="./images/favicon.png" type="image/png"/>
 <link rel="shortcut icon" href="./images/favicon.ico"/>
@@ -79,10 +79,12 @@ body {
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -138,6 +140,9 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -192,6 +197,7 @@ $(document).ready(function () {
 
             <li class="dropdown-header">Kinship</li>
             <li><a href="data-links-79-pair.html">Links79Pair</a></li>
+            <li><a href="data-links-97-pair.html">Links97Pair</a></li>
             <li class="divider"/>
             <li class="dropdown-header">Nongenetic</li>
             <li><a href="data-subject-details-79.html">SubjectDetails79</a></li>
