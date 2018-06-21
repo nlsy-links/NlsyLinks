@@ -24,20 +24,15 @@ pathOutputLinkExpanded      <- file.path(directoryDatasetsRda, "Links79PairExpan
 pathOutputSubjectDetails    <- file.path(directoryDatasetsRda, "SubjectDetails79.rda")
 pathOutputSurveyDate        <- file.path(directoryDatasetsRda, "SurveyDate.rda")
 
-###############################################################
-###  ExtraOutcomes79
+# ---- ExtraOutcomes79 ---------------------------------------------------------
 ExtraOutcomes79             <- read.csv(file.path(directoryDatasetsCsv, "extra-outcomes-79.csv"))
-# ExtraOutcomes79$SubjectTag <- as.integer(round(ExtraOutcomes79$SubjectTag))
 
-sapply(ExtraOutcomes79, class)
 save(ExtraOutcomes79, file=pathOutputExtraOutcomes, compress="xz")
 
-###############################################################
-###  Links79PairExpanded and Links79Pair
+# ---- Links79PairExpanded and Links79Pair -------------------------------------
 dsLinks79PairWithoutOutcomes <- pathInputLinks %>% 
   read.csv(stringsAsFactors=FALSE) %>% 
   dplyr::select(-MultipleBirthIfSameSex, -RImplicitSubject, -RImplicitMother)
-
 
 ExtraOutcomes79$SubjectTag <- NlsyLinks::CreateSubjectTag(subjectID=ExtraOutcomes79$SubjectID, generation=ExtraOutcomes79$Generation)
 # colnames(dsLinks79PairWithoutOutcomes)
@@ -69,11 +64,10 @@ Links79PairExpanded <- c("MathStandardized", "HeightZGenderAge") %>%
 Links79Pair <- Links79PairExpanded %>% 
   dplyr::select(ExtendedID, SubjectTag_S1, SubjectTag_S2, R, RelationshipPath)
 
-save(Links79Pair, file=pathOutputLinkTrim, compress="xz")
+save(Links79Pair        , file=pathOutputLinkTrim    , compress="xz")
 save(Links79PairExpanded, file=pathOutputLinkExpanded, compress="xz")
 
-###############################################################
-###  SubjectDetails
+# ---- SubjectDetails ----------------------------------------------------------
 SubjectDetails79 <- read.csv(pathInputSubjectDetails, stringsAsFactors=TRUE)
 
 vectorOfTwins <- sort(unique(unlist(Links79PairExpanded[Links79PairExpanded$IsMz=="Yes", c("SubjectTag_S1", "SubjectTag_S2")])))
@@ -92,13 +86,15 @@ SubjectDetails79 <- SubjectDetails79 %>%
 
 save(SubjectDetails79, file=pathOutputSubjectDetails, compress="xz")
 
-###############################################################
-###  SurveyDate
+# ---- SurveyDate --------------------------------------------------------------
 SurveyDate <- read.csv(pathInputSurveyDate, stringsAsFactors=FALSE)
 
-SurveyDate$SurveySource <- factor(SurveyDate$SurveySource, levels=0:3, labels=c("NoInterview", "Gen1", "Gen2C", "Gen2YA"))
-SurveyDate$SurveyDate <- as.Date(SurveyDate$SurveyDate)
-SurveyDate$Age <- ifelse(!is.na(SurveyDate$AgeCalculateYears), SurveyDate$AgeCalculateYears, SurveyDate$AgeSelfReportYears)
+SurveyDate <- SurveyDate %>% 
+  dplyr::mutate(
+    SurveySource  = factor(SurveySource, levels=0:3, labels=c("NoInterview", "Gen1", "Gen2C", "Gen2YA")),
+    SurveyDate    = as.Date(SurveyDate),
+    Age           = ifelse(!is.na(AgeCalculateYears), AgeCalculateYears, AgeSelfReportYears)
+  ) %>% 
+  dplyr::arrange(SubjectTag, SurveySource, SurveyYear)
 
-sapply(SurveyDate, class)
 save(SurveyDate, file=pathOutputSurveyDate, compress="xz")
