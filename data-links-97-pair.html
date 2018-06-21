@@ -245,6 +245,12 @@ $(document).ready(function () {
 <ul>
 <li><a href="#description">Description</a></li>
 <li><a href="#formats">Formats</a></li>
+<li><a href="#data-dictionary">Data Dictionary</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#see-also">See Also</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#source">Source</a></li>
+<li><a href="#examples">Examples</a></li>
 </ul>
 </div>
 
@@ -263,9 +269,166 @@ $(document).ready(function () {
 <p>The dataset is available in the following formats:</p>
 <ul>
 <li><a href="https://github.com/LiveOak/NlsyLinks/blob/master/outside-data/nlsy-97/links-2017-97.csv?raw=true">CSV</a> (our recommendation).</li>
-<li>R Binary -to be released.</li>
+<li><a href="https://github.com/LiveOak/NlsyLinks/raw/master/data/Links97PairExpanded.rda">R Binary</a>.</li>
 <li>SAS -to be released.</li>
 </ul>
+</div>
+<div id="data-dictionary" class="section level1">
+<h1>Data Dictionary</h1>
+<p>The dataset indicates a county’s characteristics, with the following fields:</p>
+<table style="width:56%;">
+<colgroup>
+<col width="19%" />
+<col width="6%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable Name</th>
+<th align="left">Type</th>
+<th align="left">Variable Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ExtendedID</td>
+<td align="left">integer</td>
+<td align="left">Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79. See References below.</td>
+</tr>
+<tr class="even">
+<td align="left">SubjectTag_S1</td>
+<td align="left">integer</td>
+<td align="left">Identity of the pair’s first subject. See Details below.</td>
+</tr>
+<tr class="odd">
+<td align="left">SubjectTag_S2</td>
+<td align="left">integer</td>
+<td align="left">Identity of the pair’s second subject. See Details below.</td>
+</tr>
+<tr class="even">
+<td align="left">RelationshipPath</td>
+<td align="left">integer</td>
+<td align="left">Specifies the relationship category of the pair. This variable is a factor, with levels <code>Gen1Housemates</code>=1, <code>Gen2Siblings</code>=2, <code>Gen2Cousins</code>=3, <code>ParentChild</code>=4, <code>AuntNiece</code>=5.</td>
+</tr>
+<tr class="odd">
+<td align="left">R</td>
+<td align="left">float</td>
+<td align="left">The pair’s Relatedness coefficient. See Details below.</td>
+</tr>
+<tr class="even">
+<td align="left">RFull</td>
+<td align="left">float</td>
+<td align="left">This is a superset of <code>R</code>. This includes all the <em>R</em> values we estimated, while <em>R</em> (i.e., the variable above) excludes values like <em>R</em>=0 for <code>Gen1Housemates</code>, and the associated relationships based on this <em>R</em> value (i.e., <code>Gen2Cousin</code>s and <code>AuntNiece</code>s).</td>
+</tr>
+<tr class="odd">
+<td align="left">EverSharedHouse</td>
+<td align="left">integer</td>
+<td align="left">Indicate if the pair likely live in the same house. This is <code>TRUE</code> for <code>Gen1Housemates</code>, <code>Gen2Siblings</code>, and <code>ParentChild</code>. This is <code>FALSE</code> for <code>AuntNiece</code> and <code>Gen2Cousins</code></td>
+</tr>
+<tr class="even">
+<td align="left">IsMz</td>
+<td align="left">integer</td>
+<td align="left">Indicates if the pair is from the same zygote (ie, they are identical twins/triplets). This variable is a factor, with levels <code>No</code>=0, <code>Yes</code>=1, <code>DoNotKnow</code>=255.</td>
+</tr>
+<tr class="odd">
+<td align="left">LastSurvey_S1</td>
+<td align="left">integer</td>
+<td align="left">The year of Subject1’s most recently completed survey. This may be different that the survey’s administration date.</td>
+</tr>
+<tr class="even">
+<td align="left">LastSurvey_S2</td>
+<td align="left">integer</td>
+<td align="left">The year of Subject2’s most recently completed survey. This may be different that the survey’s administration date.</td>
+</tr>
+<tr class="odd">
+<td align="left">RPass1</td>
+<td align="left">float</td>
+<td align="left">The pair’s estimated <em>R</em> coefficient, using both implicit and explicit information. Interpolation was NOT used. The variable <code>R</code> is identically constructed, but it did use interpolation.</td>
+</tr>
+<tr class="even">
+<td align="left">Generation_S1</td>
+<td align="left">integer</td>
+<td align="left">The generation of the first subject. Values for Gen1 and Gen2 are <code>1</code> and <code>2</code>, respectively.</td>
+</tr>
+<tr class="odd">
+<td align="left">Generation_S2</td>
+<td align="left">integer</td>
+<td align="left">The generation of the second subject. Values for Gen1 and Gen2 are <code>1</code> and <code>2</code>, respectively.</td>
+</tr>
+<tr class="even">
+<td align="left">SubjectID_S1</td>
+<td align="left">integer</td>
+<td align="left">The ID value assigned by NLS to the first subject. For Gen1 Subjects, this is their “CaseID” (ie, R00001.00). For Gen2 subjects, this is their “CID” (ie, C00001.00).</td>
+</tr>
+<tr class="odd">
+<td align="left">SubjectID_S2</td>
+<td align="left">integer</td>
+<td align="left">The ID value assigned by NLS to the second subject.</td>
+</tr>
+<tr class="even">
+<td align="left">MathStandardized_S1</td>
+<td align="left">float</td>
+<td align="left">The PIAT-Math score for Subject1. See <a href="./data-extra-outcomes-79.html"><code>ExtraOutcomes79</code></a> for more information about its source.</td>
+</tr>
+<tr class="odd">
+<td align="left">MathStandardized_S2</td>
+<td align="left">float</td>
+<td align="left">The PIAT-Math score for Subject2.</td>
+</tr>
+<tr class="even">
+<td align="left">HeightZGenderAge_S1</td>
+<td align="left">float</td>
+<td align="left">The early adult height for Subject1. See <a href="./data-extra-outcomes-79.html"><code>ExtraOutcomes79</code></a> for more information about its source.</td>
+</tr>
+<tr class="odd">
+<td align="left">HeightZGenderAge_S2</td>
+<td align="left">float</td>
+<td align="left">The early adult height for Subject2.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="details" class="section level1">
+<h1>Details</h1>
+<p>The variable <code>ExtendedID</code> corresponds to the NLSY97 variable <code>[SIDCODE]</code> (<em>e.g.</em>, <a href="https://www.nlsinfo.org/investigator/pages/search.jsp#R11930.00">R11930.00</a>), which uniquely identifies a <em>household</em> that may contain multiple NLSY97 subjects.</p>
+<p>The variables <code>SubjectTag_S1</code> and <code>SubjectTag_S2</code> uniquely identify subjects. It corresponds to the NLSY97 variable <code>[PUBID]</code>, (<em>e.g.</em>, <a href="https://www.nlsinfo.org/investigator/pages/search.jsp#R00001.00">R00001.00</a>).</p>
+<p>The <code>RelationshipPath</code> variable is not useful with this dataset, but is included to be consistent with the [Links97Pair] dataset.</p>
+<p>An extended family with  subjects will have (-1)/2 rows. Typically, Subject1 is older while Subject2 is younger.</p>
+<p>MZ twins have <em>R</em>=1. DZ twins and full-siblings have <em>R</em>=.5. Half-siblings have <em>R</em>=.25. Typical first cousins have <em>R</em>=.125. Unrelated subjects have <em>R</em>=0 (this occasionally happens for <code>Housemates</code>, but never for the other paths). Other <em>R</em> coefficients are possible.</p>
+<p>There are several other uncommon possibilities, such as half-cousins (<em>R</em>=.0625) and ambiguous aunt-nieces (<em>R</em>=.125, which is an average of 1/4 and 0/4). The variable coding for genetic relatedness,<code>R</code>, in [<code>Links79Pair</code>] contains only the common values of <em>R</em> whose groups are likely to have stable estimates. However the variable <code>RFull</code> in [<code>Links79PairExpanded</code>] contains all <em>R</em> values. We strongly recommend using <code>R</code> in this [base::data.frame]. Move to <code>RFull</code> (or some combination) only if you have a good reason, and are willing to carefully monitor a variety of validity checks. Some of these excluded groups are too small to be estimated reliably.</p>
+<hr />
+</div>
+<div id="see-also" class="section level1">
+<h1>See Also</h1>
+<p>The <code>LinksPair97</code> dataset contains columns necessary for a basic BG analysis. The [Links97PairExpanded] dataset contains further information that might be useful in more complicated BG analyses.</p>
+<p>A tutorial that produces a similar dataset is <a href="http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html" class="uri">http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html</a>. It provides examples in SAS, SPSS, and STATA.</p>
+<p>The current dataset (ie, <code>Links97Pair</code>) can be saved as a CSV file (comma-separated file) and imported into in other programs and languages. In the R console, type the following two lines of code:</p>
+<p><code>library(NlsyLinks)</code></p>
+<p><code>write.csv(Links97Pair, &quot;C:/BGDirectory/Links97Pair.csv&quot;)</code></p>
+<p>where <code>&quot;C:/BGDirectory/&quot;</code> is replaced by your preferred directory. Remember to use forward slashes instead of backslashes; for instance, the path <code>&quot;C:\BGDirectory\Links97Pair.csv&quot;</code> can be misinterpreted.</p>
+<hr />
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p>For more information on <em>R</em> (<em>ie</em>, the Relatedness coefficient), please see Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005). <a href="http://www.springerlink.com/content/n3x1v1q282583366/">Reformulating and simplifying the DF analysis model.</a> <em>Behavior Genetics, 35</em> (2), 211-217.</p>
+<hr />
+</div>
+<div id="source" class="section level1">
+<h1>Source</h1>
+<p>Information comes from the Summer 2018 release of the <a href="https://www.bls.gov/nls/nlsy97.htm">NLSY97 sample</a>. Data were extracted with the NLS Investigator (<a href="https://www.nlsinfo.org/investigator/" class="uri">https://www.nlsinfo.org/investigator/</a>).</p>
+<hr />
+</div>
+<div id="examples" class="section level1">
+<h1>Examples</h1>
+<pre class="r"><code>library(NlsyLinks)     # Load the package into the current R session.
+summary(Links97Pair)   # Summarize the five variables.
+hist(Links97Pair$R)    # Display a histogram of the Relatedness coefficients.
+table(Links97Pair$R)   # Create a table of the Relatedness coefficients for the whole sample.
+
+#Create a dataset of only monozygotic sibs.
+mz_sibs &lt;- subset(Links97Pair, R &gt; .9)
+summary(mz_sibs)       # Create a table MZ sibs.</code></pre>
 </div>
 
 <!-- start of after_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->
