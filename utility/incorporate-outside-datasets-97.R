@@ -15,7 +15,7 @@ library(magrittr)
 
 requireNamespace("readr"        )
 requireNamespace("tidyr"        )
-requireNamespace("dplyr"        ) 
+requireNamespace("dplyr"        )
 
 # ---- declare-globals ---------------------------------------------------------
 directoryDatasetsCsv <- "./outside-data" #These CSVs are in the repository, but not in the build.
@@ -34,7 +34,7 @@ pathOutputSubjectDetails    <- file.path(directoryDatasetsRda, "SubjectDetails79
 pathOutputSurveyDate        <- file.path(directoryDatasetsRda, "SurveyDate.rda")
 
 # ---- load-data ---------------------------------------------------------------
-dsLinks79PairWithoutOutcomes  <- read.csv(pathInputLinks             , stringsAsFactors=FALSE) 
+dsLinks79PairWithoutOutcomes  <- read.csv(pathInputLinks             , stringsAsFactors=FALSE)
 ExtraOutcomes79               <- read.csv(pathInputExtraOutcomes79   , stringsAsFactors=TRUE )
 SubjectDetails79              <- read.csv(pathInputSubjectDetails    , stringsAsFactors=TRUE )
 SurveyDate                    <- read.csv(pathInputSurveyDate        , stringsAsFactors=FALSE)
@@ -42,69 +42,69 @@ SurveyDate                    <- read.csv(pathInputSurveyDate        , stringsAs
 # ---- tweak-data --------------------------------------------------------------
 
 # ---- Groom ExtraOutcomes79 ---------------------------------------------------------
-ExtraOutcomes79 <- ExtraOutcomes79 %>% 
+ExtraOutcomes79 <- ExtraOutcomes79 %>%
   as.data.frame()
 
 # ---- Groom Links79PairExpanded and Links79Pair -------------------------------------
-dsLinks79PairWithoutOutcomes <- dsLinks79PairWithoutOutcomes %>% 
+dsLinks79PairWithoutOutcomes <- dsLinks79PairWithoutOutcomes %>%
   dplyr::select(-MultipleBirthIfSameSex, -RImplicitSubject, -RImplicitMother)
 
-ExtraOutcomes79WithTags <- ExtraOutcomes79 %>% 
+ExtraOutcomes79WithTags <- ExtraOutcomes79 %>%
   dplyr::mutate(
-    SubjectTag = NlsyLinks::CreateSubjectTag(subjectID=SubjectID, generation=Generation)  
+    SubjectTag = NlsyLinks::CreateSubjectTag(subjectID=SubjectID, generation=Generation)
   )
 
 remaining           <- setdiff(colnames(dsLinks79PairWithoutOutcomes),  c("SubjectTag_S1", "SubjectTag_S2"))
 relationshipLabels  <- c("Gen1Housemates","Gen2Siblings","Gen2Cousins","ParentChild", "AuntNiece")
 
-Links79PairExpanded <- c("MathStandardized", "HeightZGenderAge") %>% 
+Links79PairExpanded <- c("MathStandardized", "HeightZGenderAge") %>%
   NlsyLinks::CreatePairLinksSingleEntered(
     outcomeNames      = .,
     outcomeDataset    = ExtraOutcomes79WithTags,
     linksPairDataset  = dsLinks79PairWithoutOutcomes,
     linksNames        = remaining
-  ) %>% 
-  dplyr::filter(SubjectTag_S1 < SubjectTag_S2) %>% 
+  ) %>%
+  dplyr::filter(SubjectTag_S1 < SubjectTag_S2) %>%
   dplyr::mutate(
     RelationshipPath  = factor(RelationshipPath, levels=seq_along(relationshipLabels), labels=relationshipLabels),
     IsMz              = factor(IsMz            , levels=c(0, 1, 255), labels=c("No", "Yes", "DoNotKnow")),
     EverSharedHouse   = as.logical(EverSharedHouse)
-  ) %>% 
-  dplyr::select(-RImplicitDifference) %>% 
-  dplyr::arrange(ExtendedID, SubjectTag_S1, SubjectTag_S2) %>% 
+  ) %>%
+  dplyr::select(-RImplicitDifference) %>%
+  dplyr::arrange(ExtendedID, SubjectTag_S1, SubjectTag_S2) %>%
   as.data.frame()
 
 # multipleBirthLabels <- c("No", "Twin", "Triplet", "DoNotKnow")
 # Links79PairExpanded$MultipleBirth <- factor(Links79PairExpanded$MultipleBirth, levels=c(0, 2, 3, 255), labels=multipleBirthLabels)
 
-Links79Pair <- Links79PairExpanded %>% 
-  dplyr::select(ExtendedID, SubjectTag_S1, SubjectTag_S2, R, RelationshipPath) %>% 
+Links79Pair <- Links79PairExpanded %>%
+  dplyr::select(ExtendedID, SubjectTag_S1, SubjectTag_S2, R, RelationshipPath) %>%
   as.data.frame()
 
 # ---- Groom SubjectDetails ----------------------------------------------------------
 vectorOfTwins <- sort(unique(unlist(Links79PairExpanded[Links79PairExpanded$IsMz=="Yes", c("SubjectTag_S1", "SubjectTag_S2")])))
 
-SubjectDetails79 <- SubjectDetails79 %>% 
+SubjectDetails79 <- SubjectDetails79 %>%
   dplyr::mutate(
     Gender          = factor(Gender, levels=1:2, labels=c("Male", "Female")),
     RaceCohort      = factor(RaceCohort, levels=1:3, labels=c("Hispanic", "Black", "Nbnh")), #R02147.00 $ C00053.00
     IsMz            = (SubjectTag %in% vectorOfTwins),
     Mob             = as.Date(as.character(Mob))
-  ) %>% 
+  ) %>%
   dplyr::select(
     -IsDead,          #This isn't finished yet.
     -DeathDate        #This isn't finished yet.
-  ) %>% 
+  ) %>%
   as.data.frame()
 
 # ---- Groom SurveyDate --------------------------------------------------------------
-SurveyDate <- SurveyDate %>% 
+SurveyDate <- SurveyDate %>%
   dplyr::mutate(
     SurveySource  = factor(SurveySource, levels=0:3, labels=c("NoInterview", "Gen1", "Gen2C", "Gen2YA")),
     SurveyDate    = as.Date(SurveyDate),
     Age           = ifelse(!is.na(AgeCalculateYears), AgeCalculateYears, AgeSelfReportYears)
-  ) %>% 
-  dplyr::arrange(SubjectTag, SurveySource, SurveyYear) %>% 
+  ) %>%
+  dplyr::arrange(SubjectTag, SurveySource, SurveyYear) %>%
   as.data.frame()
 
 # ---- verify-values -----------------------------------------------------------

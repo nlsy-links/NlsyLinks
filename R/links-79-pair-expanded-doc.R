@@ -59,8 +59,8 @@
 #' [ExtraOutcomes79], but are included here to make some examples
 #' more concise and accessible.
 #'
-#' @format 
-#' A data frame with 11,075 observations on the following 22 variables.  
+#' @format
+#' A data frame with 11,075 observations on the following 22 variables.
 #' There is one row per unique pair of subjects, irrespective of order.
 #'
 #' * **ExtendedID** see the variable of the same name in [Links79Pair]
@@ -94,11 +94,11 @@
 #' * **HeightZGenderAge_S2** The early adult height for Subject2.
 #'
 #' @author Will Beasley
-#' 
+#'
 #' @source See [Links79Pair].
-#' 
+#'
 #' @keywords datasets
-#' 
+#'
 #' @examples
 #' library(NlsyLinks) # Load the package into the current R session.
 #' olderR   <- Links79PairExpanded$RExplicitOlderSibVersion   # Declare a concise variable name.
@@ -109,7 +109,7 @@
 #' ftable(youngerR, olderR, dnn=c("Younger's Version", "Older's Version")) # A formatted table.
 #'
 #' # write.csv(
-#' #   Links79PairExpanded, 
+#' #   Links79PairExpanded,
 #' #   file      ='~/NlsyLinksStaging/Links79PairExpanded.csv',
 #' #   row.names = FALSE
 #' # )

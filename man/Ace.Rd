@@ -9,10 +9,10 @@
 \usage{
 AceUnivariate(
   method         = c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"),
-  dataSet, 
-  oName_S1, 
-  oName_S2, 
-  rName          = "R", 
+  dataSet,
+  oName_S1,
+  oName_S2,
+  rName          = "R",
   manifestScale  = "Continuous"
 )
 
@@ -62,7 +62,7 @@ dsOutcomes$SubjectTag <- CreateSubjectTag(
 dsLinks  <- Links79Pair
 dsLinks  <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Only Gen2 Sibs (ie, NLSY79C)
 dsDF     <- CreatePairLinksDoubleEntered(
-  outcomeDataset     = dsOutcomes, 
+  outcomeDataset     = dsOutcomes,
   linksPairDataset   = dsLinks,
   outcomeNames       = c("MathStandardized", "HeightZGenderAge", "WeightZGenderAge")
 )

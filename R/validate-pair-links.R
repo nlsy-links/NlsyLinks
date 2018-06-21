@@ -18,13 +18,13 @@
 #' have a `numeric` mode/datatype.
 #'
 #' @param linksPair The [base::data.frame] to validate.
-#' 
+#'
 #' @return Returns `TRUE` if the validation passes. Returns an error (and associated descriptive message) if it false.
-#' 
+#'
 #' @seealso [Links79Pair], [Links79PairExpanded],
-#' 
+#'
 #' @keywords validation
-#' 
+#'
 #' @examples
 #' dsSingleLinks <- data.frame(
 #'   ExtendedID        = c(  1  , 1,   1  , 2),

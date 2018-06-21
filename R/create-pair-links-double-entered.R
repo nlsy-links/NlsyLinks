@@ -1,14 +1,14 @@
 #' @name CreatePairLinks
-#' 
-#' @aliases 
-#' CreatePairLinksSingleEntered 
+#'
+#' @aliases
+#' CreatePairLinksSingleEntered
 #' CreatePairLinksDoubleEntered
 #' CreatePairLinksDoubleEnteredWithNoOutcomes
-#' 
+#'
 #' @export CreatePairLinksSingleEntered  CreatePairLinksDoubleEntered CreatePairLinksDoubleEnteredWithNoOutcomes
 #'
 #' @title Creates a pairs linking file.
-#' 
+#'
 #' @description Creates a linking file for BG designs using this file structure (e.g., DF analysis, other ACE modeling).
 #' A DF analysis requires a double-entered file that contains the `R`
 #' value for the pair, and their two outcome variable values.
@@ -16,25 +16,25 @@
 #' [CreatePairLinksDoubleEnteredWithNoOutcomes()] is intended to be a
 #' primarily a helper function for [CreateSpatialNeighbours()].
 #'
-#' @usage 
-#' 
+#' @usage
+#'
 #' CreatePairLinksDoubleEntered(
-#'   outcomeDataset, 
-#'   linksPairDataset, 
+#'   outcomeDataset,
+#'   linksPairDataset,
 #'   outcomeNames,
-#'   linksNames             = c("ExtendedID", "R", "RelationshipPath"), 
+#'   linksNames             = c("ExtendedID", "R", "RelationshipPath"),
 #'   validateOutcomeDataset = TRUE,
-#'   subject1Qualifier      = "_S1", 
+#'   subject1Qualifier      = "_S1",
 #'   subject2Qualifier      = "_S2"
 #' )
 #'
 #' CreatePairLinksSingleEntered(
-#'   outcomeDataset, 
-#'   linksPairDataset, 
+#'   outcomeDataset,
+#'   linksPairDataset,
 #'   outcomeNames,
-#'   linksNames             = c("ExtendedID", "R", "RelationshipPath"), 
+#'   linksNames             = c("ExtendedID", "R", "RelationshipPath"),
 #'   validateOutcomeDataset = TRUE,
-#'   subject1Qualifier      = "_S1", 
+#'   subject1Qualifier      = "_S1",
 #'   subject2Qualifier      = "_S2"
 #' )
 #'
@@ -53,13 +53,13 @@
 #' @param validateOutcomeDataset Indicates if characteristics of the outcomeDataset should be validated.
 #' @param subject1Qualifier Indicates how the outcome variable for the pair's first subject is distinguished from the other subject.  The default is `_S1`.
 #' @param subject2Qualifier Indicates how the outcome variable for the pair's second subject is distinguished from the other subject.  The default is `_S2`.
-#' 
+#'
 #' @author Will Beasley
-#' 
+#'
 #' @references For more information about a DF analysis, see Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' [Reformulating and simplifying the DF analysis model.](http://www.springerlink.com/content/n3x1v1q282583366/)
 #' *Behavior Genetics, 35* (2), 211-217.
-#' 
+#'
 #' @examples
 #' dsSingleLinks <- data.frame(
 #'   ExtendedID=c(1, 1, 1, 2),

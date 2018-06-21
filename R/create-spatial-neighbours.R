@@ -1,11 +1,11 @@
 #' @name CreateSpatialNeighbours
-#' 
+#'
 #' @export
 #'
 #' @title Distances between related family members, formated for spatial analysis.
-#' 
+#'
 #' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a [base::data.frame]) to represent neigbours.
-#' 
+#'
 #' @usage  CreateSpatialNeighbours(linksPairsDoubleEntered)
 ## CreateSpatialNeighbours79Gen2()
 #'
@@ -39,9 +39,9 @@
 #' The \pkg{spdep} package documentation: [spdep: Spatial dependence: weighting schemes, statistics and models](https://cran.r-project.org/package=spdep).
 #'
 #' @author Will Beasley and  David Bard
-#' 
+#'
 #' @note Notice the British variant of 'neighbo*u*rs' is used, to be consistent with the `spdep::spatial.neighbour` class.
-#' 
+#'
 #' @examples
 #' dsLinksAll             <- Links79Pair
 #' dsLinksGen1Housemates  <- dsLinksAll[dsLinksAll$RelationshipPath=="Gen1Housemates", ]

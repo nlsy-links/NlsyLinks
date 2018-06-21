@@ -8,22 +8,22 @@
 \title{Creates a pairs linking file.}
 \usage{
 CreatePairLinksDoubleEntered(
-  outcomeDataset, 
-  linksPairDataset, 
+  outcomeDataset,
+  linksPairDataset,
   outcomeNames,
-  linksNames             = c("ExtendedID", "R", "RelationshipPath"), 
+  linksNames             = c("ExtendedID", "R", "RelationshipPath"),
   validateOutcomeDataset = TRUE,
-  subject1Qualifier      = "_S1", 
+  subject1Qualifier      = "_S1",
   subject2Qualifier      = "_S2"
 )
 
 CreatePairLinksSingleEntered(
-  outcomeDataset, 
-  linksPairDataset, 
+  outcomeDataset,
+  linksPairDataset,
   outcomeNames,
-  linksNames             = c("ExtendedID", "R", "RelationshipPath"), 
+  linksNames             = c("ExtendedID", "R", "RelationshipPath"),
   validateOutcomeDataset = TRUE,
-  subject1Qualifier      = "_S1", 
+  subject1Qualifier      = "_S1",
   subject2Qualifier      = "_S2"
 )
 
