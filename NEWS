@@ -4,7 +4,7 @@ Version 2.0.8 (2018-?-?)
 ------------------------------------------------------------------------------
 Updates:
 * [pkgdown](https://hadley.github.io/pkgdown/) documentation
-* Rename dataset `SurveyDate` to `SurveyDate79`.
+* Rename dataset `SurveyDate` to `Survey79`.
 
 
 Version 2.0.5 (2016-03-17)
