@@ -24,20 +24,20 @@ algorithmVersion     <- 85L
 
 pathInputLinks              <- file.path(directoryDatasetsCsv, paste0("links-2011-v"     , algorithmVersion, ".csv"))
 pathInputSubjectDetails     <- file.path(directoryDatasetsCsv, paste0("subject-details-v", algorithmVersion, ".csv"))
-pathInputSurveyDate         <- file.path(directoryDatasetsCsv, paste0("survey-time.csv"))
+pathInputSurvey79           <- file.path(directoryDatasetsCsv, paste0("survey-79.csv"))
 pathInputExtraOutcomes79    <- file.path(directoryDatasetsCsv, "extra-outcomes-79.csv")
 
 pathOutputExtraOutcomes     <- file.path(directoryDatasetsRda, "ExtraOutcomes79.rda")
 pathOutputLinkTrim          <- file.path(directoryDatasetsRda, "Links79Pair.rda")
 pathOutputLinkExpanded      <- file.path(directoryDatasetsRda, "Links79PairExpanded.rda")
 pathOutputSubjectDetails    <- file.path(directoryDatasetsRda, "SubjectDetails79.rda")
-pathOutputSurveyDate        <- file.path(directoryDatasetsRda, "SurveyDate.rda")
+pathOutputSurvey79          <- file.path(directoryDatasetsRda, "Survey79.rda")
 
 # ---- load-data ---------------------------------------------------------------
 dsLinks79PairWithoutOutcomes  <- read.csv(pathInputLinks             , stringsAsFactors=FALSE)
 ExtraOutcomes79               <- read.csv(pathInputExtraOutcomes79   , stringsAsFactors=TRUE )
 SubjectDetails79              <- read.csv(pathInputSubjectDetails    , stringsAsFactors=TRUE )
-SurveyDate                    <- read.csv(pathInputSurveyDate        , stringsAsFactors=FALSE)
+Survey79                      <- read.csv(pathInputSurvey79          , stringsAsFactors=FALSE)
 
 # ---- tweak-data --------------------------------------------------------------
 
@@ -97,8 +97,8 @@ SubjectDetails79 <- SubjectDetails79 %>%
   ) %>%
   as.data.frame()
 
-# ---- Groom SurveyDate --------------------------------------------------------------
-SurveyDate <- SurveyDate %>%
+# ---- Groom Survey79 --------------------------------------------------------------
+Survey79 <- Survey79 %>%
   dplyr::mutate(
     SurveySource  = factor(SurveySource, levels=0:3, labels=c("NoInterview", "Gen1", "Gen2C", "Gen2YA")),
     SurveyDate    = as.Date(SurveyDate),
@@ -113,11 +113,11 @@ checkmate::assert_data_frame(ExtraOutcomes79      , min.rows=100)
 checkmate::assert_data_frame(Links79Pair          , min.rows=100)
 checkmate::assert_data_frame(Links79PairExpanded  , min.rows=100)
 checkmate::assert_data_frame(SubjectDetails79     , min.rows=100)
-checkmate::assert_data_frame(SurveyDate           , min.rows=100)
+checkmate::assert_data_frame(Survey79             , min.rows=100)
 
 # ---- save-to-disk ------------------------------------------------------------
 save(ExtraOutcomes79            , file=pathOutputExtraOutcomes      , compress="xz")
 save(Links79Pair                , file=pathOutputLinkTrim           , compress="xz")
 save(Links79PairExpanded        , file=pathOutputLinkExpanded       , compress="xz")
 save(SubjectDetails79           , file=pathOutputSubjectDetails     , compress="xz")
-save(SurveyDate                 , file=pathOutputSurveyDate         , compress="xz")
+save(Survey79                   , file=pathOutputSurvey79           , compress="xz")

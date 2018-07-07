@@ -25,14 +25,14 @@ algorithmVersion     <- 11L
 pathInputLinks              <- file.path(directoryDatasetsCsv, paste0("links-2017-97.csv"))
 # pathInputLinks              <- file.path(directoryDatasetsCsv, paste0("links-2017-97-v"  , algorithmVersion, ".csv"))
 # pathInputSubjectDetails     <- file.path(directoryDatasetsCsv, paste0("subject-details-v", algorithmVersion, ".csv"))
-# pathInputSurveyDate         <- file.path(directoryDatasetsCsv, paste0("survey-time.csv"))
+# pathInputSurvey97           <- file.path(directoryDatasetsCsv, paste0("survey-time.csv"))
 # pathInputExtraOutcomes79    <- file.path(directoryDatasetsCsv, "extra-outcomes-79.csv")
 
 # pathOutputExtraOutcomes     <- file.path(directoryDatasetsRda, "ExtraOutcomes79.rda")
 pathOutputLinkTrim          <- file.path(directoryDatasetsRda, "Links97Pair.rda")
 pathOutputLinkExpanded      <- file.path(directoryDatasetsRda, "Links97PairExpanded.rda")
 # pathOutputSubjectDetails    <- file.path(directoryDatasetsRda, "SubjectDetails79.rda")
-# pathOutputSurveyDate        <- file.path(directoryDatasetsRda, "SurveyDate.rda")
+# pathOutputSurvey97          <- file.path(directoryDatasetsRda, "Survey97.rda")
 
 col_types_links <- readr::cols_only(
   ExtendedID                     = readr::col_integer(),
@@ -64,7 +64,7 @@ col_types_links <- readr::cols_only(
 dsLinksWithoutOutcomes          <- readr::read_csv(pathInputLinks       , col_types=col_types_links)
 # ExtraOutcomes79               <- read.csv(pathInputExtraOutcomes79   , stringsAsFactors=TRUE )
 # SubjectDetails79              <- read.csv(pathInputSubjectDetails    , stringsAsFactors=TRUE )
-# SurveyDate                    <- read.csv(pathInputSurveyDate        , stringsAsFactors=FALSE)
+# Survey97                      <- read.csv(pathInputSurvey97          , stringsAsFactors=FALSE)
 
 rm(pathInputLinks, col_types_links)
 
@@ -155,11 +155,11 @@ Links97Pair <- Links97PairExpanded %>%
 #   ) %>%
 #   as.data.frame()
 #
-# # ---- Groom SurveyDate --------------------------------------------------------------
-# SurveyDate <- SurveyDate %>%
+# # ---- Groom Survey97 --------------------------------------------------------------
+# Survey97 <- Survey97 %>%
 #   dplyr::mutate(
 #     SurveySource  = factor(SurveySource, levels=0:3, labels=c("NoInterview", "Gen1", "Gen2C", "Gen2YA")),
-#     SurveyDate    = as.Date(SurveyDate),
+#     Survey97      = as.Date(Survey97),
 #     Age           = ifelse(!is.na(AgeCalculateYears), AgeCalculateYears, AgeSelfReportYears)
 #   ) %>%
 #   dplyr::arrange(SubjectTag, SurveySource, SurveyYear) %>%
@@ -170,12 +170,12 @@ Links97Pair <- Links97PairExpanded %>%
 # checkmate::assert_data_frame(ExtraOutcomes79      , min.rows=100)
 checkmate::assert_data_frame(Links97Pair          , min.rows=100)
 checkmate::assert_data_frame(Links97PairExpanded  , min.rows=100)
-# checkmate::assert_data_frame(SubjectDetails79     , min.rows=100)
-# checkmate::assert_data_frame(SurveyDate           , min.rows=100)
+# checkmate::assert_data_frame(SubjectDetails79   , min.rows=100)
+# checkmate::assert_data_frame(Survey97           , min.rows=100)
 
 # ---- save-to-disk ------------------------------------------------------------
 # save(ExtraOutcomes79            , file=pathOutputExtraOutcomes      , compress="xz")
 save(Links97Pair                , file=pathOutputLinkTrim           , compress="xz")
 save(Links97PairExpanded        , file=pathOutputLinkExpanded       , compress="xz")
-# save(SubjectDetails79           , file=pathOutputSubjectDetails     , compress="xz")
-# save(SurveyDate                 , file=pathOutputSurveyDate         , compress="xz")
+# save(SubjectDetails79         , file=pathOutputSubjectDetails     , compress="xz")
+# save(Survey97                 , file=pathOutputSurvey97           , compress="xz")

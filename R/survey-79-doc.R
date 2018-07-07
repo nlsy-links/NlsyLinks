@@ -1,4 +1,4 @@
-#' @name SurveyDate
+#' @name Survey79
 #'
 #' @docType data
 #'
@@ -13,7 +13,7 @@
 #' These variables are useful to many types of analyses (not just behavior genetics), and are
 #' provided to save users time.
 #'
-#' @name SurveyDate
+#' @name Survey79
 #'
 #' @docType data
 #'
@@ -21,7 +21,7 @@
 #' * **SubjectTag** see the variable of the same name in [Links79Pair]
 #' * **SurveySource** The location of that subject's survey responses that year.  Values are `NoInterview`, `Gen1`, `Gen2C` or `Gen2YA`.
 #' * **SurveyYear** The year/wave of the survey.
-#' * **SurveyDate** The exact date of the administered survey.
+#' * **Survey79** The exact date of the administered survey.
 #' * **AgeSelfReportYears** The subject's age, according to a their own response, or their mother's response.
 #' * **AgeCalculateYears** The subject's age, calculated from subtracting their birthday from the interview date.
 #' * **Age** The subject's age, which uses `AgeCalculateYears` or `AgeSelfReportYears` if it's not available.
@@ -47,12 +47,12 @@
 #' @examples
 #' library(NlsyLinks) #Load the package into the current R session.
 #'
-#' summary(SurveyDate)
-#' table(SurveyDate$SurveyYear, SurveyDate$SurveySource)
-#' table(is.na(SurveyDate$AgeSelfReportYears), is.na(SurveyDate$AgeCalculateYears))
+#' summary(Survey79)
+#' table(Survey79$SurveyYear, Survey79$SurveySource)
+#' table(is.na(Survey79$AgeSelfReportYears), is.na(Survey79$AgeCalculateYears))
 #'
 #' if( require(ggplot2) & require(plyr) ) {
-#'   dsSourceYear <- plyr::count(SurveyDate, c("SurveyYear", "SurveySource"))
+#'   dsSourceYear <- plyr::count(Survey79, c("SurveyYear", "SurveySource"))
 #'   dsSourceYear <- dsSourceYear[dsSourceYear$SurveySource != "NoInterview", ]
 #'
 #'   ggplot(dsSourceYear, aes(x=SurveyYear, y=freq, color=SurveySource)) +
@@ -62,7 +62,7 @@
 #'     theme_bw() +
 #'     theme(legend.position=c(0,0), legend.justification=c(0,0))
 #'
-#'   ggplot(SurveyDate, aes(x=AgeSelfReportYears, y=AgeCalculateYears)) +
+#'   ggplot(Survey79, aes(x=AgeSelfReportYears, y=AgeCalculateYears)) +
 #'     geom_abline() +
 #'     geom_point(shape=21) +
 #'     theme_bw()
