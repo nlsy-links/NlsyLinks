@@ -112,7 +112,7 @@ for( i in seq_along(rVersions) ) {
   rVersion <-  rVersions[i] # rVersion <- "RFull"
 #  print(rVersion)
   dsGroupSummary <- NlsyLinks::RGroupSummary(dsDirty, oName_1, oName_2, rName=rVersion)#, determinantThreshold=determinantThreshold)
-  dsGroupSummary[dsGroupSummary[, rVersion] %in% rGroupsToDrop, "Included"] <- FALSE
+  dsGroupSummary[dsGroupSummary[[rVersion]] %in% rGroupsToDrop, "Included"] <- FALSE
 
   groupDatasets[[(i-1)*2 + 1]] <- dsGroupSummary
 
@@ -173,8 +173,8 @@ PrintAces <- function( ) {
     "$N$"         = "N"
   )
 
-  dAcePretty <- cbind(dAcePretty[, 1], plyr::numcolwise(round)(dAcePretty,digits=2))
-  dAcePretty <- cbind(dAcePretty[, 1], plyr::numcolwise(scales::comma)(dAcePretty))
+  dAcePretty <- cbind(dAcePretty[[1]], plyr::numcolwise(round)(dAcePretty,digits=2))
+  dAcePretty <- cbind(dAcePretty[[1]], plyr::numcolwise(scales::comma)(dAcePretty))
 
   dAcePretty <- t(apply(dAcePretty, 1, function(x) gsub("^0.", ".", x)))
 
