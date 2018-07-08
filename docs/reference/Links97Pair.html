@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults — Links79Pair • NlsyLinks</title>
+<title>Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults — Links97Pair • NlsyLinks</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
 
 
 
-<meta property="og:title" content="Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults — Links79Pair" />
+<meta property="og:title" content="Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults — Links97Pair" />
 
 <meta property="og:description" content="This dataset specifies the relatedness coefficient (ie, 'R') between
 subjects in the same extended family.  Each row represents a unique
@@ -101,8 +101,8 @@ NOTE: Two variable names changed in November 2013. Subject1Tag and Subject2Tag b
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LiveOak/NlsyLinks/blob/master/R/links-79-pair-doc.R'><code>R/links-79-pair-doc.R</code></a></small>
-    <div class="hidden name"><code>Links79Pair.Rd</code></div>
+    <small class="dont-index">Source: <a href='https://github.com/LiveOak/NlsyLinks/blob/master/R/links-97-pair-doc.R'><code>R/links-97-pair-doc.R</code></a></small>
+    <div class="hidden name"><code>Links97Pair.Rd</code></div>
     </div>
 
     <div class="ref-description">
@@ -117,128 +117,104 @@ relationship pair.</p>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 42,773 observations on the following 5 variables.
+    <p>A data frame with 2,519 observations on the following 5 variables.
 There is one row per unique pair of subjects, irrespective of order.</p><ul>
 <li><p><strong>ExtendedID</strong> Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.</p></li>
 <li><p><strong>SubjectTag_S1</strong> Identity of the pair's first subject.  See Details below.</p></li>
 <li><p><strong>SubjectTag_S2</strong> Identity of the pair's second subject.  See Details below.</p></li>
 <li><p><strong>R</strong> The pair's Relatedness coefficient.  See Details below.</p></li>
-<li><p><strong>RelationshipPath</strong> Specifies the relationship category of the pair.  This variable is a factor, with levels <code>Gen1Housemates</code>=1, <code>Gen2Siblings</code>=2, <code>Gen2Cousins</code>=3, <code>ParentChild</code>=4, <code>AuntNiece</code>=5.</p></li>
+<li><p><strong>RelationshipPath</strong> Specifies the relationship category of the pair.  This variable is a factor, with level <code>Housemates</code>=1.</p></li>
 </ul>
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>Gen1 information comes from the Summer 2013 release of the
-<a href='http://www.bls.gov/nls/nlsy79.htm'>NLSY79 sample</a>.  Gen2 information
-comes from the Summer 2013 release of the
-<a href='http://www.bls.gov/nls/nlsy79ch.htm'>NLSY79 Children and Young Adults</a>.
+    <p>Information comes from the Summer 2018 release of the
+<a href='https://www.bls.gov/nls/nlsy97.htm'>NLSY97 sample</a>.
 Data were extracted with the NLS Investigator
 (https://www.nlsinfo.org/investigator/).</p>
-<p>The internal version for the links is <code>Links2011V84</code>.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The dataset contains Gen1 and Gen2 subjects.  "Gen1" refers to subjects in
-the original NLSY79 sample (http://www.bls.gov/nls/nlsy79.htm).
-"Gen2" subjects are the biological children of the Gen1 females -ie, those
-in the NLSY79 Children and Young Adults sample
-(http://www.bls.gov/nls/nlsy79ch.htm).</p>
-<p>Subjects will be in the same extended family if either:</p><ol>
-<li><p>they are Gen1 housemates,</p></li>
-<li><p>they are Gen2 siblings,</p></li>
-<li><p>they are Gen2 cousins (ie, they have mothers who are Gen1 sisters in the NLSY79,</p></li>
-<li><p>they are mother and child (in Gen1 and Gen2, respectively), or</p></li>
-<li><p>they are aunt|uncle and niece|nephew (in Gen1 and Gen2, respectively).</p></li>
-</ol>
-    <p>The variables <code>SubjectTag_S1</code> and <code>SubjectTag_S2</code> uniquely identify
-subjects.  For Gen2 subjects, the SubjectTag is identical to their CID (ie,
-C00001.00 -the SubjectID assigned in the NLSY79-Children files).  However
-for Gen1 subjects, the SubjectTag is their CaseID (ie, R00001.00), with
-"00" appended.  This manipulation is necessary to identify subjects
-uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43
-has a <code>SubjectTag</code> of 4300.  The SubjectTags of her four children
-remain 4301, 4302, 4303, and 4304.</p>
-<p>Level 5 of <code>RelationshipPath</code> (ie, AuntNiece) is gender neutral.  The
-relationship could be either Aunt-Niece, Aunt-Nephew, Uncle-Niece, or
-Uncle-Nephew.  If there's a widely-accepted gender-neutral term, please
-tell me.</p>
+    <p>The variable <code>ExtendedID</code> corresponds to the NLSY97 variable <code>[SIDCODE]</code>
+(<em>e.g.</em>, <a href='https://www.nlsinfo.org/investigator/pages/search.jsp#R11930.00'>R11930.00</a>),
+which uniquely identifies a <em>household</em> that may contain multiple NLSY97 subjects.</p>
+<p>The variables <code>SubjectTag_S1</code> and <code>SubjectTag_S2</code> uniquely identify
+subjects.  It corresponds to the NLSY97 variable <code>[PUBID]</code>,
+(<em>e.g.</em>, <a href='https://www.nlsinfo.org/investigator/pages/search.jsp#R00001.00'>R00001.00</a>).</p>
+<p>The <code>RelationshipPath</code> variable is not useful with this dataset,
+but is included to be consistent with the Links97Pair dataset.</p>
 <p>An extended family with \(k\) subjects will have
 \(k\)(\(k\)-1)/2 rows.  Typically, Subject1 is older while Subject2 is
 younger.</p>
 <p>MZ twins have <em>R</em>=1.  DZ twins and full-siblings have <em>R</em>=.5.
 Half-siblings have <em>R</em>=.25. Typical first cousins have <em>R</em>=.125.
 Unrelated subjects have <em>R</em>=0 (this occasionally happens for
-<code>Gen1Housemates</code>, but never for the other paths).
+<code>Housemates</code>, but never for the other paths).
 Other <em>R</em> coefficients are possible.</p>
 <p>There are several other uncommon possibilities, such as half-cousins (<em>R</em>=.0625) and
 ambiguous aunt-nieces (<em>R</em>=.125, which is an average of 1/4 and 0/4).
-The variable coding for genetic relatedness,<code>R</code>, in <code>Links79Pair</code> contains
+The variable coding for genetic relatedness,<code>R</code>, in <code><a href='Links79Pair.html'>Links79Pair</a></code> contains
 only the common values of <em>R</em> whose groups are likely to have stable estimates.
 However the variable <code>RFull</code> in <code><a href='Links79PairExpanded.html'>Links79PairExpanded</a></code> contains all <em>R</em> values.
 We strongly recommend using <code>R</code> in this <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.  Move to
 <code>RFull</code> (or some combination) only if you have a good reason, and are willing
 to carefully monitor a variety of validity checks.  Some of these
 excluded groups are too small to be estimated reliably.</p>
-<p>Furthermore, some of these groups have members who are more strongly genetically related than their
-items would indicate. For instance, there are 41 Gen1 pairs who explicitly claim they are not biologically related
-(<em>ie</em>, <code>RExplicit</code>=0), yet their correlation for Adult Height is <em>r</em>=0.24.  This is
-much higher than would be expected for two people sampled randomly; it is nearly identical to
-the <em>r</em>=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
-biological parent.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The NLSY79 variable HHID (ie, R00001.49) is the source for the
-<code>ExtendedID</code> variable.  This is discussed at
-http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm.</p>
-<p>For more information on <em>R</em> (<em>ie</em>, the Relatedness coefficient), please see
+    <p>For more information on <em>R</em> (<em>ie</em>, the Relatedness coefficient), please see
 Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005).
 <a href='http://www.springerlink.com/content/n3x1v1q282583366/'>Reformulating and simplifying the DF analysis model.</a>
 <em>Behavior Genetics, 35</em> (2), 211-217.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>The <code>LinksPair79</code> dataset contains columns necessary for a
-basic BG analysis.  The <a href='Links79PairExpanded.html'>Links79PairExpanded</a> dataset contains
+    <div class='dont-index'><p>The <code>LinksPair97</code> dataset contains columns necessary for a
+basic BG analysis.  The <a href='Links97PairExpanded.html'>Links97PairExpanded</a> dataset contains
 further information that might be useful in more complicated BG analyses.</p>
 <p>A tutorial that produces a similar dataset is
 http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html.
 It provides examples in SAS, SPSS, and STATA.</p>
-<p>The current dataset (ie, <code>Links79Pair</code>) can be saved as a CSV file
+<p>The current dataset (ie, <code>Links97Pair</code>) can be saved as a CSV file
 (comma-separated file) and imported into in other programs and languages.
 In the R console, type the following two lines of code:</p>
 <p><code>library(NlsyLinks)</code></p>
-<p><code>write.csv(Links79Pair, "C:/BGDirectory/Links79Pair.csv")</code></p>
+<p><code>write.csv(Links97Pair, "C:/BGDirectory/Links97Pair.csv")</code></p>
 <p>where <code>"C:/BGDirectory/"</code> is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
-path <code>"C:\BGDirectory\Links79Pair.csv"</code> can be misinterpreted.</p></div>
+path <code>"C:\BGDirectory\Links97Pair.csv"</code> can be misinterpreted.</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>NlsyLinks</span>)     <span class='co'># Load the package into the current R session.</span>
-<span class='fu'>summary</span>(<span class='no'>Links79Pair</span>)   <span class='co'># Summarize the five variables.</span></div><div class='output co'>#&gt;    ExtendedID    SubjectTag_S1     SubjectTag_S2           R        
-#&gt;  Min.   :    2   Min.   :    200   Min.   :    201   Min.   :0.062  
-#&gt;  1st Qu.: 3045   1st Qu.: 304500   1st Qu.: 304504   1st Qu.:0.250  
-#&gt;  Median : 5976   Median : 597602   Median : 598001   Median :0.500  
-#&gt;  Mean   : 5830   Mean   : 583280   Mean   : 584537   Mean   :0.381  
-#&gt;  3rd Qu.: 8422   3rd Qu.: 842202   3rd Qu.: 844503   3rd Qu.:0.500  
-#&gt;  Max.   :12675   Max.   :1267500   Max.   :1267501   Max.   :1.000  
-#&gt;                                                      NA's   :3674   
-#&gt;        RelationshipPath
-#&gt;  Gen1Housemates: 5302  
-#&gt;  Gen2Siblings  :11088  
-#&gt;  Gen2Cousins   : 4995  
-#&gt;  ParentChild   :11504  
-#&gt;  AuntNiece     : 9884  
-#&gt;                        
-#&gt;                        </div><div class='input'><span class='fu'>hist</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)    <span class='co'># Display a histogram of the Relatedness coefficients.</span></div><div class='img'><img src='Links79Pair-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>table</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)   <span class='co'># Create a table of the Relatedness coefficients for the whole sample.</span></div><div class='output co'>#&gt; 
-#&gt; 0.0625  0.125   0.25  0.375    0.5   0.75      1 
-#&gt;    309   4465  11183    610  22482     12     38 </div><div class='input'>
-<span class='co'>#Create a dataset of only Gen2 sibs, and display the distribution of R.</span>
-<span class='no'>gen2Siblings</span> <span class='kw'>&lt;-</span> <span class='fu'>subset</span>(<span class='no'>Links79Pair</span>, <span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>)
-<span class='fu'>table</span>(<span class='no'>gen2Siblings</span>$<span class='no'>R</span>)  <span class='co'># Create a table of the Relatedness coefficients for the Gen2 sibs.</span></div><div class='output co'>#&gt; 
-#&gt;  0.25 0.375   0.5  0.75     1 
-#&gt;  3442   610  6997    12    27 </div><div class='input'>
+<span class='fu'>summary</span>(<span class='no'>Links97Pair</span>)   <span class='co'># Summarize the five variables.</span></div><div class='output co'>#&gt;    ExtendedID   SubjectTag_S1  SubjectTag_S2        R         
+#&gt;  Min.   :   8   Min.   :   6   Min.   :   7   Min.   :0.2500  
+#&gt;  1st Qu.:2038   1st Qu.:2402   1st Qu.:2402   1st Qu.:0.5000  
+#&gt;  Median :4148   Median :4939   Median :4940   Median :0.5000  
+#&gt;  Mean   :3987   Mean   :4767   Mean   :4768   Mean   :0.4924  
+#&gt;  3rd Qu.:5991   3rd Qu.:7174   3rd Qu.:7175   3rd Qu.:0.5000  
+#&gt;  Max.   :7477   Max.   :9021   Max.   :9022   Max.   :1.0000  
+#&gt;                                               NA's   :284     
+#&gt;    RelationshipPath
+#&gt;  Housemates:2519   
+#&gt;                    
+#&gt;                    
+#&gt;                    
+#&gt;                    
+#&gt;                    
+#&gt;                    </div><div class='input'><span class='fu'>hist</span>(<span class='no'>Links97Pair</span>$<span class='no'>R</span>)    <span class='co'># Display a histogram of the Relatedness coefficients.</span></div><div class='img'><img src='Links97Pair-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>table</span>(<span class='no'>Links97Pair</span>$<span class='no'>R</span>)   <span class='co'># Create a table of the Relatedness coefficients for the whole sample.</span></div><div class='output co'>#&gt; 
+#&gt; 0.25  0.5    1 
+#&gt;  124 2083   28 </div><div class='input'>
+<span class='co'>#Create a dataset of only monozygotic sibs.</span>
+<span class='no'>mz_sibs</span> <span class='kw'>&lt;-</span> <span class='fu'>subset</span>(<span class='no'>Links97Pair</span>, <span class='no'>R</span> <span class='kw'>&gt;</span> <span class='fl'>.9</span>)
+<span class='fu'>summary</span>(<span class='no'>mz_sibs</span>)       <span class='co'># Create a table MZ sibs.</span></div><div class='output co'>#&gt;    ExtendedID   SubjectTag_S1  SubjectTag_S2        R       RelationshipPath
+#&gt;  Min.   :  67   Min.   :  75   Min.   :  76   Min.   :1   Housemates:28     
+#&gt;  1st Qu.:1536   1st Qu.:1788   1st Qu.:1789   1st Qu.:1                     
+#&gt;  Median :3293   Median :3925   Median :3926   Median :1                     
+#&gt;  Mean   :3465   Mean   :4145   Mean   :4146   Mean   :1                     
+#&gt;  3rd Qu.:5699   3rd Qu.:6856   3rd Qu.:6856   3rd Qu.:1                     
+#&gt;  Max.   :7282   Max.   :8792   Max.   :8793   Max.   :1                     </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

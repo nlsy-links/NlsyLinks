@@ -18,11 +18,25 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+<meta property="og:title" content="Calculates summary statistics for each <em>R</em>elatedness Group in the sample. — RGroupSummary" />
+
+<meta property="og:description" content="Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.
+If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM." />
+<meta name="twitter:card" content="summary" />
+
+
 
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -46,15 +60,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">NlsyLinks</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">NlsyLinks</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2.0.8.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       
@@ -66,6 +87,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -73,21 +95,25 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Calculates summary statistics for each <em>R</em>elatedness Group in the sample.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LiveOak/NlsyLinks/blob/master/R/r-group-summary.R'><code>R/r-group-summary.R</code></a></small>
+    <div class="hidden name"><code>RGroupSummary.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.</p>
 <p>If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>RGroupSummary</span>(<span class='no'>ds</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>, <span class='kw'>rName</span> <span class='kw'>=</span> <span class='st'>"R"</span>,
   <span class='kw'>determinantThreshold</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -137,7 +163,7 @@
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Please see <a href = 'http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf'>Neale &amp; Maes</a> for more information about SEM with multiple groups.</p>
+    <p>Please see <a href='http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf'>Neale &amp; Maes</a> for more information about SEM with multiple groups.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -179,18 +205,19 @@
 #&gt; 1     1     TRUE      8340 98.24454 98.60504   160.6817   168.9103
 #&gt;   O1O2Covariance Correlation Determinant PosDefinite
 #&gt; 1       78.80601   0.4783524    20930.41        TRUE</div><div class='input'>
-<span class='co'>#Should return:</span>
-<span class='co'>#  Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance</span>
-<span class='co'>#1     1     TRUE      8392 98.07162 98.56864    216.466   229.2988       90.90266</span>
-<span class='co'>#  Correlation Determinant PosDefinite</span>
-<span class='co'>#1   0.4080195     41372.1        TRUE</span>
-<span class='co'>###</span>
-<span class='co'>### ReadCsvNlsy79</span>
-<span class='co'>###</span>
-<span class='fu'>not_run</span>({
-  <span class='no'>filePathGen2</span> <span class='kw'>&lt;-</span> <span class='st'>"~/Nlsy/Datasets/gen2-birth.csv"</span>
-  <span class='no'>ds</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='ReadCsvNlsy79.html'>ReadCsvNlsy79Gen2</a></span>(<span class='kw'>filePath</span><span class='kw'>=</span><span class='no'>filePathGen2</span>)
-})</div></pre>
+#Should return:
+#  Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
+#1     1     TRUE      8392 98.07162 98.56864    216.466   229.2988       90.90266
+#  Correlation Determinant PosDefinite
+#1   0.4080195     41372.1        TRUE
+###
+### ReadCsvNlsy79
+###
+</div><span class='co'># NOT RUN {</span>
+<span class='no'>filePathGen2</span> <span class='kw'>&lt;-</span> <span class='st'>"~/Nlsy/Datasets/gen2-birth.csv"</span>
+<span class='no'>ds</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='ReadCsvNlsy79.html'>ReadCsvNlsy79Gen2</a></span>(<span class='kw'>filePath</span><span class='kw'>=</span><span class='no'>filePathGen2</span>)
+<span class='co'># }</span><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -219,11 +246,14 @@ Will Beasley and David Bard
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+
