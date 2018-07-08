@@ -207,4 +207,3 @@ ace
 
 ## ----results='asis', echo=FALSE-------------------------------------------------------
 toLatex(sessionInfo(), locale=T)
-

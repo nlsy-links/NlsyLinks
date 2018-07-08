@@ -1,5 +1,5 @@
 % \VignetteIndexEntry{The NLS Investigator}
-% \VignetteEngine{knitr::knitr} 
+% \VignetteEngine{knitr::knitr}
 \documentclass{article}
 \usepackage[margin=1.0in]{geometry}
 \usepackage[colorlinks=true,urlcolor=darkblue,linkcolor=greenteal]{hyperref}  %This makes reference links hyperlinks in pdf (tip from
@@ -50,7 +50,7 @@ Standard terminology is to refer second generation subjects as `children' when t
 
 \includegraphics{./GraphicsNlsInvestigator/Cohort.png}
 
-\item Select the variables.  There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks.  A thorough tutorial begins on the NLS Investigator page: \url{http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html}.  To better leverage the NLSY's extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial.  However for the purposes of this vignette, we'll simply select a few easy variables.  
+\item Select the variables.  There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks.  A thorough tutorial begins on the NLS Investigator page: \url{http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html}.  To better leverage the NLSY's extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial.  However for the purposes of this vignette, we'll simply select a few easy variables.
 
 First, in the `Variables Search' tab, select `Word in Title (enter search term)'.  Second, type ``other symptom - f'' in the textbox.  Third, clicking the `Display Variables' button should retrieve at least four NLSYC variables whose title starts with ``other symptom - f''.  Fourth, supposing we care about only their fevers, click their two corresponding checkboxes.  (If you're curious, the `XRND' value for year stands for \href{http://www.bls.gov/nls/nls138.pdf}{cross round}; XRND variables are calculated by the NLS staff, and typically come from the subject's most recent survey).
 
@@ -60,7 +60,7 @@ First, in the `Variables Search' tab, select `Word in Title (enter search term)'
 
 \includegraphics{./GraphicsNlsInvestigator/Review.png}
 
-\item When the dataset is complete, it is time to save the tagset.  A \textbf{tagset file} is simply metadata of the desired variables.  The file identifies the variables, \emph{but does not contain actual data values}.  As your project evolves over time (because you're adding variables, or refreshing your dataset after a new survey is released), it's convenient to keep the metadata distinct from the real data.  
+\item When the dataset is complete, it is time to save the tagset.  A \textbf{tagset file} is simply metadata of the desired variables.  The file identifies the variables, \emph{but does not contain actual data values}.  As your project evolves over time (because you're adding variables, or refreshing your dataset after a new survey is released), it's convenient to keep the metadata distinct from the real data.
 
 The actual values are contained in the \textbf{data file}, which is discussed in the next two steps.  These issues are covered further in the \href{http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html}{official tutorial}.
 
@@ -74,13 +74,13 @@ The actual values are contained in the \textbf{data file}, which is discussed in
 
 \includegraphics{./GraphicsNlsInvestigator/DownloadStep2.png}
 
-\item Open the zip file and extract the *.csv file to a location that the vignette examples have permission to read.  Then try some of the \code{NlsyLinks} vignette examples at \url{https://cran.r-project.org/package=NlsyLinks}. 
+\item Open the zip file and extract the *.csv file to a location that the vignette examples have permission to read.  Then try some of the \code{NlsyLinks} vignette examples at \url{https://cran.r-project.org/package=NlsyLinks}.
 
 \end{enumerate}
 \section{Using Multiple Tagsets}
 Tagsets were introduced in Step 5, but are discussed more thoroughly here.  Tagsets make large projects more manageable in two ways.  First, they save effort and reduce errors because you don't have to re-select all the variables every time you revisit the NLS Investigator.  You can save and load the tagsets during subsequent sessions.  In fact, you can save multiple tagsets on the NLS server.
 
-Second, using \emph{multiple} tagsets provides a convenient approach to organize and compartmentalize your variables.  It's not unusual for some complicated longitudinal studies to use hundreds of NLSY variables.  We've found it easier to manage five tagsets of ~100 variables, than one tagset of 500.  Since all NLSY tagsets (and therefore their datasets) automatically include the subject ID, merging the multiple datasets later is trivial with statistical software. 
+Second, using \emph{multiple} tagsets provides a convenient approach to organize and compartmentalize your variables.  It's not unusual for some complicated longitudinal studies to use hundreds of NLSY variables.  We've found it easier to manage five tagsets of ~100 variables, than one tagset of 500.  Since all NLSY tagsets (and therefore their datasets) automatically include the subject ID, merging the multiple datasets later is trivial with statistical software.
 
 In \R{}, use the \code{merge} function; the \code{by} argument should be `R0000100' for NLSY79 subjects,  `C0000100' for NLSYC subjects, and `R0000100' for NLSY97 subjects.  For example, a study about intelligence and teenage fertility would have one tagset containing the intelligence variables, and a second tagset containing the fertility variables.  These two tagsets eventually could produce two CSV data files called \code{IQ.csv} and \code{Fertility.csv}, located in the \code{BGResearch} directory.  The \R{} code to read and merge these two datasets could be as simple as
 
