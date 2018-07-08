@@ -1,4 +1,58 @@
+template:
+  params:
+    bootswatch: cosmo
+
+home:
+  links:
+  - text: Ask a question
+    href: http://discourse.mc-stan.org/
+
 articles:
-  - exclude: "Connecting to Spark"
+  - title: "Getting Started"
+    desc: >
+      These vignettes provide an introduction to research with the NLSY.
     contents:
-      - GraphicsNlsInvestigator
+      - NlsyAce
+      - NlsInvestigator
+      - Faq
+
+reference:
+  - title: "Datasets from the NLSY79"
+    desc: >
+      Datasets derived from the NLSY79 Gen1 & Gen2
+    contents:
+      - Links79Pair
+      - Links79PairExpanded
+      - ExtraOutcomes79
+      - SubjectDetails79
+      - Survey79
+  - title: "Datasets from the NLSY97"
+    desc: >
+      Datasets derived from the NLSY97
+    contents:
+      - Links97Pair
+      - Links97PairExpanded
+  - title: "Datasets from the NLSY97"
+    desc: >
+      Datasets derived from the NLSY97
+    contents:
+  - title: "BG"
+    desc: >
+      Behavior Genetics
+    contents:
+      - Ace
+      - AceEstimate-class
+      - AceLavaanGroup
+      - CleanSemAceDataset
+      - ColumnUtilities
+      - CreateAceEstimate
+      - CreatePairLinks
+      - CreateSpatialNeighbours
+      - CreateSubjectTag
+      - GetDetails-methods
+      - NlsyLinks-package
+      - RGroupSummary
+      - ReadCsvNlsy79
+      - ValidateOutcomeDataset
+      - ValidatePairLinks
+      - ValidatePairLinksAreSymmetric
