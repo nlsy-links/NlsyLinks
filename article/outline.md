@@ -28,14 +28,14 @@ Proposed Structure for manuscript (possibly submitted to JSS)
 
 
 ### Structural and Topical information
-The NlsyLinks package contains multiple datasets, which are classified in two types of information: topical and structural.  The *topical information* refers to the  predictor and outcome variables conventionally used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and fertility (eg, Rodgers et al, 2013?), but are not relevant to many hypotheses outside this area.
+In addition to functions, the NlsyLinks package contains two types of information: topical and structural.  The *topical information* refers to the  predictor and outcome variables conventionally used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and fertility (eg, Rodgers et al, 2013?), but are not relevant to many hypotheses outside this area.
 
-In contrast, the *structural information* is not typically directly stated in the hypotheses, yet is essential to many types of NLSY-related investigations by helping augment or structure the:
+In contrast, the *structural information* is not typically directly stated in the hypotheses, yet is essential to many types of NLSY-related investigations including:
 * familial relationships (*e.g.*, Subjects 301 and 302 are half-brothers; Subjects 506 and 507 are second-cousins siblings),
-* subject characteristics (*e.g.*, Subject 301 is a Native American female), or
-* subject-survey characteristics (*e.g.*, Subject 301 was 15 for the 1981 Survey; Subject 301 did not respond to the 1990 survey)
+* subject characteristics (*e.g.*, Subject 301 is a Native American female; Subject 607 died from heart disease in 2005), and
+* subject-survey characteristics (*e.g.*, Subject 301 was 15 years old for the 1981 Survey; Subject 301 did not respond to the 1990 survey).
 
-The NlsyLink includes small topical datasets primarily for convenience so that examples and vignettes are more realistic.  The structural datasets are intended to be the authoritative representations, and are the direct product of two recent multi-year NIH grants (for a complete history, see Rodgers et al, 2017).
+The NlsyLink includes small topical datasets so that vignettes and examples are more realistic and reproducible.  The structural datasets are intended to be the authoritative representations, and are the direct product of two NIH grants (for a complete history of the familial relationships, see Rodgers et al., 2017).
 
 ----------------------------------------------------
 
