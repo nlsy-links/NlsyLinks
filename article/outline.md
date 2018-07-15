@@ -84,7 +84,7 @@ Standard terminology is to refer second generation subjects as `children' when t
 # SAS Analogues
 * The `NlsyLinks` datasets can be used in any statistical package, and we demonstrate that here with SAS.
 * 
-Downloadable from qqq.
+Downloadable from qqq.-qqqq
 
 ----------------------------------------------------
 
@@ -94,5 +94,6 @@ Downloadable from qqq.
 
 # References
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5NDUyNjc0OSwtMTg2MDg1ODA2Ml19
+eyJoaXN0b3J5IjpbODE4MTU5NTYwLC01OTQ1MjY3NDksLTE4Nj
+A4NTgwNjJdfQ==
 -->
