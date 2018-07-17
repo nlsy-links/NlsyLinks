@@ -42,7 +42,7 @@ The NlsyLinks includes small topical datasets which allows the vignettes and exa
 
 The package pertains to multiple generations of the 'Nlsy79' and multiple generations of the 'Nlsy97'.  Because NlsyLinks package structures information within and between generations of the NLSY simultaneously, it requires slightly unconventional NLSY terminology to reduce ambiguity.  
 
-The 'Nlsy79' refers to both the original subjects interviewed in 1979, and their children (termed 'Nlsy79 Gen1' and 'Nlsy79 Gen2', respectively).  Data for the 'Nlsy79 Gen1' comes from the [original NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm), while data for the 'Nlsy Gen2' comes from both the [NLSY-C sample]() and the [NLSY-YA sample]() ('C' stands for children, and 'YA' stands for young adult).  More specifically, the [Gen2 subjects](http://www.bls.gov/nls/nlsy79ch.htm) are the biological offspring of the Gen1 mothers; they initially completed the NLSY-C survey until roughly age 14, and then completed the NLSY-YA survey (the oldest 'Young Adult' respondent was QQ in the 2016 survey).  Although the NLSY does not interview 'Nlsy79 Gen0' (the parents of Gen1) or 'Nlsy79 Gen3' (the children of Gen2), it does contain direct and indirect information about them,
+The 'Nlsy79 sample' refers to both the original 12,686 subjects interviewed in 1979, and their 11k children (termed 'Nlsy79 Gen1' and 'Nlsy79 Gen2', respectively).  Data for the 'Nlsy79 Gen1' comes from the [original NLSY79 stydy](http://www.bls.gov/nls/nlsy79.htm), while data for the 'Nlsy Gen2' comes from both the [NLSY-C study]() and the [NLSY-YA study]() ('C' stands for children, and 'YA' stands for young adult).  More specifically, the [Gen2 subjects](http://www.bls.gov/nls/nlsy79ch.htm) are the biological offspring of the Gen1 mothers; they initially completed the NLSY-C survey until roughly age 14, and then completed the NLSY-YA survey (the oldest 'Young Adult' respondent was QQ in the 2016 survey).  Although the NLSY does not interview 'Nlsy79 Gen0' (the parents of Gen1) or 'Nlsy79 Gen3' (the children of Gen2), it does contain direct and indirect information about them,
 
 The terminology for the 'Nlsy97' sample is similar yet simpler than the 'Nlsy79',  because the explicit respondents come from a single generation (*i.e.*, the 'Nlsy97 Gen1').  A few variables reflect Gen0 and Gen2.  In contrast to the Nlsy79, the Nlsy97 contains more information about the housemates.
 
@@ -50,12 +50,16 @@ They both are nationally-representative samples,
 
 Standard terminology is to refer second generation subjects as `children' when they are younger than age 15 (NSLYC), and as `young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as `NLSY79-C', `NLSY79C', `NLSY-C' or `NLSYC'. This packages uses `Gen2' to refer to subjects of this generation, regardless of their age at the time of the survey.
 
-
+* Ambiguous Siblings
+* Ambiguous Twins
 ----------------------------------------------------
 
 # Retrieving Data with the NLS Investigator
 * This will use much of the existing `NlsyInvestigator` vignette.
 
+Once a researcher has has a research idea, we suggest to then explore what the NLSY study can offer by poking around the (a) vast online documentation and (b) NLS Investigator.  The documentation online (www.qqq), and has general information (*e.g.*, how to connect the nationally representative sample was collected), topical information (*e.g.*, what medical and health information has been collected across survey waves and subject ages), and descriptive summaries (*e.g.*, attrition over time for different race and ethnic groups).  This material has helpful suggestions which variables are available and appropriate.
+
+With these hints, it's time to turn to select and download the specific variables from the NLS Investigator.  The NLS Investigator is described briefly here (see the [NLS Investigator](https://github.com/LiveOak/NlsyLinks/blob/master/inst/doc/NlsInvestigator.pdf) vignette for more detailed instruction).  Unless you need only a handful of variables, researches new to the NLSY should expect round trips as they iteratively improve and complete their variable set.  First select the 'Study'
 
 
 ----------------------------------------------------
@@ -94,5 +98,6 @@ Downloadable from qqq.-qqqq
 
 # References
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzNzAxNjAwMyw4MTgxNTk1NjBdfQ==
+eyJoaXN0b3J5IjpbMTE3Njc1Mzg4MywtNjM3MDE2MDAzLDgxOD
+E1OTU2MF19
 -->
