@@ -29,10 +29,10 @@ Proposed Structure for manuscript (possibly submitted to JSS)
 
 ### Structural and Topical information
 
-The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain  predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and fertility (eg, Rodgers et al, 2013?), but are not relevant to many hypotheses outside this area.
+The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain  predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and fertility (*e.g.*, Rodgers et al, 2013?), but are not relevant to many hypotheses outside these fields.
 
 In contrast, variables in *structural datasets* are not typically directly stated in the hypotheses, yet are essential to many NLSY-related investigations including:
-* familial relationships (*e.g.*, Subjects 301 and 302 are half-brothers; Subjects 506 and 507 are second-cousins siblings),
+* familial relationships (*e.g.*, Subjects 301 and 302 are half-brothers; Subjects 301 and 403 are first-cousins),
 * subject characteristics (*e.g.*, Subject 301 is a Native American female; Subject 607 died from heart disease in 2005; Subject 802 is part of the military over-sample), and
 * subject-survey characteristics (*e.g.*, Subject 301 was 15 years old for the 1981 Survey; Subject 301 did not respond to the 1990 survey; Subject 702 completed the NLSY-C survey in 1996 and the NLSY-YA survey in 1998).
 
@@ -57,9 +57,9 @@ Standard terminology is to refer second generation subjects as `children' when t
 # Retrieving Data with the NLS Investigator
 * This will use much of the existing `NlsyInvestigator` vignette.
 
-Once a researcher has has a research idea, we suggest to then explore what the NLSY study can offer by poking around the (a) vast online documentation and (b) NLS Investigator.  The documentation online (www.qqq), and has general information (*e.g.*, how to connect the nationally representative sample was collected), topical information (*e.g.*, what medical and health information has been collected across survey waves and subject ages), and descriptive summaries (*e.g.*, attrition over time for different race and ethnic groups).  This material has helpful suggestions which variables are available and appropriate.
+When a researcher pursues a new idea, we suggest to start by exploring what the NLSY can offer by poking around the (a) vast online documentation and (b) NLS Investigator.  The documentation online (www.qqq), and has general information (*e.g.*, how to connect the nationally representative sample was collected), topical information (*e.g.*, what medical and health information has been collected across survey waves and subject ages), and descriptive summaries (*e.g.*, attrition over time for different race and ethnic groups).  This material has helpful suggestions which variables are available and appropriate.
 
-With these hints, it's time to turn to select and download the specific variables from the NLS Investigator.  The NLS Investigator is described briefly here (see the [NLS Investigator](https://github.com/LiveOak/NlsyLinks/blob/master/inst/doc/NlsInvestigator.pdf) vignette for more detailed instruction).  Unless you need only a handful of variables, researches new to the NLSY should expect round trips as they iteratively improve and complete their variable set.  First select the 'Study'
+With these hints, it's time to identify and download the specific variables from the NLS Investigator.  The NLS Investigator is described briefly here (see the [NLS Investigator](https://github.com/LiveOak/NlsyLinks/blob/master/inst/doc/NlsInvestigator.pdf) vignette for more detailed instruction).  Researchers new to the NLSY should expect at least a dozen round trips as they iteratively improve and complete their set of variables.  First, select the 'Study', such as 'NLSY79 Child & Young Adult' (which corresponds to 'Nlsy79 Gen2' in our terminology.  Second, select your desired variables, out of the tens of thousands available ones.		
 
 
 ----------------------------------------------------
@@ -98,6 +98,6 @@ Downloadable from qqq.-qqqq
 
 # References
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3Njc1Mzg4MywtNjM3MDE2MDAzLDgxOD
-E1OTU2MF19
+eyJoaXN0b3J5IjpbMTc2NzI4MTE3MCwxMTc2NzUzODgzLC02Mz
+cwMTYwMDMsODE4MTU5NTYwXX0=
 -->
