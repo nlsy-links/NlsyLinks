@@ -14,6 +14,13 @@ Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls
 ## 2011 -
 
 <ol>
+<li value=73><cite>Kavish, N., Connolly, E. J., & Boutwell, B. B. (2018). Genetic and environmental contributions to the association between violent victimization and major depressive disorder. *Personality and Individual Differences*. <em class="doi">doi:10.1016/j.paid.2018.05.034</em></cite>(NLSYC)</li>
+
+<li value=73><cite>Garrison, S. M., & Rodgers, J. L. (2017). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *Journal of Personality and Social Psychology* </cite>(NLSY79)</li>
+
+<li value=72><cite>Johansson, O. (2017). Special Needs Children and Sibling Spillover Effects: Evidence from the National Longitudinal Study of Youth. (Unpublished Thesis) </cite>(NLSYC)</li>
+
+<li value=71><cite>Little, C. W., Haughbrook, R., & Hart, S. A. (2017). Cross-study differences in the etiology of reading comprehension: A meta-analytical review of twin studies. *Behavior genetics*, 47(1), 52-76. <em class="doi">doi:10.1007/s10519-016-9810-6</em> </cite>(NLSYC)</li>
 
 <li value=70><cite>Garrison, S. M., & Rodgers, J. L. (2017). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *Multivariate Behavioral Research*, 52(1), 118-119", https://osf.io/xbkja/. </cite>(NLSY79)</li>
 
