@@ -14,9 +14,9 @@ For beginners, the most helpful documents are:
  * [Vignette for extracting NLSY data](http://cran.r-project.org/web/packages/NlsyLinks/vignettes/NlsInvestigator.pdf)
  * [NlsyLinks FAQ](http://cran.r-project.org/web/packages/NlsyLinks/vignettes/Faq.pdf)
 
-[![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12519) Package DOI
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12519.svg)](https://doi.org/10.5281/zenodo.12519) Package DOI
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.12425.png)](http://dx.doi.org/10.5281/zenodo.12425) Website DOI
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12425.svg)](https://doi.org/10.5281/zenodo.12425) Website DOI
 
 ***
 ## Examples for [SAS](http://en.wikipedia.org/wiki/SAS_%28software%29)
@@ -30,7 +30,7 @@ Here's a SAS example that covers the basics.  If you have a need for a different
 ## NlsyLinksDetermination in C\#
 The [`NlsyLinksDetermination` repository](https://github.com/LiveOak/NlsyLinksDetermination/) contains the [C#](http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29) code that manipulates the NLSY data to produce the relatedness values.  If you're only interested in the R package (and not how the relatedness coefficients were determined), then please see the [`NlsyLinks`](./research-software-and-support.html#nlsylinks-and-examples-for-r) package described above.
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.12518.png)](http://dx.doi.org/10.5281/zenodo.12518) Algorithm DOI
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12518.svg)](https://doi.org/10.5281/zenodo.12518) Algorithm DOI
 
 ***
 ## Support Forums

@@ -24,7 +24,7 @@ Repositories produced by our research include:
 If you have any questions or comments, feel free to post them below. -- *JAMTTSIIR (Joe's Amazing Team That's So Interdisciplinary It's Ridiculous)*
 
 <div class="well">
-  [![DOI](https://zenodo.org/badge/4971/LiveOak/NlsyLinks.png)](http://dx.doi.org/10.5281/zenodo.12519)
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12519.svg)](https://doi.org/10.5281/zenodo.12519)
   <a class="btn btn-info btn-xs" href="https://github.com/LiveOak/NlsyLinks">
     <i class="fa fa-github"></i> Source Code
   </a>
