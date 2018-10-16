@@ -18,7 +18,7 @@ requireNamespace("tidyr"        )
 requireNamespace("dplyr"        )
 
 # ---- declare-globals ---------------------------------------------------------
-directoryDatasetsCsv <- "./outside-data" #These CSVs are in the repository, but not in the build.
+directoryDatasetsCsv <- "./outside-data/nlsy-79" #These CSVs are in the repository, but not in the build.
 directoryDatasetsRda <- "./data" #These RDAs are derived from the CSV, and included in the build as compressed binaries.
 algorithmVersion     <- 85L
 
