@@ -8,14 +8,14 @@ subset(Links79Pair, RelationshipPath=='Gen2Siblings' & R==.75)
 ## ----eval=FALSE, echo=TRUE, tidy=FALSE----------------------------------------
 #  dsLinks <- Links79PairExpanded
 #  isGen2Sib <- dsLinks$RelationshipPath=='Gen2Siblings'
-#
+#  
 #  olderFullYoungerHalf <- (dsLinks$RExplicitOlderSibVersion==.5 &
 #                             dsLinks$RExplicitYoungerSibVersion==.25)
-#
+#  
 #  olderHalfYoungerFull <- (dsLinks$RExplicitOlderSibVersion==.25 &
 #                             dsLinks$RExplicitYoungerSibVersion==.5)
-#
-#
+#  
+#  
 #  dsLinks[isGen2Sib & (olderFullYoungerHalf | olderHalfYoungerFull), ]
 
 ## ----eval=FALSE, echo=TRUE, tidy=FALSE----------------------------------------
@@ -61,3 +61,4 @@ dsDemographics$Gender <- factor(x=dsDemographics$Gender,
 
 ## ----echo=TRUE, eval=FALSE, tidy=FALSE----------------------------------------
 #  dsCombined <- merge(x=dsDemographics, y=dsOutcomes, by="SubjectTag", all=TRUE)
+

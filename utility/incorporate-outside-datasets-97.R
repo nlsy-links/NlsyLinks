@@ -101,7 +101,8 @@ rm(pathInputLinks, col_types_links)
 #   dplyr::select(-RImplicitDifference) %>%
 #   dplyr::arrange(ExtendedID, SubjectTag_S1, SubjectTag_S2) %>%
 #   as.data.frame()
-Links97PairExpanded <- dsLinksWithoutOutcomes %>%
+Links97PairExpanded <-
+  dsLinksWithoutOutcomes %>%
   dplyr::mutate(
     RelationshipPath  = factor(RelationshipPath, levels=c(1L)           , labels=c("Housemates")),
     IsMz              = factor(IsMz            , levels=c(0L, 1L, 255L) , labels=c("No", "Yes", "DoNotKnow"))
@@ -135,7 +136,8 @@ Links97PairExpanded <- dsLinksWithoutOutcomes %>%
 # multipleBirthLabels <- c("No", "Twin", "Triplet", "DoNotKnow")
 # Links79PairExpanded$MultipleBirth <- factor(Links79PairExpanded$MultipleBirth, levels=c(0, 2, 3, 255), labels=multipleBirthLabels)
 
-Links97Pair <- Links97PairExpanded %>%
+Links97Pair <-
+  Links97PairExpanded %>%
   dplyr::select(ExtendedID, SubjectTag_S1, SubjectTag_S2, R, RelationshipPath) %>%
   as.data.frame()
 
@@ -170,12 +172,8 @@ Links97Pair <- Links97PairExpanded %>%
 # checkmate::assert_data_frame(ExtraOutcomes79      , min.rows=100)
 checkmate::assert_data_frame(Links97Pair          , min.rows=100)
 checkmate::assert_data_frame(Links97PairExpanded  , min.rows=100)
-# checkmate::assert_data_frame(SubjectDetails79   , min.rows=100)
-# checkmate::assert_data_frame(Survey97           , min.rows=100)
 
 # ---- save-to-disk ------------------------------------------------------------
 # save(ExtraOutcomes79            , file=pathOutputExtraOutcomes      , compress="xz")
-save(Links97Pair                , file=pathOutputLinkTrim           , compress="xz")
-save(Links97PairExpanded        , file=pathOutputLinkExpanded       , compress="xz")
-# save(SubjectDetails79         , file=pathOutputSubjectDetails     , compress="xz")
-# save(Survey97                 , file=pathOutputSurvey97           , compress="xz")
+readr::write_rds(Links97Pair                , path=pathOutputLinkTrim           , compress="xz")
+readr::write_rds(Links97PairExpanded        , path=pathOutputLinkExpanded       , compress="xz")

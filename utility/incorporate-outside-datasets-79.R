@@ -33,11 +33,79 @@ pathOutputLinkExpanded      <- file.path(directoryDatasetsRda, "Links79PairExpan
 pathOutputSubjectDetails    <- file.path(directoryDatasetsRda, "SubjectDetails79.rda")
 pathOutputSurvey79          <- file.path(directoryDatasetsRda, "Survey79.rda")
 
+col_types_pair <- readr::cols_only(
+  ExtendedID                    = readr::col_integer(),
+  SubjectTag_S1                 = readr::col_integer(),
+  SubjectTag_S2                 = readr::col_integer(),
+  RelationshipPath              = readr::col_integer(),
+  EverSharedHouse               = readr::col_integer(),
+  R                             = readr::col_double(),
+  RFull                         = readr::col_double(),
+  MultipleBirthIfSameSex        = readr::col_integer(),
+  IsMz                          = readr::col_integer(),
+  LastSurvey_S1                 = readr::col_integer(),
+  LastSurvey_S2                 = readr::col_integer(),
+  RImplicitPass1                = readr::col_double(),
+  RImplicit                     = readr::col_double(),
+  RImplicit2004                 = readr::col_double(),
+  RImplicitDifference           = readr::col_double(),
+  RExplicit                     = readr::col_double(),
+  RExplicitPass1                = readr::col_double(),
+  RPass1                        = readr::col_double(),
+  RExplicitOlderSibVersion      = readr::col_double(),
+  RExplicitYoungerSibVersion    = readr::col_double(),
+  RImplicitSubject              = readr::col_double(),
+  RImplicitMother               = readr::col_double(),
+  Generation_S1                 = readr::col_integer(),
+  Generation_S2                 = readr::col_integer(),
+  SubjectID_S1                  = readr::col_integer(),
+  SubjectID_S2                  = readr::col_integer()
+)
+col_types_outcomes <- readr::cols_only(
+  SubjectTag                  = readr::col_integer(),
+  SubjectID                   = readr::col_integer(),
+  Generation                  = readr::col_integer(),
+  HeightZGenderAge            = readr::col_double(),
+  WeightZGenderAge            = readr::col_double(),
+  AfqtRescaled2006Gaussified  = readr::col_double(),
+  Afi                         = readr::col_integer(),
+  Afm                         = readr::col_integer(),
+  MathStandardized            = readr::col_double()
+)
+
+col_types_subject_details <- readr::cols_only(
+  SubjectTag                = readr::col_integer(),
+  ExtendedID                = readr::col_integer(),
+  Generation                = readr::col_integer(),
+  Gender                    = readr::col_integer(),
+  RaceCohort                = readr::col_integer(),
+  SiblingCountInNls         = readr::col_integer(),
+  BirthOrderInNls           = readr::col_integer(),
+  SimilarAgeCount           = readr::col_integer(),
+  HasMzPossibly             = readr::col_integer(),
+  KidCountBio               = readr::col_integer(),
+  KidCountInNls             = readr::col_integer(),
+  Mob                       = readr::col_date(format = ""),
+  LastSurveyYearCompleted   = readr::col_integer(),
+  AgeAtLastSurvey           = readr::col_double(),
+  IsDead                    = readr::col_integer(),
+  DeathDate                 = readr::col_date(format = "")
+)
+
+col_types_survey <- readr::cols_only(
+  SubjectTag          = readr::col_integer(),
+  SurveySource        = readr::col_integer(),
+  SurveyYear          = readr::col_integer(),
+  SurveyDate          = readr::col_date(format = ""),
+  AgeSelfReportYears  = readr::col_double(),
+  AgeCalculateYears   = readr::col_double()
+)
+
 # ---- load-data ---------------------------------------------------------------
-dsLinks79PairWithoutOutcomes  <- read.csv(pathInputLinks             , stringsAsFactors=FALSE)
-ExtraOutcomes79               <- read.csv(pathInputExtraOutcomes79   , stringsAsFactors=TRUE )
-SubjectDetails79              <- read.csv(pathInputSubjectDetails    , stringsAsFactors=TRUE )
-Survey79                      <- read.csv(pathInputSurvey79          , stringsAsFactors=FALSE)
+dsLinks79PairWithoutOutcomes  <- readr::read_csv(pathInputLinks              , col_types=col_types_pair)
+ExtraOutcomes79               <- readr::read_csv(pathInputExtraOutcomes79    , col_types=col_types_outcomes)
+SubjectDetails79              <- readr::read_csv(pathInputSubjectDetails     , col_types=col_types_subject_details)
+Survey79                      <- readr::read_csv(pathInputSurvey79           , col_types=col_types_survey)
 
 # ---- tweak-data --------------------------------------------------------------
 
@@ -46,10 +114,12 @@ ExtraOutcomes79 <- ExtraOutcomes79 %>%
   as.data.frame()
 
 # ---- Groom Links79PairExpanded and Links79Pair -------------------------------------
-dsLinks79PairWithoutOutcomes <- dsLinks79PairWithoutOutcomes %>%
+dsLinks79PairWithoutOutcomes <-
+  dsLinks79PairWithoutOutcomes %>%
   dplyr::select(-MultipleBirthIfSameSex, -RImplicitSubject, -RImplicitMother)
 
-ExtraOutcomes79WithTags <- ExtraOutcomes79 %>%
+ExtraOutcomes79WithTags <-
+  ExtraOutcomes79 %>%
   dplyr::mutate(
     SubjectTag = NlsyLinks::CreateSubjectTag(subjectID=SubjectID, generation=Generation)
   )
@@ -57,7 +127,8 @@ ExtraOutcomes79WithTags <- ExtraOutcomes79 %>%
 remaining           <- setdiff(colnames(dsLinks79PairWithoutOutcomes),  c("SubjectTag_S1", "SubjectTag_S2"))
 relationshipLabels  <- c("Gen1Housemates","Gen2Siblings","Gen2Cousins","ParentChild", "AuntNiece")
 
-Links79PairExpanded <- c("MathStandardized", "HeightZGenderAge") %>%
+Links79PairExpanded <-
+  c("MathStandardized", "HeightZGenderAge") %>%
   NlsyLinks::CreatePairLinksSingleEntered(
     outcomeNames      = .,
     outcomeDataset    = ExtraOutcomes79WithTags,
@@ -77,14 +148,16 @@ Links79PairExpanded <- c("MathStandardized", "HeightZGenderAge") %>%
 # multipleBirthLabels <- c("No", "Twin", "Triplet", "DoNotKnow")
 # Links79PairExpanded$MultipleBirth <- factor(Links79PairExpanded$MultipleBirth, levels=c(0, 2, 3, 255), labels=multipleBirthLabels)
 
-Links79Pair <- Links79PairExpanded %>%
+Links79Pair <-
+  Links79PairExpanded %>%
   dplyr::select(ExtendedID, SubjectTag_S1, SubjectTag_S2, R, RelationshipPath) %>%
   as.data.frame()
 
 # ---- Groom SubjectDetails ----------------------------------------------------------
 vectorOfTwins <- sort(unique(unlist(Links79PairExpanded[Links79PairExpanded$IsMz=="Yes", c("SubjectTag_S1", "SubjectTag_S2")])))
 
-SubjectDetails79 <- SubjectDetails79 %>%
+SubjectDetails79 <-
+  SubjectDetails79 %>%
   dplyr::mutate(
     Gender          = factor(Gender, levels=1:2, labels=c("Male", "Female")),
     RaceCohort      = factor(RaceCohort, levels=1:3, labels=c("Hispanic", "Black", "Nbnh")), #R02147.00 $ C00053.00
@@ -98,7 +171,8 @@ SubjectDetails79 <- SubjectDetails79 %>%
   as.data.frame()
 
 # ---- Groom Survey79 --------------------------------------------------------------
-Survey79 <- Survey79 %>%
+Survey79 <-
+  Survey79 %>%
   dplyr::mutate(
     SurveySource  = factor(SurveySource, levels=0:3, labels=c("NoInterview", "Gen1", "Gen2C", "Gen2YA")),
     SurveyDate    = as.Date(SurveyDate),
@@ -116,8 +190,8 @@ checkmate::assert_data_frame(SubjectDetails79     , min.rows=100)
 checkmate::assert_data_frame(Survey79             , min.rows=100)
 
 # ---- save-to-disk ------------------------------------------------------------
-save(ExtraOutcomes79            , file=pathOutputExtraOutcomes      , compress="xz")
-save(Links79Pair                , file=pathOutputLinkTrim           , compress="xz")
-save(Links79PairExpanded        , file=pathOutputLinkExpanded       , compress="xz")
-save(SubjectDetails79           , file=pathOutputSubjectDetails     , compress="xz")
-save(Survey79                   , file=pathOutputSurvey79           , compress="xz")
+readr::write_rds(ExtraOutcomes79            , path=pathOutputExtraOutcomes      , compress="xz")
+readr::write_rds(Links79Pair                , path=pathOutputLinkTrim           , compress="xz")
+readr::write_rds(Links79PairExpanded        , path=pathOutputLinkExpanded       , compress="xz")
+readr::write_rds(SubjectDetails79           , path=pathOutputSubjectDetails     , compress="xz")
+readr::write_rds(Survey79                   , path=pathOutputSurvey79           , compress="xz")
