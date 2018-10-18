@@ -122,7 +122,8 @@ ExtraOutcomes79WithTags <-
   ExtraOutcomes79 %>%
   dplyr::mutate(
     SubjectTag = NlsyLinks::CreateSubjectTag(subjectID=SubjectID, generation=Generation)
-  )
+  ) %>%
+  as.data.frame()
 
 remaining           <- setdiff(colnames(dsLinks79PairWithoutOutcomes),  c("SubjectTag_S1", "SubjectTag_S2"))
 relationshipLabels  <- c("Gen1Housemates","Gen2Siblings","Gen2Cousins","ParentChild", "AuntNiece")
@@ -190,8 +191,8 @@ checkmate::assert_data_frame(SubjectDetails79     , min.rows=100)
 checkmate::assert_data_frame(Survey79             , min.rows=100)
 
 # ---- save-to-disk ------------------------------------------------------------
-readr::write_rds(ExtraOutcomes79            , path=pathOutputExtraOutcomes      , compress="xz")
-readr::write_rds(Links79Pair                , path=pathOutputLinkTrim           , compress="xz")
-readr::write_rds(Links79PairExpanded        , path=pathOutputLinkExpanded       , compress="xz")
-readr::write_rds(SubjectDetails79           , path=pathOutputSubjectDetails     , compress="xz")
-readr::write_rds(Survey79                   , path=pathOutputSurvey79           , compress="xz")
+save(ExtraOutcomes79            , file=pathOutputExtraOutcomes      , compress="xz")
+save(Links79Pair                , file=pathOutputLinkTrim           , compress="xz")
+save(Links79PairExpanded        , file=pathOutputLinkExpanded       , compress="xz")
+save(SubjectDetails79           , file=pathOutputSubjectDetails     , compress="xz")
+save(Survey79                   , file=pathOutputSurvey79           , compress="xz")

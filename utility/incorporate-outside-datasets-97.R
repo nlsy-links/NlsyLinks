@@ -175,5 +175,5 @@ checkmate::assert_data_frame(Links97PairExpanded  , min.rows=100)
 
 # ---- save-to-disk ------------------------------------------------------------
 # save(ExtraOutcomes79            , file=pathOutputExtraOutcomes      , compress="xz")
-readr::write_rds(Links97Pair                , path=pathOutputLinkTrim           , compress="xz")
-readr::write_rds(Links97PairExpanded        , path=pathOutputLinkExpanded       , compress="xz")
+save(Links97Pair                , file=pathOutputLinkTrim           , compress="xz")
+save(Links97PairExpanded        , file=pathOutputLinkExpanded       , compress="xz")
