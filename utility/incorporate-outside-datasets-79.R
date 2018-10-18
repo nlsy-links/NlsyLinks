@@ -22,7 +22,7 @@ directoryDatasetsCsv <- "./outside-data/nlsy-79" #These CSVs are in the reposito
 directoryDatasetsRda <- "./data" #These RDAs are derived from the CSV, and included in the build as compressed binaries.
 algorithmVersion     <- 85L
 
-pathInputLinks              <- file.path(directoryDatasetsCsv, paste0("links-2011-v"     , algorithmVersion, ".csv"))
+pathInputLinks              <- file.path(directoryDatasetsCsv, paste0("links-2017-79.csv"))
 pathInputSubjectDetails     <- file.path(directoryDatasetsCsv, paste0("subject-details-v", algorithmVersion, ".csv"))
 pathInputSurvey79           <- file.path(directoryDatasetsCsv, paste0("survey-79.csv"))
 pathInputExtraOutcomes79    <- file.path(directoryDatasetsCsv, "extra-outcomes-79.csv")
@@ -38,7 +38,7 @@ col_types_pair <- readr::cols_only(
   SubjectTag_S1                 = readr::col_integer(),
   SubjectTag_S2                 = readr::col_integer(),
   RelationshipPath              = readr::col_integer(),
-  EverSharedHouse               = readr::col_integer(),
+  EverSharedHouse               = readr::col_logical(),
   R                             = readr::col_double(),
   RFull                         = readr::col_double(),
   MultipleBirthIfSameSex        = readr::col_integer(),
