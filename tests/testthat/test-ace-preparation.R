@@ -39,10 +39,10 @@ test_that("CleanSemAceDataset HeightZGenderAge", {
   expectedRowCount <- 5884
   expectedColumnNames <- c('R', 'O1', 'O2', 'GroupID')
   expectedCompleteRows <- expectedRowCount
-  expectedMeanR <- 0.421269544527532
+  expectedMeanR <- 0.42118456832087014519
   expectedMeanO1 <- -0.0241219488333721
   expectedMeanO2 <- -0.0516293302405181
-  expectedMeanGroupID <- 2.36199864038069
+  expectedMeanGroupID <- 2.3613188307273964561
 
   expect_equal(object=nrow(dsClean), expected=expectedRowCount, scale=1)
   expect_equal(object=colnames(dsClean), expected=expectedColumnNames, scale=1)
@@ -68,14 +68,14 @@ test_that("Group Summary MathStandardized", {
   expectedColumnNames <- c('R', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
   expectedR <- c(.25, .375, .5, .75, 1)
   expectedIncluded <- c(T, T, T, F, T)
-  expectedPairCount <- c(2691, 133, 5493, 2, 21)
-  expectedO1Mean <- c(95.1142697881828, 93.5413533834586, 99.8883123975969, 108.5, 98.2142857142857)
-  expectedO2Mean <- c(95.9810479375697, 93.4135338345865, 100.023393409794, 106, 96.0238095238095)
-  expectedO1Variance <- c(126.890562096704, 163.07214057872, 168.734928924968, 220.5, 289.439285714286)
-  expectedO2Variance <- c(150.10540276759, 131.55875484165, 172.916650390903, 18, 215.236904761905)
-  expectedO1O2Covariance <- c(42.0434303937537, 46.5604209387104, 90.1246543803548, 63, 229.107142857143)
-  expectedCorrelation <- c(0.304638873616383, 0.317882876874765, 0.527621772719931, 1, 0.917913001835716)
-  expectedDeterminant <- c(17279.3088916572, 19285.6949659089, 21054.6253864743, 0, 9807.93306547619)
+  expectedPairCount <- c(2689, 137, 5491, 2, 21)
+  expectedO1Mean <- c(95.1044998140573, 93.6313868613139, 99.8937352030595, 108.5, 98.2142857142857)
+  expectedO2Mean <- c(95.97936035701, 93.3686131386861, 100.028683299945, 106, 96.0238095238095)
+  expectedO1Variance <- c(126.948897154855, 160.012022327179, 168.732558195079, 220.5, 289.439285714286)
+  expectedO2Variance <- c(150.177494233562, 136.662757621297, 172.729277300594, 18, 215.236904761905)
+  expectedO1O2Covariance <- c(41.9691405281548, 50.3979041434092, 90.0411633343385, 63, 229.107142857143)
+  expectedCorrelation <- c(0.30395772301827, 0.340809019009798, 0.527422525509699, 1, 0.917913001835716)
+  expectedDeterminant <- c(17303.4585137582, 19327.7354817445, 21037.6417395154, 0, 9807.93306547619)
   expectedPosDefinite <- expectedIncluded
 
   expect_equal(object=nrow(dsGroupSummary), expected=expectedRowCount, scale=1)
@@ -104,14 +104,14 @@ test_that("Group Summary HeightZGenderAge", {
   expectedColumnNames <- c('R', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
   expectedR <- c(.25, .375, .5, .75, 1)
   expectedIncluded <- c(T, T, T, F, T)
-  expectedPairCount <- c(1862, 46, 3960, 0, 16)
-  expectedO1Mean <- c(-0.0656364910243787, 0.220021938792836, -0.00701925328898143, NA, -0.127696863629105)
-  expectedO2Mean <- c(-0.0810552323175826, -0.10598269817887, -0.036536371675191, NA, -0.206430523000536)
-  expectedO1Variance <- c(1.03961713881969, 1.06618757651653, 0.973121078779517, NA, 0.989812601868269)
-  expectedO2Variance <- c(1.04022348588538, 0.96155858700553, 0.957650757558288, NA, 1.062981918949)
-  expectedO1O2Covariance <- c(0.268806438004843, 0.429343906702951, 0.391073094984259, NA, 0.947322488484283)
-  expectedCorrelation <- c(0.258487545858257, 0.424033940313456, 0.405108093793955, NA, 0.923545760601445)
-  expectedDeterminant <- c(1.00917726301635, 0.84086562933513, 0.778971972668575, NA, 0.154733001745783)
+  expectedPairCount <- c(1863, 48, 3957, 0, 16)
+  expectedO1Mean <- c(-0.0656790934983323, 0.13536237807408, -0.00607218172541112, NA, -0.127696863629105)
+  expectedO2Mean <- c(-0.0809263333200959, -0.107861955617865, -0.0365279114683667, NA, -0.206430523000536)
+  expectedO1Variance <- c(1.03906218652336, 1.14976428238439, 0.972674771045228, NA, 0.989812601868269)
+  expectedO2Variance <- c(1.03969578031032, 0.926910872047652, 0.958287174752661, NA, 1.062981918949)
+  expectedO1O2Covariance <- c(0.268651843136663, 0.407477856542372, 0.391359082973515, NA, 0.947322488484283)
+  expectedCorrelation <- c(0.25847343452369, 0.394712262077996, 0.405362672107938, NA, 0.923545760601445)
+  expectedDeterminant <- c(1.00813475798763, 0.899690810061788, 0.778939826472253, NA, 0.154733001745783)
   expectedPosDefinite <- expectedIncluded
 
   expect_equal(object=nrow(dsGroupSummary), expected=expectedRowCount, scale=1)
@@ -143,14 +143,14 @@ test_that("Group Summary Changed Variable Name for 'R'", {
   expectedColumnNames <- c('RRR', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
   expectedR <- c(.25, .375, .5, .75, 1)
   expectedIncluded <- c(T, T, T, F, T)
-  expectedPairCount <- c(1862, 46, 3960, 0, 16)
-  expectedO1Mean <- c(-0.0656364910243787, 0.220021938792836, -0.00701925328898143, NA, -0.127696863629105)
-  expectedO2Mean <- c(-0.0810552323175826, -0.10598269817887, -0.036536371675191, NA, -0.206430523000536)
-  expectedO1Variance <- c(1.03961713881969, 1.06618757651653, 0.973121078779517, NA, 0.989812601868269)
-  expectedO2Variance <- c(1.04022348588538, 0.96155858700553, 0.957650757558288, NA, 1.062981918949)
-  expectedO1O2Covariance <- c(0.268806438004843, 0.429343906702951, 0.391073094984259, NA, 0.947322488484283)
-  expectedCorrelation <- c(0.258487545858257, 0.424033940313456, 0.405108093793955, NA, 0.923545760601445)
-  expectedDeterminant <- c(1.00917726301635, 0.84086562933513, 0.778971972668575, NA, 0.154733001745783)
+  expectedPairCount <- c(1863, 48, 3957, 0, 16)
+  expectedO1Mean <- c(-0.0656790934983323, 0.13536237807408, -0.00607218172541112, NA, -0.127696863629105)
+  expectedO2Mean <- c(-0.0809263333200959, -0.107861955617865, -0.0365279114683667, NA, -0.206430523000536)
+  expectedO1Variance <- c(1.03906218652336, 1.14976428238439, 0.972674771045228, NA, 0.989812601868269)
+  expectedO2Variance <- c(1.03969578031032, 0.926910872047652, 0.958287174752661, NA, 1.062981918949)
+  expectedO1O2Covariance <- c(0.268651843136663, 0.407477856542372, 0.391359082973515, NA, 0.947322488484283)
+  expectedCorrelation <- c(0.25847343452369, 0.394712262077996, 0.405362672107938, NA, 0.923545760601445)
+  expectedDeterminant <- c(1.00813475798763, 0.899690810061788, 0.778939826472253, NA, 0.154733001745783)
   expectedPosDefinite <- expectedIncluded
 
   expect_equal(object=nrow(dsGroupSummary), expected=expectedRowCount, scale=1)
