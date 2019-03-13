@@ -9,9 +9,6 @@ title: "Links97Pair"
 
 This dataset specifies the relatedness coefficient `R` between subjects in the same extended family.  Each row represents a unique relationship pair.
 
-**This is a pre-release version.  The structure of the existing variables should remain unchanged (although cells will be updated).**
-
-
 ***
 # Formats
 The dataset is available in the following formats:
