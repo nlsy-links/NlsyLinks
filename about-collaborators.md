@@ -89,3 +89,9 @@ TODO: elaborate this section
 <a href="http://www.norc.org/"> 
   <img src="./images/norc_logo.png" alt="NORC" style="width: 250px;"/>
 </a>
+
+
+Funding
+=================================
+
+This package’s development has been supported by two grants from NIH.  The first, NIH Grant [1R01HD65865](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50), “NLSY Kinship Links: Reliable and Valid Sibling Identiﬁcation” (PI: Joe Rodgers; Vignette Construction by Will Beasley) supported the (virtually) final completion of the NLSY79 and NLSYC/YA kinship linking files.  The second, NIH Grant [1R01HD087395](https://projectreporter.nih.gov/project_info_description.cfm?projectnumber=1R01HD087395-01A1), “New NLSY Kinship Links and Longitudinal/ Cross-Generational Models: Cognition and Fertility Research," (PI:  Joe Rodgers;  Vignette Construction by Will Beasley) is supporting the development of the NLSY97 kinship links, and slight updates/extensions in the links for the two earlier data sources.
