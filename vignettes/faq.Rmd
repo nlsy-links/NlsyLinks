@@ -45,7 +45,7 @@ Gen1 and Gen2
 
 This package considers both generations of the NLSY79.  The first generation (*i.e.*, 'Gen1') refers to subjects in the original NLSY79 sample (http://www.bls.gov/nls/nlsy79.htm).  The second generation (*i.e.*, `Gen2') of subjects are the biological offspring of the original females -*i.e.*, those in the NLSY79 Children and Young Adults sample (http://www.bls.gov/nls/nlsy79ch.htm).  The NLSY97 is a third dataset that can be used for behavior genetic research (http://www.bls.gov/nls/nlsy97.htm), although this vignette focuses on the two generations in the NLSY79.
 
-Standard terminology is to refer second generation subjects as 'children' when they are younger than age 15 (NSLYC), and as 'young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as `NLSY79-C`, `NLSY79C`, `NLSY-C` or `NLSYC`. This packages uses 'Gen2' to refer to subjects of this generation, regardless of their age at the time of the survey.
+Standard terminology is to refer second generation subjects as 'children' when they are younger than age 15 (NSLYC), and as 'young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as 'NLSY79-C', 'NLSY79C', 'NLSY-C' or 'NLSYC'. This packages uses 'Gen2' to refer to subjects of this generation, regardless of their age at the time of the survey.
 
 
 Ambiguous twins
@@ -183,3 +183,8 @@ dsCombined <- merge(x=dsDemographics, y=dsOutcomes, by="SubjectTag", all=TRUE)
 
 Make sure that `dsOutcomes` also has the `SubjectTag` variable; this will happen automatically if it was read into R using the `ReadCsvNlsy79Gen1()` or `ReadCsvNlsy79Gen2()` functions.  For more information about `SubjectTag`, please see the `Links79Pair` entry in the [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf).
 
+
+Funding
+===============================
+
+This package’s development has been supported by two grants from NIH.  The first, NIH Grant [1R01HD65865](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50), “NLSY Kinship Links: Reliable and Valid Sibling Identiﬁcation” (PI: Joe Rodgers; Vignette Construction by Will Beasley) supported the (virtually) final completion of the NLSY79 and NLSYC/YA kinship linking files.  The second, NIH Grant [1R01HD087395](https://projectreporter.nih.gov/project_info_description.cfm?projectnumber=1R01HD087395-01A1), “New NLSY Kinship Links and Longitudinal/ Cross-Generational Models: Cognition and Fertility Research," (PI:  Joe Rodgers;  Vignette Construction by Will Beasley) is supporting the development of the NLSY97 kinship links, and slight updates/extensions in the links for the two earlier data sources.
