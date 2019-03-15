@@ -7,11 +7,14 @@ NlsyLinks
 | [Dev](https://github.com/LiveOak/NlsyLinks/tree/dev) | [![Travis-CI Build Status](https://travis-ci.org/LiveOak/NlsyLinks.png?branch=dev)](https://travis-ci.org/LiveOak/NlsyLinks) | [![Build status](https://ci.appveyor.com/api/projects/status/fo1oeqn9734dhhmu/branch/dev?svg=true)](https://ci.appveyor.com/project/wibeasley/nlsylinks/branch/dev) | [![Coverage Status](https://coveralls.io/repos/LiveOak/NlsyLinks/badge.svg?branch=dev)](https://coveralls.io/r/LiveOak/NlsyLinks?branch=dev) |
 | | *Ubuntu LTS* | *Windows Server* |  *Travis Code Coverage* |
 
+
 ## Description
 
-Utilities and kinship information for behavior genetics and
-developmental research using the National Longitudinal Survey of Youth
-([NLSY](http://www.bls.gov/nls/))
+
+NlsyLinks is a free downloadable R package to facilitate Behavior Genetic and Family Studies research using the NLSY samples (the National Longitudinal Survey of Youth).  These samples are based on a cross-generational longitudinal nationally representative sample of over 30,000 participants followed for up to 35 years.  There are almost 50,000 pairwise kinship links.
+
+Get started at [here](http://www.bls.gov/nls/) the NLSY and [here](http://liveoak.github.io/NlsyLinks/) for the NlsyLinks package.
+    
 
 ## Installing
 
