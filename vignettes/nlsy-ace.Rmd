@@ -19,7 +19,7 @@ We describe how to use the NlsyLinks package to examine various biometric models
 
 ```{r preliminaries, echo=FALSE, message=FALSE}
 library(knitr)
-library(magrittr)
+# library(magrittr)
 library(xtable)
 opts_chunk$set(echo=TRUE)
 options(width=88, show.signif.stars = FALSE, continue=" ") #, lattice.theme = function() canonical.theme("pdf", color = FALSE)
@@ -76,7 +76,7 @@ The steps are:
  Within the R script, identify the locations of the downloaded data file, and load it into a data frame.
 
 1. Within the R script, load the linking dataset.  Then select only Gen2 subjects.  The 'Pair' version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.
-1. Load and assign the 'ExtraOutcomes79` dataset.
+1. Load and assign the `ExtraOutcomes79` dataset.
 1. Specify the outcome variable name and filter out all subjects who have a negative value in this variable.  The NLSY typically uses negative values to indicate different types of missingness (see 'Further Information' below).
 1. Create a double-entered file by calling the 'CreatePairLinksDoubleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).  *(There are occasions when a single-entered file is more appropriate for a DF analysis.  See Rodgers & Kohler, 2005, for additional information.)*
 1. Use 'DeFriesFulkerMethod3` function (*i.e.*, general linear model) to estimate the coefficients of the DF model.
@@ -462,21 +462,8 @@ For the sake of documentation and reproducibility, the current report was render
 <details>
   <summary>Environment <span class="glyphicon glyphicon-plus-sign"></span></summary>
 ```{r session-info-2, echo=FALSE}
-devtools::session_info()$platform %>% 
-  tibble::enframe() %>% 
-  knitr::kable(format="html") %>% 
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-    full_width = F, 
-    position = "left"
-  )
-devtools::session_info()$packages %>% 
-  knitr::kable(format="html") %>% 
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-    full_width = F, 
-    position = "left"
-  )
+devtools::session_info()$platform
+knitr::kable(devtools::session_info()$packages, format="html")
 ```
 </details>
 

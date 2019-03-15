@@ -1,3 +1,5 @@
+^Meta$
+^doc$
 # RStudio temp files to ignore during build process
 ^.*\.Rproj$
 ^\.Rproj\.user$
@@ -13,7 +15,6 @@
 ^shim_package\.sh$
 ^unshim_package\.sh$
 ^wercker\.yml$
-
 # Directories to ignore during build process
 ^article$
 ^docs$

@@ -1,6 +1,7 @@
+Meta
+doc
 ############
 ## Project-specific
-############
 
 # History and RStudio files
 .Rhistory
@@ -8,23 +9,15 @@
 .RData
 .Rproj.user
 .Rproj.user/
-
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-
 # README htmls in any folder
 README.html
-
 # The devtools zip is downloaded when the package is updating itself.  If it's not deleted, there's no reason to commit it to the repository.
 devtools.zip
-
-############
 ## Windows
-############
-
 # Windows image file caches
 Thumbs.db
-
 # Folder config file
 Desktop.ini

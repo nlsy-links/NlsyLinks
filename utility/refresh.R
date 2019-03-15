@@ -12,6 +12,7 @@ devtools::run_examples(); dev.off() #This overwrites the NAMESPACE file too
 # devtools::run_examples(, "redcap_read.Rd")
 test_results_checked <- devtools::test()
 # test_results_not_checked <- testthat::test_dir("./tests/manual/")
+devtools::clean_vignettes()
 devtools::build_vignettes()
 pkgdown::build_site()
 
