@@ -4,7 +4,8 @@
 \alias{CleanSemAceDataset}
 \title{Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.}
 \usage{
-CleanSemAceDataset(dsDirty, dsGroupSummary, oName_S1, oName_S2, rName = "R")
+CleanSemAceDataset(dsDirty, dsGroupSummary, oName_S1, oName_S2,
+  rName = "R")
 }
 \arguments{
 \item{dsDirty}{This is the \link[base:data.frame]{base::data.frame} to be cleaned.}

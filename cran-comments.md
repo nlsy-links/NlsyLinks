@@ -1,5 +1,5 @@
 ## Description
-This submission is a continuation of yesterday's submission (which corresponded to the new version of testthat --one of the tests catching a failing condition needed to change). 
+This submission is a continuation of yesterday's submission (which corresponded to the new version of testthat --one of the tests catching a failing condition needed to change).
 
 Kurt asked, "Would it be possible to put some of the data sets into a separate package which changes less frequently than code and docs?" I'll gladly defer to your judgment and recommendations, but I see two reasons to retain a united package.  
 
@@ -16,7 +16,7 @@ Test environments
 * [win-builder (version="R-devel")](http://win-builder.r-project.org/68aDSl8xhbGq)
 * [Travis CI, Ubuntu 12.04 LTS](https://travis-ci.org/LiveOak/NlsyLinks/)
 * [AppVeyor, Windows Server 2012](https://ci.appveyor.com/project/wibeasley/nlsylinks)
-<!-- * [Werker, Docker](https://app.wercker.com/#applications/5590d20a4fea05eb7a02e590) -->
+
 
 R CMD check results
 -----------------------------------------------

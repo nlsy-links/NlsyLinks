@@ -11,18 +11,31 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+<meta property="og:title" content="Extra outcome variables in the NLSY79 — ExtraOutcomes79" />
+
+<meta property="og:description" content="This dataset is provided primarily to facilitate documentation examples." />
+<meta name="twitter:card" content="summary" />
+
+
 
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -46,15 +59,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">NlsyLinks</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">NlsyLinks</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2.0.8.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       
@@ -66,6 +86,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -73,15 +94,19 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Extra outcome variables in the NLSY79</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LiveOak/NlsyLinks/blob/master/R/extra-outcomes-79-doc.R'><code>R/extra-outcomes-79-doc.R</code></a></small>
+    <div class="hidden name"><code>ExtraOutcomes79.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This dataset is provided primarily to facilitate documentation examples.</p>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
@@ -102,8 +127,8 @@
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Gen1 information comes from the Summer 2013 release of the
-<a href = 'http://www.bls.gov/nls/nlsy79.htm'>NLSY79 sample</a>.  Gen2 information comes from the Summer 2013 release of the
-<a href = 'http://www.bls.gov/nls/nlsy79ch.htm'>NLSY79 Children and Young Adults sample</a>.  Data were extracted with the NLS Investigator
+<a href='http://www.bls.gov/nls/nlsy79.htm'>NLSY79 sample</a>.  Gen2 information comes from the Summer 2013 release of the
+<a href='http://www.bls.gov/nls/nlsy79ch.htm'>NLSY79 Children and Young Adults sample</a>.  Data were extracted with the NLS Investigator
 (https://www.nlsinfo.org/investigator/).</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -116,11 +141,11 @@ appended.  This manipulation is necessary to identify subjects uniquely in
 inter-generational datasets.  A Gen1 subject with an ID of 43 has a
 <code>SubjectTag</code> of 4300.  The SubjectTags of her four children remain
 4301, 4302, 4303, and 4304.</p>
-<p>For Gen2, an NLSY79 variable of <code>MathStandardized</code> is C05801.00.
-    <code>Afi</code> and <code>Afm</code>, values were simplified
+<p>For Gen2, an NLSY79 variable of <code>MathStandardized</code> is C05801.00.</p>
+<p><code>Afi</code> and <code>Afm</code>, values were simplified
 (to one value per subject) by Kelly Meredith in Sept 2010.</p>
 <p>The variables for height and weight were manipulated in R files available in a
-<a href = 'https://github.com/LiveOak/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes'>repository</a> available to the public.
+<a href='https://github.com/LiveOak/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes'>repository</a> available to the public.
 Find the appropriate subfolder, and view the HTML report for more details.</p>
     
 
@@ -159,7 +184,7 @@ Find the appropriate subfolder, and view the HTML report for more details.</p>
 <span class='fu'>hist</span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>HeightZGenderAge</span>)
 <span class='fu'>hist</span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>WeightZGenderAge</span>)
 <span class='fu'>hist</span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>Afi</span>)
-<span class='fu'>hist</span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>Afm</span>)</div><img src='ExtraOutcomes79-4.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>par</span>(<span class='no'>oldPar</span>)</div></pre>
+<span class='fu'>hist</span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>Afm</span>)</div><div class='img'><img src='ExtraOutcomes79-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>par</span>(<span class='no'>oldPar</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -187,11 +212,14 @@ Will Beasley
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

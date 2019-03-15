@@ -53,7 +53,7 @@ cat("Drop pair if housemates are not confirmed in the same generation:", dropIfH
 <<evaluate_groups, echo=FALSE, results='asis'>>=
 @
 
-\section{Ace - Comparison of $R$ Variants} 
+\section{Ace - Comparison of $R$ Variants}
 (See the final table for an explanation of the different $R$ variants.)
 
 <<evaluate_ace, echo=FALSE, results='asis'>>=

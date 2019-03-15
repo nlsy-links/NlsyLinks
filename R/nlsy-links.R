@@ -1,6 +1,8 @@
 #' @title Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 #'
 #' @description Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
+#' Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article,
+#' '[*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 #'
 #' @docType package
 #'

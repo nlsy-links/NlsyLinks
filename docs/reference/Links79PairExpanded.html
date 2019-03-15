@@ -6,23 +6,44 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kinship linking file for pairs of relatives.  It builds upon the Links79Pair dataset. — Links79PairExpanded • NlsyLinks</title>
+<title>Kinship linking file for pairs of relatives.  It builds upon the <a href='Links79Pair.html'>Links79Pair</a> dataset. — Links79PairExpanded • NlsyLinks</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+<meta property="og:title" content="Kinship linking file for pairs of relatives.  It builds upon the <a href='Links79Pair.html'>Links79Pair</a> dataset. — Links79PairExpanded" />
+
+<meta property="og:description" content="Please first read the documentation for Links79Pair.  That
+dataset contains the same pairs/rows, but only a subset of the
+variables/columns.
+NOTE: In Nov 2013, the variable naming scheme changed in order to be more consistent across variables.  For variables
+that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an _S1 or _S2
+appended to it.  For instance, the variables LastSurvey_S1 and LastSurvey_S2 correspond to the last surveys completed
+by the pair's first and second subject, respectively.  Similarly, the functions CreatePairLinksDoubleEntered() and
+CreatePairLinksSingleEntered() now by default append _S1 and _S2, instead of _1 and _2.  However this can be
+modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters." />
+<meta name="twitter:card" content="summary" />
+
+
 
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -46,15 +67,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">NlsyLinks</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">NlsyLinks</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2.0.8.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       
@@ -66,6 +94,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -73,12 +102,15 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Kinship linking file for pairs of relatives.  It builds upon the Links79Pair dataset.</h1>
+    <h1>Kinship linking file for pairs of relatives.  It builds upon the <a href='Links79Pair.html'>Links79Pair</a> dataset.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LiveOak/NlsyLinks/blob/master/R/links-79-pair-expanded-doc.R'><code>R/links-79-pair-expanded-doc.R</code></a></small>
+    <div class="hidden name"><code>Links79PairExpanded.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Please first read the documentation for <a href='Links79Pair.html'>Links79Pair</a>.  That
 dataset contains the same pairs/rows, but only a subset of the
@@ -90,6 +122,7 @@ by the pair's first and second subject, respectively.  Similarly, the functions 
 <code><a href='CreatePairLinks.html'>CreatePairLinksSingleEntered()</a></code> now by default append <code>_S1</code> and <code>_S2</code>, instead of <code>_1</code> and <code>_2</code>.  However this can be
 modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters.</p>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
@@ -133,14 +166,11 @@ There is one row per unique pair of subjects, irrespective of order.</p><ul>
     <p>Specifies the relatedness coefficient (ie, '<em>R</em>') between subjects in the
 same extended family.  Each row represents a unique relationship pair.  An
 extended family with \(k\) subjects will have \(k\)(\(k\)-1)/2 rows.
-Typically, Subject1 is older while Subject2 is younger.
-    <code>RelationshipPath</code> variable.  Code written using this dataset should
+Typically, Subject1 is older while Subject2 is younger.</p>
+<p><code>RelationshipPath</code> variable.  Code written using this dataset should
 NOT assume it contains only Gen2 sibiling pairs.  See an example of
 filtering the relationship category in the in <a href='Links79Pair.html'>Links79Pair</a>
 documentation.</p>
-<p>Please first read the documentation for <a href='Links79Pair.html'>Links79Pair</a>.  That
-dataset contains the same pairs/rows, but only a subset of the
-variables/columns.</p>
 <p>The specific steps to determine the <em>R</em> coefficient will be described
 in an upcoming publication.  The following information may influence the
 decisions of an applied researcher.</p>
@@ -171,7 +201,7 @@ more concise and accessible.</p>
 <span class='no'>olderR</span>   <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>$<span class='no'>RExplicitOlderSibVersion</span>   <span class='co'># Declare a concise variable name.</span>
 <span class='no'>youngerR</span> <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>$<span class='no'>RExplicitYoungerSibVersion</span> <span class='co'># Declare a concise variable name.</span>
 
-<span class='fu'>plot</span>(<span class='fu'>jitter</span>(<span class='no'>olderR</span>), <span class='fu'>jitter</span>(<span class='no'>youngerR</span>))  <span class='co'># Scatterplot the siblings' responses.</span></div><img src='Links79PairExpanded-2.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>table</span>( <span class='no'>youngerR</span>, <span class='no'>olderR</span>)  <span class='co'># Table of the relationship between the siblings' responses.</span></div><div class='output co'>#&gt;         olderR
+<span class='fu'>plot</span>(<span class='fu'>jitter</span>(<span class='no'>olderR</span>), <span class='fu'>jitter</span>(<span class='no'>youngerR</span>))  <span class='co'># Scatterplot the siblings' responses.</span></div><div class='img'><img src='Links79PairExpanded-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>table</span>( <span class='no'>youngerR</span>, <span class='no'>olderR</span>)  <span class='co'># Table of the relationship between the siblings' responses.</span></div><div class='output co'>#&gt;         olderR
 #&gt; youngerR 0.25 0.375  0.5
 #&gt;    0.25  1904     2  105
 #&gt;    0.375   15     3    8
@@ -180,11 +210,13 @@ more concise and accessible.</p>
 #&gt; 0.25                              1904     2  105
 #&gt; 0.375                               15     3    8
 #&gt; 0.5                                136     5 6338</div><div class='input'>
-<span class='co'># write.csv(</span>
-<span class='co'>#   Links79PairExpanded, </span>
-<span class='co'>#   file      ='~/NlsyLinksStaging/Links79PairExpanded.csv',</span>
-<span class='co'>#   row.names = FALSE</span>
-<span class='co'># )</span></div></pre>
+# write.csv(
+#   Links79PairExpanded,
+#   file      ='~/NlsyLinksStaging/Links79PairExpanded.csv',
+#   row.names = FALSE
+# )
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -212,11 +244,14 @@ Will Beasley
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

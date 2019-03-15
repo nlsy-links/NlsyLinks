@@ -14,9 +14,9 @@ dsOutcomes <- dsOutcomes[, c("ID", outcomeNames)]
 dsOutcomes$Generation <- 1
 dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$ID, generation=dsOutcomes$Generation)
 for( outcomeName in outcomeNames ) { #This loop converts the missing values, and then converts them to numeric values.
-  isMissing <- (dsOutcomes[, outcomeName]==".")
-  dsOutcomes[isMissing, outcomeName] <- NA
-  dsOutcomes[, outcomeName] <- as.numeric(dsOutcomes[, outcomeName])
+  isMissing <- (dsOutcomes[[outcomeName]]==".")
+  dsOutcomes[[outcomeName]][isMissing] <- NA
+  dsOutcomes[[outcomeName]] <- as.numeric(dsOutcomes[[outcomeName]])
 }
 summary(dsOutcomes)
 

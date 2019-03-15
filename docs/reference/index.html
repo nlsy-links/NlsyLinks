@@ -11,18 +11,28 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+<meta property="og:title" content="Function reference" />
+
+
 
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -46,15 +56,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">NlsyLinks</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">NlsyLinks</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2.0.8.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       
@@ -66,6 +83,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -73,166 +91,219 @@
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9">
+<div class="row">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;2.0.7.9000</small>
-      </h1>
+      <h1>Reference</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    <table class="ref-index">
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <colgroup>
+      
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="AceEstimate-class.html">AceEstimate-class</a></code> </p>
-          </td>
-          <td><p>Class AceEstimate</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="AceLavaanGroup.html">AceLavaanGroup</a></code> </p>
-          </td>
-          <td><p>A simple multiple-group ACE model with the <span class="pkg">lavaan</span> package.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="Ace.html">AceUnivariate</a></code> <code><a href="Ace.html">DeFriesFulkerMethod1</a></code> <code><a href="Ace.html">DeFriesFulkerMethod3</a></code> </p>
-          </td>
-          <td><p>Estimates the heritability of additive traits using a single variable.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="CleanSemAceDataset.html">CleanSemAceDataset</a></code> </p>
-          </td>
-          <td><p>Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ColumnUtilities.html">VerifyColumnExists</a></code> <code><a href="ColumnUtilities.html">RenameColumn</a></code> <code><a href="ColumnUtilities.html">RenameNlsyColumn</a></code> </p>
-          </td>
-          <td><p>A collection of functions that helps data management data.frames, particularly those derived from NLSY Extracts.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="CreateAceEstimate.html">CreateAceEstimate</a></code> </p>
-          </td>
-          <td><p>Instantiate an AceEstimate object.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="CreatePairLinks.html">CreatePairLinksDoubleEntered</a></code> <code><a href="CreatePairLinks.html">CreatePairLinksSingleEntered</a></code> <code><a href="CreatePairLinks.html">CreatePairLinksDoubleEnteredWithNoOutcomes</a></code> </p>
-          </td>
-          <td><p>Creates a pairs linking file.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="CreateSpatialNeighbours.html">CreateSpatialNeighbours</a></code> </p>
-          </td>
-          <td><p>Distances between related family members, formated for spatial analysis.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="CreateSubjectTag.html">CreateSubjectTag</a></code> </p>
-          </td>
-          <td><p>Creates a SubjectTag.  This value uniquely identifies subjects, when both generations are included in the same dataset.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ExtraOutcomes79.html">ExtraOutcomes79</a></code> </p>
-          </td>
-          <td><p>Extra outcome variables in the NLSY79</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="GetDetails-methods.html">GetDetails-methods</a></code> </p>
-          </td>
-          <td><p>A generic function for extracting the <code>Details</code> slot of an object.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="Links79PairExpanded.html">Links79PairExpanded</a></code> </p>
-          </td>
-          <td><p>Kinship linking file for pairs of relatives.  It builds upon the Links79Pair dataset.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="Links79Pair.html">Links79Pair</a></code> </p>
-          </td>
-          <td><p>Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="NlsyLinks-package.html">NlsyLinks-package</a></code> </p>
-          </td>
-          <td><p>Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ReadCsvNlsy79.html">ReadCsvNlsy79Gen1</a></code> </p>
-          </td>
-          <td><p>Read a CSV file downloaded from the NLS Investigator</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="RGroupSummary.html">RGroupSummary</a></code> </p>
-          </td>
-          <td><p>Calculates summary statistics for each <em>R</em>elatedness Group in the sample.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="SubjectDetails79.html">SubjectDetails79</a></code> </p>
-          </td>
-          <td><p>Dataset containing further details of the Gen1 and Gen2 subjects.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="SurveyDate.html">SurveyDate</a></code> </p>
-          </td>
-          <td><p>Dataset containing survey details for each subject, for each year</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ValidateOutcomeDataset.html">ValidateOutcomeDataset</a></code> </p>
-          </td>
-          <td><p>Validates the schema of datasets containing outcome variables.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ValidatePairLinksAreSymmetric.html">ValidatePairLinksAreSymmetric</a></code> </p>
-          </td>
-          <td><p>Verifies that the pair relationships are symmetric.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="ValidatePairLinks.html">ValidatePairLinks</a></code> </p>
-          </td>
-          <td><p>Validates the schema of a links for pairs of relatives</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-datasets-from-the-nlsy-" class="hasAnchor"><a href="#section-datasets-from-the-nlsy-" class="anchor"></a>Datasets from the NLSY79</h2>
+          <p class="section-desc"><p>Datasets derived from the NLSY79 Gen1 &amp; Gen2</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="Links79Pair.html">Links79Pair</a></code> </p>
+        </td>
+        <td><p>Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Links79PairExpanded.html">Links79PairExpanded</a></code> </p>
+        </td>
+        <td><p>Kinship linking file for pairs of relatives.  It builds upon the Links79Pair dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ExtraOutcomes79.html">ExtraOutcomes79</a></code> </p>
+        </td>
+        <td><p>Extra outcome variables in the NLSY79</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="SubjectDetails79.html">SubjectDetails79</a></code> </p>
+        </td>
+        <td><p>Dataset containing further details of the Gen1 and Gen2 subjects.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Survey79.html">Survey79</a></code> </p>
+        </td>
+        <td><p>Dataset containing survey details for each subject, for each year</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-datasets-from-the-nlsy-" class="hasAnchor"><a href="#section-datasets-from-the-nlsy-" class="anchor"></a>Datasets from the NLSY97</h2>
+          <p class="section-desc"><p>Datasets derived from the NLSY97</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="Links97Pair.html">Links97Pair</a></code> </p>
+        </td>
+        <td><p>Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Links97PairExpanded.html">Links97PairExpanded</a></code> </p>
+        </td>
+        <td><p>Kinship linking file for pairs of relatives In the NLSY97.  It builds upon the Links97Pair dataset.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-bg" class="hasAnchor"><a href="#section-bg" class="anchor"></a>BG</h2>
+          <p class="section-desc"><p>Behavior Genetics</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="CreatePairLinks.html">CreatePairLinksDoubleEntered()</a></code> <code><a href="CreatePairLinks.html">CreatePairLinksSingleEntered()</a></code> <code><a href="CreatePairLinks.html">CreatePairLinksDoubleEnteredWithNoOutcomes()</a></code> </p>
+        </td>
+        <td><p>Creates a pairs linking file.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CreateSpatialNeighbours.html">CreateSpatialNeighbours()</a></code> </p>
+        </td>
+        <td><p>Distances between related family members, formated for spatial analysis.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CreateSubjectTag.html">CreateSubjectTag()</a></code> </p>
+        </td>
+        <td><p>Creates a SubjectTag.  This value uniquely identifies subjects, when both generations are included in the same dataset.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="GetDetails-methods.html">GetDetails-methods</a></code> </p>
+        </td>
+        <td><p>A generic function for extracting the <code>Details</code> slot of an object.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="NlsyLinks-package.html">NlsyLinks-package</a></code> </p>
+        </td>
+        <td><p>Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="RGroupSummary.html">RGroupSummary()</a></code> </p>
+        </td>
+        <td><p>Calculates summary statistics for each <em>R</em>elatedness Group in the sample.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-ace" class="hasAnchor"><a href="#section-ace" class="anchor"></a>ACE</h2>
+          <p class="section-desc"><p>Estimating sources of shared genetic and environment.</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="Ace.html">AceUnivariate()</a></code> <code><a href="Ace.html">DeFriesFulkerMethod1()</a></code> <code><a href="Ace.html">DeFriesFulkerMethod3()</a></code> </p>
+        </td>
+        <td><p>Estimates the heritability of additive traits using a single variable.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="AceEstimate-class.html">AceEstimate-class</a></code> </p>
+        </td>
+        <td><p>Class AceEstimate</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="AceLavaanGroup.html">AceLavaanGroup()</a></code> </p>
+        </td>
+        <td><p>A simple multiple-group ACE model with the <span class="pkg">lavaan</span> package.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CleanSemAceDataset.html">CleanSemAceDataset()</a></code> </p>
+        </td>
+        <td><p>Produces a cleaned dataset that works well with when using SEM to estimate a univariate ACE model.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CreateAceEstimate.html">CreateAceEstimate()</a></code> </p>
+        </td>
+        <td><p>Instantiate an AceEstimate object.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-utilities" class="hasAnchor"><a href="#section-utilities" class="anchor"></a>Utilities</h2>
+          <p class="section-desc"><p>Utilities for managing the datasets</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="ColumnUtilities.html">VerifyColumnExists()</a></code> <code><a href="ColumnUtilities.html">RenameColumn()</a></code> <code><a href="ColumnUtilities.html">RenameNlsyColumn()</a></code> </p>
+        </td>
+        <td><p>A collection of functions that helps data management data.frames, particularly those derived from NLSY Extracts.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ReadCsvNlsy79.html">ReadCsvNlsy79Gen1()</a></code> </p>
+        </td>
+        <td><p>Read a CSV file downloaded from the NLS Investigator</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-validation" class="hasAnchor"><a href="#section-validation" class="anchor"></a>Validation</h2>
+          <p class="section-desc"><p>Validating the datasets</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="ValidateOutcomeDataset.html">ValidateOutcomeDataset()</a></code> </p>
+        </td>
+        <td><p>Validates the schema of datasets containing outcome variables.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ValidatePairLinks.html">ValidatePairLinks()</a></code> </p>
+        </td>
+        <td><p>Validates the schema of a links for pairs of relatives</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ValidatePairLinksAreSymmetric.html">ValidatePairLinksAreSymmetric()</a></code> </p>
+        </td>
+        <td><p>Verifies that the pair relationships are symmetric.</p></td>
+      </tr>
+    </tbody>
+    </table>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-datasets-from-the-nlsy-">Datasets from the NLSY79</a></li>
+      <li><a href="#section-datasets-from-the-nlsy-">Datasets from the NLSY97</a></li>
+      <li><a href="#section-bg">BG</a></li>
+      <li><a href="#section-ace">ACE</a></li>
+      <li><a href="#section-utilities">Utilities</a></li>
+      <li><a href="#section-validation">Validation</a></li>
     </ul>
   </div>
 </div>
@@ -243,11 +314,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

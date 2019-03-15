@@ -1,9 +1,10 @@
 
 
-Version 2.0.8 (2017-?-?)
+Version 2.0.8 (2018-?-?)
 ------------------------------------------------------------------------------
 Updates:
 * [pkgdown](https://hadley.github.io/pkgdown/) documentation
+* Rename dataset `SurveyDate` to `Survey79`.
 
 
 Version 2.0.5 (2016-03-17)
@@ -14,7 +15,7 @@ Updates:
 Version 2.0.1 (2015-08-16)
 ------------------------------------------------------------------------------
 Updates:
-* SurveyDate datset contains survey details for each subject, for each year.
+* SurveyDate dataset contains survey details for each subject, for each year.
 * Small updates to meet newer CRAN guidelines.
 
 Version 1.4005 (2015-01-15)
@@ -31,7 +32,7 @@ New Features:
 
 Updates:
 * `R` now has missing values for Gen1 pairs if the 1979 roster (eg, R00001.51) doesn't indicate they're the same generation.  If this value is desirable for your research, their R values are still available in `RFull`.
-* The naming scheme for the `Links79Pair` and `Links79PairExpanded` datasets are more consistent across variables.  For variables that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an `_S1` or `_S2` appended to it.  For instance, the variables `LastSurvey_S1` and `LastSurvey_S2` correspond to the last surveys completed by the pair's first and second subject, respectively.  
+* The naming scheme for the `Links79Pair` and `Links79PairExpanded` datasets are more consistent across variables.  For variables that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an `_S1` or `_S2` appended to it.  For instance, the variables `LastSurvey_S1` and `LastSurvey_S2` correspond to the last surveys completed by the pair's first and second subject, respectively.
 * Similarly, the functions `CreatePairLinksDoubleEntered` and `CreatePairLinksSingleEntered` now by default append `_S1` and `_S2`, instead of `_1` and `_2`.  However this can be modified using the `subject1Qualifier` and `subject2Qualifier` parameters.
 * Added function `ReadCsvNlsy79Gen1()`
 * Updated reference manual, ACE vignette, and FAQ.
@@ -119,10 +120,10 @@ New Features:
 Version 0.24 (2012-04-16)
 ------------------------------------------------------------------------------
 New Features:
-* The S4 class 'AceEstimate' is returned by the 'Ace' function. 
+* The S4 class 'AceEstimate' is returned by the 'Ace' function.
 * Methods & functions associated with the AceEstimate class.
 * SubjectDetails79 dataset for Gen2.
-* ReadCsvNlsy79 function.  
+* ReadCsvNlsy79 function.
 * Validation functions: (a) OutComeDataset
 * Column Utilities: (a) VerifyColumnExists, (c) RenameNlsyColumn
 
@@ -144,5 +145,5 @@ Version 0.10 (2012-01-16)
 
 GitHub Commits and Releases
 ------------------------------------------------------------------------------
-* For a detailed change log, please see https://github.com/LiveOak/NlsyLinks/commits/master.  
+* For a detailed change log, please see https://github.com/LiveOak/NlsyLinks/commits/master.
 * For a list of the major releases, please see https://github.com/LiveOak/NlsyLinks/releases.

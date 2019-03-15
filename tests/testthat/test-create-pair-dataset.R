@@ -25,36 +25,36 @@ context("CreatePairLinksDoubleEntered")
 test_that("CreatePairLinksDoubleEntered -Normal Scenario", {
   dsLinks <- LoadPairFile()
   dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
-  
+
   dsOutcomes <- LoadOutcomeFile()
   dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID, generation=dsOutcomes$Generation)
   dsLinksWithExtraOutcome <- CreatePairLinksDoubleEntered(outcomeNames=LoadDefaultOutcomeNames(), outcomeDataset=dsOutcomes, linksPairDataset=dsLinks)
-  expect_equal(nrow(dsLinksWithExtraOutcome), 22176, info="The number of rows in the pairs links should be correct.")
-  expect_equal(ncol(dsLinksWithExtraOutcome), 7, info="The number of columns in the pairs links should be correct.")  
-  
+  expect_equal(nrow(dsLinksWithExtraOutcome), 22228, info="The number of rows in the pairs links should be correct.")
+  expect_equal(ncol(dsLinksWithExtraOutcome), 7, info="The number of columns in the pairs links should be correct.")
+
   expectedColumnNames <- c("SubjectTag_S1", "SubjectTag_S2", "ExtendedID", "R", "RelationshipPath", "HeightZGenderAge_S1", "HeightZGenderAge_S2")
   actualColumnNames <- colnames(dsLinksWithExtraOutcome)
   expect_equal(actualColumnNames, expectedColumnNames, info="The column names, and their order, should be correct.")
-  
+
   expect_equal(mean(dsLinksWithExtraOutcome$HeightZGenderAge_S1, na.rm=T), 0, tolerance=.05, scale=1)
   expect_equal(mean(dsLinksWithExtraOutcome$HeightZGenderAge_S1, na.rm=T), mean(dsLinksWithExtraOutcome$HeightZGenderAge_S2, na.rm=T))#, tolerance=.01, scale=1)
-  
+
 #   expect_equal(mean(dsLinksWithExtraOutcome$Weight_S1, na.rm=T), 161.949, tolerance=1e-4, scale=1)
-#   expect_equal(mean(dsLinksWithExtraOutcome$Weight_S1, na.rm=T), mean(dsLinksWithExtraOutcome$Weight_S2, na.rm=T))#, tolerance=.01, scale=1)  
+#   expect_equal(mean(dsLinksWithExtraOutcome$Weight_S1, na.rm=T), mean(dsLinksWithExtraOutcome$Weight_S2, na.rm=T))#, tolerance=.01, scale=1)
 
   #The following aren't tested against meaningful values, but they do provide some regression testing.
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$SubjectTag_S1), na.rm=T), 13164976703)
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$SubjectTag_S1), na.rm=T), sum(as.numeric(dsLinksWithExtraOutcome$SubjectTag_S2, na.rm=T)))  
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$ExtendedID), na.rm=T), 131575156)
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$R), na.rm=T), 9247.5) #9235.75)# 8813.5)  
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$RelationshipPath), na.rm=T), 44352)
+  expect_equal(sum(dsLinksWithExtraOutcome$SubjectTag_S1, na.rm=T), 13182575229)
+  expect_equal(sum(dsLinksWithExtraOutcome$SubjectTag_S1, na.rm=T), sum(dsLinksWithExtraOutcome$SubjectTag_S2, na.rm=T))
+  expect_equal(sum(dsLinksWithExtraOutcome$ExtendedID, na.rm=T), 131751128)
+  expect_equal(sum(dsLinksWithExtraOutcome$R, na.rm=T), 9268) #9235.75)# 8813.5)
+  expect_equal(sum(as.integer(dsLinksWithExtraOutcome$RelationshipPath), na.rm=T), 44456)
 })
 test_that("CreatePairLinksDoubleEntered -Normal Scenario 2 sibs", {
   dsExpected <- data.frame(
     SubjectTag_S1=c(101, 102),
-    SubjectTag_S2=c(102, 101), 
+    SubjectTag_S2=c(102, 101),
     ExtendedID=c(1, 1),
-    R=c(.5, .5), 
+    R=c(.5, .5),
     RelationshipPath=rep("Gen2Siblings", 2),
     DV1_S1=c(11, 12),
     DV2_S1=c(21, 22),
@@ -64,46 +64,46 @@ test_that("CreatePairLinksDoubleEntered -Normal Scenario 2 sibs", {
   dsSingleLinks <- data.frame(ExtendedID=c(1), SubjectTag_S1=c(101), SubjectTag_S2=c(102), R=c(.5), RelationshipPath=rep("Gen2Siblings", 1))
   dsSingleOutcomes <- data.frame(SubjectTag=c(101, 102), DV1=c(11, 12), DV2=c(21, 22))
   dsDouble <- CreatePairLinksDoubleEntered(outcomeDataset=dsSingleOutcomes, linksPairDataset=dsSingleLinks, outcomeNames=c("DV1", "DV2"), validateOutcomeDataset=T)
-  
+
   expect_equal(object=dsDouble, expected=dsExpected)
 })
 test_that("CreatePairLinksDoubleEntered -Normal Scenario 3 sibs", {
   dsExpected <- data.frame(
-    SubjectTag_S1=c(101, 101, 102, 102, 103, 103), 
-    SubjectTag_S2=c(102, 103, 103, 101, 101, 102), 
-    ExtendedID=rep(1, 6), 
-    R=c(.5, .25, .25, .5, .25, .25), 
+    SubjectTag_S1=c(101, 101, 102, 102, 103, 103),
+    SubjectTag_S2=c(102, 103, 103, 101, 101, 102),
+    ExtendedID=rep(1, 6),
+    R=c(.5, .25, .25, .5, .25, .25),
     RelationshipPath=rep("Gen2Siblings", 6),
     DV1_S1=c(11, 11, 12, 12, 13, 13),
-    DV2_S1=c(21, 21, 22, 22, 23, 23),    
-    DV1_S2=c(12, 13, 13, 11, 11, 12),    
-    DV2_S2=c(22, 23, 23, 21, 21, 22)    
+    DV2_S1=c(21, 21, 22, 22, 23, 23),
+    DV1_S2=c(12, 13, 13, 11, 11, 12),
+    DV2_S2=c(22, 23, 23, 21, 21, 22)
   )
-  
+
   dsSingleLinks <- data.frame(ExtendedID=c(1, 1, 1), SubjectTag_S1=c(101, 101, 102), SubjectTag_S2=c(102, 103, 103), R=c(.5, .25, .25), RelationshipPath=rep("Gen2Siblings", 3))
   dsSingleOutcomes <- data.frame(SubjectTag=c(101, 102, 103), DV1=c(11, 12, 13), DV2=c(21, 22, 23))
   dsDouble <- CreatePairLinksDoubleEntered(outcomeDataset=dsSingleOutcomes, linksPairDataset=dsSingleLinks, outcomeNames=c("DV1", "DV2"), validateOutcomeDataset=T)
-  
+
   expect_equal(object=dsDouble, expected=dsExpected)
 })
 test_that("CreatePairLinksDoubleEntered -Normal Scenario 2 familes", {
   #dsExpected <- data.frame(SubjectTag_S1=c(101, 101, 102, 201, 102, 103, 103, 202), SubjectTag_S2=c(102, 103, 103, 202, 101, 101, 102, 201), ExtendedID=c(1,1,1,2, 1,1,1,2), R=c(.5, .25, .25, .5, .5, .25, .25, .5), RelationshipPath=rep("Gen2Siblings", 8))
   dsExpected <- data.frame(
-    SubjectTag_S1=c(101, 101, 102, 201, 102, 103, 103, 202), 
-    SubjectTag_S2=c(102, 103, 103, 202, 101, 101, 102, 201), 
-    ExtendedID=c(1,1,1,2, 1,1,1,2), 
-    R=c(.5, .25, .25, .5, .5, .25, .25, .5), 
+    SubjectTag_S1=c(101, 101, 102, 201, 102, 103, 103, 202),
+    SubjectTag_S2=c(102, 103, 103, 202, 101, 101, 102, 201),
+    ExtendedID=c(1,1,1,2, 1,1,1,2),
+    R=c(.5, .25, .25, .5, .5, .25, .25, .5),
     RelationshipPath=rep("Gen2Siblings", 8),
     DV1_S1=c(11, 11, 12, 41, 12, 13, 13, 42),
-    DV2_S1=c(21, 21, 22, 51, 22, 23, 23, 52),    
-    DV1_S2=c(12, 13, 13, 42, 11, 11, 12, 41),    
-    DV2_S2=c(22, 23, 23, 52, 21, 21, 22, 51)    
-  )  
- 
+    DV2_S1=c(21, 21, 22, 51, 22, 23, 23, 52),
+    DV1_S2=c(12, 13, 13, 42, 11, 11, 12, 41),
+    DV2_S2=c(22, 23, 23, 52, 21, 21, 22, 51)
+  )
+
   dsSingleLinks <- data.frame(ExtendedID=c(1, 1, 1, 2), SubjectTag_S1=c(101, 101, 102, 201), SubjectTag_S2=c(102, 103, 103, 202), R=c(.5, .25, .25, .5), RelationshipPath=rep("Gen2Siblings", 4))
   dsSingleOutcomes <- data.frame(SubjectTag=c(101, 102, 103, 201, 202), DV1=c(11, 12, 13, 41, 42), DV2=c(21, 22, 23, 51, 52))
   dsDouble <- CreatePairLinksDoubleEntered(outcomeDataset=dsSingleOutcomes, linksPairDataset=dsSingleLinks, outcomeNames=c("DV1", "DV2"), validateOutcomeDataset=T)
- 
+
   expect_equal(object=dsDouble, expected=dsExpected)
 })
 
@@ -117,25 +117,25 @@ test_that("CreatePairLinksSingleEntered -Normal Scenario", {
   dsOutcomes <- LoadOutcomeFile()
   dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID, generation=dsOutcomes$Generation)
   dsLinksWithExtraOutcome <- CreatePairLinksSingleEntered(outcomeNames=LoadDefaultOutcomeNames(), outcomeDataset=dsOutcomes, linksPairDataset=dsLinks)
-  expect_equal(nrow(dsLinksWithExtraOutcome), 11088, info="The number of rows in the pairs links should be correct.")
-  expect_equal(ncol(dsLinksWithExtraOutcome), 7, info="The number of columns in the pairs links should be correct.")  
-  
+  expect_equal(nrow(dsLinksWithExtraOutcome), 11114, info="The number of rows in the pairs links should be correct.")
+  expect_equal(ncol(dsLinksWithExtraOutcome), 7, info="The number of columns in the pairs links should be correct.")
+
   expectedColumnNames <- c("SubjectTag_S1", "SubjectTag_S2", "ExtendedID", "R", "RelationshipPath", "HeightZGenderAge_S1", "HeightZGenderAge_S2")
   actualColumnNames <- colnames(dsLinksWithExtraOutcome)
   expect_equal(actualColumnNames, expectedColumnNames, info="The column names, and their order, should be correct.")
-  
-  expect_equal(mean(dsLinksWithExtraOutcome$HeightZGenderAge_S1, na.rm=T), 0, tolerance=.04, scale=1)  
+
+  expect_equal(mean(dsLinksWithExtraOutcome$HeightZGenderAge_S1, na.rm=T), 0, tolerance=.04, scale=1)
   expect_equal(mean(dsLinksWithExtraOutcome$HeightZGenderAge_S2, na.rm=T), 0, tolerance=.06, scale=1)
-    
+
 #   expect_equal(mean(dsLinksWithExtraOutcome$Weight_S1, na.rm=T),  167.03616780045351, tolerance=1e-15, scale=1)
 #   expect_equal(mean(dsLinksWithExtraOutcome$Weight_S2, na.rm=T), 155.87657328461225, tolerance=1e-15, scale=1)
-  
+
   #The following aren't tested against meaningful values, but they do provide some regression testing.
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$SubjectTag_S1), na.rm=T), 6582479134)
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$SubjectTag_S2), na.rm=T), 6582497569)  
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$ExtendedID), na.rm=T), 65787578)
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$R), na.rm=T), 4623.75)  
-  expect_equal(sum(as.numeric(dsLinksWithExtraOutcome$RelationshipPath), na.rm=T), 22176)
+  expect_equal(sum(dsLinksWithExtraOutcome$SubjectTag_S1, na.rm=T), 6591278376)
+  expect_equal(sum(dsLinksWithExtraOutcome$SubjectTag_S2, na.rm=T), 6591296853)
+  expect_equal(sum(dsLinksWithExtraOutcome$ExtendedID, na.rm=T), 65875564)
+  expect_equal(sum(dsLinksWithExtraOutcome$R, na.rm=T), 4634)
+  expect_equal(sum(as.integer(dsLinksWithExtraOutcome$RelationshipPath), na.rm=T), 22228)
 })
 
 ###########
@@ -207,21 +207,21 @@ test_that("ValidatePairLinksAreSymmetric -Normal Scenario", {
 })
 test_that("ValidatePairLinksAreSymmetric -Short Scenario", {
   dsDouble <- data.frame(
-    SubjectTag_S1=c(101, 101, 102, 102, 103, 103), 
-    SubjectTag_S2=c(102, 103, 103, 101, 101, 102), 
-    ExtendedID=rep(1, 6), 
-    R=c(.5, .25, .25, .5, .25, .25), 
+    SubjectTag_S1=c(101, 101, 102, 102, 103, 103),
+    SubjectTag_S2=c(102, 103, 103, 101, 101, 102),
+    ExtendedID=rep(1, 6),
+    R=c(.5, .25, .25, .5, .25, .25),
     RelationshipPath=rep("Gen2Siblings", 6),
     DV1_S1=c(11, 11, 12, 12, 13, 13),
-    DV2_S1=c(21, 21, 22, 22, 23, 23),    
-    DV1_S2=c(12, 13, 13, 11, 11, 12),    
-    DV2_S2=c(22, 23, 23, 21, 21, 22)    
+    DV2_S1=c(21, 21, 22, 22, 23, 23),
+    DV1_S2=c(12, 13, 13, 11, 11, 12),
+    DV2_S2=c(22, 23, 23, 21, 21, 22)
     )
   expect_true(ValidatePairLinksAreSymmetric(dsDouble))
 })
 
 test_that("ValidatePairLinksAreSymmetric -not doubled 1", {
-  dsLinks <- LoadPairFile() 
+  dsLinks <- LoadPairFile()
   expect_error(ValidatePairLinksAreSymmetric(dsLinks), label="The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (SubjectTag_S1, SubjectTag_S2, R)=(101, 102, 0.5) was found 0 time(s).")
 })
 test_that("ValidatePairLinksAreSymmetric -not doubled 2", {

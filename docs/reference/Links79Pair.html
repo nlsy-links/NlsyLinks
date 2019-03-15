@@ -11,18 +11,34 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+<meta property="og:title" content="Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults — Links79Pair" />
+
+<meta property="og:description" content="This dataset specifies the relatedness coefficient (ie, 'R') between
+subjects in the same extended family.  Each row represents a unique
+relationship pair.
+NOTE: Two variable names changed in November 2013. Subject1Tag and Subject2Tag became SubjectTag_S1 and SubjectTag_S2." />
+<meta name="twitter:card" content="summary" />
+
+
 
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -46,15 +62,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">NlsyLinks</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">NlsyLinks</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2.0.8.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       
@@ -66,6 +89,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -73,18 +97,22 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LiveOak/NlsyLinks/blob/master/R/links-79-pair-doc.R'><code>R/links-79-pair-doc.R</code></a></small>
+    <div class="hidden name"><code>Links79Pair.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This dataset specifies the relatedness coefficient (ie, '<code>R</code>') between
 subjects in the same extended family.  Each row represents a unique
 relationship pair.</p>
 <p>NOTE: Two variable names changed in November 2013. <code>Subject1Tag</code> and <code>Subject2Tag</code> became <code>SubjectTag_S1</code> and <code>SubjectTag_S2</code>.</p>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
@@ -101,9 +129,9 @@ There is one row per unique pair of subjects, irrespective of order.</p><ul>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Gen1 information comes from the Summer 2013 release of the
-<a href = 'http://www.bls.gov/nls/nlsy79.htm'>NLSY79 sample</a>.  Gen2 information
+<a href='http://www.bls.gov/nls/nlsy79.htm'>NLSY79 sample</a>.  Gen2 information
 comes from the Summer 2013 release of the
-<a href = 'http://www.bls.gov/nls/nlsy79ch.htm'>NLSY79 Children and Young Adults</a>.
+<a href='http://www.bls.gov/nls/nlsy79ch.htm'>NLSY79 Children and Young Adults</a>.
 Data were extracted with the NLS Investigator
 (https://www.nlsinfo.org/investigator/).</p>
 <p>The internal version for the links is <code>Links2011V84</code>.</p>
@@ -140,9 +168,11 @@ younger.</p>
 <p>MZ twins have <em>R</em>=1.  DZ twins and full-siblings have <em>R</em>=.5.
 Half-siblings have <em>R</em>=.25. Typical first cousins have <em>R</em>=.125.
 Unrelated subjects have <em>R</em>=0 (this occasionally happens for
-<code>Gen1Housemates</code>).  Other <em>R</em> coefficients are possible.</p>
+<code>Gen1Housemates</code>, but never for the other paths).
+Other <em>R</em> coefficients are possible.</p>
 <p>There are several other uncommon possibilities, such as half-cousins (<em>R</em>=.0625) and
-ambiguous aunt-nieces (<em>R</em>=.125). The variable coding for genetic relatedness,<code>R</code>, in <code>Links79Pair</code> contains
+ambiguous aunt-nieces (<em>R</em>=.125, which is an average of 1/4 and 0/4).
+The variable coding for genetic relatedness,<code>R</code>, in <code>Links79Pair</code> contains
 only the common values of <em>R</em> whose groups are likely to have stable estimates.
 However the variable <code>RFull</code> in <code><a href='Links79PairExpanded.html'>Links79PairExpanded</a></code> contains all <em>R</em> values.
 We strongly recommend using <code>R</code> in this <a href='http://www.rdocumentation.org/packages/base/topics/data.frame'>base::data.frame</a>.  Move to
@@ -163,12 +193,12 @@ biological parent.</p>
 http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm.</p>
 <p>For more information on <em>R</em> (<em>ie</em>, the Relatedness coefficient), please see
 Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005).
-<a href = 'http://www.springerlink.com/content/n3x1v1q282583366/'>Reformulating and simplifying the DF analysis model.</a>
+<a href='http://www.springerlink.com/content/n3x1v1q282583366/'>Reformulating and simplifying the DF analysis model.</a>
 <em>Behavior Genetics, 35</em> (2), 211-217.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>The <code>LinksPair79</code> dataset contains columns necessary for a
+    <div class='dont-index'><p>The <code>LinksPair79</code> dataset contains columns necessary for a
 basic BG analysis.  The <a href='Links79PairExpanded.html'>Links79PairExpanded</a> dataset contains
 further information that might be useful in more complicated BG analyses.</p>
 <p>A tutorial that produces a similar dataset is
@@ -176,12 +206,12 @@ http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/li
 It provides examples in SAS, SPSS, and STATA.</p>
 <p>The current dataset (ie, <code>Links79Pair</code>) can be saved as a CSV file
 (comma-separated file) and imported into in other programs and languages.
-In the R console, type the following two lines of code:
-    <code>library(NlsyLinks)</code>
-    <code>write.csv(Links79Pair, "C:/BGDirectory/Links79Pair.csv")</code></p>
+In the R console, type the following two lines of code:</p>
+<p><code>library(NlsyLinks)</code></p>
+<p><code>write.csv(Links79Pair, "C:/BGDirectory/Links79Pair.csv")</code></p>
 <p>where <code>"C:/BGDirectory/"</code> is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
-path <code>"C:\BGDirectory\Links79Pair.csv"</code> can be misinterpreted.</p>
+path <code>"C:\BGDirectory\Links79Pair.csv"</code> can be misinterpreted.</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -201,7 +231,7 @@ path <code>"C:\BGDirectory\Links79Pair.csv"</code> can be misinterpreted.</p>
 #&gt;  ParentChild   :11504  
 #&gt;  AuntNiece     : 9884  
 #&gt;                        
-#&gt;                        </div><div class='input'><span class='fu'>hist</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)    <span class='co'># Display a histogram of the Relatedness coefficients.</span></div><img src='Links79Pair-4.png' alt='' width='540' height='400' /><div class='input'><span class='fu'>table</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)   <span class='co'># Create a table of the Relatedness coefficients for the whole sample.</span></div><div class='output co'>#&gt; 
+#&gt;                        </div><div class='input'><span class='fu'>hist</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)    <span class='co'># Display a histogram of the Relatedness coefficients.</span></div><div class='img'><img src='Links79Pair-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>table</span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)   <span class='co'># Create a table of the Relatedness coefficients for the whole sample.</span></div><div class='output co'>#&gt; 
 #&gt; 0.0625  0.125   0.25  0.375    0.5   0.75      1 
 #&gt;    309   4465  11183    610  22482     12     38 </div><div class='input'>
 <span class='co'>#Create a dataset of only Gen2 sibs, and display the distribution of R.</span>
@@ -241,11 +271,14 @@ Will Beasley
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

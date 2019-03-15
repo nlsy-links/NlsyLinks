@@ -49,10 +49,10 @@ CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rNa
   oldColumnNames <- c(rName, oName_S1, oName_S2)
   newColumnNames <- c("R", "O1", "O2")
   selectedRows <- (
-    (!base::is.na(dsDirty[, rName])) &
-    (dsDirty[, rName] %in% rLevelsToInclude) &
-    (!base::is.na(dsDirty[, oName_S1])) &
-    (!base::is.na(dsDirty[, oName_S2]))
+    (!base::is.na(dsDirty[[rName]])) &
+    (dsDirty[[rName]] %in% rLevelsToInclude) &
+    (!base::is.na(dsDirty[[oName_S1]])) &
+    (!base::is.na(dsDirty[[oName_S2]]))
   )
 
   dsClean <- dsDirty[selectedRows, oldColumnNames]
