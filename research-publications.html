@@ -117,7 +117,7 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="include/custom.css" type="text/css" />
+<link rel="stylesheet" href="include\custom.css" type="text/css" />
 
 </head>
 
@@ -146,9 +146,6 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
-summary {
-  display: list-item;
-}
 </style>
 
 
@@ -156,74 +153,14 @@ summary {
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
 </script>
 
 <!-- code folding -->
+
 
 
 
@@ -307,9 +244,9 @@ $(document).ready(function () {
 <div id="TOC">
 <ul>
 <li><a href="#articles-and-book-chapters">Articles and Book Chapters</a><ul>
-<li><a href="#section">2011 -</a></li>
-<li><a href="#section-1">2001 - 2010</a></li>
-<li><a href="#section-2">1994 - 2000</a></li>
+<li><a href="#present">2011 - Present</a></li>
+<li><a href="#section">2001 - 2010</a></li>
+<li><a href="#section-1">1994 - 2000</a></li>
 </ul></li>
 <li><a href="#recent-presentations-by-the-team">Recent Presentations by the Team</a></li>
 <li><a href="#general-nlsy-articles">General NLSY Articles</a></li>
@@ -322,11 +259,11 @@ $(document).ready(function () {
 <p>Researchers and grad students interested using the <a href="http://www.bls.gov/nls/">NLSY</a> for Behavior Genetics and family research, please start with our 2016 article, <a href="https://link.springer.com/article/10.1007/s10519-016-9785-3"><em>The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research</em></a>.</p>
 <div id="articles-and-book-chapters" class="section level1">
 <h1>Articles and Book Chapters</h1>
-<p><strong>In reverse chronological order, <a href="https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md">updated</a> August 2017</strong></p>
-<div id="section" class="section level2">
-<h2>2011 -</h2>
+<p><strong>In reverse chronological order, <a href="https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md">updated</a> March 2019</strong></p>
+<div id="present" class="section level2">
+<h2>2011 - Present</h2>
 <ol>
-<li value="73">
+<li value="74">
 <cite>Kavish, N., Connolly, E. J., &amp; Boutwell, B. B. (2018). Genetic and environmental contributions to the association between violent victimization and major depressive disorder. <em>Personality and Individual Differences</em>. <em class="doi"><a href="doi:10.1016/j.paid.2018.05.034" class="uri">doi:10.1016/j.paid.2018.05.034</a></em></cite>(NLSYC)
 </li>
 <li value="73">
@@ -339,7 +276,7 @@ $(document).ready(function () {
 <cite>Little, C. W., Haughbrook, R., &amp; Hart, S. A. (2017). Cross-study differences in the etiology of reading comprehension: A meta-analytical review of twin studies. <em>Behavior genetics</em>, 47(1), 52-76. <em class="doi"><a href="doi:10.1007/s10519-016-9810-6" class="uri">doi:10.1007/s10519-016-9810-6</a></em> </cite>(NLSYC)
 </li>
 <li value="70">
-<cite>Garrison, S. M., &amp; Rodgers, J. L. (2017). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. <em>Multivariate Behavioral Research</em>, 52(1), 118-119&quot;, <a href="https://osf.io/xbkja/" class="uri">https://osf.io/xbkja/</a>. </cite>(NLSY79)
+<cite>Garrison, S. M., &amp; Rodgers, J. L. (2017). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. <em>Multivariate Behavioral Research</em>, 52(1), 118-119“, <a href="https://osf.io/xbkja/" class="uri">https://osf.io/xbkja/</a>. </cite>(NLSY79)
 </li>
 <li value="69">
 <cite>Kavish, N. A., Connolly, E. J., &amp; Boutwell, B. B. (2017). Additive genetic and environmental contributions to the longitudinal association between violent victimization and depression. <em>bioRxiv</em>. <em class="doi"><a href="doi:10.1101/164194" class="uri">doi:10.1101/164194</a> </em></cite>(NLSYC)
@@ -363,7 +300,7 @@ $(document).ready(function () {
 <cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., &amp; Rowe, D. C. (2016) <a href="http://link.springer.com/article/10.1007%2Fs10519-016-9785-3">The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.</a> <em>Behavior Genetics</em>. <em class="doi">doi: 10.1007/s10519-016-9785-3</em></cite>(NLSY79; NLSYC)
 </li>
 <li value="62">
-<cite>Garrison, S. Mason (2016) Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters, Vanderbilt University.</cite> (NLSY79)
+<cite>Garrison, S. Mason (2016) Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters Thesis, Vanderbilt University.</cite> (NLSY79)
 </li>
 <li value="61">
 <cite>Connolly, E. J., Beaver, K. M. (2015) <a href="https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory">Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.</a> <em>Journal of Criminal Justice</em>. <em class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</em></cite>(NLSYC)
@@ -424,7 +361,7 @@ $(document).ready(function () {
 </li>
 </ol>
 </div>
-<div id="section-1" class="section level2">
+<div id="section" class="section level2">
 <h2>2001 - 2010</h2>
 <ol>
 <li value="42">
@@ -495,7 +432,7 @@ $(document).ready(function () {
 </li>
 </ol>
 </div>
-<div id="section-2" class="section level2">
+<div id="section-1" class="section level2">
 <h2>1994 - 2000</h2>
 <ol>
 <li value="20">
@@ -563,9 +500,26 @@ $(document).ready(function () {
 </div>
 <div id="recent-presentations-by-the-team" class="section level1">
 <h1>Recent Presentations by the Team</h1>
+<p><strong>2019: Society for Personality and Social Psychology</strong></p>
+<ul>
+<li><cite>Uncovering the Origins of Age at First Intercourse: Applications of an Extended-Family Behavior Genetic Model. Mason Garrison.</cite></li>
+</ul>
+<p><strong>2018: Behavior Genetics Association</strong></p>
+<ul>
+<li><p><cite>Responding to a 100-Year-Old Challenge from Fisher: A Biometrical Analysis of Adult Height in the NLSY Data Using Only Cousin Pairs. Joe Rodgers.</cite></p></li>
+<li><p><cite>AC’RE model: Estimating Rearing Effects without Twins Raised Apart. Mason Garrison.</cite></p></li>
+</ul>
+<p><strong>2017: Society for Personality and Social Psychology</strong></p>
+<ul>
+<li><cite>Causal Claims without Experiments: Advances in Discordant Sibling Designs with the SES-health Gradient. Mason Garrison.</cite></li>
+</ul>
+<p><strong>2016: Society of Multivariate Experimental Psychology</strong></p>
+<ul>
+<li><cite>Decomposing the Causes of the SES-Health Gradient with Biometrical Modeling. Mason Garrison.</cite></li>
+</ul>
 <p><strong>2016: Developmental Methods</strong></p>
 <ul>
-<li><cite><a href="./publications/2015/garrison-devmeth-2016.pdf">Advances in discordant sibling designs from the NLSY,illustrated with SES and health.</a> Mason Garrison.</cite></li>
+<li><cite><a href="./publications/2015/garrison-devmeth-2016.pdf">Advances in discordant sibling designs from the NLSY, illustrated with SES and health.</a> Mason Garrison.</cite></li>
 </ul>
 <p><strong>2015: International Society for Intelligence Research</strong></p>
 <ul>
@@ -610,7 +564,7 @@ $(document).ready(function () {
 <h1>Current Documentation, Vignettes, and User Support</h1>
 <p>Please see the provided entries on the <a href="research-software-and-support.html">Research Software and Support</a> page.</p>
 <hr />
-<p>Compiled by <a href="http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Joe Rodgers</a>, <a href="http://howardliveoak.com/about.html">Will Beasley</a>, and <a href="http://www.smasongarrison.com/">Mason Garrison</a></p>
+<p>Compiled by <a href="http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Joe Rodgers</a>, <a href="http://howardliveoak.com/about.html">Will Beasley</a>, <a href="http://www.smasongarrison.com/">Mason Garrison</a>, and <a href="https://www.vanderbilt.edu/psychological_sciences/bio/patrick-okeefe">Patrick O’Keefe</a></p>
 </div>
 
 <!-- start of after_body material from RMarkdown example http://rmarkdown.rstudio.com/ -->

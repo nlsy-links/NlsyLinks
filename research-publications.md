@@ -2,19 +2,19 @@
 title: "Publications involving the kinship links"
 ---
 
-The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links. Note that research presentations have not been included on this list, except for those that occurred during the course of the most recent NIH grant (2011-2014). Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list. 
+The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links. Note that research presentations have not been included on this list, except for those that occurred during the course of the most recent NIH grant (2011-2014). Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list.
 
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this archive of articles around ten years ago. There are likely some additional publications based on the kinship links of which we are not aware. If you know of such papers, please bring them to our attention.
 
 Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
 # Articles and Book Chapters
-**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) August 2017**
+**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) March 2019**
 
-## 2011 -
+## 2011 - Present
 
 <ol>
-<li value=73><cite>Kavish, N., Connolly, E. J., & Boutwell, B. B. (2018). Genetic and environmental contributions to the association between violent victimization and major depressive disorder. *Personality and Individual Differences*. <em class="doi">doi:10.1016/j.paid.2018.05.034</em></cite>(NLSYC)</li>
+<li value=74><cite>Kavish, N., Connolly, E. J., & Boutwell, B. B. (2018). Genetic and environmental contributions to the association between violent victimization and major depressive disorder. *Personality and Individual Differences*. <em class="doi">doi:10.1016/j.paid.2018.05.034</em></cite>(NLSYC)</li>
 
 <li value=73><cite>Garrison, S. M., & Rodgers, J. L. (2017). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *Journal of Personality and Social Psychology* </cite>(NLSY79)</li>
 
@@ -35,10 +35,10 @@ Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls
 <li value=65><cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence*. <em class="doi">doi:Intelligence,59,139-156.doi:10.1016/j.intell.2016.08.008</em></cite>(NLSY79; NLSYC)</li>
 
  <li value=64><cite>Brauer, J. R. (2016) [Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.](http://dx.doi.org/10.1111/jora.12283) *Journal of Research on Adolescence*. <em class="doi">doi: 10.1111/jora.12283</em></cite>(NLSYC)</li>
- 
- <li value=63><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <em class="doi">doi: 10.1007/s10519-016-9785-3</em></cite>(NLSY79; NLSYC)</li> 
- 
-<li value=62><cite>Garrison, S. Mason (2016) Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters, Vanderbilt University.</cite> (NLSY79)</li>
+
+ <li value=63><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <em class="doi">doi: 10.1007/s10519-016-9785-3</em></cite>(NLSY79; NLSYC)</li>
+
+<li value=62><cite>Garrison, S. Mason (2016) Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters Thesis, Vanderbilt University.</cite> (NLSY79)</li>
 
  <li value=61><cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.]( https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_GeneEnvironment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <em class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</em></cite>(NLSYC)</li>
 
@@ -171,9 +171,29 @@ Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls
 </ol>
 
 # Recent Presentations by the Team
+
+**2019: Society for Personality and Social Psychology**
+
+* <cite>Uncovering the Origins of Age at First Intercourse: Applications of an Extended-Family Behavior Genetic Model. Mason Garrison.</cite>
+
+**2018: Behavior Genetics Association**
+
+* <cite>Responding to a 100-Year-Old Challenge from Fisher: A Biometrical Analysis of Adult Height in the NLSY Data Using Only Cousin Pairs. Joe Rodgers.</cite>
+
+* <cite>AC'RE model: Estimating Rearing Effects without Twins Raised Apart. Mason Garrison.</cite>
+
+
+**2017: Society for Personality and Social Psychology**
+
+* <cite>Causal Claims without Experiments: Advances in Discordant Sibling Designs with the SES-health Gradient. Mason Garrison.</cite>
+
+**2016: Society of Multivariate Experimental Psychology**
+
+* <cite>Decomposing the Causes of the SES-Health Gradient with Biometrical Modeling. Mason Garrison.</cite>
+
 **2016: Developmental Methods**
 
-* <cite>[Advances in discordant sibling designs from the NLSY,illustrated with SES and health.](./publications/2015/garrison-devmeth-2016.pdf) Mason Garrison.</cite>
+* <cite>[Advances in discordant sibling designs from the NLSY, illustrated with SES and health.](./publications/2015/garrison-devmeth-2016.pdf) Mason Garrison.</cite>
 
 **2015: International Society for Intelligence Research**
 
@@ -216,4 +236,4 @@ A larger, searchable list of research using the NLSY datasets is maintained at [
 Please see the provided entries on the [Research Software and Support](research-software-and-support.html) page.
 
 ------
-Compiled by [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), and [Mason Garrison](http://www.smasongarrison.com/)
+Compiled by [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), [Mason Garrison](http://www.smasongarrison.com/), and [Patrick O'Keefe](https://www.vanderbilt.edu/psychological_sciences/bio/patrick-okeefe)
