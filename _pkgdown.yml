@@ -6,6 +6,7 @@ navbar:
     left:
     - home
     - intro
+    - research
     - articles
     - reference
     - datasets_79
@@ -16,6 +17,11 @@ navbar:
     home:
       icon: fas fa-home fa-lg
       href: index.html
+    research:
+      text: Research
+      menu:
+      - text: Publications
+        href: articles/publications.html
     articles:
       text: Articles
       menu:
