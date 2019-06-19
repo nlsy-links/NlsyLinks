@@ -88,7 +88,8 @@ RGroupSummary <- function( ds, oName_S1, oName_S2, rName="R", determinantThresho
 
   #ds <- subset(ds, R==.75)
   rLevelsFirstPass <- base::sort(base::unique(ds[[rName]])) #Enumerate the values of R existing in the current data.frame.
-   dsGroupSummary <- base::data.frame(
+
+  dsGroupSummary <- base::data.frame(
     R=rLevelsFirstPass, Included=F, PairCount=NA, O1Mean=NA, O2Mean=NA,
     O1Variance=NA, O2Variance=NA, O1O2Covariance=NA, Correlation=NA,
     Determinant=NA, PosDefinite=FALSE)
@@ -97,7 +98,7 @@ RGroupSummary <- function( ds, oName_S1, oName_S2, rName="R", determinantThresho
   base::colnames(dsGroupSummary)[index] <- rName
 
   #The primary goal of this loop is to identify the R groups whose covariance matrix isn't positive definite.
-  #TODO: Consider rewriting with plyr.  It's small, so there won't be a performance benefit.  It will add another dependency to the package.
+  #TODO: Consider rewriting with dplyr.  It's small, so there won't be a performance benefit.  It will add another dependency to the package.
   for( rLevel in rLevelsFirstPass ) {
     #print(rLevel)
     dsGroupSlice <- ds[!is.na(ds[[rName]]) & ds[[rName]]==rLevel & !is.na(ds[[oName_S1]]) & !is.na(ds[[oName_S2]]), c(oName_S1, oName_S2)]

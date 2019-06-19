@@ -1,25 +1,59 @@
+# List files that should be included in the repo,
+#   but ignored by R when building the packages.
+#   Specify with a PCRE regular expression.
+#   See http://r-pkgs.had.co.nz/package.html#package
+
+# NlsyLinks-specific exclusions
+^article$
 ^Meta$
-^doc$
-# RStudio temp files to ignore during build process
+^outside-data$
+^pages$
+
+# Directories used in many R-centric repos.
+^\.github$
+^docs$
+^revdep$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 
-# Files to ignore during build process
+
+# Files used in many R-centric repos.
 ^_pkgdown\.yml$
 ^\.gitignore$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^CONDUCT.md$
+^CODE_OF_CONDUCT.md$
+^CODE-OF-CONDUCT.md$
+^code_of_conduct.md$
+^code-of-conduct.md$
+^config.yml$
 ^cran-comments\.md$
-^documentation-peek\.pdf$
+^license\.md$
+^LICENSE\.md$
 ^README\.html$
 ^shim_package\.sh$
-^unshim_package\.sh$
 ^wercker\.yml$
-# Directories to ignore during build process
-^article$
-^docs$
-^\.lintr$
-^outside-data$
+
+
+# Directories occasionally used in R-centric repos written by the BBMC.
+^analysis$
+^data-private$
+^data-public$
+^data-unshared$
+^demonstration$
+^documentation$
+^documentation-for-developers$
+^figure$
+^libs$
+^manipulation$
+^sandbox$
+^scripts$
+^stitched-output$
 ^playgrounds$
-^revdep$
 ^utility$
+
+
+# Files occasionally used in R-centric repos written by the BBMC.
+^documentation-peek.pdf$
+^doc$

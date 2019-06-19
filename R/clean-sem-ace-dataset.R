@@ -68,7 +68,7 @@ CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rNa
 
   #rLevelsToExclude <- dsGroupSummary[!dsGroupSummary$Included, 'R']
 
-  #This loop assigns a GroupID, depending on their R value. TODO: possibly rewrite and vectorize with plyr.
+  #This loop assigns a GroupID, depending on their R value. TODO: possibly rewrite and vectorize with dplyr.
   dsClean$GroupID <- NA
   for( groupIndex in seq_along(rLevelsToInclude) ) {
     r <- rLevelsToInclude[groupIndex]

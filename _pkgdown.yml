@@ -1,40 +1,81 @@
 template:
   params:
     bootswatch: cosmo
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - research
+    - articles
+    - reference
+    - datasets_79
+    - tutorials
+    - news
+    right: github
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    research:
+      text: Research
+      menu:
+      - text: Publications
+        href: articles/publications.html
+      - text: Facilitating Research
+        href: articles/facilitating.html
+      - text: Software and Support
+        href: articles/software-and-support.html
+    articles:
+      text: Articles
+      menu:
+      - text: FAQ for the NlsyLinks Package
+        href: articles/faq.html
+      - text: The NLS Investigator
+        href: articles/nls-investigator.html
+      - text: ACE Models with the NLSY
+        href: articles/nlsy-ace.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    datasets_79:
+      text: Datasets NLSY79 (Gen1 & Gen2)
+      menu:
+      - text: Basic Kinship Links
+        href: reference/Links79Pair.html
+      - text: Expanded Kinship Links
+        href: reference/Links79PairExpanded.html
+      - text: Selected Outcomes
+        href: reference/ExtraOutcomes79.html
+      - text: Participant Details
+        href: reference/SubjectDetails79.html
+      - text: Participant * SurveyYear
+        href: reference/Survey79.html
+    datasets_97:
+      text: Datasets NLSY97
+      menu:
+      - text: Basic Kinship Links
+        href: reference/Links97Pair.html
+      - text: Expanded Kinship Links
+        href: reference/Links97PairExpanded.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/LiveOak/NlsyLinks
 
-home:
-  links:
-#  - text: Ask a question
-#    href: http://discourse.mc-stan.org/
 
 articles:
   - title: "Getting Started"
     desc: >
       These vignettes provide an introduction to research with the NLSY.
     contents:
-      - NlsyAce
-      - NlsInvestigator
-      - Faq
+      - nlsy-ace
+      - nls-investigator
+      - faq
 
 reference:
-
-  - title: "Datasets from the NLSY79"
+  - title: "Datasets"
     desc: >
-      Datasets derived from the NLSY79 Gen1 & Gen2
-    contents:
-      - Links79Pair
-      - Links79PairExpanded
-      - ExtraOutcomes79
-      - SubjectDetails79
-      - Survey79
-
-  - title: "Datasets from the NLSY97"
-    desc: >
-      Datasets derived from the NLSY97
-    contents:
-      - Links97Pair
-      - Links97PairExpanded
-
+      See the menu items "Datasets NLSY79 (Gen1 & Gen2)" and "Datasets NLSY97"
   - title: "BG"
     desc: >
       Behavior Genetics

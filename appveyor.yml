@@ -11,10 +11,21 @@ install:
 
 # Adapt as necessary starting from here
 
+environment:
+  global:
+    USE_RTOOLS: false
+    WARNINGS_ARE_ERRORS: 1
+
+  matrix:
+  - R_VERSION: release
+    R_ARCH: x64
+
+  - R_VERSION: stable
+
 build_script:
   - travis-tool.sh install_deps
 # - travis-tool.sh install_github hadley/testthat
-  
+
 test_script:
   - travis-tool.sh run_tests
 

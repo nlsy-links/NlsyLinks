@@ -41,27 +41,30 @@ stated by month (eg, the child is 38 months old); a constant of 0.5 months has b
 Gen1 datasets, self-reported age is stated by year (eg, the subject is 52 years old); a constant of 0.5 years has been added.
 }
 \examples{
-library(NlsyLinks) #Load the package into the current R session.
+library(NlsyLinks) # Load the package into the current R session.
 
 summary(Survey79)
 table(Survey79$SurveyYear, Survey79$SurveySource)
 table(is.na(Survey79$AgeSelfReportYears), is.na(Survey79$AgeCalculateYears))
 
-if( require(ggplot2) & require(plyr) ) {
-  dsSourceYear <- plyr::count(Survey79, c("SurveyYear", "SurveySource"))
-  dsSourceYear <- dsSourceYear[dsSourceYear$SurveySource != "NoInterview", ]
+if( require(ggplot2) & require(dplyr) ) {
+  dsSourceYear <- Survey79 \%>\%
+    dplyr::count(SurveyYear, SurveySource) \%>\%
+    dplyr::filter(SurveySource != "NoInterview")
 
-  ggplot(dsSourceYear, aes(x=SurveyYear, y=freq, color=SurveySource)) +
-    geom_line(size=2) +
-    geom_point(size=5, shape=21) +
+  Survey79 \%>\%
+    dplyr::filter(SurveySource != "NoInterview") \%>\%
+    dplyr::group_by(SurveySource, SurveyYear) \%>\%
+    dplyr::summarize(
+      age_min = min(Age, na.rm=TRUE),
+      age_max = max(Age, na.rm=TRUE)
+    ) \%>\%
+    dplyr::ungroup() \%>\%
+    ggplot(aes(x=SurveyYear, ymin=age_min, ymax=age_max, color=SurveySource)) +
+    geom_errorbar() +
     scale_color_brewer(palette = "Dark2") +
-    theme_bw() +
-    theme(legend.position=c(0,0), legend.justification=c(0,0))
-
-  ggplot(Survey79, aes(x=AgeSelfReportYears, y=AgeCalculateYears)) +
-    geom_abline() +
-    geom_point(shape=21) +
-    theme_bw()
+    theme_minimal() +
+    theme(legend.position = c(0, 1), legend.justification=c(0, 1))
 }
 
 }
