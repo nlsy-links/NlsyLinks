@@ -51,5 +51,14 @@ We now use  [this GitHub repository](https://github.com/LiveOak/NlsyLinksStaging
 
 The help forums remain on the package's [R-Forge](https://r-forge.r-project.org/forum/?group_id=1330).  
 
+## Publication
+
+Please see [research-publications](http://liveoak.github.io/NlsyLinks/research-publications.html for a list of the 70+ publications arising from the kinship links.  An overview is available at:
+
+Joseph Lee Rodgers, William H. Beasley, David E. Bard, Kelly M. Meredith, Michael D. Hunter, Amber B. Johnson, Maury Buster, Chengchang Li, Kim O. May, S. Mason Garrison, Warren B. Miller, Edwin van den Oord, and David C. Rowe (2016). *Behavior Genetics, 46*. [https://doi.org/10.1007/s10519-016-9785-3](https://doi.org/10.1007/s10519-016-9785-3).
+
+>The National Longitudinal Survey of Youth datasets (NLSY79; NLSY-Children/Young Adults; NLSY97) have extensive family pedigree information contained within them. These data sources are based on probability sampling, a longitudinal design, and a cross-generational and within-family data structure, with hundreds of phenotypes relevant to behavior genetic (BG) researchers, as well as to other developmental and family researchers. These datasets provide a unique and powerful source of information for BG researchers. But much of the information required for biometrical modeling has been hidden, and has required substantial programming effort to uncover—until recently. Our research team has spent over 20 years developing kinship links to genetically inform biometrical modeling. In the most recent release of kinship links from two of the NLSY datasets, the direct kinship indicators included in the 2006 surveys allowed successful and unambiguous linking of over 94 % of the potential pairs. In this paper, we provide details for research teams interested in using the NLSY data portfolio to conduct BG (and other family-oriented) research.
+
+
 ## Thanks to Funders
 The current work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 ([Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), PI).
