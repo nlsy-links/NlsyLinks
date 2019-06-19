@@ -60,8 +60,8 @@
 #'     dplyr::filter(SurveySource != "NoInterview") %>%
 #'     dplyr::group_by(SurveySource, SurveyYear) %>%
 #'     dplyr::summarize(
-#'       age_min = min(Age, na.rm=T),
-#'       age_max = max(Age, na.rm=T)
+#'       age_min = min(Age, na.rm=TRUE),
+#'       age_max = max(Age, na.rm=TRUE)
 #'     ) %>%
 #'     dplyr::ungroup() %>%
 #'     ggplot(aes(x=SurveyYear, ymin=age_min, ymax=age_max, color=SurveySource)) +
