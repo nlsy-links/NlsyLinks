@@ -1,8 +1,8 @@
 rm(list=ls(all=TRUE)) #Clear variables from previous runs.
 
-# @knitr load_sources ------------------------------------------------------------
+# ---- load_sources ------------------------------------------------------------
 
-# @knitr load_packages -----------------------------------------------------------
+# ---- load_packages -----------------------------------------------------------
 library(magrittr)
 library(knitr)
 requireNamespace("NlsyLinks", quietly=T)
@@ -11,7 +11,7 @@ requireNamespace("dplyr", quietly=T)
 requireNamespace("plyr", quietly=T)
 requireNamespace("scales", quietly=T)
 
-# @knitr define_globals ----------------------------------------------------------
+# ---- define_globals ----------------------------------------------------------
 oName <- "HeightZGenderAge" # o' stands for outcomes
 # oName <- "WeightZGenderAge"
 
@@ -55,12 +55,12 @@ suppressGroupTables <- TRUE
 #       )"
 # )
 
-# @knitr load_data ---------------------------------------------------------------
+# ---- load_data ---------------------------------------------------------------
 dsPair <- NlsyLinks::Links79PairExpanded
 dsOutcomes <- NlsyLinks::ExtraOutcomes79[, c("SubjectTag", oName)]
 dsDetails <- NlsyLinks::SubjectDetails79[, c("SubjectTag", "Gender", "RaceCohort")]
 
-# @knitr tweak_data --------------------------------------------------------------
+# ---- tweak_data --------------------------------------------------------------
 dsPair <- dsPair[as.integer(dsPair$RelationshipPath) %in% relationshipPaths, ]
 
 oName_1 <- paste0(oName, "_S1")
@@ -100,7 +100,7 @@ rm(dsSubject, dsPair)
 # mean(!is.na(dsDirty$RFull))
 # mean(!is.na(dsDirty[!is.na(dsDirty[, oName_1]) & !is.na(dsDirty[, oName_2]), "RFull"]))
 
-# @knitr evaluate_groups ---------------------------------------------------------
+# ---- evaluate_groups ---------------------------------------------------------
 groupDatasets <- list()
 dsAce <- data.frame(
   Version=rVersions,
@@ -159,7 +159,7 @@ for( i in seq_along(rVersions) ) {
   PrintGroupSummary(groupDatasets[[(i-1)*2 + 1]], title=rVersion)
 }
 
-# @knitr evaluate_ace ------------------------------------------------------------
+# ---- evaluate_ace ------------------------------------------------------------
 PrintAces <- function( ) {
   dAcePretty <- dsAce
   dAcePretty <- dplyr::rename_(dAcePretty,
