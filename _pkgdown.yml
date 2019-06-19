@@ -1,6 +1,35 @@
 template:
   params:
     bootswatch: cosmo
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - tutorials
+    - news
+    right: github
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    articles:
+      text: Articles
+      menu:
+      - text: FAQ for the NlsyLinks Package
+        href: articles/faq.html
+      - text: The NLS Investigator
+        href: articles/nls-investigator.html
+      - text: ACE Models with the NLSY
+        href: articles/nlsy-ace.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/LiveOak/NlsyLinks
 
 home:
   links:
@@ -17,7 +46,6 @@ articles:
       - faq
 
 reference:
-
   - title: "Datasets from the NLSY79"
     desc: >
       Datasets derived from the NLSY79 Gen1 & Gen2
