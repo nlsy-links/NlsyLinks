@@ -1,6 +1,4 @@
 # ------------------------------------------------------------
-context("Clean Ace Sem Dataset")
-
 test_that("CleanSemAceDataset MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
   oName_S1 <- "MathStandardized_S1"
@@ -53,8 +51,6 @@ test_that("CleanSemAceDataset HeightZGenderAge", {
 })
 
 # ------------------------------------------------------------
-context("R Group Summary")
-
 test_that("Group Summary MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
   oName_S1 <- "MathStandardized_S1" #Stands for Manifest1

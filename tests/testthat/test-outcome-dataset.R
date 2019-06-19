@@ -11,8 +11,6 @@ LoadDefaultOutcomeNames <- function( ) {
 }
 
 # ------------------------------------------------------------
-context("Validate Outcome Dataset")
-
 test_that("Normal Scenario", {
   ds <- LoadOutcomeFile()
   ds$SubjectTag <- CreateSubjectTag(ds$SubjectID, ds$Generation)

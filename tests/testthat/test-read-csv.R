@@ -15,8 +15,6 @@ library(devtools)
 # basename((normalizePath(".")))
 
 # ------------------------------------------------------------
-context("Read CSV")
-
 test_that("Nlsy79Gen1Path", {
   filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen1-life-course.csv")
 #   dsExtract <- read.csv(filePathGen1)

@@ -1,6 +1,4 @@
 # ------------------------------------------------------------
-context("Ace Wrapper Exceptions")
-
 test_that("AceUnivariate -NULL method", {
   dsOutcomes <- ExtraOutcomes79
   dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,generation=dsOutcomes$Generation)

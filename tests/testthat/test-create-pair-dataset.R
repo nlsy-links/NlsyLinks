@@ -20,8 +20,6 @@ LoadDefaultOutcomeNames <- function( ) {
 }
 
 # ------------------------------------------------------------
-context("CreatePairLinksDoubleEntered")
-
 test_that("CreatePairLinksDoubleEntered -Normal Scenario", {
   dsLinks <- LoadPairFile()
   dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
@@ -109,8 +107,6 @@ test_that("CreatePairLinksDoubleEntered -Normal Scenario 2 familes", {
 
 
 # ------------------------------------------------------------
-context("CreatePairLinksSingleEntered")
-
 test_that("CreatePairLinksSingleEntered -Normal Scenario", {
   dsLinks <- LoadPairFile()
   dsLinks <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ]
@@ -140,8 +136,6 @@ test_that("CreatePairLinksSingleEntered -Normal Scenario", {
 
 
 # ------------------------------------------------------------
-context("CreatePairLinksDoubleEnteredWithNoOutcomes")
-
 test_that("CreatePairLinksDoubleEnteredWithNoOutcomes -Normal Scenario 2 sibs", {
   dsExpected <- data.frame(SubjectTag_S1=c(101, 102), SubjectTag_S2=c(102, 101), ExtendedID=c(1, 1),R=c(.5, .5), RelationshipPath=rep("Gen2Siblings", 2))
   dsSingle <- data.frame(ExtendedID=c(1), SubjectTag_S1=c(101), SubjectTag_S2=c(102), R=c(.5), RelationshipPath=rep("Gen2Siblings", 1))
@@ -164,8 +158,6 @@ test_that("CreatePairLinksDoubleEnteredWithNoOutcomes -Normal Scenario 2 familes
 
 
 # ------------------------------------------------------------
-context("ValidatePairLinks")
-
 test_that("CreatePairLinksDoubleEnteredWithNoOutcomes -Short Scenario", {
   dsLinks <- LoadPairFile()
   expect_true(ValidatePairLinks(dsLinks))
@@ -199,8 +191,6 @@ test_that("Bad R", {
 })
 
 # ------------------------------------------------------------
-context("ValidatePairLinksAreSymmetric")
-
 test_that("ValidatePairLinksAreSymmetric -Normal Scenario", {
   testthat::skip("Save time for now")
   dsLinks <- LoadPairFile()

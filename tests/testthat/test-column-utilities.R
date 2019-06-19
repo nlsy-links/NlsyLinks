@@ -23,8 +23,6 @@ source(file.path(directoryForExpectedVectors, "expected-vectors.R"))
 
 
 # ------------------------------------------------------------
-context("CreateSubjectTag")
-
 test_that("CreateSubjectTag -Scenario 1", {
   ids <- c(1:10, 1:10)
   generation <- c(rep(1, 10), rep(2, 10))
@@ -80,8 +78,6 @@ test_that("CreateSubjectTag -With ExtraOutcomes79", {
 
 
 # ------------------------------------------------------------
-context("ExtractColumnExists")
-
 test_that("Nlsy79Gen2", {
   #filePathGen2 <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
   filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
@@ -95,8 +91,6 @@ test_that("Nlsy79Gen2", {
 })
 
 # ------------------------------------------------------------
-context("Rename Nlsy Column")
-
 test_that("RenameNlsyColumn", {
   filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
   ds <- read.csv(filePathGen2)

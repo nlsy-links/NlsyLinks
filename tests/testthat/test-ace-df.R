@@ -1,7 +1,5 @@
 
 # ------------------------------------------------------------
-context("DF Method 1")
-
 test_that("DFMethod1 -MathStandardized", {
   dsOutcomes <- ExtraOutcomes79
   dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,generation=dsOutcomes$Generation)
@@ -39,8 +37,6 @@ test_that("DFMethod1 -MathStandardized", {
 
 
 # ------------------------------------------------------------
-context("DF Method 3")
-
 test_that("DFMethod3 -MathStandardized", {
   dsOutcomes <- ExtraOutcomes79
   dsOutcomes$SubjectTag <- CreateSubjectTag(subjectID=dsOutcomes$SubjectID,generation=dsOutcomes$Generation)

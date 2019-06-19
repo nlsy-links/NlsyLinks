@@ -1,8 +1,6 @@
 options(digits=20)
 
 # ------------------------------------------------------------
-context("Lavaan")
-
 test_that("AceLavaanGroup -MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
   oName_S1 <- "MathStandardized_S1" #Stands for Manifest1

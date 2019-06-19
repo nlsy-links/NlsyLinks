@@ -1,7 +1,4 @@
-
 # ------------------------------------------------------------
-context("Ace Estimation")
-
 test_that("CreateAceEstimate -Plain", {
   aSquared <- .5
   cSquared  <- .3
