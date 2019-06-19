@@ -6,15 +6,13 @@ LoadOutcomeFile <- function( ) {
   return( ExtraOutcomes79 )
 }
 LoadDefaultOutcomeNames <- function( ) {
-  return( c("AfqtRescaled2006Gaussified", "HeightZGenderAge", 
+  return( c("AfqtRescaled2006Gaussified", "HeightZGenderAge",
             "WeightZGenderAge", "Afi", "Afm", "MathStandardized") )
 }
 
-
-
-###########
+# ------------------------------------------------------------
 context("Validate Outcome Dataset")
-###########
+
 test_that("Normal Scenario", {
   ds <- LoadOutcomeFile()
   ds$SubjectTag <- CreateSubjectTag(ds$SubjectID, ds$Generation)
@@ -23,7 +21,7 @@ test_that("Normal Scenario", {
 
 test_that("Zero rows", {
   ds <- LoadOutcomeFile()
-  ds$SubjectTag <- CreateSubjectTag(ds$SubjectID, ds$Generation)  
+  ds$SubjectTag <- CreateSubjectTag(ds$SubjectID, ds$Generation)
   ds <- ds[0,]
   expect_error(ValidateOutcomeDataset(dsOutcome=ds, outcomeNames=LoadDefaultOutcomeNames()), "The dsOutcome data frame should have at least one row, but does not.")
 })
@@ -85,28 +83,28 @@ test_that("outcomeNames -Missing column", {
   ds$SubjectTag <- CreateSubjectTag(ds$SubjectID, ds$Generation)
   expect_error(ValidateOutcomeDataset(dsOutcome=ds, outcomeNames="BAD"))#, "The parameter for 'outcomeNames' should be passed, but was not.")
 })
-# 
+#
 # test_that("Bad SubjectTag_S1", {
 #   dsLinks <- LoadPairFile()
 #   expect_true(ValidatePairLinks(dsLinks))
 #   colnames(dsLinks)[colnames(dsLinks)=="SubjectTag_S1"] <- "Bad"
 #   expect_error(ValidatePairLinks(dsLinks), "The column 'SubjectTag_S1' should exist in the linksPair file, but does not.")
 # })
-# 
+#
 # test_that("Bad SubjectTag_S2", {
 #   dsLinks <- LoadPairFile()
 #   expect_true(ValidatePairLinks(dsLinks))
 #   colnames(dsLinks)[colnames(dsLinks)=="SubjectTag_S2"] <- "Bad"
 #   expect_error(ValidatePairLinks(dsLinks), "The column 'SubjectTag_S2' should exist in the linksPair file, but does not.")
 # })
-# 
+#
 # test_that("Bad R", {
 #   dsLinks <- LoadPairFile()
 #   expect_true(ValidatePairLinks(dsLinks))
 #   colnames(dsLinks)[colnames(dsLinks)=="R"] <- "Bad"
 #   expect_error(ValidatePairLinks(dsLinks), "The column 'R' should exist in the linksPair file, but does not.")
 # })
-# 
+#
 # # test_that("Bad MultipleBirth", {
 # #   dsLinks <- LoadPairFile()
 # #   expect_true(ValidatePairLinks(dsLinks))

@@ -4,9 +4,9 @@ library(devtools)
 
 # print(basename(normalizePath(".")))
 # {
-# if( basename(normalizePath("."))=="NlsyLinks" ) 
+# if( basename(normalizePath("."))=="NlsyLinks" )
 #   directory <- "./inst/extdata"
-# else if( basename(normalizePath("."))=="tests" ) 
+# else if( basename(normalizePath("."))=="tests" )
 #   directory <- "./../extdata/"
 # else
 #   stop("The working directory is not recognized by this test fixture.")
@@ -14,25 +14,25 @@ library(devtools)
 # basename(dirname(normalizePath(".")))
 # basename((normalizePath(".")))
 
-###########
+# ------------------------------------------------------------
 context("Read CSV")
-###########
-test_that("Nlsy79Gen1Path", {  
+
+test_that("Nlsy79Gen1Path", {
   filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen1-life-course.csv")
 #   dsExtract <- read.csv(filePathGen1)
   ds <- ReadCsvNlsy79Gen1(filePath=filePathGen1)
-  
+
   expect_equal(object=min(ds$SubjectTag), expected=100, scale=1)
   expect_equal(object=max(ds$SubjectTag), expected=1268600, scale=1)
   expect_true(all(ds$Generation==1))
   expect_equal(object=nrow(ds), expected=12686, scale=1)
   expect_equal(object=ncol(ds), expected=13, scale=1)
 })
-test_that("Nlsy79Gen1DataFrame", {  
+test_that("Nlsy79Gen1DataFrame", {
   filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen1-life-course.csv")
   dsRaw <- read.csv(filePathGen1)
   ds <- ReadCsvNlsy79Gen1(dsExtract=dsRaw)
-  
+
   expect_equal(object=min(ds$SubjectTag), expected=100, scale=1)
   expect_equal(object=max(ds$SubjectTag), expected=1268600, scale=1)
   expect_true(all(ds$Generation==1))
@@ -40,11 +40,11 @@ test_that("Nlsy79Gen1DataFrame", {
   expect_equal(object=ncol(ds), expected=13, scale=1)
 })
 
-test_that("Nlsy79Gen2Path", {  
+test_that("Nlsy79Gen2Path", {
   #   ds <- ReadCsvNlsy79Gen2(filePath=file.path(directory, fileNameGen2))
   filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv")
   ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
-  
+
   expect_equal(object=min(ds$SubjectTag), expected=201, scale=1)
   expect_equal(object=max(ds$SubjectTag), expected=1267501, scale=1)
   expect_true(all(ds$Generation==2))
@@ -54,11 +54,11 @@ test_that("Nlsy79Gen2Path", {
   expect_equal(object=ncol(ds), expected=11, scale=1)
 })
 
-test_that("Nlsy79Gen2DataFrame", {  
+test_that("Nlsy79Gen2DataFrame", {
   filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv")
   dsRaw <- read.csv(filePathGen2)
   ds <- ReadCsvNlsy79Gen2(dsExtract=dsRaw)
-  
+
   expect_equal(object=min(ds$SubjectTag), expected=201, scale=1)
   expect_equal(object=max(ds$SubjectTag), expected=1267501, scale=1)
   expect_true(all(ds$Generation==2))

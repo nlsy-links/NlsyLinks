@@ -1,6 +1,6 @@
-###########
+# ------------------------------------------------------------
 context("Pair Datasets")
-###########
+
 test_that("Links79Pair", {
   expectedColumnCount <- 5
   actualColumnCount <- ncol(Links79Pair)

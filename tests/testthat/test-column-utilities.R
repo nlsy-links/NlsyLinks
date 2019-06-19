@@ -22,9 +22,9 @@ fileNameGen2 <- "gen2-birth.csv"
 source(file.path(directoryForExpectedVectors, "expected-vectors.R"))
 
 
-###########
+# ------------------------------------------------------------
 context("CreateSubjectTag")
-###########
+
 test_that("CreateSubjectTag -Scenario 1", {
   ids <- c(1:10, 1:10)
   generation <- c(rep(1, 10), rep(2, 10))
@@ -69,24 +69,22 @@ test_that("CreateSubjectTag -Scenario 6", {
   expect_equivalent(expected, CreateSubjectTag(ids, generation))
 })
 
-test_that("CreateSubjectTag -With ExtraOutcomes79", {  
+test_that("CreateSubjectTag -With ExtraOutcomes79", {
   actual <- CreateSubjectTag(subjectID=ExtraOutcomes79$SubjectID, generation=ExtraOutcomes79$Generation)
   expected <- ExpectedSubjectTags
-  
+
   expect_equal(expected, actual)
   #The PrintVector function is in "./Content/DeveloperUtilities.R"
-  #cat(PrintVector(ExtraOutcomes79$SubjectTag))  
+  #cat(PrintVector(ExtraOutcomes79$SubjectTag))
 })
 
 
-
-
-###########
+# ------------------------------------------------------------
 context("ExtractColumnExists")
-###########
+
 test_that("Nlsy79Gen2", {
-  #filePathGen2 <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"  
-  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"  
+  #filePathGen2 <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
+  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
   expectedColumNames <- c("C0000100", "C0000200", "C0005300", "C0005400", "C0005700", "C0328000", "C0328600", "C0328800")
   ds <- read.csv(filePathGen2)
   expectedIndex <- 0
@@ -96,11 +94,11 @@ test_that("Nlsy79Gen2", {
   }
 })
 
-###########
+# ------------------------------------------------------------
 context("Rename Nlsy Column")
-###########
+
 test_that("RenameNlsyColumn", {
-  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"  
+  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
   ds <- read.csv(filePathGen2)
   originalColumNames <- c("C0000100", "C0000200", "C0005300", "C0005400", "C0005700", "C0328000", "C0328600", "C0328800")
   newColumnNames <- c("SubjectID", "MotherID", "Race", "Gender", "Yob", "GestationWeeks", "BirthWeightInOunces", "BirthLengthInInches")
@@ -109,38 +107,38 @@ test_that("RenameNlsyColumn", {
     #expect_equal(VerifyColumnExists(ds, expectedColumnName), expected=expectedIndex, paste("The column '", expectedColumnName, "' should be found."))
   }
   expect_equal(colnames(ds), expected=newColumnNames, info="The renamed columns should be correct.")
-  
+
 })
 
 
-# 
+#
 # test_that("Zero rows", {
 #   dsLinks <- LoadPairFile()
 #   dsLinks <- dsLinks[0,]
 #   expect_error(ValidatePairLinks(dsLinks), "The linksPair file should have at least one row, but does not.")
 # })
-# 
+#
 # test_that("Bad SubjectTag_S1", {
 #   dsLinks <- LoadPairFile()
 #   expect_true(ValidatePairLinks(dsLinks))
 #   colnames(dsLinks)[colnames(dsLinks)=="SubjectTag_S1"] <- "Bad"
 #   expect_error(ValidatePairLinks(dsLinks), "The column 'SubjectTag_S1' should exist in the linksPair file, but does not.")
 # })
-# 
+#
 # test_that("Bad SubjectTag_S2", {
 #   dsLinks <- LoadPairFile()
 #   expect_true(ValidatePairLinks(dsLinks))
 #   colnames(dsLinks)[colnames(dsLinks)=="SubjectTag_S2"] <- "Bad"
 #   expect_error(ValidatePairLinks(dsLinks), "The column 'SubjectTag_S2' should exist in the linksPair file, but does not.")
 # })
-# 
+#
 # test_that("Bad R", {
 #   dsLinks <- LoadPairFile()
 #   expect_true(ValidatePairLinks(dsLinks))
 #   colnames(dsLinks)[colnames(dsLinks)=="R"] <- "Bad"
 #   expect_error(ValidatePairLinks(dsLinks), "The column 'R' should exist in the linksPair file, but does not.")
 # })
-# 
+#
 # # test_that("Bad MultipleBirth", {
 # #   dsLinks <- LoadPairFile()
 # #   expect_true(ValidatePairLinks(dsLinks))
