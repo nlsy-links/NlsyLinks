@@ -55,3 +55,4 @@
 
 # Files occasionally used in R-centric repos written by the BBMC.
 ^documentation-peek.pdf$
+^doc$
