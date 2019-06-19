@@ -22,6 +22,10 @@ navbar:
       menu:
       - text: Publications
         href: articles/publications.html
+      - text: Facilitating Research
+        href: articles/facilitating.html
+      - text: Software and Support
+        href: articles/software-and-support.html
     articles:
       text: Articles
       menu:
@@ -58,10 +62,6 @@ navbar:
       icon: fab fa-github fa-lg
       href: https://github.com/LiveOak/NlsyLinks
 
-home:
-  links:
-#  - text: Ask a question
-#    href: http://discourse.mc-stan.org/
 
 articles:
   - title: "Getting Started"
