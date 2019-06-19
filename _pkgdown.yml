@@ -12,9 +12,9 @@ articles:
     desc: >
       These vignettes provide an introduction to research with the NLSY.
     contents:
-      - NlsyAce
-      - NlsInvestigator
-      - Faq
+      - nlsy-ace
+      - nls-investigator
+      - faq
 
 reference:
 
