@@ -88,7 +88,7 @@ RGroupSummary <- function( ds, oName_S1, oName_S2, rName="R", determinantThresho
 
   #ds <- subset(ds, R==.75)
   rLevelsFirstPass <- base::sort(base::unique(ds[[rName]])) #Enumerate the values of R existing in the current data.frame.
-  browser()
+
   dsGroupSummary <- base::data.frame(
     R=rLevelsFirstPass, Included=F, PairCount=NA, O1Mean=NA, O2Mean=NA,
     O1Variance=NA, O2Variance=NA, O1O2Covariance=NA, Correlation=NA,
