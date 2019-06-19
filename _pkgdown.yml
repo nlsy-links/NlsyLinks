@@ -6,8 +6,9 @@ navbar:
     left:
     - home
     - intro
-    - reference
     - articles
+    - reference
+    - datasets_79
     - tutorials
     - news
     right: github
@@ -15,9 +16,6 @@ navbar:
     home:
       icon: fas fa-home fa-lg
       href: index.html
-    reference:
-      text: Reference
-      href: reference/index.html
     articles:
       text: Articles
       menu:
@@ -27,6 +25,29 @@ navbar:
         href: articles/nls-investigator.html
       - text: ACE Models with the NLSY
         href: articles/nlsy-ace.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    datasets_79:
+      text: Datasets NLSY79 (Gen1 & Gen2)
+      menu:
+      - text: Basic Kinship Links
+        href: reference/Links79Pair.html
+      - text: Expanded Kinship Links
+        href: reference/Links79PairExpanded.html
+      - text: Selected Outcomes
+        href: reference/ExtraOutcomes79.html
+      - text: Participant Details
+        href: reference/SubjectDetails79.html
+      - text: Participant * SurveyYear
+        href: reference/Survey79.html
+    datasets_97:
+      text: Datasets NLSY97
+      menu:
+      - text: Basic Kinship Links
+        href: reference/Links97Pair.html
+      - text: Expanded Kinship Links
+        href: reference/Links97PairExpanded.html
     github:
       icon: fab fa-github fa-lg
       href: https://github.com/LiveOak/NlsyLinks
@@ -46,23 +67,9 @@ articles:
       - faq
 
 reference:
-  - title: "Datasets from the NLSY79"
+  - title: "Datasets"
     desc: >
-      Datasets derived from the NLSY79 Gen1 & Gen2
-    contents:
-      - Links79Pair
-      - Links79PairExpanded
-      - ExtraOutcomes79
-      - SubjectDetails79
-      - Survey79
-
-  - title: "Datasets from the NLSY97"
-    desc: >
-      Datasets derived from the NLSY97
-    contents:
-      - Links97Pair
-      - Links97PairExpanded
-
+      See the menu items "Datasets NLSY79 (Gen1 & Gen2)" and "Datasets NLSY97"
   - title: "BG"
     desc: >
       Behavior Genetics
