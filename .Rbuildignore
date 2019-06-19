@@ -7,7 +7,6 @@
 ^article$
 ^Meta$
 ^outside-data$
-^pages$
 
 # Directories used in many R-centric repos.
 ^\.github$
