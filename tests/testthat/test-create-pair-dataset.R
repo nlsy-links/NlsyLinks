@@ -201,6 +201,7 @@ test_that("Bad R", {
 context("ValidatePairLinksAreSymmetric")
 ###########
 test_that("ValidatePairLinksAreSymmetric -Normal Scenario", {
+  testthat::skip("Save time for now")
   dsLinks <- LoadPairFile()
   dsDouble <- CreatePairLinksDoubleEnteredWithNoOutcomes(linksPairDataset=dsLinks)
   expect_true(ValidatePairLinksAreSymmetric(dsDouble))
