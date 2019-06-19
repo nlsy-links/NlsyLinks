@@ -9,15 +9,16 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-***
-***
-# Investigators
+Investigators
+=============================
+
 *For a recent description of the current kinship link team (and also background and description of the overall projects), please see:* 
 
 Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](./publications/2013/rodgers-2013-international-innovation.pdf).  *International Innovation*.
 
-***
-### Vanderbilt University, Peabody College of Education, Department of Psychology and Human Development
+Vanderbilt University, Peabody College of Education, Department of Psychology and Human Development
+-----------------------------
+
 The PI, [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), recently retired as George Lynn Cross Research Professor Emeritus from the [University of Oklahoma](http://www.ou.edu/) Department of [Psychology](http://www.ou.edu/cas/psychology/), and moved to Vanderbilt's [Peabody College of Education](http://peabody.vanderbilt.edu/), [Department of Psychology and Human Development](http://www.vanderbilt.edu/psychological_sciences/) to direct the Quantitative Methods program.  For over 20 years he has been the coordinator of the NLSY Kinship Links project, and the PI on associated NIH grants.  His first Vanderbilt graduate student, [S. Mason Garrison](http://www.smasongarrison.com), is now working on the project.
 
 The current work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 (May 1, 2011 to December 31, 2014;  Joe Rodgers, PI).  Previous kinship linking activity was supported by two previous NIH grants, the first in the 1990s, the second in the early 2000s.
@@ -29,8 +30,9 @@ The current work on the NLSY Kinship links has been supported by NIH Grant R01-H
   <img src="./images/vuheader.jpg" alt="Psychological Sciences" style="width: 500px;"/> 
 </a>
 
-***
-### OUHSC Pediatrics
+OUHSC Pediatrics
+-----------------------------
+
 The [Pediatrics Dept](http://www.oumedicine.com/pediatrics) of the University of Oklahoma [Health Sciences Center](http://www.ouhsc.edu/) z.  Current investigators are members of the [BBMC](http://ouhsc.edu/BBMC/) (Biomedical and Behavioral Methodology Core) and [CCAN](http://www.oumedicine.com/pediatrics/department-sections/developmental-behavioral-pediatrics/center-on-child-abuse-and-neglect) (Center for Child Abuse and Neglect).
 
 The participating members include David Bard and [Michael Hunter](http://students.ou.edu/H/Michael.D.Hunter-1/).
@@ -45,8 +47,9 @@ The participating members include David Bard and [Michael Hunter](http://student
   <img src="./images/ccanlogo.jpg" alt="CCAN" style="width: 170px;"/>
 </a>
 
-***
-### Howard Live Oak
+Howard Live Oak
+-----------------------------
+
 Howard Live Oak, LLC is a small consulting company specializing in custom software for data management and statistical analysis. Typical clients are small companies and research teams that would like gain a better understanding of systems manifesting in observed datasets.  It's participating member is [Will Beasley](https://www.researchgate.net/profile/William_Beasley2).
 
 <a href="http://howardliveoak.com/"> 
@@ -56,10 +59,11 @@ Howard Live Oak, LLC is a small consulting company specializing in custom softwa
 ***
 ***
 # NLSY Administrators
+=============================
 
-***
-### Bureau of Labor Statistics (BLS) 
-TODO: elaborate this section.
+
+Bureau of Labor Statistics (BLS) 
+-----------------------------
 
 The [BLS](http://www.bls.gov/) was the first funding agency for the NLSY79.
 
@@ -68,8 +72,8 @@ The [BLS](http://www.bls.gov/) was the first funding agency for the NLSY79.
 </a>
 
 ***
-### National Institute of Child Health and Human Development (NICHD)
-TODO: elaborate this section
+National Institute of Child Health and Human Development (NICHD)
+-----------------------------
 
 The [NICHD](https://www.nichd.nih.gov/) was the funding agency for the NLSY-Children/Young Adults.
 
@@ -77,9 +81,9 @@ The [NICHD](https://www.nichd.nih.gov/) was the funding agency for the NLSY-Chil
   <img src="./images/nichd_logo.jpeg" alt="NICHD" style="width: 200px;"/>
 </a>
 
-***
-### Center for Human Resources Research (CHRR)
-TODO: elaborate this section
+
+Center for Human Resources Research (CHRR)
+-----------------------------
 
 The [CHRR](https://www.chrr.ohio-state.edu/) is the data management arm who compiles, archives, and distributes the NLSY datasets.  CHRR has its own webpage, https://www.chrr.ohio-state.edu/
 
@@ -87,9 +91,9 @@ The [CHRR](https://www.chrr.ohio-state.edu/) is the data management arm who comp
   <img src="./images/chrr_logo.jpeg" alt="CHRR" style="width: 150px;"/>
 </a>
 
-***
-### National Opinion Research Center (NORC)
-TODO: elaborate this section
+
+National Opinion Research Center (NORC)
+-----------------------------
 
 [NORC](http://www.norc.org/) from the University of Chicago collects the NLSY data.
 

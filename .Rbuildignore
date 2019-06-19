@@ -8,6 +8,12 @@
 ^Meta$
 ^outside-data$
 
+# NlsyLinks Articles/Vignettes that are in the website, but not the package vignettes
+# $vignettes/about\.Rmd$
+# $vignettes/collaborators\.Rmd$
+# $vignettes/facilitating\.Rmd$
+# $vignettes/software-and-support\.Rmd$
+
 # Directories used in many R-centric repos.
 ^\.github$
 ^docs$
