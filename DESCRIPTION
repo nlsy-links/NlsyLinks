@@ -23,9 +23,9 @@ Imports:
     methods
 Suggests:
     devtools,
+    dplyr,
     ggplot2,
     knitr,
-    plyr,
     rmarkdown,
     scales,
     testit,
