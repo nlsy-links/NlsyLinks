@@ -26,6 +26,7 @@ Suggests:
     ggplot2,
     knitr,
     plyr,
+    rmarkdown,
     scales,
     testit,
     testthat,
