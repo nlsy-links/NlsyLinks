@@ -37,7 +37,7 @@
 #' For Gen2, an NLSY79 variable of `MathStandardized` is C05801.00.
 #'
 #' `Afi` and `Afm`, values were simplified
-#' (to one value per subject) by Kelly Meredith in Sept 2010.
+#' (to one value per subject) by Kelly Williams in Sept 2010.
 #'
 #' The variables for height and weight were manipulated in R files available in a
 #' [repository](https://github.com/nlsy-links/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes) available to the public.

@@ -39,7 +39,7 @@ inter-generational datasets.  A Gen1 subject with an ID of 43 has a
 For Gen2, an NLSY79 variable of \code{MathStandardized} is C05801.00.
 
 \code{Afi} and \code{Afm}, values were simplified
-(to one value per subject) by Kelly Meredith in Sept 2010.
+(to one value per subject) by Kelly Williams in Sept 2010.
 
 The variables for height and weight were manipulated in R files available in a
 \href{https://github.com/nlsy-links/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes}{repository} available to the public.

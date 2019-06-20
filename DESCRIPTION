@@ -8,12 +8,12 @@ Authors@R: c(person("Will", "Beasley", role = c("aut", "cre"), email =
     person("David", "Bard", role = "ctb"),
     person("Michael", "Hunter", role = "ctb"), person(given="S. Mason",
     family="Garrison", role = "ctb"), 
-    person("Kelly", "Meredith", role = "ctb"))
+    person("Kelly", "Williams", role = "ctb"))
 Description: Utilities and kinship information for behavior genetics and
     developmental research using the National Longitudinal Survey of Youth
     (NLSY; <http://www.bls.gov/nls/>).
 URL: http://nlsy-links.github.io/NlsyLinks, https://github.com/nlsy-links/NlsyLinks,
-    https://r-forge.r-project.org/projects/nlsylinks
+    https://groups.google.com/forum/#!forum/nlsy-links
 BugReports: https://github.com/nlsy-links/NlsyLinks/issues
 Depends:
     R (>= 3.0.0),
