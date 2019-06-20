@@ -15,11 +15,11 @@ The *release* version of `NlsyLinks` can be installed from [CRAN](https://cran.r
 install.packages("NlsyLinks")
 ```
 
-The latest *development* version of `NlsyLinks` can be installed from [GitHub](https://github.com/nlsy-links/NlsyLinks/) after installing the `devtools` package.
+The latest *development* version of `NlsyLinks` can be installed from [GitHub](https://github.com/nlsy-links/NlsyLinks/) after installing the `remotes` package.
 
 ```r
-install.packages("devtools")
-devtools::install_github(repo="nlsy-links/NlsyLinks")
+install.packages("remotes")
+remotes::install_github(repo="nlsy-links/NlsyLinks")
 ```
 
 Obtaining the Links
@@ -34,9 +34,9 @@ There are roughly three versions of the links:
 
 This repository contains the code used in the [NlsyLinks](https://cran.r-project.org/package=NlsyLinks) R package.  For additional information about the package and using it in NLSY research, please see http://nlsy-links.github.io/NlsyLinks/
 
-We now use  [this GitHub repository](https://github.com/nlsy-links/NlsyLinksStaging) as our primary way of managing, tracking, and build-checking versions of the source code.  We're no longer using our [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/) to check builds.  The stable releases (intended for most researchers) is available on the package's  [CRAN site](https://cran.r-project.org/package=NlsyLinks).
+[This GitHub repository](https://github.com/nlsy-links/NlsyLinksStaging) is our primary way of managing, tracking, and build-checking versions of the source code.  (We're no longer using our [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/).)  The stable releases (intended for most researchers) is available on the package's [CRAN site](https://cran.r-project.org/package=NlsyLinks).
 
-The help forums remain on the package's [R-Forge](https://r-forge.r-project.org/forum/?group_id=1330).  
+We recently moved the forums to https://groups.google.com/forum/#!forum/nlsy-links.  Previous conversations are available at our old [R-Forge](https://r-forge.r-project.org/forum/?group_id=1330) and [Disqus](https://disqus.com/home/forum/nlsylinks/) sites.
 
 Publication
 --------------------------
