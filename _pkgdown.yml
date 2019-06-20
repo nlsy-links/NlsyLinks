@@ -1,7 +1,8 @@
 template:
   params:
-    bootswatch: cosmo
+    bootswatch: yeti
 navbar:
+  type: inverse
   structure:
     left:
     - home
