@@ -17,7 +17,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
 # Articles and Book Chapters
-**In reverse chronological order, [updated](https://github.com/LiveOak/NlsyLinks/commits/gh-pages/research-publications.md) March 2019**
+**In reverse chronological order, [updated](https://github.com/nlsy-links/NlsyLinks/commits/gh-pages/research-publications.md) March 2019**
 
 ## 2011 - Present
 
@@ -73,7 +73,7 @@ Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls
 
  <li value=50><cite>Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/handle/11244/7913). Doctoral dissertation, University of Oklahoma.</cite> (NLSY79)</li>
 
- <li value=49><cite>Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](https://github.com/LiveOak/NlsyLinksDetermination/blob/master/publications/2013/rodgers-2013-international-innovation.pdf?raw=true). *International Innovation*, 59-61.</cite></li>
+ <li value=49><cite>Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/publications/2013/rodgers-2013-international-innovation.pdf?raw=true). *International Innovation*, 59-61.</cite></li>
 
  <li value=48><cite>D'Onofrio, B. M., Rickert, M. E., L&aring;ngstr&ouml;m, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. </cite> (NLSY79; NLSYC/YA)</li>
 

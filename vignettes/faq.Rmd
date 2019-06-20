@@ -36,7 +36,7 @@ Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls
 
 The current [FAQ](https://cran.r-project.org/package=NlsyLinks/vignettes/Faq.pdf) and the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) provide overview, and the [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf) describe the package's syntax and functions; the documents are available on [CRAN](https://cran.r-project.org/package=NlsyLinks).
 
-Literature targeting general behavior genetics is listed in the appendix of the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf).  Furthermore, [the articles and books involving the NLSY kinship links](http://liveoak.github.io/NlsyLinks/research_publications.html) provide more specialized information.
+Literature targeting general behavior genetics is listed in the appendix of the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf).  Furthermore, [the articles and books involving the NLSY kinship links](http://nlsy-links.github.io/NlsyLinks/research_publications.html) provide more specialized information.
 
 Gen1 and Gen2
 ===============================

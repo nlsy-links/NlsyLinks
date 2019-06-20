@@ -18,12 +18,12 @@
 #'
 #' The release version is available through [CRAN](https://cran.r-project.org/package=NlsyLinks) by
 #' running `install.packages('NlsyLinks')`.
-#' The most recent development version is available through [GitHub](https://github.com/LiveOak/NlsyLinks) by
+#' The most recent development version is available through [GitHub](https://github.com/nlsy-links/NlsyLinks) by
 #' running
-#' `devtools::install_github` `(repo = 'LiveOak/NlsyLinks')`
+#' `devtools::install_github` `(repo = 'nlsy-links/NlsyLinks')`
 #' (make sure [devtools](https://cran.r-project.org/package=devtools) is already installed).
 #' If you're having trouble with the package, please install the development version.  If this doesn't solve
-#' your problem, please create a [new issue](https://github.com/LiveOak/NlsyLinks/issues), or email Will.
+#' your problem, please create a [new issue](https://github.com/nlsy-links/NlsyLinks/issues), or email Will.
 #'
 #' @author
 #' [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](http://howardliveoak.com/), Norman)
@@ -43,7 +43,7 @@
 #' Identification"](http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50)
 #' (PI: Joe Rodgers).  A more complete list of research articles
 #' using NLSY Kinship Links is maintained on our [package's
-#' website](http://liveoak.github.io/NlsyLinks/research-publications.html).
+#' website](http://nlsy-links.github.io/NlsyLinks/research-publications.html).
 #'
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' [Reformulating and simplifying the DF analysis model](http://www.springerlink.com/content/n3x1v1q282583366/).
@@ -92,6 +92,6 @@
 #'
 #' # Install/update NlsyLinks with the development version from GitHub
 #' #install.packages('devtools') #Uncomment if 'devtools' isn't installed already.
-#' devtools::install_github('LiveOak/NlsyLinks')
+#' devtools::install_github('nlsy-links/NlsyLinks')
 #' }
 NULL

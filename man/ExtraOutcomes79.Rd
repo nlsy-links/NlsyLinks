@@ -42,7 +42,7 @@ For Gen2, an NLSY79 variable of \code{MathStandardized} is C05801.00.
 (to one value per subject) by Kelly Meredith in Sept 2010.
 
 The variables for height and weight were manipulated in R files available in a
-\href{https://github.com/LiveOak/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes}{repository} available to the public.
+\href{https://github.com/nlsy-links/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes}{repository} available to the public.
 Find the appropriate subfolder, and view the HTML report for more details.
 }
 \examples{

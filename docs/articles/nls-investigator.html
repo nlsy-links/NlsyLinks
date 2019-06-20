@@ -124,7 +124,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/LiveOak/NlsyLinks">
+  <a href="https://github.com/nlsy-links/NlsyLinks">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -151,7 +151,7 @@
             
             <h4 class="date">2019-06-19</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/LiveOak/NlsyLinks/blob/master/vignettes/nls-investigator.Rmd"><code>vignettes/nls-investigator.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/nls-investigator.Rmd"><code>vignettes/nls-investigator.Rmd</code></a></small>
       <div class="hidden name"><code>nls-investigator.Rmd</code></div>
 
     </div>
@@ -172,29 +172,29 @@
 <li>Browse to [<a href="http://www.nlsinfo.org/investigator/" class="uri">http://www.nlsinfo.org/investigator/</a>]. Select the ‘REGISTER’ link in the top right, and create a personal account. If you have already registered, Log In and proceed to the next step.</li>
 <li>
 <p>Select your desired cohort, in the dropdown box titled, "Select the study you want to work with:’’. In the screenshot below, second generation of the NLSY79 sample is selected.</p>
-<p><a href="https://github.com/LiveOak/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T"><img src="GraphicsNlsInvestigator/Cohort.png" style="width: 500px;"></a></p>
+<p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T"><img src="GraphicsNlsInvestigator/Cohort.png" style="width: 500px;"></a></p>
 </li>
 <li>
 <p>Select the variables. There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks. A thorough tutorial begins on the NLS Investigator page: [<a href="http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html" class="uri">http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html</a>]. To better leverage the NLSY’s extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial. However for the purposes of this vignette, we’ll simply select a few easy variables.</p>
 <p>First, in the ‘Variables Search’ tab, select ‘Word in Title (enter search term)’. Second, type “other symptom - f” in the textbox. Third, clicking the ‘Display Variables’ button should retrieve at least four NLSYC variables whose title starts with “other symptom - f”. Fourth, supposing we care about only their fevers, click their two corresponding checkboxes. (If you’re curious, the ‘XRND’ value for year stands for <a href="http://www.bls.gov/nls/nls138.pdf">cross round</a>; XRND variables are calculated by the NLS staff, and typically come from the subject’s most recent survey).</p>
-<p><a href="https://github.com/LiveOak/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T"><img src="GraphicsNlsInvestigator/Select.png" style="width: 750px;"></a></p>
+<p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T"><img src="GraphicsNlsInvestigator/Select.png" style="width: 750px;"></a></p>
 </li>
 <li>
 <p>Review your selected variables by clicking the corresponding tab. Notice that several important variables are automatically included in every dataset. In real research these steps are iterated many times, as you repeated select, then review, then save, then re-select, then re-review, then… But we’ll move on, because these seven variables are good enough for an example.</p>
-<p><a href="https://github.com/LiveOak/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Review.png?raw=T"><img src="GraphicsNlsInvestigator/Review.png" style="width: 750px;"></a></p>
+<p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Review.png?raw=T"><img src="GraphicsNlsInvestigator/Review.png" style="width: 750px;"></a></p>
 </li>
 <li>
 <p>When the dataset is complete, it is time to save the tagset. A <strong>tagset file</strong> is simply metadata of the desired variables. The file identifies the variables, <em>but does not contain actual data values</em>. As your project evolves over time (because you’re adding variables, or refreshing your dataset after a new survey is released), it’s convenient to keep the metadata distinct from the real data.</p>
 <p>The actual values are contained in the <strong>data file</strong>, which is discussed in the next two steps. These issues are covered further in the <a href="http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html">official tutorial</a>.</p>
-<p><a href="https://github.com/LiveOak/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Tagset.png?raw=T"><img src="GraphicsNlsInvestigator/Tagset.png" style="width: 750px;"></a></p>
+<p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Tagset.png?raw=T"><img src="GraphicsNlsInvestigator/Tagset.png" style="width: 750px;"></a></p>
 </li>
 <li>
 <p>The first step of the download process is to create the data file on the NLS server. Click the ‘Save/Download’ tab, and then the ‘Advanced Download’ tab. As far as the NlsyLinks package is concerned, only the the ‘Comma-delimited datafile…’ box needs to be checked. Then provide a ‘Data filename’. Finally, click the ‘Start Download’ button.</p>
-<p><a href="https://github.com/LiveOak/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep1.png?raw=T"><img src="GraphicsNlsInvestigator/DownloadStep1.png" style="width: 750px;"></a></p>
+<p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep1.png?raw=T"><img src="GraphicsNlsInvestigator/DownloadStep1.png" style="width: 750px;"></a></p>
 </li>
 <li>
 <p>The second step of the download process is to transfer the zip file to your local computer. Click the maroon ‘download’ hyperlink.</p>
-<p><a href="https://github.com/LiveOak/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep2.png?raw=T"><img src="GraphicsNlsInvestigator/DownloadStep2.png" style="width: 750px;"></a></p>
+<p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep2.png?raw=T"><img src="GraphicsNlsInvestigator/DownloadStep2.png" style="width: 750px;"></a></p>
 </li>
 <li><p>Open the zip file and extract the *.csv file to a location that the vignette examples have permission to read. Then try some of the NlsyLinks vignette examples at <a href="https://cran.r-project.org/package=NlsyLinks" class="uri">https://cran.r-project.org/package=NlsyLinks</a>.</p></li>
 </ol>
@@ -215,7 +215,7 @@
 <h1 class="hasAnchor">
 <a href="#tagset-history" class="anchor"></a>Tagset History</h1>
 <p>We recommend saving the tagsets on both the NLS server and your local machine. Tagsets are not guaranteed to be retained on the NLS server more than 90 days. Locally save when variables are added or removed from the tagset in a consistent location, and name the file to reflect the current date. The files can be read with any simple text editor. The directory below contains the partial evolution of four distinct tagsets (i.e., ‘Gen1Links’, ‘Gen2Links’, ‘Gen2ImplicitFather’, ‘Gen2LinksFromGen1’).</p>
-<p><a href="https://github.com/LiveOak/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/TagsetBackups.png?raw=T"><img src="GraphicsNlsInvestigator/TagsetBackups.png" style="width: 750px;"></a></p>
+<p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/TagsetBackups.png?raw=T"><img src="GraphicsNlsInvestigator/TagsetBackups.png" style="width: 750px;"></a></p>
 </div>
 <div id="notes" class="section level1">
 <h1 class="hasAnchor">
