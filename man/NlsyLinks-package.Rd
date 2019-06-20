@@ -19,12 +19,12 @@ and Young Adults sample (http://www.bls.gov/nls/nlsy79ch.htm).
 
 The release version is available through \href{https://cran.r-project.org/package=NlsyLinks}{CRAN} by
 running \code{install.packages('NlsyLinks')}.
-The most recent development version is available through \href{https://github.com/LiveOak/NlsyLinks}{GitHub} by
+The most recent development version is available through \href{https://github.com/nlsy-links/NlsyLinks}{GitHub} by
 running
-\code{devtools::install_github} \code{(repo = 'LiveOak/NlsyLinks')}
+\code{devtools::install_github} \code{(repo = 'nlsy-links/NlsyLinks')}
 (make sure \href{https://cran.r-project.org/package=devtools}{devtools} is already installed).
 If you're having trouble with the package, please install the development version.  If this doesn't solve
-your problem, please create a \href{https://github.com/LiveOak/NlsyLinks/issues}{new issue}, or email Will.
+your problem, please create a \href{https://github.com/nlsy-links/NlsyLinks/issues}{new issue}, or email Will.
 }
 \examples{
 library(NlsyLinks)    # Load the package into the current R session.
@@ -38,14 +38,14 @@ install.packages('NlsyLinks')
 
 # Install/update NlsyLinks with the development version from GitHub
 #install.packages('devtools') #Uncomment if 'devtools' isn't installed already.
-devtools::install_github('LiveOak/NlsyLinks')
+devtools::install_github('nlsy-links/NlsyLinks')
 }
 }
 \references{
 This package's development was largely supported by the NIH
 Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{"NLSY Kinship Links: Reliable and Valid Sibling Identification"}
 (PI: Joe Rodgers).  A more complete list of research articles
-using NLSY Kinship Links is maintained on our \href{http://liveoak.github.io/NlsyLinks/research-publications.html}{package's website}.
+using NLSY Kinship Links is maintained on our \href{http://nlsy-links.github.io/NlsyLinks/research-publications.html}{package's website}.
 
 Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 \href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model}.

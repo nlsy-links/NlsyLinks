@@ -1,12 +1,5 @@
 ---
 title: "Publications involving the kinship links"
-output:
-  rmarkdown::html_vignette:
-    toc: true
-vignette: >
-  %\VignetteIndexEntry{Publications involving the kinship links}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links. Note that research presentations have not been included on this list, except for those that occurred during the course of the most recent NIH grant (2011-2014). Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list.
@@ -15,11 +8,10 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 
 Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
-Articles and Book Chapters
-=============================
+# Articles and Book Chapters
+**In reverse chronological order, [updated](https://github.com/nlsy-links/NlsyLinks/commits/gh-pages/research-publications.md) March 2019**
 
-2011 - Present
------------------------------
+## 2011 - Present
 
 <ol>
 
@@ -88,9 +80,7 @@ Articles and Book Chapters
  <li value=43><cite>Meredith, K. (2011). Effects of early family environment on age at menarche in the NLSY. Masters thesis, University of Oklahoma. (NLS79).</cite></li>
 </ol>
 
-
-2001 - 2010
------------------------------
+## 2001 - 2010
 
 <ol>
  <li value=42><cite>Classen, R. (2010). [Measures of the intergenerational transmission of body mass index between mothers and their children in the United States, 1981-2004](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2821676/). *Economics and Human Biology, 8*, 30-43. </cite> (NLSY79; NLSYC/YA)</li>
@@ -137,9 +127,7 @@ Articles and Book Chapters
 
  <li value=21><cite>Rodgers, J. L. & Doughty, D. (2001). [Does having boys or girls run in the family?](http://www.tandfonline.com/doi/abs/10.1080/09332480.2001.10542293) *Chance, 14*, 8-13.</cite> (NLSY79)</li>
 </ol>
-
-1994 - 2000
------------------------------
+## 1994 - 2000
 
 <ol>
  <li value=20><cite>Cleveland, H. H., Jacobson, K. C., Lipinski, J. J. & Rowe, D. C. (2000). [Genetic and shared environmental contributions to the relationship between the home environment and child and adolescent achievement.](http://www.ncbi.nlm.nih.gov/pubmed/10953940) *Intelligence, 28*, 69-86.</cite> (NLSYC)</li>
@@ -183,9 +171,7 @@ Articles and Book Chapters
  <li value=1><cite>Rowe, D. C., Vaszonyi, A. T., & Flannery, D.J. (1994). [No more than skin deep: Ethnic and racial similarity in developmental processes.](http://psycnet.apa.org/journals/rev/101/3/396/) *Psychological Review, 101*, 396-413.</cite> (NLSYC)</li>
 </ol>
 
-Recent Presentations by the Team
-=============================
-
+# Recent Presentations by the Team
 
 **2019: Society for Personality and Social Psychology**
 
@@ -245,9 +231,7 @@ Recent Presentations by the Team
 * <cite>[Multivariate Models of BMI, Intelligence, and Fertility](./publications/2012/meredith-bga-2012.pptx) Using the NLSY-Children Kinship Links. Kelly Meredith.</cite>
 * <cite>[The 2012 National Longitudinal Survey of Youth Kinship Links](./publications/2012/donofrio-bga-2012.pptx): A Discussion. Brian D'Onofrio.</cite>
 
-General NLSY Articles
-=============================
-
+# General NLSY Articles
 A larger, searchable list of research using the NLSY datasets is maintained at [nlsinfo.org](https://nlsinfo.org/bibliography-start).
 
 # Current Documentation, Vignettes, and User Support
@@ -255,3 +239,4 @@ Please see the provided entries on the [Research Software and Support](research-
 
 ------
 Compiled by [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), [Mason Garrison](http://www.smasongarrison.com/), and [Patrick O'Keefe](https://www.vanderbilt.edu/psychological_sciences/bio/patrick-okeefe)
+

@@ -14,7 +14,7 @@ Test environments
 
 * Local Ubuntu 14.04 LTS
 * [win-builder (version="R-devel")](http://win-builder.r-project.org/68aDSl8xhbGq)
-* [Travis CI, Ubuntu 12.04 LTS](https://travis-ci.org/LiveOak/NlsyLinks/)
+* [Travis CI, Ubuntu 12.04 LTS](https://travis-ci.org/nlsy-links/NlsyLinks/)
 * [AppVeyor, Windows Server 2012](https://ci.appveyor.com/project/wibeasley/nlsylinks)
 
 

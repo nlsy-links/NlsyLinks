@@ -63,22 +63,22 @@ img {
 
 <div id="dataset-sources" class="section level2">
 <h2>Dataset Sources</h2>
-<p>The following files come from the <a href="https://github.com/LiveOak/NlsyLinksDetermination">NlsyLinksDetermination</a> code written in C#. Developers looking only at this package won’t have access to this code. This documentation is intended to make our research more reproducible.</p>
+<p>The following files come from the <a href="https://github.com/nlsy-links/NlsyLinksDetermination">NlsyLinksDetermination</a> code written in C#. Developers looking only at this package won’t have access to this code. This documentation is intended to make our research more reproducible.</p>
 <div id="csvs-in-data" class="section level3">
 <h3>CSVs in <code>/data/</code></h3>
 <ul>
-<li><p><strong>outside-data/links-2011-vxx.csv</strong>: This linking file is primary output of the grant. It has one row per pair (pairs are “single-entered” and show up only once). It can be refreshed by running <a href="https://github.com/LiveOak/NlsyLinksDetermination/blob/master/ForDistribution/Links/AssembleRelatedValues.R">AssembleRelatedValues.R</a>.</p></li>
-<li><p><strong>outside-data/subject-details-vxx.csv</strong>: This dataset has one row per subject, and it primarily contains plumbing variables (ie, variables that help assemble larger datasets, like number of siblings and the year of their last completed survey). It can be refreshed by running <a href="https://github.com/LiveOak/NlsyLinksDetermination/blob/master/ForDistribution/SubjectDetails/AssembleSubjectDetails.R">AssembleSubjectDetails.R</a>.</p></li>
-<li><p><strong>outside-data/extra-outcomes-79.csv</strong>: This dataset has one row per subject, and contains primarily outcome measures, intended to be used in examples and demonstrations. It can be refreshed by running <a href="https://github.com/LiveOak/NlsyLinksDetermination/blob/master/ForDistribution/Outcomes/OutcomesAssembly.R">OutcomesAssembly.R</a>.</p></li>
-<li><p><strong>outside-data/survey-time.csv</strong>: This dataset has one row per subject per year. This very general dataset can be useful to any BG or non-BG project. It can be refreshed by running <a href="https://github.com/LiveOak/NlsyLinksDetermination/blob/master/ForDistribution/SurveyTime/SurveyTimeAssembly.R">SurveyTimeAssembly.R</a>.</p>
+<li><p><strong>outside-data/links-2011-vxx.csv</strong>: This linking file is primary output of the grant. It has one row per pair (pairs are “single-entered” and show up only once). It can be refreshed by running <a href="https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/ForDistribution/Links/AssembleRelatedValues.R">AssembleRelatedValues.R</a>.</p></li>
+<li><p><strong>outside-data/subject-details-vxx.csv</strong>: This dataset has one row per subject, and it primarily contains plumbing variables (ie, variables that help assemble larger datasets, like number of siblings and the year of their last completed survey). It can be refreshed by running <a href="https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/ForDistribution/SubjectDetails/AssembleSubjectDetails.R">AssembleSubjectDetails.R</a>.</p></li>
+<li><p><strong>outside-data/extra-outcomes-79.csv</strong>: This dataset has one row per subject, and contains primarily outcome measures, intended to be used in examples and demonstrations. It can be refreshed by running <a href="https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/ForDistribution/Outcomes/OutcomesAssembly.R">OutcomesAssembly.R</a>.</p></li>
+<li><p><strong>outside-data/survey-time.csv</strong>: This dataset has one row per subject per year. This very general dataset can be useful to any BG or non-BG project. It can be refreshed by running <a href="https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/ForDistribution/SurveyTime/SurveyTimeAssembly.R">SurveyTimeAssembly.R</a>.</p>
 <p>If the subject did not answer a year’s survey the <code>ExtractSource</code> variable will be <code>0</code>.</p></li>
 </ul>
 </div>
 <div id="csvs-in-instextdata" class="section level3">
 <h3>CSVs in <code>/inst/extdata/</code></h3>
 <ul>
-<li><p><strong>gen1-life-course.csv</strong>: This dataset comes straight from the <a href="https://www.nlsinfo.org/investigator/">NLSY Investigator</a>. The tagset, which defines the variables to extract, can be downloaded from the repository file, <a href="https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Extracts/Tagsets/Gen1Documentation_LifeCourse.NLSY79">Gen1Documentation_LifeCourse.NLSY79</a>.</p></li>
-<li><p><strong>gen2-birth.csv</strong>: This dataset comes straight from the <a href="https://www.nlsinfo.org/investigator/">NLSY Investigator</a>. The tagset, which defines the variables to extract, can be downloaded from the repository file, <a href="https://github.com/LiveOak/NlsyLinksDetermination/blob/master/Extracts/Tagsets/Gen2Documentation_Birth.CHILDYA">Gen2Documentation_Birth.CHILDYA</a>.</p></li>
+<li><p><strong>gen1-life-course.csv</strong>: This dataset comes straight from the <a href="https://www.nlsinfo.org/investigator/">NLSY Investigator</a>. The tagset, which defines the variables to extract, can be downloaded from the repository file, <a href="https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/Extracts/Tagsets/Gen1Documentation_LifeCourse.NLSY79">Gen1Documentation_LifeCourse.NLSY79</a>.</p></li>
+<li><p><strong>gen2-birth.csv</strong>: This dataset comes straight from the <a href="https://www.nlsinfo.org/investigator/">NLSY Investigator</a>. The tagset, which defines the variables to extract, can be downloaded from the repository file, <a href="https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/Extracts/Tagsets/Gen2Documentation_Birth.CHILDYA">Gen2Documentation_Birth.CHILDYA</a>.</p></li>
 </ul>
 </div>
 </div>

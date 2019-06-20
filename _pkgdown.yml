@@ -1,7 +1,8 @@
 template:
   params:
-    bootswatch: cosmo
+    bootswatch: yeti
 navbar:
+  type: inverse
   structure:
     left:
     - home
@@ -64,7 +65,7 @@ navbar:
         href: reference/Links97PairExpanded.html
     github:
       icon: fab fa-github fa-lg
-      href: https://github.com/LiveOak/NlsyLinks
+      href: https://github.com/nlsy-links/NlsyLinks
 
 
 articles:

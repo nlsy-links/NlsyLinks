@@ -40,7 +40,7 @@
 #' (to one value per subject) by Kelly Meredith in Sept 2010.
 #'
 #' The variables for height and weight were manipulated in R files available in a
-#' [repository](https://github.com/LiveOak/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes) available to the public.
+#' [repository](https://github.com/nlsy-links/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes) available to the public.
 #' Find the appropriate subfolder, and view the HTML report for more details.
 #'
 #' @keywords datasets

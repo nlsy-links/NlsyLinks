@@ -22,7 +22,7 @@ DATA  LinksFromRPackage;
 RUN;
 ```
 
-Note that for this to run missing values must be `.` as SAS specifies them not `NA`, the default R missing value code.  The file `links.csv` with the path `E:/links.csv` can be downloaded from [GitHub](https://github.com/LiveOak/NlsyLinks/raw/master/UtilityScripts/SasExample/links.csv) or exported from the [`NlsyLinks`](https://cran.r-project.org/package=NlsyLinks) R package with the following R code.
+Note that for this to run missing values must be `.` as SAS specifies them not `NA`, the default R missing value code.  The file `links.csv` with the path `E:/links.csv` can be downloaded from [GitHub](https://github.com/nlsy-links/NlsyLinks/raw/master/UtilityScripts/SasExample/links.csv) or exported from the [`NlsyLinks`](https://cran.r-project.org/package=NlsyLinks) R package with the following R code.
 
 ```
 ### Begin R Code to export links
