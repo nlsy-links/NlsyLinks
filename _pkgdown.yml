@@ -27,6 +27,10 @@ navbar:
         href: articles/facilitating.html
       - text: Software and Support
         href: articles/software-and-support.html
+      - text: Collaborators
+        href: articles/collaborators.html
+      - text: About
+        href: articles/about.html
     articles:
       text: Articles
       menu:

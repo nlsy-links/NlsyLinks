@@ -9,7 +9,7 @@ We have been distributing the NLSY kinship links for close to two decades, and o
 Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
 # Articles and Book Chapters
-**In reverse chronological order, [updated](https://github.com/nlsy-links/NlsyLinks/commits/gh-pages/research-publications.md) March 2019**
+**In reverse chronological order, [updated](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications.Rmd) March 2019**
 
 ## 2011 - Present
 
@@ -239,4 +239,3 @@ Please see the provided entries on the [Research Software and Support](research-
 
 ------
 Compiled by [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), [Mason Garrison](http://www.smasongarrison.com/), and [Patrick O'Keefe](https://www.vanderbilt.edu/psychological_sciences/bio/patrick-okeefe)
-
