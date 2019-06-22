@@ -8,7 +8,7 @@ Proposed Structure for manuscript (possibly submitted to JSS)
 * William Howard Beasley (Howard Live Oak LLC, Norman)
 * Michael D. Hunter (University of Oklahoma Health Sciences Center, OKC)
 * David Bard (University of Oklahoma Health Sciences Center, OKC)
-* Kelly Meredith (Oklahoma City University, OKC)
+* Kelly Williams (Oklahoma City University, OKC)
 * S. Mason Garrison (Vanderbilt University, Nashville)
 * Joseph Lee Rodgers (Vanderbilt University, Nashville)
 

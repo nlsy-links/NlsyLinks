@@ -7,10 +7,11 @@ navbar:
     left:
     - home
     - intro
-    - research
+#    - research
     - articles
     - reference
-    - datasets_79
+#    - datasets_79
+#    - datasets_97
     - tutorials
     - news
     right: github
@@ -18,9 +19,28 @@ navbar:
     home:
       icon: fas fa-home fa-lg
       href: index.html
-    research:
-      text: Research
+#    research:
+#      text: Research
+#      menu:
+#      - text: Publications
+#        href: articles/publications.html
+#      - text: Facilitating Research
+#        href: articles/facilitating.html
+#      - text: Software and Support
+#        href: articles/software-and-support.html
+#      - text: Collaborators
+#        href: articles/collaborators.html
+#      - text: About
+#        href: articles/about.html
+    articles:
+      text: Articles
       menu:
+      - text: FAQ for the NlsyLinks Package
+        href: articles/faq.html
+      - text: The NLS Investigator
+        href: articles/nls-investigator.html
+      - text: ACE Models with the NLSY
+        href: articles/nlsy-ace.html
       - text: Publications
         href: articles/publications.html
       - text: Facilitating Research
@@ -31,88 +51,97 @@ navbar:
         href: articles/collaborators.html
       - text: About
         href: articles/about.html
-    articles:
-      text: Articles
-      menu:
-      - text: FAQ for the NlsyLinks Package
-        href: articles/faq.html
-      - text: The NLS Investigator
-        href: articles/nls-investigator.html
-      - text: ACE Models with the NLSY
-        href: articles/nlsy-ace.html
+
     reference:
       text: Reference
       href: reference/index.html
-    datasets_79:
-      text: Datasets NLSY79 (Gen1 & Gen2)
-      menu:
-      - text: Basic Kinship Links
-        href: reference/Links79Pair.html
-      - text: Expanded Kinship Links
-        href: reference/Links79PairExpanded.html
-      - text: Selected Outcomes
-        href: reference/ExtraOutcomes79.html
-      - text: Participant Details
-        href: reference/SubjectDetails79.html
-      - text: Participant * SurveyYear
-        href: reference/Survey79.html
-    datasets_97:
-      text: Datasets NLSY97
-      menu:
-      - text: Basic Kinship Links
-        href: reference/Links97Pair.html
-      - text: Expanded Kinship Links
-        href: reference/Links97PairExpanded.html
+#     datasets_79:
+#       text: Datasets NLSY79 (Gen1 & Gen2)
+#       menu:
+#       - text: Basic Kinship Links
+#         href: reference/Links79Pair.html
+#       - text: Expanded Kinship Links
+#         href: reference/Links79PairExpanded.html
+#       - text: Selected Outcomes
+#         href: reference/ExtraOutcomes79.html
+#       - text: Participant Details
+#         href: reference/SubjectDetails79.html
+#       - text: Participant * SurveyYear
+#         href: reference/Survey79.html
+#     datasets_97:
+#       text: Datasets NLSY97
+#       menu:
+#       - text: Basic Kinship Links
+#         href: reference/Links97Pair.html
+#       - text: Expanded Kinship Links
+#         href: reference/Links97PairExpanded.html
     github:
       icon: fab fa-github fa-lg
       href: https://github.com/nlsy-links/NlsyLinks
 
-
 articles:
-  - title: "Getting Started"
-    desc: >
-      These vignettes provide an introduction to research with the NLSY.
-    contents:
-      - nlsy-ace
-      - nls-investigator
-      - faq
+- title: All vignettes
+  desc: These vignettes provide an introduction to research with the NLSY.
+  contents:
+  - publications
+  - nlsy-ace
+  - facilitating
+  - nls-investigator
+  - faq
+  - software-and-support
+  - collaborators
+  - about
 
 reference:
-  - title: "Datasets"
-    desc: >
-      See the menu items "Datasets NLSY79 (Gen1 & Gen2)" and "Datasets NLSY97"
-  - title: "BG"
-    desc: >
-      Behavior Genetics
-    contents:
-      - CreatePairLinks
-      - CreateSpatialNeighbours
-      - CreateSubjectTag
-      - GetDetails-methods
-      - NlsyLinks-package
-      - RGroupSummary
+- title: "NLSY79 Datasets"
+  desc: >
+    Datasets NLSY79 (Gen1 & Gen2)
+  contents:
+  - Links79Pair
+  - Links79PairExpanded
+  - ExtraOutcomes79
+  - SubjectDetails79
+  - Survey79
 
-  - title: "ACE"
-    desc: >
-      Estimating sources of shared genetic and environment.
-    contents:
-      - Ace
-      - AceEstimate-class
-      - AceLavaanGroup
-      - CleanSemAceDataset
-      - CreateAceEstimate
+- title: "NLSY97 Datasets"
+  desc: >
+    Datasets NLSY97
+  contents:
+  - Links97Pair
+  - Links97PairExpanded
 
-  - title: "Utilities"
-    desc: >
-      Utilities for managing the datasets
-    contents:
-      - ColumnUtilities
-      - ReadCsvNlsy79
+- title: "BG"
+  desc: >
+    Behavior Genetics
+  contents:
+    - CreatePairLinks
+    - CreateSpatialNeighbours
+    - CreateSubjectTag
+    - GetDetails-methods
+    - NlsyLinks-package
+    - RGroupSummary
 
-  - title: "Validation"
-    desc: >
-      Validating the datasets
-    contents:
-      - ValidateOutcomeDataset
-      - ValidatePairLinks
-      - ValidatePairLinksAreSymmetric
+- title: "ACE"
+  desc: >
+    Estimating sources of shared genetic and environment.
+  contents:
+    - Ace
+    - AceEstimate-class
+    - AceLavaanGroup
+    - CleanSemAceDataset
+    - CreateAceEstimate
+
+- title: "Utilities"
+  desc: >
+    Utilities for managing the datasets
+  contents:
+    - ColumnUtilities
+    - ReadCsvNlsy79
+
+- title: "Validation"
+  desc: >
+    Validating the datasets
+  contents:
+    - ValidateOutcomeDataset
+    - ValidatePairLinks
+    - ValidatePairLinksAreSymmetric

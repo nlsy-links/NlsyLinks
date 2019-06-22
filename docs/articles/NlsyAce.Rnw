@@ -16,7 +16,7 @@
   \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)\\
   \href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)\\
   \href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)\\
-  Kelly Meredith (Oklahoma City University, OKC)\\
+  Kelly Williams (Oklahoma City University, OKC)\\
   \href{http://mhuntero.com/}{Michael D. Hunter} (University of Oklahoma, Norman)
 }
 \begin{document}
@@ -106,7 +106,7 @@ summary(dsLinking) #Notice there are 11,088 records (one for each unique pair).
 dsOutcomes <- ExtraOutcomes79 #'ds' stands for 'Data Set'
 summary(dsOutcomes)
 
-#Step 5: This step isn't necessary for this example, because Kelly Meredith already
+#Step 5: This step isn't necessary for this example, because Kelly Williams already
 #   groomed the values.  If the negative values (which represent NLSY missing or
 #   skip patterns) still exist, then:
 dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
