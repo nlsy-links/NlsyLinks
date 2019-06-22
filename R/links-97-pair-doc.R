@@ -72,7 +72,6 @@
 #' In the R console, type the following two lines of code:
 #'
 #' `library(NlsyLinks)`
-#'
 #' `write.csv(Links97Pair, "C:/BGDirectory/Links97Pair.csv")`
 #'
 #' where `"C:/BGDirectory/"` is replaced by your preferred directory.

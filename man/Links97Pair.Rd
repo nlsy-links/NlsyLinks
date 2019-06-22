@@ -95,7 +95,6 @@ The current dataset (ie, \code{Links97Pair}) can be saved as a CSV file
 In the R console, type the following two lines of code:
 
 \code{library(NlsyLinks)}
-
 \code{write.csv(Links97Pair, "C:/BGDirectory/Links97Pair.csv")}
 
 where \code{"C:/BGDirectory/"} is replaced by your preferred directory.
