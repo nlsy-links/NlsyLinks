@@ -73,6 +73,12 @@
 #' the *r*=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
 #' biological parent.
 #'
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset automatically available.
+#' However to use the kinship information in a different enviroment, download the
+#' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
+#' which is readble by all statistical software.
+#'
 #' @author Will Beasley
 #' @seealso The `LinksPair79` dataset contains columns necessary for a
 #' basic BG analysis.  The [Links79PairExpanded] dataset contains

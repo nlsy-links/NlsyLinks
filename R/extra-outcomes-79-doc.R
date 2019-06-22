@@ -43,6 +43,12 @@
 #' [repository](https://github.com/nlsy-links/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes) available to the public.
 #' Find the appropriate subfolder, and view the HTML report for more details.
 #'
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset automatically available.
+#' However to use the kinship information in a different enviroment, download the
+#' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/extra-outcomes-79.csv?raw=true),
+#' which is readble by all statistical software.
+#'
 #' @keywords datasets
 #'
 #' @examples

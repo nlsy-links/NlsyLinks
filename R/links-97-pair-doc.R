@@ -52,6 +52,12 @@
 #' to carefully monitor a variety of validity checks.  Some of these
 #' excluded groups are too small to be estimated reliably.
 #'
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset automatically available.
+#' However to use the kinship information in a different enviroment, download the
+#' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-2017-97.csv?raw=true),
+#' which is readble by all statistical software.
+#'
 #' @author Will Beasley
 #' @seealso The `LinksPair97` dataset contains columns necessary for a
 #' basic BG analysis.  The [Links97PairExpanded] dataset contains

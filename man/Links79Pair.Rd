@@ -86,6 +86,12 @@ items would indicate. For instance, there are 41 Gen1 pairs who explicitly claim
 much higher than would be expected for two people sampled randomly; it is nearly identical to
 the \emph{r}=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
 biological parent.
+
+\strong{Download CSV}
+If you're using the NlsyLinks package in R, the dataset automatically available.
+However to use the kinship information in a different enviroment, download the
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true}{csv},
+which is readble by all statistical software.
 }
 \examples{
 library(NlsyLinks)     # Load the package into the current R session.
