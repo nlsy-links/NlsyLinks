@@ -53,10 +53,12 @@
 #' excluded groups are too small to be estimated reliably.
 #'
 #' **Download CSV**
-#' If you're using the NlsyLinks package in R, the dataset automatically available.
+#' If you're using the NlsyLinks package in R, the dataset is automatically available.
 #' However to use the kinship information in a different enviroment, download the
 #' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-2017-97.csv?raw=true),
 #' which is readble by all statistical software.
+#' [links-metadata-2017-97.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-metadata-2017-97.yml)
+#' documents the dataset version information.
 #'
 #' @author Will Beasley
 #' @seealso The `LinksPair97` dataset contains columns necessary for a

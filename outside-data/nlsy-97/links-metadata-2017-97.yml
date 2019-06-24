@@ -1,0 +1,5 @@
+- sample: NLSY97
+  algorithm_version: 11
+  description_of_last_change: refresh
+  version_date: '2018-06-20'
+  note_1: For a complete history of algorithm versions, see `data-public/metadata/tables-97/ArchiveDescription.csv
