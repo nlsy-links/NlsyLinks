@@ -126,14 +126,6 @@ full-siblings as well.
 The math and height scores are duplicated from
 \href{./data-extra-outcomes-79.html}{ExtraOutcomes79}, but are included here to make some examples
 more concise and accessible.
-
-\strong{Download CSV}
-If you're using the NlsyLinks package in R, the dataset is automatically available.
-However to use the kinship information in a different enviroment, download the
-\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true}{csv},
-which is readble by all statistical software.
-\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
-documents the dataset version information.
 }
 \examples{
 library(NlsyLinks)     # Load the package into the current R session.
@@ -176,6 +168,14 @@ In the R console, type the following two lines of code:
 where \code{"C:/BGDirectory/"} is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
 path \code{"C:\BGDirectory\Links79Pair.csv"} can be misinterpreted.
+
+\strong{Download CSV}
+If you're using the NlsyLinks package in R, the dataset is automatically available.
+To use it in a different environment,
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true}{download the csv},
+which is readble by all statistical software.
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
+documents the dataset version information.
 }
 \author{
 Will Beasley

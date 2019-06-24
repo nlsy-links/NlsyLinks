@@ -54,14 +54,6 @@
 #' [ExtraOutcomes79], but are included here to make some examples
 #' more concise and accessible.
 #'
-#' **Download CSV**
-#' If you're using the NlsyLinks package in R, the dataset is automatically available.
-#' However to use the kinship information in a different enviroment, download the
-#' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
-#' which is readble by all statistical software.
-#' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
-#' documents the dataset version information.
-#'
 #' @format
 #' A data frame with 11,075 observations on the following 22 variables.
 #' There is one row per unique pair of subjects, irrespective of order.
@@ -97,6 +89,15 @@
 #' * **HeightZGenderAge_S2** The early adult height for Subject2.
 #'
 #' @author Will Beasley
+#'
+#' @seealso
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset is automatically available.
+#' To use it in a different environment,
+#' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
+#' which is readble by all statistical software.
+#' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
+#' documents the dataset version information.
 #'
 #' @source See [Links79Pair].
 #'

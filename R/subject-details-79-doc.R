@@ -6,14 +6,6 @@
 #'
 #' @description These variables are useful to many types of analyses (not just behavior genetics), and are provided to save users time.
 #'
-#' **Download CSV**
-#' If you're using the NlsyLinks package in R, the dataset is automatically available.
-#' However to use the kinship information in a different enviroment, download the
-#' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/subject-details.csv?raw=true),
-#' which is readble by all statistical software.
-#' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
-#' documents the dataset version information.
-#'
 #' @name SubjectDetails79
 #'
 #' @docType data
@@ -40,6 +32,16 @@
 #' * **DeathDate** ##This variable is not available yet## The subject's month of death.  The exact day is not available to the public. By default, we set their birthday to the 15th day of the month.
 #'
 #' @author Will Beasley
+#'
+#' @seealso
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset is automatically available.
+#' To use it in a different environment,
+#' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/subject-details.csv?raw=true),
+#' which is readble by all statistical software.
+#' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
+#' documents the dataset version information.
+#'
 #'
 #' @source Gen1 information comes from the Summer 2013 release of the [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information
 #' comes from the Summer 2013 release of the

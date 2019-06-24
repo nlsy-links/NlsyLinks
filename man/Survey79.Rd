@@ -39,14 +39,6 @@ theri birthday is set to the 15th day of the month to produce \code{AgeCalculate
 In the Gen2 Child dataset, self-reported age is
 stated by month (eg, the child is 38 months old); a constant of 0.5 months has been added to balance the downward bias.  In the Gen2 YA and
 Gen1 datasets, self-reported age is stated by year (eg, the subject is 52 years old); a constant of 0.5 years has been added.
-
-\strong{Download CSV}
-If you're using the NlsyLinks package in R, the dataset is automatically available.
-However to use the kinship information in a different enviroment, download the
-\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/survey-79.csv?raw=true}{csv},
-which is readble by all statistical software.
-\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
-documents the dataset version information.
 }
 \examples{
 library(NlsyLinks) # Load the package into the current R session.
@@ -78,5 +70,13 @@ if( require(ggplot2) & require(dplyr) ) {
 }
 \author{
 Will Beasley
+
+\strong{Download CSV}
+If you're using the NlsyLinks package in R, the dataset is automatically available.
+To use it in a different environment,
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/survey-79.csv?raw=true}{download the csv},
+which is readble by all statistical software.
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
+documents the dataset version information.
 }
 \keyword{datasets}

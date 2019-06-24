@@ -114,15 +114,8 @@
 #' [`ExtraOutcomes79`](./data-extra-outcomes-79.html), but are included here to make some examples
 #' more concise and accessible.
 #'
-#' **Download CSV**
-#' If you're using the NlsyLinks package in R, the dataset is automatically available.
-#' However to use the kinship information in a different enviroment, download the
-#' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
-#' which is readble by all statistical software.
-#' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
-#' documents the dataset version information.
-#'
 #' @author Will Beasley
+#'
 #' @seealso The `LinksPair79` dataset contains columns necessary for a
 #' basic BG analysis.  The [Links79PairExpanded] dataset contains
 #' further information that might be useful in more complicated BG analyses.
@@ -142,6 +135,15 @@
 #' where `"C:/BGDirectory/"` is replaced by your preferred directory.
 #' Remember to use forward slashes instead of backslashes; for instance, the
 #' path `"C:\BGDirectory\Links79Pair.csv"` can be misinterpreted.
+#'
+#'
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset is automatically available.
+#' To use it in a different environment,
+#' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
+#' which is readble by all statistical software.
+#' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
+#' documents the dataset version information.
 #'
 #' @references The NLSY79 variable HHID (ie, R00001.49) is the source for the
 #' `ExtendedID` variable.  This is discussed at

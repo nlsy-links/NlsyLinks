@@ -74,15 +74,16 @@
 #' * **SubjectID_S1** The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).
 #' * **SubjectID_S2** The ID value assigned by NLS to the second subject.
 #'
+#' @author Will Beasley
+#'
+#' @seealso
 #' **Download CSV**
 #' If you're using the NlsyLinks package in R, the dataset automatically is available.
-#' However to use the kinship information in a different enviroment, download the
-#' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
+#' To use it in a different environment,
+#' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
 #' which is readble by all statistical software.
 #' [links-metadata-2017-97.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-metadata-2017-97.yml)
 #' documents the dataset version information.
-#'
-#' @author Will Beasley
 #'
 #' @source See [Links97Pair].
 #'

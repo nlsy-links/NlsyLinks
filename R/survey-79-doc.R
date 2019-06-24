@@ -35,15 +35,15 @@
 #' stated by month (eg, the child is 38 months old); a constant of 0.5 months has been added to balance the downward bias.  In the Gen2 YA and
 #' Gen1 datasets, self-reported age is stated by year (eg, the subject is 52 years old); a constant of 0.5 years has been added.
 #'
+#' @author Will Beasley
+#'
 #' **Download CSV**
 #' If you're using the NlsyLinks package in R, the dataset is automatically available.
-#' However to use the kinship information in a different enviroment, download the
-#' [csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/survey-79.csv?raw=true),
+#' To use it in a different environment,
+#' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/survey-79.csv?raw=true),
 #' which is readble by all statistical software.
 #' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
 #' documents the dataset version information.
-#'
-#' @author Will Beasley
 #'
 #' @source Gen1 information comes from the Summer 2013 release of the [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information
 #' comes from the January 2015 release of the
