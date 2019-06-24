@@ -1,0 +1,5 @@
+- sample: NLSY79
+  algorithm_version: 89
+  description_of_last_change: Add 2014 variables for Gen2 relationships
+  version_date: '2018-10-14'
+  note_1: For a complete history of algorithm versions, see `data-public/metadata/tables-79/ArchiveDescription.csv

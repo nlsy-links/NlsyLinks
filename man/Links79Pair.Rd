@@ -86,6 +86,46 @@ items would indicate. For instance, there are 41 Gen1 pairs who explicitly claim
 much higher than would be expected for two people sampled randomly; it is nearly identical to
 the \emph{r}=0.26 we observed among the 268 Gen1 half-sibling pairs who claim they share exactly 1
 biological parent.
+
+The \code{LinksPair79} dataset contains columns necessary for a
+basic BG analysis.  The \code{Links79PairExpanded} dataset contains
+further information that might be useful in more complicated BG analyses.
+
+A tutorial that produces a similar dataset is
+http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html.
+It provides examples in SAS, SPSS, and STATA.
+
+\code{RelationshipPath} variable.  Code written using this dataset should
+NOT assume it contains only Gen2 sibiling pairs.  See below for an example of
+filtering the relationship category in the in \code{Links79Pair}
+documentation.
+
+The specific steps to determine the \emph{R} coefficient will be described
+in an upcoming publication.  The following information may influence the
+decisions of an applied researcher.
+
+A distinction is made between \code{Explicit} and \code{Implicit} information.
+Explicit information comes from survey items that directly address the
+subject's relationships.  For instance in 2006, surveys asked if the
+sibling pair share the same biological father (eg, Y19940.00 and
+T00020.00).  Implicit information comes from items where the subject
+typically isn't aware that their responses may be used to determine genetic
+relatedness.  For instance, if two siblings have biological fathers with
+the same month of death (eg, R37722.00 and R37723.00), it may be reasonable
+to assume they share the same biological father.
+
+\code{Interpolation} is our lingo when other siblings are used to leverage
+insight into the current pair.  For example, assume Subject 101, 102, and
+103 have the same mother.  Further assume 101 and 102 report they share a
+biological father, and that 101 and 103 share one too.  Finally, assume
+that we don't have information about the relationship between 102 and 103.
+If we are comfortable with our level of uncertainty of these
+determinations, then we can interpolate/infer that 102 and 103 are
+full-siblings as well.
+
+The math and height scores are duplicated from
+\href{./data-extra-outcomes-79.html}{ExtraOutcomes79}, but are included here to make some examples
+more concise and accessible.
 }
 \examples{
 library(NlsyLinks)     # Load the package into the current R session.
@@ -128,6 +168,14 @@ In the R console, type the following two lines of code:
 where \code{"C:/BGDirectory/"} is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
 path \code{"C:\BGDirectory\Links79Pair.csv"} can be misinterpreted.
+
+\strong{Download CSV}
+If you're using the NlsyLinks package in R, the dataset is automatically available.
+To use it in a different environment,
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true}{download the csv},
+which is readble by all statistical software.
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
+documents the dataset version information.
 }
 \author{
 Will Beasley

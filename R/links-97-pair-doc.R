@@ -53,6 +53,7 @@
 #' excluded groups are too small to be estimated reliably.
 #'
 #' @author Will Beasley
+#'
 #' @seealso The `LinksPair97` dataset contains columns necessary for a
 #' basic BG analysis.  The [Links97PairExpanded] dataset contains
 #' further information that might be useful in more complicated BG analyses.
@@ -66,12 +67,19 @@
 #' In the R console, type the following two lines of code:
 #'
 #' `library(NlsyLinks)`
-#'
 #' `write.csv(Links97Pair, "C:/BGDirectory/Links97Pair.csv")`
 #'
 #' where `"C:/BGDirectory/"` is replaced by your preferred directory.
 #' Remember to use forward slashes instead of backslashes; for instance, the
 #' path `"C:\BGDirectory\Links97Pair.csv"` can be misinterpreted.
+#'
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset is automatically available.
+#' To use it in a different environment,
+#' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-2017-97.csv?raw=true),
+#' which is readble by all statistical software.
+#' [links-metadata-2017-97.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-metadata-2017-97.yml)
+#' documents the dataset version information.
 #'
 #' @references
 #'

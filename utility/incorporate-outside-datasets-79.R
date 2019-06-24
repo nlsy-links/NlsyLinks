@@ -1,10 +1,6 @@
  #This isn't part of the build process.  They should be executed infrequently, not for every build.
 #   Run it when there's a chance the extract data is different, or there's been a new version frrom NlsyLinksDetermination
 
-# knitr::stitch_rmd(script="./manipulation/te-ellis.R", output="./stitched-output/manipulation/te-ellis.md") # dir.create("./stitched-output/manipulation/", recursive=T)
-# For a brief description of this file see the presentation at
-#   - slides: https://rawgit.com/wibeasley/RAnalysisSkeleton/master/documentation/time-and-effort-synthesis.html#/
-#   - code: https://github.com/wibeasley/RAnalysisSkeleton/blob/master/documentation/time-and-effort-synthesis.Rpres
 rm(list=ls(all=TRUE))  #Clear the variables from previous runs.
 if( any(search()=="package:NlsyLinks") ) detach("package:NlsyLinks") #So the lazy-loaded datasets aren't available
 

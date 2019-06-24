@@ -44,6 +44,14 @@ For Gen2, an NLSY79 variable of \code{MathStandardized} is C05801.00.
 The variables for height and weight were manipulated in R files available in a
 \href{https://github.com/nlsy-links/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes}{repository} available to the public.
 Find the appropriate subfolder, and view the HTML report for more details.
+
+\strong{Download CSV}
+If you're using the NlsyLinks package in R, the dataset is automatically available.
+However to use the kinship information in a different enviroment, download the
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/extra-outcomes-79.csv?raw=true}{csv},
+which is readble by all statistical software.
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
+documents the dataset version information.
 }
 \examples{
 library(NlsyLinks) #Load the package into the current R session.

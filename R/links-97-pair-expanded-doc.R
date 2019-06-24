@@ -76,6 +76,15 @@
 #'
 #' @author Will Beasley
 #'
+#' @seealso
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset automatically is available.
+#' To use it in a different environment,
+#' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
+#' which is readble by all statistical software.
+#' [links-metadata-2017-97.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-metadata-2017-97.yml)
+#' documents the dataset version information.
+#'
 #' @source See [Links97Pair].
 #'
 #' @keywords datasets

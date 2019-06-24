@@ -37,6 +37,14 @@
 #'
 #' @author Will Beasley
 #'
+#' **Download CSV**
+#' If you're using the NlsyLinks package in R, the dataset is automatically available.
+#' To use it in a different environment,
+#' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/survey-79.csv?raw=true),
+#' which is readble by all statistical software.
+#' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
+#' documents the dataset version information.
+#'
 #' @source Gen1 information comes from the Summer 2013 release of the [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information
 #' comes from the January 2015 release of the
 #' [NLSY79 Children and Young Adults sample](http://www.bls.gov/nls/nlsy79ch.htm).  Data were extracted with the NLS Investigator

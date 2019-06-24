@@ -7,11 +7,11 @@ navbar:
     left:
     - home
     - intro
-#    - research
+    # - research
     - articles
     - reference
-#    - datasets_79
-#    - datasets_97
+    # - datasets_79
+    # - datasets_97
     - tutorials
     - news
     right: github
@@ -35,14 +35,14 @@ navbar:
     articles:
       text: Articles
       menu:
+      - text: Publications
+        href: articles/publications.html
+      - text: ACE Models with the NLSY
+        href: articles/nlsy-ace.html
       - text: FAQ for the NlsyLinks Package
         href: articles/faq.html
       - text: The NLS Investigator
         href: articles/nls-investigator.html
-      - text: ACE Models with the NLSY
-        href: articles/nlsy-ace.html
-      - text: Publications
-        href: articles/publications.html
       - text: Facilitating Research
         href: articles/facilitating.html
       - text: Software and Support
@@ -53,7 +53,7 @@ navbar:
         href: articles/about.html
 
     reference:
-      text: Reference
+      text: Datasets & Functions
       href: reference/index.html
 #     datasets_79:
 #       text: Datasets NLSY79 (Gen1 & Gen2)
