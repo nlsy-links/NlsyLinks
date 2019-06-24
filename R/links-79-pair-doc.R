@@ -91,7 +91,7 @@
 #' decisions of an applied researcher.
 #'
 #'
-#' A distinction is made between `Explicit' and `Implicit' information.
+#' A distinction is made between `Explicit` and `Implicit` information.
 #' Explicit information comes from survey items that directly address the
 #' subject's relationships.  For instance in 2006, surveys asked if the
 #' sibling pair share the same biological father (eg, Y19940.00 and
@@ -101,7 +101,7 @@
 #' the same month of death (eg, R37722.00 and R37723.00), it may be reasonable
 #' to assume they share the same biological father.
 #'
-#' `Interpolation' is our lingo when other siblings are used to leverage
+#' `Interpolation` is our lingo when other siblings are used to leverage
 #' insight into the current pair.  For example, assume Subject 101, 102, and
 #' 103 have the same mother.  Further assume 101 and 102 report they share a
 #' biological father, and that 101 and 103 share one too.  Finally, assume

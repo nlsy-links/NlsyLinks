@@ -200,10 +200,12 @@ We strongly recommend using <code>R</code> in this <a href='https://rdrr.io/r/ba
 to carefully monitor a variety of validity checks.  Some of these
 excluded groups are too small to be estimated reliably.</p>
 <p><strong>Download CSV</strong>
-If you're using the NlsyLinks package in R, the dataset automatically available.
+If you're using the NlsyLinks package in R, the dataset is automatically available.
 However to use the kinship information in a different enviroment, download the
 <a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-2017-97.csv?raw=true'>csv</a>,
-which is readble by all statistical software.</p>
+which is readble by all statistical software.
+<a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-metadata-2017-97.yml'>links-metadata-2017-97.yml</a>
+documents the dataset version information.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -223,8 +225,8 @@ It provides examples in SAS, SPSS, and STATA.</p>
 <p>The current dataset (ie, <code>Links97Pair</code>) can be saved as a CSV file
 (comma-separated file) and imported into in other programs and languages.
 In the R console, type the following two lines of code:</p>
-<p><code><a href='https://rdrr.io/r/base/library.html'>library(NlsyLinks)</a></code></p>
-<p><code><a href='https://rdrr.io/r/utils/write.table.html'>write.csv(Links97Pair, "C:/BGDirectory/Links97Pair.csv")</a></code></p>
+<p><code><a href='https://rdrr.io/r/base/library.html'>library(NlsyLinks)</a></code>
+<code><a href='https://rdrr.io/r/utils/write.table.html'>write.csv(Links97Pair, "C:/BGDirectory/Links97Pair.csv")</a></code></p>
 <p>where <code>"C:/BGDirectory/"</code> is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
 path <code>"C:\BGDirectory\Links97Pair.csv"</code> can be misinterpreted.</p></div>

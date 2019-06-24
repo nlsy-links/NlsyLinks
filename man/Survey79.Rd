@@ -41,10 +41,12 @@ stated by month (eg, the child is 38 months old); a constant of 0.5 months has b
 Gen1 datasets, self-reported age is stated by year (eg, the subject is 52 years old); a constant of 0.5 years has been added.
 
 \strong{Download CSV}
-If you're using the NlsyLinks package in R, the dataset automatically available.
+If you're using the NlsyLinks package in R, the dataset is automatically available.
 However to use the kinship information in a different enviroment, download the
 \href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/survey-79.csv?raw=true}{csv},
 which is readble by all statistical software.
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
+documents the dataset version information.
 }
 \examples{
 library(NlsyLinks) # Load the package into the current R session.

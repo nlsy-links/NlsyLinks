@@ -20,7 +20,15 @@ There is one row per unique pair of subjects, irrespective of order.
 \item \strong{RPass1} The pair's estimated \emph{R} coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable \code{R} is identically constructed, but it did use interpolation.
 \item \strong{SubjectID_S1} The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).
 \item \strong{SubjectID_S2} The ID value assigned by NLS to the second subject.
-}}
+}
+
+\strong{Download CSV}
+If you're using the NlsyLinks package in R, the dataset automatically is available.
+However to use the kinship information in a different enviroment, download the
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true}{csv},
+which is readble by all statistical software.
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-metadata-2017-97.yml}{links-metadata-2017-97.yml}
+documents the dataset version information.}
 \source{
 See \link{Links97Pair}.
 }

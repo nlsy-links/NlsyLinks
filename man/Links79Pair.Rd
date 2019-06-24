@@ -104,7 +104,7 @@ The specific steps to determine the \emph{R} coefficient will be described
 in an upcoming publication.  The following information may influence the
 decisions of an applied researcher.
 
-A distinction is made between \code{Explicit' and }Implicit' information.
+A distinction is made between \code{Explicit} and \code{Implicit} information.
 Explicit information comes from survey items that directly address the
 subject's relationships.  For instance in 2006, surveys asked if the
 sibling pair share the same biological father (eg, Y19940.00 and
@@ -114,7 +114,7 @@ relatedness.  For instance, if two siblings have biological fathers with
 the same month of death (eg, R37722.00 and R37723.00), it may be reasonable
 to assume they share the same biological father.
 
-`Interpolation' is our lingo when other siblings are used to leverage
+\code{Interpolation} is our lingo when other siblings are used to leverage
 insight into the current pair.  For example, assume Subject 101, 102, and
 103 have the same mother.  Further assume 101 and 102 report they share a
 biological father, and that 101 and 103 share one too.  Finally, assume
@@ -128,10 +128,12 @@ The math and height scores are duplicated from
 more concise and accessible.
 
 \strong{Download CSV}
-If you're using the NlsyLinks package in R, the dataset automatically available.
+If you're using the NlsyLinks package in R, the dataset is automatically available.
 However to use the kinship information in a different enviroment, download the
 \href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true}{csv},
 which is readble by all statistical software.
+\href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
+documents the dataset version information.
 }
 \examples{
 library(NlsyLinks)     # Load the package into the current R session.

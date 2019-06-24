@@ -14,6 +14,7 @@
 # $vignettes/facilitating\.Rmd$
 # $vignettes/software-and-support\.Rmd$
 
+
 # Directories used in many R-centric repos.
 ^\.github$
 ^docs$
@@ -24,6 +25,7 @@
 
 # Files used in many R-centric repos.
 ^_pkgdown\.yml$
+^_pkgdown-backup\.yml$
 ^\.gitignore$
 ^\.travis\.yml$
 ^appveyor\.yml$
