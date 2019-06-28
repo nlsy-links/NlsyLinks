@@ -10,17 +10,19 @@ count_pretty <- function( d ) {
     " distinct families."
   )
 
-  print(
-    d %>%
-      dplyr::group_by(ExtendedID) %>%
-      dplyr::summarize(
-        LinkCountWithinFamily = dplyr::n()
-      ) %>%
-      dplyr::ungroup() %>%
-      dplyr::count(LinkCountWithinFamily) %>%
-      dplyr::rename(FamilyCount = n)
-  )
+  d %>%
+    dplyr::group_by(ExtendedID) %>%
+    dplyr::summarize(
+      LinkCountWithinFamily = dplyr::n(),
+      SisterCountWithinFamily = dplyr::recode(LinkCountWithinFamily, `1`=2, `3`=3, `6`=4, `10`=5)
+    ) %>%
+    dplyr::ungroup() %>%
+    dplyr::count(LinkCountWithinFamily, SisterCountWithinFamily) %>%
+    dplyr::rename(FamilyCount = n) %>%
+    knitr::kable( )
 }
+# k(k-1)/2 = a
+# k*k  - k = 2a
 
 ds_gen1_link_sisters <-
   Links79PairExpanded %>%

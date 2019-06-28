@@ -394,17 +394,19 @@ count_pretty &lt;- function( d ) {
     &quot; distinct families.&quot;
   )
 
-  print(
-    d %&gt;%
-      dplyr::group_by(ExtendedID) %&gt;%
-      dplyr::summarize(
-        LinkCountWithinFamily = dplyr::n()
-      ) %&gt;%
-      dplyr::ungroup() %&gt;%
-      dplyr::count(LinkCountWithinFamily) %&gt;%
-      dplyr::rename(FamilyCount = n)
-  )
+  d %&gt;%
+    dplyr::group_by(ExtendedID) %&gt;%
+    dplyr::summarize(
+      LinkCountWithinFamily = dplyr::n(),
+      SisterCountWithinFamily = dplyr::recode(LinkCountWithinFamily, `1`=2, `3`=3, `6`=4, `10`=5)
+    ) %&gt;%
+    dplyr::ungroup() %&gt;%
+    dplyr::count(LinkCountWithinFamily, SisterCountWithinFamily) %&gt;%
+    dplyr::rename(FamilyCount = n) %&gt;%
+    knitr::kable( )
 }
+# k(k-1)/2 = a
+# k*k  - k = 2a
 
 ds_gen1_link_sisters &lt;-
   Links79PairExpanded %&gt;%
@@ -445,13 +447,37 @@ ds_gen1_link_sisters &lt;-
 # A1: 1289 links among 865 distinct families
 count_pretty(ds_gen1_link_sisters)</code></pre>
 <pre><code>## 1289 links among 865 distinct families.</code></pre>
-<pre><code>## # A tibble: 4 x 2
-##   LinkCountWithinFamily FamilyCount
-##                   &lt;int&gt;       &lt;int&gt;
-## 1                     1         697
-## 2                     3         144
-## 3                     6          20
-## 4                    10           4</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">LinkCountWithinFamily</th>
+<th align="right">SisterCountWithinFamily</th>
+<th align="right">FamilyCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">697</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">144</td>
+</tr>
+<tr class="odd">
+<td align="right">6</td>
+<td align="right">4</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">5</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code># Q2a: How many Gen1 sister pairs where we know if they've had Gen2 kids.  (There's a small chance the woman dropped out of study before offspring began to be tracked in the early 1980s)
 # A2a: 1289 links among 865 distinct families.
 ds_gen1_link_sisters_kid_count_nonmissing &lt;-
@@ -461,13 +487,37 @@ ds_gen1_link_sisters_kid_count_nonmissing &lt;-
 
 count_pretty(ds_gen1_link_sisters_kid_count_nonmissing)</code></pre>
 <pre><code>## 1289 links among 865 distinct families.</code></pre>
-<pre><code>## # A tibble: 4 x 2
-##   LinkCountWithinFamily FamilyCount
-##                   &lt;int&gt;       &lt;int&gt;
-## 1                     1         697
-## 2                     3         144
-## 3                     6          20
-## 4                    10           4</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">LinkCountWithinFamily</th>
+<th align="right">SisterCountWithinFamily</th>
+<th align="right">FamilyCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">697</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">144</td>
+</tr>
+<tr class="odd">
+<td align="right">6</td>
+<td align="right">4</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">5</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code># Q2b: Of these, how many sister pairs where both Gen1 sisters have 1+ biological Gen2 kids.
 # A2b: 832 links among 607 distinct families.
 
@@ -478,13 +528,37 @@ ds_gen1_link_sisters_kid_count_positive &lt;-
 
 count_pretty(ds_gen1_link_sisters_kid_count_positive)</code></pre>
 <pre><code>## 832 links among 607 distinct families.</code></pre>
-<pre><code>## # A tibble: 4 x 2
-##   LinkCountWithinFamily FamilyCount
-##                   &lt;int&gt;       &lt;int&gt;
-## 1                     1         510
-## 2                     3          88
-## 3                     6           8
-## 4                    10           1</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">LinkCountWithinFamily</th>
+<th align="right">SisterCountWithinFamily</th>
+<th align="right">FamilyCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">510</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">88</td>
+</tr>
+<tr class="odd">
+<td align="right">6</td>
+<td align="right">4</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">5</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code>sum(ds_gen1_link_sisters_kid_count_positive$KidCountBio_S1)</code></pre>
 <pre><code>## [1] 1979</code></pre>
 <pre class="r"><code>sum(ds_gen1_link_sisters_kid_count_positive$KidCountBio_S2)</code></pre>
@@ -509,20 +583,1255 @@ ds_gen2_link &lt;-
 # Q3a: from these Gen1 moms,
 count_pretty(ds_gen2_link)</code></pre>
 <pre><code>## 3218 links among 575 distinct families.</code></pre>
-<pre><code>## # A tibble: 30 x 2
-##    LinkCountWithinFamily FamilyCount
-##                    &lt;int&gt;       &lt;int&gt;
-##  1                     1          92
-##  2                     2          94
-##  3                     3          54
-##  4                     4         120
-##  5                     5           7
-##  6                     6          56
-##  7                     7          39
-##  8                     8           5
-##  9                     9          33
-## 10                    10          10
-## # … with 20 more rows</code></pre>
+<pre><code>## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default
+
+## Warning: Unreplaced values treated as NA as .x is not compatible. Please
+## specify replacements exhaustively or supply .default</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">LinkCountWithinFamily</th>
+<th align="right">SisterCountWithinFamily</th>
+<th align="right">FamilyCount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">92</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">NA</td>
+<td align="right">94</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">54</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">NA</td>
+<td align="right">120</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">NA</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">4</td>
+<td align="right">56</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">NA</td>
+<td align="right">39</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">NA</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">NA</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">5</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">NA</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">NA</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="right">NA</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="right">NA</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">NA</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">NA</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="right">17</td>
+<td align="right">NA</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">20</td>
+<td align="right">NA</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">21</td>
+<td align="right">NA</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">22</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="right">NA</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">25</td>
+<td align="right">NA</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">31</td>
+<td align="right">NA</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">35</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">36</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">37</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">45</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="right">46</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">58</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code># ds_gen2_link %&gt;%
 #   dplyr::group_by(MomTag) %&gt;%
 #   dplyr::summarize(
