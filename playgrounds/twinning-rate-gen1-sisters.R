@@ -9,6 +9,17 @@ count_pretty <- function( d ) {
     dplyr::n_distinct(d$ExtendedID),
     " distinct families."
   )
+
+  print(
+    d %>%
+      dplyr::group_by(ExtendedID) %>%
+      dplyr::summarize(
+        LinkCountWithinFamily = dplyr::n()
+      ) %>%
+      dplyr::ungroup() %>%
+      dplyr::count(LinkCountWithinFamily) %>%
+      dplyr::rename(FamilyCount = n)
+  )
 }
 
 ds_gen1_link_sisters <-
@@ -51,7 +62,9 @@ ds_gen1_link_sisters <-
 count_pretty(ds_gen1_link_sisters)
 
 
-# Q2a: How many Gen1 sister pairs where we know if they've had kids.  (There's a small chance the woman dropped out of study before offspring began to be tracked in the early 1980s)
+
+
+# Q2a: How many Gen1 sister pairs where we know if they've had Gen2 kids.  (There's a small chance the woman dropped out of study before offspring began to be tracked in the early 1980s)
 # A2a: 1289 links among 865 distinct families.
 ds_gen1_link_sisters_kid_count_nonmissing <-
   ds_gen1_link_sisters %>%
@@ -60,24 +73,45 @@ ds_gen1_link_sisters_kid_count_nonmissing <-
 
 count_pretty(ds_gen1_link_sisters_kid_count_nonmissing)
 
-# Q2b: Of these, how many sister pairs where both sisters have 1+ biological kids.
+# Q2b: Of these, how many sister pairs where both Gen1 sisters have 1+ biological Gen2 kids.
 # A2b: 832 links among 607 distinct families.
 
 ds_gen1_link_sisters_kid_count_positive <-
   ds_gen1_link_sisters_kid_count_nonmissing %>%
-  dplyr::filter(1L <= KidCountBio_S1)%>%
+  dplyr::filter(1L <= KidCountBio_S1) %>%
   dplyr::filter(1L <= KidCountBio_S2)
 
 count_pretty(ds_gen1_link_sisters_kid_count_positive)
+sum(ds_gen1_link_sisters_kid_count_positive$KidCountBio_S1)
+sum(ds_gen1_link_sisters_kid_count_positive$KidCountBio_S2)
 
 # NlsyLinks::SubjectDetails79 %>% tibble::as_tibble()
 
-# ds_gen2_offspring <-
-#   Links79PairExpanded %>%
-#   tibble::as_tibble() %>%
-#   dplyr::filter(RelationshipPath == "Gen2Siblings") %>%
-#   dplyr::filter(ExtendedID %in% unique(ds_gen1_multiples$ExtendedID))
-#
+ds_gen2_link <-
+  Links79PairExpanded %>%
+  tibble::as_tibble() %>%
+  dplyr::filter(RelationshipPath == "Gen2Siblings") %>%
+  # dplyr::filter(ExtendedID %in% unique(ds_gen1_link_sisters_kid_count_positive$ExtendedID)) %>%
+  dplyr::mutate(
+    MomTag  = as.integer(as.integer(SubjectTag_S1 / 100) * 100)
+  ) %>%
+  dplyr::filter(
+    MomTag %in% unique(c(
+      ds_gen1_link_sisters_kid_count_positive$SubjectTag_S1,
+      ds_gen1_link_sisters_kid_count_positive$SubjectTag_S2
+    ))
+  )
+
+# Q3a: from these Gen1 moms,
+count_pretty(ds_gen2_link)
+
+# ds_gen2_link %>%
+#   dplyr::group_by(MomTag) %>%
+#   dplyr::summarize(
+#     IsMzCount     = sum(IsMz == "Yes")
+#   ) %>%
+#   dplyr::ungroup()
+
 # table(ds_gen2_offspring[, c("R", "IsMz")])
 
 # > table(ds_gen2_offspring[, c("R", "IsMz")])
