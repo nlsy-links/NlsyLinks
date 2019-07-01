@@ -14,7 +14,8 @@ count_pretty <- function( d ) {
     dplyr::group_by(ExtendedID) %>%
     dplyr::summarize(
       LinkCountWithinFamily = dplyr::n(),
-      SisterCountWithinFamily = dplyr::recode(LinkCountWithinFamily, `1`=2, `3`=3, `6`=4, `10`=5)
+      # SisterCountWithinFamily = dplyr::recode(LinkCountWithinFamily, `1`=2, `3`=3, `6`=4, `10`=5),
+      SisterCountWithinFamily = as.integer(round(uniroot(function(k) k*(k-1) / 2 - LinkCountWithinFamily, c(0.5, 100))$root))
     ) %>%
     dplyr::ungroup() %>%
     dplyr::count(LinkCountWithinFamily, SisterCountWithinFamily) %>%
@@ -23,6 +24,27 @@ count_pretty <- function( d ) {
 }
 # k(k-1)/2 = a
 # k*k  - k = 2a
+# k*k  - k - 2 = 2a -2
+# (k-2)(k+1) = 2a - 2
+# k =
+# a <- c(0)
+# uniroot(function(k) k*(k-1) / 2 - a, c(.5, 100))$root
+# as.integer(round(uniroot(function(k) k*(k-1) / 2 - a, c(.5, 100))$root))
+#
+# a <- c(0, 1, 3, 6, 10)
+# a %>%
+#   purrr::map_int(
+#     .,
+#     ~as.integer(round(uniroot(function(k) k*(k-1) / 2 - ., c(.5, 100))$root))
+#   )
+
+
+#  k  a
+#  1  0
+#  2  1
+#  3  3
+#  4  6
+#  5 10
 
 ds_gen1_link_sisters <-
   Links79PairExpanded %>%
@@ -104,7 +126,8 @@ ds_gen2_link <-
     ))
   )
 
-# Q3a: from these Gen1 moms,
+# Q3a: from these Gen1 moms, how many in which 0, 1, 2 Gen1 sisters
+#      who are mothers of twins ( if possible with zygositynfor their offspring)
 count_pretty(ds_gen2_link)
 
 # ds_gen2_link %>%
