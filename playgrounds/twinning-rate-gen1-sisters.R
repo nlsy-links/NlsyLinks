@@ -1,6 +1,7 @@
 # If necessary: remotes::install_github("nlsy-links/NlsyLinks")
 library(NlsyLinks)
 library(magrittr)
+options(width = 100)
 
 count_pretty <- function( d ) {
   message(
