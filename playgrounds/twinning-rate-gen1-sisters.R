@@ -96,6 +96,11 @@ count_pretty(ds_gen1_link_sisters_kid_count_positive)
 
 # NlsyLinks::SubjectDetails79 %>% tibble::as_tibble()
 
+
+# Q3a: from these Gen1 *moms*, how many kids does each have?
+# A3a: 3218 links among 2917 distinct people and 575 distinct families.
+#      Each link immediately below represents a Gen2Sibling pair
+
 ds_gen2_link <-
   Links79PairExpanded %>%
   tibble::as_tibble() %>%
@@ -109,19 +114,39 @@ ds_gen2_link <-
       ds_gen1_link_sisters_kid_count_positive$SubjectTag_S1,
       ds_gen1_link_sisters_kid_count_positive$SubjectTag_S2
     ))
+  ) %>%
+  dplyr::select(
+    ExtendedID,
+    MomTag,
+    SubjectTag_S1,
+    SubjectTag_S2,
+    RFull,
+    IsMz
   )
-
-# Q3a: from these Gen1 *moms*, how many kids does each have?
-# A3a: ---
-#      Each link immediately below represents a Gen2Sibling pair
 count_pretty(ds_gen2_link)
 
 
-# Q3b: from these Gen1 *sisters*, how many kids does each (in the sister pair) have?
-# count_pretty(ds_gen2_link)
+# Q3b: from these Gen1 *sisters*(ie, mom-pairs), how many kids does each (in the sister pair) have?
+ds_gen1_link_sisters_kid_count_positive %>%
+  dplyr::count(KidCountBio_S1, KidCountBio_S2)
+table(ds_gen1_link_sisters_kid_count_positive[, c("KidCountBio_S1", "KidCountBio_S2")])
 
+# Q3c: Among the Gen1 sister pairs where each had 1+ kids, how many MZs were born
+# A3c: 7 MZs were born to these Gen1 moms.  0 of the MZs' moms were sisters.
+ds_gen1_mom <-
+  ds_gen2_link %>%
+  dplyr::group_by(ExtendedID, MomTag) %>%
+  dplyr::summarize(
+    gen2_link_count   = dplyr::n(),
+    gen2_offspring    = dplyr::n_distinct(c(SubjectTag_S1, SubjectTag_S2)),
+    mz_link_count     = sum(IsMz == "Yes")
+  ) %>%
+  dplyr::ungroup()
 
-# Q3c: like before, but add dimensions of MZ count and DZ count
+ds_gen1_mom %>%
+  dplyr::filter(1L <= mz_link_count)
+
+# Q3?: like before, but add dimensions of MZ count and DZ count
 # count_pretty(ds_gen2_link)
 
 # ds_gen2_link %>%

@@ -573,6 +573,11 @@ count_pretty(ds_gen1_link_sisters_kid_count_positive)</code></pre>
 
 # NlsyLinks::SubjectDetails79 %&gt;% tibble::as_tibble()
 
+
+# Q3a: from these Gen1 *moms*, how many kids does each have?
+# A3a: 3218 links among 2917 distinct people and 575 distinct families.
+#      Each link immediately below represents a Gen2Sibling pair
+
 ds_gen2_link &lt;-
   Links79PairExpanded %&gt;%
   tibble::as_tibble() %&gt;%
@@ -586,11 +591,15 @@ ds_gen2_link &lt;-
       ds_gen1_link_sisters_kid_count_positive$SubjectTag_S1,
       ds_gen1_link_sisters_kid_count_positive$SubjectTag_S2
     ))
+  ) %&gt;%
+  dplyr::select(
+    ExtendedID,
+    MomTag,
+    SubjectTag_S1,
+    SubjectTag_S2,
+    RFull,
+    IsMz
   )
-
-# Q3a: from these Gen1 *moms*, how many kids does each have?
-# A3a: ---
-#      Each link immediately below represents a Gen2Sibling pair
 count_pretty(ds_gen2_link)</code></pre>
 <pre><code>## 3218 links among 2917 distinct people and 575 distinct families.</code></pre>
 <table>
@@ -754,11 +763,61 @@ count_pretty(ds_gen2_link)</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># Q3b: from these Gen1 *sisters*, how many kids does each (in the sister pair) have?
-# count_pretty(ds_gen2_link)
+<pre class="r"><code># Q3b: from these Gen1 *sisters*(ie, mom-pairs), how many kids does each (in the sister pair) have?
+ds_gen1_link_sisters_kid_count_positive %&gt;%
+  dplyr::count(KidCountBio_S1, KidCountBio_S2)</code></pre>
+<pre><code>## # A tibble: 46 x 3
+##    KidCountBio_S1 KidCountBio_S2     n
+##             &lt;int&gt;          &lt;int&gt; &lt;int&gt;
+##  1              1              1    48
+##  2              1              2    81
+##  3              1              3    36
+##  4              1              4    14
+##  5              1              5     4
+##  6              1              6     4
+##  7              2              1    57
+##  8              2              2   153
+##  9              2              3    89
+## 10              2              4    27
+## # … with 36 more rows</code></pre>
+<pre class="r"><code>table(ds_gen1_link_sisters_kid_count_positive[, c(&quot;KidCountBio_S1&quot;, &quot;KidCountBio_S2&quot;)])</code></pre>
+<pre><code>##               KidCountBio_S2
+## KidCountBio_S1   1   2   3   4   5   6   7   8
+##             1   48  81  36  14   4   4   0   0
+##             2   57 153  89  27   6   6   1   0
+##             3   29  80  48  18   5   2   2   2
+##             4   11  29  25   9   3   2   0   1
+##             5    3   3   7   4   3   1   1   0
+##             6    1   5   2   1   3   0   0   0
+##             7    1   1   0   0   0   0   0   0
+##             9    1   0   0   0   0   0   0   0
+##             10   1   1   0   0   0   0   0   0
+##             11   0   0   1   0   0   0   0   0</code></pre>
+<pre class="r"><code># Q3c: Among the Gen1 sister pairs where each had 1+ kids, how many MZs were born
+# A3c: 7 MZs were born to these Gen1 moms.  0 of the MZs' moms were sisters.
+ds_gen1_mom &lt;-
+  ds_gen2_link %&gt;%
+  dplyr::group_by(ExtendedID, MomTag) %&gt;%
+  dplyr::summarize(
+    gen2_link_count   = dplyr::n(),
+    gen2_offspring    = dplyr::n_distinct(c(SubjectTag_S1, SubjectTag_S2)),
+    mz_link_count     = sum(IsMz == &quot;Yes&quot;)
+  ) %&gt;%
+  dplyr::ungroup()
 
-
-# Q3c: like before, but add dimensions of MZ count and DZ count
+ds_gen1_mom %&gt;%
+  dplyr::filter(1L &lt;= mz_link_count)</code></pre>
+<pre><code>## # A tibble: 7 x 5
+##   ExtendedID MomTag gen2_link_count gen2_offspring mz_link_count
+##        &lt;int&gt;  &lt;int&gt;           &lt;int&gt;          &lt;int&gt;         &lt;int&gt;
+## 1       1903 190500               6              4             1
+## 2       2299 229900               3              3             1
+## 3       3428 342900               6              4             1
+## 4       3922 392400               1              2             1
+## 5       7064 706500               3              3             1
+## 6       8869 886900               6              4             1
+## 7       8967 896700              15              6             1</code></pre>
+<pre class="r"><code># Q3?: like before, but add dimensions of MZ count and DZ count
 # count_pretty(ds_gen2_link)
 
 # ds_gen2_link %&gt;%
