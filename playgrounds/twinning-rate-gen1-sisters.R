@@ -15,7 +15,7 @@ count_pretty <- function( d ) {
     dplyr::summarize(
       LinkCountWithinFamily = dplyr::n(),
       # SisterCountWithinFamily = dplyr::recode(LinkCountWithinFamily, `1`=2, `3`=3, `6`=4, `10`=5),
-      SisterCountWithinFamily = as.integer(round(uniroot(function(k) k*(k-1) / 2 - LinkCountWithinFamily, c(0.5, 100))$root))
+      SisterCountWithinFamily = as.integer(round(uniroot(function(k) k*(k-1) - 2 * LinkCountWithinFamily, c(0.5, 100))$root))
     ) %>%
     dplyr::ungroup() %>%
     dplyr::count(LinkCountWithinFamily, SisterCountWithinFamily) %>%
@@ -27,24 +27,7 @@ count_pretty <- function( d ) {
 # k*k  - k - 2 = 2a -2
 # (k-2)(k+1) = 2a - 2
 # k =
-# a <- c(0)
-# uniroot(function(k) k*(k-1) / 2 - a, c(.5, 100))$root
-# as.integer(round(uniroot(function(k) k*(k-1) / 2 - a, c(.5, 100))$root))
-#
-# a <- c(0, 1, 3, 6, 10)
-# a %>%
-#   purrr::map_int(
-#     .,
-#     ~as.integer(round(uniroot(function(k) k*(k-1) / 2 - ., c(.5, 100))$root))
-#   )
 
-
-#  k  a
-#  1  0
-#  2  1
-#  3  3
-#  4  6
-#  5 10
 
 ds_gen1_link_sisters <-
   Links79PairExpanded %>%
@@ -86,8 +69,6 @@ ds_gen1_link_sisters <-
 count_pretty(ds_gen1_link_sisters)
 
 
-
-
 # Q2a: How many Gen1 sister pairs where we know if they've had Gen2 kids.  (There's a small chance the woman dropped out of study before offspring began to be tracked in the early 1980s)
 # A2a: 1289 links among 865 distinct families.
 ds_gen1_link_sisters_kid_count_nonmissing <-
@@ -126,9 +107,16 @@ ds_gen2_link <-
     ))
   )
 
-# Q3a: from these Gen1 moms, how many in which 0, 1, 2 Gen1 sisters
-#      who are mothers of twins ( if possible with zygositynfor their offspring)
+# Q3a: from these Gen1 *moms*, how many kids does each have?
 count_pretty(ds_gen2_link)
+
+
+# Q3b: from these Gen1 *sisters*, how many kids does each (in the sister pair) have?
+# count_pretty(ds_gen2_link)
+
+
+# Q3c: like before, but add dimensions of MZ count and DZ count
+# count_pretty(ds_gen2_link)
 
 # ds_gen2_link %>%
 #   dplyr::group_by(MomTag) %>%
