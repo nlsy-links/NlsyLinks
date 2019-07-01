@@ -592,13 +592,37 @@ ds_gen2_link &lt;-
       ds_gen1_link_sisters_kid_count_positive$SubjectTag_S2
     ))
   ) %&gt;%
+  dplyr::left_join(
+    NlsyLinks::SubjectDetails79 %&gt;%
+      dplyr::select(
+        SubjectTag,
+        mob_s1          = Mob
+      ),
+    by = c(&quot;SubjectTag_S1&quot; = &quot;SubjectTag&quot;)
+  ) %&gt;%
+  dplyr::left_join(
+    NlsyLinks::SubjectDetails79 %&gt;%
+      dplyr::select(
+        SubjectTag,
+        mob_s2          = Mob
+      ),
+    by = c(&quot;SubjectTag_S2&quot; = &quot;SubjectTag&quot;)
+  ) %&gt;%
+  dplyr::mutate(
+    mob_difference  = as.integer(difftime(mob_s2, mob_s1, units = &quot;days&quot;)),
+    is_dz_maybe   = (abs(mob_difference) &lt; 45) &amp; (IsMz != &quot;Yes&quot;)
+  ) %&gt;%
   dplyr::select(
     ExtendedID,
     MomTag,
     SubjectTag_S1,
     SubjectTag_S2,
     RFull,
-    IsMz
+    IsMz,
+    mob_s1,
+    mob_s2,
+    # mob_difference,
+    is_dz_maybe
   )
 count_pretty(ds_gen2_link)</code></pre>
 <pre><code>## 3218 links among 2917 distinct people and 575 distinct families.</code></pre>
@@ -801,22 +825,63 @@ ds_gen1_mom &lt;-
   dplyr::summarize(
     gen2_link_count   = dplyr::n(),
     gen2_offspring    = dplyr::n_distinct(c(SubjectTag_S1, SubjectTag_S2)),
-    mz_link_count     = sum(IsMz == &quot;Yes&quot;)
+    mz_link_count     = sum(IsMz == &quot;Yes&quot;),
+    is_dz_maybe_count = sum(is_dz_maybe, na.rm=T)
   ) %&gt;%
   dplyr::ungroup()
 
-ds_gen1_mom %&gt;%
-  dplyr::filter(1L &lt;= mz_link_count)</code></pre>
-<pre><code>## # A tibble: 7 x 5
-##   ExtendedID MomTag gen2_link_count gen2_offspring mz_link_count
-##        &lt;int&gt;  &lt;int&gt;           &lt;int&gt;          &lt;int&gt;         &lt;int&gt;
-## 1       1903 190500               6              4             1
-## 2       2299 229900               3              3             1
-## 3       3428 342900               6              4             1
-## 4       3922 392400               1              2             1
-## 5       7064 706500               3              3             1
-## 6       8869 886900               6              4             1
-## 7       8967 896700              15              6             1</code></pre>
+ds_gen1_mom_with_twins &lt;-
+  ds_gen1_mom %&gt;%
+  dplyr::filter(
+    1L &lt;= mz_link_count
+    |
+    1L &lt;= is_dz_maybe_count
+  )
+
+table(table(ds_gen1_mom_with_twins$ExtendedID))</code></pre>
+<pre><code>## 
+##  1 
+## 34</code></pre>
+<pre class="r"><code>ds_gen1_mom_with_twins %&gt;%
+  print(n = 50)</code></pre>
+<pre><code>## # A tibble: 34 x 6
+##    ExtendedID MomTag gen2_link_count gen2_offspring mz_link_count
+##         &lt;int&gt;  &lt;int&gt;           &lt;int&gt;          &lt;int&gt;         &lt;int&gt;
+##  1        142 1.43e4               6              4             0
+##  2        157 1.59e4              10              5             0
+##  3        287 2.88e4              15              6             0
+##  4       1254 1.25e5               6              4             0
+##  5       1903 1.90e5               6              4             1
+##  6       1935 1.94e5               3              3             0
+##  7       2070 2.07e5               3              3             0
+##  8       2299 2.30e5               3              3             1
+##  9       2770 2.77e5               3              3             0
+## 10       2789 2.79e5               1              2             0
+## 11       3423 3.42e5               6              4             0
+## 12       3428 3.43e5               6              4             1
+## 13       3455 3.46e5               3              3             0
+## 14       3505 3.51e5               3              3             0
+## 15       3543 3.54e5              28              8             0
+## 16       3654 3.65e5              45             10             0
+## 17       3728 3.73e5              10              5             0
+## 18       3922 3.92e5               1              2             1
+## 19       4682 4.68e5               3              3             0
+## 20       4733 4.73e5               6              4             0
+## 21       4988 4.99e5               3              3             0
+## 22       6283 6.28e5               1              2             0
+## 23       7064 7.06e5               3              3             1
+## 24       7502 7.50e5              10              5             0
+## 25       7672 7.67e5               6              4             0
+## 26       7829 7.83e5               6              4             0
+## 27       7958 7.96e5               6              4             0
+## 28       8029 8.03e5              15              6             0
+## 29       8529 8.53e5               1              2             0
+## 30       8869 8.87e5               6              4             1
+## 31       8900 8.90e5               3              3             0
+## 32       8967 8.97e5              15              6             1
+## 33       9232 9.23e5               3              3             0
+## 34      12146 1.21e6               3              3             0
+## # … with 1 more variable: is_dz_maybe_count &lt;int&gt;</code></pre>
 <pre class="r"><code># Q3?: like before, but add dimensions of MZ count and DZ count
 # count_pretty(ds_gen2_link)
 

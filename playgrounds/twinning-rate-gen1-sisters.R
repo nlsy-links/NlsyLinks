@@ -115,13 +115,37 @@ ds_gen2_link <-
       ds_gen1_link_sisters_kid_count_positive$SubjectTag_S2
     ))
   ) %>%
+  dplyr::left_join(
+    NlsyLinks::SubjectDetails79 %>%
+      dplyr::select(
+        SubjectTag,
+        mob_s1          = Mob
+      ),
+    by = c("SubjectTag_S1" = "SubjectTag")
+  ) %>%
+  dplyr::left_join(
+    NlsyLinks::SubjectDetails79 %>%
+      dplyr::select(
+        SubjectTag,
+        mob_s2          = Mob
+      ),
+    by = c("SubjectTag_S2" = "SubjectTag")
+  ) %>%
+  dplyr::mutate(
+    mob_difference  = as.integer(difftime(mob_s2, mob_s1, units = "days")),
+    is_dz_maybe   = (abs(mob_difference) < 45) & (IsMz != "Yes")
+  ) %>%
   dplyr::select(
     ExtendedID,
     MomTag,
     SubjectTag_S1,
     SubjectTag_S2,
     RFull,
-    IsMz
+    IsMz,
+    mob_s1,
+    mob_s2,
+    # mob_difference,
+    is_dz_maybe
   )
 count_pretty(ds_gen2_link)
 
@@ -139,12 +163,23 @@ ds_gen1_mom <-
   dplyr::summarize(
     gen2_link_count   = dplyr::n(),
     gen2_offspring    = dplyr::n_distinct(c(SubjectTag_S1, SubjectTag_S2)),
-    mz_link_count     = sum(IsMz == "Yes")
+    mz_link_count     = sum(IsMz == "Yes"),
+    is_dz_maybe_count = sum(is_dz_maybe, na.rm=T)
   ) %>%
   dplyr::ungroup()
 
-ds_gen1_mom %>%
-  dplyr::filter(1L <= mz_link_count)
+ds_gen1_mom_with_twins <-
+  ds_gen1_mom %>%
+  dplyr::filter(
+    1L <= mz_link_count
+    |
+    1L <= is_dz_maybe_count
+  )
+
+table(table(ds_gen1_mom_with_twins$ExtendedID))
+ds_gen1_mom_with_twins %>%
+  print(n = 50)
+
 
 # Q3?: like before, but add dimensions of MZ count and DZ count
 # count_pretty(ds_gen2_link)
