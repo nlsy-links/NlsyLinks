@@ -6,6 +6,8 @@ count_pretty <- function( d ) {
   message(
     nrow(d),
     " links among ",
+    dplyr::n_distinct(c(d$SubjectTag_S1, d$SubjectTag_S2)),
+    " distinct people and ",
     dplyr::n_distinct(d$ExtendedID),
     " distinct families."
   )
@@ -15,10 +17,10 @@ count_pretty <- function( d ) {
     dplyr::summarize(
       LinkCountWithinFamily = dplyr::n(),
       # SisterCountWithinFamily = dplyr::recode(LinkCountWithinFamily, `1`=2, `3`=3, `6`=4, `10`=5),
-      SisterCountWithinFamily = as.integer(round(uniroot(function(k) k*(k-1) - 2 * LinkCountWithinFamily, c(0.5, 100))$root))
+      PersonCountWithinFamily = as.integer(round(uniroot(function(k) k*(k-1) - 2 * LinkCountWithinFamily, c(0.5, 100))$root))
     ) %>%
     dplyr::ungroup() %>%
-    dplyr::count(LinkCountWithinFamily, SisterCountWithinFamily) %>%
+    dplyr::count(LinkCountWithinFamily, PersonCountWithinFamily) %>%
     dplyr::rename(FamilyCount = n) %>%
     knitr::kable( )
 }
@@ -65,12 +67,14 @@ ds_gen1_link_sisters <-
   )
 
 # Q1: How many Gen1 sister pairs
-# A1: 1289 links among 865 distinct families
+# A1: 1289 links among 1926 distinct people and 865 distinct families.
+#     Each link immediately below represents one Gen1 sister pair.
 count_pretty(ds_gen1_link_sisters)
 
 
 # Q2a: How many Gen1 sister pairs where we know if they've had Gen2 kids.  (There's a small chance the woman dropped out of study before offspring began to be tracked in the early 1980s)
-# A2a: 1289 links among 865 distinct families.
+# A2a: 1289 links among 1926 distinct people and 865 distinct families.
+#      Each link immediately below represents one Gen1 sister pair.
 ds_gen1_link_sisters_kid_count_nonmissing <-
   ds_gen1_link_sisters %>%
   tidyr::drop_na(KidCountBio_S1) %>%
@@ -79,16 +83,16 @@ ds_gen1_link_sisters_kid_count_nonmissing <-
 count_pretty(ds_gen1_link_sisters_kid_count_nonmissing)
 
 # Q2b: Of these, how many sister pairs where both Gen1 sisters have 1+ biological Gen2 kids.
-# A2b: 832 links among 607 distinct families.
-
+# A2b: 832 links among 1321 distinct people and 607 distinct families.
+#      Each link immediately below represents one Gen1 sister pair.
 ds_gen1_link_sisters_kid_count_positive <-
   ds_gen1_link_sisters_kid_count_nonmissing %>%
   dplyr::filter(1L <= KidCountBio_S1) %>%
   dplyr::filter(1L <= KidCountBio_S2)
 
 count_pretty(ds_gen1_link_sisters_kid_count_positive)
-sum(ds_gen1_link_sisters_kid_count_positive$KidCountBio_S1)
-sum(ds_gen1_link_sisters_kid_count_positive$KidCountBio_S2)
+# sum(ds_gen1_link_sisters_kid_count_positive$KidCountBio_S1)
+# sum(ds_gen1_link_sisters_kid_count_positive$KidCountBio_S2)
 
 # NlsyLinks::SubjectDetails79 %>% tibble::as_tibble()
 
@@ -108,6 +112,8 @@ ds_gen2_link <-
   )
 
 # Q3a: from these Gen1 *moms*, how many kids does each have?
+# A3a: ---
+#      Each link immediately below represents a Gen2Sibling pair
 count_pretty(ds_gen2_link)
 
 
