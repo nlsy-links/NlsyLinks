@@ -5,7 +5,7 @@ options(device = deviceType) #http://support.rstudio.org/help/discussions/proble
 
 devtools::document()
 devtools::check_man() #Should return NULL
-pkgdown::clean_site()
+# pkgdown::clean_site()
 pkgdown::build_site()
 system("R CMD Rd2pdf --no-preview --force --output=./documentation-peek.pdf ." )
 

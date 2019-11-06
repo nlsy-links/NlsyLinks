@@ -8,10 +8,12 @@
 
 <title>A simple multiple-group ACE model with the <span class="pkg">lavaan</span> package. — AceLavaanGroup • NlsyLinks</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
@@ -32,11 +34,12 @@
 
 
 
-<meta property="og:title" content="A simple multiple-group ACE model with the <span class="pkg">lavaan</span> package. — AceLavaanGroup" />
 
+<meta property="og:title" content="A simple multiple-group ACE model with the <span class="pkg">lavaan</span> package. — AceLavaanGroup" />
 <meta property="og:description" content="This function uses the lavaan package to estimate a univariate ACE model, using multiple groups.
 Each group has a unique value of R (i.e., the Relatedness coefficient)." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -116,7 +119,6 @@ Each group has a unique value of R (i.e., the Relatedness coefficient)." />
   <a href="../reference/index.html">Datasets &amp; Functions</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
@@ -143,15 +145,13 @@ Each group has a unique value of R (i.e., the Relatedness coefficient)." />
     </div>
 
     <div class="ref-description">
-    
     <p>This function uses the <span class="pkg">lavaan</span> package to estimate a univariate ACE model, using multiple groups.
 Each group has a unique value of <code>R</code> (i.e., the <em>R</em>elatedness coefficient).</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>AceLavaanGroup</span>(<span class='no'>dsClean</span>, <span class='kw'>estimateA</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>estimateC</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>printOutput</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -172,30 +172,25 @@ Each group has a unique value of <code>R</code> (i.e., the <em>R</em>elatedness 
       <td><p>Indicates if the estimated parameters and fit statistics are printed to the console.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An AceEstimate object.</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The variance component for <em>E</em> is always estimated, while the <em>A</em> and <em>C</em> estimates can be fixed to zero (when <code>estimateA</code> and/or <em>estimateC</em> are set to <code>FALSE</code>).</p>
-    
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Currently, the variables in <code>dsClean</code> must be named <code>O1</code>, <code>O2</code> and <code>R</code>; the letter 'O' stands for <em>O</em>utcome.  This may not be as restrictive as it initially seems, because <code>dsClean</code> is intented to be produced by <code><a href='CleanSemAceDataset.html'>CleanSemAceDataset()</a></code>.  If this is too restrictive for your uses, we'd like to here about it (<em>please email wibeasley at hotmail period com</em>).</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>The <span class="pkg">lavaan</span> package is developed by Yves Rosseel at Ghent University.
 Three good starting points are the package website (http://lavaan.ugent.be/), the package documentation (https://cran.r-project.org/package=lavaan)
 and the JSS paper.</p>
 <p>Rosseel, Yves (2012), <a href='http://www.jstatsoft.org/v48/i02/'>lavaan: An R Package for Structural Equation Modeling</a>. <em>Journal of Statistical Software, 48</em>, (2), 1-36.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='CleanSemAceDataset.html'>CleanSemAceDataset()</a></code>.  Further ACE model details are discussed in our package's <a href='https://cran.r-project.org/package=NlsyLinks'>vignettes</a>.</p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>NlsyLinks</span>) <span class='co'># Load the package into the current R session.</span>
@@ -217,29 +212,30 @@ and the JSS paper.</p>
 <span class='co'>#     ASquared     CSquared     ESquared    CaseCount</span>
 <span class='co'>#    0.6681874    0.1181227    0.2136900 8390.0000000</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>lavaan</span>) <span class='co'>#Load the package to access methods of the lavaan class.</span></div><div class='output co'>#&gt; <span class='message'>This is lavaan 0.6-3</span></div><div class='output co'>#&gt; <span class='message'>lavaan is BETA software! Please report any bugs.</span></div><div class='input'><span class='fu'><a href='GetDetails-methods.html'>GetDetails</a></span>(<span class='no'>ace</span>)</div><div class='output co'>#&gt; lavaan 0.6-3 ended normally after 54 iterations
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>lavaan</span>) <span class='co'>#Load the package to access methods of the lavaan class.</span></div><div class='output co'>#&gt; <span class='message'>This is lavaan 0.6-5</span></div><div class='output co'>#&gt; <span class='message'>lavaan is BETA software! Please report any bugs.</span></div><div class='input'><span class='fu'><a href='GetDetails-methods.html'>GetDetails</a></span>(<span class='no'>ace</span>)</div><div class='output co'>#&gt; lavaan 0.6-5 ended normally after 54 iterations
 #&gt; 
+#&gt;   Estimator                                         ML
 #&gt;   Optimization method                           NLMINB
 #&gt;   Number of free parameters                         32
 #&gt;   Number of equality constraints                    28
-#&gt; 
-#&gt;   Number of observations per group         
-#&gt;   1                                               2689
-#&gt;   2                                                137
-#&gt;   3                                               5491
-#&gt;   4                                                 21
-#&gt; 
-#&gt;   Estimator                                         ML
-#&gt;   Model Fit Test Statistic                     447.241
+#&gt;   Row rank of the constraints matrix                28
+#&gt;                                                       
+#&gt;   Number of observations per group:                   
+#&gt;     1                                             2689
+#&gt;     2                                              137
+#&gt;     3                                             5491
+#&gt;     4                                               21
+#&gt;                                                       
+#&gt; Model Test User Model:
+#&gt;                                                       
+#&gt;   Test statistic                               447.241
 #&gt;   Degrees of freedom                                16
 #&gt;   P-value (Chi-square)                           0.000
-#&gt; 
-#&gt; Chi-square for each group:
-#&gt; 
-#&gt;   1                                            281.866
-#&gt;   2                                             30.277
-#&gt;   3                                            127.671
-#&gt;   4                                              7.428</div><div class='input'>
+#&gt;   Test statistic for each group:
+#&gt;     1                                          281.866
+#&gt;     2                                           30.277
+#&gt;     3                                          127.671
+#&gt;     4                                            7.428</div><div class='input'>
 <span class='co'>#Exmaine fit stats like Chi-Squared, RMSEA, CFI, etc.</span>
 <span class='fu'><a href='https://rdrr.io/pkg/lavaan/man/fitMeasures.html'>fitMeasures</a></span>(<span class='fu'><a href='GetDetails-methods.html'>GetDetails</a></span>(<span class='no'>ace</span>)) <span class='co'>#The function 'fitMeasures' is defined in the lavaan package.</span></div><div class='output co'>#&gt;                npar                fmin               chisq                  df 
 #&gt;               4.000               0.027             447.241              16.000 
@@ -264,35 +260,36 @@ and the JSS paper.</p>
 #&gt;                 mfi 
 #&gt;               0.974 </div><div class='input'>
 <span class='co'>#Examine low-level details like each group's individual parameter estimates and standard errors.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='fu'><a href='GetDetails-methods.html'>GetDetails</a></span>(<span class='no'>ace</span>))</div><div class='output co'>#&gt; lavaan 0.6-3 ended normally after 54 iterations
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='fu'><a href='GetDetails-methods.html'>GetDetails</a></span>(<span class='no'>ace</span>))</div><div class='output co'>#&gt; lavaan 0.6-5 ended normally after 54 iterations
 #&gt; 
+#&gt;   Estimator                                         ML
 #&gt;   Optimization method                           NLMINB
 #&gt;   Number of free parameters                         32
 #&gt;   Number of equality constraints                    28
-#&gt; 
-#&gt;   Number of observations per group         
-#&gt;   1                                               2689
-#&gt;   2                                                137
-#&gt;   3                                               5491
-#&gt;   4                                                 21
-#&gt; 
-#&gt;   Estimator                                         ML
-#&gt;   Model Fit Test Statistic                     447.241
+#&gt;   Row rank of the constraints matrix                28
+#&gt;                                                       
+#&gt;   Number of observations per group:                   
+#&gt;     1                                             2689
+#&gt;     2                                              137
+#&gt;     3                                             5491
+#&gt;     4                                               21
+#&gt;                                                       
+#&gt; Model Test User Model:
+#&gt;                                                       
+#&gt;   Test statistic                               447.241
 #&gt;   Degrees of freedom                                16
 #&gt;   P-value (Chi-square)                           0.000
-#&gt; 
-#&gt; Chi-square for each group:
-#&gt; 
-#&gt;   1                                            281.866
-#&gt;   2                                             30.277
-#&gt;   3                                            127.671
-#&gt;   4                                              7.428
+#&gt;   Test statistic for each group:
+#&gt;     1                                          281.866
+#&gt;     2                                           30.277
+#&gt;     3                                          127.671
+#&gt;     4                                            7.428
 #&gt; 
 #&gt; Parameter Estimates:
 #&gt; 
 #&gt;   Information                                 Observed
 #&gt;   Observed information based on                Hessian
-#&gt;   Standard Errors                             Standard
+#&gt;   Standard errors                             Standard
 #&gt; 
 #&gt; 
 #&gt; Group 1 [1]:
@@ -650,17 +647,11 @@ and the JSS paper.</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#note">Note</a></li>
-
       <li><a href="#references">References</a></li>
-
       <li><a href="#see-also">See also</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
@@ -676,7 +667,7 @@ and the JSS paper.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>

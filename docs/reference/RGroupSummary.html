@@ -8,10 +8,12 @@
 
 <title>Calculates summary statistics for each <em>R</em>elatedness Group in the sample. — RGroupSummary • NlsyLinks</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
@@ -32,11 +34,12 @@
 
 
 
-<meta property="og:title" content="Calculates summary statistics for each <em>R</em>elatedness Group in the sample. — RGroupSummary" />
 
+<meta property="og:title" content="Calculates summary statistics for each <em>R</em>elatedness Group in the sample. — RGroupSummary" />
 <meta property="og:description" content="Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.
 If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -116,7 +119,6 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
   <a href="../reference/index.html">Datasets &amp; Functions</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
@@ -143,15 +145,13 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
     </div>
 
     <div class="ref-description">
-    
     <p>Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.</p>
 <p>If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>RGroupSummary</span>(<span class='no'>ds</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>, <span class='kw'>rName</span> <span class='kw'>=</span> <span class='st'>"R"</span>,
   <span class='kw'>determinantThreshold</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -176,7 +176,7 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
       <td><p>The minimum value the covariance matrix's determinant (for the group) should exceed to be considered Positive Definite.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a> with one row per group.  The <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a> contains the following variables:</p><ul>
@@ -193,17 +193,14 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
 <li><p><strong>PosDefinite</strong> Indicates if the group's covariance matrix is positive definite.</p></li>
 </ul>
 
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>This function isn't specific to an ACE model and groups defined by <code>R</code>.  It could be applied to any multiple-group SEM with two manifest/outcome variables.  In the future, we may generalize it beyond two manifest variables.</p>
 <p>To get summary stats for the entire sample, create a dummy indicator variable that assigns everyone to the same group.  See the second example below.</p>
 <p>The default determinantThreshold value is nonzero, in order to forgive slight numerical inaccuracies caused by fixed-precision arithmetic.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Please see <a href='http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf'>Neale &amp; Maes</a> for more information about SEM with multiple groups.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>NlsyLinks</span>) <span class='co'>#Load the package into the current R session.</span>
@@ -244,31 +241,26 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
 #&gt; 1     1     TRUE      8340 98.24454 98.60504   160.6817   168.9103
 #&gt;   O1O2Covariance Correlation Determinant PosDefinite
 #&gt; 1       78.80601   0.4783524    20930.41        TRUE</div><div class='input'>
-#Should return:
-#  Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance
-#1     1     TRUE      8392 98.07162 98.56864    216.466   229.2988       90.90266
-#  Correlation Determinant PosDefinite
-#1   0.4080195     41372.1        TRUE
-###
-### ReadCsvNlsy79
-###
-</div><span class='co'># NOT RUN {</span>
+<span class='co'>#Should return:</span>
+<span class='co'>#  Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance O1O2Covariance</span>
+<span class='co'>#1     1     TRUE      8392 98.07162 98.56864    216.466   229.2988       90.90266</span>
+<span class='co'>#  Correlation Determinant PosDefinite</span>
+<span class='co'>#1   0.4080195     41372.1        TRUE</span>
+<span class='co'>###</span>
+<span class='co'>### ReadCsvNlsy79</span>
+<span class='co'>###</span>
+<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='no'>filePathGen2</span> <span class='kw'>&lt;-</span> <span class='st'>"~/Nlsy/Datasets/gen2-birth.csv"</span>
 <span class='no'>ds</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='ReadCsvNlsy79.html'>ReadCsvNlsy79Gen2</a></span>(<span class='kw'>filePath</span><span class='kw'>=</span><span class='no'>filePathGen2</span>)
-<span class='co'># }</span><div class='input'>
-</div></pre>
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#references">References</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
@@ -284,7 +276,7 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>

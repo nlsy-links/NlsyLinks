@@ -8,10 +8,12 @@
 
 <title>Distances between related family members, formated for spatial analysis. — CreateSpatialNeighbours • NlsyLinks</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
@@ -32,10 +34,11 @@
 
 
 
-<meta property="og:title" content="Distances between related family members, formated for spatial analysis. — CreateSpatialNeighbours" />
 
+<meta property="og:title" content="Distances between related family members, formated for spatial analysis. — CreateSpatialNeighbours" />
 <meta property="og:description" content="This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The spdep (Spatial Dependence) uses a sparse matrix (actually a base::data.frame) to represent neigbours." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -115,7 +118,6 @@
   <a href="../reference/index.html">Datasets &amp; Functions</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
@@ -142,13 +144,11 @@
     </div>
 
     <div class="ref-description">
-    
     <p>This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The <span class="pkg">spdep</span> (Spatial Dependence) uses a sparse matrix (actually a <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a>) to represent neigbours.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>CreateSpatialNeighbours</span>(<span class='no'>linksPairsDoubleEntered</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -157,7 +157,7 @@
       <td><p>A <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a> containing the links, preferably created by a function like <code><a href='CreatePairLinks.html'>CreatePairLinksDoubleEntered()</a></code>.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An S3 <code>spdep::spatial.neighbours</code> object to work with functions in the <span class="pkg">spdep</span> package.</p>
@@ -166,16 +166,13 @@
 <p><code>R</code> is renamed '<code>weight</code>'.</p>
 <p>The attribute <code>region.id</code> specifies each unique SubjectTag.</p>
 <p>The attribue <code>n</code> specifies the number of unique subjects.</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>There is one row per unique pair of subjects, <em>respecting order</em>.  This has twice as many rows as <a href='Links79Pair.html'>Links79Pair</a> and <a href='Links79PairExpanded.html'>Links79PairExpanded</a> (which have one row per unique pair of subjects, <em>irrespective of order</em>).</p>
 <p><code>CreateSpatialNeighbours()</code> accepts any paired relationships in a <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a>, as long as it contains the columns <code>SubjectTag_S1</code>, <code>SubjectTag_S2</code>, and <code>R</code>.  See <a href='Links79Pair.html'>Links79Pair</a> for more details about these columns.</p>
-    
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Notice the British variant of 'neighbo<em>u</em>rs' is used, to be consistent with the <code>spdep::spatial.neighbour</code> class.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Bard, D.E., Beasley, W.H., Meredith, K., &amp; Rodgers, J.L. (2012). <a href='http://link.springer.com/article/10.1007/s10519-012-9566-6'>Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model</a>. Behavior Genetics Association 42nd Annual Meeting. <a href='https://r-forge.r-project.org/forum/forum.php?thread_id=4761&amp;forum_id=4266&amp;group_id=1330'>Slides</a>.</p>
@@ -183,7 +180,6 @@
 <p>Banerjee, S., Carlin, B.P., &amp; Gelfand, A.E. (2004). <a href='http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C'>Hierarchical Modeling and Analysis for Spatial Data</a>. Boca Raton: CRC Press.</p>
 <p>Lawson, A.B (2013). <a href='http://books.google.com/books?id=g7RJEZb1umwC'>Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition</a>. Boca Raton: CRC Press.</p>
 <p>The <span class="pkg">spdep</span> package documentation: <a href='https://cran.r-project.org/package=spdep'>spdep: Spatial dependence: weighting schemes, statistics and models</a>.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>dsLinksAll</span>             <span class='kw'>&lt;-</span> <span class='no'>Links79Pair</span>
@@ -219,15 +215,10 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#note">Note</a></li>
-
       <li><a href="#references">References</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
@@ -243,7 +234,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>
