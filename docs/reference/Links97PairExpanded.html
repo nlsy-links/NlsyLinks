@@ -8,10 +8,12 @@
 
 <title>Kinship linking file for pairs of relatives In the NLSY97.  It builds upon the <a href='Links97Pair.html'>Links97Pair</a> dataset. — Links97PairExpanded • NlsyLinks</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
@@ -32,8 +34,8 @@
 
 
 
-<meta property="og:title" content="Kinship linking file for pairs of relatives In the NLSY97.  It builds upon the <a href='Links97Pair.html'>Links97Pair</a> dataset. — Links97PairExpanded" />
 
+<meta property="og:title" content="Kinship linking file for pairs of relatives In the NLSY97.  It builds upon the <a href='Links97Pair.html'>Links97Pair</a> dataset. — Links97PairExpanded" />
 <meta property="og:description" content="Please first read the documentation for Links97Pair.  That
 dataset contains the same pairs/rows, but only a subset of the
 variables/columns.
@@ -44,6 +46,7 @@ by the pair's first and second subject, respectively.  Similarly, the functions 
 CreatePairLinksSingleEntered() by default append _S1 and _S2.  However this can be
 modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -123,7 +126,6 @@ modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters." />
   <a href="../reference/index.html">Datasets &amp; Functions</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
@@ -150,7 +152,6 @@ modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters." />
     </div>
 
     <div class="ref-description">
-    
     <p>Please first read the documentation for <a href='Links97Pair.html'>Links97Pair</a>.  That
 dataset contains the same pairs/rows, but only a subset of the
 variables/columns.</p>
@@ -160,10 +161,10 @@ appended to it.  For instance, the variables <code>LastSurvey_S1</code> and <cod
 by the pair's first and second subject, respectively.  Similarly, the functions <code><a href='CreatePairLinks.html'>CreatePairLinksDoubleEntered()</a></code> and
 <code><a href='CreatePairLinks.html'>CreatePairLinksSingleEntered()</a></code> by default append <code>_S1</code> and <code>_S2</code>.  However this can be
 modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters.</p>
-    
     </div>
 
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>A data frame with 11,075 observations on the following 22 variables.
@@ -182,11 +183,9 @@ There is one row per unique pair of subjects, irrespective of order.</p><ul>
 <li><p><strong>SubjectID_S1</strong> The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).</p></li>
 <li><p><strong>SubjectID_S2</strong> The ID value assigned by NLS to the second subject.</p></li>
 </ul>
-    
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>See <a href='Links97Pair.html'>Links97Pair</a>.</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Specifies the relatedness coefficient (ie, '<em>R</em>') between subjects in the
@@ -196,17 +195,15 @@ Typically, Subject1 is older while Subject2 is younger.</p>
 <p>The specific steps to determine the <em>R</em> coefficient will be described
 in an upcoming publication.  The following information may influence the
 decisions of an applied researcher.</p>
-    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><strong>Download CSV</strong>
 If you're using the NlsyLinks package in R, the dataset automatically is available.
 To use it in a different environment,
-<a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true'>download the csv</a>,
+<a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-2017-97.csv?raw=true'>download the csv</a>,
 which is readble by all statistical software.
 <a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-metadata-2017-97.yml'>links-metadata-2017-97.yml</a>
 documents the dataset version information.</p></div>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>NlsyLinks</span>) <span class='co'># Load the package into the current R session.</span>
@@ -222,15 +219,10 @@ documents the dataset version information.</p></div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      
       <li><a href="#format">Format</a></li>
-
       <li><a href="#source">Source</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#see-also">See also</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
@@ -246,7 +238,7 @@ documents the dataset version information.</p></div>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>

@@ -107,7 +107,7 @@
                         <h4 class="author">Kelly <a href="https://www.okcu.edu/directory/kelly-williams">Williams</a> (Oklahoma City University, OKC)</h4>
                         <h4 class="author">Michael D. <a href="http://mhuntero.com/">Hunter</a> (Georgia Tech, Atlanta)</h4>
             
-            <h4 class="date">2019-06-24</h4>
+            <h4 class="date">2019-11-06</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/nlsy-ace.Rmd"><code>vignettes/nlsy-ace.Rmd</code></a></small>
       <div class="hidden name"><code>nlsy-ace.Rmd</code></div>
@@ -377,32 +377,33 @@
 <a class="sourceLine" id="cb22-4" data-line-number="4"><span class="co">#</span></a>
 <a class="sourceLine" id="cb22-5" data-line-number="5"><span class="co">#Step 11: Inspect the output further</span></a>
 <a class="sourceLine" id="cb22-6" data-line-number="6"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(lavaan) <span class="co">#Load the package to access methods of the lavaan class.</span></a></code></pre></div>
-<pre><code>## This is lavaan 0.6-3</code></pre>
+<pre><code>## This is lavaan 0.6-5</code></pre>
 <pre><code>## lavaan is BETA software! Please report any bugs.</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw"><a href="../reference/GetDetails-methods.html">GetDetails</a></span>(ace)</a></code></pre></div>
-<pre><code>## lavaan 0.6-3 ended normally after 54 iterations
+<pre><code>## lavaan 0.6-5 ended normally after 54 iterations
 ## 
+##   Estimator                                         ML
 ##   Optimization method                           NLMINB
 ##   Number of free parameters                         32
 ##   Number of equality constraints                    28
-## 
-##   Number of observations per group         
-##   1                                               2689
-##   2                                                137
-##   3                                               5491
-##   4                                                 21
-## 
-##   Estimator                                         ML
-##   Model Fit Test Statistic                     447.241
+##   Row rank of the constraints matrix                28
+##                                                       
+##   Number of observations per group:                   
+##     1                                             2689
+##     2                                              137
+##     3                                             5491
+##     4                                               21
+##                                                       
+## Model Test User Model:
+##                                                       
+##   Test statistic                               447.241
 ##   Degrees of freedom                                16
 ##   P-value (Chi-square)                           0.000
-## 
-## Chi-square for each group:
-## 
-##   1                                            281.866
-##   2                                             30.277
-##   3                                            127.671
-##   4                                              7.428</code></pre>
+##   Test statistic for each group:
+##     1                                          281.866
+##     2                                           30.277
+##     3                                          127.671
+##     4                                            7.428</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co">#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.</span></a>
 <a class="sourceLine" id="cb27-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span>(<span class="kw"><a href="../reference/GetDetails-methods.html">GetDetails</a></span>(ace)) <span class="co">#'fitMeasures' is defined in the lavaan package.</span></a></code></pre></div>
 <pre><code>##                npar                fmin               chisq                  df 
@@ -496,8 +497,8 @@
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">xt &lt;-<span class="st"> </span><span class="kw">xtable</span>(<span class="kw"><a href="https://rdrr.io/r/base/table.html">table</a></span>(Links79Pair<span class="op">$</span>RelationshipPath, <span class="dt">dnn=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Relationship Frequency"</span>)),</a>
 <a class="sourceLine" id="cb37-2" data-line-number="2">             <span class="dt">caption=</span><span class="st">"Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"</span>)</a>
 <a class="sourceLine" id="cb37-3" data-line-number="3"><span class="kw">print.xtable</span>(xt, <span class="dt">format.args=</span><span class="kw"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="dt">big.mark=</span><span class="st">","</span>), <span class="dt">type =</span> <span class="st">"html"</span>)</a></code></pre></div>
-<!-- html table generated in R 3.6.0 by xtable 1.8-4 package -->
-<!-- Mon Jun 24 13:46:35 2019 -->
+<!-- html table generated in R 3.6.1 by xtable 1.8-4 package -->
+<!-- Wed Nov  6 12:09:57 2019 -->
 <table class="table">
 <caption align="bottom">
 Number of NLSY79 relationship, by <code>RelationshipPath</code>.(Recall that ‘AuntNiece’ also contains uncles and nephews.)
@@ -655,15 +656,15 @@ AuntNiece
 <p>For the sake of documentation and reproducibility, the current report was rendered in the following environment. Click the line below to expand. But you’ll probably regret it.</p>
 <details><p><summary>Environment <span class="glyphicon glyphicon-plus-sign"></span></summary></p>
 <pre><code>##  setting  value                       
-##  version  R version 3.6.0 (2019-04-26)
-##  os       Ubuntu 18.04.2 LTS          
+##  version  R version 3.6.1 (2019-07-05)
+##  os       Ubuntu 19.10                
 ##  system   x86_64, linux-gnu           
 ##  ui       X11                         
-##  language (EN)                        
+##  language en_US                       
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
-##  tz       America/New_York            
-##  date     2019-06-24</code></pre>
+##  tz       America/Chicago             
+##  date     2019-11-06</code></pre>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -732,7 +733,7 @@ FALSE
 2019-03-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -749,10 +750,10 @@ backports
 backports
 </td>
 <td style="text-align:left;">
-1.1.4
+1.1.5
 </td>
 <td style="text-align:left;">
-1.1.4
+1.1.5
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/backports
@@ -767,10 +768,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-04-10
+2019-10-02
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -787,10 +788,10 @@ callr
 callr
 </td>
 <td style="text-align:left;">
-3.2.0
+3.3.2
 </td>
 <td style="text-align:left;">
-3.2.0
+3.3.2
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/callr
@@ -805,10 +806,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-03-15
+2019-09-22
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -846,7 +847,7 @@ FALSE
 2019-03-19
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -884,45 +885,7 @@ FALSE
 2019-03-18
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-commonmark
-</td>
-<td style="text-align:left;">
-commonmark
-</td>
-<td style="text-align:left;">
-1.7
-</td>
-<td style="text-align:left;">
-1.7
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/commonmark
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/commonmark
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-2018-12-01
-</td>
-<td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -960,7 +923,7 @@ FALSE
 2017-09-16
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -998,7 +961,7 @@ FALSE
 2018-05-01
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1015,10 +978,10 @@ devtools
 devtools
 </td>
 <td style="text-align:left;">
-2.0.2
+2.2.1
 </td>
 <td style="text-align:left;">
-2.0.2
+2.2.1
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/devtools
@@ -1033,10 +996,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-04-08
+2019-09-24
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1053,10 +1016,10 @@ digest
 digest
 </td>
 <td style="text-align:left;">
-0.6.19
+0.6.22
 </td>
 <td style="text-align:left;">
-0.6.19
+0.6.22
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/digest
@@ -1071,10 +1034,48 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-05-20
+2019-10-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ellipsis
+</td>
+<td style="text-align:left;">
+ellipsis
+</td>
+<td style="text-align:left;">
+0.3.0
+</td>
+<td style="text-align:left;">
+0.3.0
+</td>
+<td style="text-align:left;">
+/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/ellipsis
+</td>
+<td style="text-align:left;">
+/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/ellipsis
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+2019-09-20
+</td>
+<td style="text-align:left;">
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1112,7 +1113,7 @@ FALSE
 2019-05-28
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1150,7 +1151,7 @@ FALSE
 2019-05-06
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1188,7 +1189,7 @@ FALSE
 2019-03-12
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1205,10 +1206,10 @@ htmltools
 htmltools
 </td>
 <td style="text-align:left;">
-0.3.6
+0.4.0
 </td>
 <td style="text-align:left;">
-0.3.6
+0.4.0
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/htmltools
@@ -1223,10 +1224,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2017-04-28
+2019-10-04
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1243,10 +1244,10 @@ knitr
 knitr
 </td>
 <td style="text-align:left;">
-1.23
+1.25
 </td>
 <td style="text-align:left;">
-1.23
+1.25
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/knitr
@@ -1261,10 +1262,10 @@ TRUE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-05-18
+2019-09-18
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1281,10 +1282,10 @@ lavaan
 lavaan
 </td>
 <td style="text-align:left;">
-0.6.3
+0.6.5
 </td>
 <td style="text-align:left;">
-0.6-3
+0.6-5
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/lavaan
@@ -1299,10 +1300,10 @@ TRUE
 FALSE
 </td>
 <td style="text-align:left;">
-2018-09-22
+2019-08-28
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1340,7 +1341,7 @@ FALSE
 2014-11-22
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1363,10 +1364,10 @@ MASS
 7.3-51.4
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/MASS
+/usr/lib/R/library/MASS
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/MASS
+/usr/lib/R/library/MASS
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1378,13 +1379,13 @@ FALSE
 2019-04-26
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+/usr/lib/R/library
 </td>
 </tr>
 <tr>
@@ -1416,7 +1417,7 @@ FALSE
 2017-04-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1454,7 +1455,7 @@ FALSE
 2016-10-15
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1492,7 +1493,7 @@ FALSE
 2018-06-12
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1515,10 +1516,10 @@ NlsyLinks
 2.0.8.9000
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/NlsyLinks
+/tmp/RtmpofOFE2/temp_libpath166925e0a13c/NlsyLinks
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/NlsyLinks
+/tmp/RtmpofOFE2/temp_libpath166925e0a13c/NlsyLinks
 </td>
 <td style="text-align:left;">
 TRUE
@@ -1527,7 +1528,7 @@ TRUE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-06-22
+2019-11-06
 </td>
 <td style="text-align:left;">
 local
@@ -1536,7 +1537,7 @@ local
 NA
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+/tmp/RtmpofOFE2/temp_libpath166925e0a13c
 </td>
 </tr>
 <tr>
@@ -1568,7 +1569,7 @@ FALSE
 2015-01-23
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1585,10 +1586,10 @@ pkgbuild
 pkgbuild
 </td>
 <td style="text-align:left;">
-1.0.3
+1.0.6
 </td>
 <td style="text-align:left;">
-1.0.3
+1.0.6
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pkgbuild
@@ -1603,10 +1604,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-03-20
+2019-10-09
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1623,10 +1624,10 @@ pkgdown
 pkgdown
 </td>
 <td style="text-align:left;">
-1.3.0.9100
+1.4.1
 </td>
 <td style="text-align:left;">
-1.3.0.9100
+1.4.1
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pkgdown
@@ -1641,10 +1642,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-06-19
+2019-09-15
 </td>
 <td style="text-align:left;">
-Github (<a href="mailto:r-lib/pkgdown@41a74a4" class="email">r-lib/pkgdown@41a74a4</a>)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1682,7 +1683,7 @@ FALSE
 2018-10-29
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1720,7 +1721,7 @@ FALSE
 2015-07-13
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1737,10 +1738,10 @@ processx
 processx
 </td>
 <td style="text-align:left;">
-3.3.1
+3.4.1
 </td>
 <td style="text-align:left;">
-3.3.1
+3.4.1
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/processx
@@ -1755,10 +1756,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-05-08
+2019-07-18
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1796,7 +1797,7 @@ FALSE
 2018-12-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1834,7 +1835,7 @@ FALSE
 2019-02-14
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1851,10 +1852,10 @@ Rcpp
 Rcpp
 </td>
 <td style="text-align:left;">
-1.0.1
+1.0.2
 </td>
 <td style="text-align:left;">
-1.0.1
+1.0.2
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/Rcpp
@@ -1869,10 +1870,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-03-17
+2019-07-25
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1889,10 +1890,10 @@ remotes
 remotes
 </td>
 <td style="text-align:left;">
-2.0.4
+2.1.0
 </td>
 <td style="text-align:left;">
-2.0.4
+2.1.0
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/remotes
@@ -1907,10 +1908,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-04-10
+2019-06-24
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1927,10 +1928,10 @@ rlang
 rlang
 </td>
 <td style="text-align:left;">
-0.3.4
+0.4.1
 </td>
 <td style="text-align:left;">
-0.3.4
+0.4.1
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rlang
@@ -1945,10 +1946,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-04-07
+2019-10-24
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -1965,54 +1966,16 @@ rmarkdown
 rmarkdown
 </td>
 <td style="text-align:left;">
-1.13
+1.16
 </td>
 <td style="text-align:left;">
-1.13
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown
+1.16
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-2019-05-22
-</td>
-<td style="text-align:left;">
-CRAN (R 3.6.0)
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-roxygen2
-</td>
-<td style="text-align:left;">
-roxygen2
-</td>
-<td style="text-align:left;">
-6.1.1
-</td>
-<td style="text-align:left;">
-6.1.1
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/roxygen2
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/roxygen2
+/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2021,10 +1984,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2018-11-07
+2019-10-01
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2062,7 +2025,7 @@ FALSE
 2018-01-03
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2100,7 +2063,7 @@ FALSE
 2019-03-19
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2138,7 +2101,7 @@ FALSE
 2018-08-09
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2176,7 +2139,7 @@ FALSE
 2018-11-05
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2214,7 +2177,7 @@ FALSE
 2019-03-12
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2252,7 +2215,7 @@ FALSE
 2019-02-10
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2269,10 +2232,10 @@ testthat
 testthat
 </td>
 <td style="text-align:left;">
-2.1.1
+2.2.1
 </td>
 <td style="text-align:left;">
-2.1.1
+2.2.1
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/testthat
@@ -2287,10 +2250,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-04-23
+2019-07-25
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2307,10 +2270,10 @@ usethis
 usethis
 </td>
 <td style="text-align:left;">
-1.5.0
+1.5.1
 </td>
 <td style="text-align:left;">
-1.5.0
+1.5.1
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/usethis
@@ -2325,10 +2288,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-04-07
+2019-07-04
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2366,7 +2329,7 @@ FALSE
 2018-03-15
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2383,54 +2346,16 @@ xfun
 xfun
 </td>
 <td style="text-align:left;">
-0.7
+0.10
 </td>
 <td style="text-align:left;">
-0.7
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xfun
+0.10
 </td>
 <td style="text-align:left;">
 /home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xfun
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-2019-05-14
-</td>
-<td style="text-align:left;">
-CRAN (R 3.6.0)
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-xml2
-</td>
-<td style="text-align:left;">
-xml2
-</td>
-<td style="text-align:left;">
-1.2.0.9000
-</td>
-<td style="text-align:left;">
-1.2.0.9000
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xml2
-</td>
-<td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xml2
+/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xfun
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2439,10 +2364,10 @@ FALSE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-06-19
+2019-10-01
 </td>
 <td style="text-align:left;">
-Github (<a href="mailto:HenrikBengtsson/xml2@618bc74" class="email">HenrikBengtsson/xml2@618bc74</a>)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2480,7 +2405,7 @@ FALSE
 2019-04-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2518,7 +2443,7 @@ FALSE
 2018-07-25
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.0)
+CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
 NA
@@ -2533,6 +2458,7 @@ NA
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+
         <div id="tocnav">
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
@@ -2562,7 +2488,7 @@ NA
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
 
       </footer>

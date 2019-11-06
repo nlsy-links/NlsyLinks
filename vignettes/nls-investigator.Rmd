@@ -37,34 +37,34 @@ Standard terminology is to refer second generation subjects as 'children' when t
 Steps to Select Variables and Download Data
 ===============================
 
-1. Browse to [http://www.nlsinfo.org/investigator/].  Select the 'REGISTER' link in the top right, and create a personal account.  If you have already registered, Log In and proceed to the next step.
+1. Browse to [http://www.nlsinfo.org/investigator].  Select the 'REGISTER' link in the top right, and create a personal account.  If you have already registered, Log In and proceed to the next step.
 1. Select your desired cohort, in the dropdown box titled, "Select the study you want to work with:''.  In the screenshot below, second generation of the NLSY79 sample is selected.
 
-    [<img src="GraphicsNlsInvestigator/Cohort.png" style="width: 500px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T)
+    [<img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T" style="width: 500px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T)
 
 1. Select the variables.  There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks.  A thorough tutorial begins on the NLS Investigator page: [http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html].  To better leverage the NLSY's extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial.  However for the purposes of this vignette, we'll simply select a few easy variables.  
 
     First, in the 'Variables Search' tab, select 'Word in Title (enter search term)'.  Second, type "other symptom - f" in the textbox.  Third, clicking the 'Display Variables' button should retrieve at least four NLSYC variables whose title starts with "other symptom - f".  Fourth, supposing we care about only their fevers, click their two corresponding checkboxes.  (If you're curious, the 'XRND' value for year stands for [cross round](http://www.bls.gov/nls/nls138.pdf); XRND variables are calculated by the NLS staff, and typically come from the subject's most recent survey).
 
-    [<img src="GraphicsNlsInvestigator/Select.png" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T)
+    [<img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T)
 
 1. Review your selected variables by clicking the corresponding tab.  Notice that several important variables are automatically included in every  dataset.  In real research these steps are iterated many times, as you repeated select, then review, then save, then re-select, then re-review, then...  But we'll move on, because these seven variables are good enough for an example.
 
-    [<img src="GraphicsNlsInvestigator/Review.png" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Review.png?raw=T)
+    [<img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Review.png?raw=T" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Review.png?raw=T)
 
 1. When the dataset is complete, it is time to save the tagset.  A **tagset file** is simply metadata of the desired variables.  The file identifies the variables, *but does not contain actual data values*.  As your project evolves over time (because you're adding variables, or refreshing your dataset after a new survey is released), it's convenient to keep the metadata distinct from the real data.  
 
     The actual values are contained in the **data file**, which is discussed in the next two steps.  These issues are covered further in the [official tutorial](http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html).
 
-    [<img src="GraphicsNlsInvestigator/Tagset.png" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Tagset.png?raw=T)
+    [<img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Tagset.png?raw=T" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Tagset.png?raw=T)
 
 1. The first step of the download process is to create the data file on the NLS server.  Click the 'Save/Download' tab, and then the 'Advanced Download' tab.  As far as the NlsyLinks package is concerned, only the the 'Comma-delimited datafile...' box needs to be checked.  Then provide a 'Data filename'.  Finally, click the 'Start Download' button.
 
-    [<img src="GraphicsNlsInvestigator/DownloadStep1.png" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep1.png?raw=T)
+    [<img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep1.png?raw=T" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep1.png?raw=T)
 
 1. The second step of the download process is to transfer the zip file to your local computer.  Click the maroon 'download' hyperlink.
 
-    [<img src="GraphicsNlsInvestigator/DownloadStep2.png" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep2.png?raw=T)
+    [<img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep2.png?raw=T" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/DownloadStep2.png?raw=T)
 
 1. Open the zip file and extract the *.csv file to a location that the vignette examples have permission to read.  Then try some of the NlsyLinks vignette examples at https://cran.r-project.org/package=NlsyLinks. 
 
@@ -94,7 +94,7 @@ Tagset History
 
 We recommend saving the tagsets on both the NLS server and your local machine.  Tagsets are not guaranteed to be retained on the NLS server more than 90 days.  Locally save when variables are added or removed from the tagset in a consistent location, and name the file to reflect the current date.  The files can be read with any simple text editor.  The directory below contains the partial evolution of four distinct tagsets (i.e., 'Gen1Links', 'Gen2Links', 'Gen2ImplicitFather', 'Gen2LinksFromGen1').
 
-[<img src="GraphicsNlsInvestigator/TagsetBackups.png" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/TagsetBackups.png?raw=T)
+[<img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/TagsetBackups.png?raw=T" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/TagsetBackups.png?raw=T)
 
 
 Notes

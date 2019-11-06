@@ -28,7 +28,9 @@
 ^_pkgdown-backup\.yml$
 ^\.gitignore$
 ^\.travis\.yml$
+^\.vscode$
 ^appveyor\.yml$
+^article/\.vscode$
 ^CONDUCT.md$
 ^CODE_OF_CONDUCT.md$
 ^CODE-OF-CONDUCT.md$
