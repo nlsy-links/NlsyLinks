@@ -37,7 +37,7 @@ Standard terminology is to refer second generation subjects as 'children' when t
 Steps to Select Variables and Download Data
 ===============================
 
-1. Browse to [http://www.nlsinfo.org/investigator/].  Select the 'REGISTER' link in the top right, and create a personal account.  If you have already registered, Log In and proceed to the next step.
+1. Browse to [http://www.nlsinfo.org/investigator].  Select the 'REGISTER' link in the top right, and create a personal account.  If you have already registered, Log In and proceed to the next step.
 1. Select your desired cohort, in the dropdown box titled, "Select the study you want to work with:''.  In the screenshot below, second generation of the NLSY79 sample is selected.
 
     [<img src="GraphicsNlsInvestigator/Cohort.png" style="width: 500px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T)
