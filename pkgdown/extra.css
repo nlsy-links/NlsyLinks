@@ -3,3 +3,7 @@
 cite {
     font-style: normal;
 }
+
+span.doi {
+    color: rgb(255, 163, 72); /*light orange*/
+}
