@@ -17,10 +17,6 @@ html, body {
   height: 100%;
 }
 
-cite {
-  font-style: normal;
-}
-
 body > .container {
   display: flex;
   height: 100%;
