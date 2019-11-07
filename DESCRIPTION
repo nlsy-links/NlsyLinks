@@ -1,8 +1,8 @@
 Package: NlsyLinks
 Type: Package
 Title: Utilities and Kinship Information for Research with the NLSY
-Version: 2.0.8.9000
-Date: 2018-06-21
+Version: 2.0.8.9001
+Date: 2019-11-06
 Authors@R: c(person("Will", "Beasley", role = c("aut", "cre"), email =
     "wibeasley@hotmail.com", comment = c(ORCID = "0000-0002-5613-5006")), 
     person("David", "Bard", role = "ctb"),
@@ -22,6 +22,7 @@ Imports:
     lavaan,
     methods
 Suggests:
+    covr,
     devtools,
     dplyr,
     ggplot2,
