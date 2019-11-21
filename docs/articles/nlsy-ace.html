@@ -108,7 +108,7 @@
                         <h4 class="author">Kelly <a href="https://www.okcu.edu/directory/kelly-williams">Williams</a> (Oklahoma City University, OKC)</h4>
                         <h4 class="author">Michael D. <a href="http://mhuntero.com/">Hunter</a> (Georgia Tech, Atlanta)</h4>
             
-            <h4 class="date">2019-11-07</h4>
+            <h4 class="date">2019-11-21</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/nlsy-ace.Rmd"><code>vignettes/nlsy-ace.Rmd</code></a></small>
       <div class="hidden name"><code>nlsy-ace.Rmd</code></div>
@@ -133,9 +133,9 @@
 <p>The variables are scaled so that they account for all observed variability in the outcome variable; specifically: <span class="math inline">\(a^2 + c^2 + e^2 = 1\)</span>. Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of <span class="math inline">\(a^2\)</span>, <span class="math inline">\(c^2\)</span>, and <span class="math inline">\(e^2\)</span> within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend <a href="http://books.google.com/books?id=r7AgAQAAIAAJ&amp;source=gbs_navlinks_s">Plomin (1990)</a> and <a href="http://psych.colorado.edu/~carey/hgss/">Carey (2003)</a>. For more in-depth ACE model-fitting strategies, we recommend <a href="http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf">Neale &amp; Maes, (1992)</a>.</p>
 <p>The <strong>NLS Investigator</strong> (<a href="http://www.nlsinfo.org/investigator/" class="uri">http://www.nlsinfo.org/investigator/</a>) is the best way to obtain the NLSY79 and NLSY97 datasets. See our vignette dedicated to the NLS Investigator by typing <code>vignette("NlsInvestigator")</code> or by visiting <a href="https://cran.r-project.org/package=NlsyLinks" class="uri">https://cran.r-project.org/package=NlsyLinks</a>.</p>
 <p>Before starting the real examples, first verify that the NlsyLinks package is installed correctly. If not, please refer to Appendix.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/any.html">any</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/zpackages.html">.packages</a></span>(<span class="dt">all.available=</span><span class="ot">TRUE</span>) <span class="op">==</span><span class="st"> "NlsyLinks"</span>) <span class="co">#Should evaluate to TRUE.</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/any.html">any</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/zpackages.html">.packages</a></span>(<span class="dt">all.available=</span><span class="ot">TRUE</span>) <span class="op">==</span><span class="st"> "NlsyLinks"</span>) <span class="co">#Should evaluate to TRUE.</span></a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks) <span class="co">#Load the package into the current session.</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks) <span class="co">#Load the package into the current session.</span></a></code></pre></div>
 <p>The package’s documentation manual can be opened by typing <code><a href="../reference/NlsyLinks-package.html">?NlsyLinks</a></code> in R or clicking the appropriate entry in RStudio’s ‘Packages’ tab (which is usually in the lower right panel).</p>
 </div>
 <div id="example-df-analysis-with-a-simple-outcome-for-gen2-subjects-using-a-package-variable" class="section level1">
@@ -146,25 +146,24 @@
 <ol style="list-style-type: decimal">
 <li><p>Use the NLS Investigator to select and download a Gen2 dataset.</p></li>
 <li><p>Open R and create a new script (see Appendix:RScripts and load the NlsyLinks package. If you haven’t done so, first install the NlsyLinks package (see Appendix:InstallingPackage). Within the R script, identify the locations of the downloaded data file, and load it into a data frame.</p></li>
-<li>Within the R script, load the linking dataset. Then select only Gen2 subjects. The ‘Pair’ version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.</li>
-<li>Load and assign the <code>ExtraOutcomes79</code> dataset.</li>
-<li>Specify the outcome variable name and filter out all subjects who have a negative value in this variable. The NLSY typically uses negative values to indicate different types of missingness (see ‘Further Information’ below).</li>
-<li>Create a double-entered file by calling the ’CreatePairLinksDoubleEntered` function. At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s). <em>(There are occasions when a single-entered file is more appropriate for a DF analysis. See Rodgers &amp; Kohler, 2005, for additional information.)</em>
-</li>
+<li><p>Within the R script, load the linking dataset. Then select only Gen2 subjects. The ‘Pair’ version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.</p></li>
+<li><p>Load and assign the <code>ExtraOutcomes79</code> dataset.</p></li>
+<li><p>Specify the outcome variable name and filter out all subjects who have a negative value in this variable. The NLSY typically uses negative values to indicate different types of missingness (see ‘Further Information’ below).</p></li>
+<li><p>Create a double-entered file by calling the ’CreatePairLinksDoubleEntered` function. At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s). <em>(There are occasions when a single-entered file is more appropriate for a DF analysis. See Rodgers &amp; Kohler, 2005, for additional information.)</em></p></li>
 <li><p>Use ’DeFriesFulkerMethod3` function (<em>i.e.</em>, general linear model) to estimate the coefficients of the DF model.</p></li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">### R Code for Example DF analysis with a simple outcome and Gen2 subjects</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#Step 2: Load the package containing the linking routines.</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#Step 3: Load the LINKING dataset and filter for the Gen2 subjects</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath<span class="op">==</span><span class="st">"Gen2Siblings"</span>)</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(dsLinking) <span class="co">#Notice there are 11,088 records (one for each unique pair).</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co">### R Code for Example DF analysis with a simple outcome and Gen2 subjects</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co">#Step 2: Load the package containing the linking routines.</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="co">#Step 3: Load the LINKING dataset and filter for the Gen2 subjects</span></a>
+<a class="sourceLine" id="cb4-6" title="6">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath<span class="op">==</span><span class="st">"Gen2Siblings"</span>)</a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(dsLinking) <span class="co">#Notice there are 11,088 records (one for each unique pair).</span></a></code></pre></div>
 <pre><code>##    ExtendedID    SubjectTag_S1     SubjectTag_S2           R        
 ##  Min.   :    2   Min.   :    201   Min.   :    202   Min.   :0.250  
 ##  1st Qu.: 3154   1st Qu.: 315401   1st Qu.: 315403   1st Qu.:0.250  
-##  Median : 6105   Median : 610702   Median : 610705   Median :0.500  
-##  Mean   : 5927   Mean   : 593061   Mean   : 593062   Mean   :0.417  
+##  Median : 6105   Median : 610703   Median : 610705   Median :0.500  
+##  Mean   : 5927   Mean   : 593061   Mean   : 593063   Mean   :0.417  
 ##  3rd Qu.: 8507   3rd Qu.: 851001   3rd Qu.: 851003   3rd Qu.:0.500  
 ##  Max.   :12673   Max.   :1267301   Max.   :1267302   Max.   :1.000  
 ##        RelationshipPath
@@ -174,9 +173,9 @@
 ##  ParentChild   :    0  
 ##  AuntNiece     :    0  
 ## </code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co">#Step 4: Load the OUTCOMES dataset, and then examine the summary.</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">dsOutcomes &lt;-<span class="st"> </span>ExtraOutcomes79 <span class="co">#'ds' stands for 'Data Set'</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(dsOutcomes)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co">#Step 4: Load the OUTCOMES dataset, and then examine the summary.</span></a>
+<a class="sourceLine" id="cb6-2" title="2">dsOutcomes &lt;-<span class="st"> </span>ExtraOutcomes79 <span class="co">#'ds' stands for 'Data Set'</span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(dsOutcomes)</a></code></pre></div>
 <pre><code>##    SubjectTag        SubjectID         Generation    HeightZGenderAge WeightZGenderAge
 ##  Min.   :    100   Min.   :      1   Min.   :1.000   Min.   :-2.985   Min.   :-2.985  
 ##  1st Qu.: 314025   1st Qu.:   5998   1st Qu.:1.000   1st Qu.:-0.724   1st Qu.:-0.677  
@@ -193,18 +192,18 @@
 ##  3rd Qu.: 0.660             3rd Qu.:18.00   3rd Qu.:14.00   3rd Qu.:108.5   
 ##  Max.   : 2.994             Max.   :27.00   Max.   :19.00   Max.   :135.0   
 ##  NA's   :12510              NA's   :12740   NA's   :18165   NA's   :15085</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co">#Step 5: This step isn't necessary for this example, because Kelly Meredith already</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#   groomed the values.  If the negative values (which represent NLSY missing or</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#   skip patterns) still exist, then:</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">dsOutcomes<span class="op">$</span>MathStandardized[dsOutcomes<span class="op">$</span>MathStandardized <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#Step 6: Create the double entered dataset.</span></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7">dsDouble &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksDoubleEntered</a></span>(</a>
-<a class="sourceLine" id="cb8-8" data-line-number="8">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
-<a class="sourceLine" id="cb8-9" data-line-number="9">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
-<a class="sourceLine" id="cb8-10" data-line-number="10">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'MathStandardized'</span>)</a>
-<a class="sourceLine" id="cb8-11" data-line-number="11">)</a>
-<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(dsDouble) <span class="co">#Notice there are 22176=(2*11088) records now (two for each unique pair).</span></a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="co">#Step 5: This step isn't necessary for this example, because Kelly Meredith already</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co">#   groomed the values.  If the negative values (which represent NLSY missing or</span></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="co">#   skip patterns) still exist, then:</span></a>
+<a class="sourceLine" id="cb8-4" title="4">dsOutcomes<span class="op">$</span>MathStandardized[dsOutcomes<span class="op">$</span>MathStandardized <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb8-5" title="5"></a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="co">#Step 6: Create the double entered dataset.</span></a>
+<a class="sourceLine" id="cb8-7" title="7">dsDouble &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksDoubleEntered</a></span>(</a>
+<a class="sourceLine" id="cb8-8" title="8">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
+<a class="sourceLine" id="cb8-9" title="9">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
+<a class="sourceLine" id="cb8-10" title="10">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'MathStandardized'</span>)</a>
+<a class="sourceLine" id="cb8-11" title="11">)</a>
+<a class="sourceLine" id="cb8-12" title="12"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(dsDouble) <span class="co">#Notice there are 22176=(2*11088) records now (two for each unique pair).</span></a></code></pre></div>
 <pre><code>##  SubjectTag_S1     SubjectTag_S2       ExtendedID          R        
 ##  Min.   :    201   Min.   :    201   Min.   :    2   Min.   :0.250  
 ##  1st Qu.: 315402   1st Qu.: 315402   1st Qu.: 3154   1st Qu.:0.250  
@@ -221,12 +220,12 @@
 ##  AuntNiece     :    0   3rd Qu.:107.0       3rd Qu.:107.0      
 ##                         Max.   :135.0       Max.   :135.0      
 ##                         NA's   :3926        NA's   :3926</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co">#Step 7: Estimate the ACE components with a DF Analysis</span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/Ace.html">DeFriesFulkerMethod3</a></span>(</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">    <span class="dt">dataSet  =</span> dsDouble,</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">    <span class="dt">oName_S1 =</span> <span class="st">"MathStandardized_S1"</span>,</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5">    <span class="dt">oName_S2 =</span> <span class="st">"MathStandardized_S2"</span>)</a>
-<a class="sourceLine" id="cb10-6" data-line-number="6">ace</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="co">#Step 7: Estimate the ACE components with a DF Analysis</span></a>
+<a class="sourceLine" id="cb10-2" title="2">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/Ace.html">DeFriesFulkerMethod3</a></span>(</a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="dt">dataSet  =</span> dsDouble,</a>
+<a class="sourceLine" id="cb10-4" title="4">    <span class="dt">oName_S1 =</span> <span class="st">"MathStandardized_S1"</span>,</a>
+<a class="sourceLine" id="cb10-5" title="5">    <span class="dt">oName_S2 =</span> <span class="st">"MathStandardized_S2"</span>)</a>
+<a class="sourceLine" id="cb10-6" title="6">ace</a></code></pre></div>
 <pre><code>## [1] "Results of ACE estimation: [show]"
 ##     ASquared     CSquared     ESquared    CaseCount 
 ## 7.734447e-01 1.469204e-01 7.963486e-02 1.668000e+04</code></pre>
@@ -239,32 +238,32 @@
 <p>The steps are:</p>
 <ol style="list-style-type: decimal">
 <li><p>Use the NLS Investigator to select and download a Gen2 dataset. Select the variables ‘length of gestation of child in weeks’ (<code>C03280.00</code>), ‘weight of child at birth in ounces’ (<code>C03286.00</code>), and ‘length of child at birth’ (<code>C03288.00</code>), and then download the *.zip file to your local computer.</p></li>
-<li>Open R and create a new script (see Appendix: RScripts) and load the NlsyLinks package.</li>
-<li>Within the R script, load the linking dataset. Then select only Gen2 subjects.</li>
-<li>Read the CSV into R as a <code>data.frame</code> using <code>ReadCsvNlsy79Gen2</code>.</li>
-<li>Verify the desired outcome column exists, and rename it something meaningful to your project. It is important that the <code>data.frame</code> is reassigned (<em>i.e.</em>, <code>ds &lt;- RenameNlsyColumn(...)</code>). In this example, we rename column <code>C0328800</code> to <code>BirthWeightInOunces</code>.</li>
-<li>Filter out all subjects who have a negative <code>BirthWeightInOunces</code> value. See the ‘Further Information’ note in the previous example.</li>
-<li>Create a double-entered file by calling the <code>CreatePairLinksDoubleEntered</code> function. At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).</li>
+<li><p>Open R and create a new script (see Appendix: RScripts) and load the NlsyLinks package.</p></li>
+<li><p>Within the R script, load the linking dataset. Then select only Gen2 subjects.</p></li>
+<li><p>Read the CSV into R as a <code>data.frame</code> using <code>ReadCsvNlsy79Gen2</code>.</p></li>
+<li><p>Verify the desired outcome column exists, and rename it something meaningful to your project. It is important that the <code>data.frame</code> is reassigned (<em>i.e.</em>, <code>ds &lt;- RenameNlsyColumn(...)</code>). In this example, we rename column <code>C0328800</code> to <code>BirthWeightInOunces</code>.</p></li>
+<li><p>Filter out all subjects who have a negative <code>BirthWeightInOunces</code> value. See the ‘Further Information’ note in the previous example.</p></li>
+<li><p>Create a double-entered file by calling the <code>CreatePairLinksDoubleEntered</code> function. At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).</p></li>
 <li><p>Call the <code>AceUnivariate</code> function to estimate the coefficients.</p></li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co">### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects</span></a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">#Step 2: Load the package containing the linking routines.</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#Step 3: Load the linking dataset and filter for the Gen2 subjects</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath<span class="op">==</span><span class="st">"Gen2Siblings"</span>)</a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co">#Step 4: Load the outcomes dataset from the hard drive and then examine the summary.</span></a>
-<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="co">#   Your path might be: filePathOutcomes &lt;- 'C:/BGResearch/NlsExtracts/gen2-birth.csv'</span></a>
-<a class="sourceLine" id="cb12-10" data-line-number="10">filePathOutcomes &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/find.package.html">path.package</a></span>(<span class="st">"NlsyLinks"</span>), <span class="st">"extdata"</span>, <span class="st">"gen2-birth.csv"</span>)</a>
-<a class="sourceLine" id="cb12-11" data-line-number="11">dsOutcomes &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ReadCsvNlsy79.html">ReadCsvNlsy79Gen2</a></span>(filePathOutcomes)</a>
-<a class="sourceLine" id="cb12-12" data-line-number="12"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(dsOutcomes)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="co">### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="co">#Step 2: Load the package containing the linking routines.</span></a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
+<a class="sourceLine" id="cb12-4" title="4"></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="co">#Step 3: Load the linking dataset and filter for the Gen2 subjects</span></a>
+<a class="sourceLine" id="cb12-6" title="6">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath<span class="op">==</span><span class="st">"Gen2Siblings"</span>)</a>
+<a class="sourceLine" id="cb12-7" title="7"></a>
+<a class="sourceLine" id="cb12-8" title="8"><span class="co">#Step 4: Load the outcomes dataset from the hard drive and then examine the summary.</span></a>
+<a class="sourceLine" id="cb12-9" title="9"><span class="co">#   Your path might be: filePathOutcomes &lt;- 'C:/BGResearch/NlsExtracts/gen2-birth.csv'</span></a>
+<a class="sourceLine" id="cb12-10" title="10">filePathOutcomes &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/find.package.html">path.package</a></span>(<span class="st">"NlsyLinks"</span>), <span class="st">"extdata"</span>, <span class="st">"gen2-birth.csv"</span>)</a>
+<a class="sourceLine" id="cb12-11" title="11">dsOutcomes &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ReadCsvNlsy79.html">ReadCsvNlsy79Gen2</a></span>(filePathOutcomes)</a>
+<a class="sourceLine" id="cb12-12" title="12"><span class="kw"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(dsOutcomes)</a></code></pre></div>
 <pre><code>##    SubjectTag        SubjectID         ExtendedID      Generation SubjectTagOfMother
 ##  Min.   :    201   Min.   :    201   Min.   :    2   Min.   :2    Min.   :    200   
 ##  1st Qu.: 310302   1st Qu.: 310302   1st Qu.: 3101   1st Qu.:2    1st Qu.: 310300   
 ##  Median : 604607   Median : 604607   Median : 6045   Median :2    Median : 604600   
 ##  Mean   : 601313   Mean   : 601313   Mean   : 6007   Mean   :2    Mean   : 601311   
-##  3rd Qu.: 876202   3rd Qu.: 876202   3rd Qu.: 8757   3rd Qu.:2    3rd Qu.: 876200   
+##  3rd Qu.: 876203   3rd Qu.: 876203   3rd Qu.: 8757   3rd Qu.:2    3rd Qu.: 876200   
 ##  Max.   :1267501   Max.   :1267501   Max.   :12675   Max.   :2    Max.   :1267500   
 ##                                      NA's   :2                                      
 ##     C0005300        C0005400         C0005700       C0328000        C0328600    
@@ -283,33 +282,33 @@
 ##  3rd Qu.:21.00  
 ##  Max.   :48.00  
 ## </code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="co">#Step 5: Verify and rename an existing column.</span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw"><a href="../reference/ColumnUtilities.html">VerifyColumnExists</a></span>(dsOutcomes, <span class="st">"C0328600"</span>) <span class="co">#Should return '10' in this example.</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="co">#Step 5: Verify and rename an existing column.</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw"><a href="../reference/ColumnUtilities.html">VerifyColumnExists</a></span>(dsOutcomes, <span class="st">"C0328600"</span>) <span class="co">#Should return '10' in this example.</span></a></code></pre></div>
 <pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">dsOutcomes &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ColumnUtilities.html">RenameNlsyColumn</a></span>(dsOutcomes, <span class="st">"C0328600"</span>, <span class="st">"BirthWeightInOunces"</span>)</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="co">#Step 6: For this item, a negative value indicates the parent refused, didn't know,</span></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="co">#   invalidly skipped, or was missing for some other reason.</span></a>
-<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="co">#   For our present purposes, we'll treat these responses equivalently.</span></a>
-<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="co">#   Then clip/Winsorized/truncate the weight to something reasonable.</span></a>
-<a class="sourceLine" id="cb16-7" data-line-number="7">dsOutcomes<span class="op">$</span>BirthWeightInOunces[dsOutcomes<span class="op">$</span>BirthWeightInOunces <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb16-8" data-line-number="8">dsOutcomes<span class="op">$</span>BirthWeightInOunces &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">pmin</a></span>(dsOutcomes<span class="op">$</span>BirthWeightInOunces, <span class="dv">200</span>)</a>
-<a class="sourceLine" id="cb16-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="co">#Step 7: Create the double entered dataset.</span></a>
-<a class="sourceLine" id="cb16-11" data-line-number="11">dsDouble &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksDoubleEntered</a></span>(</a>
-<a class="sourceLine" id="cb16-12" data-line-number="12">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
-<a class="sourceLine" id="cb16-13" data-line-number="13">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
-<a class="sourceLine" id="cb16-14" data-line-number="14">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'BirthWeightInOunces'</span>)</a>
-<a class="sourceLine" id="cb16-15" data-line-number="15">)</a>
-<a class="sourceLine" id="cb16-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb16-17" data-line-number="17"><span class="co">#Step 8: Estimate the ACE components with a DF Analysis</span></a>
-<a class="sourceLine" id="cb16-18" data-line-number="18">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/Ace.html">AceUnivariate</a></span>(</a>
-<a class="sourceLine" id="cb16-19" data-line-number="19">  <span class="dt">method   =</span> <span class="st">"DeFriesFulkerMethod3"</span>,</a>
-<a class="sourceLine" id="cb16-20" data-line-number="20">  <span class="dt">dataSet  =</span> dsDouble,</a>
-<a class="sourceLine" id="cb16-21" data-line-number="21">  <span class="dt">oName_S1 =</span> <span class="st">"BirthWeightInOunces_S1"</span>,</a>
-<a class="sourceLine" id="cb16-22" data-line-number="22">  <span class="dt">oName_S2 =</span> <span class="st">"BirthWeightInOunces_S2"</span></a>
-<a class="sourceLine" id="cb16-23" data-line-number="23">)</a>
-<a class="sourceLine" id="cb16-24" data-line-number="24">ace</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1">dsOutcomes &lt;-<span class="st"> </span><span class="kw"><a href="../reference/ColumnUtilities.html">RenameNlsyColumn</a></span>(dsOutcomes, <span class="st">"C0328600"</span>, <span class="st">"BirthWeightInOunces"</span>)</a>
+<a class="sourceLine" id="cb16-2" title="2"></a>
+<a class="sourceLine" id="cb16-3" title="3"><span class="co">#Step 6: For this item, a negative value indicates the parent refused, didn't know,</span></a>
+<a class="sourceLine" id="cb16-4" title="4"><span class="co">#   invalidly skipped, or was missing for some other reason.</span></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="co">#   For our present purposes, we'll treat these responses equivalently.</span></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="co">#   Then clip/Winsorized/truncate the weight to something reasonable.</span></a>
+<a class="sourceLine" id="cb16-7" title="7">dsOutcomes<span class="op">$</span>BirthWeightInOunces[dsOutcomes<span class="op">$</span>BirthWeightInOunces <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb16-8" title="8">dsOutcomes<span class="op">$</span>BirthWeightInOunces &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">pmin</a></span>(dsOutcomes<span class="op">$</span>BirthWeightInOunces, <span class="dv">200</span>)</a>
+<a class="sourceLine" id="cb16-9" title="9"></a>
+<a class="sourceLine" id="cb16-10" title="10"><span class="co">#Step 7: Create the double entered dataset.</span></a>
+<a class="sourceLine" id="cb16-11" title="11">dsDouble &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksDoubleEntered</a></span>(</a>
+<a class="sourceLine" id="cb16-12" title="12">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
+<a class="sourceLine" id="cb16-13" title="13">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
+<a class="sourceLine" id="cb16-14" title="14">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'BirthWeightInOunces'</span>)</a>
+<a class="sourceLine" id="cb16-15" title="15">)</a>
+<a class="sourceLine" id="cb16-16" title="16"></a>
+<a class="sourceLine" id="cb16-17" title="17"><span class="co">#Step 8: Estimate the ACE components with a DF Analysis</span></a>
+<a class="sourceLine" id="cb16-18" title="18">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/Ace.html">AceUnivariate</a></span>(</a>
+<a class="sourceLine" id="cb16-19" title="19">  <span class="dt">method   =</span> <span class="st">"DeFriesFulkerMethod3"</span>,</a>
+<a class="sourceLine" id="cb16-20" title="20">  <span class="dt">dataSet  =</span> dsDouble,</a>
+<a class="sourceLine" id="cb16-21" title="21">  <span class="dt">oName_S1 =</span> <span class="st">"BirthWeightInOunces_S1"</span>,</a>
+<a class="sourceLine" id="cb16-22" title="22">  <span class="dt">oName_S2 =</span> <span class="st">"BirthWeightInOunces_S2"</span></a>
+<a class="sourceLine" id="cb16-23" title="23">)</a>
+<a class="sourceLine" id="cb16-24" title="24">ace</a></code></pre></div>
 <pre><code>## [1] "Results of ACE estimation: [show]"
 ##     ASquared     CSquared     ESquared    CaseCount 
 ## 5.103108e-01 1.752415e-01 3.144477e-01 1.744000e+04</code></pre>
@@ -330,27 +329,27 @@
 <li><p>Estimate the SEM with the  package. The function returns an <code>S4</code> object, which shows the basic ACE information.</p></li>
 <li><p>Inspect details of the SEM, beyond the ACE components. In this example, we look at the fit stats and the parameter estimates. The  package has additional methods that may be useful for your purposes.</p></li>
 </ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects</span></a>
-<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="co">#Steps 1-5 are explained in the vignette's first example:</span></a>
-<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
-<a class="sourceLine" id="cb18-4" data-line-number="4">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath<span class="op">==</span><span class="st">"Gen2Siblings"</span>)</a>
-<a class="sourceLine" id="cb18-5" data-line-number="5">dsOutcomes &lt;-<span class="st"> </span>ExtraOutcomes79</a>
-<a class="sourceLine" id="cb18-6" data-line-number="6">dsOutcomes<span class="op">$</span>MathStandardized[dsOutcomes<span class="op">$</span>MathStandardized <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb18-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="co">#Step 6: Create the single entered dataset.</span></a>
-<a class="sourceLine" id="cb18-9" data-line-number="9">dsSingle &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksSingleEntered</a></span>(</a>
-<a class="sourceLine" id="cb18-10" data-line-number="10">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
-<a class="sourceLine" id="cb18-11" data-line-number="11">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
-<a class="sourceLine" id="cb18-12" data-line-number="12">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'MathStandardized'</span>)</a>
-<a class="sourceLine" id="cb18-13" data-line-number="13">)</a>
-<a class="sourceLine" id="cb18-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb18-15" data-line-number="15"><span class="co">#Step 7: Declare the names for the two outcome variables.</span></a>
-<a class="sourceLine" id="cb18-16" data-line-number="16">oName_S1 &lt;-<span class="st"> "MathStandardized_S1"</span> <span class="co">#Stands for Outcome1</span></a>
-<a class="sourceLine" id="cb18-17" data-line-number="17">oName_S2 &lt;-<span class="st"> "MathStandardized_S2"</span> <span class="co">#Stands for Outcome2</span></a>
-<a class="sourceLine" id="cb18-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb18-19" data-line-number="19"><span class="co">#Step 8: Summarize the R groups and determine which groups can be estimated.</span></a>
-<a class="sourceLine" id="cb18-20" data-line-number="20">dsGroupSummary &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RGroupSummary.html">RGroupSummary</a></span>(dsSingle, oName_S1, oName_S2)</a>
-<a class="sourceLine" id="cb18-21" data-line-number="21">dsGroupSummary</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects</span></a>
+<a class="sourceLine" id="cb18-2" title="2"><span class="co">#Steps 1-5 are explained in the vignette's first example:</span></a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
+<a class="sourceLine" id="cb18-4" title="4">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath<span class="op">==</span><span class="st">"Gen2Siblings"</span>)</a>
+<a class="sourceLine" id="cb18-5" title="5">dsOutcomes &lt;-<span class="st"> </span>ExtraOutcomes79</a>
+<a class="sourceLine" id="cb18-6" title="6">dsOutcomes<span class="op">$</span>MathStandardized[dsOutcomes<span class="op">$</span>MathStandardized <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb18-7" title="7"></a>
+<a class="sourceLine" id="cb18-8" title="8"><span class="co">#Step 6: Create the single entered dataset.</span></a>
+<a class="sourceLine" id="cb18-9" title="9">dsSingle &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksSingleEntered</a></span>(</a>
+<a class="sourceLine" id="cb18-10" title="10">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
+<a class="sourceLine" id="cb18-11" title="11">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
+<a class="sourceLine" id="cb18-12" title="12">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'MathStandardized'</span>)</a>
+<a class="sourceLine" id="cb18-13" title="13">)</a>
+<a class="sourceLine" id="cb18-14" title="14"></a>
+<a class="sourceLine" id="cb18-15" title="15"><span class="co">#Step 7: Declare the names for the two outcome variables.</span></a>
+<a class="sourceLine" id="cb18-16" title="16">oName_S1 &lt;-<span class="st"> "MathStandardized_S1"</span> <span class="co">#Stands for Outcome1</span></a>
+<a class="sourceLine" id="cb18-17" title="17">oName_S2 &lt;-<span class="st"> "MathStandardized_S2"</span> <span class="co">#Stands for Outcome2</span></a>
+<a class="sourceLine" id="cb18-18" title="18"></a>
+<a class="sourceLine" id="cb18-19" title="19"><span class="co">#Step 8: Summarize the R groups and determine which groups can be estimated.</span></a>
+<a class="sourceLine" id="cb18-20" title="20">dsGroupSummary &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RGroupSummary.html">RGroupSummary</a></span>(dsSingle, oName_S1, oName_S2)</a>
+<a class="sourceLine" id="cb18-21" title="21">dsGroupSummary</a></code></pre></div>
 <pre><code>##       R Included PairCount    O1Mean    O2Mean O1Variance O2Variance O1O2Covariance
 ## 1 0.250     TRUE      2689  95.10450  95.97936   126.9489   150.1775       41.96914
 ## 2 0.375     TRUE       137  93.63139  93.36861   160.0120   136.6628       50.39790
@@ -363,24 +362,24 @@
 ## 3   0.5274225   21037.642        TRUE
 ## 4   1.0000000       0.000       FALSE
 ## 5   0.9179130    9807.933        TRUE</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co">#Step 9: Create a cleaned dataset</span></a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">dsClean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CleanSemAceDataset.html">CleanSemAceDataset</a></span>(<span class="dt">dsDirty=</span>dsSingle, dsGroupSummary, oName_S1, oName_S2)</a>
-<a class="sourceLine" id="cb20-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="co">#Step 10: Run the model</span></a>
-<a class="sourceLine" id="cb20-5" data-line-number="5">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/AceLavaanGroup.html">AceLavaanGroup</a></span>(dsClean)</a>
-<a class="sourceLine" id="cb20-6" data-line-number="6">ace</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="co">#Step 9: Create a cleaned dataset</span></a>
+<a class="sourceLine" id="cb20-2" title="2">dsClean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CleanSemAceDataset.html">CleanSemAceDataset</a></span>(<span class="dt">dsDirty=</span>dsSingle, dsGroupSummary, oName_S1, oName_S2)</a>
+<a class="sourceLine" id="cb20-3" title="3"></a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="co">#Step 10: Run the model</span></a>
+<a class="sourceLine" id="cb20-5" title="5">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/AceLavaanGroup.html">AceLavaanGroup</a></span>(dsClean)</a>
+<a class="sourceLine" id="cb20-6" title="6">ace</a></code></pre></div>
 <pre><code>## [1] "Results of ACE estimation: [show]"
 ##     ASquared     CSquared     ESquared    CaseCount 
 ##    0.6219253    0.2097338    0.1683408 8338.0000000</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co">#Notice the 'CaseCount' is 8,390 instead of 17,440.</span></a>
-<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="co">#  This is because (a) one pair with R=.75 was excluded, and</span></a>
-<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="co">#  (b) the SEM uses a single-entered dataset instead of double-entered.</span></a>
-<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="co">#</span></a>
-<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="co">#Step 11: Inspect the output further</span></a>
-<a class="sourceLine" id="cb22-6" data-line-number="6"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(lavaan) <span class="co">#Load the package to access methods of the lavaan class.</span></a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="co">#Notice the 'CaseCount' is 8,390 instead of 17,440.</span></a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="co">#  This is because (a) one pair with R=.75 was excluded, and</span></a>
+<a class="sourceLine" id="cb22-3" title="3"><span class="co">#  (b) the SEM uses a single-entered dataset instead of double-entered.</span></a>
+<a class="sourceLine" id="cb22-4" title="4"><span class="co">#</span></a>
+<a class="sourceLine" id="cb22-5" title="5"><span class="co">#Step 11: Inspect the output further</span></a>
+<a class="sourceLine" id="cb22-6" title="6"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(lavaan) <span class="co">#Load the package to access methods of the lavaan class.</span></a></code></pre></div>
 <pre><code>## This is lavaan 0.6-5</code></pre>
 <pre><code>## lavaan is BETA software! Please report any bugs.</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw"><a href="../reference/GetDetails-methods.html">GetDetails</a></span>(ace)</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw"><a href="../reference/GetDetails-methods.html">GetDetails</a></span>(ace)</a></code></pre></div>
 <pre><code>## lavaan 0.6-5 ended normally after 54 iterations
 ## 
 ##   Estimator                                         ML
@@ -405,8 +404,8 @@
 ##     2                                           30.277
 ##     3                                          127.671
 ##     4                                            7.428</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co">#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.</span></a>
-<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span>(<span class="kw"><a href="../reference/GetDetails-methods.html">GetDetails</a></span>(ace)) <span class="co">#'fitMeasures' is defined in the lavaan package.</span></a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="co">#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span>(<span class="kw"><a href="../reference/GetDetails-methods.html">GetDetails</a></span>(ace)) <span class="co">#'fitMeasures' is defined in the lavaan package.</span></a></code></pre></div>
 <pre><code>##                npar                fmin               chisq                  df 
 ##               4.000               0.027             447.241              16.000 
 ##              pvalue      baseline.chisq         baseline.df     baseline.pvalue 
@@ -429,34 +428,34 @@
 ##             597.581               0.999               0.999               0.799 
 ##                 mfi 
 ##               0.974</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="co">#Examine low-level details like each group's individual parameter estimates and standard</span></a>
-<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="co">#  errors.  Uncomment the next line to view the entire output (which is roughly 4 pages).</span></a>
-<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="co">#summary(GetDetails(ace))</span></a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="co">#Examine low-level details like each group's individual parameter estimates and standard</span></a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="co">#  errors.  Uncomment the next line to view the entire output (which is roughly 4 pages).</span></a>
+<a class="sourceLine" id="cb29-3" title="3"><span class="co">#summary(GetDetails(ace))</span></a></code></pre></div>
 </div>
 <div id="example-multiple-group-sem-of-a-simple-outcome-for-gen1-subjects" class="section level1">
 <h1 class="hasAnchor">
 <a href="#example-multiple-group-sem-of-a-simple-outcome-for-gen1-subjects" class="anchor"></a>Example: Multiple Group SEM of a Simple Outcome for Gen1 Subjects</h1>
 <p>The example differs from the previous one in three ways. First, Gen1 subjects are used. Second, standardized height is used instead of math. Third, pairs are dropped if their <code>R</code> is zero; we return to this last issue after the code is run.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects</span></a>
-<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="co">#Steps 1-5 are explained in the vignette's first example:</span></a>
-<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
-<a class="sourceLine" id="cb30-4" data-line-number="4">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath<span class="op">==</span><span class="st">"Gen1Housemates"</span>)</a>
-<a class="sourceLine" id="cb30-5" data-line-number="5">dsOutcomes &lt;-<span class="st"> </span>ExtraOutcomes79</a>
-<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="co">#The HeightZGenderAge variable is already groomed</span></a>
-<a class="sourceLine" id="cb30-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb30-8" data-line-number="8"><span class="co">#Step 6: Create the single entered dataset.</span></a>
-<a class="sourceLine" id="cb30-9" data-line-number="9">dsSingle &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksSingleEntered</a></span>(</a>
-<a class="sourceLine" id="cb30-10" data-line-number="10">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
-<a class="sourceLine" id="cb30-11" data-line-number="11">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
-<a class="sourceLine" id="cb30-12" data-line-number="12">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'HeightZGenderAge'</span>))</a>
-<a class="sourceLine" id="cb30-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb30-14" data-line-number="14"><span class="co">#Step 7: Declare the names for the two outcome variables.</span></a>
-<a class="sourceLine" id="cb30-15" data-line-number="15">oName_S1 &lt;-<span class="st"> "HeightZGenderAge_S1"</span></a>
-<a class="sourceLine" id="cb30-16" data-line-number="16">oName_S2 &lt;-<span class="st"> "HeightZGenderAge_S2"</span></a>
-<a class="sourceLine" id="cb30-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb30-18" data-line-number="18"><span class="co">#Step 8: Summarize the R groups and determine which groups can be estimated.</span></a>
-<a class="sourceLine" id="cb30-19" data-line-number="19">dsGroupSummary &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RGroupSummary.html">RGroupSummary</a></span>(dsSingle, oName_S1, oName_S2)</a>
-<a class="sourceLine" id="cb30-20" data-line-number="20">dsGroupSummary</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects</span></a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="co">#Steps 1-5 are explained in the vignette's first example:</span></a>
+<a class="sourceLine" id="cb30-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
+<a class="sourceLine" id="cb30-4" title="4">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath<span class="op">==</span><span class="st">"Gen1Housemates"</span>)</a>
+<a class="sourceLine" id="cb30-5" title="5">dsOutcomes &lt;-<span class="st"> </span>ExtraOutcomes79</a>
+<a class="sourceLine" id="cb30-6" title="6"><span class="co">#The HeightZGenderAge variable is already groomed</span></a>
+<a class="sourceLine" id="cb30-7" title="7"></a>
+<a class="sourceLine" id="cb30-8" title="8"><span class="co">#Step 6: Create the single entered dataset.</span></a>
+<a class="sourceLine" id="cb30-9" title="9">dsSingle &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksSingleEntered</a></span>(</a>
+<a class="sourceLine" id="cb30-10" title="10">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
+<a class="sourceLine" id="cb30-11" title="11">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
+<a class="sourceLine" id="cb30-12" title="12">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'HeightZGenderAge'</span>))</a>
+<a class="sourceLine" id="cb30-13" title="13"></a>
+<a class="sourceLine" id="cb30-14" title="14"><span class="co">#Step 7: Declare the names for the two outcome variables.</span></a>
+<a class="sourceLine" id="cb30-15" title="15">oName_S1 &lt;-<span class="st"> "HeightZGenderAge_S1"</span></a>
+<a class="sourceLine" id="cb30-16" title="16">oName_S2 &lt;-<span class="st"> "HeightZGenderAge_S2"</span></a>
+<a class="sourceLine" id="cb30-17" title="17"></a>
+<a class="sourceLine" id="cb30-18" title="18"><span class="co">#Step 8: Summarize the R groups and determine which groups can be estimated.</span></a>
+<a class="sourceLine" id="cb30-19" title="19">dsGroupSummary &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RGroupSummary.html">RGroupSummary</a></span>(dsSingle, oName_S1, oName_S2)</a>
+<a class="sourceLine" id="cb30-20" title="20">dsGroupSummary</a></code></pre></div>
 <pre><code>##      R Included PairCount      O1Mean       O2Mean O1Variance O2Variance O1O2Covariance
 ## 1 0.25     TRUE       280  0.04830041  0.056049671  1.0181579  1.1847214      0.2655632
 ## 2 0.50     TRUE      3894 -0.04986899 -0.027888465  0.9735617  1.0193789      0.4660286
@@ -465,23 +464,23 @@
 ## 1   0.2417977   1.1357096        TRUE
 ## 2   0.4678030   0.7752456        TRUE
 ## 3   0.6522137   0.1734469        TRUE</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="co">#Step 9: Create a cleaned dataset</span></a>
-<a class="sourceLine" id="cb32-2" data-line-number="2">dsClean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CleanSemAceDataset.html">CleanSemAceDataset</a></span>(<span class="dt">dsDirty=</span>dsSingle, dsGroupSummary, oName_S1, oName_S2)</a>
-<a class="sourceLine" id="cb32-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="co">#Step 10: Run the model</span></a>
-<a class="sourceLine" id="cb32-5" data-line-number="5">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/AceLavaanGroup.html">AceLavaanGroup</a></span>(dsClean)</a>
-<a class="sourceLine" id="cb32-6" data-line-number="6">ace</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1"><span class="co">#Step 9: Create a cleaned dataset</span></a>
+<a class="sourceLine" id="cb32-2" title="2">dsClean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CleanSemAceDataset.html">CleanSemAceDataset</a></span>(<span class="dt">dsDirty=</span>dsSingle, dsGroupSummary, oName_S1, oName_S2)</a>
+<a class="sourceLine" id="cb32-3" title="3"></a>
+<a class="sourceLine" id="cb32-4" title="4"><span class="co">#Step 10: Run the model</span></a>
+<a class="sourceLine" id="cb32-5" title="5">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/AceLavaanGroup.html">AceLavaanGroup</a></span>(dsClean)</a>
+<a class="sourceLine" id="cb32-6" title="6">ace</a></code></pre></div>
 <pre><code>## [1] "Results of ACE estimation: [show]"
 ##     ASquared     CSquared     ESquared    CaseCount 
 ##    0.7040149    0.1123658    0.1836193 4185.0000000</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="co">#Step 11: Inspect the output further (see the final step in the previous example).</span></a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1"><span class="co">#Step 11: Inspect the output further (see the final step in the previous example).</span></a></code></pre></div>
 <p>Most of them responded they were <code>Non-relative</code>s to the explict items asked in 1979 (<em>i.e.</em>, NLSY79 variables <code>R00001.50</code> through <code>R00001.59</code>). Yet their height’s observed correlations is far larger than would be expected for a sample of unrelated subjects. Since our team began BG research with the NLSY in the mid-1990s, the <span class="math inline">\(R\)</span>=0 group has consistently presented higher than expected correlations, across many domains of outcome variables. For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes. Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.</p>
 <p>If you wish to exclude additional groups from the analyses, Step 8 should change slightly. For instance, to MZ twins, replace the two lines in Step 8 with the following four. This is most for demonstration. It is unlikely to be useful idea in the current example, and is more likely to be useful when using the <code>RFull</code> variable, which includes all values of <code>R</code> we were able to determine.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="co">#Step 8: Summarize the R groups and determine which groups can be estimated.</span></a>
-<a class="sourceLine" id="cb35-2" data-line-number="2">dsGroupSummary &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RGroupSummary.html">RGroupSummary</a></span>(dsSingle, oName_S1, oName_S2)</a>
-<a class="sourceLine" id="cb35-3" data-line-number="3">rGroupsToDrop &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>( <span class="dv">1</span> )</a>
-<a class="sourceLine" id="cb35-4" data-line-number="4">dsGroupSummary[dsGroupSummary<span class="op">$</span>R <span class="op">%in%</span><span class="st"> </span>rGroupsToDrop, <span class="st">"Included"</span>] &lt;-<span class="st"> </span><span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb35-5" data-line-number="5">dsGroupSummary</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="co">#Step 8: Summarize the R groups and determine which groups can be estimated.</span></a>
+<a class="sourceLine" id="cb35-2" title="2">dsGroupSummary &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RGroupSummary.html">RGroupSummary</a></span>(dsSingle, oName_S1, oName_S2)</a>
+<a class="sourceLine" id="cb35-3" title="3">rGroupsToDrop &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>( <span class="dv">1</span> )</a>
+<a class="sourceLine" id="cb35-4" title="4">dsGroupSummary[dsGroupSummary<span class="op">$</span>R <span class="op">%in%</span><span class="st"> </span>rGroupsToDrop, <span class="st">"Included"</span>] &lt;-<span class="st"> </span><span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb35-5" title="5">dsGroupSummary</a></code></pre></div>
 <pre><code>##      R Included PairCount      O1Mean       O2Mean O1Variance O2Variance O1O2Covariance
 ## 1 0.25     TRUE       280  0.04830041  0.056049671  1.0181579  1.1847214      0.2655632
 ## 2 0.50     TRUE      3894 -0.04986899 -0.027888465  0.9735617  1.0193789      0.4660286
@@ -495,11 +494,11 @@
 <h1 class="hasAnchor">
 <a href="#example-multiple-group-sem-of-a-simple-outcome-all-pairs-in-gen1-and-gen2" class="anchor"></a>Example: Multiple Group SEM of a Simple Outcome all pairs in Gen1 and Gen2</h1>
 <p>The example differs from the previous example in one way –all possible pairs are considered for the analysis. Pairs are only excluded (a) if they belong to one of the small <code>R</code> groups that are difficult to estimate, or (b) if the value for adult height is missing. This includes all  relationships in the follow five types of NLSY79 relationships.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">xt &lt;-<span class="st"> </span><span class="kw">xtable</span>(<span class="kw"><a href="https://rdrr.io/r/base/table.html">table</a></span>(Links79Pair<span class="op">$</span>RelationshipPath, <span class="dt">dnn=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Relationship Frequency"</span>)),</a>
-<a class="sourceLine" id="cb37-2" data-line-number="2">             <span class="dt">caption=</span><span class="st">"Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"</span>)</a>
-<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="kw">print.xtable</span>(xt, <span class="dt">format.args=</span><span class="kw"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="dt">big.mark=</span><span class="st">","</span>), <span class="dt">type =</span> <span class="st">"html"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">xt &lt;-<span class="st"> </span><span class="kw">xtable</span>(<span class="kw"><a href="https://rdrr.io/r/base/table.html">table</a></span>(Links79Pair<span class="op">$</span>RelationshipPath, <span class="dt">dnn=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Relationship Frequency"</span>)),</a>
+<a class="sourceLine" id="cb37-2" title="2">             <span class="dt">caption=</span><span class="st">"Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"</span>)</a>
+<a class="sourceLine" id="cb37-3" title="3"><span class="kw">print.xtable</span>(xt, <span class="dt">format.args=</span><span class="kw"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="dt">big.mark=</span><span class="st">","</span>), <span class="dt">type =</span> <span class="st">"html"</span>)</a></code></pre></div>
 <!-- html table generated in R 3.6.1 by xtable 1.8-4 package -->
-<!-- Thu Nov  7 01:47:23 2019 -->
+<!-- Thu Nov 21 13:02:22 2019 -->
 <table class="table">
 <caption align="bottom">
 Number of NLSY79 relationship, by <code>RelationshipPath</code>.(Recall that ‘AuntNiece’ also contains uncles and nephews.)
@@ -553,31 +552,31 @@ AuntNiece
 </tr>
 </table>
 <p>In our opinion, using the intergenerational links is one of the most exciting new opportunities for NLSY researchers to pursue. We will be happy to facilitate such research through consult or collaboration, or even by generating new data structures that may be of value. The complete kinship linking file facilitates many different kinds of cross-generational research, using both biometrical and other kinds of modeling methods.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects</span></a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="co">#Steps 1-5 are explained in the vignette's first example:</span></a>
-<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
-<a class="sourceLine" id="cb38-4" data-line-number="4">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath <span class="op">%in%</span></a>
-<a class="sourceLine" id="cb38-5" data-line-number="5"><span class="st">                      </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Gen1Housemates"</span>, <span class="st">"Gen2Siblings"</span>, <span class="st">"Gen2Cousins"</span>,</a>
-<a class="sourceLine" id="cb38-6" data-line-number="6">                        <span class="st">"ParentChild"</span>, <span class="st">"AuntNiece"</span>))</a>
-<a class="sourceLine" id="cb38-7" data-line-number="7"><span class="co">#Because all five paths are specified, the line above is equivalent to:</span></a>
-<a class="sourceLine" id="cb38-8" data-line-number="8"><span class="co">#dsLinking &lt;- Links79Pair</span></a>
-<a class="sourceLine" id="cb38-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb38-10" data-line-number="10">dsOutcomes &lt;-<span class="st"> </span>ExtraOutcomes79</a>
-<a class="sourceLine" id="cb38-11" data-line-number="11"><span class="co">#The HeightZGenderAge variable is already groomed</span></a>
-<a class="sourceLine" id="cb38-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb38-13" data-line-number="13"><span class="co">#Step 6: Create the single entered dataset.</span></a>
-<a class="sourceLine" id="cb38-14" data-line-number="14">dsSingle &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksSingleEntered</a></span>(</a>
-<a class="sourceLine" id="cb38-15" data-line-number="15">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
-<a class="sourceLine" id="cb38-16" data-line-number="16">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
-<a class="sourceLine" id="cb38-17" data-line-number="17">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'HeightZGenderAge'</span>))</a>
-<a class="sourceLine" id="cb38-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb38-19" data-line-number="19"><span class="co">#Step 7: Declare the names for the two outcome variables.</span></a>
-<a class="sourceLine" id="cb38-20" data-line-number="20">oName_S1 &lt;-<span class="st"> "HeightZGenderAge_S1"</span></a>
-<a class="sourceLine" id="cb38-21" data-line-number="21">oName_S2 &lt;-<span class="st"> "HeightZGenderAge_S2"</span></a>
-<a class="sourceLine" id="cb38-22" data-line-number="22"></a>
-<a class="sourceLine" id="cb38-23" data-line-number="23"><span class="co">#Step 8: Summarize the R groups and determine which groups can be estimated.</span></a>
-<a class="sourceLine" id="cb38-24" data-line-number="24">dsGroupSummary &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RGroupSummary.html">RGroupSummary</a></span>(dsSingle, oName_S1, oName_S2)</a>
-<a class="sourceLine" id="cb38-25" data-line-number="25">dsGroupSummary</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects</span></a>
+<a class="sourceLine" id="cb38-2" title="2"><span class="co">#Steps 1-5 are explained in the vignette's first example:</span></a>
+<a class="sourceLine" id="cb38-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(NlsyLinks)</a>
+<a class="sourceLine" id="cb38-4" title="4">dsLinking &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(Links79Pair, RelationshipPath <span class="op">%in%</span></a>
+<a class="sourceLine" id="cb38-5" title="5"><span class="st">                      </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Gen1Housemates"</span>, <span class="st">"Gen2Siblings"</span>, <span class="st">"Gen2Cousins"</span>,</a>
+<a class="sourceLine" id="cb38-6" title="6">                        <span class="st">"ParentChild"</span>, <span class="st">"AuntNiece"</span>))</a>
+<a class="sourceLine" id="cb38-7" title="7"><span class="co">#Because all five paths are specified, the line above is equivalent to:</span></a>
+<a class="sourceLine" id="cb38-8" title="8"><span class="co">#dsLinking &lt;- Links79Pair</span></a>
+<a class="sourceLine" id="cb38-9" title="9"></a>
+<a class="sourceLine" id="cb38-10" title="10">dsOutcomes &lt;-<span class="st"> </span>ExtraOutcomes79</a>
+<a class="sourceLine" id="cb38-11" title="11"><span class="co">#The HeightZGenderAge variable is already groomed</span></a>
+<a class="sourceLine" id="cb38-12" title="12"></a>
+<a class="sourceLine" id="cb38-13" title="13"><span class="co">#Step 6: Create the single entered dataset.</span></a>
+<a class="sourceLine" id="cb38-14" title="14">dsSingle &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CreatePairLinks.html">CreatePairLinksSingleEntered</a></span>(</a>
+<a class="sourceLine" id="cb38-15" title="15">  <span class="dt">outcomeDataset   =</span> dsOutcomes,</a>
+<a class="sourceLine" id="cb38-16" title="16">  <span class="dt">linksPairDataset =</span> dsLinking,</a>
+<a class="sourceLine" id="cb38-17" title="17">  <span class="dt">outcomeNames     =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'HeightZGenderAge'</span>))</a>
+<a class="sourceLine" id="cb38-18" title="18"></a>
+<a class="sourceLine" id="cb38-19" title="19"><span class="co">#Step 7: Declare the names for the two outcome variables.</span></a>
+<a class="sourceLine" id="cb38-20" title="20">oName_S1 &lt;-<span class="st"> "HeightZGenderAge_S1"</span></a>
+<a class="sourceLine" id="cb38-21" title="21">oName_S2 &lt;-<span class="st"> "HeightZGenderAge_S2"</span></a>
+<a class="sourceLine" id="cb38-22" title="22"></a>
+<a class="sourceLine" id="cb38-23" title="23"><span class="co">#Step 8: Summarize the R groups and determine which groups can be estimated.</span></a>
+<a class="sourceLine" id="cb38-24" title="24">dsGroupSummary &lt;-<span class="st"> </span><span class="kw"><a href="../reference/RGroupSummary.html">RGroupSummary</a></span>(dsSingle, oName_S1, oName_S2)</a>
+<a class="sourceLine" id="cb38-25" title="25">dsGroupSummary</a></code></pre></div>
 <pre><code>##        R Included PairCount      O1Mean      O2Mean O1Variance O2Variance
 ## 1 0.0625     TRUE       202  0.22968753 -0.07575395  1.0509023  0.8271487
 ## 2 0.1250     TRUE      2422 -0.02213186  0.01502572  1.0334694  0.9809845
@@ -594,16 +593,16 @@ AuntNiece
 ## 5      0.4146816   0.4263636   0.7739915        TRUE
 ## 6             NA          NA          NA       FALSE
 ## 7      0.6863894   0.8287857   0.2147630        TRUE</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="co">#Step 9: Create a cleaned dataset</span></a>
-<a class="sourceLine" id="cb40-2" data-line-number="2">dsClean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CleanSemAceDataset.html">CleanSemAceDataset</a></span>(<span class="dt">dsDirty=</span>dsSingle, dsGroupSummary, oName_S1, oName_S2)</a>
-<a class="sourceLine" id="cb40-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="co">#Step 10: Run the model</span></a>
-<a class="sourceLine" id="cb40-5" data-line-number="5">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/AceLavaanGroup.html">AceLavaanGroup</a></span>(dsClean)</a>
-<a class="sourceLine" id="cb40-6" data-line-number="6">ace</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1"><span class="co">#Step 9: Create a cleaned dataset</span></a>
+<a class="sourceLine" id="cb40-2" title="2">dsClean &lt;-<span class="st"> </span><span class="kw"><a href="../reference/CleanSemAceDataset.html">CleanSemAceDataset</a></span>(<span class="dt">dsDirty=</span>dsSingle, dsGroupSummary, oName_S1, oName_S2)</a>
+<a class="sourceLine" id="cb40-3" title="3"></a>
+<a class="sourceLine" id="cb40-4" title="4"><span class="co">#Step 10: Run the model</span></a>
+<a class="sourceLine" id="cb40-5" title="5">ace &lt;-<span class="st"> </span><span class="kw"><a href="../reference/AceLavaanGroup.html">AceLavaanGroup</a></span>(dsClean)</a>
+<a class="sourceLine" id="cb40-6" title="6">ace</a></code></pre></div>
 <pre><code>## [1] "Results of ACE estimation: [show]"
 ##     ASquared     CSquared     ESquared    CaseCount 
 ## 7.366543e-01 6.580003e-02 1.975456e-01 2.469700e+04</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="co">#Step 11: Inspect the output further (see the final step two examples above).</span></a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1"><span class="co">#Step 11: Inspect the output further (see the final step two examples above).</span></a></code></pre></div>
 <p>Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x –from 4,185 to 24,700. The number of <em>subjects</em> doubles when Gen2 is added, and the number of <em>relationship pairs</em> really takes off. When an extended family’s entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered. This increased statistical power is even more important when the popluation’s <span class="math inline">\(a^2\)</span> is small or moderate, instead of something large like 0.7.</p>
 <p>You may notice that the analysis has 24,697 relationships instead of the entire 42,836. This is primarily because not all subjects have a value for ‘adult height’ (and that’s mostly because a lot of Gen2 subjects are too young). There are 42,088 pairs with a nonmissing value in <code>RFull</code>, meaning that 98.3 are classified. We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there’s a 99+% chance we have an <code>RFull</code> for it. For a description of the <code>R</code> and <code>RFull</code> variables, please see the <code>Links79Pair</code> entry in the package <a href="https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf">reference manual</a>.</p>
 <p><strong>References:</strong></p>
@@ -656,16 +655,16 @@ AuntNiece
 <a href="#version-information" class="anchor"></a>Version Information</h1>
 <p>For the sake of documentation and reproducibility, the current report was rendered in the following environment. Click the line below to expand. But you’ll probably regret it.</p>
 <details><p><summary>Environment <span class="glyphicon glyphicon-plus-sign"></span></summary></p>
-<pre><code>##  setting  value                       
-##  version  R version 3.6.1 (2019-07-05)
-##  os       Ubuntu 19.10                
-##  system   x86_64, linux-gnu           
-##  ui       X11                         
-##  language en_US                       
-##  collate  en_US.UTF-8                 
-##  ctype    en_US.UTF-8                 
-##  tz       America/Chicago             
-##  date     2019-11-07</code></pre>
+<pre><code>##  setting  value                                      
+##  version  R version 3.6.1 Patched (2019-08-12 r76979)
+##  os       Windows &gt;= 8 x64                           
+##  system   x86_64, mingw32                            
+##  ui       RTerm                                      
+##  language (EN)                                       
+##  collate  English_United States.1252                 
+##  ctype    English_United States.1252                 
+##  tz       America/Chicago                            
+##  date     2019-11-21</code></pre>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -719,10 +718,10 @@ assertthat
 0.2.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/assertthat
+D:/Projects/RLibraries/assertthat
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/assertthat
+D:/Projects/RLibraries/assertthat
 </td>
 <td style="text-align:left;">
 FALSE
@@ -734,13 +733,13 @@ FALSE
 2019-03-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -757,10 +756,10 @@ backports
 1.1.5
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/backports
+D:/Projects/RLibraries/backports
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/backports
+D:/Projects/RLibraries/backports
 </td>
 <td style="text-align:left;">
 FALSE
@@ -775,10 +774,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -795,10 +794,10 @@ callr
 3.3.2
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/callr
+D:/Projects/RLibraries/callr
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/callr
+D:/Projects/RLibraries/callr
 </td>
 <td style="text-align:left;">
 FALSE
@@ -813,10 +812,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -833,10 +832,10 @@ cli
 1.1.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/cli
+D:/Projects/RLibraries/cli
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/cli
+D:/Projects/RLibraries/cli
 </td>
 <td style="text-align:left;">
 FALSE
@@ -848,13 +847,13 @@ FALSE
 2019-03-19
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -871,10 +870,10 @@ colorspace
 1.4-1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/colorspace
+D:/Projects/RLibraries/colorspace
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/colorspace
+D:/Projects/RLibraries/colorspace
 </td>
 <td style="text-align:left;">
 FALSE
@@ -886,13 +885,13 @@ FALSE
 2019-03-18
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -909,10 +908,10 @@ crayon
 1.3.4
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/crayon
+D:/Projects/RLibraries/crayon
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/crayon
+D:/Projects/RLibraries/crayon
 </td>
 <td style="text-align:left;">
 FALSE
@@ -924,13 +923,13 @@ FALSE
 2017-09-16
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -947,10 +946,10 @@ desc
 1.2.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/desc
+D:/Projects/RLibraries/desc
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/desc
+D:/Projects/RLibraries/desc
 </td>
 <td style="text-align:left;">
 FALSE
@@ -962,13 +961,13 @@ FALSE
 2018-05-01
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -985,10 +984,10 @@ devtools
 2.2.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/devtools
+D:/Projects/RLibraries/devtools
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/devtools
+D:/Projects/RLibraries/devtools
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1003,10 +1002,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1023,10 +1022,10 @@ digest
 0.6.22
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/digest
+D:/Projects/RLibraries/digest
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/digest
+D:/Projects/RLibraries/digest
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1041,10 +1040,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1061,10 +1060,10 @@ ellipsis
 0.3.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/ellipsis
+D:/Projects/RLibraries/ellipsis
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/ellipsis
+D:/Projects/RLibraries/ellipsis
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1079,10 +1078,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1099,10 +1098,10 @@ evaluate
 0.14
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/evaluate
+D:/Projects/RLibraries/evaluate
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/evaluate
+D:/Projects/RLibraries/evaluate
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1114,13 +1113,13 @@ FALSE
 2019-05-28
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1137,10 +1136,10 @@ fs
 1.3.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/fs
+D:/Projects/RLibraries/fs
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/fs
+D:/Projects/RLibraries/fs
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1152,13 +1151,13 @@ FALSE
 2019-05-06
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1175,10 +1174,10 @@ glue
 1.3.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/glue
+D:/Projects/RLibraries/glue
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/glue
+D:/Projects/RLibraries/glue
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1190,13 +1189,13 @@ FALSE
 2019-03-12
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1213,10 +1212,10 @@ htmltools
 0.4.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/htmltools
+D:/Projects/RLibraries/htmltools
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/htmltools
+D:/Projects/RLibraries/htmltools
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1231,10 +1230,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1251,10 +1250,10 @@ knitr
 1.25
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/knitr
+D:/Projects/RLibraries/knitr
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/knitr
+D:/Projects/RLibraries/knitr
 </td>
 <td style="text-align:left;">
 TRUE
@@ -1269,10 +1268,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1289,10 +1288,10 @@ lavaan
 0.6-5
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/lavaan
+D:/Projects/RLibraries/lavaan
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/lavaan
+D:/Projects/RLibraries/lavaan
 </td>
 <td style="text-align:left;">
 TRUE
@@ -1307,10 +1306,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1327,10 +1326,10 @@ magrittr
 1.5
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/magrittr
+D:/Projects/RLibraries/magrittr
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/magrittr
+D:/Projects/RLibraries/magrittr
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1342,13 +1341,13 @@ FALSE
 2014-11-22
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1365,19 +1364,19 @@ MASS
 7.3-51.4
 </td>
 <td style="text-align:left;">
-/usr/lib/R/library/MASS
+C:/Program Files/R/R-3.6.1patched/library/MASS
 </td>
 <td style="text-align:left;">
-/usr/lib/R/library/MASS
-</td>
-<td style="text-align:left;">
-FALSE
+C:/Program Files/R/R-3.6.1patched/library/MASS
 </td>
 <td style="text-align:left;">
 FALSE
 </td>
 <td style="text-align:left;">
-2019-04-26
+FALSE
+</td>
+<td style="text-align:left;">
+2019-03-31
 </td>
 <td style="text-align:left;">
 CRAN (R 3.6.1)
@@ -1386,7 +1385,7 @@ CRAN (R 3.6.1)
 NA
 </td>
 <td style="text-align:left;">
-/usr/lib/R/library
+C:/Program Files/R/R-3.6.1patched/library
 </td>
 </tr>
 <tr>
@@ -1403,10 +1402,10 @@ memoise
 1.1.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/memoise
+D:/Projects/RLibraries/memoise
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/memoise
+D:/Projects/RLibraries/memoise
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1418,13 +1417,13 @@ FALSE
 2017-04-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1441,10 +1440,10 @@ mnormt
 1.5-5
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/mnormt
+D:/Projects/RLibraries/mnormt
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/mnormt
+D:/Projects/RLibraries/mnormt
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1456,13 +1455,13 @@ FALSE
 2016-10-15
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1479,10 +1478,10 @@ munsell
 0.5.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/munsell
+D:/Projects/RLibraries/munsell
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/munsell
+D:/Projects/RLibraries/munsell
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1494,13 +1493,13 @@ FALSE
 2018-06-12
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1517,10 +1516,10 @@ NlsyLinks
 2.0.8.9001
 </td>
 <td style="text-align:left;">
-/tmp/RtmpyXCeoy/temp_libpathd176ec1d6d0/NlsyLinks
+C:/Users/Will/AppData/Local/Temp/RtmpaE9JuR/temp_libpath490066eb37/NlsyLinks
 </td>
 <td style="text-align:left;">
-/tmp/RtmpyXCeoy/temp_libpathd176ec1d6d0/NlsyLinks
+C:/Users/Will/AppData/Local/Temp/RtmpaE9JuR/temp_libpath490066eb37/NlsyLinks
 </td>
 <td style="text-align:left;">
 TRUE
@@ -1529,16 +1528,16 @@ TRUE
 FALSE
 </td>
 <td style="text-align:left;">
-2019-11-07
+2019-11-21
 </td>
 <td style="text-align:left;">
 local
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/tmp/RtmpyXCeoy/temp_libpathd176ec1d6d0
+C:/Users/Will/AppData/Local/Temp/RtmpaE9JuR/temp_libpath490066eb37
 </td>
 </tr>
 <tr>
@@ -1555,10 +1554,10 @@ pbivnorm
 0.6.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pbivnorm
+D:/Projects/RLibraries/pbivnorm
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pbivnorm
+D:/Projects/RLibraries/pbivnorm
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1570,13 +1569,13 @@ FALSE
 2015-01-23
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1593,10 +1592,10 @@ pkgbuild
 1.0.6
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pkgbuild
+D:/Projects/RLibraries/pkgbuild
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pkgbuild
+D:/Projects/RLibraries/pkgbuild
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1611,10 +1610,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1631,10 +1630,10 @@ pkgdown
 1.4.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pkgdown
+D:/Projects/RLibraries/pkgdown
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pkgdown
+D:/Projects/RLibraries/pkgdown
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1649,10 +1648,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1669,10 +1668,10 @@ pkgload
 1.0.2
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pkgload
+D:/Projects/RLibraries/pkgload
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/pkgload
+D:/Projects/RLibraries/pkgload
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1684,13 +1683,13 @@ FALSE
 2018-10-29
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1707,10 +1706,10 @@ prettyunits
 1.0.2
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/prettyunits
+D:/Projects/RLibraries/prettyunits
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/prettyunits
+D:/Projects/RLibraries/prettyunits
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1722,13 +1721,13 @@ FALSE
 2015-07-13
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1745,10 +1744,10 @@ processx
 3.4.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/processx
+D:/Projects/RLibraries/processx
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/processx
+D:/Projects/RLibraries/processx
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1763,10 +1762,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1783,10 +1782,10 @@ ps
 1.3.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/ps
+D:/Projects/RLibraries/ps
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/ps
+D:/Projects/RLibraries/ps
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1798,13 +1797,13 @@ FALSE
 2018-12-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1821,10 +1820,10 @@ R6
 2.4.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/R6
+D:/Projects/RLibraries/R6
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/R6
+D:/Projects/RLibraries/R6
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1836,13 +1835,13 @@ FALSE
 2019-02-14
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1859,10 +1858,10 @@ Rcpp
 1.0.2
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/Rcpp
+D:/Projects/RLibraries/Rcpp
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/Rcpp
+D:/Projects/RLibraries/Rcpp
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1877,10 +1876,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1897,10 +1896,10 @@ remotes
 2.1.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/remotes
+D:/Projects/RLibraries/remotes
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/remotes
+D:/Projects/RLibraries/remotes
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1915,10 +1914,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1935,10 +1934,10 @@ rlang
 0.4.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rlang
+D:/Projects/RLibraries/rlang
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rlang
+D:/Projects/RLibraries/rlang
 </td>
 <td style="text-align:left;">
 FALSE
@@ -1953,10 +1952,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1967,34 +1966,34 @@ rmarkdown
 rmarkdown
 </td>
 <td style="text-align:left;">
-1.16
+1.16.3
 </td>
 <td style="text-align:left;">
-1.16
+1.16.3
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown
+D:/Projects/RLibraries/rmarkdown
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rmarkdown
-</td>
-<td style="text-align:left;">
-FALSE
+D:/Projects/RLibraries/rmarkdown
 </td>
 <td style="text-align:left;">
 FALSE
 </td>
 <td style="text-align:left;">
-2019-10-01
+FALSE
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+2019-11-06
 </td>
 <td style="text-align:left;">
-NA
+Github (<a href="mailto:rstudio/rmarkdown@d9e4b45" class="email">rstudio/rmarkdown@d9e4b45</a>)
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+TRUE
+</td>
+<td style="text-align:left;">
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2011,10 +2010,10 @@ rprojroot
 1.3-2
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rprojroot
+D:/Projects/RLibraries/rprojroot
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rprojroot
+D:/Projects/RLibraries/rprojroot
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2026,13 +2025,13 @@ FALSE
 2018-01-03
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2049,10 +2048,10 @@ rstudioapi
 0.10
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rstudioapi
+D:/Projects/RLibraries/rstudioapi
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/rstudioapi
+D:/Projects/RLibraries/rstudioapi
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2064,13 +2063,13 @@ FALSE
 2019-03-19
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2087,10 +2086,10 @@ scales
 1.0.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/scales
+D:/Projects/RLibraries/scales
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/scales
+D:/Projects/RLibraries/scales
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2102,13 +2101,13 @@ FALSE
 2018-08-09
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2125,10 +2124,10 @@ sessioninfo
 1.1.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/sessioninfo
+D:/Projects/RLibraries/sessioninfo
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/sessioninfo
+D:/Projects/RLibraries/sessioninfo
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2140,13 +2139,13 @@ FALSE
 2018-11-05
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2163,10 +2162,10 @@ stringi
 1.4.3
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/stringi
+D:/Projects/RLibraries/stringi
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/stringi
+D:/Projects/RLibraries/stringi
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2178,13 +2177,13 @@ FALSE
 2019-03-12
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2201,10 +2200,10 @@ stringr
 1.4.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/stringr
+D:/Projects/RLibraries/stringr
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/stringr
+D:/Projects/RLibraries/stringr
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2216,13 +2215,13 @@ FALSE
 2019-02-10
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2239,10 +2238,10 @@ testthat
 2.2.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/testthat
+D:/Projects/RLibraries/testthat
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/testthat
+D:/Projects/RLibraries/testthat
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2257,10 +2256,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2277,10 +2276,10 @@ usethis
 1.5.1
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/usethis
+D:/Projects/RLibraries/usethis
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/usethis
+D:/Projects/RLibraries/usethis
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2295,10 +2294,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2315,10 +2314,10 @@ withr
 2.1.2
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/withr
+D:/Projects/RLibraries/withr
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/withr
+D:/Projects/RLibraries/withr
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2330,13 +2329,13 @@ FALSE
 2018-03-15
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2353,10 +2352,10 @@ xfun
 0.10
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xfun
+D:/Projects/RLibraries/xfun
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xfun
+D:/Projects/RLibraries/xfun
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2371,10 +2370,10 @@ FALSE
 CRAN (R 3.6.1)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2391,10 +2390,10 @@ xtable
 1.8-4
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xtable
+D:/Projects/RLibraries/xtable
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/xtable
+D:/Projects/RLibraries/xtable
 </td>
 <td style="text-align:left;">
 TRUE
@@ -2406,13 +2405,13 @@ FALSE
 2019-04-21
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2429,10 +2428,10 @@ yaml
 2.2.0
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/yaml
+D:/Projects/RLibraries/yaml
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6/yaml
+D:/Projects/RLibraries/yaml
 </td>
 <td style="text-align:left;">
 FALSE
@@ -2444,13 +2443,13 @@ FALSE
 2018-07-25
 </td>
 <td style="text-align:left;">
-CRAN (R 3.6.1)
+CRAN (R 3.6.0)
 </td>
 <td style="text-align:left;">
-NA
+TRUE
 </td>
 <td style="text-align:left;">
-/home/wibeasley/R/x86_64-pc-linux-gnu-library/3.6
+D:/Projects/RLibraries
 </td>
 </tr>
 </tbody>

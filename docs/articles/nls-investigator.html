@@ -108,7 +108,7 @@
                         <h4 class="author">Kelly <a href="https://www.okcu.edu/directory/kelly-williams">Williams</a> (Oklahoma City University, OKC)</h4>
                         <h4 class="author">Michael D. <a href="http://mhuntero.com/">Hunter</a> (Georgia Tech, Atlanta)</h4>
             
-            <h4 class="date">2019-11-07</h4>
+            <h4 class="date">2019-11-21</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/nls-investigator.Rmd"><code>vignettes/nls-investigator.Rmd</code></a></small>
       <div class="hidden name"><code>nls-investigator.Rmd</code></div>
@@ -128,7 +128,7 @@
 <h1 class="hasAnchor">
 <a href="#steps-to-select-variables-and-download-data" class="anchor"></a>Steps to Select Variables and Download Data</h1>
 <ol style="list-style-type: decimal">
-<li>Browse to [<a href="http://www.nlsinfo.org/investigator" class="uri">http://www.nlsinfo.org/investigator</a>]. Select the ‘REGISTER’ link in the top right, and create a personal account. If you have already registered, Log In and proceed to the next step.</li>
+<li><p>Browse to [<a href="http://www.nlsinfo.org/investigator" class="uri">http://www.nlsinfo.org/investigator</a>]. Select the ‘REGISTER’ link in the top right, and create a personal account. If you have already registered, Log In and proceed to the next step.</p></li>
 <li>
 <p>Select your desired cohort, in the dropdown box titled, "Select the study you want to work with:’’. In the screenshot below, second generation of the NLSY79 sample is selected.</p>
 <p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T"><img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T" style="width: 500px;"></a></p>
@@ -164,9 +164,9 @@
 <p>Tagsets were introduced in Step 5, but are discussed more thoroughly here. Tagsets make large projects more manageable in two ways. First, they save effort and reduce errors because you don’t have to re-select all the variables every time you revisit the NLS Investigator. You can save and load the tagsets during subsequent sessions. In fact, you can save multiple tagsets on the NLS server.</p>
 <p>Second, using <em>multiple</em> tagsets provides a convenient approach to organize and compartmentalize your variables. It’s not unusual for some complicated longitudinal studies to use hundreds of NLSY variables. We’ve found it easier to manage five tagsets of ~100 variables, than one tagset of 500. Since all NLSY tagsets (and therefore their datasets) automatically include the subject ID, merging the multiple datasets later is trivial with statistical software.</p>
 <p>In R, use the <code>merge</code> function; the <code>by</code> argument should be <code>R0000100</code> for NLSY79 subjects, <code>C0000100</code> for NLSYC subjects, and <code>R0000100</code> for NLSY97 subjects. For example, a study about intelligence and teenage fertility would have one tagset containing the intelligence variables, and a second tagset containing the fertility variables. These two tagsets eventually could produce two CSV data files called <code>IQ.csv</code> and <code>Fertility.csv</code>, located in the <code>BGResearch</code> directory. The R code to read and merge these two datasets could be as simple as</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">dsIQ        &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">'C:/BGResearch/IQ.csv'</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">dsFertility &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">'C:/BGResearch/Fertility.csv'</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">ds          &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/merge.html">merge</a></span>(dsIQ, dsFertility, <span class="dt">by=</span><span class="st">"C0000100"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">dsIQ        &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">'C:/BGResearch/IQ.csv'</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-2" title="2">dsFertility &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">'C:/BGResearch/Fertility.csv'</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-3" title="3">ds          &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/merge.html">merge</a></span>(dsIQ, dsFertility, <span class="dt">by=</span><span class="st">"C0000100"</span>)</a></code></pre></div>
 <p>In SAS, the <code>merge</code> function (and its <code>BY</code> argument) <a href="http://support.sas.com/documentation/cdl/en/basess/58133/HTML/default/viewer.htm#a001318494.htm">behaves similarly</a> as above. Notice that the SAS documentation states, “Before you can perform a match-merge, all data sets must be sorted by the variables that you want to use for the merge”, which is <code>C0000100</code> in this example.</p>
 <p>If you’re importing CSV files specifically for the NlsyLinks package, you’ll find functions like <code>ReadCsvNlsy79Gen1</code> and <code>ReadCsvNlsy79Gen2</code> more convenient for later analyses.</p>
 </div>
