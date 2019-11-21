@@ -173,7 +173,7 @@ path \code{"C:\BGDirectory\Links79Pair.csv"} can be misinterpreted.
 If you're using the NlsyLinks package in R, the dataset is automatically available.
 To use it in a different environment,
 \href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true}{download the csv},
-which is readble by all statistical software.
+which is readable by all statistical software.
 \href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
 documents the dataset version information.
 }
