@@ -1,0 +1,105 @@
+% !TeX program = pdfLaTeX
+\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[hyphens]{url} % not crucial - just used below for the URL
+\usepackage{hyperref}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%
+% \usepackage{mathptmx}      % use Times fonts if available on your TeX system
+%
+% insert here the call for the packages your document requires
+%\usepackage{latexsym}
+% etc.
+%
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
+
+%% load any required packages here
+
+
+
+
+
+\begin{document}
+
+\title{NlsyLinks }
+ \subtitle{An R package for research with the NLSY (National
+Longitudinal Survey of Youth)} 
+
+
+\author{  William H Beasley \and  }
+
+
+\institute{
+        William H Beasley \at
+     Howard Live Oak, LLC \\
+     \email{\href{mailto:wibeasley@hotmail.com}{\nolinkurl{wibeasley@hotmail.com}}}  %  \\
+%             \emph{Present address:} of F. Author  %  if needed
+    \and
+    }
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+
+\maketitle
+
+\begin{abstract}
+The text of your abstract. 150 -- 250 words.
+\\
+\keywords{
+        key \and
+        dictionary \and
+        word \and
+    }
+
+
+\end{abstract}
+
+
+\def\spacingset#1{\renewcommand{\baselinestretch}%
+{#1}\small\normalsize} \spacingset{1}
+
+
+\hypertarget{intro}{%
+\section{Introduction}\label{intro}}
+
+Your text comes here. Separate text sections with \cite{Mislevy06Cog}.
+
+\hypertarget{sec:1}{%
+\section{Section title}\label{sec:1}}
+
+Text with citations by \cite{Galyardt14mmm}.
+
+\hypertarget{sec:2}{%
+\subsection{Subsection title}\label{sec:2}}
+
+as required. Don't forget to give each section and subsection a unique
+label (see Sect. \ref{sec:1}).
+
+\hypertarget{paragraph-headings}{%
+\paragraph{Paragraph headings}\label{paragraph-headings}}
+
+Use paragraph headings as needed.
+
+\begin{align}
+a^2+b^2=c^2
+\end{align}
+
+\bibliographystyle{spphys}
+\bibliography{bibliography.bib}
+
+\end{document}
