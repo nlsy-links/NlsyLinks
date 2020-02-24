@@ -10,14 +10,14 @@ Introduction
 ----------------------------------------------------
 
 * NLSY Structure
-* Benefits of Accounting for Kinships  
+* Benefits of Accounting for Kinships
     * BG
     * D'Onofrio-type research
 * Terminology
 
 ### Structural and Topical information
 
-The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain  predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and menarche (*e.g.*, Rodgers et al, [2015](http://link.springer.com/article/10.1007/s10519-014-9676-4)), but are not relevant to many hypotheses outside these fields.
+The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and menarche (*e.g.*, Rodgers et al, [2015](http://link.springer.com/article/10.1007/s10519-014-9676-4)), but are not relevant to many hypotheses outside these fields.
 
 In contrast, variables in *structural datasets* are not typically directly stated in the hypotheses, yet are essential to many NLSY-related investigations including:
 
@@ -29,7 +29,7 @@ The NlsyLinks includes small topical datasets which allows the vignettes and exa
 
 ### Terminology
 
-The package pertains to multiple generations of the 'Nlsy79' and multiple generations of the 'Nlsy97'.  Because the NlsyLinks package structures information within and between generations of the NLSY simultaneously, it requires slightly unconventional NLSY terminology to reduce ambiguity.  
+The package pertains to multiple generations of the 'Nlsy79' and multiple generations of the 'Nlsy97'.  Because the NlsyLinks package structures information within and between generations of the NLSY simultaneously, it requires slightly unconventional NLSY terminology to reduce ambiguity.
 
 The 'Nlsy79 sample' refers to both the original 12,686 subjects interviewed in 1979, and their 11,500+ children (termed 'Nlsy79 Gen1' and 'Nlsy79 Gen2', respectively).  Data for the 'Nlsy79 Gen1' comes from the [original NLSY79 study](http://www.bls.gov/nls/nlsy79.htm), while data for the 'Nlsy Gen2' comes from both the [NLSY-C study]() and the [NLSY-YA study]() ('C' stands for children, and 'YA' stands for young adult).  More specifically, the [Gen2 subjects](http://www.bls.gov/nls/nlsy79ch.htm) are the biological offspring of the Gen1 mothers; they initially completed the NLSY-C survey until roughly age 14, and then completed the NLSY-YA survey (the oldest 'Young Adult' respondent was QQ in the 2016 survey).  Although the NLSY does not interview 'Nlsy79 Gen0' (the parents of Gen1) or 'Nlsy79 Gen3' (the children of Gen2), it does contain direct and indirect information about them.
 
