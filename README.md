@@ -37,7 +37,7 @@ This repository contains the code used in the [NlsyLinks](https://cran.r-project
 
 [This GitHub repository](https://github.com/nlsy-links/NlsyLinksStaging) is our primary way of managing, tracking, and build-checking versions of the source code.  (We're no longer using our [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/).)  The stable releases (intended for most researchers) is available on the package's [CRAN site](https://cran.r-project.org/package=NlsyLinks).
 
-We recently moved the forums to <https://groups.google.com/forum/#!forum/nlsy-links.>  Previous conversations are available at our old [R-Forge](https://r-forge.r-project.org/forum/?group_id=1330) and [Disqus](https://disqus.com/home/forum/nlsylinks/) sites.
+We recently moved the forums to <https://groups.google.com/forum/#!forum/nlsy-links>.  Previous conversations are available at our old [R-Forge](https://r-forge.r-project.org/forum/?group_id=1330) and [Disqus](https://disqus.com/home/forum/nlsylinks/) sites.
 
 Publication
 --------------------------
