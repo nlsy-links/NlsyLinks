@@ -8,7 +8,7 @@
 \description{
 Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 Researchers and grad students interested using the \href{http://www.bls.gov/nls/}{NLSY} for Behavior Genetics and family research, please start with our 2016 article,
-'\href{https://link.springer.com/article/10.1007/s10519-016-9785-3}{The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research}.
+'\href{https://link.springer.com/article/10.1007/s10519-016-9785-3}{\emph{The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research}}.
 }
 \note{
 This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to

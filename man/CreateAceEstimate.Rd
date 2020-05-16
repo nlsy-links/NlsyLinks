@@ -4,8 +4,14 @@
 \alias{CreateAceEstimate}
 \title{Instantiate an \linkS4class{AceEstimate} object.}
 \usage{
-CreateAceEstimate(aSquared, cSquared, eSquared, caseCount,
-  details = list(), unityTolerance = 1e-11)
+CreateAceEstimate(
+  aSquared,
+  cSquared,
+  eSquared,
+  caseCount,
+  details = list(),
+  unityTolerance = 1e-11
+)
 }
 \arguments{
 \item{aSquared}{The proportion of variability due to a shared genetic influence (typically represented as a^2, or sometimes h^2).}

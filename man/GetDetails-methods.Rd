@@ -6,6 +6,9 @@
 \alias{GetDetails}
 \alias{AceEstimate-method}
 \title{A generic function for extracting the \code{Details} slot of an object.}
+\usage{
+\S4method{GetDetails}{AceEstimate}(object)
+}
 \description{
 A generic function for extracting the \code{Details} slot of an AceEstimation object.
 }

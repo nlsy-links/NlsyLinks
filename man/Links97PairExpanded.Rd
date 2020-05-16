@@ -4,7 +4,8 @@
 \name{Links97PairExpanded}
 \alias{Links97PairExpanded}
 \title{Kinship linking file for pairs of relatives In the NLSY97.  It builds upon the \link{Links97Pair} dataset.}
-\format{A data frame with 11,075 observations on the following 22 variables.
+\format{
+A data frame with 11,075 observations on the following 22 variables.
 There is one row per unique pair of subjects, irrespective of order.
 \itemize{
 \item \strong{ExtendedID} see the variable of the same name in \link{Links97Pair}
@@ -20,7 +21,8 @@ There is one row per unique pair of subjects, irrespective of order.
 \item \strong{RPass1} The pair's estimated \emph{R} coefficient, using both implicit and explicit information.  Interpolation was NOT used.  The variable \code{R} is identically constructed, but it did use interpolation.
 \item \strong{SubjectID_S1} The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).
 \item \strong{SubjectID_S2} The ID value assigned by NLS to the second subject.
-}}
+}
+}
 \source{
 See \link{Links97Pair}.
 }
@@ -30,10 +32,10 @@ dataset contains the same pairs/rows, but only a subset of the
 variables/columns.
 
 For variables
-that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an \code{_S1} or \code{_S2}
+that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an \verb{_S1} or \verb{_S2}
 appended to it.  For instance, the variables \code{LastSurvey_S1} and \code{LastSurvey_S2} correspond to the last surveys completed
 by the pair's first and second subject, respectively.  Similarly, the functions \code{\link[=CreatePairLinksDoubleEntered]{CreatePairLinksDoubleEntered()}} and
-\code{\link[=CreatePairLinksSingleEntered]{CreatePairLinksSingleEntered()}} by default append \code{_S1} and \code{_S2}.  However this can be
+\code{\link[=CreatePairLinksSingleEntered]{CreatePairLinksSingleEntered()}} by default append \verb{_S1} and \verb{_S2}.  However this can be
 modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters.
 }
 \details{

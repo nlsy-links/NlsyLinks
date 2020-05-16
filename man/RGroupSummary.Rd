@@ -4,8 +4,13 @@
 \alias{RGroupSummary}
 \title{Calculates summary statistics for each \emph{R}elatedness Group in the sample.}
 \usage{
-RGroupSummary(ds, oName_S1, oName_S2, rName = "R",
-  determinantThreshold = 1e-05)
+RGroupSummary(
+  ds,
+  oName_S1,
+  oName_S2,
+  rName = "R",
+  determinantThreshold = 1e-05
+)
 }
 \arguments{
 \item{ds}{The \link[base:data.frame]{base::data.frame} containing the following variables:}

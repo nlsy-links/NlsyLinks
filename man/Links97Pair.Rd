@@ -4,7 +4,8 @@
 \name{Links97Pair}
 \alias{Links97Pair}
 \title{Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults}
-\format{A data frame with 2,519 observations on the following 5 variables.
+\format{
+A data frame with 2,519 observations on the following 5 variables.
 There is one row per unique pair of subjects, irrespective of order.
 \itemize{
 \item \strong{ExtendedID} Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.
@@ -12,7 +13,8 @@ There is one row per unique pair of subjects, irrespective of order.
 \item \strong{SubjectTag_S2} Identity of the pair's second subject.  See Details below.
 \item \strong{R} The pair's Relatedness coefficient.  See Details below.
 \item \strong{RelationshipPath} Specifies the relationship category of the pair.  This variable is a factor, with level \code{Housemates}=1.
-}}
+}
+}
 \source{
 Information comes from the Summer 2018 release of the
 \href{https://www.bls.gov/nls/nlsy97.htm}{NLSY97 sample}.
@@ -27,12 +29,12 @@ relationship pair.
 NOTE: Two variable names changed in November 2013. \code{Subject1Tag} and \code{Subject2Tag} became \code{SubjectTag_S1} and \code{SubjectTag_S2}.
 }
 \details{
-The variable \code{ExtendedID} corresponds to the NLSY97 variable \code{[SIDCODE]}
+The variable \code{ExtendedID} corresponds to the NLSY97 variable \verb{[SIDCODE]}
 (\emph{e.g.}, \href{https://www.nlsinfo.org/investigator/pages/search.jsp#R11930.00}{R11930.00}),
 which uniquely identifies a \emph{household} that may contain multiple NLSY97 subjects.
 
 The variables \code{SubjectTag_S1} and \code{SubjectTag_S2} uniquely identify
-subjects.  It corresponds to the NLSY97 variable \code{[PUBID]},
+subjects.  It corresponds to the NLSY97 variable \verb{[PUBID]},
 (\emph{e.g.}, \href{https://www.nlsinfo.org/investigator/pages/search.jsp#R00001.00}{R00001.00}).
 
 The \code{RelationshipPath} variable is not useful with this dataset,
@@ -93,7 +95,7 @@ In the R console, type the following two lines of code:
 
 where \code{"C:/BGDirectory/"} is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
-path \code{"C:\BGDirectory\Links97Pair.csv"} can be misinterpreted.
+path \code{"C:\\BGDirectory\\Links97Pair.csv"} can be misinterpreted.
 
 \strong{Download CSV}
 If you're using the NlsyLinks package in R, the dataset is automatically available.

@@ -4,7 +4,8 @@
 \name{ExtraOutcomes79}
 \alias{ExtraOutcomes79}
 \title{Extra outcome variables in the NLSY79}
-\format{A data frame with 11,495 observations on the following 6 variables. There is one row per subject.
+\format{
+A data frame with 11,495 observations on the following 6 variables. There is one row per subject.
 \itemize{
 \item \strong{SubjectTag} The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).
 \item \strong{SubjectID} The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).
@@ -16,7 +17,8 @@
 \item \strong{Afi} Self-reported age of first intercourse (Gen1 only; see Details).
 \item \strong{Afm} Self-reported age of first menstration (Gen1 only; see Details).
 \item \strong{MathStandardized} Standardized PIAT Math scores (Gen2 only; see Details).
-}}
+}
+}
 \source{
 Gen1 information comes from the Summer 2013 release of the
 \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information comes from the Summer 2013 release of the
