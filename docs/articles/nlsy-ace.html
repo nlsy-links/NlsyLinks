@@ -133,7 +133,7 @@
 <p>The variables are scaled so that they account for all observed variability in the outcome variable; specifically: <span class="math inline">\(a^2 + c^2 + e^2 = 1\)</span>. Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of <span class="math inline">\(a^2\)</span>, <span class="math inline">\(c^2\)</span>, and <span class="math inline">\(e^2\)</span> within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend <a href="http://books.google.com/books?id=r7AgAQAAIAAJ&amp;source=gbs_navlinks_s">Plomin (1990)</a> and <a href="http://psych.colorado.edu/~carey/hgss/">Carey (2003)</a>. For more in-depth ACE model-fitting strategies, we recommend <a href="http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf">Neale &amp; Maes, (1992)</a>.</p>
 <p>The <strong>NLS Investigator</strong> (<a href="http://www.nlsinfo.org/investigator/" class="uri">http://www.nlsinfo.org/investigator/</a>) is the best way to obtain the NLSY79 and NLSY97 datasets. See our vignette dedicated to the NLS Investigator by typing <code>vignette("NlsInvestigator")</code> or by visiting <a href="https://cran.r-project.org/package=NlsyLinks" class="uri">https://cran.r-project.org/package=NlsyLinks</a>.</p>
 <p>Before starting the real examples, first verify that the NlsyLinks package is installed correctly. If not, please refer to Appendix.</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/any.html">any</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/zpackages.html">.packages</a></span>(<span class="kw">all.available</span><span class="kw">=</span><span class="fl">TRUE</span>) <span class="kw">==</span> <span class="st">"NlsyLinks"</span>) <span class="co">#Should evaluate to TRUE.</span></pre></body></html></div>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/any.html">any</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/zpackages.html">.packages</a></span>(<span class="kw">all.available</span> <span class="kw">=</span> <span class="fl">TRUE</span>) <span class="kw">==</span> <span class="st">"NlsyLinks"</span>) <span class="co">#Should evaluate to TRUE.</span></pre></body></html></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">NlsyLinks</span>) <span class="co">#Load the package into the current session.</span></pre></body></html></div>
 <p>The package’s documentation manual can be opened by typing <code><a href="../reference/NlsyLinks-package.html">?NlsyLinks</a></code> in R or clicking the appropriate entry in RStudio’s ‘Packages’ tab (which is usually in the lower right panel).</p>
@@ -145,7 +145,7 @@
 <p>A DeFries-Fulker (<strong>DF</strong>) Analysis uses linear regression to estimate the <span class="math inline">\(a^2\)</span>, <span class="math inline">\(c^2\)</span>, and <span class="math inline">\(e^2\)</span> of a univariate biometric system. The interpretations of the DF analysis can be found in Rodgers &amp; Kohler (2005) and Rodgers, Rowe, &amp; Li (1999). This vignette example uses the newest variation, which estimates two parameters; the corresponding function is called <code>DeFriesFulkerMethod3</code>. The steps are:</p>
 <ol style="list-style-type: decimal">
 <li><p>Use the NLS Investigator to select and download a Gen2 dataset.</p></li>
-<li><p>Open R and create a new script (see Appendix:RScripts and load the NlsyLinks package. If you haven’t done so, first install the NlsyLinks package (see Appendix:InstallingPackage). Within the R script, identify the locations of the downloaded data file, and load it into a data frame.</p></li>
+<li><p>Open R and create a new script (see <a href="#appendix-creating-and-saving-r-scripts">Appendix: R Scripts</a> and load the NlsyLinks package. If you haven’t done so, <a href="#appendix-installing-and-loading-the-nlsylinks-package">install the NlsyLinks package</a>). Within the R script, identify the locations of the downloaded data file, and load it into a data frame.</p></li>
 <li><p>Within the R script, load the linking dataset. Then select only Gen2 subjects. The ‘Pair’ version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.</p></li>
 <li><p>Load and assign the <code>ExtraOutcomes79</code> dataset.</p></li>
 <li><p>Specify the outcome variable name and filter out all subjects who have a negative value in this variable. The NLSY typically uses negative values to indicate different types of missingness (see ‘Further Information’ below).</p></li>
@@ -238,7 +238,7 @@
 <p>The steps are:</p>
 <ol style="list-style-type: decimal">
 <li><p>Use the NLS Investigator to select and download a Gen2 dataset. Select the variables ‘length of gestation of child in weeks’ (<code>C03280.00</code>), ‘weight of child at birth in ounces’ (<code>C03286.00</code>), and ‘length of child at birth’ (<code>C03288.00</code>), and then download the *.zip file to your local computer.</p></li>
-<li><p>Open R and create a new script (see Appendix: RScripts) and load the NlsyLinks package.</p></li>
+<li><p><a href="#appendix-creating-and-saving-r-scripts">Open R and create a new script</a> and load the NlsyLinks package.</p></li>
 <li><p>Within the R script, load the linking dataset. Then select only Gen2 subjects.</p></li>
 <li><p>Read the CSV into R as a <code>data.frame</code> using <code>ReadCsvNlsy79Gen2</code>.</p></li>
 <li><p>Verify the desired outcome column exists, and rename it something meaningful to your project. It is important that the <code>data.frame</code> is reassigned (<em>i.e.</em>, <code>ds &lt;- RenameNlsyColumn(...)</code>). In this example, we rename column <code>C0328800</code> to <code>BirthWeightInOunces</code>.</p></li>
@@ -497,7 +497,7 @@
              <span class="kw">caption</span><span class="kw">=</span><span class="st">"Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"</span>)
 <span class="fu">print.xtable</span>(<span class="no">xt</span>, <span class="kw">format.args</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">big.mark</span><span class="kw">=</span><span class="st">","</span>), <span class="kw">type</span> <span class="kw">=</span> <span class="st">"html"</span>)</pre></body></html></div>
 <!-- html table generated in R 4.0.0 by xtable 1.8-4 package -->
-<!-- Sat May 16 17:13:09 2020 -->
+<!-- Sat May 16 18:58:42 2020 -->
 <table class="table">
 <caption align="bottom">
 Number of NLSY79 relationship, by <code>RelationshipPath</code>.(Recall that ‘AuntNiece’ also contains uncles and nephews.)
@@ -627,10 +627,10 @@ AuntNiece
 <h1 class="hasAnchor">
 <a href="#appendix-installing-and-loading-the-nlsylinks-package" class="anchor"></a>Appendix: Installing and Loading the NlsyLinks Package</h1>
 <p>There are three operations you’ll typically do with a package: (a) install, (b) load, and (c) update.</p>
-<p>The simplest way to <em>install</em> NlsyLinks is to type <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("NlsyLinks")</a></code>. You may be asked to select a CRAN mirror to download the package from; if so, choose a close location.</p>
+<p>The simplest way to <em>install</em> NlsyLinks is to type <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("NlsyLinks")</a></code> in the console.</p>
 <p>R then will download NlsyLinks on your local computer. It may try to save and install the package to a location that you don’t have permission to write files in. If so, R will ask if you would like to install it to a better location (<em>i.e.</em>, somewhere you do have permission to write files). Approve this decision (which is acceptable for everyone except for some network administrators).</p>
 <p>For a given computer, you’ll need to <em>install</em> a package only once for each version of R (new versions of R are released every few months). However, you’ll need to <em>load</em> a package in every session that you call its functions. To <em>load</em> NlsyLinks, type <code><a href="https://rdrr.io/pkg/NlsyLinks/man">library(NlsyLinks)</a></code>. Loading reads NlsyLinks information from the hard drive and places it in temporary memory. Once it’s loaded, you won’t need to load it again until R is closed and reopened later.</p>
-<p>Developers are continually improving their packages by adding functions and documentation. These newer versions are then uploaded to the CRAN servers. You may <em>update</em> all your installed packages at once by typing <code><a href="https://rdrr.io/r/utils/update.packages.html">update.packages()</a></code>. The command checks a CRAN server for newer versions of the packages installed on your local machine. Then they are automatically downloaded and installed.</p>
+<p>Developers are continually improving their packages by adding functions and documentation. These newer versions are then uploaded to the CRAN servers. You may <em>update</em> all your installed packages at once by typing <code><a href="https://rdrr.io/r/utils/update.packages.html">update.packages(ask = FALSE)</a></code>. The command checks a CRAN server for newer versions of the packages installed on your local machine. Then they are automatically downloaded and installed.</p>
 <p>The grant supporting NlsyLinks extends until Summer 2014. Until then, we’ll be including new features and documentation, as we address additional user needs (if you have suggestions, we’d like to hear from you). When the NLSY periodically updates its data, we’ll update our kinship links (embedded in NlsyLinks) with the newest information.</p>
 </div>
 <div id="appendix-references" class="section level1">
@@ -669,37 +669,10 @@ AuntNiece
 <th style="text-align:left;">
 </th>
 <th style="text-align:left;">
-package
-</th>
-<th style="text-align:left;">
-ondiskversion
-</th>
-<th style="text-align:left;">
 loadedversion
 </th>
 <th style="text-align:left;">
-path
-</th>
-<th style="text-align:left;">
-loadedpath
-</th>
-<th style="text-align:left;">
-attached
-</th>
-<th style="text-align:left;">
-is_base
-</th>
-<th style="text-align:left;">
 date
-</th>
-<th style="text-align:left;">
-source
-</th>
-<th style="text-align:left;">
-md5ok
-</th>
-<th style="text-align:left;">
-library
 </th>
 </tr></thead>
 <tbody>
@@ -708,189 +681,54 @@ library
 assertthat
 </td>
 <td style="text-align:left;">
-assertthat
-</td>
-<td style="text-align:left;">
 0.2.1
-</td>
-<td style="text-align:left;">
-0.2.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/assertthat
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/assertthat
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2019-03-21
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 backports
 </td>
 <td style="text-align:left;">
-backports
-</td>
-<td style="text-align:left;">
 1.1.7
-</td>
-<td style="text-align:left;">
-1.1.7
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/backports
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/backports
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-05-13
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 callr
 </td>
 <td style="text-align:left;">
-callr
-</td>
-<td style="text-align:left;">
 3.4.3
-</td>
-<td style="text-align:left;">
-3.4.3
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/callr
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/callr
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-03-28
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 cli
 </td>
 <td style="text-align:left;">
-cli
-</td>
-<td style="text-align:left;">
 2.0.2
-</td>
-<td style="text-align:left;">
-2.0.2
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/cli
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/cli
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-02-28
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 colorspace
-</td>
-<td style="text-align:left;">
-colorspace
-</td>
-<td style="text-align:left;">
-1.4.1
 </td>
 <td style="text-align:left;">
 1.4-1
 </td>
 <td style="text-align:left;">
-D:/Projects/RLibraries/colorspace
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/colorspace
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 2019-03-18
-</td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -898,455 +736,131 @@ D:/Projects/RLibraries
 crayon
 </td>
 <td style="text-align:left;">
-crayon
-</td>
-<td style="text-align:left;">
 1.3.4
-</td>
-<td style="text-align:left;">
-1.3.4
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/crayon
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/crayon
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2017-09-16
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 desc
 </td>
 <td style="text-align:left;">
-desc
-</td>
-<td style="text-align:left;">
 1.2.0
-</td>
-<td style="text-align:left;">
-1.2.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/desc
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/desc
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2018-05-01
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 devtools
 </td>
 <td style="text-align:left;">
-devtools
-</td>
-<td style="text-align:left;">
 2.3.0
-</td>
-<td style="text-align:left;">
-2.3.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/devtools
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/devtools
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-04-10
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 digest
 </td>
 <td style="text-align:left;">
-digest
-</td>
-<td style="text-align:left;">
 0.6.25
-</td>
-<td style="text-align:left;">
-0.6.25
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/digest
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/digest
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-02-23
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 ellipsis
 </td>
 <td style="text-align:left;">
-ellipsis
-</td>
-<td style="text-align:left;">
 0.3.1
-</td>
-<td style="text-align:left;">
-0.3.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/ellipsis
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/ellipsis
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-05-15
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 evaluate
 </td>
 <td style="text-align:left;">
-evaluate
-</td>
-<td style="text-align:left;">
 0.14
-</td>
-<td style="text-align:left;">
-0.14
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/evaluate
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/evaluate
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2019-05-28
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 fansi
 </td>
 <td style="text-align:left;">
-fansi
-</td>
-<td style="text-align:left;">
 0.4.1
-</td>
-<td style="text-align:left;">
-0.4.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/fansi
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/fansi
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-01-08
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 fs
 </td>
 <td style="text-align:left;">
-fs
-</td>
-<td style="text-align:left;">
 1.4.1
-</td>
-<td style="text-align:left;">
-1.4.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/fs
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/fs
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-04-04
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 glue
 </td>
 <td style="text-align:left;">
-glue
-</td>
-<td style="text-align:left;">
 1.4.1
-</td>
-<td style="text-align:left;">
-1.4.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/glue
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/glue
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-05-13
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 htmltools
 </td>
 <td style="text-align:left;">
-htmltools
-</td>
-<td style="text-align:left;">
 0.4.0
-</td>
-<td style="text-align:left;">
-0.4.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/htmltools
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/htmltools
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2019-10-04
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 knitr
 </td>
 <td style="text-align:left;">
-knitr
-</td>
-<td style="text-align:left;">
 1.28
-</td>
-<td style="text-align:left;">
-1.28
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/knitr
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/knitr
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-02-06
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 lavaan
-</td>
-<td style="text-align:left;">
-lavaan
-</td>
-<td style="text-align:left;">
-0.6.6
 </td>
 <td style="text-align:left;">
 0.6-6
 </td>
 <td style="text-align:left;">
-D:/Projects/RLibraries/lavaan
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/lavaan
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 2020-05-13
-</td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1354,113 +868,32 @@ D:/Projects/RLibraries
 lifecycle
 </td>
 <td style="text-align:left;">
-lifecycle
-</td>
-<td style="text-align:left;">
 0.2.0
-</td>
-<td style="text-align:left;">
-0.2.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/lifecycle
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/lifecycle
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-03-06
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 magrittr
 </td>
 <td style="text-align:left;">
-magrittr
-</td>
-<td style="text-align:left;">
 1.5
-</td>
-<td style="text-align:left;">
-1.5
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/magrittr
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/magrittr
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2014-11-22
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 MASS
-</td>
-<td style="text-align:left;">
-MASS
-</td>
-<td style="text-align:left;">
-7.3.51.6
 </td>
 <td style="text-align:left;">
 7.3-51.6
 </td>
 <td style="text-align:left;">
-C:/Program Files/R/R-4.0.0patched/library/MASS
-</td>
-<td style="text-align:left;">
-C:/Program Files/R/R-4.0.0patched/library/MASS
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 2020-04-26
-</td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-C:/Program Files/R/R-4.0.0patched/library
 </td>
 </tr>
 <tr>
@@ -1468,75 +901,21 @@ C:/Program Files/R/R-4.0.0patched/library
 memoise
 </td>
 <td style="text-align:left;">
-memoise
-</td>
-<td style="text-align:left;">
 1.1.0
-</td>
-<td style="text-align:left;">
-1.1.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/memoise
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/memoise
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2017-04-21
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 mnormt
-</td>
-<td style="text-align:left;">
-mnormt
-</td>
-<td style="text-align:left;">
-1.5.7
 </td>
 <td style="text-align:left;">
 1.5-7
 </td>
 <td style="text-align:left;">
-D:/Projects/RLibraries/mnormt
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/mnormt
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 2020-04-30
-</td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -1544,569 +923,164 @@ D:/Projects/RLibraries
 munsell
 </td>
 <td style="text-align:left;">
-munsell
-</td>
-<td style="text-align:left;">
 0.5.0
-</td>
-<td style="text-align:left;">
-0.5.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/munsell
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/munsell
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2018-06-12
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 NlsyLinks
 </td>
 <td style="text-align:left;">
-NlsyLinks
-</td>
-<td style="text-align:left;">
 2.0.8.9001
-</td>
-<td style="text-align:left;">
-2.0.8.9001
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/NlsyLinks
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/NlsyLinks
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-05-16
 </td>
-<td style="text-align:left;">
-local
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 pbivnorm
 </td>
 <td style="text-align:left;">
-pbivnorm
-</td>
-<td style="text-align:left;">
 0.6.0
-</td>
-<td style="text-align:left;">
-0.6.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/pbivnorm
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/pbivnorm
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2015-01-23
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 pkgbuild
 </td>
 <td style="text-align:left;">
-pkgbuild
-</td>
-<td style="text-align:left;">
 1.0.8
-</td>
-<td style="text-align:left;">
-1.0.8
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/pkgbuild
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/pkgbuild
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-05-07
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 pkgdown
 </td>
 <td style="text-align:left;">
-pkgdown
-</td>
-<td style="text-align:left;">
 1.5.1
-</td>
-<td style="text-align:left;">
-1.5.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/pkgdown
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/pkgdown
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-04-09
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 pkgload
 </td>
 <td style="text-align:left;">
-pkgload
-</td>
-<td style="text-align:left;">
 1.0.2
-</td>
-<td style="text-align:left;">
-1.0.2
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/pkgload
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/pkgload
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2018-10-29
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 prettyunits
 </td>
 <td style="text-align:left;">
-prettyunits
-</td>
-<td style="text-align:left;">
 1.1.1
-</td>
-<td style="text-align:left;">
-1.1.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/prettyunits
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/prettyunits
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-01-24
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 processx
 </td>
 <td style="text-align:left;">
-processx
-</td>
-<td style="text-align:left;">
 3.4.2
-</td>
-<td style="text-align:left;">
-3.4.2
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/processx
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/processx
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-02-09
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 ps
 </td>
 <td style="text-align:left;">
-ps
-</td>
-<td style="text-align:left;">
 1.3.3
-</td>
-<td style="text-align:left;">
-1.3.3
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/ps
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/ps
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-05-08
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 R6
 </td>
 <td style="text-align:left;">
-R6
-</td>
-<td style="text-align:left;">
 2.4.1
-</td>
-<td style="text-align:left;">
-2.4.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/R6
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/R6
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2019-11-12
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Rcpp
 </td>
 <td style="text-align:left;">
-Rcpp
-</td>
-<td style="text-align:left;">
 1.0.4.6
-</td>
-<td style="text-align:left;">
-1.0.4.6
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/Rcpp
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/Rcpp
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-04-09
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 remotes
 </td>
 <td style="text-align:left;">
-remotes
-</td>
-<td style="text-align:left;">
 2.1.1
-</td>
-<td style="text-align:left;">
-2.1.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/remotes
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/remotes
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-02-15
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 rlang
 </td>
 <td style="text-align:left;">
-rlang
-</td>
-<td style="text-align:left;">
 0.4.6
-</td>
-<td style="text-align:left;">
-0.4.6
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/rlang
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/rlang
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-05-02
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 rmarkdown
 </td>
 <td style="text-align:left;">
-rmarkdown
-</td>
-<td style="text-align:left;">
 2.1
-</td>
-<td style="text-align:left;">
-2.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/rmarkdown
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/rmarkdown
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-01-20
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 rprojroot
-</td>
-<td style="text-align:left;">
-rprojroot
-</td>
-<td style="text-align:left;">
-1.3.2
 </td>
 <td style="text-align:left;">
 1.3-2
 </td>
 <td style="text-align:left;">
-D:/Projects/RLibraries/rprojroot
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/rprojroot
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 2018-01-03
-</td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2114,379 +1088,109 @@ D:/Projects/RLibraries
 rstudioapi
 </td>
 <td style="text-align:left;">
-rstudioapi
-</td>
-<td style="text-align:left;">
 0.11
-</td>
-<td style="text-align:left;">
-0.11
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/rstudioapi
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/rstudioapi
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-02-07
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 scales
 </td>
 <td style="text-align:left;">
-scales
-</td>
-<td style="text-align:left;">
 1.1.1
-</td>
-<td style="text-align:left;">
-1.1.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/scales
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/scales
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-05-11
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 sessioninfo
 </td>
 <td style="text-align:left;">
-sessioninfo
-</td>
-<td style="text-align:left;">
 1.1.1
-</td>
-<td style="text-align:left;">
-1.1.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/sessioninfo
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/sessioninfo
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2018-11-05
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 stringi
 </td>
 <td style="text-align:left;">
-stringi
-</td>
-<td style="text-align:left;">
 1.4.6
-</td>
-<td style="text-align:left;">
-1.4.6
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/stringi
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/stringi
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-02-17
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 stringr
 </td>
 <td style="text-align:left;">
-stringr
-</td>
-<td style="text-align:left;">
 1.4.0
-</td>
-<td style="text-align:left;">
-1.4.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/stringr
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/stringr
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2019-02-10
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 testthat
 </td>
 <td style="text-align:left;">
-testthat
-</td>
-<td style="text-align:left;">
 2.3.2
-</td>
-<td style="text-align:left;">
-2.3.2
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/testthat
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/testthat
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-03-02
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 usethis
 </td>
 <td style="text-align:left;">
-usethis
-</td>
-<td style="text-align:left;">
 1.6.1
-</td>
-<td style="text-align:left;">
-1.6.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/usethis
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/usethis
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-04-29
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 withr
 </td>
 <td style="text-align:left;">
-withr
-</td>
-<td style="text-align:left;">
 2.2.0
-</td>
-<td style="text-align:left;">
-2.2.0
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/withr
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/withr
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-04-20
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 xfun
 </td>
 <td style="text-align:left;">
-xfun
-</td>
-<td style="text-align:left;">
 0.13
-</td>
-<td style="text-align:left;">
-0.13
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/xfun
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/xfun
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-04-13
 </td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 xtable
-</td>
-<td style="text-align:left;">
-xtable
-</td>
-<td style="text-align:left;">
-1.8.4
 </td>
 <td style="text-align:left;">
 1.8-4
 </td>
 <td style="text-align:left;">
-D:/Projects/RLibraries/xtable
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/xtable
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
 2019-04-21
-</td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
 </td>
 </tr>
 <tr>
@@ -2494,37 +1198,10 @@ D:/Projects/RLibraries
 yaml
 </td>
 <td style="text-align:left;">
-yaml
-</td>
-<td style="text-align:left;">
 2.2.1
-</td>
-<td style="text-align:left;">
-2.2.1
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/yaml
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries/yaml
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-FALSE
 </td>
 <td style="text-align:left;">
 2020-02-01
-</td>
-<td style="text-align:left;">
-CRAN (R 4.0.0)
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-D:/Projects/RLibraries
 </td>
 </tr>
 </tbody>

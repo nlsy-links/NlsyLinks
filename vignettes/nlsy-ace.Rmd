@@ -55,7 +55,7 @@ The **NLS Investigator** (http://www.nlsinfo.org/investigator/) is the best way 
 Before starting the real examples, first verify that the NlsyLinks package is installed correctly.  If not, please refer to Appendix.
 
 ```{r}
-any(.packages(all.available=TRUE) == "NlsyLinks") #Should evaluate to TRUE.
+any(.packages(all.available = TRUE) == "NlsyLinks") #Should evaluate to TRUE.
 library(NlsyLinks) #Load the package into the current session.
 ```
 
@@ -72,7 +72,7 @@ The steps are:
 
 1. Use the NLS Investigator to select and download a Gen2 dataset.
 
-1. Open R and create a new script (see Appendix:RScripts and load the NlsyLinks package.  If you haven't done so, first install the NlsyLinks package (see Appendix:InstallingPackage).
+1. Open R and create a new script (see [Appendix: R Scripts](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.  If you haven't done so, [install the NlsyLinks package](#appendix-installing-and-loading-the-nlsylinks-package)).
  Within the R script, identify the locations of the downloaded data file, and load it into a data frame.
 
 1. Within the R script, load the linking dataset.  Then select only Gen2 subjects.  The 'Pair' version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.
@@ -127,7 +127,7 @@ The steps are:
 
 1. Use the NLS Investigator to select and download a Gen2 dataset.  Select the variables 'length of gestation of child in weeks' (`C03280.00`), 'weight of child at birth in ounces' (`C03286.00`), and 'length of child at birth' (`C03288.00`), and then download the *.zip file to your local computer.
 
-1. Open R and create a new script (see Appendix: RScripts) and load the NlsyLinks package.
+1. [Open R and create a new script](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.
 1. Within the R script, load the linking dataset.  Then select only Gen2 subjects.
 1. Read the CSV into R as a `data.frame` using `ReadCsvNlsy79Gen2`.
 1. Verify the desired outcome column exists, and rename it something meaningful to your project.  It is important that the `data.frame` is reassigned (*i.e.*, `ds <- RenameNlsyColumn(...)`).  In this example, we rename column `C0328800` to `BirthWeightInOunces`.
@@ -398,8 +398,7 @@ Appendix: Installing and Loading the NlsyLinks Package
 There are three operations you'll typically do with a package: (a) install, (b) load, and (c) update.
 
 The simplest way to *install* NlsyLinks is to type
-`install.packages("NlsyLinks")`.  You may be asked to select a CRAN
-mirror to download the package from; if so, choose a close location.
+`install.packages("NlsyLinks")` in the console.
 
 R then will download NlsyLinks on your local computer.  It may
 try to save and install the package to a location that you don't have permission to
@@ -419,7 +418,7 @@ is closed and reopened later.
 Developers are continually improving their packages by adding functions and
 documentation.  These newer versions are then uploaded to the CRAN servers.  You
 may *update* all your installed packages at once by typing
-`update.packages()`.  The command checks a CRAN server for
+`update.packages(ask = FALSE)`.  The command checks a CRAN server for
 newer versions of the packages installed on your local machine.  Then they are
 automatically downloaded and installed.
 
@@ -463,7 +462,7 @@ For the sake of documentation and reproducibility, the current report was render
   <summary>Environment <span class="glyphicon glyphicon-plus-sign"></span></summary>
 ```{r session-info-2, echo=FALSE}
 devtools::session_info()$platform
-knitr::kable(devtools::session_info()$packages, format="html")
+knitr::kable(devtools::session_info()$packages[, c("loadedversion", "date")], format="html")
 ```
 </details>
 
