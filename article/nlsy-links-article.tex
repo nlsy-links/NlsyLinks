@@ -733,13 +733,13 @@ The steps are:
   function. This \texttt{data.frame} contains only the three necessary
   rows and columns.
 \item
-  Estimate the SEM with the \pkg{lavaan} package. The function returns
-  an \texttt{S4} object, which shows the basic ACE information.
+  Estimate the SEM with the lavaan package. The function returns an
+  \texttt{S4} object, which shows the basic ACE information.
 \item
   Inspect details of the SEM, beyond the ACE components. In this
   example, we look at the fit stats and the parameter estimates. The
-  \pkg{lavaan} package has additional methods that may be useful for
-  your purposes.
+  lavaan package has additional methods that may be useful for your
+  purposes.
 \end{enumerate}
 
 \begin{Shaded}
@@ -904,8 +904,8 @@ The example differs from the previous example in one way --all possible
 pairs are considered for the analysis. Pairs are only excluded (a) if
 they belong to one of the small \texttt{R} groups that are difficult to
 estimate, or (b) if the value for adult height is missing. This includes
-all \Sexpr{scales::comma(nrow(Links79Pair))} relationships in the follow
-five types of NLSY79 relationships.
+all 42,836 relationships in the follow five types of NLSY79
+relationships.
 
 \begin{Shaded}
 \begin{Highlighting}[]

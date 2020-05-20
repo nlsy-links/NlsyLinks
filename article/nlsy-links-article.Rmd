@@ -248,9 +248,9 @@ The steps are:
 
 9. Create a `data.frame` with cleaned variables to pass to the SEM function.  This `data.frame` contains only the three necessary rows and columns.
 
-10. Estimate the SEM with the \pkg{lavaan} package.  The function returns an `S4` object, which shows the basic ACE information.
+10. Estimate the SEM with the lavaan package.  The function returns an `S4` object, which shows the basic ACE information.
 
-11. Inspect details of the SEM, beyond the ACE components.  In this example, we look at the fit stats and the parameter estimates.  The \pkg{lavaan} package has additional methods that may be useful for your purposes.
+11. Inspect details of the SEM, beyond the ACE components.  In this example, we look at the fit stats and the parameter estimates.  The lavaan package has additional methods that may be useful for your purposes.
 
 
 ```{r}
@@ -304,7 +304,8 @@ ACE SEM of Two Generations
 
 {Benefits of cross-generational analysis}
 
-The example differs from the previous example in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small `R` groups that are difficult to estimate, or (b) if the value for adult height is missing.  This includes all \Sexpr{scales::comma(nrow(Links79Pair))} relationships in the follow five types of NLSY79 relationships.
+The example differs from the previous example in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small `R` groups that are difficult to estimate, or (b) if the value for adult height is missing.  This includes all `r scales::comma(nrow(Links79Pair))` relationships in the follow five types of NLSY79 relationships.
+
 ```{r, results='asis'}
 xt <- xtable::xtable(table(Links79Pair$RelationshipPath, dnn=c("Relationship Frequency")),
              caption="Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)")
