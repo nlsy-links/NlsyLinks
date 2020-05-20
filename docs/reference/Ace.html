@@ -249,7 +249,7 @@ versions will incorporate methods that use latent variable models.</p>
 <span class='no'>estimatedMath</span> <span class='co'>#ASquared and CSquared should be 0.85 and 0.045.</span></div><div class='output co'>#&gt; [1] "Results of ACE estimation: [show]"
 #&gt;     ASquared     CSquared     ESquared    CaseCount 
 #&gt; 7.734447e-01 1.469204e-01 7.963486e-02 1.668000e+04 </div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='fu'><a href='GetDetails-methods.html'>GetDetails</a></span>(<span class='no'>estimatedMath</span>))</div><div class='output co'>#&gt; [1] "lm"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='fu'><a href='GetDetails-methods.html'>GetDetails</a></span>(<span class='no'>estimatedMath</span>))</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/r/base/class.html'>class</a></span>(<span class='fu'>GetDetails</span>(<span class='no'>estimatedMath</span>))</div><div class='output co'>#&gt; [1] "lm"</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='fu'>GetDetails</span>(<span class='no'>estimatedMath</span>))</div><div class='output co'>#&gt; 
 #&gt; Call:
 #&gt; stats::lm(formula = dv_S1Centered ~ 0 + dv_S2Centered + interaction)
 #&gt; 

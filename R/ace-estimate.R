@@ -4,12 +4,6 @@
 #'
 #' @name AceEstimate-class
 #'
-#' @aliases AceEstimate-class getEstimate,AceEstimate-method
-#' initialize,AceEstimate-method print,AceEstimate-method
-#' show,AceEstimate-method GetDetails,AceEstimate-method
-#'
-#' @docType class
-#'
 #' @note The contents of the `Details` list depends on the underlying
 #' estimation routine.  For example, when the ACE model is estimated with a DF
 #' analysis, the output is an [stats::lm()] object, because the [stats::lm()] function
@@ -30,7 +24,6 @@
 #' est <- CreateAceEstimate(.5, .2, .3, 40)
 #' est
 #' print(est)
-
 methods::setClass(Class="AceEstimate",
   representation=representation(
     ASquared ="numeric",
@@ -109,11 +102,8 @@ methods::setMethod(f="show", "AceEstimate", function( object ) {
 
 methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetails") })
 
-#' @name GetDetails-methods
-#' @aliases GetDetails-methods GetDetails AceEstimate-method
 #' @export GetDetails
 #' @exportMethod GetDetails
-#' @docType methods
 #' @title A generic function for extracting the `Details` slot of an object.
 #'
 #' @description A generic function for extracting the `Details` slot of an AceEstimation object.
@@ -146,7 +136,6 @@ methods::setMethod(f="GetDetails", "AceEstimate",
 ## '
 ## ' @name GetEstimate-methods
 ## ' @aliases GetEstimate-methods GetEstimate,AceEstimate-method
-## ' @docType methods
 ## ' @section Methods: \describe{
 ## '
 ## ' \item{list("signature(object = \"AceEstimate\")")}{ %% ~~describe this

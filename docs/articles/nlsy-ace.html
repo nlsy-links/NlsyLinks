@@ -108,7 +108,7 @@
                         <h4 class="author">Kelly <a href="https://www.okcu.edu/directory/kelly-williams">Williams</a> (Oklahoma City University, OKC)</h4>
                         <h4 class="author">Michael D. <a href="http://mhuntero.com/">Hunter</a> (Georgia Tech, Atlanta)</h4>
             
-            <h4 class="date">2020-05-16</h4>
+            <h4 class="date">2020-05-20</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/nlsy-ace.Rmd"><code>vignettes/nlsy-ace.Rmd</code></a></small>
       <div class="hidden name"><code>nlsy-ace.Rmd</code></div>
@@ -379,7 +379,7 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">lavaan</span>) <span class="co">#Load the package to access methods of the lavaan class.</span></pre></body></html></div>
 <pre><code>## This is lavaan 0.6-6</code></pre>
 <pre><code>## lavaan is BETA software! Please report any bugs.</code></pre>
-<div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="fu"><a href="../reference/GetDetails-methods.html">GetDetails</a></span>(<span class="no">ace</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="fu">GetDetails</span>(<span class="no">ace</span>)</pre></body></html></div>
 <pre><code>## lavaan 0.6-6 ended normally after 54 iterations
 ## 
 ##   Estimator                                         ML
@@ -404,7 +404,7 @@
 ##     3                                          127.671
 ##     4                                            7.428</code></pre>
 <div class="sourceCode" id="cb27"><html><body><pre class="r"><span class="co">#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.</span>
-<span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span>(<span class="fu"><a href="../reference/GetDetails-methods.html">GetDetails</a></span>(<span class="no">ace</span>)) <span class="co">#'fitMeasures' is defined in the lavaan package.</span></pre></body></html></div>
+<span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span>(<span class="fu">GetDetails</span>(<span class="no">ace</span>)) <span class="co">#'fitMeasures' is defined in the lavaan package.</span></pre></body></html></div>
 <pre><code>##                npar                fmin               chisq                  df 
 ##               4.000               0.027             447.241              16.000 
 ##              pvalue      baseline.chisq         baseline.df     baseline.pvalue 
@@ -497,7 +497,7 @@
              <span class="kw">caption</span><span class="kw">=</span><span class="st">"Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"</span>)
 <span class="fu">print.xtable</span>(<span class="no">xt</span>, <span class="kw">format.args</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">big.mark</span><span class="kw">=</span><span class="st">","</span>), <span class="kw">type</span> <span class="kw">=</span> <span class="st">"html"</span>)</pre></body></html></div>
 <!-- html table generated in R 4.0.0 by xtable 1.8-4 package -->
-<!-- Sat May 16 18:58:42 2020 -->
+<!-- Wed May 20 11:42:04 2020 -->
 <table class="table">
 <caption align="bottom">
 Number of NLSY79 relationship, by <code>RelationshipPath</code>.(Recall that ‘AuntNiece’ also contains uncles and nephews.)
@@ -663,7 +663,7 @@ AuntNiece
 ##  collate  English_United States.1252                 
 ##  ctype    English_United States.1252                 
 ##  tz       America/Chicago                            
-##  date     2020-05-16</code></pre>
+##  date     2020-05-20</code></pre>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -937,7 +937,7 @@ NlsyLinks
 2.0.8.9001
 </td>
 <td style="text-align:left;">
-2020-05-16
+2020-05-20
 </td>
 </tr>
 <tr>
@@ -1176,10 +1176,10 @@ withr
 xfun
 </td>
 <td style="text-align:left;">
-0.13
+0.14
 </td>
 <td style="text-align:left;">
-2020-04-13
+2020-05-20
 </td>
 </tr>
 <tr>
