@@ -193,7 +193,7 @@ The steps are:
 
 6. Create a *single*-entered file by calling the `CreatePairLinksSingleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).
 
-7. Declare the names of the outcome variables corresponding to the two members in each pair.  Assuming the variable is called 'ZZZ' and the preceeding steps have been followed, the variable 'ZZZ\_S1' corresponds to the first members and ZZZ\_S2' corresponds to the second members.
+7. Declare the names of the outcome variables corresponding to the two members in each pair.  Assuming the variable is called 'ZZZ' and the preceding steps have been followed, the variable 'ZZZ\_S1' corresponds to the first members and ZZZ\_S2' corresponds to the second members.
 
 8. Create a GroupSummary `data.frame`, which identifies the `R` groups that should be considered by the model.  Inspect the output to see if the groups show unexpected or fishy differences.
 
@@ -422,7 +422,7 @@ may *update* all your installed packages at once by typing
 newer versions of the packages installed on your local machine.  Then they are
 automatically downloaded and installed.
 
-The grant supporting NlsyLinks extends until Summer 2014.  Until then,
+The grant supporting NlsyLinks extends until 2020.  Until then,
 we'll be including new features and documentation, as we address additional user
 needs (if you have suggestions, we'd like to hear from you).  When the NLSY periodically updates its data, we'll
 update our kinship links (embedded in NlsyLinks) with the newest information.

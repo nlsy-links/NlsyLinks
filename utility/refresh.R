@@ -18,7 +18,7 @@ devtools::build_vignettes()
 # pkgdown::clean_site()
 pkgdown::build_site()
 
-# devtools::build(args="--resave-data --no-build-vignettes")#args="--resave-data")
+# devtools::build(args="--resave-data --no-build-vignetteszz")#args="--resave-data")
 
 # system("R CMD build --resave-data .") #Then move it up one directory.
 # tarBallPattern <- "^NlsyLinks_.+\\.tar\\.gz$"
