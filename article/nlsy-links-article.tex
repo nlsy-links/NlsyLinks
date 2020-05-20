@@ -117,16 +117,8 @@ The text of your abstract. 150 -- 250 words.
 \hypertarget{intro}{%
 \section{Introduction}\label{intro}}
 
-\hypertarget{abstract}{%
-\subsection{Abstract}\label{abstract}}
-
-\hypertarget{introduction}{%
-\subsection{Introduction}\label{introduction}}
-
 \begin{itemize}
 \tightlist
-\item
-  NLSY Structure
 \item
   Benefits of Accounting for Kinships
 
@@ -137,12 +129,10 @@ The text of your abstract. 150 -- 250 words.
   \item
     D'Onofrio-type research
   \end{itemize}
-\item
-  Terminology
 \end{itemize}
 
 \hypertarget{structural-and-topical-information}{%
-\subsubsection{Structural and Topical
+\subsection{Structural and Topical
 information}\label{structural-and-topical-information}}
 
 The NlsyLinks package offers two types of datasets: topical and
@@ -182,7 +172,7 @@ relationships, see Rodgers et al.,
 \href{http://link.springer.com/article/10.1007\%2Fs10519-016-9785-3}{2016}).
 
 \hypertarget{terminology}{%
-\subsubsection{Terminology}\label{terminology}}
+\subsection{Terminology}\label{terminology}}
 
 The package pertains to multiple generations of the `Nlsy79' and
 multiple generations of the `Nlsy97'. Because the NlsyLinks package
@@ -308,16 +298,12 @@ For more in-depth ACE model-fitting strategies, we recommend
 (1992)}.
 
 \hypertarget{retrieving-data-with-the-nls-investigator}{%
-\subsection{Retrieving Data with the NLS
+\section{Retrieving Data with the NLS
 Investigator}\label{retrieving-data-with-the-nls-investigator}}
 
-\begin{itemize}
-\tightlist
-\item
-  This will use much of the existing
-  \href{https://nlsy-links.github.io/NlsyLinks/docs/articles/nls-investigator.html}{NLS
-  Investigator} vignette.
-\end{itemize}
+\{This will use much of the existing
+\href{https://nlsy-links.github.io/NlsyLinks/docs/articles/nls-investigator.html}{NLS
+Investigator} vignette.\}
 
 When a researcher pursues a new idea, we suggest to start by exploring
 what the NLSY can offer by poking around the (a) vast online
@@ -346,19 +332,16 @@ installed correctly. If not, please refer to Appendix.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{any}\NormalTok{(}\KeywordTok{.packages}\NormalTok{(}\DataTypeTok{all.available =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{==}\StringTok{ "NlsyLinks"}\NormalTok{) }\CommentTok{#Should evaluate to TRUE.}
+\CommentTok{# Should evaluate to TRUE.}
+\KeywordTok{any}\NormalTok{(}\KeywordTok{.packages}\NormalTok{(}\DataTypeTok{all.available =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{==}\StringTok{ "NlsyLinks"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(NlsyLinks) }\CommentTok{# Load the package into the current session.}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## [1] TRUE
-\end{verbatim}
+\hypertarget{illustrative-examples}{%
+\section{Illustrative Examples}\label{illustrative-examples}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(NlsyLinks) }\CommentTok{#Load the package into the current session.}
-\end{Highlighting}
-\end{Shaded}
+We will start with a simple example and gradually increase complexity.
 
 \hypertarget{ace-df-analysis-of-one-generation-nlsy79-gen1}{%
 \subsection{ACE DF Analysis of One Generation (NLSY79
@@ -424,13 +407,12 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{### R Code for Example DF analysis with a simple outcome and Gen2 subjects}
-\CommentTok{#Step 2: Load the package containing the linking routines.}
+\CommentTok{# Step 2: Load the package containing the linking routines.}
 \KeywordTok{library}\NormalTok{(NlsyLinks)}
 
-\CommentTok{#Step 3: Load the LINKING dataset and filter for the Gen2 subjects}
+\CommentTok{# Step 3: Load the LINKING dataset and filter for the Gen2 subjects}
 \NormalTok{dsLinking <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(Links79Pair, RelationshipPath}\OperatorTok{==}\StringTok{"Gen2Siblings"}\NormalTok{)}
-\KeywordTok{summary}\NormalTok{(dsLinking) }\CommentTok{#Notice there are 11,088 records (one for each unique pair).}
+\KeywordTok{summary}\NormalTok{(dsLinking) }\CommentTok{#Notice there are 11k records (one for each pair).}
 \end{Highlighting}
 \end{Shaded}
 
@@ -453,7 +435,7 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#Step 4: Load the OUTCOMES dataset, and then examine the summary.}
+\CommentTok{# Step 4: Load the OUTCOMES dataset, and then examine the summary.}
 \NormalTok{dsOutcomes <-}\StringTok{ }\NormalTok{ExtraOutcomes79 }\CommentTok{#'ds' stands for 'Data Set'}
 \KeywordTok{summary}\NormalTok{(dsOutcomes)}
 \end{Highlighting}
@@ -488,18 +470,18 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#Step 5: This step isn't necessary for this example, because Kelly Meredith already}
-\CommentTok{#   groomed the values.  If the negative values (which represent NLSY missing or}
+\CommentTok{# Step 5: If the negative values (which represent NLSY missing or}
 \CommentTok{#   skip patterns) still exist, then:}
 \NormalTok{dsOutcomes}\OperatorTok{$}\NormalTok{MathStandardized[dsOutcomes}\OperatorTok{$}\NormalTok{MathStandardized }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
 
-\CommentTok{#Step 6: Create the double entered dataset.}
+\CommentTok{# Step 6: Create the double entered dataset.}
 \NormalTok{dsDouble <-}\StringTok{ }\KeywordTok{CreatePairLinksDoubleEntered}\NormalTok{(}
   \DataTypeTok{outcomeDataset   =}\NormalTok{ dsOutcomes,}
   \DataTypeTok{linksPairDataset =}\NormalTok{ dsLinking,}
   \DataTypeTok{outcomeNames     =} \KeywordTok{c}\NormalTok{(}\StringTok{'MathStandardized'}\NormalTok{)}
 \NormalTok{)}
-\KeywordTok{summary}\NormalTok{(dsDouble) }\CommentTok{#Notice there are 22176=(2*11088) records now (two for each unique pair).}
+\CommentTok{# Notice there are now two records for each unique pair.}
+\KeywordTok{summary}\NormalTok{(dsDouble) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -524,11 +506,12 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#Step 7: Estimate the ACE components with a DF Analysis}
+\CommentTok{# Step 7: Estimate the ACE components with a DF Analysis}
 \NormalTok{ace <-}\StringTok{ }\KeywordTok{DeFriesFulkerMethod3}\NormalTok{(}
-    \DataTypeTok{dataSet  =}\NormalTok{ dsDouble,}
-    \DataTypeTok{oName_S1 =} \StringTok{"MathStandardized_S1"}\NormalTok{,}
-    \DataTypeTok{oName_S2 =} \StringTok{"MathStandardized_S2"}\NormalTok{)}
+  \DataTypeTok{dataSet  =}\NormalTok{ dsDouble,}
+  \DataTypeTok{oName_S1 =} \StringTok{"MathStandardized_S1"}\NormalTok{,}
+  \DataTypeTok{oName_S2 =} \StringTok{"MathStandardized_S2"}
+\NormalTok{)}
 \NormalTok{ace}
 \end{Highlighting}
 \end{Shaded}
@@ -600,16 +583,18 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects}
-\CommentTok{#Step 2: Load the package containing the linking routines.}
+\CommentTok{# Step 2: Load the package containing the linking routines.}
 \KeywordTok{library}\NormalTok{(NlsyLinks)}
 
-\CommentTok{#Step 3: Load the linking dataset and filter for the Gen2 subjects}
-\NormalTok{dsLinking <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(Links79Pair, RelationshipPath}\OperatorTok{==}\StringTok{"Gen2Siblings"}\NormalTok{)}
+\CommentTok{# Step 3: Load the linking dataset and filter for the Gen2 subjects}
+\NormalTok{dsLinking <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(Links79Pair, RelationshipPath }\OperatorTok{==}\StringTok{ "Gen2Siblings"}\NormalTok{)}
 
-\CommentTok{#Step 4: Load the outcomes dataset from the hard drive and then examine the summary.}
-\CommentTok{#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/gen2-birth.csv'}
-\NormalTok{filePathOutcomes <-}\StringTok{ }\KeywordTok{file.path}\NormalTok{(}\KeywordTok{path.package}\NormalTok{(}\StringTok{"NlsyLinks"}\NormalTok{), }\StringTok{"extdata"}\NormalTok{, }\StringTok{"gen2-birth.csv"}\NormalTok{)}
+\CommentTok{# Step 4: Read the outcomes dataset then examine the summary.}
+\CommentTok{#   Your path might be filePathOutcomes <- "C:/Nls/gen2-birth.csv"}
+\NormalTok{filePathOutcomes <-}\StringTok{ }\KeywordTok{file.path}\NormalTok{(}
+  \KeywordTok{path.package}\NormalTok{(}\StringTok{"NlsyLinks"}\NormalTok{),}
+  \StringTok{"extdata/gen2-birth.csv"}
+\NormalTok{)}
 \NormalTok{dsOutcomes <-}\StringTok{ }\KeywordTok{ReadCsvNlsy79Gen2}\NormalTok{(filePathOutcomes)}
 \KeywordTok{summary}\NormalTok{(dsOutcomes)}
 \end{Highlighting}
@@ -644,8 +629,8 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#Step 5: Verify and rename an existing column.}
-\KeywordTok{VerifyColumnExists}\NormalTok{(dsOutcomes, }\StringTok{"C0328600"}\NormalTok{) }\CommentTok{#Should return '10' in this example.}
+\CommentTok{# Step 5: Verify and rename an existing column.}
+\KeywordTok{VerifyColumnExists}\NormalTok{(dsOutcomes, }\StringTok{"C0328600"}\NormalTok{) }\CommentTok{# Should return '10' in this example.}
 \end{Highlighting}
 \end{Shaded}
 
@@ -655,23 +640,27 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dsOutcomes <-}\StringTok{ }\KeywordTok{RenameNlsyColumn}\NormalTok{(dsOutcomes, }\StringTok{"C0328600"}\NormalTok{, }\StringTok{"BirthWeightInOunces"}\NormalTok{)}
+\NormalTok{dsOutcomes <-}\StringTok{ }\KeywordTok{RenameNlsyColumn}\NormalTok{(}
+\NormalTok{  dsOutcomes, }
+  \StringTok{"C0328600"}\NormalTok{, }
+  \StringTok{"BirthWeightInOunces"}
+\NormalTok{)}
 
-\CommentTok{#Step 6: For this item, a negative value indicates the parent refused, didn't know,}
-\CommentTok{#   invalidly skipped, or was missing for some other reason.}
-\CommentTok{#   For our present purposes, we'll treat these responses equivalently.}
-\CommentTok{#   Then clip/Winsorized/truncate the weight to something reasonable.}
+\CommentTok{# Step 6: For this item, a negative value indicates the parent }
+\CommentTok{#   refused, didn't know, invalidly skipped, or was missing.}
+\CommentTok{#   For present purposes, treat these responses equivalently.}
+\CommentTok{#   Then clip/Winsorize/truncate the weight.}
 \NormalTok{dsOutcomes}\OperatorTok{$}\NormalTok{BirthWeightInOunces[dsOutcomes}\OperatorTok{$}\NormalTok{BirthWeightInOunces }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
 \NormalTok{dsOutcomes}\OperatorTok{$}\NormalTok{BirthWeightInOunces <-}\StringTok{ }\KeywordTok{pmin}\NormalTok{(dsOutcomes}\OperatorTok{$}\NormalTok{BirthWeightInOunces, }\DecValTok{200}\NormalTok{)}
 
-\CommentTok{#Step 7: Create the double entered dataset.}
+\CommentTok{# Step 7: Create the double entered dataset.}
 \NormalTok{dsDouble <-}\StringTok{ }\KeywordTok{CreatePairLinksDoubleEntered}\NormalTok{(}
   \DataTypeTok{outcomeDataset   =}\NormalTok{ dsOutcomes,}
   \DataTypeTok{linksPairDataset =}\NormalTok{ dsLinking,}
-  \DataTypeTok{outcomeNames     =} \KeywordTok{c}\NormalTok{(}\StringTok{'BirthWeightInOunces'}\NormalTok{)}
+  \DataTypeTok{outcomeNames     =} \KeywordTok{c}\NormalTok{(}\StringTok{"BirthWeightInOunces"}\NormalTok{)}
 \NormalTok{)}
 
-\CommentTok{#Step 8: Estimate the ACE components with a DF Analysis}
+\CommentTok{# Step 8: Estimate the ACE components with a DF Analysis}
 \NormalTok{ace <-}\StringTok{ }\KeywordTok{AceUnivariate}\NormalTok{(}
   \DataTypeTok{method   =} \StringTok{"DeFriesFulkerMethod3"}\NormalTok{,}
   \DataTypeTok{dataSet  =}\NormalTok{ dsDouble,}
@@ -744,25 +733,25 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects}
-\CommentTok{#Steps 1-5 are explained in the vignette's first example:}
+\CommentTok{# Steps 1-5 are explained in the first example:}
 \KeywordTok{library}\NormalTok{(NlsyLinks)}
 \NormalTok{dsLinking <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(Links79Pair, RelationshipPath}\OperatorTok{==}\StringTok{"Gen2Siblings"}\NormalTok{)}
 \NormalTok{dsOutcomes <-}\StringTok{ }\NormalTok{ExtraOutcomes79}
 \NormalTok{dsOutcomes}\OperatorTok{$}\NormalTok{MathStandardized[dsOutcomes}\OperatorTok{$}\NormalTok{MathStandardized }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
 
-\CommentTok{#Step 6: Create the single entered dataset.}
+\CommentTok{# Step 6: Create the single entered dataset.}
 \NormalTok{dsSingle <-}\StringTok{ }\KeywordTok{CreatePairLinksSingleEntered}\NormalTok{(}
   \DataTypeTok{outcomeDataset   =}\NormalTok{ dsOutcomes,}
   \DataTypeTok{linksPairDataset =}\NormalTok{ dsLinking,}
   \DataTypeTok{outcomeNames     =} \KeywordTok{c}\NormalTok{(}\StringTok{'MathStandardized'}\NormalTok{)}
 \NormalTok{)}
 
-\CommentTok{#Step 7: Declare the names for the two outcome variables.}
+\CommentTok{# Step 7: Declare the names for the two outcome variables.}
 \NormalTok{oName_S1 <-}\StringTok{ "MathStandardized_S1"} \CommentTok{#Stands for Outcome1}
 \NormalTok{oName_S2 <-}\StringTok{ "MathStandardized_S2"} \CommentTok{#Stands for Outcome2}
 
-\CommentTok{#Step 8: Summarize the R groups and determine which groups can be estimated.}
+\CommentTok{# Step 8: Summarize the R groups and }
+\CommentTok{#   determine which groups can be estimated.}
 \NormalTok{dsGroupSummary <-}\StringTok{ }\KeywordTok{RGroupSummary}\NormalTok{(dsSingle, oName_S1, oName_S2)}
 \NormalTok{dsGroupSummary}
 \end{Highlighting}
@@ -785,10 +774,10 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#Step 9: Create a cleaned dataset}
+\CommentTok{# Step 9: Create a cleaned dataset}
 \NormalTok{dsClean <-}\StringTok{ }\KeywordTok{CleanSemAceDataset}\NormalTok{(}\DataTypeTok{dsDirty=}\NormalTok{dsSingle, dsGroupSummary, oName_S1, oName_S2)}
 
-\CommentTok{#Step 10: Run the model}
+\CommentTok{# Step 10: Run the model}
 \NormalTok{ace <-}\StringTok{ }\KeywordTok{AceLavaanGroup}\NormalTok{(dsClean)}
 \NormalTok{ace}
 \end{Highlighting}
@@ -802,12 +791,12 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#Notice the 'CaseCount' is 8,390 instead of 17,440.}
-\CommentTok{#  This is because (a) one pair with R=.75 was excluded, and}
-\CommentTok{#  (b) the SEM uses a single-entered dataset instead of double-entered.}
+\CommentTok{# Notice the 'CaseCount' is 8.5k instead of 17k.}
+\CommentTok{#   This is because (a) one pair with R=.75 was excluded, and}
+\CommentTok{#   (b) the SEM uses a single-entered dataset (not double).}
 \CommentTok{#}
-\CommentTok{#Step 11: Inspect the output further}
-\KeywordTok{library}\NormalTok{(lavaan) }\CommentTok{#Load the package to access methods of the lavaan class.}
+\CommentTok{# Step 11: Inspect the output further}
+\KeywordTok{library}\NormalTok{(lavaan)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -853,8 +842,8 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.}
-\KeywordTok{fitMeasures}\NormalTok{(}\KeywordTok{GetDetails}\NormalTok{(ace)) }\CommentTok{#'fitMeasures' is defined in the lavaan package.}
+\CommentTok{# Examine fit stats like Chi-Squared, RMSEA, CFI, etc.}
+\KeywordTok{fitMeasures}\NormalTok{(}\KeywordTok{GetDetails}\NormalTok{(ace)) }\CommentTok{# lavaan defines fitMeasures }
 \end{Highlighting}
 \end{Shaded}
 
@@ -885,9 +874,9 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#Examine low-level details like each group's individual parameter estimates and standard}
-\CommentTok{#  errors.  Uncomment the next line to view the entire output (which is roughly 4 pages).}
-\CommentTok{#summary(GetDetails(ace))}
+\CommentTok{# Examine low-level details like each group's individual estimates}
+\CommentTok{#  and SEs.  Uncomment next line to view entire output (~4 pages).}
+\CommentTok{# summary(GetDetails(ace))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -909,8 +898,10 @@ relationships.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{xt <-}\StringTok{ }\NormalTok{xtable}\OperatorTok{::}\KeywordTok{xtable}\NormalTok{(}\KeywordTok{table}\NormalTok{(Links79Pair}\OperatorTok{$}\NormalTok{RelationshipPath, }\DataTypeTok{dnn=}\KeywordTok{c}\NormalTok{(}\StringTok{"Relationship Frequency"}\NormalTok{)),}
-             \DataTypeTok{caption=}\StringTok{"Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"}\NormalTok{)}
+\NormalTok{xt <-}\StringTok{ }\NormalTok{xtable}\OperatorTok{::}\KeywordTok{xtable}\NormalTok{(}
+  \KeywordTok{table}\NormalTok{(Links79Pair}\OperatorTok{$}\NormalTok{RelationshipPath, }\DataTypeTok{dnn=}\KeywordTok{c}\NormalTok{(}\StringTok{"Relationship Frequency"}\NormalTok{)),}
+  \DataTypeTok{caption =} \StringTok{"Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"}
+\NormalTok{)}
 \NormalTok{xtable}\OperatorTok{::}\KeywordTok{print.xtable}\NormalTok{(xt, }\DataTypeTok{format.args=}\KeywordTok{list}\NormalTok{(}\DataTypeTok{big.mark=}\StringTok{","}\NormalTok{), }\DataTypeTok{type =} \StringTok{"html"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -950,25 +941,24 @@ modeling methods.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects}
-\CommentTok{#Steps 1-5 are explained in the vignette's first example:}
+\CommentTok{# Steps 1-5 are explained in the vignette's first example:}
 \KeywordTok{library}\NormalTok{(NlsyLinks)}
 \NormalTok{dsLinking <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(Links79Pair, RelationshipPath }\OperatorTok{%in%}
 \StringTok{                      }\KeywordTok{c}\NormalTok{(}\StringTok{"Gen1Housemates"}\NormalTok{, }\StringTok{"Gen2Siblings"}\NormalTok{, }\StringTok{"Gen2Cousins"}\NormalTok{,}
                         \StringTok{"ParentChild"}\NormalTok{, }\StringTok{"AuntNiece"}\NormalTok{))}
-\CommentTok{#Because all five paths are specified, the line above is equivalent to:}
-\CommentTok{#dsLinking <- Links79Pair}
+\CommentTok{# Because all five paths are specified, the line above is equivalent to:}
+\CommentTok{# dsLinking <- Links79Pair}
 
 \NormalTok{dsOutcomes <-}\StringTok{ }\NormalTok{ExtraOutcomes79}
-\CommentTok{#The HeightZGenderAge variable is already groomed}
+\CommentTok{# The HeightZGenderAge variable is already groomed}
 
-\CommentTok{#Step 6: Create the single entered dataset.}
+\CommentTok{# Step 6: Create the single entered dataset.}
 \NormalTok{dsSingle <-}\StringTok{ }\KeywordTok{CreatePairLinksSingleEntered}\NormalTok{(}
   \DataTypeTok{outcomeDataset   =}\NormalTok{ dsOutcomes,}
   \DataTypeTok{linksPairDataset =}\NormalTok{ dsLinking,}
   \DataTypeTok{outcomeNames     =} \KeywordTok{c}\NormalTok{(}\StringTok{'HeightZGenderAge'}\NormalTok{))}
 
-\CommentTok{#Step 7: Declare the names for the two outcome variables.}
+\CommentTok{# Step 7: Declare the names for the two outcome variables.}
 \NormalTok{oName_S1 <-}\StringTok{ "HeightZGenderAge_S1"}
 \NormalTok{oName_S2 <-}\StringTok{ "HeightZGenderAge_S2"}
 
@@ -1020,7 +1010,7 @@ modeling methods.
 \end{Highlighting}
 \end{Shaded}
 
-Notice the ACE estimates are very similar to the previous exampl, but
+Notice the ACE estimates are very similar to the previous example, but
 the number of pairs has increased by 6x --from 4,185 to 24,700. The
 number of \emph{subjects} doubles when Gen2 is added, and the number of
 \emph{relationship pairs} really takes off. When an extended family's
@@ -1053,6 +1043,9 @@ Analyses}\label{more-advanced-ace-analyses}}
   (\emph{e.g.}, OpenMx, lavaan, Mplus) than then wrappers provided by
   \texttt{NlsyLinks}, or any other package.
 \end{itemize}
+
+\hypertarget{further-topics}{%
+\section{Further Topics}\label{further-topics}}
 
 \hypertarget{data-manipulation-and-non-biometric-analyses}{%
 \subsection{Data Manipulation and Non-Biometric

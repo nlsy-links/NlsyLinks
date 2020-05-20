@@ -42,19 +42,11 @@ output: rticles::springer_article
 # Introduction {#intro}
 
 
-Abstract
-----------------------------------------------------
-
-Introduction
-----------------------------------------------------
-
-* NLSY Structure
 * Benefits of Accounting for Kinships
   * BG
   * D'Onofrio-type research
-* Terminology
 
-### Structural and Topical information
+## Structural and Topical information
 
 The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and menarche (*e.g.*, Rodgers et al, [2015](http://link.springer.com/article/10.1007/s10519-014-9676-4)), but are not relevant to many hypotheses outside these fields.
 
@@ -66,7 +58,7 @@ In contrast, variables in *structural datasets* are not typically directly state
 
 The NlsyLinks includes small topical datasets which allows the vignettes and examples to be reproducible and more realistic.  The structural datasets are intended to be the authoritative representations, and are the product of two NIH grants (for a complete history of the familial relationships, see Rodgers et al., [2016](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3)).
 
-### Terminology
+## Terminology
 
 The package pertains to multiple generations of the 'Nlsy79' and multiple generations of the 'Nlsy97'.  Because the NlsyLinks package structures information within and between generations of the NLSY simultaneously, it requires slightly unconventional NLSY terminology to reduce ambiguity.
 
@@ -95,9 +87,9 @@ An **ACE model** is the basic biometrical model used by Behavior Genetic researc
 The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend [Plomin (1990)](http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s) and [Carey (2003)](http://psych.colorado.edu/~carey/hgss/).  For more in-depth ACE model-fitting strategies, we recommend [Neale & Maes, (1992)](http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf).
 
 Retrieving Data with the NLS Investigator
-----------------------------------------------------
+====================================================
 
-* This will use much of the existing [NLS Investigator](https://nlsy-links.github.io/NlsyLinks/docs/articles/nls-investigator.html) vignette.
+{This will use much of the existing [NLS Investigator](https://nlsy-links.github.io/NlsyLinks/docs/articles/nls-investigator.html) vignette.}
 
 When a researcher pursues a new idea, we suggest to start by exploring what the NLSY can offer by poking around the (a) vast online documentation and (b) NLS Investigator.  The documentation online (www.qqq), and has general information (*e.g.*, how to connect the nationally representative sample was collected), topical information (*e.g.*, what medical and health information has been collected across survey waves and subject ages), and descriptive summaries (*e.g.*, attrition over time for different race and ethnic groups).  This material has helpful suggestions which variables are available and appropriate.
 
@@ -105,10 +97,16 @@ With these hints, it's time to identify and download the specific variables from
 
 Before starting the examples, first verify that the NlsyLinks package is installed correctly.  If not, please refer to Appendix.
 
-```{r}
-any(.packages(all.available = TRUE) == "NlsyLinks") #Should evaluate to TRUE.
-library(NlsyLinks) #Load the package into the current session.
+```{r, eval = FALSE}
+# Should evaluate to TRUE.
+any(.packages(all.available = TRUE) == "NlsyLinks")
+library(NlsyLinks) # Load the package into the current session.
 ```
+
+Illustrative Examples
+====================================================
+
+We will start with a simple example and gradually increase complexity.
 
 ACE DF Analysis of One Generation (NLSY79 Gen1)
 ----------------------------------------------------
@@ -132,36 +130,36 @@ The steps are:
 1. Use 'DeFriesFulkerMethod3` function (*i.e.*, general linear model) to estimate the coefficients of the DF model.
 
 ```{r}
-### R Code for Example DF analysis with a simple outcome and Gen2 subjects
-#Step 2: Load the package containing the linking routines.
+# Step 2: Load the package containing the linking routines.
 library(NlsyLinks)
 
-#Step 3: Load the LINKING dataset and filter for the Gen2 subjects
+# Step 3: Load the LINKING dataset and filter for the Gen2 subjects
 dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
-summary(dsLinking) #Notice there are 11,088 records (one for each unique pair).
+summary(dsLinking) #Notice there are 11k records (one for each pair).
 
-#Step 4: Load the OUTCOMES dataset, and then examine the summary.
+# Step 4: Load the OUTCOMES dataset, and then examine the summary.
 dsOutcomes <- ExtraOutcomes79 #'ds' stands for 'Data Set'
 summary(dsOutcomes)
 
-#Step 5: This step isn't necessary for this example, because Kelly Meredith already
-#   groomed the values.  If the negative values (which represent NLSY missing or
+# Step 5: If the negative values (which represent NLSY missing or
 #   skip patterns) still exist, then:
 dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
 
-#Step 6: Create the double entered dataset.
+# Step 6: Create the double entered dataset.
 dsDouble <- CreatePairLinksDoubleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
   outcomeNames     = c('MathStandardized')
 )
-summary(dsDouble) #Notice there are 22176=(2*11088) records now (two for each unique pair).
+# Notice there are now two records for each unique pair.
+summary(dsDouble) 
 
-#Step 7: Estimate the ACE components with a DF Analysis
+# Step 7: Estimate the ACE components with a DF Analysis
 ace <- DeFriesFulkerMethod3(
-    dataSet  = dsDouble,
-    oName_S1 = "MathStandardized_S1",
-    oName_S2 = "MathStandardized_S2")
+  dataSet  = dsDouble,
+  oName_S1 = "MathStandardized_S1",
+  oName_S2 = "MathStandardized_S2"
+)
 ace
 ```
 
@@ -186,38 +184,44 @@ The steps are:
 
 
 ```{r}
-### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects
-#Step 2: Load the package containing the linking routines.
+# Step 2: Load the package containing the linking routines.
 library(NlsyLinks)
 
-#Step 3: Load the linking dataset and filter for the Gen2 subjects
-dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
+# Step 3: Load the linking dataset and filter for the Gen2 subjects
+dsLinking <- subset(Links79Pair, RelationshipPath == "Gen2Siblings")
 
-#Step 4: Load the outcomes dataset from the hard drive and then examine the summary.
-#   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/gen2-birth.csv'
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
+# Step 4: Read the outcomes dataset then examine the summary.
+#   Your path might be filePathOutcomes <- "C:/Nls/gen2-birth.csv"
+filePathOutcomes <- file.path(
+  path.package("NlsyLinks"),
+  "extdata/gen2-birth.csv"
+)
 dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
 summary(dsOutcomes)
 
-#Step 5: Verify and rename an existing column.
-VerifyColumnExists(dsOutcomes, "C0328600") #Should return '10' in this example.
-dsOutcomes <- RenameNlsyColumn(dsOutcomes, "C0328600", "BirthWeightInOunces")
+# Step 5: Verify and rename an existing column.
+VerifyColumnExists(dsOutcomes, "C0328600") # Should return '10' in this example.
+dsOutcomes <- RenameNlsyColumn(
+  dsOutcomes, 
+  "C0328600", 
+  "BirthWeightInOunces"
+)
 
-#Step 6: For this item, a negative value indicates the parent refused, didn't know,
-#   invalidly skipped, or was missing for some other reason.
-#   For our present purposes, we'll treat these responses equivalently.
-#   Then clip/Winsorized/truncate the weight to something reasonable.
+# Step 6: For this item, a negative value indicates the parent 
+#   refused, didn't know, invalidly skipped, or was missing.
+#   For present purposes, treat these responses equivalently.
+#   Then clip/Winsorize/truncate the weight.
 dsOutcomes$BirthWeightInOunces[dsOutcomes$BirthWeightInOunces < 0] <- NA
 dsOutcomes$BirthWeightInOunces <- pmin(dsOutcomes$BirthWeightInOunces, 200)
 
-#Step 7: Create the double entered dataset.
+# Step 7: Create the double entered dataset.
 dsDouble <- CreatePairLinksDoubleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
-  outcomeNames     = c('BirthWeightInOunces')
+  outcomeNames     = c("BirthWeightInOunces")
 )
 
-#Step 8: Estimate the ACE components with a DF Analysis
+# Step 8: Estimate the ACE components with a DF Analysis
 ace <- AceUnivariate(
   method   = "DeFriesFulkerMethod3",
   dataSet  = dsDouble,
@@ -254,47 +258,47 @@ The steps are:
 
 
 ```{r}
-### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects
-#Steps 1-5 are explained in the vignette's first example:
+# Steps 1-5 are explained in the first example:
 library(NlsyLinks)
 dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
 dsOutcomes <- ExtraOutcomes79
 dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
 
-#Step 6: Create the single entered dataset.
+# Step 6: Create the single entered dataset.
 dsSingle <- CreatePairLinksSingleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
   outcomeNames     = c('MathStandardized')
 )
 
-#Step 7: Declare the names for the two outcome variables.
+# Step 7: Declare the names for the two outcome variables.
 oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
 oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
 
-#Step 8: Summarize the R groups and determine which groups can be estimated.
+# Step 8: Summarize the R groups and 
+#   determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
-#Step 9: Create a cleaned dataset
+# Step 9: Create a cleaned dataset
 dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
 
-#Step 10: Run the model
+# Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
 ace
-#Notice the 'CaseCount' is 8,390 instead of 17,440.
-#  This is because (a) one pair with R=.75 was excluded, and
-#  (b) the SEM uses a single-entered dataset instead of double-entered.
+# Notice the 'CaseCount' is 8.5k instead of 17k.
+#   This is because (a) one pair with R=.75 was excluded, and
+#   (b) the SEM uses a single-entered dataset (not double).
 #
-#Step 11: Inspect the output further
-library(lavaan) #Load the package to access methods of the lavaan class.
+# Step 11: Inspect the output further
+library(lavaan)
 GetDetails(ace)
-#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.
-fitMeasures(GetDetails(ace)) #'fitMeasures' is defined in the lavaan package.
+# Examine fit stats like Chi-Squared, RMSEA, CFI, etc.
+fitMeasures(GetDetails(ace)) # lavaan defines fitMeasures 
 
-#Examine low-level details like each group's individual parameter estimates and standard
-#  errors.  Uncomment the next line to view the entire output (which is roughly 4 pages).
-#summary(GetDetails(ace))
+# Examine low-level details like each group's individual estimates
+#  and SEs.  Uncomment next line to view entire output (~4 pages).
+# summary(GetDetails(ace))
 ```
 
 ACE SEM of Two Generations
@@ -306,9 +310,11 @@ ACE SEM of Two Generations
 
 The example differs from the previous example in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small `R` groups that are difficult to estimate, or (b) if the value for adult height is missing.  This includes all `r scales::comma(nrow(Links79Pair))` relationships in the follow five types of NLSY79 relationships.
 
-```{r, results='asis'}
-xt <- xtable::xtable(table(Links79Pair$RelationshipPath, dnn=c("Relationship Frequency")),
-             caption="Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)")
+```{r, results = 'asis'}
+xt <- xtable::xtable(
+  table(Links79Pair$RelationshipPath, dnn=c("Relationship Frequency")),
+  caption = "Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"
+)
 xtable::print.xtable(xt, format.args=list(big.mark=","), type = "html")
 ```
 
@@ -316,25 +322,24 @@ In our opinion, using the intergenerational links is one of the most exciting ne
 
 
 ```{r}
-### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects
-#Steps 1-5 are explained in the vignette's first example:
+# Steps 1-5 are explained in the vignette's first example:
 library(NlsyLinks)
 dsLinking <- subset(Links79Pair, RelationshipPath %in%
                       c("Gen1Housemates", "Gen2Siblings", "Gen2Cousins",
                         "ParentChild", "AuntNiece"))
-#Because all five paths are specified, the line above is equivalent to:
-#dsLinking <- Links79Pair
+# Because all five paths are specified, the line above is equivalent to:
+# dsLinking <- Links79Pair
 
 dsOutcomes <- ExtraOutcomes79
-#The HeightZGenderAge variable is already groomed
+# The HeightZGenderAge variable is already groomed
 
-#Step 6: Create the single entered dataset.
+# Step 6: Create the single entered dataset.
 dsSingle <- CreatePairLinksSingleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
   outcomeNames     = c('HeightZGenderAge'))
 
-#Step 7: Declare the names for the two outcome variables.
+# Step 7: Declare the names for the two outcome variables.
 oName_S1 <- "HeightZGenderAge_S1"
 oName_S2 <- "HeightZGenderAge_S2"
 
@@ -352,7 +357,7 @@ ace
 #Step 11: Inspect the output further (see the final step two examples above).
 ```
 
-Notice the ACE estimates are very similar to the previous exampl, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the population's $a^2$ is small or moderate, instead of something large like 0.7.
+Notice the ACE estimates are very similar to the previous example, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the population's $a^2$ is small or moderate, instead of something large like 0.7.
 
 You may notice that the analysis has `r scales::comma(ace@CaseCount)` relationships instead of the entire `r scales::comma(nrow(Links79Pair))`.  This is primarily because not all subjects have a value for 'adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are `r scales::comma(sum(!is.na(Links79PairExpanded$RFull)))` pairs with a nonmissing value in `RFull`, meaning that `r round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)` are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+% chance we have an `RFull` for it.  For a description of the `R` and `RFull` variables, please see the `Links79Pair` entry in the package [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf).
 
@@ -361,6 +366,9 @@ More Advanced ACE Analyses
 ----------------------------------------------------
 
 * When the analysis grows beyond a single outcome at one time point, researchers are better off using the modeling software itself (*e.g.*, OpenMx, lavaan, Mplus) than then wrappers provided by `NlsyLinks`, or any other package.
+
+Further Topics
+====================================================
 
 Data Manipulation and Non-Biometric Analyses
 ----------------------------------------------------
