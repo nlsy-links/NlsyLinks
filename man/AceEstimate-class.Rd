@@ -3,6 +3,11 @@
 \docType{class}
 \name{AceEstimate-class}
 \alias{AceEstimate-class}
+\alias{getEstimate,AceEstimate-method}
+\alias{initialize,AceEstimate-method}
+\alias{print,AceEstimate-method}
+\alias{show,AceEstimate-method}
+\alias{GetDetails,AceEstimate-method}
 \title{Class AceEstimate}
 \description{
 A class containing information about a single univariate ACE model.
@@ -28,6 +33,7 @@ showClass("AceEstimate")
 est <- CreateAceEstimate(.5, .2, .3, 40)
 est
 print(est)
+
 }
 \keyword{ACE}
 \keyword{classes}
