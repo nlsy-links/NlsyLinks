@@ -25,6 +25,7 @@ Suggests:
     covr,
     devtools,
     dplyr,
+    spelling,
     ggplot2,
     knitr,
     rmarkdown,
@@ -38,3 +39,4 @@ VignetteBuilder: knitr
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
+Language: en-US
