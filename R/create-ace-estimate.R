@@ -12,7 +12,7 @@
 #' @param unityTolerance Specifies how close the the sum of the ACE components should be to one, to be considered properly scaled to one.
 #' @param details A `list` that contains the modeling output and details.
 #'
-#' @details The contents of the `details` list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a [stats::lm] object, because the [stats::lm] function was used (ie, the basical general linear model).  Alternatively, if the user specified the `lavaan` package should estimate that ACE model, the output is a [lavaan::lavaan] object.
+#' @details The contents of the `details` list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a [stats::lm] object, because the [stats::lm] function was used (ie, the basic general linear model).  Alternatively, if the user specified the `lavaan` package should estimate that ACE model, the output is a [lavaan::lavaan] object.
 #'
 #' @return An S4 object of [AceEstimate-class].
 #' @author Will Beasley

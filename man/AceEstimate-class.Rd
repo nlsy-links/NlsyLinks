@@ -16,7 +16,7 @@ A class containing information about a single univariate ACE model.
 The contents of the \code{Details} list depends on the underlying
 estimation routine.  For example, when the ACE model is estimated with a DF
 analysis, the output is an \code{\link[stats:lm]{stats::lm()}} object, because the \code{\link[stats:lm]{stats::lm()}} function
-was used (ie, the basical general linear model).  Alternatively, if the
+was used (ie, the basic general linear model).  Alternatively, if the
 user specified the \code{\link[lavaan:lavaan]{lavaan::lavaan()}} package should estimate that ACE model,
 the output is a \code{\link[lavaan:lavaan]{lavaan::lavaan()}} object.
 }

@@ -30,7 +30,7 @@
 #' `oName_S2`, and `rName`)
 #' @param oName_S1 The name of the outcome variable corresponding to the first
 #' subject in the pair. This should be a `character` value.
-#' @param oName_S2 The name of theoutcome variable corresponding to the second
+#' @param oName_S2 The name of the outcome variable corresponding to the second
 #' subject in the pair. This should be a `character` value.
 #' @param rName The name of the relatedness coefficient for the pair (this is
 #' typically abbreviated as `R`). This should be a `character` value.

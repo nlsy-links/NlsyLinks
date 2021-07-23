@@ -31,7 +31,7 @@ Each group has a unique value of \code{R} (i.e., the \emph{R}elatedness coeffici
 The variance component for \emph{E} is always estimated, while the \emph{A} and \emph{C} estimates can be fixed to zero (when \code{estimateA} and/or \emph{estimateC} are set to \code{FALSE}).
 }
 \note{
-Currently, the variables in \code{dsClean} must be named \code{O1}, \code{O2} and \code{R}; the letter 'O' stands for \emph{O}utcome.  This may not be as restrictive as it initially seems, because \code{dsClean} is intented to be produced by \code{\link[=CleanSemAceDataset]{CleanSemAceDataset()}}.  If this is too restrictive for your uses, we'd like to here about it (\emph{please email wibeasley at hotmail period com}).
+Currently, the variables in \code{dsClean} must be named \code{O1}, \code{O2} and \code{R}; the letter 'O' stands for \emph{O}utcome.  This may not be as restrictive as it initially seems, because \code{dsClean} is intended to be produced by \code{\link[=CleanSemAceDataset]{CleanSemAceDataset()}}.  If this is too restrictive for your uses, we'd like to here about it (\emph{please email wibeasley at hotmail period com}).
 }
 \examples{
 library(NlsyLinks) # Load the package into the current R session.

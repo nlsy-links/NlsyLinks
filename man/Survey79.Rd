@@ -36,7 +36,7 @@ provided to save users time.
 The \code{AgeSelfReportYears} and \code{AgeCalculateYears} variables usually agree, but not always.  The \code{Age} variable uses \code{AgeCalculateYears} (or \code{AgeSelfReportYears} when \code{AgeCalculateYears} is missing).
 
 The exact \emph{date} of birth isn't public (only the subject's \emph{month} of birth).  To balance the downward bias of two weeks,
-theri birthday is set to the 15th day of the month to produce \code{AgeCalculateYears}.
+their birthday is set to the 15th day of the month to produce \code{AgeCalculateYears}.
 
 In the Gen2 Child dataset, self-reported age is
 stated by month (eg, the child is 38 months old); a constant of 0.5 months has been added to balance the downward bias.  In the Gen2 YA and

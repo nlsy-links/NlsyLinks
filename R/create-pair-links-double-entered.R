@@ -47,7 +47,7 @@
 #' @param linksPairDataset A data frame containing the `SubjectTag`s of
 #' each subject in the pair and their `R` coefficient.
 #' @param outcomeNames The column names of the outcome variable(s)
-#' @param linksNames The column names desired to be prseent in the newly
+#' @param linksNames The column names desired to be present in the newly
 #' created data frame.  `SubjectTag_S1` and `SubjectTag_S2` are included
 #' automatically.
 #' @param validateOutcomeDataset Indicates if characteristics of the outcomeDataset should be validated.

@@ -98,7 +98,7 @@ http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/li
 It provides examples in SAS, SPSS, and STATA.
 
 \code{RelationshipPath} variable.  Code written using this dataset should
-NOT assume it contains only Gen2 sibiling pairs.  See below for an example of
+NOT assume it contains only Gen2 sibling pairs.  See below for an example of
 filtering the relationship category in the in \code{Links79Pair}
 documentation.
 

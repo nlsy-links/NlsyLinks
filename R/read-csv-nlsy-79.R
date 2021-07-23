@@ -11,7 +11,7 @@
 #' @param filePath A path to the CSV file. Remember to use double back-slashes in Windows, or forward-slashes in Windows or Linux.
 #' @param dsExtract A 'data.frame' (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.
 #'
-#' @return A [base::data.frame] to facililate biometric analysis.
+#' @return A [base::data.frame] to facilitate biometric analysis.
 #'
 #' @details The function does seven things.
 #' 1. Reads the CSV into a [base::data.frame].

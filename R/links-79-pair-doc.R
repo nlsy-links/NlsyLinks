@@ -82,7 +82,7 @@
 #' It provides examples in SAS, SPSS, and STATA.
 #'
 #' `RelationshipPath` variable.  Code written using this dataset should
-#' NOT assume it contains only Gen2 sibiling pairs.  See below for an example of
+#' NOT assume it contains only Gen2 sibling pairs.  See below for an example of
 #' filtering the relationship category in the in `Links79Pair`
 #' documentation.
 #'

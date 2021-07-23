@@ -20,7 +20,7 @@
 #' Typically, Subject1 is older while Subject2 is younger.
 #'
 #' `RelationshipPath` variable.  Code written using this dataset should
-#' NOT assume it contains only Gen2 sibiling pairs.  See an example of
+#' NOT assume it contains only Gen2 sibling pairs.  See an example of
 #' filtering the relationship category in the in [Links79Pair]
 #' documentation.
 #'

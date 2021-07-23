@@ -33,7 +33,7 @@ This function takes a 'GroupSummary' \link[base:data.frame]{base::data.frame} (w
 The function takes \code{dsDirty} and produces a new \link[base:data.frame]{base::data.frame} with the following features:
 \enumerate{
 \item Only three existing columns are retained: \code{O1}, \code{O2}, and \code{R}.  They are assigned these names.
-\item A new column called \code{GroupID} is created to reflect their group membership (which is based on the \code{R} value).  These valuesa re sequential integers, starting at 1.  The group with the weakest \code{R} is 1.  The group with the strongest \code{R} has the largest \code{GroupID} (this is typically the MZ tiwns).
+\item A new column called \code{GroupID} is created to reflect their group membership (which is based on the \code{R} value).  These values are sequential integers, starting at 1.  The group with the weakest \code{R} is 1.  The group with the strongest \code{R} has the largest \code{GroupID} (this is typically the MZ twins).
 \item Any row is excluded if it has a missing data point for \code{O1}, \code{O2}, or \code{R}.
 \item The \link[base:data.frame]{base::data.frame} is sorted by the \code{R} value.  This helps program against the multiple-group SEM API sometimes.
 }

@@ -58,7 +58,7 @@ extended family with \eqn{k} subjects will have \eqn{k}(\eqn{k}-1)/2 rows.
 Typically, Subject1 is older while Subject2 is younger.
 
 \code{RelationshipPath} variable.  Code written using this dataset should
-NOT assume it contains only Gen2 sibiling pairs.  See an example of
+NOT assume it contains only Gen2 sibling pairs.  See an example of
 filtering the relationship category in the in \link{Links79Pair}
 documentation.
 

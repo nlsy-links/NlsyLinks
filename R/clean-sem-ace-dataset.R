@@ -13,7 +13,7 @@
 #'
 #' @details The function takes `dsDirty` and produces a new [base::data.frame] with the following features:
 #' 1. Only three existing columns are retained: `O1`, `O2`, and `R`.  They are assigned these names.
-#' 1. A new column called `GroupID` is created to reflect their group membership (which is based on the `R` value).  These valuesa re sequential integers, starting at 1.  The group with the weakest `R` is 1.  The group with the strongest `R` has the largest `GroupID` (this is typically the MZ tiwns).
+#' 1. A new column called `GroupID` is created to reflect their group membership (which is based on the `R` value).  These values are sequential integers, starting at 1.  The group with the weakest `R` is 1.  The group with the strongest `R` has the largest `GroupID` (this is typically the MZ twins).
 #' 1. Any row is excluded if it has a missing data point for `O1`, `O2`, or `R`.
 #' 1. The [base::data.frame] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
 #'

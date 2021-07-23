@@ -2,7 +2,7 @@
 % Please edit documentation in R/create-spatial-neighbours.R
 \name{CreateSpatialNeighbours}
 \alias{CreateSpatialNeighbours}
-\title{Distances between related family members, formated for spatial analysis.}
+\title{Distances between related family members, formatted for spatial analysis.}
 \usage{
 CreateSpatialNeighbours(linksPairsDoubleEntered)
 }
@@ -20,10 +20,10 @@ An S3 \code{spdep::spatial.neighbours} object to work with functions in the \pkg
 
 The attribute \code{region.id} specifies each unique SubjectTag.
 
-The attribue \code{n} specifies the number of unique subjects.
+The attribute \code{n} specifies the number of unique subjects.
 }
 \description{
-This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a \link[base:data.frame]{base::data.frame}) to represent neigbours.
+This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a \link[base:data.frame]{base::data.frame}) to represent neighbours.
 }
 \details{
 There is one row per unique pair of subjects, \emph{respecting order}.  This has twice as many rows as \link{Links79Pair} and \link{Links79PairExpanded} (which have one row per unique pair of subjects, \emph{irrespective of order}).

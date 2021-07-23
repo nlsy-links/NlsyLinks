@@ -30,7 +30,7 @@ variables and the relatedness coefficient (corresponding to \code{oName_S1},
 \item{oName_S1}{The name of the outcome variable corresponding to the first
 subject in the pair. This should be a \code{character} value.}
 
-\item{oName_S2}{The name of theoutcome variable corresponding to the second
+\item{oName_S2}{The name of the outcome variable corresponding to the second
 subject in the pair. This should be a \code{character} value.}
 
 \item{rName}{The name of the relatedness coefficient for the pair (this is

@@ -22,7 +22,7 @@
 #'
 #' @author Will Beasley
 #'
-#' @note Currently, the variables in `dsClean` must be named `O1`, `O2` and `R`; the letter 'O' stands for *O*utcome.  This may not be as restrictive as it initially seems, because `dsClean` is intented to be produced by [CleanSemAceDataset()].  If this is too restrictive for your uses, we'd like to here about it (*please email wibeasley at hotmail period com*).
+#' @note Currently, the variables in `dsClean` must be named `O1`, `O2` and `R`; the letter 'O' stands for *O*utcome.  This may not be as restrictive as it initially seems, because `dsClean` is intended to be produced by [CleanSemAceDataset()].  If this is too restrictive for your uses, we'd like to here about it (*please email wibeasley at hotmail period com*).
 #'
 #' @seealso [CleanSemAceDataset()].  Further ACE model details are discussed in our package's [vignettes](https://cran.r-project.org/package=NlsyLinks).
 #'
