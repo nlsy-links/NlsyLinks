@@ -80,7 +80,7 @@ test_that("CreateSubjectTag -With ExtraOutcomes79", {
 # ------------------------------------------------------------
 test_that("Nlsy79Gen2", {
   #filePathGen2 <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
-  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
+  filePathGen2 <-system.file("extdata/gen2-birth.csv", package = "NlsyLinks")
   expectedColumNames <- c("C0000100", "C0000200", "C0005300", "C0005400", "C0005700", "C0328000", "C0328600", "C0328800")
   ds <- read.csv(filePathGen2)
   expectedIndex <- 0
@@ -92,7 +92,7 @@ test_that("Nlsy79Gen2", {
 
 # ------------------------------------------------------------
 test_that("RenameNlsyColumn", {
-  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv") #"./Datasets/gen2-birth.csv"
+  filePathGen2 <- system.file("extdata/gen2-birth.csv", package = "NlsyLinks")
   ds <- read.csv(filePathGen2)
   originalColumNames <- c("C0000100", "C0000200", "C0005300", "C0005400", "C0005700", "C0328000", "C0328600", "C0328800")
   newColumnNames <- c("SubjectID", "MotherID", "Race", "Gender", "Yob", "GestationWeeks", "BirthWeightInOunces", "BirthLengthInInches")
