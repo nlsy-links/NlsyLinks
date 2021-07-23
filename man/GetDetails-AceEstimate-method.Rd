@@ -7,6 +7,9 @@
 \usage{
 \S4method{GetDetails}{AceEstimate}(object)
 }
+\arguments{
+\item{object}{ACE object}
+}
 \description{
 A generic function for extracting the \code{Details} slot of an AceEstimation object.
 }

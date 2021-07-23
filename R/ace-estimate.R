@@ -4,10 +4,6 @@
 #'
 #' @name AceEstimate-class
 #'
-#' @aliases AceEstimate-class getEstimate,AceEstimate-method
-#' initialize,AceEstimate-method print,AceEstimate-method
-#' show,AceEstimate-method GetDetails,AceEstimate-method
-#'
 #' @docType class
 #'
 #' @note The contents of the `Details` list depends on the underlying
@@ -107,11 +103,8 @@ methods::setMethod(f="show", "AceEstimate", function( object ) {
   #cat(c(ASquared=methods::slot(object, "ASquared"), CSquared=methods::slot(object, "CSquared"), ESquared=methods::slot(object, "ESquared"), CaseCount=round(methods::slot(object,"CaseCount"))))
 })
 
-#' @name GetDetails-methods
-#' @aliases GetDetails-methods GetDetails AceEstimate-method
 methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetails") })
 
-#' @export GetDetails
 #' @exportMethod GetDetails
 #' @docType methods
 #' @title A generic function for extracting the `Details` slot of an object.
@@ -123,6 +116,7 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 # '  \describe{
 # '   \item{GetDetails}{`signature(object="AceEstimate")`: Extracts the `Details` slot of an [AceEstimation] object.}
 # '  }
+#' @param object ACE object
 #' @author Will Beasley
 #' @keywords methods
 methods::setMethod(f="GetDetails", "AceEstimate",
