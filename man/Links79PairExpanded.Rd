@@ -4,7 +4,8 @@
 \name{Links79PairExpanded}
 \alias{Links79PairExpanded}
 \title{Kinship linking file for pairs of relatives.  It builds upon the \link{Links79Pair} dataset.}
-\format{A data frame with 11,075 observations on the following 22 variables.
+\format{
+A data frame with 11,075 observations on the following 22 variables.
 There is one row per unique pair of subjects, irrespective of order.
 \itemize{
 \item \strong{ExtendedID} see the variable of the same name in \link{Links79Pair}
@@ -33,7 +34,8 @@ There is one row per unique pair of subjects, irrespective of order.
 \item \strong{MathStandardized_S2} The PIAT-Math score for Subject2.
 \item \strong{HeightZGenderAge_S1} The early adult height for Subject1.  See \link{ExtraOutcomes79} for more information about its source.
 \item \strong{HeightZGenderAge_S2} The early adult height for Subject2.
-}}
+}
+}
 \source{
 See \link{Links79Pair}.
 }
@@ -43,10 +45,10 @@ dataset contains the same pairs/rows, but only a subset of the
 variables/columns.
 
 NOTE: In Nov 2013, the variable naming scheme changed in order to be more consistent across variables.  For variables
-that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an \code{_S1} or \code{_S2}
+that are measured separately for both subjects (eg, Gender), the subjects' variable name will have an \verb{_S1} or \verb{_S2}
 appended to it.  For instance, the variables \code{LastSurvey_S1} and \code{LastSurvey_S2} correspond to the last surveys completed
 by the pair's first and second subject, respectively.  Similarly, the functions \code{\link[=CreatePairLinksDoubleEntered]{CreatePairLinksDoubleEntered()}} and
-\code{\link[=CreatePairLinksSingleEntered]{CreatePairLinksSingleEntered()}} now by default append \code{_S1} and \code{_S2}, instead of \code{_1} and \code{_2}.  However this can be
+\code{\link[=CreatePairLinksSingleEntered]{CreatePairLinksSingleEntered()}} now by default append \verb{_S1} and \verb{_S2}, instead of \verb{_1} and \verb{_2}.  However this can be
 modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters.
 }
 \details{

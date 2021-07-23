@@ -4,8 +4,12 @@
 \alias{AceLavaanGroup}
 \title{A simple multiple-group ACE model with the \pkg{lavaan} package.}
 \usage{
-AceLavaanGroup(dsClean, estimateA = TRUE, estimateC = TRUE,
-  printOutput = FALSE)
+AceLavaanGroup(
+  dsClean,
+  estimateA = TRUE,
+  estimateC = TRUE,
+  printOutput = FALSE
+)
 }
 \arguments{
 \item{dsClean}{The \link[base:data.frame]{base::data.frame} containing complete cases for the \code{R} groups to be included in the estimation.}

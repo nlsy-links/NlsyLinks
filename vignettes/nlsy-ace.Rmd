@@ -55,7 +55,7 @@ The **NLS Investigator** (http://www.nlsinfo.org/investigator/) is the best way 
 Before starting the real examples, first verify that the NlsyLinks package is installed correctly.  If not, please refer to Appendix.
 
 ```{r}
-any(.packages(all.available=TRUE) == "NlsyLinks") #Should evaluate to TRUE.
+any(.packages(all.available = TRUE) == "NlsyLinks") #Should evaluate to TRUE.
 library(NlsyLinks) #Load the package into the current session.
 ```
 
@@ -72,7 +72,7 @@ The steps are:
 
 1. Use the NLS Investigator to select and download a Gen2 dataset.
 
-1. Open R and create a new script (see Appendix:RScripts and load the NlsyLinks package.  If you haven't done so, first install the NlsyLinks package (see Appendix:InstallingPackage).
+1. Open R and create a new script (see [Appendix: R Scripts](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.  If you haven't done so, [install the NlsyLinks package](#appendix-installing-and-loading-the-nlsylinks-package)).
  Within the R script, identify the locations of the downloaded data file, and load it into a data frame.
 
 1. Within the R script, load the linking dataset.  Then select only Gen2 subjects.  The 'Pair' version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.
@@ -127,7 +127,7 @@ The steps are:
 
 1. Use the NLS Investigator to select and download a Gen2 dataset.  Select the variables 'length of gestation of child in weeks' (`C03280.00`), 'weight of child at birth in ounces' (`C03286.00`), and 'length of child at birth' (`C03288.00`), and then download the *.zip file to your local computer.
 
-1. Open R and create a new script (see Appendix: RScripts) and load the NlsyLinks package.
+1. [Open R and create a new script](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.
 1. Within the R script, load the linking dataset.  Then select only Gen2 subjects.
 1. Read the CSV into R as a `data.frame` using `ReadCsvNlsy79Gen2`.
 1. Verify the desired outcome column exists, and rename it something meaningful to your project.  It is important that the `data.frame` is reassigned (*i.e.*, `ds <- RenameNlsyColumn(...)`).  In this example, we rename column `C0328800` to `BirthWeightInOunces`.
@@ -193,7 +193,7 @@ The steps are:
 
 6. Create a *single*-entered file by calling the `CreatePairLinksSingleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).
 
-7. Declare the names of the outcome variables corresponding to the two members in each pair.  Assuming the variable is called 'ZZZ' and the preceeding steps have been followed, the variable 'ZZZ\_S1' corresponds to the first members and ZZZ\_S2' corresponds to the second members.
+7. Declare the names of the outcome variables corresponding to the two members in each pair.  Assuming the variable is called 'ZZZ' and the preceding steps have been followed, the variable 'ZZZ\_S1' corresponds to the first members and ZZZ\_S2' corresponds to the second members.
 
 8. Create a GroupSummary `data.frame`, which identifies the `R` groups that should be considered by the model.  Inspect the output to see if the groups show unexpected or fishy differences.
 
@@ -347,7 +347,7 @@ ace
 #Step 11: Inspect the output further (see the final step two examples above).
 ```
 
-Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the popluation's $a^2$ is small or moderate, instead of something large like 0.7.
+Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the population's $a^2$ is small or moderate, instead of something large like 0.7.
 
 You may notice that the analysis has `r scales::comma(ace@CaseCount)` relationships instead of the entire `r scales::comma(nrow(Links79Pair))`.  This is primarily because not all subjects have a value for 'adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are `r scales::comma(sum(!is.na(Links79PairExpanded$RFull)))` pairs with a nonmissing value in `RFull`, meaning that `r round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)` are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+% chance we have an `RFull` for it.  For a description of the `R` and `RFull` variables, please see the `Links79Pair` entry in the package [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf).
 
@@ -398,8 +398,7 @@ Appendix: Installing and Loading the NlsyLinks Package
 There are three operations you'll typically do with a package: (a) install, (b) load, and (c) update.
 
 The simplest way to *install* NlsyLinks is to type
-`install.packages("NlsyLinks")`.  You may be asked to select a CRAN
-mirror to download the package from; if so, choose a close location.
+`install.packages("NlsyLinks")` in the console.
 
 R then will download NlsyLinks on your local computer.  It may
 try to save and install the package to a location that you don't have permission to
@@ -419,11 +418,11 @@ is closed and reopened later.
 Developers are continually improving their packages by adding functions and
 documentation.  These newer versions are then uploaded to the CRAN servers.  You
 may *update* all your installed packages at once by typing
-`update.packages()`.  The command checks a CRAN server for
+`update.packages(ask = FALSE)`.  The command checks a CRAN server for
 newer versions of the packages installed on your local machine.  Then they are
 automatically downloaded and installed.
 
-The grant supporting NlsyLinks extends until Summer 2014.  Until then,
+The grant supporting NlsyLinks extends until 2020.  Until then,
 we'll be including new features and documentation, as we address additional user
 needs (if you have suggestions, we'd like to hear from you).  When the NLSY periodically updates its data, we'll
 update our kinship links (embedded in NlsyLinks) with the newest information.
@@ -463,7 +462,7 @@ For the sake of documentation and reproducibility, the current report was render
   <summary>Environment <span class="glyphicon glyphicon-plus-sign"></span></summary>
 ```{r session-info-2, echo=FALSE}
 devtools::session_info()$platform
-knitr::kable(devtools::session_info()$packages, format="html")
+knitr::kable(devtools::session_info()$packages[, c("loadedversion", "date")], format="html")
 ```
 </details>
 

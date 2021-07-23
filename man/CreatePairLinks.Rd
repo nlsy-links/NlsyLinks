@@ -46,9 +46,9 @@ automatically.}
 
 \item{validateOutcomeDataset}{Indicates if characteristics of the outcomeDataset should be validated.}
 
-\item{subject1Qualifier}{Indicates how the outcome variable for the pair's first subject is distinguished from the other subject.  The default is \code{_S1}.}
+\item{subject1Qualifier}{Indicates how the outcome variable for the pair's first subject is distinguished from the other subject.  The default is \verb{_S1}.}
 
-\item{subject2Qualifier}{Indicates how the outcome variable for the pair's second subject is distinguished from the other subject.  The default is \code{_S2}.}
+\item{subject2Qualifier}{Indicates how the outcome variable for the pair's second subject is distinguished from the other subject.  The default is \verb{_S2}.}
 }
 \description{
 Creates a linking file for BG designs using this file structure (e.g., DF analysis, other ACE modeling).

@@ -1,6 +1,6 @@
 ## Dataset Sources
 
-The following files come from the [NlsyLinksDetermination](https://github.com/nlsy-links/NlsyLinksDetermination) code written in C#.  Developers looking only at this package won't have access to this code.  This documentation is intended to make our research more reproducible.
+The following files come from the [NlsyLinksDetermination](https://github.com/nlsy-links/nlsy-links-determination-2017) code written in C#.  Developers looking only at this package won't have access to this code.  This documentation is intended to make our research more reproducible.
 
 ###  CSVs in `/data/`
  * **outside-data/links-2011-vxx.csv**: This linking file is primary output of the grant.  It has one row per pair (pairs are "single-entered" and show up only once).  It can be refreshed by running [AssembleRelatedValues.R](https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/ForDistribution/Links/AssembleRelatedValues.R).

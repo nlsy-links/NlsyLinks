@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -41,7 +45,6 @@
 <meta property="og:description" content="Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 Researchers and grad students interested using the NLSY for Behavior Genetics and family research, please start with our 2016 article,
 'The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -59,7 +62,7 @@ Researchers and grad students interested using the NLSY for Behavior Genetics an
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -150,7 +153,7 @@ Researchers and grad students interested using the NLSY for Behavior Genetics an
     <div class="ref-description">
     <p>Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 Researchers and grad students interested using the <a href='http://www.bls.gov/nls/'>NLSY</a> for Behavior Genetics and family research, please start with our 2016 article,
-'<a href='https://link.springer.com/article/10.1007/s10519-016-9785-3'>The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research</a>.</p>
+'<a href='https://link.springer.com/article/10.1007/s10519-016-9785-3'><em>The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research</em></a>.</p>
     </div>
 
 
@@ -166,7 +169,7 @@ and Young Adults sample (http://www.bls.gov/nls/nlsy79ch.htm).</p>
 running <code><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages('NlsyLinks')</a></code>.
 The most recent development version is available through <a href='https://github.com/nlsy-links/NlsyLinks'>GitHub</a> by
 running
-<code><a href='https://rdrr.io/pkg/devtools/man/remote-reexports.html'>devtools::install_github</a></code> <code>(repo = 'nlsy-links/NlsyLinks')</code>
+<code><a href='https://devtools.r-lib.org//reference/remote-reexports.html'>devtools::install_github</a></code> <code>(repo = 'nlsy-links/NlsyLinks')</code>
 (make sure <a href='https://cran.r-project.org/package=devtools'>devtools</a> is already installed).
 If you're having trouble with the package, please install the development version.  If this doesn't solve
 your problem, please create a <a href='https://github.com/nlsy-links/NlsyLinks/issues'>new issue</a>, or email Will.</p>
@@ -222,24 +225,13 @@ In J.L. Rodgers, D. Rowe, &amp; W.B. Miller (Eds.)
 
 <span class='co'># Install/update NlsyLinks with the development version from GitHub</span>
 <span class='co'>#install.packages('devtools') #Uncomment if 'devtools' isn't installed already.</span>
-<span class='kw pkg'>devtools</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/devtools/man/remote-reexports.html'>install_github</a></span>(<span class='st'>'nlsy-links/NlsyLinks'</span>)
+<span class='kw pkg'>devtools</span><span class='kw ns'>::</span><span class='fu'><a href='https://devtools.r-lib.org//reference/remote-reexports.html'>install_github</a></span>(<span class='st'>'nlsy-links/NlsyLinks'</span>)
 }</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#note">Note</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p><a href='http://scholar.google.com/citations?user=ffsJTC0AAAAJ'>William Howard Beasley</a> (<a href='http://howardliveoak.com/'>Howard Live Oak LLC</a>, Norman)</p>
-<p><a href='http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers'>Joseph Lee Rodgers</a> (Vanderbilt University, Nashville)</p>
-<p><a href='http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041'>David Bard</a> (University of Oklahoma Health Sciences Center, OKC)</p>
-<p>Kelly Meredith (Oklahoma City University, OKC)</p>
-<p><a href='http://mhuntero.com/'>Michael D. Hunter</a> (University of Oklahoma, Norman)</p>
-<p>Maintainer: Will Beasley <a href='mailto:wibeasley@hotmail.com'>wibeasley@hotmail.com</a></p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -250,7 +242,7 @@ In J.L. Rodgers, D. Rowe, &amp; W.B. Miller (Eds.)
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

@@ -4,7 +4,8 @@
 \name{SubjectDetails79}
 \alias{SubjectDetails79}
 \title{Dataset containing further details of the Gen1 and Gen2 subjects.}
-\format{A data frame with 24,181 observations on the following 12
+\format{
+A data frame with 24,181 observations on the following 12
 variables.
 \itemize{
 \item \strong{SubjectTag} see the variable of the same name in \link{Links79Pair}
@@ -24,7 +25,8 @@ variables.
 \item \strong{AgeAtLastSurvey} The subject's age at the most recently completed survey.
 \item \strong{IsDead} ##This variable is not available yet## Indicates if the subject was alive for the last attempted survey.
 \item \strong{DeathDate} ##This variable is not available yet## The subject's month of death.  The exact day is not available to the public. By default, we set their birthday to the 15th day of the month.
-}}
+}
+}
 \source{
 Gen1 information comes from the Summer 2013 release of the \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
 comes from the Summer 2013 release of the

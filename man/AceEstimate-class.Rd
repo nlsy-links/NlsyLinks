@@ -33,6 +33,7 @@ showClass("AceEstimate")
 est <- CreateAceEstimate(.5, .2, .3, 40)
 est
 print(est)
+
 }
 \keyword{ACE}
 \keyword{classes}

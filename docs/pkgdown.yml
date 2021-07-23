@@ -1,5 +1,5 @@
-pandoc: 2.7.2
-pkgdown: 1.4.1
+pandoc: 2.7.3
+pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
   about: about.html
@@ -10,4 +10,5 @@ articles:
   nlsy-ace: nlsy-ace.html
   publications: publications.html
   software-and-support: software-and-support.html
+last_built: 2020-05-20T16:41Z
 

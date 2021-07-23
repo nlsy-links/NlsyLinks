@@ -30,7 +30,7 @@
 #' est <- CreateAceEstimate(.5, .2, .3, 40)
 #' est
 #' print(est)
-
+#'
 methods::setClass(Class="AceEstimate",
   representation=representation(
     ASquared ="numeric",
@@ -107,10 +107,10 @@ methods::setMethod(f="show", "AceEstimate", function( object ) {
   #cat(c(ASquared=methods::slot(object, "ASquared"), CSquared=methods::slot(object, "CSquared"), ESquared=methods::slot(object, "ESquared"), CaseCount=round(methods::slot(object,"CaseCount"))))
 })
 
-methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetails") })
-
 #' @name GetDetails-methods
 #' @aliases GetDetails-methods GetDetails AceEstimate-method
+methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetails") })
+
 #' @export GetDetails
 #' @exportMethod GetDetails
 #' @docType methods

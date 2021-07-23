@@ -4,7 +4,8 @@
 \name{Links79Pair}
 \alias{Links79Pair}
 \title{Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults}
-\format{A data frame with 42,773 observations on the following 5 variables.
+\format{
+A data frame with 42,773 observations on the following 5 variables.
 There is one row per unique pair of subjects, irrespective of order.
 \itemize{
 \item \strong{ExtendedID} Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.
@@ -12,7 +13,8 @@ There is one row per unique pair of subjects, irrespective of order.
 \item \strong{SubjectTag_S2} Identity of the pair's second subject.  See Details below.
 \item \strong{R} The pair's Relatedness coefficient.  See Details below.
 \item \strong{RelationshipPath} Specifies the relationship category of the pair.  This variable is a factor, with levels \code{Gen1Housemates}=1, \code{Gen2Siblings}=2, \code{Gen2Cousins}=3, \code{ParentChild}=4, \code{AuntNiece}=5.
-}}
+}
+}
 \source{
 Gen1 information comes from the Summer 2013 release of the
 \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
@@ -124,7 +126,7 @@ determinations, then we can interpolate/infer that 102 and 103 are
 full-siblings as well.
 
 The math and height scores are duplicated from
-\href{./data-extra-outcomes-79.html}{ExtraOutcomes79}, but are included here to make some examples
+\href{./data-extra-outcomes-79.html}{\code{ExtraOutcomes79}}, but are included here to make some examples
 more concise and accessible.
 }
 \examples{
@@ -167,7 +169,7 @@ In the R console, type the following two lines of code:
 
 where \code{"C:/BGDirectory/"} is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
-path \code{"C:\BGDirectory\Links79Pair.csv"} can be misinterpreted.
+path \code{"C:\\BGDirectory\\Links79Pair.csv"} can be misinterpreted.
 
 \strong{Download CSV}
 If you're using the NlsyLinks package in R, the dataset is automatically available.

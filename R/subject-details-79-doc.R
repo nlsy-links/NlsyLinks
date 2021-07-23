@@ -6,8 +6,6 @@
 #'
 #' @description These variables are useful to many types of analyses (not just behavior genetics), and are provided to save users time.
 #'
-#' @name SubjectDetails79
-#'
 #' @docType data
 #'
 #' @format A data frame with 24,181 observations on the following 12
