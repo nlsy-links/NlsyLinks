@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Instantiate an <a href='AceEstimate-class.html'>AceEstimate</a> object. — CreateAceEstimate • NlsyLinks</title>
+<title>Instantiate an AceEstimate object. — CreateAceEstimate • NlsyLinks</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Instantiate an <a href='AceEstimate-class.html'>AceEstimate</a> object. — CreateAceEstimate" />
+<meta property="og:title" content="Instantiate an AceEstimate object. — CreateAceEstimate" />
 <meta property="og:description" content="Creates an instance of the S4 class, AceEstimate instantiating arguments set the parameter values estimated by the ACE model." />
 
 
@@ -82,7 +82,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -126,7 +126,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -152,14 +152,14 @@
     <p>Creates an instance of the <code>S4</code> class, <a href='AceEstimate-class.html'>AceEstimate</a> instantiating arguments set the parameter values estimated by the ACE model.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>CreateAceEstimate</span>(
-  <span class='no'>aSquared</span>,
-  <span class='no'>cSquared</span>,
-  <span class='no'>eSquared</span>,
-  <span class='no'>caseCount</span>,
-  <span class='kw'>details</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(),
-  <span class='kw'>unityTolerance</span> <span class='kw'>=</span> <span class='fl'>1e-11</span>
-)</pre>
+    <pre class="usage"><span class='fu'>CreateAceEstimate</span><span class='op'>(</span>
+  <span class='va'>aSquared</span>,
+  <span class='va'>cSquared</span>,
+  <span class='va'>eSquared</span>,
+  <span class='va'>caseCount</span>,
+  details <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
+  unityTolerance <span class='op'>=</span> <span class='fl'>1e-11</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -195,7 +195,10 @@
     <p>An S4 object of <a href='AceEstimate-class.html'>AceEstimate</a>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The contents of the <code>details</code> list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a <a href='https://rdrr.io/r/stats/lm.html'>stats::lm</a> object, because the <a href='https://rdrr.io/r/stats/lm.html'>stats::lm</a> function was used (ie, the basical general linear model).  Alternatively, if the user specified the <code>lavaan</code> package should estimate that ACE model, the output is a <a href='https://rdrr.io/pkg/lavaan/man/lavaan.html'>lavaan::lavaan</a> object.</p>
+    <p>The contents of the <code>details</code> list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a <a href='https://rdrr.io/r/stats/lm.html'>stats::lm</a> object, because the <a href='https://rdrr.io/r/stats/lm.html'>stats::lm</a> function was used (ie, the basic general linear model).  Alternatively, if the user specified the <code>lavaan</code> package should estimate that ACE model, the output is a <a href='https://rdrr.io/pkg/lavaan/man/lavaan.html'>lavaan::lavaan</a> object.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Will Beasley</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -212,7 +215,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

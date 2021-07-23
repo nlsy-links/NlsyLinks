@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A simple multiple-group ACE model with the <span class="pkg">lavaan</span> package. — AceLavaanGroup • NlsyLinks</title>
+<title>A simple multiple-group ACE model with the lavaan package. — AceLavaanGroup • NlsyLinks</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="A simple multiple-group ACE model with the <span class="pkg">lavaan</span> package. — AceLavaanGroup" />
+<meta property="og:title" content="A simple multiple-group ACE model with the lavaan package. — AceLavaanGroup" />
 <meta property="og:description" content="This function uses the lavaan package to estimate a univariate ACE model, using multiple groups.
 Each group has a unique value of R (i.e., the Relatedness coefficient)." />
 
@@ -83,7 +83,7 @@ Each group has a unique value of R (i.e., the Relatedness coefficient)." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -127,7 +127,7 @@ Each group has a unique value of R (i.e., the Relatedness coefficient)." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -154,12 +154,12 @@ Each group has a unique value of R (i.e., the Relatedness coefficient)." />
 Each group has a unique value of <code>R</code> (i.e., the <em>R</em>elatedness coefficient).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>AceLavaanGroup</span>(
-  <span class='no'>dsClean</span>,
-  <span class='kw'>estimateA</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>estimateC</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>printOutput</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>AceLavaanGroup</span><span class='op'>(</span>
+  <span class='va'>dsClean</span>,
+  estimateA <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  estimateC <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  printOutput <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -190,7 +190,7 @@ Each group has a unique value of <code>R</code> (i.e., the <em>R</em>elatedness 
     <p>The variance component for <em>E</em> is always estimated, while the <em>A</em> and <em>C</em> estimates can be fixed to zero (when <code>estimateA</code> and/or <em>estimateC</em> are set to <code>FALSE</code>).</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>Currently, the variables in <code>dsClean</code> must be named <code>O1</code>, <code>O2</code> and <code>R</code>; the letter 'O' stands for <em>O</em>utcome.  This may not be as restrictive as it initially seems, because <code>dsClean</code> is intented to be produced by <code><a href='CleanSemAceDataset.html'>CleanSemAceDataset()</a></code>.  If this is too restrictive for your uses, we'd like to here about it (<em>please email wibeasley at hotmail period com</em>).</p>
+    <p>Currently, the variables in <code>dsClean</code> must be named <code>O1</code>, <code>O2</code> and <code>R</code>; the letter 'O' stands for <em>O</em>utcome.  This may not be as restrictive as it initially seems, because <code>dsClean</code> is intended to be produced by <code><a href='CleanSemAceDataset.html'>CleanSemAceDataset()</a></code>.  If this is too restrictive for your uses, we'd like to here about it (<em>please email wibeasley at hotmail period com</em>).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>The <span class="pkg">lavaan</span> package is developed by Yves Rosseel at Ghent University.
@@ -200,20 +200,24 @@ and the JSS paper.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='CleanSemAceDataset.html'>CleanSemAceDataset()</a></code>.  Further ACE model details are discussed in our package's <a href='https://cran.r-project.org/package=NlsyLinks'>vignettes</a>.</p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Will Beasley</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>NlsyLinks</span>) <span class='co'># Load the package into the current R session.</span>
-<span class='no'>dsLinks</span>  <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span> <span class='co'>#Start with the built-in data.frame in NlsyLinks</span>
-<span class='no'>dsLinks</span>  <span class='kw'>&lt;-</span> <span class='no'>dsLinks</span>[<span class='no'>dsLinks</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>, ] <span class='co'># Use only Gen2 Siblings (NLSY79-C)</span>
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://nlsy-links.github.io/NlsyLinks'>NlsyLinks</a></span><span class='op'>)</span> <span class='co'># Load the package into the current R session.</span>
+<span class='va'>dsLinks</span>  <span class='op'>&lt;-</span> <span class='va'>Links79PairExpanded</span> <span class='co'>#Start with the built-in data.frame in NlsyLinks</span>
+<span class='va'>dsLinks</span>  <span class='op'>&lt;-</span> <span class='va'>dsLinks</span><span class='op'>[</span><span class='va'>dsLinks</span><span class='op'>$</span><span class='va'>RelationshipPath</span><span class='op'>==</span><span class='st'>'Gen2Siblings'</span>, <span class='op'>]</span> <span class='co'># Use only Gen2 Siblings (NLSY79-C)</span>
 
-<span class='no'>oName_S1</span> <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'>#Stands for Outcome1</span>
-<span class='no'>oName_S2</span> <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'>#Stands for Outcome2</span>
+<span class='va'>oName_S1</span> <span class='op'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'>#Stands for Outcome1</span>
+<span class='va'>oName_S2</span> <span class='op'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'>#Stands for Outcome2</span>
 
-<span class='no'>dsGroupSummary</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='RGroupSummary.html'>RGroupSummary</a></span>(<span class='no'>dsLinks</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>)
-<span class='no'>dsClean</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='CleanSemAceDataset.html'>CleanSemAceDataset</a></span>(<span class='kw'>dsDirty</span><span class='kw'>=</span><span class='no'>dsLinks</span>, <span class='no'>dsGroupSummary</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>)
+<span class='va'>dsGroupSummary</span> <span class='op'>&lt;-</span> <span class='fu'><a href='RGroupSummary.html'>RGroupSummary</a></span><span class='op'>(</span><span class='va'>dsLinks</span>, <span class='va'>oName_S1</span>, <span class='va'>oName_S2</span><span class='op'>)</span>
+<span class='va'>dsClean</span> <span class='op'>&lt;-</span> <span class='fu'><a href='CleanSemAceDataset.html'>CleanSemAceDataset</a></span><span class='op'>(</span>dsDirty<span class='op'>=</span><span class='va'>dsLinks</span>, <span class='va'>dsGroupSummary</span>, <span class='va'>oName_S1</span>, <span class='va'>oName_S2</span><span class='op'>)</span>
 
-<span class='no'>ace</span> <span class='kw'>&lt;-</span> <span class='fu'>AceLavaanGroup</span>(<span class='no'>dsClean</span>)
-<span class='no'>ace</span></div><div class='output co'>#&gt; [1] "Results of ACE estimation: [show]"
+<span class='va'>ace</span> <span class='op'>&lt;-</span> <span class='fu'>AceLavaanGroup</span><span class='op'>(</span><span class='va'>dsClean</span><span class='op'>)</span>
+<span class='va'>ace</span>
+</div><div class='output co'>#&gt; [1] "Results of ACE estimation: [show]"
 #&gt;     ASquared     CSquared     ESquared    CaseCount 
 #&gt;    0.6219253    0.2097338    0.1683408 8338.0000000 </div><div class='input'>
 <span class='co'>#Should produce:</span>
@@ -221,11 +225,14 @@ and the JSS paper.</p>
 <span class='co'>#     ASquared     CSquared     ESquared    CaseCount</span>
 <span class='co'>#    0.6681874    0.1181227    0.2136900 8390.0000000</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>lavaan</span>) <span class='co'>#Load the package to access methods of the lavaan class.</span></div><div class='output co'>#&gt; <span class='message'>This is lavaan 0.6-6</span></div><div class='output co'>#&gt; <span class='message'>lavaan is BETA software! Please report any bugs.</span></div><div class='input'><span class='fu'>GetDetails</span>(<span class='no'>ace</span>)</div><div class='output co'>#&gt; lavaan 0.6-6 ended normally after 54 iterations
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://lavaan.ugent.be'>lavaan</a></span><span class='op'>)</span> <span class='co'>#Load the package to access methods of the lavaan class.</span>
+</div><div class='output co'>#&gt; <span class='message'>This is lavaan 0.6-9</span>
+#&gt; <span class='message'>lavaan is FREE software! Please report any bugs.</span></div><div class='input'><span class='fu'>GetDetails</span><span class='op'>(</span><span class='va'>ace</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; lavaan 0.6-9 ended normally after 54 iterations
 #&gt; 
 #&gt;   Estimator                                         ML
 #&gt;   Optimization method                           NLMINB
-#&gt;   Number of free parameters                         32
+#&gt;   Number of model parameters                        32
 #&gt;   Number of equality constraints                    28
 #&gt;                                                       
 #&gt;   Number of observations per group:                   
@@ -245,7 +252,8 @@ and the JSS paper.</p>
 #&gt;     3                                          127.671
 #&gt;     4                                            7.428</div><div class='input'>
 <span class='co'>#Exmaine fit stats like Chi-Squared, RMSEA, CFI, etc.</span>
-<span class='fu'><a href='https://rdrr.io/pkg/lavaan/man/fitMeasures.html'>fitMeasures</a></span>(<span class='fu'>GetDetails</span>(<span class='no'>ace</span>)) <span class='co'>#The function 'fitMeasures' is defined in the lavaan package.</span></div><div class='output co'>#&gt;                npar                fmin               chisq                  df 
+<span class='fu'><a href='https://rdrr.io/pkg/lavaan/man/fitMeasures.html'>fitMeasures</a></span><span class='op'>(</span><span class='fu'>GetDetails</span><span class='op'>(</span><span class='va'>ace</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#The function 'fitMeasures' is defined in the lavaan package.</span>
+</div><div class='output co'>#&gt;                npar                fmin               chisq                  df 
 #&gt;               4.000               0.027             447.241              16.000 
 #&gt;              pvalue      baseline.chisq         baseline.df     baseline.pvalue 
 #&gt;               0.000            2106.324               4.000               0.000 
@@ -268,11 +276,12 @@ and the JSS paper.</p>
 #&gt;                 mfi 
 #&gt;               0.974 </div><div class='input'>
 <span class='co'>#Examine low-level details like each group's individual parameter estimates and standard errors.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='fu'>GetDetails</span>(<span class='no'>ace</span>))</div><div class='output co'>#&gt; lavaan 0.6-6 ended normally after 54 iterations
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'>GetDetails</span><span class='op'>(</span><span class='va'>ace</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; lavaan 0.6-9 ended normally after 54 iterations
 #&gt; 
 #&gt;   Estimator                                         ML
 #&gt;   Optimization method                           NLMINB
-#&gt;   Number of free parameters                         32
+#&gt;   Number of model parameters                        32
 #&gt;   Number of equality constraints                    28
 #&gt;                                                       
 #&gt;   Number of observations per group:                   
@@ -509,7 +518,9 @@ and the JSS paper.</p>
 #&gt;     c2               34.425    4.982    6.910    0.000
 #&gt; </div><div class='input'>
 <span class='co'>#Extract low-level details. This may be useful when programming simulations.</span>
-<span class='fu'><a href='https://rdrr.io/pkg/lavaan/man/lavInspect.html'>inspect</a></span>(<span class='fu'>GetDetails</span>(<span class='no'>ace</span>), <span class='kw'>what</span><span class='kw'>=</span><span class='st'>"converged"</span>) <span class='co'>#The lavaan package defines 'inspect'.</span></div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/lavaan/man/lavInspect.html'>inspect</a></span>(<span class='fu'>GetDetails</span>(<span class='no'>ace</span>), <span class='kw'>what</span><span class='kw'>=</span><span class='st'>"coef"</span>)</div><div class='output co'>#&gt; $`1`
+<span class='fu'><a href='https://rdrr.io/pkg/lavaan/man/lavInspect.html'>inspect</a></span><span class='op'>(</span><span class='fu'>GetDetails</span><span class='op'>(</span><span class='va'>ace</span><span class='op'>)</span>, what<span class='op'>=</span><span class='st'>"converged"</span><span class='op'>)</span> <span class='co'>#The lavaan package defines 'inspect'.</span>
+</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/lavaan/man/lavInspect.html'>inspect</a></span><span class='op'>(</span><span class='fu'>GetDetails</span><span class='op'>(</span><span class='va'>ace</span><span class='op'>)</span>, what<span class='op'>=</span><span class='st'>"coef"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $`1`
 #&gt; $`1`$lambda
 #&gt;        E1     E2      A1      A2     C1     C2
 #&gt; O1 -5.257  0.000 -10.103   0.000 -5.867  0.000
@@ -664,7 +675,7 @@ and the JSS paper.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

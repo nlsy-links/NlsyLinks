@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Distances between related family members, formated for spatial analysis. — CreateSpatialNeighbours • NlsyLinks</title>
+<title>Distances between related family members, formatted for spatial analysis. — CreateSpatialNeighbours • NlsyLinks</title>
 
 
 <!-- jquery -->
@@ -41,8 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Distances between related family members, formated for spatial analysis. — CreateSpatialNeighbours" />
-<meta property="og:description" content="This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The spdep (Spatial Dependence) uses a sparse matrix (actually a base::data.frame) to represent neigbours." />
+<meta property="og:title" content="Distances between related family members, formatted for spatial analysis. — CreateSpatialNeighbours" />
+<meta property="og:description" content="This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The spdep (Spatial Dependence) uses a sparse matrix (actually a base::data.frame) to represent neighbours." />
 
 
 
@@ -82,7 +82,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -126,7 +126,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -143,16 +143,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Distances between related family members, formated for spatial analysis.</h1>
+    <h1>Distances between related family members, formatted for spatial analysis.</h1>
     <small class="dont-index">Source: <a href='https://github.com/nlsy-links/NlsyLinks/blob/master/R/create-spatial-neighbours.R'><code>R/create-spatial-neighbours.R</code></a></small>
     <div class="hidden name"><code>CreateSpatialNeighbours.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The <span class="pkg">spdep</span> (Spatial Dependence) uses a sparse matrix (actually a <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a>) to represent neigbours.</p>
+    <p>This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The <span class="pkg">spdep</span> (Spatial Dependence) uses a sparse matrix (actually a <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a>) to represent neighbours.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>CreateSpatialNeighbours</span>(<span class='no'>linksPairsDoubleEntered</span>)</pre>
+    <pre class="usage"><span class='fu'>CreateSpatialNeighbours</span><span class='op'>(</span><span class='va'>linksPairsDoubleEntered</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -170,7 +170,7 @@
 <p><code>SubjectTag_S2</code> is renamed '<code>to</code>'.</p>
 <p><code>R</code> is renamed '<code>weight</code>'.</p>
 <p>The attribute <code>region.id</code> specifies each unique SubjectTag.</p>
-<p>The attribue <code>n</code> specifies the number of unique subjects.</p>
+<p>The attribute <code>n</code> specifies the number of unique subjects.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>There is one row per unique pair of subjects, <em>respecting order</em>.  This has twice as many rows as <a href='Links79Pair.html'>Links79Pair</a> and <a href='Links79PairExpanded.html'>Links79PairExpanded</a> (which have one row per unique pair of subjects, <em>irrespective of order</em>).</p>
@@ -185,16 +185,20 @@
 <p>Banerjee, S., Carlin, B.P., &amp; Gelfand, A.E. (2004). <a href='http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C'><em>Hierarchical Modeling and Analysis for Spatial Data</em></a>. Boca Raton: CRC Press.</p>
 <p>Lawson, A.B (2013). <a href='http://books.google.com/books?id=g7RJEZb1umwC'><em>Bayesian Disease Mapping: Hierarchical Modeling in Spatial Epidemiology, Second Edition</em></a>. Boca Raton: CRC Press.</p>
 <p>The <span class="pkg">spdep</span> package documentation: <a href='https://cran.r-project.org/package=spdep'>spdep: Spatial dependence: weighting schemes, statistics and models</a>.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Will Beasley and  David Bard</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>dsLinksAll</span>             <span class='kw'>&lt;-</span> <span class='no'>Links79Pair</span>
-<span class='no'>dsLinksGen1Housemates</span>  <span class='kw'>&lt;-</span> <span class='no'>dsLinksAll</span>[<span class='no'>dsLinksAll</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>"Gen1Housemates"</span>, ]
-<span class='no'>dsLinksGen2Siblings</span>    <span class='kw'>&lt;-</span> <span class='no'>dsLinksAll</span>[<span class='no'>dsLinksAll</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>"Gen2Siblings"</span>, ]
+    <pre class="examples"><div class='input'><span class='va'>dsLinksAll</span>             <span class='op'>&lt;-</span> <span class='va'>Links79Pair</span>
+<span class='va'>dsLinksGen1Housemates</span>  <span class='op'>&lt;-</span> <span class='va'>dsLinksAll</span><span class='op'>[</span><span class='va'>dsLinksAll</span><span class='op'>$</span><span class='va'>RelationshipPath</span><span class='op'>==</span><span class='st'>"Gen1Housemates"</span>, <span class='op'>]</span>
+<span class='va'>dsLinksGen2Siblings</span>    <span class='op'>&lt;-</span> <span class='va'>dsLinksAll</span><span class='op'>[</span><span class='va'>dsLinksAll</span><span class='op'>$</span><span class='va'>RelationshipPath</span><span class='op'>==</span><span class='st'>"Gen2Siblings"</span>, <span class='op'>]</span>
 
-<span class='no'>spGen1</span> <span class='kw'>&lt;-</span> <span class='fu'>CreateSpatialNeighbours</span>(<span class='no'>dsLinksGen1Housemates</span>)
-<span class='no'>spGen2</span> <span class='kw'>&lt;-</span> <span class='fu'>CreateSpatialNeighbours</span>(<span class='no'>dsLinksGen2Siblings</span>)
+<span class='va'>spGen1</span> <span class='op'>&lt;-</span> <span class='fu'>CreateSpatialNeighbours</span><span class='op'>(</span><span class='va'>dsLinksGen1Housemates</span><span class='op'>)</span>
+<span class='va'>spGen2</span> <span class='op'>&lt;-</span> <span class='fu'>CreateSpatialNeighbours</span><span class='op'>(</span><span class='va'>dsLinksGen2Siblings</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>spGen2</span>)</div><div class='output co'>#&gt;    from  to weight
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>spGen2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    from  to weight
 #&gt; 3   201 202   0.50
 #&gt; 10  301 302   0.50
 #&gt; 11  301 303   0.50
@@ -209,11 +213,12 @@
 <span class='co'>#24  401 403   0.25</span>
 <span class='co'>#28  801 802   0.50</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(<span class='no'>spGen2</span>$<span class='no'>weight</span>)</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>spGen2</span><span class='op'>$</span><span class='va'>weight</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; 
 #&gt;  0.25 0.375   0.5  0.75     1 
-#&gt;  3448   622  7004    13    27 </div><div class='input'>#Returns:
-#0.25 0.375   0.5  0.75     1
-#3442   610  6997    12    27
+#&gt;  3448   622  7004    13    27 </div><div class='input'><span class='co'>#Returns:</span>
+<span class='co'>#0.25 0.375   0.5  0.75     1</span>
+<span class='co'>#3442   610  6997    12    27</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -230,7 +235,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

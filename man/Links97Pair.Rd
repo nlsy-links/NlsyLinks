@@ -3,12 +3,12 @@
 \docType{data}
 \name{Links97Pair}
 \alias{Links97Pair}
-\title{Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults}
+\title{Kinship linking file for pairs of relatives in the NLSY97}
 \format{
 A data frame with 2,519 observations on the following 5 variables.
 There is one row per unique pair of subjects, irrespective of order.
 \itemize{
-\item \strong{ExtendedID} Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.
+\item \strong{ExtendedID} Identity of the extended family of the pair; it corresponds to the HHID in the NLSY97.  See References below.
 \item \strong{SubjectTag_S1} Identity of the pair's first subject.  See Details below.
 \item \strong{SubjectTag_S2} Identity of the pair's second subject.  See Details below.
 \item \strong{R} The pair's Relatedness coefficient.  See Details below.
@@ -52,9 +52,9 @@ Other \emph{R} coefficients are possible.
 
 There are several other uncommon possibilities, such as half-cousins (\emph{R}=.0625) and
 ambiguous aunt-nieces (\emph{R}=.125, which is an average of 1/4 and 0/4).
-The variable coding for genetic relatedness,\code{R}, in \code{\link{Links79Pair}} contains
+The variable coding for genetic relatedness,\code{R}, in \code{\link{Links97Pair}} contains
 only the common values of \emph{R} whose groups are likely to have stable estimates.
-However the variable \code{RFull} in \code{\link{Links79PairExpanded}} contains all \emph{R} values.
+However the variable \code{RFull} in \code{\link{Links97PairExpanded}} contains all \emph{R} values.
 We strongly recommend using \code{R} in this \link[base:data.frame]{base::data.frame}.  Move to
 \code{RFull} (or some combination) only if you have a good reason, and are willing
 to carefully monitor a variety of validity checks.  Some of these

@@ -82,7 +82,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -126,7 +126,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -152,7 +152,7 @@
     <p>The function accepts a (file path to) CSV file and creates a <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a>.  The <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a> is modified and augmented with columns to assist later routines.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ReadCsvNlsy79Gen1</span>(<span class='no'>filePath</span>, <span class='kw'>dsExtract</span> <span class='kw'>=</span> <span class='kw pkg'>utils</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span>(<span class='no'>filePath</span>))</pre>
+    <pre class="usage"><span class='fu'>ReadCsvNlsy79Gen1</span><span class='op'>(</span><span class='va'>filePath</span>, dsExtract <span class='op'>=</span> <span class='fu'>utils</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='va'>filePath</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -169,7 +169,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a> to facililate biometric analysis.</p>
+    <p>A <a href='https://rdrr.io/r/base/data.frame.html'>base::data.frame</a> to facilitate biometric analysis.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The function does seven things.</p><ol>
@@ -182,12 +182,16 @@
 <li><p>The NLSY variable <code>R00001.49</code> (ie, their Mother's <code>HHID</code> is attached to each Gen2 record).</p></li>
 </ol>
 
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Will Beasley</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>filePathGen2</span> <span class='kw'>&lt;-</span> <span class='st'>"~/Nlsy/Datasets/gen2-birth.csv"</span>
-<span class='no'>ds</span> <span class='kw'>&lt;-</span> <span class='fu'>ReadCsvNlsy79Gen2</span>(<span class='kw'>filePath</span><span class='kw'>=</span><span class='no'>filePathGen2</span>)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>filePathGen2</span> <span class='op'>&lt;-</span> <span class='st'>"~/Nlsy/Datasets/gen2-birth.csv"</span>
+<span class='va'>ds</span> <span class='op'>&lt;-</span> <span class='fu'>ReadCsvNlsy79Gen2</span><span class='op'>(</span>filePath<span class='op'>=</span><span class='va'>filePathGen2</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -203,7 +207,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

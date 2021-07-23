@@ -85,7 +85,7 @@ NOTE: Two variable names changed in November 2013. Subject1Tag and Subject2Tag b
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -129,7 +129,7 @@ NOTE: Two variable names changed in November 2013. Subject1Tag and Subject2Tag b
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -237,7 +237,7 @@ further information that might be useful in more complicated BG analyses.</p>
 http://www.nlsinfo.org/childya/nlsdocs/tutorials/linking_mothers_and_children/linking_mothers_and_children_tutorial.html.
 It provides examples in SAS, SPSS, and STATA.</p>
 <p><code>RelationshipPath</code> variable.  Code written using this dataset should
-NOT assume it contains only Gen2 sibiling pairs.  See below for an example of
+NOT assume it contains only Gen2 sibling pairs.  See below for an example of
 filtering the relationship category in the in <code>Links79Pair</code>
 documentation.</p>
 <p>The specific steps to determine the <em>R</em> coefficient will be described
@@ -283,7 +283,7 @@ It provides examples in SAS, SPSS, and STATA.</p>
 <p>The current dataset (ie, <code>Links79Pair</code>) can be saved as a CSV file
 (comma-separated file) and imported into in other programs and languages.
 In the R console, type the following two lines of code:</p>
-<p><code><a href='https://rdrr.io/pkg/NlsyLinks/man'>library(NlsyLinks)</a></code></p>
+<p><code><a href='http://nlsy-links.github.io/NlsyLinks'>library(NlsyLinks)</a></code></p>
 <p><code><a href='https://rdrr.io/r/utils/write.table.html'>write.csv(Links79Pair, "C:/BGDirectory/Links79Pair.csv")</a></code></p>
 <p>where <code>"C:/BGDirectory/"</code> is replaced by your preferred directory.
 Remember to use forward slashes instead of backslashes; for instance, the
@@ -295,10 +295,14 @@ To use it in a different environment,
 which is readable by all statistical software.
 <a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml'>links-metadata-2017-79.yml</a>
 documents the dataset version information.</p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Will Beasley</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>NlsyLinks</span>)     <span class='co'># Load the package into the current R session.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>Links79Pair</span>)   <span class='co'># Summarize the five variables.</span></div><div class='output co'>#&gt;    ExtendedID    SubjectTag_S1     SubjectTag_S2           R        
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://nlsy-links.github.io/NlsyLinks'>NlsyLinks</a></span><span class='op'>)</span>     <span class='co'># Load the package into the current R session.</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>Links79Pair</span><span class='op'>)</span>   <span class='co'># Summarize the five variables.</span>
+</div><div class='output co'>#&gt;    ExtendedID    SubjectTag_S1     SubjectTag_S2           R        
 #&gt;  Min.   :    2   Min.   :    200   Min.   :    201   Min.   :0.062  
 #&gt;  1st Qu.: 3042   1st Qu.: 304200   1st Qu.: 304301   1st Qu.:0.250  
 #&gt;  Median : 5973   Median : 597302   Median : 597701   Median :0.500  
@@ -313,12 +317,15 @@ documents the dataset version information.</p></div>
 #&gt;  ParentChild   :11521  
 #&gt;  AuntNiece     : 9899  
 #&gt;                        
-#&gt;                        </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)    <span class='co'># Display a histogram of the Relatedness coefficients.</span></div><div class='img'><img src='Links79Pair-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(<span class='no'>Links79Pair</span>$<span class='no'>R</span>)   <span class='co'># Create a table of the Relatedness coefficients for the whole sample.</span></div><div class='output co'>#&gt; 
+#&gt;                        </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>Links79Pair</span><span class='op'>$</span><span class='va'>R</span><span class='op'>)</span>    <span class='co'># Display a histogram of the Relatedness coefficients.</span>
+</div><div class='img'><img src='Links79Pair-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>Links79Pair</span><span class='op'>$</span><span class='va'>R</span><span class='op'>)</span>   <span class='co'># Create a table of the Relatedness coefficients for the whole sample.</span>
+</div><div class='output co'>#&gt; 
 #&gt; 0.0625  0.125   0.25  0.375    0.5   0.75      1 
 #&gt;    309   4466  11201    622  22506     13     38 </div><div class='input'>
 <span class='co'>#Create a dataset of only Gen2 sibs, and display the distribution of R.</span>
-<span class='no'>gen2Siblings</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>Links79Pair</span>, <span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span>(<span class='no'>gen2Siblings</span>$<span class='no'>R</span>)  <span class='co'># Create a table of the Relatedness coefficients for the Gen2 sibs.</span></div><div class='output co'>#&gt; 
+<span class='va'>gen2Siblings</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>Links79Pair</span>, <span class='va'>RelationshipPath</span><span class='op'>==</span><span class='st'>'Gen2Siblings'</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>gen2Siblings</span><span class='op'>$</span><span class='va'>R</span><span class='op'>)</span>  <span class='co'># Create a table of the Relatedness coefficients for the Gen2 sibs.</span>
+</div><div class='output co'>#&gt; 
 #&gt;  0.25 0.375   0.5  0.75     1 
 #&gt;  3448   622  7004    13    27 </div><div class='input'>
 </div></pre>
@@ -337,7 +344,7 @@ documents the dataset version information.</p></div>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

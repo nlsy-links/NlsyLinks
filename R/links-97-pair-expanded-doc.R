@@ -45,9 +45,6 @@
 # determinations, then we can interpolate/infer that 102 and 103 are
 # full-siblings as well.
 #
-# The math and height scores are duplicated from
-# [ExtraOutcomes79], but are included here to make some examples
-# more concise and accessible.
 #
 #' @format
 #' A data frame with 11,075 observations on the following 22 variables.

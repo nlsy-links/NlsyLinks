@@ -82,7 +82,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -126,7 +126,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -159,13 +159,13 @@
     <p>A data frame with 11,495 observations on the following 6 variables. There is one row per subject.</p><ul>
 <li><p><strong>SubjectTag</strong> The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).</p></li>
 <li><p><strong>SubjectID</strong> The ID value assigned by NLS to the first subject.  For Gen1 Subjects, this is their "CaseID" (ie, R00001.00).  For Gen2 subjects, this is their "CID" (ie, C00001.00).</p></li>
-<li><p><strong>Generation</strong> The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a  <code>factor</code> (in constrast with data frames like
-<a href='Links79Pair.html'>Links79Pair</a>).  This dataset is supposed to mimick the dataset provided by the researcher, which typically will not have been converted to a <code>factor</code>.</p></li>
+<li><p><strong>Generation</strong> The generation of the subject.  Values are either 1 or 2, representing Gen1 and Gen2.  Note that this variable is not a  <code>factor</code> (in contrast with data frames like
+<a href='Links79Pair.html'>Links79Pair</a>).  This dataset is supposed to mimic the dataset provided by the researcher, which typically will not have been converted to a <code>factor</code>.</p></li>
 <li><p><strong>HeightZGenderAge</strong> The subject's height, standardized by gender and age (see Details).</p></li>
 <li><p><strong>WeightZGenderAge</strong> The subject's weight, standardized by gender and age (see Details).</p></li>
 <li><p><strong>AfqtRescaled2006Gaussified</strong> Armed Forces Qualification Test Score (Gen1 only; see Details).</p></li>
 <li><p><strong>Afi</strong> Self-reported age of first intercourse (Gen1 only; see Details).</p></li>
-<li><p><strong>Afm</strong> Self-reported age of first menstration (Gen1 only; see Details).</p></li>
+<li><p><strong>Afm</strong> Self-reported age of first menstruation (Gen1 only; see Details).</p></li>
 <li><p><strong>MathStandardized</strong> Standardized PIAT Math scores (Gen2 only; see Details).</p></li>
 </ul>
 
@@ -193,18 +193,22 @@ inter-generational datasets.  A Gen1 subject with an ID of 43 has a
 Find the appropriate subfolder, and view the HTML report for more details.</p>
 <p><strong>Download CSV</strong>
 If you're using the NlsyLinks package in R, the dataset is automatically available.
-However to use the kinship information in a different enviroment, download the
+However to use the kinship information in a different environment, download the
 <a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/extra-outcomes-79.csv?raw=true'>csv</a>,
 which is readable by all statistical software.
 <a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml'>links-metadata-2017-79.yml</a>
 documents the dataset version information.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Will Beasley</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>NlsyLinks</span>) <span class='co'>#Load the package into the current R session.</span>
-<span class='no'>gen2Outcomes</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>ExtraOutcomes79</span>, <span class='no'>Generation</span><span class='kw'>==</span><span class='fl'>2</span>) <span class='co'>#Create a dataset of only Gen2 subjects.</span>
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://nlsy-links.github.io/NlsyLinks'>NlsyLinks</a></span><span class='op'>)</span> <span class='co'>#Load the package into the current R session.</span>
+<span class='va'>gen2Outcomes</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span><span class='op'>(</span><span class='va'>ExtraOutcomes79</span>, <span class='va'>Generation</span><span class='op'>==</span><span class='fl'>2</span><span class='op'>)</span> <span class='co'>#Create a dataset of only Gen2 subjects.</span>
 
 <span class='co'>#plot(ExtraOutcomes79) #Uncomment to see a large scatterplot matrix.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>ExtraOutcomes79</span>)</div><div class='output co'>#&gt;    SubjectTag        SubjectID         Generation    HeightZGenderAge
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>ExtraOutcomes79</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    SubjectTag        SubjectID         Generation    HeightZGenderAge
 #&gt;  Min.   :    100   Min.   :      1   Min.   :1.000   Min.   :-2.985  
 #&gt;  1st Qu.: 314025   1st Qu.:   5998   1st Qu.:1.000   1st Qu.:-0.724  
 #&gt;  Median : 620050   Median :  12000   Median :1.000   Median :-0.045  
@@ -228,13 +232,16 @@ documents the dataset version information.</p>
 #&gt;  3rd Qu.:108.5   
 #&gt;  Max.   :135.0   
 #&gt;  NA's   :15085   </div><div class='input'>
-<span class='no'>oldPar</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>mfrow</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>3</span>,<span class='fl'>2</span>))
-<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>Generation</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>MathStandardized</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>HeightZGenderAge</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>WeightZGenderAge</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>Afi</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>ExtraOutcomes79</span>$<span class='no'>Afm</span>)</div><div class='img'><img src='ExtraOutcomes79-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='no'>oldPar</span>)</div></pre>
+<span class='va'>oldPar</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3</span>,<span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>ExtraOutcomes79</span><span class='op'>$</span><span class='va'>Generation</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>ExtraOutcomes79</span><span class='op'>$</span><span class='va'>MathStandardized</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>ExtraOutcomes79</span><span class='op'>$</span><span class='va'>HeightZGenderAge</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>ExtraOutcomes79</span><span class='op'>$</span><span class='va'>WeightZGenderAge</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>ExtraOutcomes79</span><span class='op'>$</span><span class='va'>Afi</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span><span class='op'>(</span><span class='va'>ExtraOutcomes79</span><span class='op'>$</span><span class='va'>Afm</span><span class='op'>)</span>
+</div><div class='img'><img src='ExtraOutcomes79-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span><span class='va'>oldPar</span><span class='op'>)</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -250,7 +257,7 @@ documents the dataset version information.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

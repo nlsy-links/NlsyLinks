@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kinship linking file for pairs of relatives.  It builds upon the <a href='Links79Pair.html'>Links79Pair</a> dataset. — Links79PairExpanded • NlsyLinks</title>
+<title>Kinship linking file for pairs of relatives.  It builds upon the Links79Pair dataset. — Links79PairExpanded • NlsyLinks</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Kinship linking file for pairs of relatives.  It builds upon the <a href='Links79Pair.html'>Links79Pair</a> dataset. — Links79PairExpanded" />
+<meta property="og:title" content="Kinship linking file for pairs of relatives.  It builds upon the Links79Pair dataset. — Links79PairExpanded" />
 <meta property="og:description" content="Please first read the documentation for Links79Pair.  That
 dataset contains the same pairs/rows, but only a subset of the
 variables/columns.
@@ -90,7 +90,7 @@ modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -134,7 +134,7 @@ modified using the 'subject1Qualifier' and 'subject2Qualifier' parameters." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -212,7 +212,7 @@ same extended family.  Each row represents a unique relationship pair.  An
 extended family with \(k\) subjects will have \(k\)(\(k\)-1)/2 rows.
 Typically, Subject1 is older while Subject2 is younger.</p>
 <p><code>RelationshipPath</code> variable.  Code written using this dataset should
-NOT assume it contains only Gen2 sibiling pairs.  See an example of
+NOT assume it contains only Gen2 sibling pairs.  See an example of
 filtering the relationship category in the in <a href='Links79Pair.html'>Links79Pair</a>
 documentation.</p>
 <p>The specific steps to determine the <em>R</em> coefficient will be described
@@ -247,9 +247,12 @@ To use it in a different environment,
 which is readable by all statistical software.
 <a href='https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml'>links-metadata-2017-79.yml</a>
 documents the dataset version information.</p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Will Beasley</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>NlsyLinks</span>) <span class='co'># Load the package into the current R session.</span>
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://nlsy-links.github.io/NlsyLinks'>NlsyLinks</a></span><span class='op'>)</span> <span class='co'># Load the package into the current R session.</span>
 <span class='co'># olderR   &lt;- Links79PairExpanded$RExplicitOlderSibVersion   # Declare a concise variable name.</span>
 <span class='co'># youngerR &lt;- Links79PairExpanded$RExplicitYoungerSibVersion # Declare a concise variable name.</span>
 
@@ -261,7 +264,9 @@ documents the dataset version information.</p></div>
 <span class='co'>#   Links79PairExpanded,</span>
 <span class='co'>#   file      ='~/NlsyLinksStaging/Links79PairExpanded.csv',</span>
 <span class='co'>#   row.names = FALSE</span>
-<span class='co'># )</span></div></pre>
+<span class='co'># )</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -277,7 +282,7 @@ documents the dataset version information.</p></div>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
