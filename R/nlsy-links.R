@@ -34,7 +34,7 @@
 #'
 #' Kelly Meredith (Oklahoma City University, OKC)
 #'
-#' [Michael D. Hunter](http://mhuntero.com/) (University of Oklahoma, Norman)
+#' [Michael D. Hunter](https://psychology.gatech.edu/michael-hunter) (University of Oklahoma, Norman)
 #'
 #' Maintainer: Will Beasley <wibeasley@@hotmail.com>
 #'
