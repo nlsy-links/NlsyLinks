@@ -43,20 +43,20 @@ devtools::install_github('nlsy-links/NlsyLinks')
 }
 \references{
 This package's development was largely supported by the NIH
-Grant 1R01HD65865, \href{http://taggs.hhs.gov/Links/LegacyAwardDetail?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{"NLSY Kinship Links: Reliable and Valid Sibling Identification"}
+Grant 1R01HD65865, \href{http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50}{"NLSY Kinship Links: Reliable and Valid Sibling Identification"}
 (PI: Joe Rodgers).  A more complete list of research articles
-using NLSY Kinship Links is maintained on our \href{https://nlsy-links.github.io/NlsyLinks/research-publications.html}{package's website}.
+using NLSY Kinship Links is maintained on our \href{http://nlsy-links.github.io/NlsyLinks/research-publications.html}{package's website}.
 
 Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
-\href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model}.
+\href{https://pubmed.ncbi.nlm.nih.gov/15685433/}{Reformulating and simplifying the DF analysis model}.
 \emph{Behavior Genetics, 35} (2), 211-217.
 
 Rodgers, J.L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W.B. (2008).
-\href{https://pubmed.ncbi.nlm.nih.gov/18825497/}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.}.
+\href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.}.
 \emph{Behavior Genetics, 38}, 567-578.
 
 D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz,
-P.J., & Lahey, B.B. (2007). \href{https://pubmed.ncbi.nlm.nih.gov/17984398/}{Causal inferences regarding prenatal alcohol exposure and childhood externalizing problems.}.
+P.J., & Lahey, B.B. (2007). \href{http://www.ncbi.nlm.nih.gov/pubmed/17984398}{Causal inferences regarding prenatal alcohol exposure and childhood externalizing problems.}.
 \emph{Archives of General Psychiatry, 64}, 1296-1304.
 
 Rodgers, J.L. & Doughty, D. (2000).  \href{http://link.springer.com/chapter/10.1007\%2F978-1-4615-4467-8_6}{Genetic and environmental influences on fertility expectations and outcomes using NLSY kinship data.}
@@ -64,25 +64,25 @@ In J.L. Rodgers, D. Rowe, & W.B. Miller (Eds.)
 \emph{Genetic influences on fertility and sexuality.} Boston: Kluwer Academic Press.
 
 Cleveland, H.H., Wiebe, R.P., van den Oord, E.J.C.G., & Rowe, D.C. (2000).
-\href{https://pubmed.ncbi.nlm.nih.gov/10953940/}{Behavior problems among children from different family structures: The influence of genetic self-selection.}
+\href{http://www.ncbi.nlm.nih.gov/pubmed/10953940}{Behavior problems among children from different family structures: The influence of genetic self-selection.}
 \emph{Child Development, 71}, 733-751.
 
 Rodgers, J.L., Rowe, D.C., & Buster, M. (1999). \href{https://pubmed.ncbi.nlm.nih.gov/10081235/}{Nature, nurture, and first sexual intercourse in the USA: Fitting behavioural genetic models to NLSY kinship data}.
 \emph{Journal of Biosocial Sciences, 31}.
 
-Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{https://psycnet.apa.org:443/journals/dev/30/3/374/}{Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors.}
+Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{http://psycnet.apa.org/journals/dev/30/3/374/}{Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors.}
 \emph{Developmental Psychology, 30}, 374-384.
 }
 \author{
-\href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\href{http://howardliveoak.com/}{Howard Live Oak LLC}, Norman)
+\href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\url{Howard Live Oak LLC}, Norman)
 
-\href{https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
+\href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
 
-\href{http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
+\href{https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
 
 Kelly Meredith (Oklahoma City University, OKC)
 
-\href{http://www.mhuntero.com/}{Michael D. Hunter} (University of Oklahoma, Norman)
+\href{http://mhuntero.com/}{Michael D. Hunter} (University of Oklahoma, Norman)
 
 Maintainer: Will Beasley \href{mailto:wibeasley@hotmail.com}{wibeasley@hotmail.com}
 }

@@ -40,7 +40,7 @@
 #' (to one value per subject) by Kelly Williams in Sept 2010.
 #'
 #' The variables for height and weight were manipulated in R files available in a
-#' [repository](https://github.com/nlsy-links/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes) available to the public.
+#' [repository](https://github.com/nlsy-links/nlsy-links-determination-2017/tree/master/data-public/derived) available to the public.
 #' Find the appropriate subfolder, and view the HTML report for more details.
 #'
 #' **Download CSV**

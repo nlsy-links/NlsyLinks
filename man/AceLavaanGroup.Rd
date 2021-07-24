@@ -70,7 +70,7 @@ The \pkg{lavaan} package is developed by Yves Rosseel at Ghent University.
 Three good starting points are the package website (http://lavaan.ugent.be/), the package documentation (https://cran.r-project.org/package=lavaan)
 and the JSS paper.
 
-Rosseel, Yves (2012), \href{https://www.jstatsoft.org/v48/i02/}{lavaan: An R Package for Structural Equation Modeling}. \emph{Journal of Statistical Software, 48}, (2), 1-36.
+Rosseel, Yves (2012), \href{http://www.jstatsoft.org/v48/i02/}{lavaan: An R Package for Structural Equation Modeling}. \emph{Journal of Statistical Software, 48}, (2), 1-36.
 }
 \seealso{
 \code{\link[=CleanSemAceDataset]{CleanSemAceDataset()}}.  Further ACE model details are discussed in our package's \href{https://cran.r-project.org/package=NlsyLinks}{vignettes}.

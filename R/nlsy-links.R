@@ -26,11 +26,11 @@
 #' your problem, please create a [new issue](https://github.com/nlsy-links/NlsyLinks/issues), or email Will.
 #'
 #' @author
-#' [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](http://howardliveoak.com/), Norman)
+#' [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](), Norman)
 #'
 #' [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 #'
-#' [David Bard](http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041) (University of Oklahoma Health Sciences Center, OKC)
+#' [David Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 #'
 #' Kelly Meredith (Oklahoma City University, OKC)
 #'
@@ -46,7 +46,7 @@
 #' website](http://nlsy-links.github.io/NlsyLinks/research-publications.html).
 #'
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
-#' [Reformulating and simplifying the DF analysis model](http://www.springerlink.com/content/n3x1v1q282583366/).
+#' [Reformulating and simplifying the DF analysis model](https://pubmed.ncbi.nlm.nih.gov/15685433/).
 #' *Behavior Genetics, 35* (2), 211-217.
 #'
 #' Rodgers, J.L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W.B. (2008).
@@ -71,7 +71,7 @@
 #'
 #' Rodgers, J.L., Rowe, D.C., & Buster, M. (1999). [Nature, nurture, and first
 #' sexual intercourse in the USA: Fitting behavioural genetic models to NLSY
-#' kinship data](http://www.ncbi.nlm.nih.gov/pubmed/10081235).
+#' kinship data](https://pubmed.ncbi.nlm.nih.gov/10081235/).
 #' *Journal of Biosocial Sciences, 31*.
 #'
 #' Rodgers, J.L., Rowe, D.C., & Li, C. (1994). [Beyond nature versus nurture:

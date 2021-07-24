@@ -154,7 +154,7 @@ Articles and Book Chapters
 
 <li value=15><cite>van den Oord, E.J.C.G., Rowe, D.C. (2000). [Racial differences in birth health risk: A quantitative genetic approach](http://link.springer.com/article/10.2307/2648042). *Demography, 37*, 285-298.</cite> (NLSY79)</li>
 
-<li value=14><cite>Rodgers, J. L., Rowe, D. C., & Buster, M. (1999). [Nature, nurture, and first sexual intercourse in the USA: Fitting behavioral genetic models to NLSY kinship data.](http://www.ncbi.nlm.nih.gov/pubmed/10081235) *Journal of Biosocial Sciences, 31*.</cite> (NLSY79)</li>
+<li value=14><cite>Rodgers, J. L., Rowe, D. C., & Buster, M. (1999). [Nature, nurture, and first sexual intercourse in the USA: Fitting behavioral genetic models to NLSY kinship data.](https://pubmed.ncbi.nlm.nih.gov/10081235/) *Journal of Biosocial Sciences, 31*.</cite> (NLSY79)</li>
 
 <li value=13><cite>van den Oord, E. J. C. G. & Rowe, D. C. (1999). [A cousin study of associations between family demographic characteristics and children's intellectual ability](http://www.sciencedirect.com/science/article/pii/S0160289699000227). *Intelligence 27*, 251-266.</cite> (NLSYC)</li>
 
