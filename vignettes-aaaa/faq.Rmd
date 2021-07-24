@@ -30,9 +30,9 @@ Getting Started
 
 **Where is a good place to start?**
 
-Welcome to the `NlsyLinks` package, which facilitates research with the [NLSY](https://www.bls.gov/nls/home.htm).  The initial focus of the package was to assist behavior genetics, but it has been expanded to help with NLSY research in general.
+Welcome to the `NlsyLinks` package, which facilitates research with the [NLSY](https://www.nlsinfo.org/home.htm).  The initial focus of the package was to assist behavior genetics, but it has been expanded to help with NLSY research in general.
 
-Researchers and grad students interested using the [NLSY](https://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
+Researchers and grad students interested using the [NLSY](https://www.nlsinfo.org/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
 The current [FAQ](https://cran.r-project.org/package=NlsyLinks/vignettes/Faq.pdf) and the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) provide overview, and the [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf) describe the package's syntax and functions; the documents are available on [CRAN](https://cran.r-project.org/package=NlsyLinks).
 
@@ -43,7 +43,7 @@ Gen1 and Gen2
 
 **What does 'Gen1' and 'Gen2' mean?**
 
-This package considers both generations of the NLSY79.  The first generation (*i.e.*, 'Gen1') refers to subjects in the original NLSY79 sample (https://www.bls.gov/nls/nlsy79.htm).  The second generation (*i.e.*, `Gen2') of subjects are the biological offspring of the original females -*i.e.*, those in the NLSY79 Children and Young Adults sample (https://www.bls.gov/nls/nlsy79ch.htm).  The NLSY97 is a third dataset that can be used for behavior genetic research (https://www.bls.gov/nls/nlsy97.htm), although this vignette focuses on the two generations in the NLSY79.
+This package considers both generations of the NLSY79.  The first generation (*i.e.*, 'Gen1') refers to subjects in the original NLSY79 sample (https://www.nlsinfo.org/content/cohorts/nlsy79).  The second generation (*i.e.*, `Gen2') of subjects are the biological offspring of the original females -*i.e.*, those in the NLSY79 Children and Young Adults sample (https://www.nlsinfo.org/content/cohorts/nlsy79-children).  The NLSY97 is a third dataset that can be used for behavior genetic research (https://www.nlsinfo.org/content/cohorts/nlsy97), although this vignette focuses on the two generations in the NLSY79.
 
 Standard terminology is to refer second generation subjects as 'children' when they are younger than age 15 (NSLYC), and as 'young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as 'NLSY79-C', 'NLSY79C', 'NLSY-C' or 'NLSYC'. This packages uses 'Gen2' to refer to subjects of this generation, regardless of their age at the time of the survey.
 

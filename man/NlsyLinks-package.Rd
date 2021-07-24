@@ -7,15 +7,15 @@
 \title{Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.}
 \description{
 Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
-Researchers and grad students interested using the \href{https://www.bls.gov/nls/}{NLSY} for Behavior Genetics and family research, please start with our 2016 article,
+Researchers and grad students interested using the \href{https://www.nlsinfo.org/}{NLSY} for Behavior Genetics and family research, please start with our 2016 article,
 '\href{https://link.springer.com/article/10.1007/s10519-016-9785-3}{\emph{The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research}}.
 }
 \note{
 This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 subjects in the original NLSY79 sample
-(https://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
+(https://www.nlsinfo.org/content/cohorts/nlsy79).  "Gen2" subjects are the
 biological children of the Gen1 females -ie, those in the NLSY79 Children
-and Young Adults sample (https://www.bls.gov/nls/nlsy79ch.htm).
+and Young Adults sample (https://www.nlsinfo.org/content/cohorts/nlsy79-children).
 
 The release version is available through \href{https://cran.r-project.org/package=NlsyLinks}{CRAN} by
 running \code{install.packages('NlsyLinks')}.
@@ -45,7 +45,7 @@ devtools::install_github('nlsy-links/NlsyLinks')
 This package's development was largely supported by the NIH
 Grant 1R01HD65865, \href{https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50}{"NLSY Kinship Links: Reliable and Valid Sibling Identification"}
 (PI: Joe Rodgers).  A more complete list of research articles
-using NLSY Kinship Links is maintained on our \href{https://nlsy-links.github.io/NlsyLinks/research-publications.html}{package's website}.
+using NLSY Kinship Links is maintained on our \href{https://nlsy-links.github.io/NlsyLinks/articles/publications.html}{package's website}.
 
 Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 \href{https://pubmed.ncbi.nlm.nih.gov/15685433/}{Reformulating and simplifying the DF analysis model}.

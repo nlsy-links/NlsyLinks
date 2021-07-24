@@ -12,7 +12,7 @@ vignette: >
 ***
 ## NlsyLinks and Examples for R
 
-The [`NlsyLinks`](http://cran.r-project.org/web/packages/NlsyLinks/) [R](http://en.wikipedia.org/wiki/R_%28programming_language%29) package contains utilities and kinship information for behavior genetics and developmental research using the [NLSY](https://www.bls.gov/nls/).  The development (and directions for installing it) are located in a [GitHub](https://github.com/nlsy-links/NlsyLinks) repository.
+The [`NlsyLinks`](http://cran.r-project.org/web/packages/NlsyLinks/) [R](http://en.wikipedia.org/wiki/R_%28programming_language%29) package contains utilities and kinship information for behavior genetics and developmental research using the [NLSY](https://www.nlsinfo.org/).  The development (and directions for installing it) are located in a [GitHub](https://github.com/nlsy-links/NlsyLinks) repository.
 
 For beginners, the most helpful documents are:
 

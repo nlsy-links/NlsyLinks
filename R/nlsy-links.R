@@ -1,7 +1,7 @@
 #' @title Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 #'
 #' @description Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
-#' Researchers and grad students interested using the [NLSY](https://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article,
+#' Researchers and grad students interested using the [NLSY](https://www.nlsinfo.org/) for Behavior Genetics and family research, please start with our 2016 article,
 #' '[*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 #'
 #' @docType package
@@ -12,9 +12,9 @@
 #'
 #' @note This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 #' subjects in the original NLSY79 sample
-#' (https://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
+#' (https://www.nlsinfo.org/content/cohorts/nlsy79).  "Gen2" subjects are the
 #' biological children of the Gen1 females -ie, those in the NLSY79 Children
-#' and Young Adults sample (https://www.bls.gov/nls/nlsy79ch.htm).
+#' and Young Adults sample (https://www.nlsinfo.org/content/cohorts/nlsy79-children).
 #'
 #' The release version is available through [CRAN](https://cran.r-project.org/package=NlsyLinks) by
 #' running `install.packages('NlsyLinks')`.
@@ -43,7 +43,7 @@
 #' Identification"](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50)
 #' (PI: Joe Rodgers).  A more complete list of research articles
 #' using NLSY Kinship Links is maintained on our [package's
-#' website](https://nlsy-links.github.io/NlsyLinks/research-publications.html).
+#' website](https://nlsy-links.github.io/NlsyLinks/articles/publications.html).
 #'
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' [Reformulating and simplifying the DF analysis model](https://pubmed.ncbi.nlm.nih.gov/15685433/).

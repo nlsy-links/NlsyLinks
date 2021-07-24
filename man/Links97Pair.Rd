@@ -17,7 +17,7 @@ There is one row per unique pair of subjects, irrespective of order.
 }
 \source{
 Information comes from the Summer 2018 release of the
-\href{https://www.bls.gov/nls/nlsy97.htm}{NLSY97 sample}.
+\href{https://www.nlsinfo.org/content/cohorts/nlsy97}{NLSY97 sample}.
 Data were extracted with the NLS Investigator
 (https://www.nlsinfo.org/investigator/).
 }

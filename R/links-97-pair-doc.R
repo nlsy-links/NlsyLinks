@@ -89,7 +89,7 @@
 #' *Behavior Genetics, 35* (2), 211-217.
 #'
 #' @source Information comes from the Summer 2018 release of the
-#' [NLSY97 sample](https://www.bls.gov/nls/nlsy97.htm).
+#' [NLSY97 sample](https://www.nlsinfo.org/content/cohorts/nlsy97).
 #' Data were extracted with the NLS Investigator
 #' (https://www.nlsinfo.org/investigator/).
 #'

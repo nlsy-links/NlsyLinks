@@ -20,10 +20,10 @@
 #' * **RelationshipPath** Specifies the relationship category of the pair.  This variable is a factor, with levels `Gen1Housemates`=1, `Gen2Siblings`=2, `Gen2Cousins`=3, `ParentChild`=4, `AuntNiece`=5.
 #'
 #' @details The dataset contains Gen1 and Gen2 subjects.  "Gen1" refers to subjects in
-#' the original NLSY79 sample (https://www.bls.gov/nls/nlsy79.htm).
+#' the original NLSY79 sample (https://www.nlsinfo.org/content/cohorts/nlsy79).
 #' "Gen2" subjects are the biological children of the Gen1 females -ie, those
 #' in the NLSY79 Children and Young Adults sample
-#' (https://www.bls.gov/nls/nlsy79ch.htm).
+#' (https://www.nlsinfo.org/content/cohorts/nlsy79-children).
 #'
 #' Subjects will be in the same extended family if either:
 #' 1. they are Gen1 housemates,
@@ -155,9 +155,9 @@
 #' *Behavior Genetics, 35* (2), 211-217.
 #'
 #' @source Gen1 information comes from the Summer 2013 release of the
-#' [NLSY79 sample](https://www.bls.gov/nls/nlsy79.htm).  Gen2 information
+#' [NLSY79 sample](https://www.nlsinfo.org/content/cohorts/nlsy79).  Gen2 information
 #' comes from the Summer 2013 release of the
-#' [NLSY79 Children and Young Adults](https://www.bls.gov/nls/nlsy79ch.htm).
+#' [NLSY79 Children and Young Adults](https://www.nlsinfo.org/content/cohorts/nlsy79-children).
 #' Data were extracted with the NLS Investigator
 #' (https://www.nlsinfo.org/investigator/).
 #'

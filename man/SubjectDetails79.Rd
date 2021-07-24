@@ -28,9 +28,9 @@ variables.
 }
 }
 \source{
-Gen1 information comes from the Summer 2013 release of the \href{https://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
+Gen1 information comes from the Summer 2013 release of the \href{https://www.nlsinfo.org/content/cohorts/nlsy79}{NLSY79 sample}.  Gen2 information
 comes from the Summer 2013 release of the
-\href{https://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
+\href{https://www.nlsinfo.org/content/cohorts/nlsy79-children}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
 (https://www.nlsinfo.org/investigator/).
 }
 \description{

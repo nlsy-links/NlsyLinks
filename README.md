@@ -3,7 +3,7 @@ NlsyLinks
 
 NlsyLinks is a free downloadable R package to facilitate Behavior Genetic and Family Studies research using the NLSY samples (the National Longitudinal Survey of Youth).  These samples are based on a cross-generational longitudinal nationally representative sample of over 30,000 participants followed for up to 35 years.  There are almost 50,000 pairwise kinship links.
 
-Get started at [here](https://www.bls.gov/nls/) the NLSY and [here](https://nlsy-links.github.io/NlsyLinks//) for the NlsyLinks package.
+Get started at [here](https://www.nlsinfo.org/) the NLSY and [here](https://nlsy-links.github.io/NlsyLinks//) for the NlsyLinks package.
 
 Installing
 --------------------------
@@ -42,7 +42,7 @@ We recently moved the forums to <https://groups.google.com/forum/#!forum/nlsy-li
 Publication
 --------------------------
 
-Please see [research-publications](https://nlsy-links.github.io/NlsyLinks//research-publications.html) for a list of the 70+ publications arising from the kinship links.  An overview is available at:
+Please see [research-publications](https://nlsy-links.github.io/NlsyLinks/articles/publications.html) for a list of the 70+ publications arising from the kinship links.  An overview is available at:
 
 Joseph Lee Rodgers, William H. Beasley, David E. Bard, Kelly M. Meredith, Michael D. Hunter, Amber B. Johnson, Maury Buster, Chengchang Li, Kim O. May, S. Mason Garrison, Warren B. Miller, Edwin van den Oord, and David C. Rowe (2016). *Behavior Genetics, 46*. [https://doi.org/10.1007/s10519-016-9785-3](https://doi.org/10.1007/s10519-016-9785-3).
 
