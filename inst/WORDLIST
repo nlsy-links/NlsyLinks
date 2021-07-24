@@ -25,6 +25,7 @@ Boca
 CARB
 CCAN
 CHRR
+CMD
 CRANPace
 CRC
 Cardon
@@ -94,7 +95,6 @@ Nlsy
 NlsyAce
 NlsyLinksDetermination
 Norwell
-O'Keefe
 OKC
 OUHSC
 Oord
@@ -150,6 +150,7 @@ biometric
 biometrical
 bls
 childya
+codecov
 cran
 csv
 determinantThreshold

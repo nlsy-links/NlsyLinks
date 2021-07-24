@@ -33,7 +33,7 @@ Suggests:
     rmarkdown,
     scales,
     testit,
-    testthat,
+    testthat (>= 2.0.0),
     xtable
 License: GPL
 LazyData: TRUE
@@ -42,3 +42,4 @@ Encoding: UTF-8
 RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 Language: en-US
+Config/testthat/edition: 2
