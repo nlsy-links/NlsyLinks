@@ -12,23 +12,23 @@ authors:
 - name: William H Beasley
   address: Howard Live Oak, LLC
   email: wibeasley@hotmail.com
-
-# - name: Âuthóř 2
-#   address: Department of ZZZ, University of WWW
-#   email: djf@wef
+- name: Michael D. Hunter
+  address: Georgia Institute of Technology, Atlanta
+- name: David E. Bard
+  address: University of Oklahoma Health Sciences Center, OKC
+- name: S. Mason Garrison
+  address: Wake Forest University, Winston-Salem
+- name: Patrick O'Keefe
+  address: Vanderbilt University, Nashville
+- name: Kelly Meredith
+  address: Oklahoma Department of Health
+- name: Joseph Lee Rodgers
+  address: Vanderbilt University, Nashville
 
 keywords:
-- key
-- dictionary
-- word
-
-#PACS:
-#- PAC1
-#- superPAC
-
-# MSC:
-# - MSC code 1
-# - MSC code 2
+- Behavior Genetics
+- National Longitudinal Survey of Youth
+- kinship
 
 abstract: |
   The text of your abstract.  150 -- 250 words.
@@ -39,8 +39,8 @@ bibstyle: spphys
 output: rticles::springer_article
 ---
 
-# Introduction {#intro}
-
+Introduction {#intro}
+====================================================
 
 * Benefits of Accounting for Kinships
   * BG
@@ -62,7 +62,7 @@ The NlsyLinks includes small topical datasets which allows the vignettes and exa
 
 The package pertains to multiple generations of the 'Nlsy79' and multiple generations of the 'Nlsy97'.  Because the NlsyLinks package structures information within and between generations of the NLSY simultaneously, it requires slightly unconventional NLSY terminology to reduce ambiguity.
 
-The 'Nlsy79 sample' refers to both the original 12,686 subjects interviewed in 1979, and their 11,500+ children (termed 'Nlsy79 Gen1' and 'Nlsy79 Gen2', respectively).  Data for the 'Nlsy79 Gen1' comes from the [original NLSY79 study](https://www.nlsinfo.org/content/cohorts/nlsy79), while data for the 'Nlsy Gen2' comes from both the [NLSY-C study]() and the [NLSY-YA study]() ('C' stands for children, and 'YA' stands for young adult).  More specifically, the [Gen2 subjects](https://www.nlsinfo.org/content/cohorts/nlsy79-children) are the biological offspring of the Gen1 mothers; they initially completed the NLSY-C survey until roughly age 14, and then completed the NLSY-YA survey (the oldest 'Young Adult' respondent was QQ in the 2016 survey).  Although the NLSY does not interview 'Nlsy79 Gen0' (the parents of Gen1) or 'Nlsy79 Gen3' (the children of Gen2), it does contain direct and indirect information about them.
+The 'Nlsy79 sample' refers to both the original 12,686 subjects interviewed in 1979, and their 11,500+ children (termed 'Nlsy79 Gen1' and 'Nlsy79 Gen2', respectively).  Data for the 'Nlsy79 Gen1' comes from the [original NLSY79 study](https://www.nlsinfo.org/content/cohorts/nlsy79), while data for the 'Nlsy Gen2' comes from both the "NLSY-C" and the "NLSY-YA" ('C' stands for children, and 'YA' stands for young adult).  More specifically, the [Gen2 subjects](https://www.nlsinfo.org/content/cohorts/nlsy79-children) are the biological offspring of the Gen1 mothers; they initially completed the NLSY-C survey until roughly age 14, and then completed the NLSY-YA survey (the oldest 'Young Adult' respondent was QQ in the 2016 survey).  Although the NLSY does not interview 'Nlsy79 Gen0' (the parents of Gen1) or 'Nlsy79 Gen3' (the children of Gen2), it does contain direct and indirect information about them.
 
 The terminology for the 'Nlsy97' sample is similar yet simpler than the 'Nlsy79', because the explicit respondents come from a single generation (*i.e.*, the 'Nlsy97 Gen1').  A few variables reflect Gen0 and Gen2.  In contrast to the Nlsy79, the Nlsy97 contains more information about the housemates.
 
@@ -320,7 +320,6 @@ xtable::print.xtable(xt, format.args=list(big.mark=","), type = "html")
 
 In our opinion, using the intergenerational links is one of the most exciting new opportunities for NLSY researchers to pursue.  We will be happy to facilitate such research through consult or collaboration, or even by generating new data structures that may be of value.  The complete kinship linking file facilitates many different kinds of cross-generational research, using both biometrical and other kinds of modeling methods.
 
-
 ```{r}
 # Steps 1-5 are explained in the vignette's first example:
 library(NlsyLinks)
@@ -383,17 +382,6 @@ SAS Analogues
 
 Additional Resources
 ----------------------------------------------------
-
-Authors & Affiliation
-----------------------------------------------------
-
-* William Howard Beasley (Howard Live Oak LLC, Norman)
-* Michael D. Hunter (Georgia Institute of Technology, Atlanta)
-* David Bard (University of Oklahoma Health Sciences Center, OKC)
-* Kelly Williams (Oklahoma City University, OKC)
-* S. Mason Garrison (Wake Forest University, Winston-Salem)
-* Patrick O'Keefe (Vanderbilt University, Nashville)
-* Joseph Lee Rodgers (Vanderbilt University, Nashville)
 
 References
 ----------------------------------------------------

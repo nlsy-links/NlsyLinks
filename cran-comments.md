@@ -15,7 +15,7 @@ Test environments
     1. [Ubuntu Linux 20.04 LTS, R-release, GCC](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-e487560c78d7460cba4f7fa2ffef8c6c)
     1. [Fedora Linux, R-devel, clang, gfortran](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-25cb9276478f4b4db3a8b1ebc6dc8b80)
     1. [Windows Server](https://builder.r-hub.io/status/REDCapR_1.0.0.tar.gz-b5b0cb95fb4746f9b354071b89caaafa)
-1. [win-builder](https://win-builder.r-project.org/BwNz2bnHxuse), development version.
+1. [win-builder](https://win-builder.r-project.org/y4W36ZKoyyc8/00check.log), development version.
 1. [GiHub Actions](https://github.com/OuhscBbmc/REDCapR/actions), Ubuntu 20.04 LTS
 
 R CMD check results
