@@ -48,7 +48,7 @@ output: rticles::springer_article
 
 ## Structural and Topical information
 
-The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and menarche (*e.g.*, Rodgers et al, [2015](http://link.springer.com/article/10.1007/s10519-014-9676-4)), but are not relevant to many hypotheses outside these fields.
+The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and menarche (*e.g.*, Rodgers et al, [2015](https://link.springer.com/article/10.1007/s10519-014-9676-4)), but are not relevant to many hypotheses outside these fields.
 
 In contrast, variables in *structural datasets* are not typically directly stated in the hypotheses, yet are essential to many NLSY-related investigations including:
 
@@ -56,7 +56,7 @@ In contrast, variables in *structural datasets* are not typically directly state
 * subject characteristics (*e.g.*, Subject 301 is a Native American female; Subject 607 died from heart disease in 2005; Subject 802 is part of the military over-sample), and
 * subject-survey characteristics (*e.g.*, Subject 301 was 15 years old for the 1981 Survey; Subject 301 did not respond to the 1990 survey; Subject 702 completed the NLSY-C survey in 1996 and the NLSY-YA survey in 1998).
 
-The NlsyLinks includes small topical datasets which allows the vignettes and examples to be reproducible and more realistic.  The structural datasets are intended to be the authoritative representations, and are the product of two NIH grants (for a complete history of the familial relationships, see Rodgers et al., [2016](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3)).
+The NlsyLinks includes small topical datasets which allows the vignettes and examples to be reproducible and more realistic.  The structural datasets are intended to be the authoritative representations, and are the product of two NIH grants (for a complete history of the familial relationships, see Rodgers et al., [2016](https://link.springer.com/article/10.1007%2Fs10519-016-9785-3)).
 
 ## Terminology
 
@@ -84,7 +84,7 @@ An **outcome variable** is directly relevant to the applied researcher; these mi
 
 An **ACE model** is the basic biometrical model used by Behavior Genetic researchers, where the genetic and environmental effects are assumed to be additive. The three primary variance components are (1) the proportion of variability due to a shared genetic influence (typically represented as $a^2$, or sometimes $h^2$), (2) the proportion of variability due to shared common environmental influence (typically $c^2$), and (3) the proportion of variability due to unexplained/residual/error influence (typically $e^2$).
 
-The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend [Plomin (1990)](http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s) and [Carey (2003)](http://psych.colorado.edu/~carey/hgss/).  For more in-depth ACE model-fitting strategies, we recommend [Neale & Maes, (1992)](http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf).
+The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend [Plomin (1990)](https://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s) and [Carey (2003)](https://psych.colorado.edu/~carey/hgss/).  For more in-depth ACE model-fitting strategies, we recommend [Neale & Maes, (1992)](https://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf).
 
 Retrieving Data with the NLS Investigator
 ====================================================

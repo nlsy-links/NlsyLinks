@@ -1,7 +1,7 @@
 ---
 title: "FAQ for the NlsyLinks Package"
 author: 
-- William Howard [Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](), Norman)
+- William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](), Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 - Kelly [Williams](https://www.okcu.edu/directory/kelly-williams) (Oklahoma City University, OKC)
@@ -36,7 +36,7 @@ Researchers and grad students interested using the [NLSY](https://www.nlsinfo.or
 
 The current [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html) and the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) provide overview, and the [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf) describe the package's syntax and functions; the documents are available on [CRAN](https://cran.r-project.org/package=NlsyLinks).
 
-Literature targeting general behavior genetics is listed in the appendix of the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf).  Furthermore, [the articles and books involving the NLSY kinship links](http://nlsy-links.github.io/NlsyLinks/research_publications.html) provide more specialized information.
+Literature targeting general behavior genetics is listed in the appendix of the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf).  Furthermore, [the articles and books involving the NLSY kinship links](https://nlsy-links.github.io/NlsyLinks/research_publications.html) provide more specialized information.
 
 Gen1 and Gen2
 ===============================
@@ -143,7 +143,7 @@ dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214700", "Race")
 dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214800", "Gender")
 ```
 
-Finally, consider converting the numeric variables to [factor](http://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html) variables so your code will be more readable.
+Finally, consider converting the numeric variables to [factor](https://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html) variables so your code will be more readable.
 
 ```{r}
 #The official documentation calls this last level "NON-BLACK, NON-HISPANIC"
