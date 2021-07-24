@@ -17,7 +17,7 @@ vignette: >
 ---
 
 
-This vignette will be useful to behavior genetic researchers interested in using the National Longitudinal Survey of Youth (NLSY79) or Children (NLSYC) data.  To fit biometrical models to the NLSY or NLSYC requires that the data be extracted from the appropriate online NLSY database into a usable file format.  The extracting software is called the [NLS Investigator](https://www.nlsinfo.org/investigator/pages/login.jsp).  We describe how to use the NLS Investigator to select and download variables.   In [subsequent vignettes](https://cran.r-project.org/package=NlsyLinks), we show how to reformat the data into file structures that accommodate behavior genetic research, and how to fit biometrical models.  The following steps are not specific to R, but rather precede the use of any analytic statistical software.
+This vignette will be useful to behavior genetic researchers interested in using the National Longitudinal Survey of Youth (NLSY79) or Children (NLSYC) data.  To fit biometrical models to the NLSY or NLSYC requires that the data be extracted from the appropriate online NLSY database into a usable file format.  The extracting software is called the [NLS Investigator](https://www.nlsinfo.org/investigator/pages/login.jsp).  We describe how to use the NLS Investigator to select and download variables.   In [subsequent vignettes](https://nlsy-links.github.io/NlsyLinks/articles/), we show how to reformat the data into file structures that accommodate behavior genetic research, and how to fit biometrical models.  The following steps are not specific to R, but rather precede the use of any analytic statistical software.
 
 
 
@@ -29,7 +29,7 @@ options(width=80)
 Terminology 
 ===============================
 
-This package considers both Gen1 and Gen2 subjects.  'Gen1' refers to subjects in the original NLSY79 sample (https://www.nlsinfo.org/content/cohorts/nlsy79).  'Gen2' subjects are the biological offspring of the Gen1 females -*i.e.*, those in the NLSY79 Children and Young Adults sample (https://www.nlsinfo.org/content/cohorts/nlsy79-children).  The NLSY97 is a third dataset that can be used for behavior genetic research (https://www.nlsinfo.org/content/cohorts/nlsy97), although this vignette focuses on the two generations in the NLSY79.
+This package considers both Nlsy79 Gen1 and Gen2 subjects.  'Gen1' refers to subjects in the original NLSY79 sample (https://www.nlsinfo.org/content/cohorts/nlsy79).  'Gen2' subjects are the biological offspring of the Gen1 females -*i.e.*, those in the NLSY79 Children and Young Adults sample (https://www.nlsinfo.org/content/cohorts/nlsy79-children).  The Nlsy97 is a third dataset that can be used for behavior genetic research (https://www.nlsinfo.org/content/cohorts/nlsy97), although this vignette focuses on the two generations in the NLSY79.
 
 Standard terminology is to refer second generation subjects as 'children' when they are younger than age 15 (NSLYC), and as 'young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as 'NLSY79-C', 'NLSY79C', 'NLSY-C' or 'NLSYC'. This packages uses 'Gen2' to refer to subjects of this generation, regardless of their age at the time of the survey.
 

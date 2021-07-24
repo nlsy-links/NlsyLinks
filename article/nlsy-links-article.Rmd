@@ -93,11 +93,9 @@ The variables are scaled so that they account for all observed variability in th
 Retrieving Data with the NLS Investigator
 ====================================================
 
-{This will use much of the existing [NLS Investigator](https://nlsy-links.github.io/NlsyLinks/docs/articles/nls-investigator.html) vignette.}
+When a researcher pursues a new idea, we suggest to start by exploring what the NLSY can offer by poking around the (a) vast online documentation and (b) [NLS Investigator](https://www.nlsinfo.org/investigator).  The documentation online (<https://www.nlsinfo.org/content/getting-started>) has general information (*e.g.*, how to connect the nationally representative sample was collected), topical information (*e.g.*, what medical and health information has been collected across survey waves and subject ages), and descriptive summaries (*e.g.*, attrition over time for different race and ethnic groups).  This material has helpful suggestions which variables are available and appropriate.
 
-When a researcher pursues a new idea, we suggest to start by exploring what the NLSY can offer by poking around the (a) vast online documentation and (b) NLS Investigator.  The documentation online (www.qqq), and has general information (*e.g.*, how to connect the nationally representative sample was collected), topical information (*e.g.*, what medical and health information has been collected across survey waves and subject ages), and descriptive summaries (*e.g.*, attrition over time for different race and ethnic groups).  This material has helpful suggestions which variables are available and appropriate.
-
-With these hints, it's time to identify and download the specific variables from the NLS Investigator.  The NLS Investigator is described briefly here (see the [NLS Investigator](https://github.com/nlsy-links/NlsyLinks/blob/master/inst/doc/NlsInvestigator.pdf) vignette for more detailed instruction).  Researchers new to the NLSY should expect at least a dozen round trips as they iteratively improve and complete their set of variables.  First, select the 'Study', such as 'NLSY79 Child & Young Adult' (which corresponds to 'Nlsy79 Gen2' in our terminology.  Second, select your desired variables, out of the tens of thousands available ones.
+With these hints, identify and download the specific variables from the NLS Investigator.  The NLS Investigator is described briefly in the second example.  For more detailed instruction see the NlsyLink package's [NLS Investigator vignette](https://nlsy-links.github.io/NlsyLinks/articles/nls-investigator.html) or the official [NLS documentation](https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide)).  Researchers new to the NLSY should expect at least a dozen round trips as they iteratively improve and complete their set of variables.  First, select the 'Study', such as 'NLSY79 Child & Young Adult' (which corresponds to 'Nlsy79 Gen2' in our terminology.  Second, select your desired variables, out of the tens of thousands available ones.
 
 Before starting the examples, first verify that the NlsyLinks package is installed correctly.  If not, please refer to Appendix.
 
@@ -112,21 +110,16 @@ Illustrative Examples
 
 We will start with a simple example and gradually increase complexity.
 
-ACE DF Analysis of One Generation (NLSY79 Gen1)
+ACE DF Analysis of One Generation (Nlsy79 Gen1)
 ----------------------------------------------------
 
-{This very basic analysis that should provide an initial feel for the inputs, mechanics, and goals of the analysis.}
+The first example should provide an initial feel for the inputs, mechanics, and goals of a typical NLSY analysis.  It uses a simple statistical model and all available Nlsy79 Gen1 subjects.  The `CreatePairLinksDoubleEntered` function will create a data frame where each represents one pair of siblings, respective of order (*i.e.*, there is a row for Subjects 201 and 202, and a second row for Subjects 202 and 201). This function examines the subjects' IDs and determines who is related to whom (and by how much).  By default, each row has at least six values/columns: (i) ID for the older member of the kinship pair: `Subject1Tag`, (ii) ID for the younger member: `Subject2Tag`, (iii) ID for their extended family: `ExtendedID`, (iv) their estimated coefficient of genetic relatedness: `R`, (v *and beyond*) outcome values for the older member; (vi *and beyond*) outcome values for the younger member.
 
-The first example uses a simple statistical model and all available Gen2 subjects.  The `CreatePairLinksDoubleEntered` function will create a data frame where each represents one pair of siblings, respective of order (*i.e.*, there is a row for Subjects 201 and 202, and a second row for Subjects 202 and 201). This function examines the subjects' IDs and determines who is related to whom (and by how much).  By default, each row it produces has at least six values/columns: (i) ID for the older member of the kinship pair: `Subject1Tag`, (ii) ID for the younger member: `Subject2Tag`, (iii) ID for their extended family: `ExtendedID`, (iv) their estimated coefficient of genetic relatedness: `R`, (v *and beyond*) outcome values for the older member; (vi *and beyond*) outcome values for the younger member.
-
-A DeFries-Fulker (**DF**) Analysis uses linear regression to estimate the $a^2$, $c^2$, and $e^2$ of a univariate biometric system.  The interpretations of the DF analysis can be found in Rodgers & Kohler (2005) and Rodgers, Rowe, & Li (1999).  This example uses the newest variation, which estimates two parameters; the corresponding function is called `DeFriesFulkerMethod3`.
-The steps are:
+A DeFries-Fulker (**DF**) Analysis uses linear regression to estimate the $a^2$, $c^2$, and $e^2$ of a univariate biometric system.  The interpretations of the DF analysis can be found in Rodgers & Kohler (2005) and Rodgers, Rowe, & Li (1999).  This example uses the newest variation, which estimates two parameters; the corresponding function is called `DeFriesFulkerMethod3`.  The steps are:
 
 1. Use the NLS Investigator to select and download a Gen2 dataset.
-
 1. Open R and create a new script (see [Appendix: R Scripts](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.  If you haven't done so, [install the NlsyLinks package](#appendix-installing-and-loading-the-nlsylinks-package)).
  Within the R script, identify the locations of the downloaded data file, and load it into a data frame.
-
 1. Within the R script, load the linking dataset.  Then select only Gen2 subjects.  The 'Pair' version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.
 1. Load and assign the `ExtraOutcomes79` dataset.
 1. Specify the outcome variable name and filter out all subjects who have a negative value in this variable.  The NLSY typically uses negative values to indicate different types of missingness (see 'Further Information' below).
@@ -167,24 +160,23 @@ ace <- DeFriesFulkerMethod3(
 ace
 ```
 
-*Further Information*: If the different reasons of missingness are important, further work is necessary.  For instance, some analyses that use item `Y19940000` might need to distinguish a response of "Don't Know" (which is coded as -2) from "Missing" (which is coded as -7).  For this example, we'll assume it's safe to clump the responses together.
+*Further Information*: If the different reasons of missingness are important, further work is necessary.  For instance, some analyses that use item `Y19940000` might need to distinguish a response of "Don't Know" (which is coded as -2) from "Missing" (which is coded as -7).  For this example, it is adequate to combine the non-response values.
 
-ACE DF Analysis of One Generation (NLSY79 Gen2)
+ACE DF Analysis of One Generation (Nlsy79 Gen2)
 ----------------------------------------------------
 
-The second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later.
+The second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the NLS Investigator.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later.
 
 The steps are:
 
 1. Use the NLS Investigator to select and download a Gen2 dataset.  Select the variables 'length of gestation of child in weeks' (`C03280.00`), 'weight of child at birth in ounces' (`C03286.00`), and 'length of child at birth' (`C03288.00`), and then download the *.zip file to your local computer.
-
-1. [Open R and create a new script](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.
-1. Within the R script, load the linking dataset.  Then select only Gen2 subjects.
-1. Read the CSV into R as a `data.frame` using `ReadCsvNlsy79Gen2`.
-1. Verify the desired outcome column exists, and rename it something meaningful to your project.  It is important that the `data.frame` is reassigned (*i.e.*, `ds <- RenameNlsyColumn(...)`).  In this example, we rename column `C0328800` to `BirthWeightInOunces`.
-1. Filter out all subjects who have a negative `BirthWeightInOunces` value.  See the 'Further Information' note in the previous example.
-1. Create a double-entered file by calling the `CreatePairLinksDoubleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).
-1. Call the `AceUnivariate` function to estimate the coefficients.
+2. [Open R and create a new script](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.
+3. Within the R script, load the linking dataset.  Then select only Gen2 subjects.
+4. Read the CSV into R as a `data.frame` using `ReadCsvNlsy79Gen2`.
+5. Verify the desired outcome column exists, and rename it something meaningful to your project.  It is important that the `data.frame` is reassigned (*i.e.*, `ds <- RenameNlsyColumn(...)`).  In this example, we rename column `C0328800` to `BirthWeightInOunces`.
+6. Filter out all subjects who have a negative `BirthWeightInOunces` value.  See the 'Further Information' note in the previous example.
+7. Create a double-entered file by calling the `CreatePairLinksDoubleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).
+8. Call the `AceUnivariate` function to estimate the coefficients.
 
 ```{r}
 # Step 2: Load the package containing the linking routines.
@@ -194,10 +186,10 @@ library(NlsyLinks)
 dsLinking <- subset(Links79Pair, RelationshipPath == "Gen2Siblings")
 
 # Step 4: Read the outcomes dataset then examine the summary.
-#   Your path might be filePathOutcomes <- "C:/Nls/gen2-birth.csv"
-filePathOutcomes <- file.path(
-  path.package("NlsyLinks"),
-  "extdata/gen2-birth.csv"
+#   Your path might be `filePathOutcomes <- "C:/Nls/gen2-birth.csv"`
+filePathOutcomes <- system.file(
+  "extdata/gen2-birth.csv", 
+  package = "NlsyLinks"
 )
 dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
 summary(dsOutcomes)
@@ -236,7 +228,7 @@ ace
 
 For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html).
 
-ACE SEM of One Generation (NLSY79 Gen2)
+ACE SEM of One Generation (Nlsy79 Gen2)
 ----------------------------------------------------
 
 The example differs from the first one by the statistical mechanism used to estimate the components.  The first example uses multiple regression to estimate the influence of the shared genetic and environmental factors, while this example uses structural equation modeling (SEM).
@@ -248,15 +240,10 @@ The steps are:
 (Steps 1-5 proceed identically to the first example.)
 
 6. Create a *single*-entered file by calling the `CreatePairLinksSingleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).
-
 7. Declare the names of the outcome variables corresponding to the two members in each pair.  Assuming the variable is called 'ZZZ' and the preceding steps have been followed, the variable 'ZZZ\_S1' corresponds to the first members and ZZZ\_S2' corresponds to the second members.
-
 8. Create a GroupSummary `data.frame`, which identifies the `R` groups that should be considered by the model.  Inspect the output to see if the groups show unexpected or fishy differences.
-
 9. Create a `data.frame` with cleaned variables to pass to the SEM function.  This `data.frame` contains only the three necessary rows and columns.
-
 10. Estimate the SEM with the lavaan package.  The function returns an `S4` object, which shows the basic ACE information.
-
 11. Inspect details of the SEM, beyond the ACE components.  In this example, we look at the fit stats and the parameter estimates.  The lavaan package has additional methods that may be useful for your purposes.
 
 ```{r}
@@ -291,7 +278,7 @@ ace
 # Notice the 'CaseCount' is 8.5k instead of 17k.
 #   This is because (a) one pair with R=.75 was excluded, and
 #   (b) the SEM uses a single-entered dataset (not double).
-#
+
 # Step 11: Inspect the output further
 library(lavaan)
 GetDetails(ace)
@@ -338,29 +325,30 @@ dsOutcomes <- ExtraOutcomes79
 dsSingle <- CreatePairLinksSingleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
-  outcomeNames     = c('HeightZGenderAge'))
+  outcomeNames     = c('HeightZGenderAge')
+)
 
 # Step 7: Declare the names for the two outcome variables.
 oName_S1 <- "HeightZGenderAge_S1"
 oName_S2 <- "HeightZGenderAge_S2"
 
-#Step 8: Summarize the R groups and determine which groups can be estimated.
+# Step 8: Summarize the R groups and determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
-#Step 9: Create a cleaned dataset
+# Step 9: Create a cleaned dataset
 dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
 
-#Step 10: Run the model
+# Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
 ace
 
-#Step 11: Inspect the output further (see the final step two examples above).
+# Step 11: Inspect the output further (see the final step two examples above).
 ```
 
-Notice the ACE estimates are very similar to the previous example, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the population's $a^2$ is small or moderate, instead of something large like 0.7.
+Notice the ACE estimates are very similar to the previous example, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* increases combinatorially.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the population's $a^2$ is small or moderate.
 
-You may notice that the analysis has `r scales::comma(ace@CaseCount)` relationships instead of the entire `r scales::comma(nrow(Links79Pair))`.  This is primarily because not all subjects have a value for 'adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are `r scales::comma(sum(!is.na(Links79PairExpanded$RFull)))` pairs with a nonmissing value in `RFull`, meaning that `r round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)` are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+% chance we have an `RFull` for it.  For a description of the `R` and `RFull` variables, please see the `Links79Pair` entry in the package [reference manual](https://nlsy-links.github.io/NlsyLinks/).
+Note that the analysis has `r scales::comma(ace@CaseCount)` relationships instead of the entire `r scales::comma(nrow(Links79Pair))`.  This is primarily because not all subjects have a value for 'adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are `r scales::comma(sum(!is.na(Links79PairExpanded$RFull)))` pairs with a nonmissing value in `RFull`, meaning that `r round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)` are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+% chance we have an `RFull` for it.  For a description of the `R` and `RFull` variables, please see the `Links79Pair` entry in the package [reference manual](https://nlsy-links.github.io/NlsyLinks/).
 
 More Advanced ACE Analyses
 ----------------------------------------------------
