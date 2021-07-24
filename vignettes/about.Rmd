@@ -4,7 +4,7 @@ author:
 - William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
-- Kelly [Williams](https://www.okcu.edu/directory/kelly-williams) (Oklahoma City University, OKC)
+- Kelly [Williams](https://www.linkedin.com/in/kelly-m-williams-phd-71189055/) (Oklahoma City University, OKC)
 - Michael D. [Hunter](https://psychology.gatech.edu/michael-hunter) (Georgia Tech, Atlanta)
 date: "`r Sys.Date()`"
 output: 
@@ -21,7 +21,7 @@ Components
 
 This website is maintained by the [Joe Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) NLSY Sibling Research Team (see the [collaborators](./about-collaborators.html) page for more details)
 
-The website is hosted on [GitHub Pages](https://pages.github.com/).  It is built with [Jekyll](https://jekyllrb.com/) and [R Markdown](https://rmarkdown.rstudio.com/) (and heavily relied on the latter when forming the site's structure).  The majority of the static reports are created with  [knitr](https://yihui.name/knitr/), while the interactive reports are created with [Shiny](https://shiny.rstudio.com/); both use 
+The website is hosted on [GitHub Pages](https://pages.github.com/).  It is built with [Jekyll](https://jekyllrb.com/) and [R Markdown](https://rmarkdown.rstudio.com/) (and heavily relied on the latter when forming the site's structure).  The majority of the static reports are created with  [knitr](https://yihui.org/knitr/), while the interactive reports are created with [Shiny](https://shiny.rstudio.com/); both use 
 [R](https://www.r-project.org/) as a foundation.
 
 Historical Archives

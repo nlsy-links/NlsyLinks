@@ -4,7 +4,7 @@ author:
 - William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
-- Kelly [Williams](https://www.okcu.edu/directory/kelly-williams) (Oklahoma City University, OKC)
+- Kelly [Williams](https://www.linkedin.com/in/kelly-m-williams-phd-71189055/) (Oklahoma City University, OKC)
 - Michael D. [Hunter](https://psychology.gatech.edu/michael-hunter) (Georgia Tech, Atlanta)
 date: "`r Sys.Date()`"
 output: 
@@ -36,7 +36,7 @@ Researchers and grad students interested using the [NLSY](https://www.nlsinfo.or
 
 The current [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html) and the [NLSY ACE vignette](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.html) provide overview, and the [reference manual](https://nlsy-links.github.io/NlsyLinks/) describe the package's syntax and functions; the documents are available on [CRAN](https://cran.r-project.org/package=NlsyLinks).
 
-Literature targeting general behavior genetics is listed in the appendix of the [NLSY ACE vignette](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.html).  Furthermore, [the articles and books involving the NLSY kinship links](https://nlsy-links.github.io/NlsyLinks/research_publications.html) provide more specialized information.
+Literature targeting general behavior genetics is listed in the appendix of the [NLSY ACE vignette](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.html).  Furthermore, [the articles and books involving the NLSY kinship links](https://nlsy-links.github.io/NlsyLinks/articles/publications.html) provide more specialized information.
 
 Gen1 and Gen2
 ===============================
@@ -118,7 +118,7 @@ Race and Gender Variables
 
 **Where are the race and gender variables?**
 
-Any NLSY dataset extracted using the [NLS Investigator](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsInvestigator.pdf) will include some mandatory fields, including race and gender.  For Gen1, these are the `R02147.00` and `R02148.00` variables; for Gen2, they are the `C00053.00` and `C00054.00` variables.
+Any NLSY dataset extracted using the [NLS Investigator](https://nlsy-links.github.io/NlsyLinks/articles/nls-investigator.html) will include some mandatory fields, including race and gender.  For Gen1, these are the `R02147.00` and `R02148.00` variables; for Gen2, they are the `C00053.00` and `C00054.00` variables.
 
 The [NlsyAce vignette](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.html) describes how to incorporate extracts into \R{} for manipulation and analysis (*e.g.*, ``DF analysis with a univariate outcome from a Gen2 Extract'').  Those vignette example focused on incorporating outcomes.  The FAQ entry focuses on race and gender.
 
