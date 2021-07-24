@@ -31,11 +31,11 @@ Because the links are distributed in a variety of file formats (including as non
 
 Here's a SAS example that covers the basics.  If you have a need for a different example, or a different language, feel free to request it in the ['Other Software' section in our forums](https://r-forge.r-project.org/forum/forum.php?forum_id=4316&group_id=1330).  We would like to know what examples of platforms are the most useful to the potential users of the links.
 
-* [SAS Example](https://github.com/nlsy-links/NlsyLinks/blob/master/NlsyLinks/UtilityScripts/SasExample/SasExample.md)
+* [SAS Example](https://github.com/nlsy-links/NlsyLinks/blob/master/utility/sas-example/sas-example.md)
 
 ***
 ## NlsyLinksDetermination in C\#
-The [`NlsyLinksDetermination` repository](https://github.com/nlsy-links/NlsyLinksDetermination/) contains the [C#](https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29) code that manipulates the NLSY data to produce the relatedness values.  If you're only interested in the R package (and not how the relatedness coefficients were determined), then please see the [`NlsyLinks`](./research-software-and-support.html#nlsylinks-and-examples-for-r) package described above.
+The [`NlsyLinksDetermination` repository](https://github.com/nlsy-links/nlsy-links-determination-2017) contains the [C#](https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29) code that manipulates the NLSY data to produce the relatedness values.  If you're only interested in the R package (and not how the relatedness coefficients were determined), then please see the [`NlsyLinks`](./research-software-and-support.html#nlsylinks-and-examples-for-r) package described above.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12518.svg)](https://doi.org/10.5281/zenodo.12518) Algorithm DOI
 

@@ -34,9 +34,9 @@ Welcome to the `NlsyLinks` package, which facilitates research with the [NLSY](h
 
 Researchers and grad students interested using the [NLSY](https://www.nlsinfo.org/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
-The current [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html) and the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) provide overview, and the [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf) describe the package's syntax and functions; the documents are available on [CRAN](https://cran.r-project.org/package=NlsyLinks).
+The current [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html) and the [NLSY ACE vignette](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.html) provide overview, and the [reference manual](https://nlsy-links.github.io/NlsyLinks/) describe the package's syntax and functions; the documents are available on [CRAN](https://cran.r-project.org/package=NlsyLinks).
 
-Literature targeting general behavior genetics is listed in the appendix of the [NLSY ACE vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf).  Furthermore, [the articles and books involving the NLSY kinship links](https://nlsy-links.github.io/NlsyLinks/research_publications.html) provide more specialized information.
+Literature targeting general behavior genetics is listed in the appendix of the [NLSY ACE vignette](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.html).  Furthermore, [the articles and books involving the NLSY kinship links](https://nlsy-links.github.io/NlsyLinks/research_publications.html) provide more specialized information.
 
 Gen1 and Gen2
 ===============================
@@ -120,7 +120,7 @@ Race and Gender Variables
 
 Any NLSY dataset extracted using the [NLS Investigator](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsInvestigator.pdf) will include some mandatory fields, including race and gender.  For Gen1, these are the `R02147.00` and `R02148.00` variables; for Gen2, they are the `C00053.00` and `C00054.00` variables.
 
-The [NlsyAce vignette](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) describes how to incorporate extracts into \R{} for manipulation and analysis (*e.g.*, ``DF analysis with a univariate outcome from a Gen2 Extract'').  Those vignette example focused on incorporating outcomes.  The FAQ entry focuses on race and gender.
+The [NlsyAce vignette](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.html) describes how to incorporate extracts into \R{} for manipulation and analysis (*e.g.*, ``DF analysis with a univariate outcome from a Gen2 Extract'').  Those vignette example focused on incorporating outcomes.  The FAQ entry focuses on race and gender.
 
 For Gen1, create a string variable that points to your extract (*e.g.*, `filePathOutcomes <- "C:/BGResearch/NlsExtracts/gen2-birth.csv"`).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
 
@@ -181,7 +181,7 @@ If you have another `data.frame` that needs to be merged with the demographic da
 dsCombined <- merge(x=dsDemographics, y=dsOutcomes, by="SubjectTag", all=TRUE)
 ```
 
-Make sure that `dsOutcomes` also has the `SubjectTag` variable; this will happen automatically if it was read into R using the `ReadCsvNlsy79Gen1()` or `ReadCsvNlsy79Gen2()` functions.  For more information about `SubjectTag`, please see the `Links79Pair` entry in the [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf).
+Make sure that `dsOutcomes` also has the `SubjectTag` variable; this will happen automatically if it was read into R using the `ReadCsvNlsy79Gen1()` or `ReadCsvNlsy79Gen2()` functions.  For more information about `SubjectTag`, please see the `Links79Pair` entry in the [reference manual](https://nlsy-links.github.io/NlsyLinks/).
 
 
 Funding

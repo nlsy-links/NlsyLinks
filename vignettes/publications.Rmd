@@ -55,7 +55,7 @@ Articles and Book Chapters
 
 <li value=59><cite>Vaughan, E. B., Van Hulle, C. A., Beasley, W. H., Rodgers, J. L., & D'Onofrio, B. M. (2015). [Clarifying the associations between age at menarche and adolescent emotional and behavioral problems.](https://www.ncbi.nlm.nih.gov/pubmed/25687264) *Journal of Youth and Adolescence, 44*(4), 922-39. <span class="doi">doi: 10.1007/s10964-015-0255-7.</span></cite> (NLSY79; NLSYC)</li>
 
-<li value=58><cite>Jodl, Jacqueline (2015). [Differential Effects of Family Context on Noncognitive Ability and School Performance during Adolescence.](https://academiccommons.columbia.edu/download/fedora_content/download/ac:187098/CONTENT/Jodl_columbia_0054D_12697.pdf) Dissertation, Columbia University.</cite> (NLSYC)</li>
+<li value=58><cite>Jodl, Jacqueline (2015). [Differential Effects of Family Context on Noncognitive Ability and School Performance during Adolescence.](https://academiccommons.columbia.edu/doi/10.7916/D8GQ75BT/download) Dissertation, Columbia University.</cite> (NLSYC)</li>
 
 <li value=57><cite>Rodgers, J. L., Van Hulle, C., D'Onofrio, B., Rathouz, P., Beasley, W., Johnson, A., Waldman, I. & Lahey, B. B. (2015). [Behavior Problems and Timing of Menarche: A Developmental Longitudinal Biometrical Analysis Using the NLSY-Children Data.](https://link.springer.com/article/10.1007/s10519-014-9676-4). *Behavior Genetics, 45*, 51-70.</cite> (NLSYC)</li>
 
@@ -73,7 +73,7 @@ Articles and Book Chapters
 
 <li value=50><cite>Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/handle/11244/7913). Doctoral dissertation, University of Oklahoma.</cite> (NLSY79)</li>
 
-<li value=49><cite>Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](https://github.com/nlsy-links/NlsyLinksDetermination/blob/master/publications/2013/rodgers-2013-international-innovation.pdf?raw=true). *International Innovation*, 59-61.</cite></li>
+<li value=49><cite>Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](https://github.com/nlsy-links/nlsy-links-determination-2017blob/master/publications/2013/rodgers-2013-international-innovation.pdf?raw=true). *International Innovation*, 59-61.</cite></li>
 
 <li value=48><cite>D'Onofrio, B. M., Rickert, M. E., L&aring;ngstr&ouml;m, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. </cite> (NLSY79; NLSYC/YA)</li>
 
@@ -95,7 +95,7 @@ Articles and Book Chapters
 <ol>
 <li value=42><cite>Classen, R. (2010). [Measures of the intergenerational transmission of body mass index between mothers and their children in the United States, 1981-2004](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2821676/). *Economics and Human Biology, 8*, 30-43. </cite> (NLSY79; NLSYC/YA)</li>
 
-<li value=41><cite>Dorius, C. (2010). [Does serial parent harm women over the long run?:The link between multiple partner fertility and women's mental and physical health at midlife](https://www.changingamericanfamilies.com/pdfs/dorius_dissertation.pdf). Dissertation, Pennsylvania State University.</cite> (NLSYC)</li>
+<li value=41><cite>Dorius, C. (2010). [Does serial parent harm women over the long run?:The link between multiple partner fertility and women's mental and physical health at midlife](https://etda.libraries.psu.edu/catalog/11162). Dissertation, Pennsylvania State University.</cite> (NLSYC)</li>
 
 <li value=40><cite>Hart, S. A., Petrill, S. A., & Kamp Dush, C. M. (2010). [Genetic influences on language, reading, and mathematics skills in a national sample: An analysis using the National Longitudinal Survey of Youth](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148850/). *Language, Speech, and Hearing Services in Schools, 41*(1), 118.</cite> (NLSY79)</li>
 
