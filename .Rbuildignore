@@ -61,6 +61,7 @@
 ^scripts$
 ^stitched-output$
 ^playgrounds$
+^publications$
 ^utility$
 
 
