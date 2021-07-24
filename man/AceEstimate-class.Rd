@@ -3,9 +3,18 @@
 \docType{class}
 \name{AceEstimate-class}
 \alias{AceEstimate-class}
+\alias{GetDetails,AceEstimate-method}
 \title{Class AceEstimate}
+\usage{
+\S4method{GetDetails}{AceEstimate}(object)
+}
+\arguments{
+\item{object}{ACE object}
+}
 \description{
 A class containing information about a single univariate ACE model.
+
+A generic function for extracting the \code{Details} slot of an AceEstimation object.
 }
 \note{
 The contents of the \code{Details} list depends on the underlying
@@ -30,5 +39,9 @@ est
 print(est)
 
 }
+\author{
+Will Beasley
+}
 \keyword{ACE}
 \keyword{classes}
+\keyword{methods}
