@@ -17,9 +17,9 @@ There is one row per unique pair of subjects, irrespective of order.
 }
 \source{
 Gen1 information comes from the Summer 2013 release of the
-\href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
+\href{https://www.nlsinfo.org/content/cohorts/nlsy79}{NLSY79 sample}.  Gen2 information
 comes from the Summer 2013 release of the
-\href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults}.
+\href{https://www.nlsinfo.org/content/cohorts/nlsy79-children}{NLSY79 Children and Young Adults}.
 Data were extracted with the NLS Investigator
 (https://www.nlsinfo.org/investigator/).
 
@@ -34,10 +34,10 @@ NOTE: Two variable names changed in November 2013. \code{Subject1Tag} and \code{
 }
 \details{
 The dataset contains Gen1 and Gen2 subjects.  "Gen1" refers to subjects in
-the original NLSY79 sample (http://www.bls.gov/nls/nlsy79.htm).
+the original NLSY79 sample (https://www.nlsinfo.org/content/cohorts/nlsy79).
 "Gen2" subjects are the biological children of the Gen1 females -ie, those
 in the NLSY79 Children and Young Adults sample
-(http://www.bls.gov/nls/nlsy79ch.htm).
+(https://www.nlsinfo.org/content/cohorts/nlsy79-children).
 
 Subjects will be in the same extended family if either:
 \enumerate{
@@ -126,7 +126,7 @@ determinations, then we can interpolate/infer that 102 and 103 are
 full-siblings as well.
 
 The math and height scores are duplicated from
-\href{./data-extra-outcomes-79.html}{\code{ExtraOutcomes79}}, but are included here to make some examples
+\href{data-extra-outcomes-79.html}{\code{ExtraOutcomes79}}, but are included here to make some examples
 more concise and accessible.
 }
 \examples{
@@ -147,7 +147,7 @@ http://www.nlsinfo.org/nlsy79/docs/79html/79text/hhcomp.htm.
 
 For more information on \emph{R} (\emph{ie}, the Relatedness coefficient), please see
 Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
-\href{http://www.springerlink.com/content/n3x1v1q282583366/}{Reformulating and simplifying the DF analysis model.}
+\href{https://pubmed.ncbi.nlm.nih.gov/15685433/}{Reformulating and simplifying the DF analysis model.}
 \emph{Behavior Genetics, 35} (2), 211-217.
 }
 \seealso{

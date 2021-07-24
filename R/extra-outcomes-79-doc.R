@@ -20,8 +20,8 @@
 #'
 #' @author Will Beasley
 #' @source Gen1 information comes from the Summer 2013 release of the
-#' [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information comes from the Summer 2013 release of the
-#' [NLSY79 Children and Young Adults sample](http://www.bls.gov/nls/nlsy79ch.htm).  Data were extracted with the NLS Investigator
+#' [NLSY79 sample](https://www.nlsinfo.org/content/cohorts/nlsy79).  Gen2 information comes from the Summer 2013 release of the
+#' [NLSY79 Children and Young Adults sample](https://www.nlsinfo.org/content/cohorts/nlsy79-children).  Data were extracted with the NLS Investigator
 #' ({https://www.nlsinfo.org/investigator/}).
 #'
 #' @details
@@ -40,7 +40,7 @@
 #' (to one value per subject) by Kelly Williams in Sept 2010.
 #'
 #' The variables for height and weight were manipulated in R files available in a
-#' [repository](https://github.com/nlsy-links/NlsyLinksDetermination/tree/master/ForDistribution/Outcomes) available to the public.
+#' [repository](https://github.com/nlsy-links/nlsy-links-determination-2017/tree/master/data-public/derived) available to the public.
 #' Find the appropriate subfolder, and view the HTML report for more details.
 #'
 #' **Download CSV**

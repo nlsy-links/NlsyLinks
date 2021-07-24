@@ -1,11 +1,11 @@
 ---
 title: "ACE Models with the NLSY"
 author: 
-- William Howard [Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](http://howardliveoak.com/), Norman)
-- Joseph Lee [Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
-- David [Bard](http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041) (University of Oklahoma Health Sciences Center, OKC)
-- Kelly [Williams](https://www.okcu.edu/directory/kelly-williams) (Oklahoma City University, OKC)
-- Michael D. [Hunter](http://mhuntero.com/) (Georgia Tech, Atlanta)
+- William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
+- Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
+- David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
+- Kelly [Williams](https://oklahoma.gov/omma.html) (Oklahoma City University, OKC)
+- Michael D. [Hunter](https://psychology.gatech.edu/michael-hunter) (Georgia Tech, Atlanta)
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
@@ -29,9 +29,9 @@ if( any(search()=="package:NlsyLinks") ) detach("package:NlsyLinks")
 Terminology
 ===============================
 
-Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
+Researchers and grad students interested using the [NLSY](https://www.nlsinfo.org/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
-This package considers both Gen1 and Gen2 subjects.  'Gen1' refers to subjects in the original NLSY79 sample (http://www.bls.gov/nls/nlsy79.htm).  'Gen2' subjects are the biological offspring of the Gen1 females -*i.e.*, those in the NLSY79 Children and Young Adults sample (http://www.bls.gov/nls/nlsy79ch.htm).  The NLSY97 is a third dataset that can be used for behavior genetic research (http://www.bls.gov/nls/nlsy97.htm), although this vignette focuses on the two generations in the NLSY79.
+This package considers both Gen1 and Gen2 subjects.  'Gen1' refers to subjects in the original NLSY79 sample (https://www.nlsinfo.org/content/cohorts/nlsy79).  'Gen2' subjects are the biological offspring of the Gen1 females -*i.e.*, those in the NLSY79 Children and Young Adults sample (https://www.nlsinfo.org/content/cohorts/nlsy79-children).  The NLSY97 is a third dataset that can be used for behavior genetic research (https://www.nlsinfo.org/content/cohorts/nlsy97), although this vignette focuses on the two generations in the NLSY79.
 
 Standard terminology is to refer second generation subjects as 'children' when they are younger than age 15 (NSLYC), and as 'young adults' when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as 'NLSY79-C', 'NLSY79C', 'NLSY-C' or 'NLSYC'. This packages uses 'Gen2' to refer to subjects of this generation, regardless of their age at the time of the survey.
 
@@ -47,10 +47,10 @@ An **outcome variable** is directly relevant to the applied researcher; these mi
 
 An ACE model is the basic biometrical model used by Behavior Genetic researchers, where the genetic and environmental effects are assumed to be additive. The three primary variance components are (1) the proportion of variability due to a shared genetic influence (typically represented as $a^2$, or sometimes $h^2$), (2) the proportion of variability due to shared common environmental influence (typically $c^2$), and (3) the proportion of variability due to unexplained/residual/error influence (typically $e^2$).
 
-The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend [Plomin (1990)](http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s) and [Carey (2003)](http://psych.colorado.edu/~carey/hgss/).  For more in-depth ACE model-fitting strategies, we recommend [Neale & Maes, (1992)](http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf).
+The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend [Plomin (1990)](https://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s) and [Carey (2003)](https://www.colorado.edu/psych-neuro/gregory-carey).  For more in-depth ACE model-fitting strategies, we recommend [Neale & Maes, (2004)](http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf).
 
 
-The **NLS Investigator** (http://www.nlsinfo.org/investigator/) is the best way to obtain the NLSY79 and NLSY97 datasets.  See our vignette dedicated to the NLS Investigator by typing `vignette("NlsInvestigator")` or by visiting https://cran.r-project.org/package=NlsyLinks.
+The **NLS Investigator** (https://www.nlsinfo.org/investigator/) is the best way to obtain the NLSY79 and NLSY97 datasets.  See our vignette dedicated to the NLS Investigator by typing `vignette("NlsInvestigator")` or by visiting https://cran.r-project.org/package=NlsyLinks.
 
 Before starting the real examples, first verify that the NlsyLinks package is installed correctly.  If not, please refer to Appendix.
 
@@ -121,7 +121,7 @@ ace
 Example: DF analysis with a univariate outcome from a Gen2 Extract
 ===============================
 
-The vignette's second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](http://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later in the vignette.
+The vignette's second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later in the vignette.
 
 The steps are:
 
@@ -178,7 +178,7 @@ ace <- AceUnivariate(
 ace
 ```
 
-For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](hhttps://cran.r-project.org/package=NlsyLinks/vignettes/faq.pdf).
+For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html).
 
 Example: Multiple Group SEM of a Simple Outcome for Gen2 Subjects
 ===============================
@@ -349,19 +349,19 @@ ace
 
 Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the population's $a^2$ is small or moderate, instead of something large like 0.7.
 
-You may notice that the analysis has `r scales::comma(ace@CaseCount)` relationships instead of the entire `r scales::comma(nrow(Links79Pair))`.  This is primarily because not all subjects have a value for 'adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are `r scales::comma(sum(!is.na(Links79PairExpanded$RFull)))` pairs with a nonmissing value in `RFull`, meaning that `r round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)` are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+% chance we have an `RFull` for it.  For a description of the `R` and `RFull` variables, please see the `Links79Pair` entry in the package [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf).
+You may notice that the analysis has `r scales::comma(ace@CaseCount)` relationships instead of the entire `r scales::comma(nrow(Links79Pair))`.  This is primarily because not all subjects have a value for 'adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are `r scales::comma(sum(!is.na(Links79PairExpanded$RFull)))` pairs with a nonmissing value in `RFull`, meaning that `r round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)` are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+% chance we have an `RFull` for it.  For a description of the `R` and `RFull` variables, please see the `Links79Pair` entry in the package [reference manual](https://nlsy-links.github.io/NlsyLinks/).
 
 **References:**
 
-The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs.  Our MDAN article presents a [GEE](http://en.wikipedia.org/wiki/Generalized_estimating_equation) method for handling this (p. 572).  The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.
+The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs.  Our MDAN article presents a [GEE](https://en.wikipedia.org/wiki/Generalized_estimating_equation) method for handling this (p. 572).  The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.
 
 One of our [2013 BGA presentations](https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330)  discusses these benefits in the context of the current NlsyLinks package, and our 2008 MDAN article accomplishes something similar using a GEE with females in both generations.
 
-Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](http://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [[Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330)]
+Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](https://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [[Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330)]
 
-Beasley, W.H., Bard, D.E., Meredith, K., Hunter, M., & Rodgers, J.L. (2013). [*NLSY Kinship Links:  Creating Biometrical Design Structures from Cross-Generational Data*](http://link.springer.com/article/10.1007/s10519-013-9623-9). Behavior Genetics Association 43rd Annual Meeting. [[Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330)]
+Beasley, W.H., Bard, D.E., Meredith, K., Hunter, M., & Rodgers, J.L. (2013). [*NLSY Kinship Links:  Creating Biometrical Design Structures from Cross-Generational Data*](https://link.springer.com/article/10.1007/s10519-013-9623-9). Behavior Genetics Association 43rd Annual Meeting. [[Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330)]
 
-Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008). [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables](http://www.ncbi.nlm.nih.gov/pubmed/18825497). *Behavior Genetics, 38*, 567-578.
+Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008). [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712575/). *Behavior Genetics, 38*, 567-578.
 
 
 Appendix: Receiving Help for the NlsyLinks Package
@@ -373,7 +373,7 @@ questions about our package, we'd like to hear from you.
 
 We provide personal support for researchers in several ways.  Perhaps the best
 place to start are the forums on R-Forge
-(http://r-forge.r-project.org/forum/?group_id=1330); there are forums for
+(https://r-forge.r-project.org/forum/?group_id=1330); there are forums for
 people using R, as well as other software such as SAS.  [This
 post](https://r-forge.r-project.org/forum/forum.php?thread_id=4537&forum_id=4266&group_id=1330) is a good overview of the current project is, which originally was an
 email Joe sent to previous users of our kinship links (many of them are/were SAS
@@ -383,14 +383,14 @@ Appendix: Creating and Saving R Scripts
 ===============================
 
 There are several options and environments for executing R code.  Our current
-recommendation is [RStudio](http://rstudio.org/), because it is easy to
+recommendation is [RStudio](https://www.rstudio.com/), because it is easy to
 install, and has features targeting beginner and experienced R users.
 We've had good experiences with it on Windows, OS X, and Ubuntu Linux.
 
 RStudio allows you to create and save R files; these are simply text files
 that have an file extension of '.R'.  RStudio will execute the commands written
 in the file.  Help documentation for RStudio can be found at
-http://www.rstudio.com/ide/docs/.
+https://support.rstudio.com/hc/en-us.
 
 Appendix: Installing and Loading the NlsyLinks Package
 ===============================
@@ -431,19 +431,19 @@ update our kinship links (embedded in NlsyLinks) with the newest information.
 Appendix: References
 ===============================
 
-A list of some articles that have used the NLSY for behavior genetics is available at: http://nlsy-links.github.io/NlsyLinks/research_publications.html.
+A list of some articles that have used the NLSY for behavior genetics is available at: https://nlsy-links.github.io/NlsyLinks/articles/publications.html.
 
-Carey, Gregory (2002). [*Human Genetics for the Social Sciences*](http://psych.colorado.edu/~carey/hgss/). Sage.
+Carey, Gregory (2002). [*Human Genetics for the Social Sciences*](https://www.colorado.edu/psych-neuro/gregory-carey). Sage.
 
-Plomin, Robert (1990). [*Nature and nurture: an introduction to human behavioral genetics*](http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s).  Brooks/Cole Publishing Company.
+Plomin, Robert (1990). [*Nature and nurture: an introduction to human behavioral genetics*](https://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s).  Brooks/Cole Publishing Company.
 
-Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008). [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables](http://www.ncbi.nlm.nih.gov/pubmed/18825497). *Behavior Genetics, 38*, 567-578.
+Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008). [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712575/). *Behavior Genetics, 38*, 567-578.
 
-Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005). [Reformulating and simplifying the DF analysis model](http://www.springerlink.com/content/n3x1v1q282583366). *Behavior Genetics, 35 (2)*, 211-217.
+Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005). [Reformulating and simplifying the DF analysis model](https://pubmed.ncbi.nlm.nih.gov/15685433/). *Behavior Genetics, 35 (2)*, 211-217.
 
-Rodgers, Joseph Lee, Rowe, David C., & Li, Chengchang (1994). [Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors](http://psycnet.apa.org/journals/dev/30/3/374/). *Developmental Psychology, 30 (3)*, 374-384.
+Rodgers, Joseph Lee, Rowe, David C., & Li, Chengchang (1994). [Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors](https://psycnet.apa.org:443/journals/dev/30/3/374/). *Developmental Psychology, 30 (3)*, 374-384.
 
-Neale, Michael C., & Cardon, Lou R. (1992). [*Methodology for genetic studies of twins and families*](http://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC). Norwell, MA: Kluwer Academic Publishers. (Also see Neale & Maes: [http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf]).
+Neale, Michael C., & Cardon, Lou R. (1992). [*Methodology for genetic studies of twins and families*](https://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC). Norwell, MA: Kluwer Academic Publishers. (Also see Neale & Maes: [http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf]).
 
 
 Funding

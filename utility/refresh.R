@@ -20,8 +20,8 @@ checks_to_exclude <- c(
   "lintr_line_length_linter"
 )
 gp <-
-  goodpractice::all_checks() |>
-  purrr::discard(~(. %in% checks_to_exclude)) |>
+  goodpractice::all_checks() %>%
+  purrr::discard(~(. %in% checks_to_exclude)) %>%
   goodpractice::gp()
 goodpractice::results(gp)
 gp
@@ -32,7 +32,8 @@ test_results_checked <- devtools::test()
 # test_results_not_checked <- testthat::test_dir("./tests/manual/")
 
 
-urlchecker::url_check(); urlchecker::url_update()
+View(urlchecker::url_check())
+urlchecker::url_update()
 
 # devtools::build(args="--resave-data --no-build-vignetteszz")#args="--resave-data")
 

@@ -1,22 +1,22 @@
 ## Description
-This submission is a continuation of yesterday's submission (which corresponded to the new version of testthat --one of the tests catching a failing condition needed to change).
+This submission revival of a package archived in April.
 
-Kurt asked, "Would it be possible to put some of the data sets into a separate package which changes less frequently than code and docs?" I'll gladly defer to your judgment and recommendations, but I see two reasons to retain a united package.  
-
-First, our primary target audience is Behavior Genetics researchers, who typically are much less familar with R than other fields.  There have been at least 3 BG researchers who have requested SAS data files, because they weren't even comfortable reading vanilla CSV files into SAS.  I'd like to avoid another step/package for them to consider, even if the dataset-only package was a dependency.  
-
-Second, assuming our grant proposal is funded, the datasets won't stay stagnant.  The NLSY has three cohorts that are surveyed every two years.  This will be only the [second CRAN submission since Dec 2013](https://cran.rstudio.com/src/contrib/Archive/NlsyLinks/), and most of those changes [were to stay current updated CRAN policies](https://cran.rstudio.com/web/packages/NlsyLinks/NEWS).  The dataset-package would have needed to change too, and therefore increase the demands on CRAN maintainers (because both packages might required updates).
+A few years ago Kurt asked, "Would it be possible to put some of the data sets into a separate package which changes less frequently than code and docs?" I'll gladly defer to your judgment and recommendations, but I see two reasons to retain a united package.  First, our primary target audience is Behavior Genetics researchers, who typically are much less familar with R than other fields.  There have been at least 3 BG researchers who have requested SAS data files, because they weren't even comfortable reading vanilla CSV files into SAS.  I'd like to avoid another step/package for them to consider, even if the dataset-only package was a dependency.  Second, assuming our grant proposal is funded, the datasets won't stay stagnant.  The NLSY has three cohorts that are surveyed every two years.  This will be only the [third CRAN submission since Dec 2013](https://cran.rstudio.com/src/contrib/Archive/NlsyLinks/), and most of those changes [were to stay current updated CRAN policies](https://cran.rstudio.com/web/packages/NlsyLinks/NEWS).  The dataset-package would have needed to change too, and therefore increase the demands on CRAN maintainers (because both packages might required updates).
 
 However, I'm happy to split this package if that's what you feel is best for CRAN and R users.  -Will Beasley
 
 Test environments
 -----------------------------------------------
 
-* Local Ubuntu 14.04 LTS
-* [win-builder (version="R-devel")](http://win-builder.r-project.org/68aDSl8xhbGq)
-* [Travis CI, Ubuntu 12.04 LTS](https://travis-ci.org/nlsy-links/NlsyLinks/)
-* [AppVeyor, Windows Server 2012](https://ci.appveyor.com/project/wibeasley/nlsylinks)
-
+1. Local Ubuntu, R 4.1.0 patched
+1. Local Win8, R 4.1.0 patched
+1. Local Win10, R 4.1.0 patched
+1. R-hub
+    1. [Ubuntu Linux 20.04 LTS, R-release, GCC](https://builder.r-hub.io/status/REDCapR_1.0.0.tar.gz-d554cfab8fed4acba83ca159d2a14a7b)
+    1. [Fedora Linux, R-devel, clang, gfortran](https://builder.r-hub.io/status/REDCapR_1.0.0.tar.gz-80a6d6b66bb84847b61d31f6029f5628)
+    1. [Windows Server](https://builder.r-hub.io/status/REDCapR_1.0.0.tar.gz-b5b0cb95fb4746f9b354071b89caaafa)
+1. [win-builder](https://win-builder.r-project.org/BwNz2bnHxuse), development version.
+1. [GiHub Actions](https://github.com/OuhscBbmc/REDCapR/actions), Ubuntu 20.04 LTS
 
 R CMD check results
 -----------------------------------------------

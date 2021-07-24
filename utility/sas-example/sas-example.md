@@ -1,14 +1,14 @@
 # Using SAS with the NlsyLinks R Package
 
 ## Authors
- * [Michael D. Hunter](http://mhuntero.com/), University of Oklahoma Health Sciences Center, OKC
- * [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ), [Howard Live Oak LLC](http://howardliveoak.com/), Norman
- * [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), Vanderbilt University, Nashville
- * [David Bard](http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041), University of Oklahoma Health Sciences Center, OKC
+ * [Michael D. Hunter](https://psychology.gatech.edu/michael-hunter), University of Oklahoma Health Sciences Center, OKC
+ * [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ), Howard Live Oak LLC, Norman
+ * [Joseph Lee Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), Vanderbilt University, Nashville
+ * [David Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd), University of Oklahoma Health Sciences Center, OKC
  * [Kelly Meredith](http://www.okcu.edu/admin/academic-affairs/staff/bio/item-id-77), Oklahoma City University, OKC
  
 ## Abstract
-We describe how to use the R package [`NlsyLinks`](https://cran.r-project.org/package=NlsyLinks) with the SAS program.  This is a replication of the analyses from the [ACE Models with the NLSY](https://cran.r-project.org/package=NlsyLinks/vignettes/NlsyAce.pdf) vignette section called "Example: DF analysis with a univariate outcome from a Gen2 Extract".
+We describe how to use the R package [`NlsyLinks`](https://cran.r-project.org/package=NlsyLinks) with the SAS program.  This is a replication of the analyses from the [ACE Models with the NLSY](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.html) vignette section called "Example: DF analysis with a univariate outcome from a Gen2 Extract".
 
 ## Import Links to SAS, Perform Data Manipulation, and Return to R
 SAS Code:

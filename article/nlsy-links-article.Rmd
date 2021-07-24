@@ -48,7 +48,7 @@ output: rticles::springer_article
 
 ## Structural and Topical information
 
-The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and menarche (*e.g.*, Rodgers et al, [2015](http://link.springer.com/article/10.1007/s10519-014-9676-4)), but are not relevant to many hypotheses outside these fields.
+The NlsyLinks package offers two types of datasets: topical and structural.  *Topical datasets* contain predictor and outcome variables typically used to test a focused hypotheses.  For instance, the NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the relationship between conduct disorder and menarche (*e.g.*, Rodgers et al, [2015](https://link.springer.com/article/10.1007/s10519-014-9676-4)), but are not relevant to many hypotheses outside these fields.
 
 In contrast, variables in *structural datasets* are not typically directly stated in the hypotheses, yet are essential to many NLSY-related investigations including:
 
@@ -56,13 +56,13 @@ In contrast, variables in *structural datasets* are not typically directly state
 * subject characteristics (*e.g.*, Subject 301 is a Native American female; Subject 607 died from heart disease in 2005; Subject 802 is part of the military over-sample), and
 * subject-survey characteristics (*e.g.*, Subject 301 was 15 years old for the 1981 Survey; Subject 301 did not respond to the 1990 survey; Subject 702 completed the NLSY-C survey in 1996 and the NLSY-YA survey in 1998).
 
-The NlsyLinks includes small topical datasets which allows the vignettes and examples to be reproducible and more realistic.  The structural datasets are intended to be the authoritative representations, and are the product of two NIH grants (for a complete history of the familial relationships, see Rodgers et al., [2016](http://link.springer.com/article/10.1007%2Fs10519-016-9785-3)).
+The NlsyLinks includes small topical datasets which allows the vignettes and examples to be reproducible and more realistic.  The structural datasets are intended to be the authoritative representations, and are the product of two NIH grants (for a complete history of the familial relationships, see Rodgers et al., [2016](https://link.springer.com/article/10.1007%2Fs10519-016-9785-3)).
 
 ## Terminology
 
 The package pertains to multiple generations of the 'Nlsy79' and multiple generations of the 'Nlsy97'.  Because the NlsyLinks package structures information within and between generations of the NLSY simultaneously, it requires slightly unconventional NLSY terminology to reduce ambiguity.
 
-The 'Nlsy79 sample' refers to both the original 12,686 subjects interviewed in 1979, and their 11,500+ children (termed 'Nlsy79 Gen1' and 'Nlsy79 Gen2', respectively).  Data for the 'Nlsy79 Gen1' comes from the [original NLSY79 study](http://www.bls.gov/nls/nlsy79.htm), while data for the 'Nlsy Gen2' comes from both the [NLSY-C study]() and the [NLSY-YA study]() ('C' stands for children, and 'YA' stands for young adult).  More specifically, the [Gen2 subjects](http://www.bls.gov/nls/nlsy79ch.htm) are the biological offspring of the Gen1 mothers; they initially completed the NLSY-C survey until roughly age 14, and then completed the NLSY-YA survey (the oldest 'Young Adult' respondent was QQ in the 2016 survey).  Although the NLSY does not interview 'Nlsy79 Gen0' (the parents of Gen1) or 'Nlsy79 Gen3' (the children of Gen2), it does contain direct and indirect information about them.
+The 'Nlsy79 sample' refers to both the original 12,686 subjects interviewed in 1979, and their 11,500+ children (termed 'Nlsy79 Gen1' and 'Nlsy79 Gen2', respectively).  Data for the 'Nlsy79 Gen1' comes from the [original NLSY79 study](https://www.nlsinfo.org/content/cohorts/nlsy79), while data for the 'Nlsy Gen2' comes from both the [NLSY-C study]() and the [NLSY-YA study]() ('C' stands for children, and 'YA' stands for young adult).  More specifically, the [Gen2 subjects](https://www.nlsinfo.org/content/cohorts/nlsy79-children) are the biological offspring of the Gen1 mothers; they initially completed the NLSY-C survey until roughly age 14, and then completed the NLSY-YA survey (the oldest 'Young Adult' respondent was QQ in the 2016 survey).  Although the NLSY does not interview 'Nlsy79 Gen0' (the parents of Gen1) or 'Nlsy79 Gen3' (the children of Gen2), it does contain direct and indirect information about them.
 
 The terminology for the 'Nlsy97' sample is similar yet simpler than the 'Nlsy79', because the explicit respondents come from a single generation (*i.e.*, the 'Nlsy97 Gen1').  A few variables reflect Gen0 and Gen2.  In contrast to the Nlsy79, the Nlsy97 contains more information about the housemates.
 
@@ -84,7 +84,7 @@ An **outcome variable** is directly relevant to the applied researcher; these mi
 
 An **ACE model** is the basic biometrical model used by Behavior Genetic researchers, where the genetic and environmental effects are assumed to be additive. The three primary variance components are (1) the proportion of variability due to a shared genetic influence (typically represented as $a^2$, or sometimes $h^2$), (2) the proportion of variability due to shared common environmental influence (typically $c^2$), and (3) the proportion of variability due to unexplained/residual/error influence (typically $e^2$).
 
-The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend [Plomin (1990)](http://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s) and [Carey (2003)](http://psych.colorado.edu/~carey/hgss/).  For more in-depth ACE model-fitting strategies, we recommend [Neale & Maes, (1992)](http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf).
+The variables are scaled so that they account for all observed variability in the outcome variable; specifically: $a^2 + c^2 + e^2 = 1$.  Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of $a^2$, $c^2$, and $e^2$ within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend [Plomin (1990)](https://books.google.com/books?id=r7AgAQAAIAAJ&source=gbs_navlinks_s) and [Carey (2003)](https://www.colorado.edu/psych-neuro/gregory-carey).  For more in-depth ACE model-fitting strategies, we recommend [Neale & Maes, (2004)](http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf).
 
 Retrieving Data with the NLS Investigator
 ====================================================
@@ -168,7 +168,7 @@ ace
 ACE DF Analysis of One Generation (NLSY79 Gen2)
 ----------------------------------------------------
 
-The second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](http://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later.
+The second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later.
 
 The steps are:
 
@@ -231,7 +231,7 @@ ace <- AceUnivariate(
 ace
 ```
 
-For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](hhttps://cran.r-project.org/package=NlsyLinks/vignettes/faq.pdf).
+For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html).
 
 ACE SEM of One Generation (NLSY79 Gen2)
 ----------------------------------------------------
@@ -359,7 +359,7 @@ ace
 
 Notice the ACE estimates are very similar to the previous example, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the population's $a^2$ is small or moderate, instead of something large like 0.7.
 
-You may notice that the analysis has `r scales::comma(ace@CaseCount)` relationships instead of the entire `r scales::comma(nrow(Links79Pair))`.  This is primarily because not all subjects have a value for 'adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are `r scales::comma(sum(!is.na(Links79PairExpanded$RFull)))` pairs with a nonmissing value in `RFull`, meaning that `r round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)` are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+% chance we have an `RFull` for it.  For a description of the `R` and `RFull` variables, please see the `Links79Pair` entry in the package [reference manual](https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf).
+You may notice that the analysis has `r scales::comma(ace@CaseCount)` relationships instead of the entire `r scales::comma(nrow(Links79Pair))`.  This is primarily because not all subjects have a value for 'adult height' (and that's mostly because a lot of Gen2 subjects are too young).  There are `r scales::comma(sum(!is.na(Links79PairExpanded$RFull)))` pairs with a nonmissing value in `RFull`, meaning that `r round(mean(!is.na(Links79PairExpanded$RFull))*100, 1)` are classified.  We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there's a 99+% chance we have an `RFull` for it.  For a description of the `R` and `RFull` variables, please see the `Links79Pair` entry in the package [reference manual](https://nlsy-links.github.io/NlsyLinks/).
 
 
 More Advanced ACE Analyses

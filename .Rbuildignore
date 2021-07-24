@@ -21,6 +21,7 @@
 ^revdep$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^pkgdown$
 
 
 # Files used in many R-centric repos.

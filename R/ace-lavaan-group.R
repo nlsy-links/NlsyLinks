@@ -18,7 +18,7 @@
 #' Three good starting points are the package website (http://lavaan.ugent.be/), the package documentation (https://cran.r-project.org/package=lavaan)
 #' and the JSS paper.
 #'
-#' Rosseel, Yves (2012), [lavaan: An R Package for Structural Equation Modeling](http://www.jstatsoft.org/v48/i02/). *Journal of Statistical Software, 48*, (2), 1-36.
+#' Rosseel, Yves (2012), [lavaan: An R Package for Structural Equation Modeling](https://www.jstatsoft.org/v48/i02/). *Journal of Statistical Software, 48*, (2), 1-36.
 #'
 #' @author Will Beasley
 #'
