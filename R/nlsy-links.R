@@ -26,7 +26,7 @@
 #' your problem, please create a [new issue](https://github.com/nlsy-links/NlsyLinks/issues), or email Will.
 #'
 #' @author
-#' [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](), Norman)
+#' [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 #'
 #' [Joseph Lee Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 #'

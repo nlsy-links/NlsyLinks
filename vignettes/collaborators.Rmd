@@ -56,7 +56,7 @@ The participating members include David Bard and [Michael Hunter](https://studen
 Howard Live Oak
 -----------------------------
   
-Howard Live Oak, LLC is a small consulting company specializing in custom software for data management and statistical analysis. Typical clients are small companies and research teams that would like gain a better understanding of systems manifesting in observed datasets.  It's participating member is [Will Beasley](https://www.researchgate.net/profile/William_Beasley2).
+Howard Live Oak, LLC is a small consulting company specializing in custom software for data management and statistical analysis. Typical clients are small companies and research teams that would like gain a better understanding of systems manifesting in observed datasets.  It's participating member is [Will Beasley](https://www.researchgate.net/profile/William-Beasley-5).
 <!--
 <a href="https://howardliveoak.com/"> 
   <img src="./images/HloGraphicGray.png" alt="Howard Live Oak" style="width: 150px;"/>
