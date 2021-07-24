@@ -53,8 +53,14 @@ Thanks to Funders
 
 The current work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 ([Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), PI).
 
-Status
+Build Status and Package Characteristics
 --------------------------
+
+| [Branch](https://github.com/nlsy-links/NlsyLinks) | [GitHub Actions](https://github.com/OuhscBbmc/nlsy-links/NlsyLinks) | [Codecov](https://codecov.io/gh/nlsy-links/NlsyLinks) |
+| :----- | :---------------------------: | :-------: |
+| [Master](https://github.com/nlsy-links/NlsyLinks/tree/master) | [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=master)](https://github.com/nlsy-links/NlsyLinks/actions) |  [![codecov](https://codecov.io/gh/nlsy-links/NlsyLinks/branch/master/graph/badge.svg)](https://codecov.io/gh/nlsy-links/NlsyLinks) |
+| [Dev](https://github.com/nlsy-links/NlsyLinks/tree/dev) | [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=dev)](https://github.com/nlsy-links/NlsyLinks/actions) | [![codecov](https://codecov.io/gh/nlsy-links/NlsyLinks/branch/dev/graph/badge.svg)](https://codecov.io/gh/nlsy-links/NlsyLinks/branch/dev) |
+| | *Ubuntu Latest* | *Test Coverage* |
 
 | [GitHub](https://github.com/nlsy-links/NlsyLinks) | [Travis-CI](https://travis-ci.org/nlsy-links/NlsyLinks/builds) | [AppVeyor](https://ci.appveyor.com/project/wibeasley/nlsylinks/history) |  [Coveralls](https://coveralls.io/r/nlsy-links/NlsyLinks) |
 | :----- | :---------------------------: | :------------: | :-------: |
