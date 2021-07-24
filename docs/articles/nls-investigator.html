@@ -40,7 +40,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -84,7 +84,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -98,7 +98,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="nls-investigator_files/header-attrs-2.9/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>The NLS Investigator</h1>
@@ -108,7 +108,7 @@
                         <h4 class="author">Kelly <a href="https://www.okcu.edu/directory/kelly-williams">Williams</a> (Oklahoma City University, OKC)</h4>
                         <h4 class="author">Michael D. <a href="http://mhuntero.com/">Hunter</a> (Georgia Tech, Atlanta)</h4>
             
-            <h4 class="date">2020-05-20</h4>
+            <h4 class="date">2021-07-23</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/nls-investigator.Rmd"><code>vignettes/nls-investigator.Rmd</code></a></small>
       <div class="hidden name"><code>nls-investigator.Rmd</code></div>
@@ -130,7 +130,7 @@
 <ol style="list-style-type: decimal">
 <li><p>Browse to [<a href="http://www.nlsinfo.org/investigator" class="uri">http://www.nlsinfo.org/investigator</a>]. Select the ‘REGISTER’ link in the top right, and create a personal account. If you have already registered, Log In and proceed to the next step.</p></li>
 <li>
-<p>Select your desired cohort, in the dropdown box titled, "Select the study you want to work with:’’. In the screenshot below, second generation of the NLSY79 sample is selected.</p>
+<p>Select your desired cohort, in the dropdown box titled, “Select the study you want to work with:’’. In the screenshot below, second generation of the NLSY79 sample is selected.</p>
 <p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T"><img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T" style="width: 500px;"></a></p>
 </li>
 <li>
@@ -164,9 +164,10 @@
 <p>Tagsets were introduced in Step 5, but are discussed more thoroughly here. Tagsets make large projects more manageable in two ways. First, they save effort and reduce errors because you don’t have to re-select all the variables every time you revisit the NLS Investigator. You can save and load the tagsets during subsequent sessions. In fact, you can save multiple tagsets on the NLS server.</p>
 <p>Second, using <em>multiple</em> tagsets provides a convenient approach to organize and compartmentalize your variables. It’s not unusual for some complicated longitudinal studies to use hundreds of NLSY variables. We’ve found it easier to manage five tagsets of ~100 variables, than one tagset of 500. Since all NLSY tagsets (and therefore their datasets) automatically include the subject ID, merging the multiple datasets later is trivial with statistical software.</p>
 <p>In R, use the <code>merge</code> function; the <code>by</code> argument should be <code>R0000100</code> for NLSY79 subjects, <code>C0000100</code> for NLSYC subjects, and <code>R0000100</code> for NLSY97 subjects. For example, a study about intelligence and teenage fertility would have one tagset containing the intelligence variables, and a second tagset containing the fertility variables. These two tagsets eventually could produce two CSV data files called <code>IQ.csv</code> and <code>Fertility.csv</code>, located in the <code>BGResearch</code> directory. The R code to read and merge these two datasets could be as simple as</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="no">dsIQ</span>        <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">'C:/BGResearch/IQ.csv'</span>, <span class="kw">header</span><span class="kw">=</span><span class="fl">TRUE</span>)
-<span class="no">dsFertility</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="st">'C:/BGResearch/Fertility.csv'</span>, <span class="kw">header</span><span class="kw">=</span><span class="fl">TRUE</span>)
-<span class="no">ds</span>          <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span>(<span class="no">dsIQ</span>, <span class="no">dsFertility</span>, <span class="kw">by</span><span class="kw">=</span><span class="st">"C0000100"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dsIQ</span>        <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">'C:/BGResearch/IQ.csv'</span>, header<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<span class="va">dsFertility</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">'C:/BGResearch/Fertility.csv'</span>, header<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<span class="va">ds</span>          <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">dsIQ</span>, <span class="va">dsFertility</span>, by<span class="op">=</span><span class="st">"C0000100"</span><span class="op">)</span></code></pre></div>
 <p>In SAS, the <code>merge</code> function (and its <code>BY</code> argument) <a href="http://support.sas.com/documentation/cdl/en/basess/58133/HTML/default/viewer.htm#a001318494.htm">behaves similarly</a> as above. Notice that the SAS documentation states, “Before you can perform a match-merge, all data sets must be sorted by the variables that you want to use for the merge”, which is <code>C0000100</code> in this example.</p>
 <p>If you’re importing CSV files specifically for the NlsyLinks package, you’ll find functions like <code>ReadCsvNlsy79Gen1</code> and <code>ReadCsvNlsy79Gen2</code> more convenient for later analyses.</p>
 </div>
@@ -199,7 +200,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

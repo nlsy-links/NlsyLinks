@@ -7,7 +7,7 @@ library(stringr) #Necessary for the 'str_c' function
 #require(ggplot2) #Necessary only for the diagnostic plots at the end.
 
 estimateA <- T #Should the user estimate the 'A' variance component (ie, the genetic source)
-estimateC <- T #Should the user estimate the 'C' variance component (ie, the enviroment source)
+estimateC <- T #Should the user estimate the 'C' variance component (ie, the environment source)
 
 dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
 dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]

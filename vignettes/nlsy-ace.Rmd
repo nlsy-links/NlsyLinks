@@ -285,7 +285,7 @@ ace
 #Step 11: Inspect the output further (see the final step in the previous example).
 ```
 
-Most of them responded they were `Non-relative`s  to the explict items asked in 1979 (*i.e.*, NLSY79 variables `R00001.50` through `R00001.59`).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.
+Most of them responded they were `Non-relative`s  to the explicit items asked in 1979 (*i.e.*, NLSY79 variables `R00001.50` through `R00001.59`).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.
 
 If you wish to exclude additional groups from the analyses, Step 8 should change slightly.  For instance, to MZ twins, replace the two lines in Step 8 with the following four.  This is most for demonstration.  It is unlikely to be useful idea in the current example, and is more likely to be useful when using the `RFull` variable, which includes all values of `R` we were able to determine.
 
@@ -384,7 +384,7 @@ Appendix: Creating and Saving R Scripts
 
 There are several options and environments for executing R code.  Our current
 recommendation is [RStudio](http://rstudio.org/), because it is easy to
-install, and has features targeting beginnner and experienced R users.
+install, and has features targeting beginner and experienced R users.
 We've had good experiences with it on Windows, OS X, and Ubuntu Linux.
 
 RStudio allows you to create and save R files; these are simply text files

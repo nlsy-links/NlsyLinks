@@ -14,7 +14,7 @@ ReadCsvNlsy79Gen1(filePath, dsExtract = utils::read.csv(filePath))
 \item{dsExtract}{A 'data.frame' (containing the extract) can be passed instead of the file path if the data has already been read into R's memory.}
 }
 \value{
-A \link[base:data.frame]{base::data.frame} to facililate biometric analysis.
+A \link[base:data.frame]{base::data.frame} to facilitate biometric analysis.
 }
 \description{
 The function accepts a (file path to) CSV file and creates a \link[base:data.frame]{base::data.frame}.  The \link[base:data.frame]{base::data.frame} is modified and augmented with columns to assist later routines.

@@ -58,7 +58,7 @@ extended family with \eqn{k} subjects will have \eqn{k}(\eqn{k}-1)/2 rows.
 Typically, Subject1 is older while Subject2 is younger.
 
 \code{RelationshipPath} variable.  Code written using this dataset should
-NOT assume it contains only Gen2 sibiling pairs.  See an example of
+NOT assume it contains only Gen2 sibling pairs.  See an example of
 filtering the relationship category in the in \link{Links79Pair}
 documentation.
 
@@ -110,7 +110,7 @@ library(NlsyLinks) # Load the package into the current R session.
 If you're using the NlsyLinks package in R, the dataset is automatically available.
 To use it in a different environment,
 \href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true}{download the csv},
-which is readble by all statistical software.
+which is readable by all statistical software.
 \href{https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml}{links-metadata-2017-79.yml}
 documents the dataset version information.
 }

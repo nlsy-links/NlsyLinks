@@ -4,16 +4,12 @@
 #'
 #' @name AceEstimate-class
 #'
-#' @aliases AceEstimate-class getEstimate,AceEstimate-method
-#' initialize,AceEstimate-method print,AceEstimate-method
-#' show,AceEstimate-method GetDetails,AceEstimate-method
-#'
 #' @docType class
 #'
 #' @note The contents of the `Details` list depends on the underlying
 #' estimation routine.  For example, when the ACE model is estimated with a DF
 #' analysis, the output is an [stats::lm()] object, because the [stats::lm()] function
-#' was used (ie, the basical general linear model).  Alternatively, if the
+#' was used (ie, the basic general linear model).  Alternatively, if the
 #' user specified the [lavaan::lavaan()] package should estimate that ACE model,
 #' the output is a [lavaan::lavaan()] object.
 #'
@@ -108,13 +104,15 @@ methods::setMethod(f="show", "AceEstimate", function( object ) {
 })
 
 #' @name GetDetails-methods
+#' @title GetDetails-methods
 #' @aliases GetDetails-methods GetDetails AceEstimate-method
+#' @param object ACE object
 methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetails") })
 
-#' @export GetDetails
 #' @exportMethod GetDetails
 #' @docType methods
 #' @title A generic function for extracting the `Details` slot of an object.
+#' @rdname AceEstimate-class
 #'
 #' @description A generic function for extracting the `Details` slot of an AceEstimation object.
 # '
@@ -123,40 +121,12 @@ methods::setGeneric("GetDetails", function( object ) { standardGeneric("GetDetai
 # '  \describe{
 # '   \item{GetDetails}{`signature(object="AceEstimate")`: Extracts the `Details` slot of an [AceEstimation] object.}
 # '  }
+#' @param object ACE object
 #' @author Will Beasley
 #' @keywords methods
 methods::setMethod(f="GetDetails", "AceEstimate",
-  definition=function( object ) {
-    #print(str(object))
-    return( methods::slot(object, "Details")[[1]] )
-  }
+                   definition=function( object ) {
+                     #print(str(object))
+                     return( methods::slot(object, "Details")[[1]] )
+                   }
 )
-# setMethod("summary", "Ace", function(x, ...) {
-#   cat("Results of ACE estimation:\n")
-#   #aceDisplay <- matrix(c("ASquared", "CSquared", "ESquared", methods::slot(x, "ASquared"), methods::slot(x, "CSquared"), methods::slot(x, "ESquared")), byrow=T, nrow=2)
-#   #cat(aceDisplay, "\n")
-#   #print(aceDisplay)
-#   print(c(ASquared=methods::slot(x, "ASquared"), CSquared=methods::slot(x, "CSquared"), ESquared=methods::slot(x, "ESquared"), CaseCount=methods::slot(x,"CaseCount")))
-#   print(c(a=33, d=43))
-# })
-## ' Generic function for returning the contents from an [AceEstimate-class] class.
-## '
-## ' Extract the values
-## '
-## '
-## ' @name GetEstimate-methods
-## ' @aliases GetEstimate-methods GetEstimate,AceEstimate-method
-## ' @docType methods
-## ' @section Methods: \describe{
-## '
-## ' \item{list("signature(object = \"AceEstimate\")")}{ %% ~~describe this
-## ' method here~~ } }
-## ' @author Will Beasley
-## ' @keywords methods
-# setGeneric("GetEstimate", function( object ) { standardGeneric("GetEstimate") })
-# setMethod(f="GetEstimate", "AceEstimate",
-#           definition=function( object ) {
-#             #print(str(object))
-#             return( c(ASquared=methods::slot(object, "ASquared"), CSquared=methods::slot(object, "CSquared"), ESquared=methods::slot(object, "ESquared")) )
-#           }
-#           )

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculates summary statistics for each <em>R</em>elatedness Group in the sample. — RGroupSummary • NlsyLinks</title>
+<title>Calculates summary statistics for each Relatedness Group in the sample. — RGroupSummary • NlsyLinks</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Calculates summary statistics for each <em>R</em>elatedness Group in the sample. — RGroupSummary" />
+<meta property="og:title" content="Calculates summary statistics for each Relatedness Group in the sample. — RGroupSummary" />
 <meta property="og:description" content="Before and after running ACE Models, it is important to examine the characteristics of the different groups.  When the ACE is estimated with an SEM using multiple groups, it is even even more important.  Groups may contain too few subjects to have a well-behaved covariance matrix.
 If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM." />
 
@@ -83,7 +83,7 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -127,7 +127,7 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nlsy-links/NlsyLinks">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -154,13 +154,13 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
 <p>If a group's covariance matrix is not Positive Definite (or it's misbehaving in some other way), it's typically recommended to exclude that group from the SEM.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>RGroupSummary</span>(
-  <span class='no'>ds</span>,
-  <span class='no'>oName_S1</span>,
-  <span class='no'>oName_S2</span>,
-  <span class='kw'>rName</span> <span class='kw'>=</span> <span class='st'>"R"</span>,
-  <span class='kw'>determinantThreshold</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>
-)</pre>
+    <pre class="usage"><span class='fu'>RGroupSummary</span><span class='op'>(</span>
+  <span class='va'>ds</span>,
+  <span class='va'>oName_S1</span>,
+  <span class='va'>oName_S2</span>,
+  rName <span class='op'>=</span> <span class='st'>"R"</span>,
+  determinantThreshold <span class='op'>=</span> <span class='fl'>1e-05</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -211,15 +211,19 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Please see <a href='http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf'>Neale &amp; Maes</a> for more information about SEM with multiple groups.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Will Beasley and David Bard</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>NlsyLinks</span>) <span class='co'>#Load the package into the current R session.</span>
-<span class='no'>dsLinks</span>        <span class='kw'>&lt;-</span> <span class='no'>Links79PairExpanded</span>   <span class='co'># Load the dataset from the NlsyLinks package.</span>
-<span class='no'>dsLinks</span>        <span class='kw'>&lt;-</span> <span class='no'>dsLinks</span>[<span class='no'>dsLinks</span>$<span class='no'>RelationshipPath</span><span class='kw'>==</span><span class='st'>'Gen2Siblings'</span>, ]
-<span class='no'>oName_S1</span>       <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'># Stands for Outcome1</span>
-<span class='no'>oName_S2</span>       <span class='kw'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'># Stands for Outcome2</span>
-<span class='no'>dsGroupSummary</span> <span class='kw'>&lt;-</span> <span class='fu'>RGroupSummary</span>(<span class='no'>dsLinks</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>)
-<span class='no'>dsGroupSummary</span></div><div class='output co'>#&gt;       R Included PairCount    O1Mean    O2Mean O1Variance O2Variance
+    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://nlsy-links.github.io/NlsyLinks'>NlsyLinks</a></span><span class='op'>)</span> <span class='co'>#Load the package into the current R session.</span>
+<span class='va'>dsLinks</span>        <span class='op'>&lt;-</span> <span class='va'>Links79PairExpanded</span>   <span class='co'># Load the dataset from the NlsyLinks package.</span>
+<span class='va'>dsLinks</span>        <span class='op'>&lt;-</span> <span class='va'>dsLinks</span><span class='op'>[</span><span class='va'>dsLinks</span><span class='op'>$</span><span class='va'>RelationshipPath</span><span class='op'>==</span><span class='st'>'Gen2Siblings'</span>, <span class='op'>]</span>
+<span class='va'>oName_S1</span>       <span class='op'>&lt;-</span> <span class='st'>"MathStandardized_S1"</span> <span class='co'># Stands for Outcome1</span>
+<span class='va'>oName_S2</span>       <span class='op'>&lt;-</span> <span class='st'>"MathStandardized_S2"</span> <span class='co'># Stands for Outcome2</span>
+<span class='va'>dsGroupSummary</span> <span class='op'>&lt;-</span> <span class='fu'>RGroupSummary</span><span class='op'>(</span><span class='va'>dsLinks</span>, <span class='va'>oName_S1</span>, <span class='va'>oName_S2</span><span class='op'>)</span>
+<span class='va'>dsGroupSummary</span>
+</div><div class='output co'>#&gt;       R Included PairCount    O1Mean    O2Mean O1Variance O2Variance
 #&gt; 1 0.250     TRUE      2689  95.10450  95.97936   126.9489   150.1775
 #&gt; 2 0.375     TRUE       137  93.63139  93.36861   160.0120   136.6628
 #&gt; 3 0.500     TRUE      5491  99.89374 100.02868   168.7326   172.7293
@@ -246,8 +250,9 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
 <span class='co'>#5     32465.6        TRUE</span>
 
 <span class='co'>#To get summary stats for the whole sample, create one large inclusive group.</span>
-<span class='no'>dsLinks</span>$<span class='no'>Dummy</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>
-(<span class='no'>dsSampleSummary</span> <span class='kw'>&lt;-</span> <span class='fu'>RGroupSummary</span>(<span class='no'>dsLinks</span>, <span class='no'>oName_S1</span>, <span class='no'>oName_S2</span>, <span class='kw'>rName</span><span class='kw'>=</span><span class='st'>"Dummy"</span>))</div><div class='output co'>#&gt;   Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance
+<span class='va'>dsLinks</span><span class='op'>$</span><span class='va'>Dummy</span> <span class='op'>&lt;-</span> <span class='fl'>1</span>
+<span class='op'>(</span><span class='va'>dsSampleSummary</span> <span class='op'>&lt;-</span> <span class='fu'>RGroupSummary</span><span class='op'>(</span><span class='va'>dsLinks</span>, <span class='va'>oName_S1</span>, <span class='va'>oName_S2</span>, rName<span class='op'>=</span><span class='st'>"Dummy"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   Dummy Included PairCount   O1Mean   O2Mean O1Variance O2Variance
 #&gt; 1     1     TRUE      8340 98.24454 98.60504   160.6817   168.9103
 #&gt;   O1O2Covariance Correlation Determinant PosDefinite
 #&gt; 1       78.80601   0.4783524    20930.41        TRUE</div><div class='input'>
@@ -259,10 +264,12 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
 <span class='co'>###</span>
 <span class='co'>### ReadCsvNlsy79</span>
 <span class='co'>###</span>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>filePathGen2</span> <span class='kw'>&lt;-</span> <span class='st'>"~/Nlsy/Datasets/gen2-birth.csv"</span>
-<span class='no'>ds</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='ReadCsvNlsy79.html'>ReadCsvNlsy79Gen2</a></span>(<span class='kw'>filePath</span><span class='kw'>=</span><span class='no'>filePathGen2</span>)
-}</div></pre>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>filePathGen2</span> <span class='op'>&lt;-</span> <span class='st'>"~/Nlsy/Datasets/gen2-birth.csv"</span>
+<span class='va'>ds</span> <span class='op'>&lt;-</span> <span class='fu'><a href='ReadCsvNlsy79.html'>ReadCsvNlsy79Gen2</a></span><span class='op'>(</span>filePath<span class='op'>=</span><span class='va'>filePathGen2</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -278,7 +285,7 @@ If a group's covariance matrix is not Positive Definite (or it's misbehaving in 
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -25,7 +25,7 @@
 #' @details The `AgeSelfReportYears` and `AgeCalculateYears` variables usually agree, but not always.  The `Age` variable uses `AgeCalculateYears` (or `AgeSelfReportYears` when `AgeCalculateYears` is missing).
 #'
 #' The exact *date* of birth isn't public (only the subject's *month* of birth).  To balance the downward bias of two weeks,
-#' theri birthday is set to the 15th day of the month to produce `AgeCalculateYears`.
+#' their birthday is set to the 15th day of the month to produce `AgeCalculateYears`.
 #'
 #' In the Gen2 Child dataset, self-reported age is
 #' stated by month (eg, the child is 38 months old); a constant of 0.5 months has been added to balance the downward bias.  In the Gen2 YA and
@@ -37,7 +37,7 @@
 #' If you're using the NlsyLinks package in R, the dataset is automatically available.
 #' To use it in a different environment,
 #' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/survey-79.csv?raw=true),
-#' which is readble by all statistical software.
+#' which is readable by all statistical software.
 #' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
 #' documents the dataset version information.
 #'

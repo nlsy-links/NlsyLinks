@@ -16,7 +16,7 @@ library(devtools)
 
 # ------------------------------------------------------------
 test_that("Nlsy79Gen1Path", {
-  filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen1-life-course.csv")
+  filePathGen1 <- system.file("extdata/gen1-life-course.csv", package = "NlsyLinks")
 #   dsExtract <- read.csv(filePathGen1)
   ds <- ReadCsvNlsy79Gen1(filePath=filePathGen1)
 
@@ -27,7 +27,7 @@ test_that("Nlsy79Gen1Path", {
   expect_equal(object=ncol(ds), expected=13, scale=1)
 })
 test_that("Nlsy79Gen1DataFrame", {
-  filePathGen1 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen1-life-course.csv")
+  filePathGen1 <- system.file("extdata/gen1-life-course.csv", package = "NlsyLinks")
   dsRaw <- read.csv(filePathGen1)
   ds <- ReadCsvNlsy79Gen1(dsExtract=dsRaw)
 
@@ -40,7 +40,7 @@ test_that("Nlsy79Gen1DataFrame", {
 
 test_that("Nlsy79Gen2Path", {
   #   ds <- ReadCsvNlsy79Gen2(filePath=file.path(directory, fileNameGen2))
-  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv")
+  filePathGen2 <- system.file("extdata/gen2-birth.csv", package = "NlsyLinks")
   ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
 
   expect_equal(object=min(ds$SubjectTag), expected=201, scale=1)
@@ -53,7 +53,7 @@ test_that("Nlsy79Gen2Path", {
 })
 
 test_that("Nlsy79Gen2DataFrame", {
-  filePathGen2 <- file.path(devtools::inst("NlsyLinks"), "extdata", "gen2-birth.csv")
+  filePathGen2 <- system.file("extdata/gen2-birth.csv", package = "NlsyLinks")
   dsRaw <- read.csv(filePathGen2)
   ds <- ReadCsvNlsy79Gen2(dsExtract=dsRaw)
 

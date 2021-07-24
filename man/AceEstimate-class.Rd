@@ -3,20 +3,24 @@
 \docType{class}
 \name{AceEstimate-class}
 \alias{AceEstimate-class}
-\alias{getEstimate,AceEstimate-method}
-\alias{initialize,AceEstimate-method}
-\alias{print,AceEstimate-method}
-\alias{show,AceEstimate-method}
 \alias{GetDetails,AceEstimate-method}
 \title{Class AceEstimate}
+\usage{
+\S4method{GetDetails}{AceEstimate}(object)
+}
+\arguments{
+\item{object}{ACE object}
+}
 \description{
 A class containing information about a single univariate ACE model.
+
+A generic function for extracting the \code{Details} slot of an AceEstimation object.
 }
 \note{
 The contents of the \code{Details} list depends on the underlying
 estimation routine.  For example, when the ACE model is estimated with a DF
 analysis, the output is an \code{\link[stats:lm]{stats::lm()}} object, because the \code{\link[stats:lm]{stats::lm()}} function
-was used (ie, the basical general linear model).  Alternatively, if the
+was used (ie, the basic general linear model).  Alternatively, if the
 user specified the \code{\link[lavaan:lavaan]{lavaan::lavaan()}} package should estimate that ACE model,
 the output is a \code{\link[lavaan:lavaan]{lavaan::lavaan()}} object.
 }
@@ -35,5 +39,9 @@ est
 print(est)
 
 }
+\author{
+Will Beasley
+}
 \keyword{ACE}
 \keyword{classes}
+\keyword{methods}

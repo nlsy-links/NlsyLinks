@@ -2,9 +2,9 @@
 #'
 #' @export
 #'
-#' @title Distances between related family members, formated for spatial analysis.
+#' @title Distances between related family members, formatted for spatial analysis.
 #'
-#' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a [base::data.frame]) to represent neigbours.
+#' @description This helper function formats the LinksPair datasets so it can be used in some types of spatial analyses. The \pkg{spdep} (Spatial Dependence) uses a sparse matrix (actually a [base::data.frame]) to represent neighbours.
 #'
 #' @usage  CreateSpatialNeighbours(linksPairsDoubleEntered)
 ## CreateSpatialNeighbours79Gen2()
@@ -25,7 +25,7 @@
 #'
 #' The attribute `region.id` specifies each unique SubjectTag.
 #'
-#' The attribue `n` specifies the number of unique subjects.
+#' The attribute `n` specifies the number of unique subjects.
 #'
 #' @references
 #' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](http://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330).

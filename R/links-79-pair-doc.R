@@ -82,7 +82,7 @@
 #' It provides examples in SAS, SPSS, and STATA.
 #'
 #' `RelationshipPath` variable.  Code written using this dataset should
-#' NOT assume it contains only Gen2 sibiling pairs.  See below for an example of
+#' NOT assume it contains only Gen2 sibling pairs.  See below for an example of
 #' filtering the relationship category in the in `Links79Pair`
 #' documentation.
 #'
@@ -141,7 +141,7 @@
 #' If you're using the NlsyLinks package in R, the dataset is automatically available.
 #' To use it in a different environment,
 #' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-2017-79.csv?raw=true),
-#' which is readble by all statistical software.
+#' which is readable by all statistical software.
 #' [links-metadata-2017-79.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-79/links-metadata-2017-79.yml)
 #' documents the dataset version information.
 #'

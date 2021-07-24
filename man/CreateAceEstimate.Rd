@@ -33,7 +33,7 @@ An S4 object of \linkS4class{AceEstimate}.
 Creates an instance of the \code{S4} class, \linkS4class{AceEstimate} instantiating arguments set the parameter values estimated by the ACE model.
 }
 \details{
-The contents of the \code{details} list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a \link[stats:lm]{stats::lm} object, because the \link[stats:lm]{stats::lm} function was used (ie, the basical general linear model).  Alternatively, if the user specified the \code{lavaan} package should estimate that ACE model, the output is a \link[lavaan:lavaan]{lavaan::lavaan} object.
+The contents of the \code{details} list depends on the underlying estimation routine.  For example, when the ACE model is estimated with a DF analysis, the output is a \link[stats:lm]{stats::lm} object, because the \link[stats:lm]{stats::lm} function was used (ie, the basic general linear model).  Alternatively, if the user specified the \code{lavaan} package should estimate that ACE model, the output is a \link[lavaan:lavaan]{lavaan::lavaan} object.
 }
 \author{
 Will Beasley

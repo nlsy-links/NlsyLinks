@@ -40,7 +40,7 @@ each subject in the pair and their \code{R} coefficient.}
 
 \item{outcomeNames}{The column names of the outcome variable(s)}
 
-\item{linksNames}{The column names desired to be prseent in the newly
+\item{linksNames}{The column names desired to be present in the newly
 created data frame.  \code{SubjectTag_S1} and \code{SubjectTag_S2} are included
 automatically.}
 

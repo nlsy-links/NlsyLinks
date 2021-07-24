@@ -2,7 +2,7 @@
 #'
 #' @docType data
 #'
-#' @title Kinship linking file for pairs of relatives in the NLSY79 and NLSY79 Children and Young Adults
+#' @title Kinship linking file for pairs of relatives in the NLSY97
 #'
 #' @description This dataset specifies the relatedness coefficient (ie, '`R`') between
 #' subjects in the same extended family.  Each row represents a unique
@@ -13,7 +13,7 @@
 #' @format A data frame with 2,519 observations on the following 5 variables.
 #' There is one row per unique pair of subjects, irrespective of order.
 #'
-#' * **ExtendedID** Identity of the extended family of the pair; it corresponds to the HHID in the NLSY79.  See References below.
+#' * **ExtendedID** Identity of the extended family of the pair; it corresponds to the HHID in the NLSY97.  See References below.
 #' * **SubjectTag_S1** Identity of the pair's first subject.  See Details below.
 #' * **SubjectTag_S2** Identity of the pair's second subject.  See Details below.
 #' * **R** The pair's Relatedness coefficient.  See Details below.
@@ -44,9 +44,9 @@
 #'
 #' There are several other uncommon possibilities, such as half-cousins (*R*=.0625) and
 #' ambiguous aunt-nieces (*R*=.125, which is an average of 1/4 and 0/4).
-#' The variable coding for genetic relatedness,`R`, in [`Links79Pair`] contains
+#' The variable coding for genetic relatedness,`R`, in [`Links97Pair`] contains
 #' only the common values of *R* whose groups are likely to have stable estimates.
-#' However the variable `RFull` in [`Links79PairExpanded`] contains all *R* values.
+#' However the variable `RFull` in [`Links97PairExpanded`] contains all *R* values.
 #' We strongly recommend using `R` in this [base::data.frame].  Move to
 #' `RFull` (or some combination) only if you have a good reason, and are willing
 #' to carefully monitor a variety of validity checks.  Some of these
@@ -77,7 +77,7 @@
 #' If you're using the NlsyLinks package in R, the dataset is automatically available.
 #' To use it in a different environment,
 #' [download the csv](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-2017-97.csv?raw=true),
-#' which is readble by all statistical software.
+#' which is readable by all statistical software.
 #' [links-metadata-2017-97.yml](https://github.com/nlsy-links/NlsyLinks/blob/master/outside-data/nlsy-97/links-metadata-2017-97.yml)
 #' documents the dataset version information.
 #'
