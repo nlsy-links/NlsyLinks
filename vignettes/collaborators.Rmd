@@ -21,9 +21,9 @@ Vanderbilt University, Peabody College of Education, Department of Psychology an
 
 The PI, [Joe Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), recently retired as George Lynn Cross Research Professor Emeritus from the
 [University of Oklahoma](https://www.ou.edu/) Department of [Psychology](https://www.ou.edu/cas/psychology/), and moved to Vanderbilt's [Peabody College of Education](https://peabody.vanderbilt.edu/), [Department of Psychology and Human Development](https://www.vanderbilt.edu/psychological_sciences/)
-to direct the Quantitative Methods program.  For over 20 years he has been the coordinator of the NLSY Kinship Links project, and the PI on associated NIH grants.  His first Vanderbilt graduate student, [S. Mason Garrison](https://www.smasongarrison.com), is now working on the project.
+to direct the Quantitative Methods program.  For over 30 years he has been the coordinator of the NLSY Kinship Links project, and the PI on associated NIH grants.  Two Vanderbilt graduate students, [S. Mason Garrison](https://www.smasongarrison.com) and [Patrick O'Keefe](https://scholar.google.com/citations?user=7ir-hqAAAAAJ&hl=en), have been working on the project, along with many collaborators who originated at the University of Oklahoma.
 
-The current work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 (May 1, 2011 to December 31, 2014;  Joe Rodgers, PI).  Previous kinship linking activity was supported by two previous NIH grants, the first in the 1990s, the second in the early 2000s.
+Recent work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 (May 1, 2011 to December 31, 2014; Joe Rodgers, PI) and NIH Grant R01-HD087395 (May 1, 2017 to April 30, 2021). Previous kinship linking activity was supported by two previous NIH grants, the first in the 1990s, the second in the early 2000s.
 
 <!--
 <a href="https://www.vanderbilt.edu">
@@ -65,7 +65,8 @@ Howard Live Oak, LLC is a small consulting company specializing in custom softwa
 
 ***
 ***
-# NLSY Administrators
+
+NLSY Administrators
 =============================
 
 
