@@ -121,7 +121,7 @@ ace
 Example: DF analysis with a univariate outcome from a Gen2 Extract
 ===============================
 
-The vignette's second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](http://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later in the vignette.
+The vignette's second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later in the vignette.
 
 The steps are:
 
@@ -178,7 +178,7 @@ ace <- AceUnivariate(
 ace
 ```
 
-For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](hhttps://cran.r-project.org/package=NlsyLinks/vignettes/faq.pdf).
+For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html).
 
 Example: Multiple Group SEM of a Simple Outcome for Gen2 Subjects
 ===============================
@@ -353,7 +353,7 @@ You may notice that the analysis has `r scales::comma(ace@CaseCount)` relationsh
 
 **References:**
 
-The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs.  Our MDAN article presents a [GEE](http://en.wikipedia.org/wiki/Generalized_estimating_equation) method for handling this (p. 572).  The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.
+The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs.  Our MDAN article presents a [GEE](https://en.wikipedia.org/wiki/Generalized_estimating_equation) method for handling this (p. 572).  The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.
 
 One of our [2013 BGA presentations](https://r-forge.r-project.org/forum/forum.php?thread_id=28498&forum_id=4266&group_id=1330)  discusses these benefits in the context of the current NlsyLinks package, and our 2008 MDAN article accomplishes something similar using a GEE with females in both generations.
 

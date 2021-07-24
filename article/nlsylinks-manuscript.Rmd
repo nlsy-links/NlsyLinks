@@ -131,7 +131,7 @@ ace
 ACE DF Analysis of One Generation (NLSY79 Gen2)
 ----------------------------------------------------
 
-The second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](http://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later.
+The second example differs from the previous example in two ways.  First, the outcome variables are read from a CSV ([comma separated values](https://en.wikipedia.org/wiki/Comma-separated_values) file) that was downloaded from the **NLS Investigator**.  Second, the DF analysis is called through the function `AceUnivariate`; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later.
 
 The steps are:
 
@@ -188,7 +188,7 @@ ace <- AceUnivariate(
 ace
 ```
 
-For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](hhttps://cran.r-project.org/package=NlsyLinks/vignettes/faq.pdf).
+For another example of incorporating CSVs downloaded from the NLS Investigator, please see the "Race and Gender Variables" entry in the [FAQ](https://nlsy-links.github.io/NlsyLinks/articles/faq.html).
 
 ACE SEM of One Generation (NLSY79 Gen2)
 ----------------------------------------------------
