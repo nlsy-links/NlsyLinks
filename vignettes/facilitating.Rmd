@@ -27,7 +27,7 @@ After the most recent release of the [NLSY79 and NLSYC/YA kinship links](https:/
 Starting in 2011, we have also provided a User-Service function (funded both by the most recent NIH grant, and also the University of Oklahoma and Vanderbilt University).  Graduate students in quantitative psychology - Kelly Meredith, Mike Hunter, and Mason Garrison - who have expertise in using the kinship links are available for consult on both design and software issues associated with fitting biometrical and other sibling models using the kinship links.
 
 ## Vignettes and example documentation
-Along with the most recent release of the two sets of kinship links, we also developed a [set of vignettes](https://nlsy-links.github.io/NlsyLinks) (programmed by Will Beasley and Mike Hunter) that provide instructions and code to facilitate researchers in using the NLSY kinship links.  Both R-based and SAS vignettes are available online through CRAN.
+Along with the most recent release of the two sets of kinship links, we also developed a [set of vignettes](https://nlsy-links.github.io/NlsyLinks/) (programmed by Will Beasley and Mike Hunter) that provide instructions and code to facilitate researchers in using the NLSY kinship links.  Both R-based and SAS vignettes are available online through CRAN.
 
 ## Future plans
 In the near future, we expect the kinship links to also be available as a link off of the [BLS](https://www.bls.gov/)/[CHRR](https://www.chrr.ohio-state.edu/) website, to further facilitate researchers who wish to use the kinship links.  The User Service function will continue through at least 2015, and potentially longer depending on future institutional and grant support.
