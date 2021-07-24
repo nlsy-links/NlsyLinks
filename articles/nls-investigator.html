@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">NlsyLinks</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.8.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.9.9001</span>
       </span>
     </div>
 
@@ -44,38 +44,8 @@
      
   </a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/publications.html">Publications</a>
-    </li>
-    <li>
-      <a href="../articles/nlsy-ace.html">ACE Models with the NLSY</a>
-    </li>
-    <li>
-      <a href="../articles/faq.html">FAQ for the NlsyLinks Package</a>
-    </li>
-    <li>
-      <a href="../articles/nls-investigator.html">The NLS Investigator</a>
-    </li>
-    <li>
-      <a href="../articles/facilitating.html">Facilitating Research</a>
-    </li>
-    <li>
-      <a href="../articles/software-and-support.html">Software and Support</a>
-    </li>
-    <li>
-      <a href="../articles/collaborators.html">Collaborators</a>
-    </li>
-    <li>
-      <a href="../articles/about.html">About</a>
-    </li>
-  </ul>
+  <a href="../articles/index.html">Articles</a>
 </li>
 <li>
   <a href="../reference/index.html">Datasets &amp; Functions</a>
@@ -102,11 +72,11 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>The NLS Investigator</h1>
-                        <h4 class="author">William Howard <a href="http://scholar.google.com/citations?user=ffsJTC0AAAAJ">Beasley</a> (<a href="http://howardliveoak.com/">Howard Live Oak LLC</a>, Norman)</h4>
-                        <h4 class="author">Joseph Lee <a href="http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Rodgers</a> (Vanderbilt University, Nashville)</h4>
-                        <h4 class="author">David <a href="http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041">Bard</a> (University of Oklahoma Health Sciences Center, OKC)</h4>
-                        <h4 class="author">Kelly <a href="https://www.okcu.edu/directory/kelly-williams">Williams</a> (Oklahoma City University, OKC)</h4>
-                        <h4 class="author">Michael D. <a href="http://mhuntero.com/">Hunter</a> (Georgia Tech, Atlanta)</h4>
+                        <h4 class="author">William Howard <a href="https://scholar.google.com/citations?user=ffsJTC0AAAAJ">Beasley</a> (Howard Live Oak LLC, Norman)</h4>
+                        <h4 class="author">Joseph Lee <a href="https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Rodgers</a> (Vanderbilt University, Nashville)</h4>
+                        <h4 class="author">David <a href="https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd">Bard</a> (University of Oklahoma Health Sciences Center, OKC)</h4>
+                        <h4 class="author">Kelly <a href="https://oklahoma.gov/omma.html">Williams</a> (Oklahoma City University, OKC)</h4>
+                        <h4 class="author">Michael D. <a href="https://psychology.gatech.edu/michael-hunter">Hunter</a> (Georgia Tech, Atlanta)</h4>
             
             <h4 class="date">2021-07-24</h4>
       
@@ -121,21 +91,21 @@
 <div id="terminology" class="section level1">
 <h1 class="hasAnchor">
 <a href="#terminology" class="anchor"></a>Terminology</h1>
-<p>This package considers both Gen1 and Gen2 subjects. ‘Gen1’ refers to subjects in the original NLSY79 sample (<a href="http://www.bls.gov/nls/nlsy79.htm" class="uri">http://www.bls.gov/nls/nlsy79.htm</a>). ‘Gen2’ subjects are the biological offspring of the Gen1 females -<em>i.e.</em>, those in the NLSY79 Children and Young Adults sample (<a href="http://www.bls.gov/nls/nlsy79ch.htm" class="uri">http://www.bls.gov/nls/nlsy79ch.htm</a>). The NLSY97 is a third dataset that can be used for behavior genetic research (<a href="http://www.bls.gov/nls/nlsy97.htm" class="uri">http://www.bls.gov/nls/nlsy97.htm</a>), although this vignette focuses on the two generations in the NLSY79.</p>
+<p>This package considers both Gen1 and Gen2 subjects. ‘Gen1’ refers to subjects in the original NLSY79 sample (<a href="https://www.nlsinfo.org/content/cohorts/nlsy79" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy79</a>). ‘Gen2’ subjects are the biological offspring of the Gen1 females -<em>i.e.</em>, those in the NLSY79 Children and Young Adults sample (<a href="https://www.nlsinfo.org/content/cohorts/nlsy79-children" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy79-children</a>). The NLSY97 is a third dataset that can be used for behavior genetic research (<a href="https://www.nlsinfo.org/content/cohorts/nlsy97" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy97</a>), although this vignette focuses on the two generations in the NLSY79.</p>
 <p>Standard terminology is to refer second generation subjects as ‘children’ when they are younger than age 15 (NSLYC), and as ‘young adults’ when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction. This cohort is sometimes abbreviated as ‘NLSY79-C’, ‘NLSY79C’, ‘NLSY-C’ or ‘NLSYC’. This packages uses ‘Gen2’ to refer to subjects of this generation, regardless of their age at the time of the survey.</p>
 </div>
 <div id="steps-to-select-variables-and-download-data" class="section level1">
 <h1 class="hasAnchor">
 <a href="#steps-to-select-variables-and-download-data" class="anchor"></a>Steps to Select Variables and Download Data</h1>
 <ol style="list-style-type: decimal">
-<li><p>Browse to [<a href="http://www.nlsinfo.org/investigator" class="uri">http://www.nlsinfo.org/investigator</a>]. Select the ‘REGISTER’ link in the top right, and create a personal account. If you have already registered, Log In and proceed to the next step.</p></li>
+<li><p>Browse to [<a href="https://www.nlsinfo.org/investigator" class="uri">https://www.nlsinfo.org/investigator</a>]. Select the ‘REGISTER’ link in the top right, and create a personal account. If you have already registered, Log In and proceed to the next step.</p></li>
 <li>
 <p>Select your desired cohort, in the dropdown box titled, "Select the study you want to work with:’’. In the screenshot below, second generation of the NLSY79 sample is selected.</p>
 <p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T"><img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Cohort.png?raw=T" style="width: 500px;"></a></p>
 </li>
 <li>
-<p>Select the variables. There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks. A thorough tutorial begins on the NLS Investigator page: [<a href="http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html" class="uri">http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html</a>]. To better leverage the NLSY’s extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial. However for the purposes of this vignette, we’ll simply select a few easy variables.</p>
-<p>First, in the ‘Variables Search’ tab, select ‘Word in Title (enter search term)’. Second, type “other symptom - f” in the textbox. Third, clicking the ‘Display Variables’ button should retrieve at least four NLSYC variables whose title starts with “other symptom - f”. Fourth, supposing we care about only their fevers, click their two corresponding checkboxes. (If you’re curious, the ‘XRND’ value for year stands for <a href="http://www.bls.gov/nls/nls138.pdf">cross round</a>; XRND variables are calculated by the NLS staff, and typically come from the subject’s most recent survey).</p>
+<p>Select the variables. There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks. A thorough tutorial begins on the NLS Investigator page: [<a href="https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide" class="uri">https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide</a>]. To better leverage the NLSY’s extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial. However for the purposes of this vignette, we’ll simply select a few easy variables.</p>
+<p>First, in the ‘Variables Search’ tab, select ‘Word in Title (enter search term)’. Second, type “other symptom - f” in the textbox. Third, clicking the ‘Display Variables’ button should retrieve at least four NLSYC variables whose title starts with “other symptom - f”. Fourth, supposing we care about only their fevers, click their two corresponding checkboxes. (If you’re curious, the ‘XRND’ value for year stands for <a href="https://www.nlsinfo.org/nls138.pdf">cross round</a>; XRND variables are calculated by the NLS staff, and typically come from the subject’s most recent survey).</p>
 <p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T"><img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T" style="width: 750px;"></a></p>
 </li>
 <li>
@@ -144,7 +114,7 @@
 </li>
 <li>
 <p>When the dataset is complete, it is time to save the tagset. A <strong>tagset file</strong> is simply metadata of the desired variables. The file identifies the variables, <em>but does not contain actual data values</em>. As your project evolves over time (because you’re adding variables, or refreshing your dataset after a new survey is released), it’s convenient to keep the metadata distinct from the real data.</p>
-<p>The actual values are contained in the <strong>data file</strong>, which is discussed in the next two steps. These issues are covered further in the <a href="http://www.nlsinfo.org/InvestigatorGuide/investigator_guide_TOC.html">official tutorial</a>.</p>
+<p>The actual values are contained in the <strong>data file</strong>, which is discussed in the next two steps. These issues are covered further in the <a href="https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide">official tutorial</a>.</p>
 <p><a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Tagset.png?raw=T"><img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Tagset.png?raw=T" style="width: 750px;"></a></p>
 </li>
 <li>
@@ -168,7 +138,7 @@
 <code class="sourceCode R"><span class="va">dsIQ</span>        <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">'C:/BGResearch/IQ.csv'</span>, header<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="va">dsFertility</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">'C:/BGResearch/Fertility.csv'</span>, header<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="va">ds</span>          <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">dsIQ</span>, <span class="va">dsFertility</span>, by<span class="op">=</span><span class="st">"C0000100"</span><span class="op">)</span></code></pre></div>
-<p>In SAS, the <code>merge</code> function (and its <code>BY</code> argument) <a href="http://support.sas.com/documentation/cdl/en/basess/58133/HTML/default/viewer.htm#a001318494.htm">behaves similarly</a> as above. Notice that the SAS documentation states, “Before you can perform a match-merge, all data sets must be sorted by the variables that you want to use for the merge”, which is <code>C0000100</code> in this example.</p>
+<p>In SAS, the <code>merge</code> function (and its <code>BY</code> argument) <a href="https://support.sas.com/documentation/cdl/en/basess/58133/HTML/default/viewer.htm#a001318494.htm">behaves similarly</a> as above. Notice that the SAS documentation states, “Before you can perform a match-merge, all data sets must be sorted by the variables that you want to use for the merge”, which is <code>C0000100</code> in this example.</p>
 <p>If you’re importing CSV files specifically for the NlsyLinks package, you’ll find functions like <code>ReadCsvNlsy79Gen1</code> and <code>ReadCsvNlsy79Gen2</code> more convenient for later analyses.</p>
 </div>
 <div id="tagset-history" class="section level1">

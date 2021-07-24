@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">NlsyLinks</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.8.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.9.9001</span>
       </span>
     </div>
 
@@ -44,38 +44,8 @@
      
   </a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/publications.html">Publications</a>
-    </li>
-    <li>
-      <a href="../articles/nlsy-ace.html">ACE Models with the NLSY</a>
-    </li>
-    <li>
-      <a href="../articles/faq.html">FAQ for the NlsyLinks Package</a>
-    </li>
-    <li>
-      <a href="../articles/nls-investigator.html">The NLS Investigator</a>
-    </li>
-    <li>
-      <a href="../articles/facilitating.html">Facilitating Research</a>
-    </li>
-    <li>
-      <a href="../articles/software-and-support.html">Software and Support</a>
-    </li>
-    <li>
-      <a href="../articles/collaborators.html">Collaborators</a>
-    </li>
-    <li>
-      <a href="../articles/about.html">About</a>
-    </li>
-  </ul>
+  <a href="../articles/index.html">Articles</a>
 </li>
 <li>
   <a href="../reference/index.html">Datasets &amp; Functions</a>
@@ -102,11 +72,11 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>ACE Models with the NLSY</h1>
-                        <h4 class="author">William Howard <a href="http://scholar.google.com/citations?user=ffsJTC0AAAAJ">Beasley</a> (<a href="http://howardliveoak.com/">Howard Live Oak LLC</a>, Norman)</h4>
-                        <h4 class="author">Joseph Lee <a href="http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Rodgers</a> (Vanderbilt University, Nashville)</h4>
-                        <h4 class="author">David <a href="http://find.ouhsc.edu/Faculty.aspx?FacultyID=1041">Bard</a> (University of Oklahoma Health Sciences Center, OKC)</h4>
-                        <h4 class="author">Kelly <a href="https://www.okcu.edu/directory/kelly-williams">Williams</a> (Oklahoma City University, OKC)</h4>
-                        <h4 class="author">Michael D. <a href="http://mhuntero.com/">Hunter</a> (Georgia Tech, Atlanta)</h4>
+                        <h4 class="author">William Howard <a href="https://scholar.google.com/citations?user=ffsJTC0AAAAJ">Beasley</a> (Howard Live Oak LLC, Norman)</h4>
+                        <h4 class="author">Joseph Lee <a href="https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Rodgers</a> (Vanderbilt University, Nashville)</h4>
+                        <h4 class="author">David <a href="https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd">Bard</a> (University of Oklahoma Health Sciences Center, OKC)</h4>
+                        <h4 class="author">Kelly <a href="https://oklahoma.gov/omma.html">Williams</a> (Oklahoma City University, OKC)</h4>
+                        <h4 class="author">Michael D. <a href="https://psychology.gatech.edu/michael-hunter">Hunter</a> (Georgia Tech, Atlanta)</h4>
             
             <h4 class="date">2021-07-24</h4>
       
@@ -121,8 +91,8 @@
 <div id="terminology" class="section level1">
 <h1 class="hasAnchor">
 <a href="#terminology" class="anchor"></a>Terminology</h1>
-<p>Researchers and grad students interested using the <a href="http://www.bls.gov/nls/">NLSY</a> for Behavior Genetics and family research, please start with our 2016 article, <a href="https://link.springer.com/article/10.1007/s10519-016-9785-3"><em>The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research</em></a>.</p>
-<p>This package considers both Gen1 and Gen2 subjects. ‘Gen1’ refers to subjects in the original NLSY79 sample (<a href="http://www.bls.gov/nls/nlsy79.htm" class="uri">http://www.bls.gov/nls/nlsy79.htm</a>). ‘Gen2’ subjects are the biological offspring of the Gen1 females -<em>i.e.</em>, those in the NLSY79 Children and Young Adults sample (<a href="http://www.bls.gov/nls/nlsy79ch.htm" class="uri">http://www.bls.gov/nls/nlsy79ch.htm</a>). The NLSY97 is a third dataset that can be used for behavior genetic research (<a href="http://www.bls.gov/nls/nlsy97.htm" class="uri">http://www.bls.gov/nls/nlsy97.htm</a>), although this vignette focuses on the two generations in the NLSY79.</p>
+<p>Researchers and grad students interested using the <a href="https://www.nlsinfo.org/">NLSY</a> for Behavior Genetics and family research, please start with our 2016 article, <a href="https://link.springer.com/article/10.1007/s10519-016-9785-3"><em>The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research</em></a>.</p>
+<p>This package considers both Gen1 and Gen2 subjects. ‘Gen1’ refers to subjects in the original NLSY79 sample (<a href="https://www.nlsinfo.org/content/cohorts/nlsy79" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy79</a>). ‘Gen2’ subjects are the biological offspring of the Gen1 females -<em>i.e.</em>, those in the NLSY79 Children and Young Adults sample (<a href="https://www.nlsinfo.org/content/cohorts/nlsy79-children" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy79-children</a>). The NLSY97 is a third dataset that can be used for behavior genetic research (<a href="https://www.nlsinfo.org/content/cohorts/nlsy97" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy97</a>), although this vignette focuses on the two generations in the NLSY79.</p>
 <p>Standard terminology is to refer second generation subjects as ‘children’ when they are younger than age 15 (NSLYC), and as ‘young adults’ when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction. This cohort is sometimes abbreviated as ‘NLSY79-C’, ‘NLSY79C’, ‘NLSY-C’ or ‘NLSYC’. This packages uses ‘Gen2’ to refer to subjects of this generation, regardless of their age at the time of the survey.</p>
 <p>Within our own team, we’ve mostly stopped using terms like ‘NLSY79’, ‘NLSY79-C’ and ‘NLSY79-YA’, because we conceptualize it as one big sample containing two related generations. It many senses, the responses collected from the second generation can be viewed as outcomes of the first generation. Likewise, the parents in the first generation provide many responses that can be viewed as explanatory variables for the 2nd generation. Depending on your research, there can be big advantages of using one cohort to augment the other. There are also survey items that provide information about the 3rd generation and the 0th generation.</p>
 <p>The <code>SubjectTag</code> variable uniquely identify NLSY79 subjects when a dataset contains both generations. For Gen2 subjects, the <code>SubjectTag</code> is identical to their CID (<em>i.e.</em>, C00001.00 -the ID assigned in the NLSY79-Children files). However for Gen1 subjects, the <code>SubjectTag</code> is their CaseID (<em>i.e.</em>, R00001.00), with “00” appended. This manipulation is necessary to identify subjects uniquely in inter-generational datasets. A Gen1 subject with an ID of 43 becomes 4300. The <code>SubjectTag</code>s of her four children remain 4301, 4302, 4303, and 4304.</p>
@@ -130,14 +100,14 @@
 <p>A subject’s <code>ExtendedID</code> indicates their extended family. Two subjects will be in the same extended family if either: [1] they are Gen1 housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (<em>i.e.</em>, they have mothers who are Gen1 sisters in the NLSY79), [4] they are mother and child (in Gen1 and Gen2, respectively), or [5] they are (aunt|uncle) and (niece|nephew) (in Gen1 and Gen2, respectively).</p>
 <p>An <strong>outcome variable</strong> is directly relevant to the applied researcher; these might represent constructs like height, IQ, and income. A <strong>plumbing variable</strong> is necessary to manage BG datasets; examples are <code>R</code>, a subject’s ID, and the date of a subject’s last survey.</p>
 <p>An ACE model is the basic biometrical model used by Behavior Genetic researchers, where the genetic and environmental effects are assumed to be additive. The three primary variance components are (1) the proportion of variability due to a shared genetic influence (typically represented as <span class="math inline">\(a^2\)</span>, or sometimes <span class="math inline">\(h^2\)</span>), (2) the proportion of variability due to shared common environmental influence (typically <span class="math inline">\(c^2\)</span>), and (3) the proportion of variability due to unexplained/residual/error influence (typically <span class="math inline">\(e^2\)</span>).</p>
-<p>The variables are scaled so that they account for all observed variability in the outcome variable; specifically: <span class="math inline">\(a^2 + c^2 + e^2 = 1\)</span>. Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of <span class="math inline">\(a^2\)</span>, <span class="math inline">\(c^2\)</span>, and <span class="math inline">\(e^2\)</span> within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend <a href="http://books.google.com/books?id=r7AgAQAAIAAJ&amp;source=gbs_navlinks_s">Plomin (1990)</a> and <a href="http://psych.colorado.edu/~carey/hgss/">Carey (2003)</a>. For more in-depth ACE model-fitting strategies, we recommend <a href="http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf">Neale &amp; Maes, (1992)</a>.</p>
-<p>The <strong>NLS Investigator</strong> (<a href="http://www.nlsinfo.org/investigator/" class="uri">http://www.nlsinfo.org/investigator/</a>) is the best way to obtain the NLSY79 and NLSY97 datasets. See our vignette dedicated to the NLS Investigator by typing <code>vignette("NlsInvestigator")</code> or by visiting <a href="https://cran.r-project.org/package=NlsyLinks" class="uri">https://cran.r-project.org/package=NlsyLinks</a>.</p>
+<p>The variables are scaled so that they account for all observed variability in the outcome variable; specifically: <span class="math inline">\(a^2 + c^2 + e^2 = 1\)</span>. Using appropriate designs that can logically distinguish these different components (under carefully specified assumptions), the basic biometrical modeling strategy is to estimate the magnitude of <span class="math inline">\(a^2\)</span>, <span class="math inline">\(c^2\)</span>, and <span class="math inline">\(e^2\)</span> within the context of a particular model. For gentle introductions to Behavior Genetic research, we recommend <a href="https://books.google.com/books?id=r7AgAQAAIAAJ&amp;source=gbs_navlinks_s">Plomin (1990)</a> and <a href="https://www.colorado.edu/psych-neuro/gregory-carey">Carey (2003)</a>. For more in-depth ACE model-fitting strategies, we recommend <a href="http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf">Neale &amp; Maes, (2004)</a>.</p>
+<p>The <strong>NLS Investigator</strong> (<a href="https://www.nlsinfo.org/investigator/" class="uri">https://www.nlsinfo.org/investigator/</a>) is the best way to obtain the NLSY79 and NLSY97 datasets. See our vignette dedicated to the NLS Investigator by typing <code>vignette("NlsInvestigator")</code> or by visiting <a href="https://cran.r-project.org/package=NlsyLinks" class="uri">https://cran.r-project.org/package=NlsyLinks</a>.</p>
 <p>Before starting the real examples, first verify that the NlsyLinks package is installed correctly. If not, please refer to Appendix.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/any.html">any</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/zpackages.html">.packages</a></span><span class="op">(</span>all.available <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">==</span> <span class="st">"NlsyLinks"</span><span class="op">)</span> <span class="co">#Should evaluate to TRUE.</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://nlsy-links.github.io/NlsyLinks">NlsyLinks</a></span><span class="op">)</span> <span class="co">#Load the package into the current session.</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://nlsy-links.github.io/NlsyLinks/">NlsyLinks</a></span><span class="op">)</span> <span class="co">#Load the package into the current session.</span></code></pre></div>
 <p>The package’s documentation manual can be opened by typing <code><a href="../reference/NlsyLinks-package.html">?NlsyLinks</a></code> in R or clicking the appropriate entry in RStudio’s ‘Packages’ tab (which is usually in the lower right panel).</p>
 </div>
 <div id="example-df-analysis-with-a-simple-outcome-for-gen2-subjects-using-a-package-variable" class="section level1">
@@ -157,7 +127,7 @@
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### R Code for Example DF analysis with a simple outcome and Gen2 subjects</span>
 <span class="co">#Step 2: Load the package containing the linking routines.</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://nlsy-links.github.io/NlsyLinks">NlsyLinks</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://nlsy-links.github.io/NlsyLinks/">NlsyLinks</a></span><span class="op">)</span>
 
 <span class="co">#Step 3: Load the LINKING dataset and filter for the Gen2 subjects</span>
 <span class="va">dsLinking</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Links79Pair</span>, <span class="va">RelationshipPath</span><span class="op">==</span><span class="st">"Gen2Siblings"</span><span class="op">)</span>
@@ -240,7 +210,7 @@
 <div id="example-df-analysis-with-a-univariate-outcome-from-a-gen2-extract" class="section level1">
 <h1 class="hasAnchor">
 <a href="#example-df-analysis-with-a-univariate-outcome-from-a-gen2-extract" class="anchor"></a>Example: DF analysis with a univariate outcome from a Gen2 Extract</h1>
-<p>The vignette’s second example differs from the previous example in two ways. First, the outcome variables are read from a CSV (<a href="http://en.wikipedia.org/wiki/Comma-separated_values">comma separated values</a> file) that was downloaded from the <strong>NLS Investigator</strong>. Second, the DF analysis is called through the function <code>AceUnivariate</code>; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later in the vignette.</p>
+<p>The vignette’s second example differs from the previous example in two ways. First, the outcome variables are read from a CSV (<a href="https://en.wikipedia.org/wiki/Comma-separated_values">comma separated values</a> file) that was downloaded from the <strong>NLS Investigator</strong>. Second, the DF analysis is called through the function <code>AceUnivariate</code>; this function is a wrapper around some simple ACE methods, and will help us smoothly transition to more techniques later in the vignette.</p>
 <p>The steps are:</p>
 <ol style="list-style-type: decimal">
 <li><p>Use the NLS Investigator to select and download a Gen2 dataset. Select the variables ‘length of gestation of child in weeks’ (<code>C03280.00</code>), ‘weight of child at birth in ounces’ (<code>C03286.00</code>), and ‘length of child at birth’ (<code>C03288.00</code>), and then download the *.zip file to your local computer.</p></li>
@@ -255,7 +225,7 @@
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects</span>
 <span class="co">#Step 2: Load the package containing the linking routines.</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://nlsy-links.github.io/NlsyLinks">NlsyLinks</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://nlsy-links.github.io/NlsyLinks/">NlsyLinks</a></span><span class="op">)</span>
 
 <span class="co">#Step 3: Load the linking dataset and filter for the Gen2 subjects</span>
 <span class="va">dsLinking</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Links79Pair</span>, <span class="va">RelationshipPath</span><span class="op">==</span><span class="st">"Gen2Siblings"</span><span class="op">)</span>
@@ -321,7 +291,7 @@
 <pre><code>## [1] "Results of ACE estimation: [show]"
 ##     ASquared     CSquared     ESquared    CaseCount 
 ## 5.103108e-01 1.752415e-01 3.144477e-01 1.744000e+04</code></pre>
-<p>For another example of incorporating CSVs downloaded from the NLS Investigator, please see the “Race and Gender Variables” entry in the <a href="hhttps://cran.r-project.org/package=NlsyLinks/vignettes/faq.pdf">FAQ</a>.</p>
+<p>For another example of incorporating CSVs downloaded from the NLS Investigator, please see the “Race and Gender Variables” entry in the <a href="https://nlsy-links.github.io/NlsyLinks/articles/faq.html">FAQ</a>.</p>
 </div>
 <div id="example-multiple-group-sem-of-a-simple-outcome-for-gen2-subjects" class="section level1">
 <h1 class="hasAnchor">
@@ -341,7 +311,7 @@
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects</span>
 <span class="co">#Steps 1-5 are explained in the vignette's first example:</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://nlsy-links.github.io/NlsyLinks">NlsyLinks</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://nlsy-links.github.io/NlsyLinks/">NlsyLinks</a></span><span class="op">)</span>
 <span class="va">dsLinking</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Links79Pair</span>, <span class="va">RelationshipPath</span><span class="op">==</span><span class="st">"Gen2Siblings"</span><span class="op">)</span>
 <span class="va">dsOutcomes</span> <span class="op">&lt;-</span> <span class="va">ExtraOutcomes79</span>
 <span class="va">dsOutcomes</span><span class="op">$</span><span class="va">MathStandardized</span><span class="op">[</span><span class="va">dsOutcomes</span><span class="op">$</span><span class="va">MathStandardized</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA</span>
@@ -453,7 +423,7 @@
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects</span>
 <span class="co">#Steps 1-5 are explained in the vignette's first example:</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://nlsy-links.github.io/NlsyLinks">NlsyLinks</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://nlsy-links.github.io/NlsyLinks/">NlsyLinks</a></span><span class="op">)</span>
 <span class="va">dsLinking</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Links79Pair</span>, <span class="va">RelationshipPath</span><span class="op">==</span><span class="st">"Gen1Housemates"</span><span class="op">)</span>
 <span class="va">dsOutcomes</span> <span class="op">&lt;-</span> <span class="va">ExtraOutcomes79</span>
 <span class="co">#The HeightZGenderAge variable is already groomed</span>
@@ -517,7 +487,7 @@
              caption<span class="op">=</span><span class="st">"Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"</span><span class="op">)</span>
 <span class="fu">print.xtable</span><span class="op">(</span><span class="va">xt</span>, format.args<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark<span class="op">=</span><span class="st">","</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"html"</span><span class="op">)</span></code></pre></div>
 <!-- html table generated in R 4.1.0 by xtable 1.8-4 package -->
-<!-- Sat Jul 24 01:51:55 2021 -->
+<!-- Sat Jul 24 04:58:05 2021 -->
 <table class="table">
 <caption align="bottom">
 Number of NLSY79 relationship, by <code>RelationshipPath</code>.(Recall that ‘AuntNiece’ also contains uncles and nephews.)
@@ -574,7 +544,7 @@ AuntNiece
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects</span>
 <span class="co">#Steps 1-5 are explained in the vignette's first example:</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://nlsy-links.github.io/NlsyLinks">NlsyLinks</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://nlsy-links.github.io/NlsyLinks/">NlsyLinks</a></span><span class="op">)</span>
 <span class="va">dsLinking</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">Links79Pair</span>, <span class="va">RelationshipPath</span> <span class="op">%in%</span>
                       <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Gen1Housemates"</span>, <span class="st">"Gen2Siblings"</span>, <span class="st">"Gen2Cousins"</span>,
                         <span class="st">"ParentChild"</span>, <span class="st">"AuntNiece"</span><span class="op">)</span><span class="op">)</span>
@@ -626,25 +596,25 @@ AuntNiece
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#Step 11: Inspect the output further (see the final step two examples above).</span></code></pre></div>
 <p>Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x –from 4,185 to 24,700. The number of <em>subjects</em> doubles when Gen2 is added, and the number of <em>relationship pairs</em> really takes off. When an extended family’s entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered. This increased statistical power is even more important when the population’s <span class="math inline">\(a^2\)</span> is small or moderate, instead of something large like 0.7.</p>
-<p>You may notice that the analysis has 24,697 relationships instead of the entire 42,836. This is primarily because not all subjects have a value for ‘adult height’ (and that’s mostly because a lot of Gen2 subjects are too young). There are 42,088 pairs with a nonmissing value in <code>RFull</code>, meaning that 98.3 are classified. We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there’s a 99+% chance we have an <code>RFull</code> for it. For a description of the <code>R</code> and <code>RFull</code> variables, please see the <code>Links79Pair</code> entry in the package <a href="https://cran.r-project.org/package=NlsyLinks/NlsyLinks.pdf">reference manual</a>.</p>
+<p>You may notice that the analysis has 24,697 relationships instead of the entire 42,836. This is primarily because not all subjects have a value for ‘adult height’ (and that’s mostly because a lot of Gen2 subjects are too young). There are 42,088 pairs with a nonmissing value in <code>RFull</code>, meaning that 98.3 are classified. We feel comfortable claiming that if a researcher has a phenotype for both members of a pair, there’s a 99+% chance we have an <code>RFull</code> for it. For a description of the <code>R</code> and <code>RFull</code> variables, please see the <code>Links79Pair</code> entry in the package <a href="https://nlsy-links.github.io/NlsyLinks/">reference manual</a>.</p>
 <p><strong>References:</strong></p>
-<p>The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs. Our MDAN article presents a <a href="http://en.wikipedia.org/wiki/Generalized_estimating_equation">GEE</a> method for handling this (p. 572). The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.</p>
+<p>The standard errors (but not the coefficients) are biased downward in these analyses, because individuals are included in multiple pairs. Our MDAN article presents a <a href="https://en.wikipedia.org/wiki/Generalized_estimating_equation">GEE</a> method for handling this (p. 572). The CARB model (or any model that treats the full pedigree as a single unit of analysis in the multivariate or multilevel sense) also would produce more accurate standard error estimates.</p>
 <p>One of our <a href="https://r-forge.r-project.org/forum/forum.php?thread_id=28498&amp;forum_id=4266&amp;group_id=1330">2013 BGA presentations</a> discusses these benefits in the context of the current NlsyLinks package, and our 2008 MDAN article accomplishes something similar using a GEE with females in both generations.</p>
-<p>Bard, D.E., Beasley, W.H., Meredith, K., &amp; Rodgers, J.L. (2012). <a href="http://link.springer.com/article/10.1007/s10519-012-9566-6"><em>Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model</em></a>. Behavior Genetics Association 42nd Annual Meeting. [<a href="https://r-forge.r-project.org/forum/forum.php?thread_id=4761&amp;forum_id=4266&amp;group_id=1330">Slides</a>]</p>
-<p>Beasley, W.H., Bard, D.E., Meredith, K., Hunter, M., &amp; Rodgers, J.L. (2013). <a href="http://link.springer.com/article/10.1007/s10519-013-9623-9"><em>NLSY Kinship Links: Creating Biometrical Design Structures from Cross-Generational Data</em></a>. Behavior Genetics Association 43rd Annual Meeting. [<a href="https://r-forge.r-project.org/forum/forum.php?thread_id=28498&amp;forum_id=4266&amp;group_id=1330">Slides</a>]</p>
-<p>Rodgers, J. L., Bard, D., Johnson, A., D’Onofrio, B., &amp; Miller, W. B. (2008). <a href="http://www.ncbi.nlm.nih.gov/pubmed/18825497">The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables</a>. <em>Behavior Genetics, 38</em>, 567-578.</p>
+<p>Bard, D.E., Beasley, W.H., Meredith, K., &amp; Rodgers, J.L. (2012). <a href="https://link.springer.com/article/10.1007/s10519-012-9566-6"><em>Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model</em></a>. Behavior Genetics Association 42nd Annual Meeting. [<a href="https://r-forge.r-project.org/forum/forum.php?thread_id=4761&amp;forum_id=4266&amp;group_id=1330">Slides</a>]</p>
+<p>Beasley, W.H., Bard, D.E., Meredith, K., Hunter, M., &amp; Rodgers, J.L. (2013). <a href="https://link.springer.com/article/10.1007/s10519-013-9623-9"><em>NLSY Kinship Links: Creating Biometrical Design Structures from Cross-Generational Data</em></a>. Behavior Genetics Association 43rd Annual Meeting. [<a href="https://r-forge.r-project.org/forum/forum.php?thread_id=28498&amp;forum_id=4266&amp;group_id=1330">Slides</a>]</p>
+<p>Rodgers, J. L., Bard, D., Johnson, A., D’Onofrio, B., &amp; Miller, W. B. (2008). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712575/">The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables</a>. <em>Behavior Genetics, 38</em>, 567-578.</p>
 </div>
 <div id="appendix-receiving-help-for-the-nlsylinks-package" class="section level1">
 <h1 class="hasAnchor">
 <a href="#appendix-receiving-help-for-the-nlsylinks-package" class="anchor"></a>Appendix: Receiving Help for the NlsyLinks Package</h1>
 <p>A portion of our current grant covers a small, part-time support staff. If you have questions about BG research with our kinship links, or questions about our package, we’d like to hear from you.</p>
-<p>We provide personal support for researchers in several ways. Perhaps the best place to start are the forums on R-Forge (<a href="http://r-forge.r-project.org/forum/?group_id=1330" class="uri">http://r-forge.r-project.org/forum/?group_id=1330</a>); there are forums for people using R, as well as other software such as SAS. <a href="https://r-forge.r-project.org/forum/forum.php?thread_id=4537&amp;forum_id=4266&amp;group_id=1330">This post</a> is a good overview of the current project is, which originally was an email Joe sent to previous users of our kinship links (many of them are/were SAS users).</p>
+<p>We provide personal support for researchers in several ways. Perhaps the best place to start are the forums on R-Forge (<a href="https://r-forge.r-project.org/forum/?group_id=1330" class="uri">https://r-forge.r-project.org/forum/?group_id=1330</a>); there are forums for people using R, as well as other software such as SAS. <a href="https://r-forge.r-project.org/forum/forum.php?thread_id=4537&amp;forum_id=4266&amp;group_id=1330">This post</a> is a good overview of the current project is, which originally was an email Joe sent to previous users of our kinship links (many of them are/were SAS users).</p>
 </div>
 <div id="appendix-creating-and-saving-r-scripts" class="section level1">
 <h1 class="hasAnchor">
 <a href="#appendix-creating-and-saving-r-scripts" class="anchor"></a>Appendix: Creating and Saving R Scripts</h1>
-<p>There are several options and environments for executing R code. Our current recommendation is <a href="http://rstudio.org/">RStudio</a>, because it is easy to install, and has features targeting beginner and experienced R users. We’ve had good experiences with it on Windows, OS X, and Ubuntu Linux.</p>
-<p>RStudio allows you to create and save R files; these are simply text files that have an file extension of ‘.R’. RStudio will execute the commands written in the file. Help documentation for RStudio can be found at <a href="http://www.rstudio.com/ide/docs/" class="uri">http://www.rstudio.com/ide/docs/</a>.</p>
+<p>There are several options and environments for executing R code. Our current recommendation is <a href="https://www.rstudio.com/">RStudio</a>, because it is easy to install, and has features targeting beginner and experienced R users. We’ve had good experiences with it on Windows, OS X, and Ubuntu Linux.</p>
+<p>RStudio allows you to create and save R files; these are simply text files that have an file extension of ‘.R’. RStudio will execute the commands written in the file. Help documentation for RStudio can be found at <a href="https://support.rstudio.com/hc/en-us" class="uri">https://support.rstudio.com/hc/en-us</a>.</p>
 </div>
 <div id="appendix-installing-and-loading-the-nlsylinks-package" class="section level1">
 <h1 class="hasAnchor">
@@ -652,20 +622,20 @@ AuntNiece
 <p>There are three operations you’ll typically do with a package: (a) install, (b) load, and (c) update.</p>
 <p>The simplest way to <em>install</em> NlsyLinks is to type <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("NlsyLinks")</a></code> in the console.</p>
 <p>R then will download NlsyLinks on your local computer. It may try to save and install the package to a location that you don’t have permission to write files in. If so, R will ask if you would like to install it to a better location (<em>i.e.</em>, somewhere you do have permission to write files). Approve this decision (which is acceptable for everyone except for some network administrators).</p>
-<p>For a given computer, you’ll need to <em>install</em> a package only once for each version of R (new versions of R are released every few months). However, you’ll need to <em>load</em> a package in every session that you call its functions. To <em>load</em> NlsyLinks, type <code><a href="http://nlsy-links.github.io/NlsyLinks">library(NlsyLinks)</a></code>. Loading reads NlsyLinks information from the hard drive and places it in temporary memory. Once it’s loaded, you won’t need to load it again until R is closed and reopened later.</p>
+<p>For a given computer, you’ll need to <em>install</em> a package only once for each version of R (new versions of R are released every few months). However, you’ll need to <em>load</em> a package in every session that you call its functions. To <em>load</em> NlsyLinks, type <code><a href="https://nlsy-links.github.io/NlsyLinks/">library(NlsyLinks)</a></code>. Loading reads NlsyLinks information from the hard drive and places it in temporary memory. Once it’s loaded, you won’t need to load it again until R is closed and reopened later.</p>
 <p>Developers are continually improving their packages by adding functions and documentation. These newer versions are then uploaded to the CRAN servers. You may <em>update</em> all your installed packages at once by typing <code><a href="https://rdrr.io/r/utils/update.packages.html">update.packages(ask = FALSE)</a></code>. The command checks a CRAN server for newer versions of the packages installed on your local machine. Then they are automatically downloaded and installed.</p>
 <p>The grant supporting NlsyLinks extends until 2020. Until then, we’ll be including new features and documentation, as we address additional user needs (if you have suggestions, we’d like to hear from you). When the NLSY periodically updates its data, we’ll update our kinship links (embedded in NlsyLinks) with the newest information.</p>
 </div>
 <div id="appendix-references" class="section level1">
 <h1 class="hasAnchor">
 <a href="#appendix-references" class="anchor"></a>Appendix: References</h1>
-<p>A list of some articles that have used the NLSY for behavior genetics is available at: <a href="http://nlsy-links.github.io/NlsyLinks/research_publications.html" class="uri">http://nlsy-links.github.io/NlsyLinks/research_publications.html</a>.</p>
-<p>Carey, Gregory (2002). <a href="http://psych.colorado.edu/~carey/hgss/"><em>Human Genetics for the Social Sciences</em></a>. Sage.</p>
-<p>Plomin, Robert (1990). <a href="http://books.google.com/books?id=r7AgAQAAIAAJ&amp;source=gbs_navlinks_s"><em>Nature and nurture: an introduction to human behavioral genetics</em></a>. Brooks/Cole Publishing Company.</p>
-<p>Rodgers, J. L., Bard, D., Johnson, A., D’Onofrio, B., &amp; Miller, W. B. (2008). <a href="http://www.ncbi.nlm.nih.gov/pubmed/18825497">The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables</a>. <em>Behavior Genetics, 38</em>, 567-578.</p>
-<p>Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005). <a href="http://www.springerlink.com/content/n3x1v1q282583366">Reformulating and simplifying the DF analysis model</a>. <em>Behavior Genetics, 35 (2)</em>, 211-217.</p>
-<p>Rodgers, Joseph Lee, Rowe, David C., &amp; Li, Chengchang (1994). <a href="http://psycnet.apa.org/journals/dev/30/3/374/">Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors</a>. <em>Developmental Psychology, 30 (3)</em>, 374-384.</p>
-<p>Neale, Michael C., &amp; Cardon, Lou R. (1992). <a href="http://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC"><em>Methodology for genetic studies of twins and families</em></a>. Norwell, MA: Kluwer Academic Publishers. (Also see Neale &amp; Maes: [<a href="http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf" class="uri">http://www.vipbg.vcu.edu/OpenMxFall09/NMbook05.pdf</a>]).</p>
+<p>A list of some articles that have used the NLSY for behavior genetics is available at: <a href="https://nlsy-links.github.io/NlsyLinks/articles/publications.html" class="uri">https://nlsy-links.github.io/NlsyLinks/articles/publications.html</a>.</p>
+<p>Carey, Gregory (2002). <a href="https://www.colorado.edu/psych-neuro/gregory-carey"><em>Human Genetics for the Social Sciences</em></a>. Sage.</p>
+<p>Plomin, Robert (1990). <a href="https://books.google.com/books?id=r7AgAQAAIAAJ&amp;source=gbs_navlinks_s"><em>Nature and nurture: an introduction to human behavioral genetics</em></a>. Brooks/Cole Publishing Company.</p>
+<p>Rodgers, J. L., Bard, D., Johnson, A., D’Onofrio, B., &amp; Miller, W. B. (2008). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712575/">The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables</a>. <em>Behavior Genetics, 38</em>, 567-578.</p>
+<p>Rodgers, Joseph Lee, &amp; Kohler, Hans-Peter (2005). <a href="https://pubmed.ncbi.nlm.nih.gov/15685433/">Reformulating and simplifying the DF analysis model</a>. <em>Behavior Genetics, 35 (2)</em>, 211-217.</p>
+<p>Rodgers, Joseph Lee, Rowe, David C., &amp; Li, Chengchang (1994). <a href="https://psycnet.apa.org:443/journals/dev/30/3/374/">Beyond nature versus nurture: DF analysis of nonshared influences on problem behaviors</a>. <em>Developmental Psychology, 30 (3)</em>, 374-384.</p>
+<p>Neale, Michael C., &amp; Cardon, Lou R. (1992). <a href="https://books.google.com/books/about/Methodology_for_genetic_studies_of_twins.html?id=vVzDmDv6WDkC"><em>Methodology for genetic studies of twins and families</em></a>. Norwell, MA: Kluwer Academic Publishers. (Also see Neale &amp; Maes: [<a href="http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf" class="uri">http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf</a>]).</p>
 </div>
 <div id="funding" class="section level1">
 <h1 class="hasAnchor">
@@ -946,7 +916,7 @@ munsell
 NlsyLinks
 </td>
 <td style="text-align:left;">
-2.0.8.9002
+2.0.9.9001
 </td>
 <td style="text-align:left;">
 2021-07-24
