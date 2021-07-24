@@ -62,12 +62,6 @@ Build Status and Package Characteristics
 | [Dev](https://github.com/nlsy-links/NlsyLinks/tree/dev) | [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=dev)](https://github.com/nlsy-links/NlsyLinks/actions) | [![codecov](https://codecov.io/gh/nlsy-links/NlsyLinks/branch/dev/graph/badge.svg)](https://codecov.io/gh/nlsy-links/NlsyLinks/branch/dev) |
 | | *Ubuntu Latest* | *Test Coverage* |
 
-| [GitHub](https://github.com/nlsy-links/NlsyLinks) | [Travis-CI](https://travis-ci.org/nlsy-links/NlsyLinks/builds) | [AppVeyor](https://ci.appveyor.com/project/wibeasley/nlsylinks/history) |  [Coveralls](https://coveralls.io/github/nlsy-links/NlsyLinks) |
-| :----- | :---------------------------: | :------------: | :-------: |
-| [Master](https://github.com/nlsy-links/NlsyLinks/tree/master) |  [![Travis-CI Build Status](https://travis-ci.org/nlsy-links/NlsyLinks.png?branch=master)](https://travis-ci.org/nlsy-links/NlsyLinks) | [![Build status](https://ci.appveyor.com/api/projects/status/fo1oeqn9734dhhmu/branch/master?svg=true)](https://ci.appveyor.com/project/wibeasley/nlsylinks/branch/master) | [![Coverage Status](https://coveralls.io/repos/nlsy-links/NlsyLinks/badge.svg?branch=master)](https://coveralls.io/github/nlsy-links/NlsyLinks?branch=master) |
-| [Dev](https://github.com/nlsy-links/NlsyLinks/tree/dev) | [![Travis-CI Build Status](https://travis-ci.org/nlsy-links/NlsyLinks.png?branch=dev)](https://travis-ci.org/nlsy-links/NlsyLinks) | [![Build status](https://ci.appveyor.com/api/projects/status/fo1oeqn9734dhhmu/branch/dev?svg=true)](https://ci.appveyor.com/project/wibeasley/nlsylinks/branch/dev) | [![Coverage Status](https://coveralls.io/repos/nlsy-links/NlsyLinks/badge.svg?branch=dev)](https://coveralls.io/github/nlsy-links/NlsyLinks?branch=dev) |
-| | *Ubuntu LTS* | *Windows Server* |  *Travis Code Coverage* |
-
 | [CRAN](https://cran.r-project.org/) | [Version](https://cran.r-project.org/package=NlsyLinks) | [Rate](https://cranlogs.r-pkg.org:443/) | [Zenodo](https://zenodo.org/search?ln=en&p=nlsylinks) |
 |  :---- | :----: | :----: | :----: |
 | [Latest](https://cran.r-project.org/package=NlsyLinks) | [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/NlsyLinks)](https://cran.r-project.org/package=NlsyLinks) | ![CRANPace](https://cranlogs.r-pkg.org:443/badges/NlsyLinks) | [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.49941.svg)](http://dx.doi.org/10.5281/zenodo.49941) |
