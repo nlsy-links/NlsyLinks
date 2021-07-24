@@ -111,7 +111,7 @@
 #' full-siblings as well.
 #'
 #' The math and height scores are duplicated from
-#' [`ExtraOutcomes79`](data-extra-outcomes-79.html), but are included here to make some examples
+#' [ExtraOutcomes79], but are included here to make some examples
 #' more concise and accessible.
 #'
 #' @author Will Beasley

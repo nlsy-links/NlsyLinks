@@ -126,7 +126,7 @@ determinations, then we can interpolate/infer that 102 and 103 are
 full-siblings as well.
 
 The math and height scores are duplicated from
-\href{data-extra-outcomes-79.html}{\code{ExtraOutcomes79}}, but are included here to make some examples
+\link{ExtraOutcomes79}, but are included here to make some examples
 more concise and accessible.
 }
 \examples{
