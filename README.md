@@ -3,7 +3,7 @@ NlsyLinks
 
 NlsyLinks is a free downloadable R package to facilitate Behavior Genetic and Family Studies research using the NLSY samples (the National Longitudinal Survey of Youth).  These samples are based on a cross-generational longitudinal nationally representative sample of over 30,000 participants followed for up to 35 years.  There are almost 50,000 pairwise kinship links.
 
-Get started at [here](http://www.bls.gov/nls/) the NLSY and [here](https://nlsy-links.github.io/NlsyLinks//) for the NlsyLinks package.
+Get started at [here](https://www.bls.gov/nls/) the NLSY and [here](https://nlsy-links.github.io/NlsyLinks//) for the NlsyLinks package.
 
 Installing
 --------------------------
@@ -35,7 +35,7 @@ Locations for Help and Development
 
 This repository contains the code used in the [NlsyLinks](https://cran.r-project.org/package=NlsyLinks) R package.  For additional information about the package and using it in NLSY research, please see <https://nlsy-links.github.io/NlsyLinks/>.
 
-[This GitHub repository](https://github.com/nlsy-links/NlsyLinksStaging) is our primary way of managing, tracking, and build-checking versions of the source code.  (We're no longer using our [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/).)  The stable releases (intended for most researchers) is available on the package's [CRAN site](https://cran.r-project.org/package=NlsyLinks).
+[This GitHub repository](https://github.com/nlsy-links/nlsy-links-determination-2017) is our primary way of managing, tracking, and build-checking versions of the source code.  (We're no longer using our [R-Forge site](https://r-forge.r-project.org/projects/nlsylinks/).)  The stable releases (intended for most researchers) is available on the package's [CRAN site](https://cran.r-project.org/package=NlsyLinks).
 
 We recently moved the forums to <https://groups.google.com/forum/#!forum/nlsy-links>.  Previous conversations are available at our old [R-Forge](https://r-forge.r-project.org/forum/?group_id=1330) and [Disqus](https://disqus.com/home/forum/nlsylinks/) sites.
 
@@ -56,7 +56,7 @@ The current work on the NLSY Kinship links has been supported by NIH Grant R01-H
 Build Status and Package Characteristics
 --------------------------
 
-| [Branch](https://github.com/nlsy-links/NlsyLinks) | [GitHub Actions](https://github.com/OuhscBbmc/nlsy-links/NlsyLinks) | [Codecov](https://codecov.io/gh/nlsy-links/NlsyLinks) |
+| [Branch](https://github.com/nlsy-links/NlsyLinks) | [GitHub Actions](https://github.com/nlsy-links/NlsyLinks/actions) | [Codecov](https://codecov.io/gh/nlsy-links/NlsyLinks) |
 | :----- | :---------------------------: | :-------: |
 | [Master](https://github.com/nlsy-links/NlsyLinks/tree/master) | [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=master)](https://github.com/nlsy-links/NlsyLinks/actions) |  [![codecov](https://codecov.io/gh/nlsy-links/NlsyLinks/branch/master/graph/badge.svg)](https://codecov.io/gh/nlsy-links/NlsyLinks) |
 | [Dev](https://github.com/nlsy-links/NlsyLinks/tree/dev) | [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=dev)](https://github.com/nlsy-links/NlsyLinks/actions) | [![codecov](https://codecov.io/gh/nlsy-links/NlsyLinks/branch/dev/graph/badge.svg)](https://codecov.io/gh/nlsy-links/NlsyLinks/branch/dev) |

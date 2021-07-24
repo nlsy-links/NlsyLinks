@@ -7,15 +7,15 @@
 \title{Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.}
 \description{
 Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
-Researchers and grad students interested using the \href{http://www.bls.gov/nls/}{NLSY} for Behavior Genetics and family research, please start with our 2016 article,
+Researchers and grad students interested using the \href{https://www.bls.gov/nls/}{NLSY} for Behavior Genetics and family research, please start with our 2016 article,
 '\href{https://link.springer.com/article/10.1007/s10519-016-9785-3}{\emph{The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research}}.
 }
 \note{
 This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 subjects in the original NLSY79 sample
-(http://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
+(https://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
 biological children of the Gen1 females -ie, those in the NLSY79 Children
-and Young Adults sample (http://www.bls.gov/nls/nlsy79ch.htm).
+and Young Adults sample (https://www.bls.gov/nls/nlsy79ch.htm).
 
 The release version is available through \href{https://cran.r-project.org/package=NlsyLinks}{CRAN} by
 running \code{install.packages('NlsyLinks')}.
@@ -52,7 +52,7 @@ Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 \emph{Behavior Genetics, 35} (2), 211-217.
 
 Rodgers, J.L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W.B. (2008).
-\href{http://www.ncbi.nlm.nih.gov/pubmed/18825497}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.}.
+\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712575/}{The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.}.
 \emph{Behavior Genetics, 38}, 567-578.
 
 D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz,
@@ -76,7 +76,7 @@ Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{http://psycnet.apa.org/journal
 \author{
 \href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\url{Howard Live Oak LLC}, Norman)
 
-\href{http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
+\href{https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
 
 \href{https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
 

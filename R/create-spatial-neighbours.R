@@ -28,9 +28,9 @@
 #' The attribute `n` specifies the number of unique subjects.
 #'
 #' @references
-#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](http://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330).
+#' Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). [*Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model*](https://link.springer.com/article/10.1007/s10519-012-9566-6). Behavior Genetics Association 42nd Annual Meeting. [Slides](https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330).
 #'
-#' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). [*Applied Spatial Data Analysis with R.*](http://link.springer.com/book/10.1007/978-1-4614-7618-4) New York: Springer. (Especially Chapter 9.)
+#' Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). [*Applied Spatial Data Analysis with R.*](https://link.springer.com/book/10.1007/978-1-4614-7618-4) New York: Springer. (Especially Chapter 9.)
 #'
 #' Banerjee, S., Carlin, B.P., & Gelfand, A.E. (2004). [*Hierarchical Modeling and Analysis for Spatial Data*](http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C). Boca Raton: CRC Press.
 #'

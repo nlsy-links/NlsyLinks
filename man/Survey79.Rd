@@ -17,9 +17,9 @@ A data frame with 580,752 observations on the following 6 variables.
 }
 }
 \source{
-Gen1 information comes from the Summer 2013 release of the \href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
+Gen1 information comes from the Summer 2013 release of the \href{https://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
 comes from the January 2015 release of the
-\href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
+\href{https://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
 (https://www.nlsinfo.org/investigator/).
 }
 \description{

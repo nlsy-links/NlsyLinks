@@ -3,7 +3,7 @@
 ## Authors
  * [Michael D. Hunter](http://mhuntero.com/), University of Oklahoma Health Sciences Center, OKC
  * [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ), [Howard Live Oak LLC](), Norman
- * [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), Vanderbilt University, Nashville
+ * [Joseph Lee Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), Vanderbilt University, Nashville
  * [David Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd), University of Oklahoma Health Sciences Center, OKC
  * [Kelly Meredith](http://www.okcu.edu/admin/academic-affairs/staff/bio/item-id-77), Oklahoma City University, OKC
  

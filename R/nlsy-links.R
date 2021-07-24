@@ -1,7 +1,7 @@
 #' @title Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 #'
 #' @description Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
-#' Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article,
+#' Researchers and grad students interested using the [NLSY](https://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article,
 #' '[*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 #'
 #' @docType package
@@ -12,9 +12,9 @@
 #'
 #' @note This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 #' subjects in the original NLSY79 sample
-#' (http://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
+#' (https://www.bls.gov/nls/nlsy79.htm).  "Gen2" subjects are the
 #' biological children of the Gen1 females -ie, those in the NLSY79 Children
-#' and Young Adults sample (http://www.bls.gov/nls/nlsy79ch.htm).
+#' and Young Adults sample (https://www.bls.gov/nls/nlsy79ch.htm).
 #'
 #' The release version is available through [CRAN](https://cran.r-project.org/package=NlsyLinks) by
 #' running `install.packages('NlsyLinks')`.
@@ -28,7 +28,7 @@
 #' @author
 #' [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](), Norman)
 #'
-#' [Joseph Lee Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
+#' [Joseph Lee Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 #'
 #' [David Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 #'
@@ -51,7 +51,7 @@
 #'
 #' Rodgers, J.L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W.B. (2008).
 #' [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing
-#' Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497).
+#' Validity of the MDAN Design with NLSY Fertility Variables.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712575/).
 #' *Behavior Genetics, 38*, 567-578.
 #'
 #' D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz,

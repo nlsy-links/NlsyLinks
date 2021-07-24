@@ -13,7 +13,7 @@ The following publication list includes research products that used the NLSY79 o
 
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this archive of articles around ten years ago. There are likely some additional publications based on the kinship links of which we are not aware. If you know of such papers, please bring them to our attention.
 
-Researchers and grad students interested using the [NLSY](http://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
+Researchers and grad students interested using the [NLSY](https://www.bls.gov/nls/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 
 Articles and Book Chapters
 =============================
@@ -115,7 +115,7 @@ Articles and Book Chapters
 
 <li value=32><cite>D'Onofrio, B. M., Van Hulle, C.A., Waldman, I. D., Rodgers, J. L., Harden, K. P., Rathouz, P. J., & Lahey, B. B. (2008). [Smoking during pregnancy and offspring externalizing problems: An exploration of genetic and environmental confounds](http://journals.cambridge.org/production/action/cjoGetFulltext?fulltextid=1641968). *Development and Psychopathology, 20*, 139-164. </cite> (NLSY79)</li>
 
-<li value=31><cite>Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008). [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.](http://www.ncbi.nlm.nih.gov/pubmed/18825497) *Behavior Genetics, 38*, 567-578.</cite> (NLSY79; NLSYC)</li>
+<li value=31><cite>Rodgers, J. L., Bard, D., Johnson, A., D'Onofrio, B., & Miller, W. B. (2008). [The Cross-Generational Mother-Daughter-Aunt-Niece Design: Establishing Validity of the MDAN Design with NLSY Fertility Variables.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712575/) *Behavior Genetics, 38*, 567-578.</cite> (NLSY79; NLSYC)</li>
 
 <li value=30><cite>D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz, P.J., & Lahey, B.B. (2007). [Causal inferences regarding prenatal alcohol exposure and childhood externalizing problems](http://www.ncbi.nlm.nih.gov/pubmed/17984398). *Archives of General Psychiatry, 64*, 1296-1304.</cite> (NLSY79; NLSYC)</li>
 
@@ -150,7 +150,7 @@ Articles and Book Chapters
 
 <li value=17><cite>Doughty, D. & Rodgers, J. L. (2000). [Behavior genetic modeling of menarche in U.S. females](http://link.springer.com/chapter/10.1007/978-1-4615-4467-8_11). In J. L. Rodgers, D. Rowe, & W. B. Miller (Eds.) *Genetic influences on fertility and sexuality*, Boston: Kluwer Academic Press.</cite> (NLSY79)</li>
 
-<li value=16><cite>Rodgers, J. L. & Doughty, D. (2000). [Genetic and environmental influences on fertility expectations and outcomes using NLSY kinship data.](http://link.springer.com/chapter/10.1007%2F978-1-4615-4467-8_6) In J. L. Rodgers, D. Rowe, & W. B. Miller (Eds.) *Genetic influences on fertility and sexuality*, Boston: Kluwer Academic Press.</cite> (NLSY79)</li>
+<li value=16><cite>Rodgers, J. L. & Doughty, D. (2000). [Genetic and environmental influences on fertility expectations and outcomes using NLSY kinship data.](https://link.springer.com/chapter/10.1007/978-1-4615-4467-8_6) In J. L. Rodgers, D. Rowe, & W. B. Miller (Eds.) *Genetic influences on fertility and sexuality*, Boston: Kluwer Academic Press.</cite> (NLSY79)</li>
 
 <li value=15><cite>van den Oord, E.J.C.G., Rowe, D.C. (2000). [Racial differences in birth health risk: A quantitative genetic approach](http://link.springer.com/article/10.2307/2648042). *Demography, 37*, 285-298.</cite> (NLSY79)</li>
 
@@ -255,4 +255,4 @@ A larger, searchable list of research using the NLSY datasets is maintained at [
 Please see the provided entries on the [Research Software and Support](research-software-and-support.html) page.
 
 ------
-Compiled by [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), [Mason Garrison](http://www.smasongarrison.com/), and [Patrick O'Keefe](https://www.vanderbilt.edu/psychological_sciences/bio/patrick-okeefe)
+Compiled by [Joe Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](http://howardliveoak.com/about.html), [Mason Garrison](http://www.smasongarrison.com/), and [Patrick O'Keefe](https://www.vanderbilt.edu/psychological_sciences/bio/patrick-okeefe)

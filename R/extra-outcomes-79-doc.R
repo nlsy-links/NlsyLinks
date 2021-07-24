@@ -20,8 +20,8 @@
 #'
 #' @author Will Beasley
 #' @source Gen1 information comes from the Summer 2013 release of the
-#' [NLSY79 sample](http://www.bls.gov/nls/nlsy79.htm).  Gen2 information comes from the Summer 2013 release of the
-#' [NLSY79 Children and Young Adults sample](http://www.bls.gov/nls/nlsy79ch.htm).  Data were extracted with the NLS Investigator
+#' [NLSY79 sample](https://www.bls.gov/nls/nlsy79.htm).  Gen2 information comes from the Summer 2013 release of the
+#' [NLSY79 Children and Young Adults sample](https://www.bls.gov/nls/nlsy79ch.htm).  Data were extracted with the NLS Investigator
 #' ({https://www.nlsinfo.org/investigator/}).
 #'
 #' @details

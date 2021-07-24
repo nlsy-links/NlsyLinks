@@ -21,8 +21,8 @@ A data frame with 11,495 observations on the following 6 variables. There is one
 }
 \source{
 Gen1 information comes from the Summer 2013 release of the
-\href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information comes from the Summer 2013 release of the
-\href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
+\href{https://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information comes from the Summer 2013 release of the
+\href{https://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults sample}.  Data were extracted with the NLS Investigator
 ({https://www.nlsinfo.org/investigator/}).
 }
 \description{

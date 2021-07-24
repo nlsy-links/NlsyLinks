@@ -17,9 +17,9 @@ There is one row per unique pair of subjects, irrespective of order.
 }
 \source{
 Gen1 information comes from the Summer 2013 release of the
-\href{http://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
+\href{https://www.bls.gov/nls/nlsy79.htm}{NLSY79 sample}.  Gen2 information
 comes from the Summer 2013 release of the
-\href{http://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults}.
+\href{https://www.bls.gov/nls/nlsy79ch.htm}{NLSY79 Children and Young Adults}.
 Data were extracted with the NLS Investigator
 (https://www.nlsinfo.org/investigator/).
 
@@ -34,10 +34,10 @@ NOTE: Two variable names changed in November 2013. \code{Subject1Tag} and \code{
 }
 \details{
 The dataset contains Gen1 and Gen2 subjects.  "Gen1" refers to subjects in
-the original NLSY79 sample (http://www.bls.gov/nls/nlsy79.htm).
+the original NLSY79 sample (https://www.bls.gov/nls/nlsy79.htm).
 "Gen2" subjects are the biological children of the Gen1 females -ie, those
 in the NLSY79 Children and Young Adults sample
-(http://www.bls.gov/nls/nlsy79ch.htm).
+(https://www.bls.gov/nls/nlsy79ch.htm).
 
 Subjects will be in the same extended family if either:
 \enumerate{

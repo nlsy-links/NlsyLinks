@@ -13,7 +13,7 @@ Authors@R: c(
     )
 Description: Utilities and kinship information for behavior genetics and
     developmental research using the National Longitudinal Survey of Youth
-    (NLSY; <http://www.bls.gov/nls/>).
+    (NLSY; <https://www.bls.gov/nls/>).
 URL: https://nlsy-links.github.io/NlsyLinks/, https://github.com/nlsy-links/NlsyLinks,
     https://groups.google.com/forum/#!forum/nlsy-links
 BugReports: https://github.com/nlsy-links/NlsyLinks/issues

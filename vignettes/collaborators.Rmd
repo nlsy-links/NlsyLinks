@@ -19,7 +19,7 @@ Research Media Ltd. (November, 2013). [Family Ties and Kinship Links](publicatio
 Vanderbilt University, Peabody College of Education, Department of Psychology and Human Development
 -----------------------------
   
-The PI, [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), recently retired as George Lynn Cross Research Professor Emeritus from the 
+The PI, [Joe Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), recently retired as George Lynn Cross Research Professor Emeritus from the 
 [University of Oklahoma](http://www.ou.edu/) Department of [Psychology](http://www.ou.edu/cas/psychology/), and moved to Vanderbilt's [Peabody College of Education](http://peabody.vanderbilt.edu/), [Department of Psychology and Human Development](http://www.vanderbilt.edu/psychological_sciences/)
 to direct the Quantitative Methods program.  For over 20 years he has been the coordinator of the NLSY Kinship Links project, and the PI on associated NIH grants.  His first Vanderbilt graduate student, [S. Mason Garrison](http://www.smasongarrison.com), is now working on the project.
 
@@ -72,10 +72,10 @@ Howard Live Oak, LLC is a small consulting company specializing in custom softwa
 Bureau of Labor Statistics (BLS) 
 -----------------------------
 
-The [BLS](http://www.bls.gov/) was the first funding agency for the NLSY79.
+The [BLS](https://www.bls.gov/) was the first funding agency for the NLSY79.
 
 <!--
-<a href="http://www.bls.gov/"> 
+<a href="https://www.bls.gov/"> 
   <img src="./images/bls_logo.jpeg" alt="BLS" style="width: 150px;"/>
 </a>
 -->

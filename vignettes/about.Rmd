@@ -2,7 +2,7 @@
 title: "About this Website"
 author: 
 - William Howard [Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ) ([Howard Live Oak LLC](), Norman)
-- Joseph Lee [Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
+- Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 - Kelly [Williams](https://www.okcu.edu/directory/kelly-williams) (Oklahoma City University, OKC)
 - Michael D. [Hunter](http://mhuntero.com/) (Georgia Tech, Atlanta)
@@ -19,7 +19,7 @@ vignette: >
 Components
 =============================
 
-This website is maintained by the [Joe Rodgers](http://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) NLSY Sibling Research Team (see the [collaborators](./about-collaborators.html) page for more details)
+This website is maintained by the [Joe Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) NLSY Sibling Research Team (see the [collaborators](./about-collaborators.html) page for more details)
 
 The website is hosted on [GitHub Pages](https://pages.github.com/).  It is built with [Jekyll](http://jekyllrb.com/) and [R Markdown](http://rmarkdown.rstudio.com/) (and heavily relied on the latter when forming the site's structure).  The majority of the static reports are created with  [knitr](http://yihui.name/knitr/), while the interactive reports are created with [Shiny](http://shiny.rstudio.com/); both use 
 [R](http://www.r-project.org/) as a foundation.
