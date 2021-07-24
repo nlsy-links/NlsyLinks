@@ -20,8 +20,8 @@ checks_to_exclude <- c(
   "lintr_line_length_linter"
 )
 gp <-
-  goodpractice::all_checks() |>
-  purrr::discard(~(. %in% checks_to_exclude)) |>
+  goodpractice::all_checks() %>%
+  purrr::discard(~(. %in% checks_to_exclude)) %>%
   goodpractice::gp()
 goodpractice::results(gp)
 gp

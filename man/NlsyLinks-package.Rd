@@ -74,7 +74,7 @@ Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{https://psycnet.apa.org:443/jo
 \emph{Developmental Psychology, 30}, 374-384.
 }
 \author{
-\href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (\url{Howard Live Oak LLC}, Norman)
+\href{http://scholar.google.com/citations?user=ffsJTC0AAAAJ}{William Howard Beasley} (Howard Live Oak LLC, Norman)
 
 \href{https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
 
