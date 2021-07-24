@@ -57,9 +57,9 @@ table(spGen2$weight)
 #3442   610  6997    12    27
 }
 \references{
-Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \href{http://link.springer.com/article/10.1007/s10519-012-9566-6}{\emph{Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model}}. Behavior Genetics Association 42nd Annual Meeting. \href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}.
+Bard, D.E., Beasley, W.H., Meredith, K., & Rodgers, J.L. (2012). \href{https://link.springer.com/article/10.1007/s10519-012-9566-6}{\emph{Biometric Analysis of Complex NLSY Pedigrees: Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model}}. Behavior Genetics Association 42nd Annual Meeting. \href{https://r-forge.r-project.org/forum/forum.php?thread_id=4761&forum_id=4266&group_id=1330}{Slides}.
 
-Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). \href{http://link.springer.com/book/10.1007/978-1-4614-7618-4}{\emph{Applied Spatial Data Analysis with R.}} New York: Springer. (Especially Chapter 9.)
+Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). \href{https://link.springer.com/book/10.1007/978-1-4614-7618-4}{\emph{Applied Spatial Data Analysis with R.}} New York: Springer. (Especially Chapter 9.)
 
 Banerjee, S., Carlin, B.P., & Gelfand, A.E. (2004). \href{http://books.google.com/books/about/Hierarchical_Modeling_and_Analysis_for_S.html?id=YqpZKTp-Wh0C}{\emph{Hierarchical Modeling and Analysis for Spatial Data}}. Boca Raton: CRC Press.
 
