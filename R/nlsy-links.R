@@ -40,10 +40,10 @@
 #'
 #' @references This package's development was largely supported by the NIH
 #' Grant 1R01HD65865, ["NLSY Kinship Links: Reliable and Valid Sibling
-#' Identification"](http://taggs.hhs.gov/AwardDetail.cfm?s_Award_Num=R01HD065865&n_Prog_Office_Code=50)
+#' Identification"](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50)
 #' (PI: Joe Rodgers).  A more complete list of research articles
 #' using NLSY Kinship Links is maintained on our [package's
-#' website](http://nlsy-links.github.io/NlsyLinks/research-publications.html).
+#' website](https://nlsy-links.github.io/NlsyLinks/research-publications.html).
 #'
 #' Rodgers, Joseph Lee, & Kohler, Hans-Peter (2005).
 #' [Reformulating and simplifying the DF analysis model](https://pubmed.ncbi.nlm.nih.gov/15685433/).
@@ -56,17 +56,17 @@
 #'
 #' D'Onofrio, B.M., Van Hulle, C.A., Waldman, I.D., Rodgers, J.L., Rathouz,
 #' P.J., & Lahey, B.B. (2007). [Causal inferences regarding prenatal alcohol
-#' exposure and childhood externalizing problems.](http://www.ncbi.nlm.nih.gov/pubmed/17984398).
+#' exposure and childhood externalizing problems.](https://pubmed.ncbi.nlm.nih.gov/17984398/).
 #' *Archives of General Psychiatry, 64*, 1296-1304.
 #'
 #' Rodgers, J.L. & Doughty, D. (2000).  [Genetic and environmental influences
-#' on fertility expectations and outcomes using NLSY kinship data.](http://link.springer.com/chapter/10.1007\%2F978-1-4615-4467-8_6)
+#' on fertility expectations and outcomes using NLSY kinship data.](https://link.springer.com/chapter/10.1007/978-1-4615-4467-8_6)
 #' In J.L. Rodgers, D. Rowe, & W.B. Miller (Eds.)
 #' *Genetic influences on fertility and sexuality.* Boston: Kluwer Academic Press.
 #'
 #' Cleveland, H.H., Wiebe, R.P., van den Oord, E.J.C.G., & Rowe, D.C. (2000).
 #' [Behavior problems among children from different family structures: The
-#' influence of genetic self-selection.](http://www.ncbi.nlm.nih.gov/pubmed/10953940)
+#' influence of genetic self-selection.](https://pubmed.ncbi.nlm.nih.gov/10953940/)
 #' *Child Development, 71*, 733-751.
 #'
 #' Rodgers, J.L., Rowe, D.C., & Buster, M. (1999). [Nature, nurture, and first
@@ -75,7 +75,7 @@
 #' *Journal of Biosocial Sciences, 31*.
 #'
 #' Rodgers, J.L., Rowe, D.C., & Li, C. (1994). [Beyond nature versus nurture:
-#' DF analysis of nonshared influences on problem behaviors.](http://psycnet.apa.org/journals/dev/30/3/374/)
+#' DF analysis of nonshared influences on problem behaviors.](https://psycnet.apa.org:443/journals/dev/30/3/374/)
 #' *Developmental Psychology, 30*, 374-384.
 #'
 #' @keywords package
