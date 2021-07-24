@@ -210,7 +210,7 @@ Recent Presentations by the Team
 
 **2016: Developmental Methods**
 
-* <cite>[Advances in discordant sibling designs from the NLSY, illustrated with SES and health.](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications/2015/garrison-devmeth-2016.pdf) Mason Garrison.</cite>
+* <cite>[Advances in discordant sibling designs from the NLSY, illustrated with SES and health.](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications/2016/garrison-devmeth-2016.pdf) Mason Garrison.</cite>
 
 **2015: International Society for Intelligence Research**
 
@@ -242,7 +242,7 @@ Recent Presentations by the Team
 
 * <cite>[The 2012 National Longitudinal Survey of Youth Kinship Links](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications/2012/rodgers-bga-2012.pptx): Conducting Behavior Genetic Research Using the NLSY79 and NLSY-Children Data. Joe Rodgers.</cite>
 * <cite>[NlsyLinks](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications/2012/beasley-bga-2012.pptx): An R Package Facilitating BG Research with the NLSY. Will Beasley.</cite>
-* <cite>[Biometric Analysis of Complex NLSY Pedigrees](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications/2012/bard-bga-2012): Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model. David Bard.</cite>
+* <cite>[Biometric Analysis of Complex NLSY Pedigrees](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications/2012/bard-bga-2012.pptx): Introducing a Conditional Autoregressive Biometric (CARB) Mixed Model. David Bard.</cite>
 * <cite>[Multivariate Models of BMI, Intelligence, and Fertility](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications/2012/meredith-bga-2012.pptx) Using the NLSY-Children Kinship Links. Kelly Meredith.</cite>
 * <cite>[The 2012 National Longitudinal Survey of Youth Kinship Links](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/publications/2012/donofrio-bga-2012.pptx): A Discussion. Brian D'Onofrio.</cite>
 
