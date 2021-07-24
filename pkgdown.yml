@@ -1,0 +1,14 @@
+pandoc: 2.7.3
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  about: about.html
+  collaborators: collaborators.html
+  facilitating: facilitating.html
+  faq: faq.html
+  nls-investigator: nls-investigator.html
+  nlsy-ace: nlsy-ace.html
+  publications: publications.html
+  software-and-support: software-and-support.html
+last_built: 2021-07-24T01:51Z
+
