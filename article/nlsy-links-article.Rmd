@@ -97,11 +97,14 @@ When a researcher pursues a new idea, we suggest to start by exploring what the 
 
 With these hints, identify and download the specific variables from the NLS Investigator.  The NLS Investigator is described briefly in the second example.  For more detailed instruction see the NlsyLink package's [NLS Investigator vignette](https://nlsy-links.github.io/NlsyLinks/articles/nls-investigator.html) or the official [NLS documentation](https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide)).  Researchers new to the NLSY should expect at least a dozen round trips as they iteratively improve and complete their set of variables.  First, select the 'Study', such as 'NLSY79 Child & Young Adult' (which corresponds to 'Nlsy79 Gen2' in our terminology.  Second, select your desired variables, out of the tens of thousands available ones.
 
-Before starting the examples, first verify that the NlsyLinks package is installed correctly.  If not, please refer to Appendix.
+Before starting the examples, first verify that the NlsyLinks and dplyr packages are installed correctly; for the later examples, the lavaan package is required.  If you are using an older version of R, replace the native pipes (`|>`) with pipes from the magrittr package (`%>%`).
 
 ```{r, eval = FALSE}
 # Should evaluate to TRUE.
 any(.packages(all.available = TRUE) == "NlsyLinks")
+any(.packages(all.available = TRUE) == "dplyr")
+any(.packages(all.available = TRUE) == "lavaan")
+
 library(NlsyLinks) # Load the package into the current session.
 ```
 
@@ -131,8 +134,10 @@ A DeFries-Fulker (**DF**) Analysis uses linear regression to estimate the $a^2$,
 library(NlsyLinks)
 
 # Step 3: Load the LINKING dataset and filter for the Gen2 subjects
-dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
-summary(dsLinking) #Notice there are 11k records (one for each pair).
+dsLinking <- 
+  Links79Pair |> 
+  dplyr::filter(RelationshipPath == "Gen2Siblings")
+summary(dsLinking) # Notice there are 11k records (one for each pair).
 
 # Step 4: Load the OUTCOMES dataset, and then examine the summary.
 dsOutcomes <- ExtraOutcomes79 #'ds' stands for 'Data Set'
@@ -140,23 +145,33 @@ summary(dsOutcomes)
 
 # Step 5: If the negative values (which represent NLSY missing or
 #   skip patterns) still exist, then:
-dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
+dsOutcomes <-
+  dsOutcomes |> 
+  dplyr::mutate(
+    MathStandardized = dplyr::if_else(
+      MathStandardized < 0,
+      NA_real_,
+      MathStandardized
+    ),
+  )
 
 # Step 6: Create the double entered dataset.
-dsDouble <- CreatePairLinksDoubleEntered(
-  outcomeDataset   = dsOutcomes,
-  linksPairDataset = dsLinking,
-  outcomeNames     = c('MathStandardized')
-)
+dsDouble <- 
+  CreatePairLinksDoubleEntered(
+    outcomeDataset   = dsOutcomes,
+    linksPairDataset = dsLinking,
+    outcomeNames     = c('MathStandardized')
+  )
 # Notice there are now two records for each unique pair.
 summary(dsDouble) 
 
 # Step 7: Estimate the ACE components with a DF Analysis
-ace <- DeFriesFulkerMethod3(
-  dataSet  = dsDouble,
-  oName_S1 = "MathStandardized_S1",
-  oName_S2 = "MathStandardized_S2"
-)
+ace <- 
+  DeFriesFulkerMethod3(
+    dataSet  = dsDouble,
+    oName_S1 = "MathStandardized_S1",
+    oName_S2 = "MathStandardized_S2"
+  )
 ace
 ```
 
@@ -173,7 +188,7 @@ The steps are:
 2. [Open R and create a new script](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.
 3. Within the R script, load the linking dataset.  Then select only Gen2 subjects.
 4. Read the CSV into R as a `data.frame` using `ReadCsvNlsy79Gen2`.
-5. Verify the desired outcome column exists, and rename it something meaningful to your project.  It is important that the `data.frame` is reassigned (*i.e.*, `ds <- RenameNlsyColumn(...)`).  In this example, we rename column `C0328800` to `BirthWeightInOunces`.
+5. Verify the desired outcome column exists, and rename it something meaningful to your project.  In this example, we rename column `C0328800` to `BirthWeightInOunces`.
 6. Filter out all subjects who have a negative `BirthWeightInOunces` value.  See the 'Further Information' note in the previous example.
 7. Create a double-entered file by calling the `CreatePairLinksDoubleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).
 8. Call the `AceUnivariate` function to estimate the coefficients.
@@ -183,46 +198,62 @@ The steps are:
 library(NlsyLinks)
 
 # Step 3: Load the linking dataset and filter for the Gen2 subjects
-dsLinking <- subset(Links79Pair, RelationshipPath == "Gen2Siblings")
+dsLinking <- 
+  Links79Pair |> 
+  dplyr::filter(RelationshipPath == "Gen2Siblings")
 
 # Step 4: Read the outcomes dataset then examine the summary.
 #   Your path might be `filePathOutcomes <- "C:/Nls/gen2-birth.csv"`
-filePathOutcomes <- system.file(
-  "extdata/gen2-birth.csv", 
-  package = "NlsyLinks"
-)
+filePathOutcomes <- 
+  system.file(
+    "extdata/gen2-birth.csv", 
+    package = "NlsyLinks"
+  )
 dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
 summary(dsOutcomes)
 
 # Step 5: Verify and rename an existing column.
 VerifyColumnExists(dsOutcomes, "C0328600") # Should return '10' in this example.
-dsOutcomes <- RenameNlsyColumn(
-  dsOutcomes, 
-  "C0328600", 
-  "BirthWeightInOunces"
-)
+dsOutcomes <- 
+  dsOutcomes |> 
+  dplyr::rename(
+    BirthWeightInOunces = C0328600, 
+  )
 
 # Step 6: For this item, a negative value indicates the parent 
 #   refused, didn't know, invalidly skipped, or was missing.
 #   For present purposes, treat these responses equivalently.
 #   Then clip/Winsorize/truncate the weight.
-dsOutcomes$BirthWeightInOunces[dsOutcomes$BirthWeightInOunces < 0] <- NA
-dsOutcomes$BirthWeightInOunces <- pmin(dsOutcomes$BirthWeightInOunces, 200)
+dsOutcomes <-
+  dsOutcomes |> 
+  dplyr::mutate(
+    # Set to NA
+    BirthWeightInOunces = dplyr::if_else(
+      BirthWeightInOunces < 0L,
+      NA_integer_,
+      BirthWeightInOunces
+    ),
+    # Winsorize
+    BirthWeightInOunces = pmin(BirthWeightInOunces, 200L),
+  )
+
 
 # Step 7: Create the double entered dataset.
-dsDouble <- CreatePairLinksDoubleEntered(
-  outcomeDataset   = dsOutcomes,
-  linksPairDataset = dsLinking,
-  outcomeNames     = c("BirthWeightInOunces")
-)
+dsDouble <- 
+  CreatePairLinksDoubleEntered(
+    outcomeDataset   = dsOutcomes,
+    linksPairDataset = dsLinking,
+    outcomeNames     = c("BirthWeightInOunces")
+  )
 
 # Step 8: Estimate the ACE components with a DF Analysis
-ace <- AceUnivariate(
-  method   = "DeFriesFulkerMethod3",
-  dataSet  = dsDouble,
-  oName_S1 = "BirthWeightInOunces_S1",
-  oName_S2 = "BirthWeightInOunces_S2"
-)
+ace <- 
+  AceUnivariate(
+    method   = "DeFriesFulkerMethod3",
+    dataSet  = dsDouble,
+    oName_S1 = "BirthWeightInOunces_S1",
+    oName_S2 = "BirthWeightInOunces_S2"
+  )
 ace
 ```
 
@@ -249,16 +280,27 @@ The steps are:
 ```{r}
 # Steps 1-5 are explained in the first example:
 library(NlsyLinks)
-dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
-dsOutcomes <- ExtraOutcomes79
-dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
+dsLinking <- 
+  Links79Pair |> 
+  dplyr::filter(RelationshipPath == "Gen2Siblings")
+
+dsOutcomes <- 
+  ExtraOutcomes79 |> 
+  dplyr::mutate(
+    MathStandardized = dplyr::if_else(
+      MathStandardized < 0,
+      NA_real_,
+      MathStandardized
+    ),
+  )
 
 # Step 6: Create the single entered dataset.
-dsSingle <- CreatePairLinksSingleEntered(
-  outcomeDataset   = dsOutcomes,
-  linksPairDataset = dsLinking,
-  outcomeNames     = c('MathStandardized')
-)
+dsSingle <- 
+  CreatePairLinksSingleEntered(
+    outcomeDataset   = dsOutcomes,
+    linksPairDataset = dsLinking,
+    outcomeNames     = c('MathStandardized')
+  )
 
 # Step 7: Declare the names for the two outcome variables.
 oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
@@ -270,7 +312,13 @@ dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
 # Step 9: Create a cleaned dataset
-dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
+dsClean <- 
+  CleanSemAceDataset(
+    dsDirty         = dsSingle, 
+    dsGroupSummary  = dsGroupSummary, 
+    oName_S1        = oName_S1, 
+    oName_S2        = oName_S2
+  )
 
 # Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
@@ -299,12 +347,19 @@ ACE SEM of Two Generations
 
 The example differs from the previous example in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small `R` groups that are difficult to estimate, or (b) if the value for adult height is missing.  This includes all `r scales::comma(nrow(Links79Pair))` relationships in the follow five types of NLSY79 relationships.
 
-```{r, results = 'asis'}
-xt <- xtable::xtable(
-  table(Links79Pair$RelationshipPath, dnn=c("Relationship Frequency")),
-  caption = "Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"
-)
-xtable::print.xtable(xt, format.args=list(big.mark=","), type = "html")
+```{r, eval=FALSE}
+Links79Pair |> 
+  dplyr::count(RelationshipPath, name = "Relationship Frequency") 
+```
+
+```{r, results = 'asis', echo = FALSE}
+Links79Pair |> 
+  dplyr::count(RelationshipPath, name = "Relationship Frequency") |> 
+  knitr::kable(
+    format      = "latex",
+    format.args = list(big.mark = ","), 
+    caption     = "Count of Nlsy79 relationships, by `RelationshipPath`.  (Recall that 'AuntNiece' also contains uncles and nephews.)"
+  )
 ```
 
 In our opinion, using the intergenerational links is one of the most exciting new opportunities for NLSY researchers to pursue.  We will be happy to facilitate such research through consult or collaboration, or even by generating new data structures that may be of value.  The complete kinship linking file facilitates many different kinds of cross-generational research, using both biometrical and other kinds of modeling methods.
@@ -312,9 +367,16 @@ In our opinion, using the intergenerational links is one of the most exciting ne
 ```{r}
 # Steps 1-5 are explained in the vignette's first example:
 library(NlsyLinks)
-dsLinking <- subset(Links79Pair, RelationshipPath %in%
-                      c("Gen1Housemates", "Gen2Siblings", "Gen2Cousins",
-                        "ParentChild", "AuntNiece"))
+desiredPaths <- 
+  c(
+    "Gen1Housemates", 
+    "Gen2Siblings", "Gen2Cousins",
+    "ParentChild", "AuntNiece"
+  )
+dsLinking <- 
+  Links79Pair |> 
+  dplyr::filter(RelationshipPath %in% desiredPaths)
+
 # Because all five paths are specified, the line above is equivalent to:
 # dsLinking <- Links79Pair
 
@@ -322,11 +384,12 @@ dsOutcomes <- ExtraOutcomes79
 # The HeightZGenderAge variable is already groomed
 
 # Step 6: Create the single entered dataset.
-dsSingle <- CreatePairLinksSingleEntered(
-  outcomeDataset   = dsOutcomes,
-  linksPairDataset = dsLinking,
-  outcomeNames     = c('HeightZGenderAge')
-)
+dsSingle <- 
+  CreatePairLinksSingleEntered(
+    outcomeDataset   = dsOutcomes,
+    linksPairDataset = dsLinking,
+    outcomeNames     = c('HeightZGenderAge')
+  )
 
 # Step 7: Declare the names for the two outcome variables.
 oName_S1 <- "HeightZGenderAge_S1"
@@ -337,7 +400,13 @@ dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
 # Step 9: Create a cleaned dataset
-dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
+dsClean <- 
+  CleanSemAceDataset(
+    dsDirty         = dsSingle, 
+    dsGroupSummary  = dsGroupSummary, 
+    oName_S1        = oName_S1, 
+    oName_S2        = oName_S2
+  )
 
 # Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
