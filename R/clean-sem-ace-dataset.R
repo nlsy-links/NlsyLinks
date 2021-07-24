@@ -72,7 +72,7 @@ CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rNa
   dsClean$GroupID <- NA
   for( groupIndex in seq_along(rLevelsToInclude) ) {
     r <- rLevelsToInclude[groupIndex]
-    memberIndices <- base::sapply(dsClean$R, EqualApprox, r)
+    memberIndices <- base::vapply(dsClean$R, EqualApprox, logical(1), r)
     dsClean$GroupID[memberIndices] <- groupIndex
   }
 
