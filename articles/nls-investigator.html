@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">NlsyLinks</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.9.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.0</span>
       </span>
     </div>
 
@@ -49,6 +49,9 @@
 </li>
 <li>
   <a href="../reference/index.html">Datasets &amp; Functions</a>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -75,10 +78,9 @@
                         <h4 class="author">William Howard <a href="https://scholar.google.com/citations?user=ffsJTC0AAAAJ">Beasley</a> (Howard Live Oak LLC, Norman)</h4>
                         <h4 class="author">Joseph Lee <a href="https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers">Rodgers</a> (Vanderbilt University, Nashville)</h4>
                         <h4 class="author">David <a href="https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd">Bard</a> (University of Oklahoma Health Sciences Center, OKC)</h4>
-                        <h4 class="author">Kelly <a href="https://oklahoma.gov/omma.html">Williams</a> (Oklahoma City University, OKC)</h4>
                         <h4 class="author">Michael D. <a href="https://psychology.gatech.edu/michael-hunter">Hunter</a> (Georgia Tech, Atlanta)</h4>
             
-            <h4 class="date">2021-07-24</h4>
+            <h4 class="date">2021-07-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/nls-investigator.Rmd"><code>vignettes/nls-investigator.Rmd</code></a></small>
       <div class="hidden name"><code>nls-investigator.Rmd</code></div>
@@ -87,11 +89,11 @@
 
     
     
-<p>This vignette will be useful to behavior genetic researchers interested in using the National Longitudinal Survey of Youth (NLSY79) or Children (NLSYC) data. To fit biometrical models to the NLSY or NLSYC requires that the data be extracted from the appropriate online NLSY database into a usable file format. The extracting software is called the <a href="https://www.nlsinfo.org/investigator/pages/login.jsp">NLS Investigator</a>. We describe how to use the NLS Investigator to select and download variables. In <a href="https://cran.r-project.org/package=NlsyLinks">subsequent vignettes</a>, we show how to reformat the data into file structures that accommodate behavior genetic research, and how to fit biometrical models. The following steps are not specific to R, but rather precede the use of any analytic statistical software.</p>
+<p>This vignette will be useful to behavior genetic researchers interested in using the National Longitudinal Survey of Youth (NLSY79) or Children (NLSYC) data. To fit biometrical models to the NLSY or NLSYC requires that the data be extracted from the appropriate online NLSY database into a usable file format. The extracting software is called the <a href="https://www.nlsinfo.org/investigator/pages/login.jsp">NLS Investigator</a>. We describe how to use the NLS Investigator to select and download variables. In <a href="https://nlsy-links.github.io/NlsyLinks/articles/">subsequent vignettes</a>, we show how to reformat the data into file structures that accommodate behavior genetic research, and how to fit biometrical models. The following steps are not specific to R, but rather precede the use of any analytic statistical software.</p>
 <div id="terminology" class="section level1">
 <h1 class="hasAnchor">
 <a href="#terminology" class="anchor"></a>Terminology</h1>
-<p>This package considers both Gen1 and Gen2 subjects. ‘Gen1’ refers to subjects in the original NLSY79 sample (<a href="https://www.nlsinfo.org/content/cohorts/nlsy79" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy79</a>). ‘Gen2’ subjects are the biological offspring of the Gen1 females -<em>i.e.</em>, those in the NLSY79 Children and Young Adults sample (<a href="https://www.nlsinfo.org/content/cohorts/nlsy79-children" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy79-children</a>). The NLSY97 is a third dataset that can be used for behavior genetic research (<a href="https://www.nlsinfo.org/content/cohorts/nlsy97" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy97</a>), although this vignette focuses on the two generations in the NLSY79.</p>
+<p>This package considers both Nlsy79 Gen1 and Gen2 subjects. ‘Gen1’ refers to subjects in the original NLSY79 sample (<a href="https://www.nlsinfo.org/content/cohorts/nlsy79" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy79</a>). ‘Gen2’ subjects are the biological offspring of the Gen1 females -<em>i.e.</em>, those in the NLSY79 Children and Young Adults sample (<a href="https://www.nlsinfo.org/content/cohorts/nlsy79-children" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy79-children</a>). The Nlsy97 is a third dataset that can be used for behavior genetic research (<a href="https://www.nlsinfo.org/content/cohorts/nlsy97" class="uri">https://www.nlsinfo.org/content/cohorts/nlsy97</a>), although this vignette focuses on the two generations in the NLSY79.</p>
 <p>Standard terminology is to refer second generation subjects as ‘children’ when they are younger than age 15 (NSLYC), and as ‘young adults’ when they are 15 and older (NLSY79-YA); though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction. This cohort is sometimes abbreviated as ‘NLSY79-C’, ‘NLSY79C’, ‘NLSY-C’ or ‘NLSYC’. This packages uses ‘Gen2’ to refer to subjects of this generation, regardless of their age at the time of the survey.</p>
 </div>
 <div id="steps-to-select-variables-and-download-data" class="section level1">
