@@ -207,57 +207,57 @@ relationships, see Rodgers et al.,
 \hypertarget{terminology}{%
 \subsection{Terminology}\label{terminology}}
 
-Since the late 1960s, the NLSY has provided multiple longitudinal
+Starting in the late 1960s, the NLS has provided multiple longitudinal
 cohorts to researcher and as a field, we have not always been consistent
 with cohort terminology. The package pertains to multiple generations of
-the `Nlsy79' and a single generation of the `Nlsy97'. Because the
+the ``Nlsy79'' and a single generation of the ``Nlsy97.'' Because the
 NlsyLinks package structures information within and between generations
 of the NLSY simultaneously, it requires slightly unconventional NLSY
 terminology to reduce ambiguity.
 
-The ``Nlsy79'' sample refers to both the original 12,686 participants
+The Nlsy79 sample refers to both the original 12,686 subjects
 interviewed in 1979, and their 11,500+ children (termed ``Nlsy79 Gen1''
-and ``Nlsy79 Gen2'', respectively). ``Nlsy79 Gen1'' reflects the
+and ``Nlsy79 Gen2,'' respectively). Nlsy79 Gen1 reflects the
 \href{https://www.nlsinfo.org/content/cohorts/nlsy79}{original NLSY79
 study}, while Nlsy Gen2 reflects their children, the
 \href{https://www.nlsinfo.org/content/cohorts/nlsy79-children}{NLSY79
-Children and Young Adults}. Although the NLSY does not interview
-``Nlsy79 Gen0'' (the parents of Gen1) or ``Nlsy79 Gen3'' (the children
-of Gen2), it does contain direct and indirect information about them.
+Children and Young Adults}. The NLSY does not interview ``Nlsy79 Gen0''
+(the parents of Gen1) or ``Nlsy79 Gen3'' (the children of Gen2), though
+it does contain direct and indirect information about them.
 
-The terminology for the ``Nlsy97'' sample is similar yet simpler than
-the Nlsy79, because the explicit respondents come from a single
-generation (in a sense the Nlsy97 Gen1). A few variables reflect Gen0
-and Gen2. In contrast to the Nlsy79, the Nlsy97 contains more
-information about the housemates.
-
-They both are nationally-representative samples.
-
-More specifically, the Nlsy79 Gen2 participants are the biological
-offspring of the Nlsy79 Gen1 mothers. Until roughly the age of 14, the
+More specifically, the Nlsy79 Gen2 subjects are the biological offspring
+of the Nlsy79 Gen1 mothers. Until roughly the age of 14, the
 ``children'' completed the NLSY-C survey, and then became ``young
 adults'' and completed the NLSY-YA survey. Though they are the same
 respondents, different funding mechanisms and different survey items
 necessitate the distinction. This cohort is sometimes abbreviated as
-``NLSY79-C'', ``NLSY79C'', ``NLSY-C'' or ``NLSYC''. This packages uses
-'``Nlsy79 Gen2'' to refer to participants of this generation, regardless
-of their age at the time of the survey.
+``NLSY79-C,'' ``NLSY79C,'' ``NLSY-C'' or ``NLSYC.'' This packages uses
+``Nlsy79 Gen2'' to refer to subjects of this generation, regardless of
+their age at the time of the survey.
+
+The terminology for the Nlsy97 sample is similar yet simpler than the
+Nlsy79, because the explicit respondents come from a single generation
+(in a sense the Nlsy97 Gen1). A few variables reflect Gen0 and Gen2. In
+contrast to the Nlsy79, the Nlsy97 contains more information about their
+housemates, even if the housemates are not subjects themselves.
+
+The Nlsy79 and Nlsy97 are both nationally-representative samples.
 
 Within our own research team, we have mostly stopped using terms like
-``NLSY79'', ``NLSY79-C'' and ``NLSY79-YA'', because we conceptualize it
+``NLSY79,'' ``NLSY79-C'' and ``NLSY79-YA,'' because we conceptualize it
 as one big sample containing two related generations. It many senses,
 the responses collected from the second generation can be viewed as
 outcomes of the first generation. Likewise, the parents in the first
 generation provide many responses that can be viewed as explanatory
 variables for the 2nd generation. Depending on your research, there can
-be big advantages of using one cohort to augment the other. There are
-also survey items that provide information about the 3rd generation and
-the 0th generation.
+be advantages of using one cohort to augment the other. There are also
+survey items that provide information about the 3rd generation and the
+0th generation.
 
 \emph{Ambiguous Categories}: In some cases, the kinship of relatives can
 be safely narrowed to two categories, but not to one. The most common
 scenario involves the \emph{ambiguous siblings} (among Nlsy79 Gen2
-siblings); due to the sampling design, we know that the two participants
+siblings); due to the sampling design, we know that the two subjects
 share the same mother, so they are either full siblings (\emph{R}=.50)
 or half siblings (\emph{R}=.25). For the qqq\% that we could not
 satisfactorily classify, we categorize them as ``ambiguous siblings''
@@ -274,7 +274,7 @@ a dataset contains both generations. For Gen2 subjects, the
 \texttt{SubjectTag} is identical to their CID (\emph{i.e.}, C00001.00
 -the ID assigned in the NLSY79-Children files). However for Gen1
 subjects, the \texttt{SubjectTag} is their CaseID (\emph{i.e.},
-R00001.00), with ``00'' appended. This manipulation is necessary to
+R00001.00), appended with ``00.'' This manipulation is necessary to
 identify subjects uniquely in inter-generational datasets. A Gen1
 subject with an ID of 43 becomes 4300. The \texttt{SubjectTag}s of her
 four children remain 4301, 4302, 4303, and 4304.
@@ -309,9 +309,9 @@ shared genetics.
 
 An \textbf{outcome variable} is directly relevant to the applied
 researcher; these might represent constructs like height, IQ, and
-income. A \textbf{plumbing variable} is necessary to manage BG datasets;
-examples are \texttt{R}, a subject's ID, and the date of a subject's
-last survey.
+income. A \textbf{structural variable} is necessary to manage BG
+datasets; examples are \texttt{R}, a subject's ID, and the date of a
+subject's last survey.
 
 An \textbf{ACE model} is the basic biometrical model used by BG
 researchers, where the genetic and environmental effects are assumed to
@@ -341,9 +341,9 @@ For more in-depth ACE model-fitting strategies, we recommend
 Investigator}\label{retrieving-data-with-the-nls-investigator}}
 
 When a researcher pursues a new idea, we suggest to start by exploring
-what the NLSY can offer by poking around the (a) vast online
-documentation and (b) \href{https://www.nlsinfo.org/investigator}{NLS
-Investigator}. The documentation online
+what the NLSY can offer by exploring the (a) vast online documentation
+and (b) \href{https://www.nlsinfo.org/investigator}{NLS Investigator}.
+The documentation online
 (\url{https://www.nlsinfo.org/content/getting-started}) has general
 information (\emph{e.g.}, how to connect the nationally representative
 sample was collected), topical information (\emph{e.g.}, what medical
@@ -360,8 +360,8 @@ Investigator vignette} or the official
 \href{https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide}{NLS
 documentation}). Researchers new to the NLSY should expect at least a
 dozen round trips as they iteratively improve and complete their set of
-variables. First, select the `Study', such as `NLSY79 Child \& Young
-Adult' (which corresponds to `Nlsy79 Gen2' in our terminology. Second,
+variables. First, select the ``Study,'' such as ``NLSY79 Child \& Young
+Adult'' (which corresponds to Nlsy79 Gen2 in our terminology. Second,
 select your desired variables, out of the tens of thousands available
 ones.
 
@@ -410,9 +410,9 @@ member.
 A DeFries-Fulker (\textbf{DF}) Analysis uses linear regression to
 estimate the \(a^2\), \(c^2\), and \(e^2\) of a univariate biometric
 system. The interpretations of the DF analysis can be found in Rodgers
-\& Kohler (2005) and Rodgers, Rowe, \& Li (1999). This example uses the
-newest variation, which estimates two parameters; the corresponding
-function is called \texttt{DeFriesFulkerMethod3}. The steps are:
+\& Kohler (2005) and Rodgers, Rowe, \& Li (1999). This
+\texttt{DeFriesFulkerMethod3()} function estimates two parameters. The
+steps are:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -422,31 +422,30 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 \item
   Open R and create a new script (see
   \protect\hyperlink{appendix-creating-and-saving-r-scripts}{Appendix: R
-  Scripts} and load the NlsyLinks package. If you haven't done so,
-  \protect\hyperlink{appendix-installing-and-loading-the-nlsylinks-package}{install
-  the NlsyLinks package}). Within the R script, identify the locations
-  of the downloaded data file, and load it into a data frame.
+  Scripts} and load the NlsyLinks package. Within the R script, identify
+  the locations of the downloaded data file, and load it into a data
+  frame.
 \item
   Within the R script, load the linking dataset. Then select only Gen2
-  subjects. The `Pair' version of the linking dataset is essentially an
-  upper triangle of a symmetric sparse matrix.
+  subjects. The ``Pair'' version of the linking dataset is essentially
+  an upper triangle of a symmetric sparse matrix.
 \item
   Load and assign the \texttt{ExtraOutcomes79} dataset.
 \item
   Specify the outcome variable name and filter out all subjects who have
   a negative value in this variable. The NLSY typically uses negative
-  values to indicate different types of missingness (see `Further
-  Information' below).
+  values to indicate different types of missingness (see Further
+  Information below).
 \item
   Create a double-entered file by calling the
-  'CreatePairLinksDoubleEntered` function. At minimum, pass the (i)
-  outcome dataset, the (ii) linking dataset, and the (iii) name(s) of
-  the outcome variable(s). \emph{(There are occasions when a
+  \texttt{CreatePairLinksDoubleEntered()} function. At minimum, pass the
+  (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s)
+  of the outcome variable(s). \emph{(There are occasions when a
   single-entered file is more appropriate for a DF analysis. See Rodgers
   \& Kohler, 2005, for additional information.)}
 \item
-  Use 'DeFriesFulkerMethod3` function (\emph{i.e.}, general linear
-  model) to estimate the coefficients of the DF model.
+  Use \texttt{DeFriesFulkerMethod3()} function (\emph{i.e.}, general
+  linear model) to estimate the coefficients of the DF model.
 \end{enumerate}
 
 \begin{Shaded}
@@ -455,8 +454,8 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 \FunctionTok{library}\NormalTok{(NlsyLinks)}
 
 \CommentTok{\# Step 3: Load the LINKING dataset and filter for the Gen2 subjects}
-\NormalTok{dsLinking }\OtherTok{\textless{}{-}} 
-\NormalTok{  Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+\NormalTok{dsLinking }\OtherTok{\textless{}{-}}
+\NormalTok{  Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
 \NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(RelationshipPath }\SpecialCharTok{==} \StringTok{"Gen2Siblings"}\NormalTok{)}
 \FunctionTok{summary}\NormalTok{(dsLinking) }\CommentTok{\# Notice there are 11k records (one for each pair).}
 \end{Highlighting}
@@ -466,8 +465,8 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 ##    ExtendedID    SubjectTag_S1     SubjectTag_S2           R        
 ##  Min.   :    2   Min.   :    201   Min.   :    202   Min.   :0.250  
 ##  1st Qu.: 3154   1st Qu.: 315401   1st Qu.: 315403   1st Qu.:0.250  
-##  Median : 6105   Median : 610703   Median : 610705   Median :0.500  
-##  Mean   : 5927   Mean   : 593061   Mean   : 593063   Mean   :0.417  
+##  Median : 6105   Median : 610702   Median : 610705   Median :0.500  
+##  Mean   : 5927   Mean   : 593061   Mean   : 593062   Mean   :0.417  
 ##  3rd Qu.: 8507   3rd Qu.: 851001   3rd Qu.: 851003   3rd Qu.:0.500  
 ##  Max.   :12673   Max.   :1267301   Max.   :1267302   Max.   :1.000  
 ##        RelationshipPath
@@ -482,7 +481,7 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Step 4: Load the OUTCOMES dataset, and then examine the summary.}
-\NormalTok{dsOutcomes }\OtherTok{\textless{}{-}}\NormalTok{ ExtraOutcomes79 }\CommentTok{\#\textquotesingle{}ds\textquotesingle{} stands for \textquotesingle{}Data Set\textquotesingle{}}
+\NormalTok{dsOutcomes }\OtherTok{\textless{}{-}}\NormalTok{ ExtraOutcomes79 }\CommentTok{\# ds stands for Data Set}
 \FunctionTok{summary}\NormalTok{(dsOutcomes)}
 \end{Highlighting}
 \end{Shaded}
@@ -519,7 +518,7 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 \CommentTok{\# Step 5: If the negative values (which represent NLSY missing or}
 \CommentTok{\#   skip patterns) still exist, then:}
 \NormalTok{dsOutcomes }\OtherTok{\textless{}{-}}
-\NormalTok{  dsOutcomes }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+\NormalTok{  dsOutcomes }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
 \NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{mutate}\NormalTok{(}
     \AttributeTok{MathStandardized =}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{if\_else}\NormalTok{(}
 \NormalTok{      MathStandardized }\SpecialCharTok{\textless{}} \DecValTok{0}\NormalTok{,}
@@ -529,14 +528,14 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 \NormalTok{  )}
 
 \CommentTok{\# Step 6: Create the double entered dataset.}
-\NormalTok{dsDouble }\OtherTok{\textless{}{-}} 
+\NormalTok{dsDouble }\OtherTok{\textless{}{-}}
   \FunctionTok{CreatePairLinksDoubleEntered}\NormalTok{(}
     \AttributeTok{outcomeDataset   =}\NormalTok{ dsOutcomes,}
     \AttributeTok{linksPairDataset =}\NormalTok{ dsLinking,}
-    \AttributeTok{outcomeNames     =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}MathStandardized\textquotesingle{}}\NormalTok{)}
+    \AttributeTok{outcomeNames     =} \FunctionTok{c}\NormalTok{(}\StringTok{"MathStandardized"}\NormalTok{)}
 \NormalTok{  )}
 \CommentTok{\# Notice there are now two records for each unique pair.}
-\FunctionTok{summary}\NormalTok{(dsDouble) }
+\FunctionTok{summary}\NormalTok{(dsDouble)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -562,7 +561,7 @@ function is called \texttt{DeFriesFulkerMethod3}. The steps are:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Step 7: Estimate the ACE components with a DF Analysis}
-\NormalTok{ace }\OtherTok{\textless{}{-}} 
+\NormalTok{ace }\OtherTok{\textless{}{-}}
   \FunctionTok{DeFriesFulkerMethod3}\NormalTok{(}
     \AttributeTok{dataSet  =}\NormalTok{ dsDouble,}
     \AttributeTok{oName\_S1 =} \StringTok{"MathStandardized\_S1"}\NormalTok{,}
@@ -605,9 +604,9 @@ The steps are:
 \tightlist
 \item
   Use the NLS Investigator to select and download a Gen2 dataset. Select
-  the variables `length of gestation of child in weeks'
-  (\texttt{C03280.00}), `weight of child at birth in ounces'
-  (\texttt{C03286.00}), and `length of child at birth'
+  the variables ``length of gestation of child in weeks''
+  (\texttt{C03280.00}), ``weight of child at birth in ounces''
+  (\texttt{C03286.00}), and ``length of child at birth''
   (\texttt{C03288.00}), and then download the *.zip file to your local
   computer.
 \item
@@ -618,22 +617,22 @@ The steps are:
   subjects.
 \item
   Read the CSV into R as a \texttt{data.frame} using
-  \texttt{ReadCsvNlsy79Gen2}.
+  \texttt{ReadCsvNlsy79Gen2()}.
 \item
   Verify the desired outcome column exists, and rename it something
   meaningful to your project. In this example, we rename column
   \texttt{C0328800} to \texttt{BirthWeightInOunces}.
 \item
   Filter out all subjects who have a negative
-  \texttt{BirthWeightInOunces} value. See the `Further Information' note
+  \texttt{BirthWeightInOunces} value. See the Further Information note
   in the previous example.
 \item
-  Create a double-entered file by calling the
-  \texttt{CreatePairLinksDoubleEntered} function. At minimum, pass the
-  (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s)
-  of the outcome variable(s).
+  Create a double-entered file by calling
+  \texttt{CreatePairLinksDoubleEntered()}. At minimum, pass the (i)
+  outcome dataset, the (ii) linking dataset, and the (iii) name(s) of
+  the outcome variable(s).
 \item
-  Call the \texttt{AceUnivariate} function to estimate the coefficients.
+  Call \texttt{AceUnivariate()} to estimate the coefficients.
 \end{enumerate}
 
 \begin{Shaded}
@@ -642,15 +641,15 @@ The steps are:
 \FunctionTok{library}\NormalTok{(NlsyLinks)}
 
 \CommentTok{\# Step 3: Load the linking dataset and filter for the Gen2 subjects}
-\NormalTok{dsLinking }\OtherTok{\textless{}{-}} 
-\NormalTok{  Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+\NormalTok{dsLinking }\OtherTok{\textless{}{-}}
+\NormalTok{  Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
 \NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(RelationshipPath }\SpecialCharTok{==} \StringTok{"Gen2Siblings"}\NormalTok{)}
 
 \CommentTok{\# Step 4: Read the outcomes dataset then examine the summary.}
 \CommentTok{\#   Your path might be \textasciigrave{}filePathOutcomes \textless{}{-} "C:/Nls/gen2{-}birth.csv"\textasciigrave{}}
-\NormalTok{filePathOutcomes }\OtherTok{\textless{}{-}} 
+\NormalTok{filePathOutcomes }\OtherTok{\textless{}{-}}
   \FunctionTok{system.file}\NormalTok{(}
-    \StringTok{"extdata/gen2{-}birth.csv"}\NormalTok{, }
+    \StringTok{"extdata/gen2{-}birth.csv"}\NormalTok{,}
     \AttributeTok{package =} \StringTok{"NlsyLinks"}
 \NormalTok{  )}
 \NormalTok{dsOutcomes }\OtherTok{\textless{}{-}} \FunctionTok{ReadCsvNlsy79Gen2}\NormalTok{(filePathOutcomes)}
@@ -664,7 +663,7 @@ The steps are:
 ##  1st Qu.: 310302   1st Qu.: 310302   1st Qu.: 3101   1st Qu.:2   
 ##  Median : 604607   Median : 604607   Median : 6045   Median :2   
 ##  Mean   : 601313   Mean   : 601313   Mean   : 6007   Mean   :2   
-##  3rd Qu.: 876203   3rd Qu.: 876203   3rd Qu.: 8757   3rd Qu.:2   
+##  3rd Qu.: 876202   3rd Qu.: 876202   3rd Qu.: 8757   3rd Qu.:2   
 ##  Max.   :1267501   Max.   :1267501   Max.   :12675   Max.   :2   
 ##                                      NA's   :2                   
 ##  SubjectTagOfMother    C0005300        C0005400         C0005700   
@@ -688,7 +687,7 @@ The steps are:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Step 5: Verify and rename an existing column.}
-\FunctionTok{VerifyColumnExists}\NormalTok{(dsOutcomes, }\StringTok{"C0328600"}\NormalTok{) }\CommentTok{\# Should return \textquotesingle{}10\textquotesingle{} in this example.}
+\FunctionTok{VerifyColumnExists}\NormalTok{(dsOutcomes, }\StringTok{"C0328600"}\NormalTok{) }\CommentTok{\# Should return 10 in this example.}
 \end{Highlighting}
 \end{Shaded}
 
@@ -698,18 +697,18 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dsOutcomes }\OtherTok{\textless{}{-}} 
-\NormalTok{  dsOutcomes }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+\NormalTok{dsOutcomes }\OtherTok{\textless{}{-}}
+\NormalTok{  dsOutcomes }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
 \NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{rename}\NormalTok{(}
-    \AttributeTok{BirthWeightInOunces =}\NormalTok{ C0328600, }
+    \AttributeTok{BirthWeightInOunces =}\NormalTok{ C0328600,}
 \NormalTok{  )}
 
-\CommentTok{\# Step 6: For this item, a negative value indicates the parent }
+\CommentTok{\# Step 6: For this item, a negative value indicates the parent}
 \CommentTok{\#   refused, didn\textquotesingle{}t know, invalidly skipped, or was missing.}
 \CommentTok{\#   For present purposes, treat these responses equivalently.}
 \CommentTok{\#   Then clip/Winsorize/truncate the weight.}
 \NormalTok{dsOutcomes }\OtherTok{\textless{}{-}}
-\NormalTok{  dsOutcomes }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+\NormalTok{  dsOutcomes }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
 \NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{mutate}\NormalTok{(}
     \CommentTok{\# Set to NA}
     \AttributeTok{BirthWeightInOunces =}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{if\_else}\NormalTok{(}
@@ -723,7 +722,7 @@ The steps are:
 
 
 \CommentTok{\# Step 7: Create the double entered dataset.}
-\NormalTok{dsDouble }\OtherTok{\textless{}{-}} 
+\NormalTok{dsDouble }\OtherTok{\textless{}{-}}
   \FunctionTok{CreatePairLinksDoubleEntered}\NormalTok{(}
     \AttributeTok{outcomeDataset   =}\NormalTok{ dsOutcomes,}
     \AttributeTok{linksPairDataset =}\NormalTok{ dsLinking,}
@@ -731,7 +730,7 @@ The steps are:
 \NormalTok{  )}
 
 \CommentTok{\# Step 8: Estimate the ACE components with a DF Analysis}
-\NormalTok{ace }\OtherTok{\textless{}{-}} 
+\NormalTok{ace }\OtherTok{\textless{}{-}}
   \FunctionTok{AceUnivariate}\NormalTok{(}
     \AttributeTok{method   =} \StringTok{"DeFriesFulkerMethod3"}\NormalTok{,}
     \AttributeTok{dataSet  =}\NormalTok{ dsDouble,}
@@ -782,9 +781,10 @@ The steps are:
   of the outcome variable(s).
 \item
   Declare the names of the outcome variables corresponding to the two
-  members in each pair. Assuming the variable is called `ZZZ' and the
-  preceding steps have been followed, the variable `ZZZ\_S1' corresponds
-  to the first members and ZZZ\_S2' corresponds to the second members.
+  members in each pair. Assuming the variable is called \texttt{ZZZ} and
+  the preceding steps have been followed, the variable
+  \texttt{ZZZ\textbackslash{}\_S1} corresponds to the first members and
+  \texttt{ZZZ\textbackslash{}\_S2} corresponds to the second members.
 \item
   Create a GroupSummary \texttt{data.frame}, which identifies the
   \texttt{R} groups that should be considered by the model. Inspect the
@@ -807,12 +807,12 @@ The steps are:
 \begin{Highlighting}[]
 \CommentTok{\# Steps 1{-}5 are explained in the first example:}
 \FunctionTok{library}\NormalTok{(NlsyLinks)}
-\NormalTok{dsLinking }\OtherTok{\textless{}{-}} 
-\NormalTok{  Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+\NormalTok{dsLinking }\OtherTok{\textless{}{-}}
+\NormalTok{  Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
 \NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(RelationshipPath }\SpecialCharTok{==} \StringTok{"Gen2Siblings"}\NormalTok{)}
 
-\NormalTok{dsOutcomes }\OtherTok{\textless{}{-}} 
-\NormalTok{  ExtraOutcomes79 }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+\NormalTok{dsOutcomes }\OtherTok{\textless{}{-}}
+\NormalTok{  ExtraOutcomes79 }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
 \NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{mutate}\NormalTok{(}
     \AttributeTok{MathStandardized =}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{if\_else}\NormalTok{(}
 \NormalTok{      MathStandardized }\SpecialCharTok{\textless{}} \DecValTok{0}\NormalTok{,}
@@ -822,18 +822,18 @@ The steps are:
 \NormalTok{  )}
 
 \CommentTok{\# Step 6: Create the single entered dataset.}
-\NormalTok{dsSingle }\OtherTok{\textless{}{-}} 
+\NormalTok{dsSingle }\OtherTok{\textless{}{-}}
   \FunctionTok{CreatePairLinksSingleEntered}\NormalTok{(}
     \AttributeTok{outcomeDataset   =}\NormalTok{ dsOutcomes,}
     \AttributeTok{linksPairDataset =}\NormalTok{ dsLinking,}
-    \AttributeTok{outcomeNames     =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}MathStandardized\textquotesingle{}}\NormalTok{)}
+    \AttributeTok{outcomeNames     =} \FunctionTok{c}\NormalTok{(}\StringTok{"MathStandardized"}\NormalTok{)}
 \NormalTok{  )}
 
 \CommentTok{\# Step 7: Declare the names for the two outcome variables.}
 \NormalTok{oName\_S1 }\OtherTok{\textless{}{-}} \StringTok{"MathStandardized\_S1"} \CommentTok{\#Stands for Outcome1}
 \NormalTok{oName\_S2 }\OtherTok{\textless{}{-}} \StringTok{"MathStandardized\_S2"} \CommentTok{\#Stands for Outcome2}
 
-\CommentTok{\# Step 8: Summarize the R groups and }
+\CommentTok{\# Step 8: Summarize the R groups and}
 \CommentTok{\#   determine which groups can be estimated.}
 \NormalTok{dsGroupSummary }\OtherTok{\textless{}{-}} \FunctionTok{RGroupSummary}\NormalTok{(dsSingle, oName\_S1, oName\_S2)}
 \NormalTok{dsGroupSummary}
@@ -858,11 +858,11 @@ The steps are:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Step 9: Create a cleaned dataset}
-\NormalTok{dsClean }\OtherTok{\textless{}{-}} 
+\NormalTok{dsClean }\OtherTok{\textless{}{-}}
   \FunctionTok{CleanSemAceDataset}\NormalTok{(}
-    \AttributeTok{dsDirty         =}\NormalTok{ dsSingle, }
-    \AttributeTok{dsGroupSummary  =}\NormalTok{ dsGroupSummary, }
-    \AttributeTok{oName\_S1        =}\NormalTok{ oName\_S1, }
+    \AttributeTok{dsDirty         =}\NormalTok{ dsSingle,}
+    \AttributeTok{dsGroupSummary  =}\NormalTok{ dsGroupSummary,}
+    \AttributeTok{oName\_S1        =}\NormalTok{ oName\_S1,}
     \AttributeTok{oName\_S2        =}\NormalTok{ oName\_S2}
 \NormalTok{  )}
 
@@ -880,7 +880,7 @@ The steps are:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Notice the \textquotesingle{}CaseCount\textquotesingle{} is 8.5k instead of 17k.}
+\CommentTok{\# Notice the CaseCount is 8.5k instead of 17k.}
 \CommentTok{\#   This is because (a) one pair with R=.75 was excluded, and}
 \CommentTok{\#   (b) the SEM uses a single{-}entered dataset (not double).}
 
@@ -929,7 +929,7 @@ The steps are:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Examine fit stats like Chi{-}Squared, RMSEA, CFI, etc.}
-\FunctionTok{fitMeasures}\NormalTok{(}\FunctionTok{GetDetails}\NormalTok{(ace)) }\CommentTok{\# lavaan defines fitMeasures }
+\FunctionTok{fitMeasures}\NormalTok{(}\FunctionTok{GetDetails}\NormalTok{(ace)) }\CommentTok{\# lavaan defines fitMeasures}
 \end{Highlighting}
 \end{Shaded}
 
@@ -984,14 +984,14 @@ relationships.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
-\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{count}\NormalTok{(RelationshipPath, }\AttributeTok{name =} \StringTok{"Relationship Frequency"}\NormalTok{) }
+\NormalTok{Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{count}\NormalTok{(RelationshipPath, }\AttributeTok{name =} \StringTok{"Relationship Frequency"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-6}Count of Nlsy79 relationships, by `RelationshipPath`.  (Recall that 'AuntNiece' also contains uncles and nephews.)}
+\caption{\label{tab:unnamed-chunk-6}Count of Nlsy79 relationships, by `RelationshipPath`.  (Recall that AuntNiece also contains uncles and nephews.)}
 \centering
 \begin{tabular}[t]{l|r}
 \hline
@@ -1022,14 +1022,14 @@ modeling methods.
 \begin{Highlighting}[]
 \CommentTok{\# Steps 1{-}5 are explained in the vignette\textquotesingle{}s first example:}
 \FunctionTok{library}\NormalTok{(NlsyLinks)}
-\NormalTok{desiredPaths }\OtherTok{\textless{}{-}} 
+\NormalTok{desiredPaths }\OtherTok{\textless{}{-}}
   \FunctionTok{c}\NormalTok{(}
-    \StringTok{"Gen1Housemates"}\NormalTok{, }
+    \StringTok{"Gen1Housemates"}\NormalTok{,}
     \StringTok{"Gen2Siblings"}\NormalTok{, }\StringTok{"Gen2Cousins"}\NormalTok{,}
     \StringTok{"ParentChild"}\NormalTok{, }\StringTok{"AuntNiece"}
 \NormalTok{  )}
-\NormalTok{dsLinking }\OtherTok{\textless{}{-}} 
-\NormalTok{  Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+\NormalTok{dsLinking }\OtherTok{\textless{}{-}}
+\NormalTok{  Links79Pair }\SpecialCharTok{|}\ErrorTok{\textgreater{}}
 \NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(RelationshipPath }\SpecialCharTok{\%in\%}\NormalTok{ desiredPaths)}
 
 \CommentTok{\# Because all five paths are specified, the line above is equivalent to:}
@@ -1039,11 +1039,11 @@ modeling methods.
 \CommentTok{\# The HeightZGenderAge variable is already groomed}
 
 \CommentTok{\# Step 6: Create the single entered dataset.}
-\NormalTok{dsSingle }\OtherTok{\textless{}{-}} 
+\NormalTok{dsSingle }\OtherTok{\textless{}{-}}
   \FunctionTok{CreatePairLinksSingleEntered}\NormalTok{(}
     \AttributeTok{outcomeDataset   =}\NormalTok{ dsOutcomes,}
     \AttributeTok{linksPairDataset =}\NormalTok{ dsLinking,}
-    \AttributeTok{outcomeNames     =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}HeightZGenderAge\textquotesingle{}}\NormalTok{)}
+    \AttributeTok{outcomeNames     =} \FunctionTok{c}\NormalTok{(}\StringTok{"HeightZGenderAge"}\NormalTok{)}
 \NormalTok{  )}
 
 \CommentTok{\# Step 7: Declare the names for the two outcome variables.}
@@ -1078,11 +1078,11 @@ modeling methods.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Step 9: Create a cleaned dataset}
-\NormalTok{dsClean }\OtherTok{\textless{}{-}} 
+\NormalTok{dsClean }\OtherTok{\textless{}{-}}
   \FunctionTok{CleanSemAceDataset}\NormalTok{(}
-    \AttributeTok{dsDirty         =}\NormalTok{ dsSingle, }
-    \AttributeTok{dsGroupSummary  =}\NormalTok{ dsGroupSummary, }
-    \AttributeTok{oName\_S1        =}\NormalTok{ oName\_S1, }
+    \AttributeTok{dsDirty         =}\NormalTok{ dsSingle,}
+    \AttributeTok{dsGroupSummary  =}\NormalTok{ dsGroupSummary,}
+    \AttributeTok{oName\_S1        =}\NormalTok{ oName\_S1,}
     \AttributeTok{oName\_S2        =}\NormalTok{ oName\_S2}
 \NormalTok{  )}
 
@@ -1115,13 +1115,13 @@ increased statistical power is even more important when the population's
 
 Note that the analysis has 24,697 relationships instead of the entire
 42,836. This is primarily because not all subjects have a value for
-`adult height' (and that's mostly because a lot of Gen2 subjects are too
+adult height (and that's mostly because a lot of Gen2 subjects are too
 young). There are 42,088 pairs with a nonmissing value in
 \texttt{RFull}, meaning that 98.3 are classified. We feel comfortable
 claiming that if a researcher has a phenotype for both members of a
-pair, there's a 99+\% chance we have an \texttt{RFull} for it. For a
-description of the \texttt{R} and \texttt{RFull} variables, please see
-the \texttt{Links79Pair} entry in the package
+pair, the pair will likely have an \texttt{RFull}. For a description of
+the \texttt{R} and \texttt{RFull} variables, please see the
+\texttt{Links79Pair} entry in the package
 \href{https://nlsy-links.github.io/NlsyLinks/}{reference manual}.
 
 \hypertarget{more-advanced-ace-analyses}{%
