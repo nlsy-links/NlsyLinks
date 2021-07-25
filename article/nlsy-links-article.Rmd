@@ -62,29 +62,29 @@ The NlsyLinks includes small topical datasets which allows the vignettes and exa
 Terminology
 ----------------------------------------------------
 
-Since the late 1960s, the NLSY has provided multiple longitudinal cohorts to researcher and as a field, we have not always been consistent with cohort terminology.  The package pertains to multiple generations of the 'Nlsy79' and a single generation of the 'Nlsy97'.  Because the NlsyLinks package structures information within and between generations of the NLSY simultaneously, it requires slightly unconventional NLSY terminology to reduce ambiguity.  
+Starting in the late 1960s, the NLS has provided multiple longitudinal cohorts to researcher and as a field, we have not always been consistent with cohort terminology.  The package pertains to multiple generations of the "Nlsy79" and a single generation of the "Nlsy97".  Because the NlsyLinks package structures information within and between generations of the NLSY simultaneously, it requires slightly unconventional NLSY terminology to reduce ambiguity.
 
-The "Nlsy79" sample refers to both the original 12,686 participants interviewed in 1979, and their 11,500+ children (termed "Nlsy79 Gen1" and "Nlsy79 Gen2", respectively).  "Nlsy79 Gen1" reflects the [original NLSY79 study](https://www.nlsinfo.org/content/cohorts/nlsy79), while Nlsy Gen2 reflects their children, the [NLSY79  Children and Young Adults](https://www.nlsinfo.org/content/cohorts/nlsy79-children).  Although the NLSY does not interview "Nlsy79 Gen0" (the parents of Gen1) or "Nlsy79 Gen3" (the children of Gen2), it does contain direct and indirect information about them.
+The Nlsy79 sample refers to both the original 12,686 subjects interviewed in 1979, and their 11,500+ children (termed "Nlsy79 Gen1" and "Nlsy79 Gen2", respectively).  Nlsy79 Gen1 reflects the [original NLSY79 study](https://www.nlsinfo.org/content/cohorts/nlsy79), while Nlsy Gen2 reflects their children, the [NLSY79  Children and Young Adults](https://www.nlsinfo.org/content/cohorts/nlsy79-children).  The NLSY does not interview "Nlsy79 Gen0" (the parents of Gen1) or "Nlsy79 Gen3" (the children of Gen2), though it does contain direct and indirect information about them.
 
-The terminology for the "Nlsy97" sample is similar yet simpler than the Nlsy79, because the explicit respondents come from a single generation (in a sense the Nlsy97 Gen1).  A few variables reflect Gen0 and Gen2.  In contrast to the Nlsy79, the Nlsy97 contains more information about the housemates.
+More specifically, the Nlsy79 Gen2 subjects are the biological offspring of the Nlsy79 Gen1 mothers.  Until roughly the age of 14, the "children" completed the NLSY-C survey, and then became "young adults" and completed the NLSY-YA survey.  Though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as "NLSY79-C", "NLSY79C", "NLSY-C" or "NLSYC". This packages uses '"Nlsy79 Gen2" to refer to subjects of this generation, regardless of their age at the time of the survey.
 
-They both are nationally-representative samples.
+The terminology for the Nlsy97 sample is similar yet simpler than the Nlsy79, because the explicit respondents come from a single generation (in a sense the Nlsy97 Gen1).  A few variables reflect Gen0 and Gen2.  In contrast to the Nlsy79, the Nlsy97 contains more information about their housemates, even if the housemates are not subjects themselves.
 
-More specifically, the Nlsy79 Gen2 participants are the biological offspring of the Nlsy79 Gen1 mothers.  Until roughly the age of 14, the "children" completed the NLSY-C survey, and then became "young adults" and completed the NLSY-YA survey.  Though they are the same respondents, different funding mechanisms and different survey items necessitate the distinction.  This cohort is sometimes abbreviated as "NLSY79-C", "NLSY79C", "NLSY-C" or "NLSYC". This packages uses '"Nlsy79 Gen2" to refer to participants of this generation, regardless of their age at the time of the survey.
+The Nlsy79 and Nlsy97 are both nationally-representative samples.
 
-Within our own research team, we have mostly stopped using terms like "NLSY79", "NLSY79-C" and "NLSY79-YA", because we conceptualize it as one big sample containing two related generations.  It many senses, the responses collected from the second generation can be viewed as outcomes of the first generation.  Likewise, the parents in the first generation provide many responses that can be viewed as explanatory variables for the 2nd generation.  Depending on your research, there can be big advantages of using one cohort to augment the other.  There are also survey items that provide information about the 3rd generation and the 0th generation.
+Within our own research team, we have mostly stopped using terms like "NLSY79", "NLSY79-C" and "NLSY79-YA", because we conceptualize it as one big sample containing two related generations.  It many senses, the responses collected from the second generation can be viewed as outcomes of the first generation.  Likewise, the parents in the first generation provide many responses that can be viewed as explanatory variables for the 2nd generation.  Depending on your research, there can be advantages of using one cohort to augment the other.  There are also survey items that provide information about the 3rd generation and the 0th generation.
 
-*Ambiguous Categories*: In some cases, the kinship of relatives can be safely narrowed to two categories, but not to one.  The most common scenario involves the *ambiguous siblings* (among Nlsy79 Gen2 siblings); due to the sampling design, we know that the two participants share the same mother, so they are either full siblings (*R*=.50) or half siblings (*R*=.25).  For the qqq% that we could not satisfactorily classify, we categorize them as "ambiguous siblings" and assign them *R*=.375.  Another common scenario involves the *ambiguous twins* (among Nlsy97 and both generations of Nlsy79).  For qqq% of the twins we comfortably classify their relationship as either MZ or DZ; the remaining qqq% percent are classified as "ambiguous twins" and assigned *R*=0.75.  Empirically, this approach has been successful in the previous 20 years of our previous research, and is discussed further in (Rodgers, qqq).
+*Ambiguous Categories*: In some cases, the kinship of relatives can be safely narrowed to two categories, but not to one.  The most common scenario involves the *ambiguous siblings* (among Nlsy79 Gen2 siblings); due to the sampling design, we know that the two subjects share the same mother, so they are either full siblings (*R*=.50) or half siblings (*R*=.25).  For the qqq% that we could not satisfactorily classify, we categorize them as "ambiguous siblings" and assign them *R*=.375.  Another common scenario involves the *ambiguous twins* (among Nlsy97 and both generations of Nlsy79).  For qqq% of the twins we comfortably classify their relationship as either MZ or DZ; the remaining qqq% percent are classified as "ambiguous twins" and assigned *R*=0.75.  Empirically, this approach has been successful in the previous 20 years of our previous research, and is discussed further in (Rodgers, qqq).
 
-The `SubjectTag` variable uniquely identify Nlsy79 subjects when a dataset contains both generations.  For Gen2 subjects, the `SubjectTag` is identical to their CID (*i.e.*, C00001.00 -the ID assigned in the NLSY79-Children files).  However for Gen1 subjects, the `SubjectTag` is their CaseID (*i.e.*, R00001.00), with "00" appended.  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The `SubjectTag`s of her four children remain 4301, 4302, 4303, and 4304.
+The `SubjectTag` variable uniquely identify Nlsy79 subjects when a dataset contains both generations.  For Gen2 subjects, the `SubjectTag` is identical to their CID (*i.e.*, C00001.00 -the ID assigned in the NLSY79-Children files).  However for Gen1 subjects, the `SubjectTag` is their CaseID (*i.e.*, R00001.00), appended with "00".  This manipulation is necessary to identify subjects uniquely in inter-generational datasets.  A Gen1 subject with an ID of 43 becomes 4300.  The `SubjectTag`s of her four children remain 4301, 4302, 4303, and 4304.
 
 The *expected coefficient of relatedness* of a pair of subjects is typically represented by the statistical variable `R`.  Examples are: Monozygotic twins have `R`=1; dizygotic twins have `R`=0.5; full siblings (*i.e.*, those who share both biological parents) have `R`=0.5;  half-siblings (*i.e.*, those who share exactly one biological parent) have `R`=0.25; adopted siblings have `R`=0.0.  Other uncommon possibilities are mentioned the documentation for `Links79Pair`.
 
-In both the Nlsy79 and Nlsy97 samples, the `ExtendedID` variable indicates a subject's extended family.  Because there are two generations within the Nlsy79 sample, two subjects will be in the same extended family if either: [1] they are Gen1 housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (*i.e.*, they have mothers who are Gen1 sisters in the NLSY79), [4] they are mother and child (in Gen1 and Gen2, respectively), or [5] they are (aunt|uncle) and (niece|nephew) (in Gen1 and Gen2, respectively).  Because there is only one generation in the Nlsy97, two subjects will be in the same extended family only if they are housemates.  
+In both the Nlsy79 and Nlsy97 samples, the `ExtendedID` variable indicates a subject's extended family.  Because there are two generations within the Nlsy79 sample, two subjects will be in the same extended family if either: [1] they are Gen1 housemates, [2] they are Gen2 siblings, [3] they are Gen2 cousins (*i.e.*, they have mothers who are Gen1 sisters in the NLSY79), [4] they are mother and child (in Gen1 and Gen2, respectively), or [5] they are (aunt|uncle) and (niece|nephew) (in Gen1 and Gen2, respectively).  Because there is only one generation in the Nlsy97, two subjects will be in the same extended family only if they are housemates.
 
 Note that housemates range from sharing all their genes (*i.e.*, monozygotic twins) to none (*e.g.*, adopted siblings).  A primary product of our efforts has been to leverage implicit and explicit information about the subjects in order to facilitate behavior genetics (BG) research, or any other investigation that needs to control for shared genetics.
 
-An **outcome variable** is directly relevant to the applied researcher; these might represent constructs like height, IQ, and income.  A **plumbing variable** is necessary to manage BG datasets; examples are `R`, a subject's ID, and the date of a subject's last survey.
+An **outcome variable** is directly relevant to the applied researcher; these might represent constructs like height, IQ, and income.  A **structural variable** is necessary to manage BG datasets; examples are `R`, a subject's ID, and the date of a subject's last survey.
 
 An **ACE model** is the basic biometrical model used by BG researchers, where the genetic and environmental effects are assumed to be additive. The three primary variance components are (1) the proportion of variability due to a shared genetic influence (typically represented as $a^2$, or sometimes $h^2$), (2) the proportion of variability due to shared common environmental influence (typically $c^2$), and (3) the proportion of variability due to unexplained/residual/error influence (typically $e^2$).
 
@@ -93,7 +93,7 @@ The variables are scaled so that they account for all observed variability in th
 Retrieving Data with the NLS Investigator
 ====================================================
 
-When a researcher pursues a new idea, we suggest to start by exploring what the NLSY can offer by poking around the (a) vast online documentation and (b) [NLS Investigator](https://www.nlsinfo.org/investigator).  The documentation online (<https://www.nlsinfo.org/content/getting-started>) has general information (*e.g.*, how to connect the nationally representative sample was collected), topical information (*e.g.*, what medical and health information has been collected across survey waves and subject ages), and descriptive summaries (*e.g.*, attrition over time for different race and ethnic groups).  This material has helpful suggestions which variables are available and appropriate.
+When a researcher pursues a new idea, we suggest to start by exploring what the NLSY can offer by exploring the (a) vast online documentation and (b) [NLS Investigator](https://www.nlsinfo.org/investigator).  The documentation online (<https://www.nlsinfo.org/content/getting-started>) has general information (*e.g.*, how to connect the nationally representative sample was collected), topical information (*e.g.*, what medical and health information has been collected across survey waves and subject ages), and descriptive summaries (*e.g.*, attrition over time for different race and ethnic groups).  This material has helpful suggestions which variables are available and appropriate.
 
 With these hints, identify and download the specific variables from the NLS Investigator.  The NLS Investigator is described briefly in the second example.  For more detailed instruction see the NlsyLink package's [NLS Investigator vignette](https://nlsy-links.github.io/NlsyLinks/articles/nls-investigator.html) or the official [NLS documentation](https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide)).  Researchers new to the NLSY should expect at least a dozen round trips as they iteratively improve and complete their set of variables.  First, select the 'Study', such as 'NLSY79 Child & Young Adult' (which corresponds to 'Nlsy79 Gen2' in our terminology.  Second, select your desired variables, out of the tens of thousands available ones.
 
@@ -118,24 +118,24 @@ ACE DF Analysis of One Generation (Nlsy79 Gen1)
 
 The first example should provide an initial feel for the inputs, mechanics, and goals of a typical NLSY analysis.  It uses a simple statistical model and all available Nlsy79 Gen1 subjects.  The `CreatePairLinksDoubleEntered` function will create a data frame where each represents one pair of siblings, respective of order (*i.e.*, there is a row for Subjects 201 and 202, and a second row for Subjects 202 and 201). This function examines the subjects' IDs and determines who is related to whom (and by how much).  By default, each row has at least six values/columns: (i) ID for the older member of the kinship pair: `Subject1Tag`, (ii) ID for the younger member: `Subject2Tag`, (iii) ID for their extended family: `ExtendedID`, (iv) their estimated coefficient of genetic relatedness: `R`, (v *and beyond*) outcome values for the older member; (vi *and beyond*) outcome values for the younger member.
 
-A DeFries-Fulker (**DF**) Analysis uses linear regression to estimate the $a^2$, $c^2$, and $e^2$ of a univariate biometric system.  The interpretations of the DF analysis can be found in Rodgers & Kohler (2005) and Rodgers, Rowe, & Li (1999).  This example uses the newest variation, which estimates two parameters; the corresponding function is called `DeFriesFulkerMethod3`.  The steps are:
+A DeFries-Fulker (**DF**) Analysis uses linear regression to estimate the $a^2$, $c^2$, and $e^2$ of a univariate biometric system.  The interpretations of the DF analysis can be found in Rodgers & Kohler (2005) and Rodgers, Rowe, & Li (1999).  This `DeFriesFulkerMethod3()` function estimates two parameters.  The steps are:
 
 1. Use the NLS Investigator to select and download a Gen2 dataset.
-1. Open R and create a new script (see [Appendix: R Scripts](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.  If you haven't done so, [install the NlsyLinks package](#appendix-installing-and-loading-the-nlsylinks-package)).
+2. Open R and create a new script (see [Appendix: R Scripts](#appendix-creating-and-saving-r-scripts) and load the NlsyLinks package.
  Within the R script, identify the locations of the downloaded data file, and load it into a data frame.
-1. Within the R script, load the linking dataset.  Then select only Gen2 subjects.  The 'Pair' version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.
-1. Load and assign the `ExtraOutcomes79` dataset.
-1. Specify the outcome variable name and filter out all subjects who have a negative value in this variable.  The NLSY typically uses negative values to indicate different types of missingness (see 'Further Information' below).
-1. Create a double-entered file by calling the 'CreatePairLinksDoubleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).  *(There are occasions when a single-entered file is more appropriate for a DF analysis.  See Rodgers & Kohler, 2005, for additional information.)*
-1. Use 'DeFriesFulkerMethod3` function (*i.e.*, general linear model) to estimate the coefficients of the DF model.
+3. Within the R script, load the linking dataset.  Then select only Gen2 subjects.  The 'Pair' version of the linking dataset is essentially an upper triangle of a symmetric sparse matrix.
+4. Load and assign the `ExtraOutcomes79` dataset.
+5. Specify the outcome variable name and filter out all subjects who have a negative value in this variable.  The NLSY typically uses negative values to indicate different types of missingness (see 'Further Information' below).
+6. Create a double-entered file by calling the 'CreatePairLinksDoubleEntered` function.  At minimum, pass the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the outcome variable(s).  *(There are occasions when a single-entered file is more appropriate for a DF analysis.  See Rodgers & Kohler, 2005, for additional information.)*
+7. Use 'DeFriesFulkerMethod3` function (*i.e.*, general linear model) to estimate the coefficients of the DF model.
 
 ```{r}
 # Step 2: Load the package containing the linking routines.
 library(NlsyLinks)
 
 # Step 3: Load the LINKING dataset and filter for the Gen2 subjects
-dsLinking <- 
-  Links79Pair |> 
+dsLinking <-
+  Links79Pair |>
   dplyr::filter(RelationshipPath == "Gen2Siblings")
 summary(dsLinking) # Notice there are 11k records (one for each pair).
 
@@ -146,7 +146,7 @@ summary(dsOutcomes)
 # Step 5: If the negative values (which represent NLSY missing or
 #   skip patterns) still exist, then:
 dsOutcomes <-
-  dsOutcomes |> 
+  dsOutcomes |>
   dplyr::mutate(
     MathStandardized = dplyr::if_else(
       MathStandardized < 0,
@@ -156,17 +156,17 @@ dsOutcomes <-
   )
 
 # Step 6: Create the double entered dataset.
-dsDouble <- 
+dsDouble <-
   CreatePairLinksDoubleEntered(
     outcomeDataset   = dsOutcomes,
     linksPairDataset = dsLinking,
     outcomeNames     = c('MathStandardized')
   )
 # Notice there are now two records for each unique pair.
-summary(dsDouble) 
+summary(dsDouble)
 
 # Step 7: Estimate the ACE components with a DF Analysis
-ace <- 
+ace <-
   DeFriesFulkerMethod3(
     dataSet  = dsDouble,
     oName_S1 = "MathStandardized_S1",
@@ -198,15 +198,15 @@ The steps are:
 library(NlsyLinks)
 
 # Step 3: Load the linking dataset and filter for the Gen2 subjects
-dsLinking <- 
-  Links79Pair |> 
+dsLinking <-
+  Links79Pair |>
   dplyr::filter(RelationshipPath == "Gen2Siblings")
 
 # Step 4: Read the outcomes dataset then examine the summary.
 #   Your path might be `filePathOutcomes <- "C:/Nls/gen2-birth.csv"`
-filePathOutcomes <- 
+filePathOutcomes <-
   system.file(
-    "extdata/gen2-birth.csv", 
+    "extdata/gen2-birth.csv",
     package = "NlsyLinks"
   )
 dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
@@ -214,18 +214,18 @@ summary(dsOutcomes)
 
 # Step 5: Verify and rename an existing column.
 VerifyColumnExists(dsOutcomes, "C0328600") # Should return '10' in this example.
-dsOutcomes <- 
-  dsOutcomes |> 
+dsOutcomes <-
+  dsOutcomes |>
   dplyr::rename(
-    BirthWeightInOunces = C0328600, 
+    BirthWeightInOunces = C0328600,
   )
 
-# Step 6: For this item, a negative value indicates the parent 
+# Step 6: For this item, a negative value indicates the parent
 #   refused, didn't know, invalidly skipped, or was missing.
 #   For present purposes, treat these responses equivalently.
 #   Then clip/Winsorize/truncate the weight.
 dsOutcomes <-
-  dsOutcomes |> 
+  dsOutcomes |>
   dplyr::mutate(
     # Set to NA
     BirthWeightInOunces = dplyr::if_else(
@@ -239,7 +239,7 @@ dsOutcomes <-
 
 
 # Step 7: Create the double entered dataset.
-dsDouble <- 
+dsDouble <-
   CreatePairLinksDoubleEntered(
     outcomeDataset   = dsOutcomes,
     linksPairDataset = dsLinking,
@@ -247,7 +247,7 @@ dsDouble <-
   )
 
 # Step 8: Estimate the ACE components with a DF Analysis
-ace <- 
+ace <-
   AceUnivariate(
     method   = "DeFriesFulkerMethod3",
     dataSet  = dsDouble,
@@ -280,12 +280,12 @@ The steps are:
 ```{r}
 # Steps 1-5 are explained in the first example:
 library(NlsyLinks)
-dsLinking <- 
-  Links79Pair |> 
+dsLinking <-
+  Links79Pair |>
   dplyr::filter(RelationshipPath == "Gen2Siblings")
 
-dsOutcomes <- 
-  ExtraOutcomes79 |> 
+dsOutcomes <-
+  ExtraOutcomes79 |>
   dplyr::mutate(
     MathStandardized = dplyr::if_else(
       MathStandardized < 0,
@@ -295,7 +295,7 @@ dsOutcomes <-
   )
 
 # Step 6: Create the single entered dataset.
-dsSingle <- 
+dsSingle <-
   CreatePairLinksSingleEntered(
     outcomeDataset   = dsOutcomes,
     linksPairDataset = dsLinking,
@@ -306,17 +306,17 @@ dsSingle <-
 oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
 oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
 
-# Step 8: Summarize the R groups and 
+# Step 8: Summarize the R groups and
 #   determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
 # Step 9: Create a cleaned dataset
-dsClean <- 
+dsClean <-
   CleanSemAceDataset(
-    dsDirty         = dsSingle, 
-    dsGroupSummary  = dsGroupSummary, 
-    oName_S1        = oName_S1, 
+    dsDirty         = dsSingle,
+    dsGroupSummary  = dsGroupSummary,
+    oName_S1        = oName_S1,
     oName_S2        = oName_S2
   )
 
@@ -331,7 +331,7 @@ ace
 library(lavaan)
 GetDetails(ace)
 # Examine fit stats like Chi-Squared, RMSEA, CFI, etc.
-fitMeasures(GetDetails(ace)) # lavaan defines fitMeasures 
+fitMeasures(GetDetails(ace)) # lavaan defines fitMeasures
 
 # Examine low-level details like each group's individual estimates
 #  and SEs.  Uncomment next line to view entire output (~4 pages).
@@ -348,16 +348,16 @@ ACE SEM of Two Generations
 The example differs from the previous example in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small `R` groups that are difficult to estimate, or (b) if the value for adult height is missing.  This includes all `r scales::comma(nrow(Links79Pair))` relationships in the follow five types of NLSY79 relationships.
 
 ```{r, eval=FALSE}
-Links79Pair |> 
-  dplyr::count(RelationshipPath, name = "Relationship Frequency") 
+Links79Pair |>
+  dplyr::count(RelationshipPath, name = "Relationship Frequency")
 ```
 
 ```{r, results = 'asis', echo = FALSE}
-Links79Pair |> 
-  dplyr::count(RelationshipPath, name = "Relationship Frequency") |> 
+Links79Pair |>
+  dplyr::count(RelationshipPath, name = "Relationship Frequency") |>
   knitr::kable(
     format      = "latex",
-    format.args = list(big.mark = ","), 
+    format.args = list(big.mark = ","),
     caption     = "Count of Nlsy79 relationships, by `RelationshipPath`.  (Recall that 'AuntNiece' also contains uncles and nephews.)"
   )
 ```
@@ -367,14 +367,14 @@ In our opinion, using the intergenerational links is one of the most exciting ne
 ```{r}
 # Steps 1-5 are explained in the vignette's first example:
 library(NlsyLinks)
-desiredPaths <- 
+desiredPaths <-
   c(
-    "Gen1Housemates", 
+    "Gen1Housemates",
     "Gen2Siblings", "Gen2Cousins",
     "ParentChild", "AuntNiece"
   )
-dsLinking <- 
-  Links79Pair |> 
+dsLinking <-
+  Links79Pair |>
   dplyr::filter(RelationshipPath %in% desiredPaths)
 
 # Because all five paths are specified, the line above is equivalent to:
@@ -384,7 +384,7 @@ dsOutcomes <- ExtraOutcomes79
 # The HeightZGenderAge variable is already groomed
 
 # Step 6: Create the single entered dataset.
-dsSingle <- 
+dsSingle <-
   CreatePairLinksSingleEntered(
     outcomeDataset   = dsOutcomes,
     linksPairDataset = dsLinking,
@@ -400,11 +400,11 @@ dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
 # Step 9: Create a cleaned dataset
-dsClean <- 
+dsClean <-
   CleanSemAceDataset(
-    dsDirty         = dsSingle, 
-    dsGroupSummary  = dsGroupSummary, 
-    oName_S1        = oName_S1, 
+    dsDirty         = dsSingle,
+    dsGroupSummary  = dsGroupSummary,
+    oName_S1        = oName_S1,
     oName_S2        = oName_S2
   )
 
