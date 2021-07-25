@@ -12,7 +12,7 @@ CreatePairLinksSingleEntered <- function( outcomeDataset, linksPairDataset, outc
   dsOutcomeSubject1 <- base::subset(outcomeDataset, select=c("SubjectTag", outcomeNames))
   dsOutcomeSubject2 <- base::subset(outcomeDataset, select=c("SubjectTag", outcomeNames))
 
-  for( j in 1:ncol(dsOutcomeSubject1) ) {
+  for( j in seq_along(dsOutcomeSubject1) ) {
     columnName <- base::colnames(dsOutcomeSubject1)[j]
     if( columnName %in% outcomeNames ) {
       colnames(dsOutcomeSubject1)[colnames(dsOutcomeSubject1) == columnName] <- base::paste0(columnName, subject1Qualifier)

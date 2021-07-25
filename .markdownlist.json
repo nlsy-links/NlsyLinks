@@ -1,0 +1,10 @@
+{
+    "default": false,
+    "header-style": { "style": "setext_with_atx" }, 
+    "MD025": {
+      "front_matter_title": "" 
+    },
+    "no-inline-html": {
+        "allowed_elements": [ "details", "br" ]
+    }
+}

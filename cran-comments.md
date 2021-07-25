@@ -1,7 +1,9 @@
-## Description
+Description
+-----------------------------------------------
+
 This submission revival of a package archived in April.
 
-A few years ago Kurt asked, "Would it be possible to put some of the data sets into a separate package which changes less frequently than code and docs?" I'll gladly defer to your judgment and recommendations, but I see two reasons to retain a united package.  First, our primary target audience is Behavior Genetics researchers, who typically are much less familar with R than other fields.  There have been at least 3 BG researchers who have requested SAS data files, because they weren't even comfortable reading vanilla CSV files into SAS.  I'd like to avoid another step/package for them to consider, even if the dataset-only package was a dependency.  Second, assuming our grant proposal is funded, the datasets won't stay stagnant.  The NLSY has three cohorts that are surveyed every two years.  This will be only the [third CRAN submission since Dec 2013](https://cran.rstudio.com/src/contrib/Archive/NlsyLinks/), and most of those changes [were to stay current updated CRAN policies](https://cran.rstudio.com/web/packages/NlsyLinks/NEWS).  The dataset-package would have needed to change too, and therefore increase the demands on CRAN maintainers (because both packages might required updates).
+Regarding package size ("the installed size is 6.0Mb"): A few years ago Kurt asked, "Would it be possible to put some of the data sets into a separate package which changes less frequently than code and docs?" I'll gladly defer to your judgment and recommendations, but I see two reasons to retain a united package.  First, our primary target audience is Behavior Genetics researchers, who typically are much less familiar with R than other fields.  There have been at least 3 BG researchers who have requested SAS data files, because they weren't even comfortable reading vanilla CSV files into SAS.  I'd like to avoid another step/package for them to consider, even if the dataset-only package was a dependency.  Second, the datasets change every few years because the NLSY's three current cohorts are surveyed every two years.  This will be only the [third CRAN submission since Dec 2013](https://cran.rstudio.com/src/contrib/Archive/NlsyLinks/), and most of those changes [were to stay current updated CRAN policies](https://cran.rstudio.com/web/packages/NlsyLinks/NEWS).  The dataset-package would have needed to change too, and therefore increase the demands on CRAN maintainers (because both packages might required updates).
 
 However, I'm happy to split this package if that's what you feel is best for CRAN and R users.  -Will Beasley
 
@@ -12,21 +14,26 @@ Test environments
 1. Local Win8, R 4.1.0 patched
 1. Local Win10, R 4.1.0 patched
 1. R-hub
-    1. [Ubuntu Linux 20.04 LTS, R-release, GCC](https://builder.r-hub.io/status/REDCapR_1.0.0.tar.gz-d554cfab8fed4acba83ca159d2a14a7b)
-    1. [Fedora Linux, R-devel, clang, gfortran](https://builder.r-hub.io/status/REDCapR_1.0.0.tar.gz-80a6d6b66bb84847b61d31f6029f5628)
-    1. [Windows Server](https://builder.r-hub.io/status/REDCapR_1.0.0.tar.gz-b5b0cb95fb4746f9b354071b89caaafa)
-1. [win-builder](https://win-builder.r-project.org/BwNz2bnHxuse), development version.
+    1. [Ubuntu Linux 20.04 LTS, R-release, GCC](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-af51fce5ccb14c11a0e6052ff081ed80)
+    1. [Fedora Linux, R-devel, clang, gfortran](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-356245764a0544d892f40e076b7e60c8)
+    1. [Windows Server](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-00b649ba8e9e4b34ad6362d81e6cd0b0)
+1. [win-builder](https://win-builder.r-project.org/NgcbF52Z5bOZ/00check.log), development version.
 1. [GiHub Actions](https://github.com/OuhscBbmc/REDCapR/actions), Ubuntu 20.04 LTS
 
 R CMD check results
 -----------------------------------------------
 
 * No ERRORs or WARNINGs on any builds.
-* One notable NOTE:
-    1. The package size has a few large data files; the data size is around 4Mb.  I believe the size is justified because it drastically reduces the code needed for the package user to start incorporating their outcomes on to the larger familial framework we've build.  (One of the package's cornerstones is how we've linked the 24,000 participants within the 5,160 extended families.)
-        a. The (uncompressed) CSV is needed for an important example how to incorporate the CSVs downloaded from the NLSY database.  I've used only the necessary columns.
-        b. The compressed RDA files have important participant data the allows the package user to incoporate
-* No other unexplainable NOTEs.  The AppVeyor bulid complains about the vingette, but I think that's something specific to that test environment, and not to the package.
 
-## Downstream dependencies
+* Three possible NOTEs, depending on the build:
+    1. This is a new submission of a package that is currently archived.
+    2. The package size has a few large data files; the data size is around 4Mb.  I believe the size is justified because it drastically reduces the code needed for the package user to start incorporating their outcomes on to the larger familial framework we've build.  (One of the package's cornerstones is how we've linked the 24,000 participants within the 5,160 extended families.)
+        a. The (uncompressed) CSV is needed for an important example how to incorporate the CSVs downloaded from the NLSY database.  I've used only the necessary columns.
+        b. The compressed RDA files have important participant data the allows the package user to incorporate
+    3. The R-hub calls to "https://www.bls.gov/" have some SSL/TLS handshake problem.  But it works fine with the other environments and when I pasted the url into several browsers.
+    
+* No other unexplainable NOTEs.  The Ubuntu R-hub build complains about some images in a vignette, but I think that's something specific to that test environment, and not to the package.  The other builds (including the other two R-hub builds) don't throw the same warning.
+
+Downstream dependencies
+-----------------------------------------------
 No other packages depend/import this one.
