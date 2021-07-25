@@ -1,6 +1,6 @@
 
 
-Version 2.0.8 (2018-?-?)
+Version 2.1.0 (2021-07-25)
 ------------------------------------------------------------------------------
 Updates:
 * [pkgdown](https://hadley.github.io/pkgdown/) documentation
