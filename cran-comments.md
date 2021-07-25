@@ -14,21 +14,24 @@ Test environments
 1. Local Win8, R 4.1.0 patched
 1. Local Win10, R 4.1.0 patched
 1. R-hub
-    1. [Ubuntu Linux 20.04 LTS, R-release, GCC](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-e487560c78d7460cba4f7fa2ffef8c6c)
-    1. [Fedora Linux, R-devel, clang, gfortran](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-25cb9276478f4b4db3a8b1ebc6dc8b80)
-    1. [Windows Server](https://builder.r-hub.io/status/REDCapR_1.0.0.tar.gz-b5b0cb95fb4746f9b354071b89caaafa)
-1. [win-builder](https://win-builder.r-project.org/y4W36ZKoyyc8/00check.log), development version.
+    1. [Ubuntu Linux 20.04 LTS, R-release, GCC](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-af51fce5ccb14c11a0e6052ff081ed80)
+    1. [Fedora Linux, R-devel, clang, gfortran](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-356245764a0544d892f40e076b7e60c8)
+    1. [Windows Server](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-00b649ba8e9e4b34ad6362d81e6cd0b0)
+1. [win-builder](https://win-builder.r-project.org/NgcbF52Z5bOZ/00check.log), development version.
 1. [GiHub Actions](https://github.com/OuhscBbmc/REDCapR/actions), Ubuntu 20.04 LTS
 
 R CMD check results
 -----------------------------------------------
 
 * No ERRORs or WARNINGs on any builds.
-* Two notable NOTEs:
+
+* Three possible NOTEs, depending on the build:
     1. This is a new submission of a package that is currently archived.
     2. The package size has a few large data files; the data size is around 4Mb.  I believe the size is justified because it drastically reduces the code needed for the package user to start incorporating their outcomes on to the larger familial framework we've build.  (One of the package's cornerstones is how we've linked the 24,000 participants within the 5,160 extended families.)
         a. The (uncompressed) CSV is needed for an important example how to incorporate the CSVs downloaded from the NLSY database.  I've used only the necessary columns.
         b. The compressed RDA files have important participant data the allows the package user to incorporate
+    3. The R-hub calls to "https://www.bls.gov/" have some SSL/TLS handshake problem.  But it works fine with the other environments and when I pasted the url into several browsers.
+    
 * No other unexplainable NOTEs.  The Ubuntu R-hub build complains about some images in a vignette, but I think that's something specific to that test environment, and not to the package.  The other builds (including the other two R-hub builds) don't throw the same warning.
 
 Downstream dependencies
