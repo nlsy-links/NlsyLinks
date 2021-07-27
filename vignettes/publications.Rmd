@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links. Note that research presentations have not been included on this list, except for those that occurred during the course of the most recent NIH grant (2011-2014). Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list.
+The following publication list includes research products that used the NLSY79 or NLSY-Children/Young Adult kinship links. Note that research presentations have not been included on this list, except for those that occurred during the course of the two most recent NIH grants (2011-2014; 2017-2021). Otherwise, journal articles, book chapters, and theses/dissertations, are included within this list.
 
 We have been distributing the NLSY kinship links for close to two decades, and only began collecting this archive of articles around ten years ago. There are likely some additional publications based on the kinship links of which we are not aware. If you know of such papers, please bring them to our attention.
 
@@ -186,10 +186,59 @@ Articles and Book Chapters
 Recent Presentations by the Team
 =============================
 
+**2021: Behavior Genetics Association**
+
+* <cite> Discordant-Sibling Designs and Applications for Differential Psychology. Hannah Robertson and Mason Garrison</cite>
+
+* <cite> Does depression lead to criminal behavior? A sibling comparison design using the NLSY. Emma Sims and Mason Garrison</cite>
+
+* <cite> Liquor Legacies: The impact of parental psychopathology and young adult depression on alcohol use. Rachel Good and Mason Garrison</cite>
+
+* <cite> Breaking down the components of the SES-health gradient with sibling comparisons. Yoo Ri Hwang and Mason Garrison</cite>
+
+* <cite> Perspectives of Gender Roles in the Family versus Personality Traits. Sherry Mao and Mason Garrison</cite>
+
+
+**2021: American Psychological Association**
+
+* <cite> Exploring the Components of Socio-Economic Status and Their Relationship with Health. Yoo Ri Hwang and Mason Garrison</cite>
+
+**2021: Society for Personality and Social Psychology**
+
+* <cite> Intergenerational consequences of divorce. Kennon Later and Mason Garrison</cite>
+
+* <cite> Gender Roles Attitudes and Personality: A Sibling Comparison Design. Sherry Mao and Mason Garrison</cite>
+
+* <cite> Vaccination and SES: Not such a simple relationship after all. Jonathan Trattner and Mason Garrison</cite>
+
+* <cite> Causal Inference Loves Moms: Extending the Discordant Kinship Design to Parents. Mason Garrison</cite>
+
+* <cite> Examining the relationship between depression and delinquency: A sibling comparison design using the NLSY. Emma Sims and Mason Garrison</cite>
+
+**2020: Behavior Genetics Association**
+
+* <cite> Examining the Causal Link between Divorce and Mental Health of their Offspring Using the Cross-Generational Sibling Comparison Model. Kennon Later and Mason Garrison</cite>
+
+* <cite> Vaccine willingness and socioeconomic status: A biometrically controlled design. Jonathan Trattner and Mason Garrison</cite>
+
+**2019: Behavior Genetics Association**
+
+* <cite> Five ways to analyze 50,000 pairs of related persons in the National Longitudinal Survey of Youth. Mike Hunter</cite>
+
+* <cite> Original and Replication Research with the NLSY79 and NLSY97 Kinship Links. Will Beasley</cite>
+%
+* <cite> Patterns of Phenotype-Environment Correlation within Cognitive Development. David Bard</cite>
+
+* <cite> The Mediating Impact of Cognitive Ability on the SES-Health Gradient. Patrick O'Keefe</cite>
+
+**2019: Association for Research in Personality**
+
+* <cite>Uncovering the Origins of Age at First Intercourse: Applications of an Extended-Family Behavior Genetic Model. Mason Garrison.</cite>
+
 
 **2019: Society for Personality and Social Psychology**
 
-* <cite>Uncovering the Origins of Age at First Intercourse: Applications of an Extended-Family Behavior Genetic Model. Mason Garrison.</cite>
+* <cite>Uncovering the Biometrical Origins of Age at First Intercourse: Applications of an Extended-Family Behavior Genetic Model. Mason Garrison.</cite>
 
 
 **2018: Behavior Genetics Association**
@@ -253,6 +302,10 @@ A larger, searchable list of research using the NLSY datasets is maintained at [
 
 # Current Documentation, Vignettes, and User Support
 Please see the provided entries on the [Research Software and Support](https://nlsy-links.github.io/NlsyLinks/articles/software-and-support.html) page.
+
+# Software Packages
+
+* <cite> Garrison, S. M., Trattner, J., and Ream, C. (2021). discord: Functions for Discordant Kinship Modeling R package [CRAN.R-project.org/package=discord](https://CRAN.R-project.org/package=discord)
 
 ------
 Compiled by [Joe Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), [Will Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ&hl=en), [Mason Garrison](https://www.smasongarrison.com/), and [Patrick O'Keefe](https://www.vanderbilt.edu/psychological_sciences/bio/patrick-okeefe)
