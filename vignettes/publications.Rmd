@@ -22,6 +22,7 @@ Articles and Book Chapters
 -----------------------------
 
 <ol>
+
 <li value=79><cite> Hunter, M. D., Garrison, S. M., Burt, S. A., & Rodgers, J. L.  (2021).  The analytic identification of variance component models common to behavior genetics.  Behavior Genetics. doi:10.1007/s10519-021-10055-x180)</cite> (NLSY79)</li>
 
 <li value=78><cite> O’Keefe P. & Rodgers, J.L. (2020). A simulation study of bootstrap approaches to estimate confidence intervals in DeFries–Fulker regression models (with application to the heritability of BMI changes in the NLSY). Behavior Genetics,50, 127–138. doi.org/10.1007/s10519-020-09993-9</cite> (NLSY79)</li>
@@ -59,9 +60,7 @@ Articles and Book Chapters
 
 <li value=62><cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.](https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_Gene-Environment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <span class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</span></cite> (NLSYC)</li>
 
-<li value=61><cite>E.J. Connolly, K.M. Beaver
-Prenatal caloric intake and the development of academic achievement among US children from ages 5 to 14
-Child Development, 86 (2015), pp. 1738-1758 </cite> (NLSYC/YA)</li>
+<li value=61><cite>Connolly, E. J., Beaver, K. M. (2015) Prenatal caloric intake and the development of academic achievement among US children from ages 5 to 14. Child Development, 86 , pp. 1738-1758 </cite> (NLSYC/YA)</li>
   
 <li value=60><cite>Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](https://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of Youth and Adolescence*, 1-15.</cite> (NLSYC)</li>
 
