@@ -22,10 +22,20 @@ Articles and Book Chapters
 -----------------------------
 
 <ol>
+<li value=79><cite> Hunter, M. D., Garrison, S. M., Burt, S. A., & Rodgers, J. L.  (2021).  The analytic identification of variance component models common to behavior genetics.  Behavior Genetics. doi:10.1007/s10519-021-10055-x180)</cite> (NLSY79)</li>
 
+<li value=78><cite> O’Keefe P. & Rodgers, J.L. (2020). A simulation study of bootstrap approaches to estimate confidence intervals in DeFries–Fulker regression models (with application to the heritability of BMI changes in the NLSY). Behavior Genetics,50, 127–138. doi.org/10.1007/s10519-020-09993-9</cite> (NLSY79)</li>
+
+<li value=77><cite> Briley, D. A.  (2020).  Behavior genetic approaches for situation research.  Pp. 25-39 in J. F. Rauthmann, R. A. Sherman, & D. C. Funder (Eds) The Oxford Handbook of Psychological Situations.  New York, NY:  Oxford University Press.</cite> (General treatment)</li>
+  
+<li value=76><cite>Connelly, E. J.  (2020).  Further evaluating the relationship between adverse childhood experiences, antisocial behavior, and violent victimization: A sibling-comparison analysis,  Youth Violence and Juvenile Justice, 18, 3-23.</cite>   (NLSY79)</li>  
+  
+<li value=75><cite>Rodgers, J. L., Garrison, S. M., O’Keefe, P., Bard, D. E., Hunter, M. D., Beasley, W. H., van den Oord, E. (2019).   Responding to a 100-year-old challenge from Fisher:  A biometrical analysis of adult height in the  NLSY data using only cousin pairs.  Behavior Genetics, 49, 444-454.</cite>  (NLSYC/YA)</li>  
+  
 <li value=74><cite>Garrison, S. M., & Rodgers, J. L. (2019). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *Journal of Personality and Social Psychology*.</cite> (NLSY79)</li>
 
-<li value=73><cite>Kavish, N., Connolly, E. J., & Boutwell, B. B. (2018). Genetic and environmental contributions to the association between violent victimization and major depressive disorder. *Personality and Individual Differences*. <span class="doi">doi: 10.1016/j.paid.2018.05.034</span></cite> (NLSYC)</li>
+  
+<li value=73><cite>Kavish, N., Connolly, E. J., & Boutwell, B. B. (2019). Genetic and environmental contributions to the association between violent victimization and major depressive disorder. *Personality and Individual Differences*. <span class="doi">doi: 10.1016/j.paid.2018.05.034</span></cite> (NLSY79, NLSYC/YA)</li>
 
 <li value=72><cite>Johansson, O. (2017). Special Needs Children and Sibling Spillover Effects: Evidence from the National Longitudinal Study of Youth. (Unpublished Thesis) </cite> (NLSYC)</li>
 
@@ -33,24 +43,26 @@ Articles and Book Chapters
 
 <li value=70><cite>Garrison, S. M., & Rodgers, J. L. (2017). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *Multivariate Behavioral Research*, 52(1), 118-119, https://osf.io/xbkja/.</cite> (NLSY79)</li>
 
-<li value=69><cite>Kavish, N. A., Connolly, E. J., & Boutwell, B. B. (2017). Additive genetic and environmental contributions to the longitudinal association between violent victimization and depression.  *bioRxiv*. <span class="doi">doi: 10.1101/164194</span></cite> (NLSYC)</li>
+<li value=69><cite>Boutwell, B. B., Connolly, E. J., Barbaro, N., Shackelford, T. K., Petkovsek, M., & Beaver, K. M. (2017). On the genetic and environmental reasons why intelligence correlates with criminal victimization.  *Intelligence*. <span class="doi">doi: 10.1101/113712</span></cite> (NLSYC)</li>
 
-<li value=68><cite>Boutwell, B. B., Connolly, E. J., Barbaro, N., Shackelford, T. K., Petkovsek, M., & Beaver, K. M. (2017). On the genetic and environmental reasons why intelligence correlates with criminal victimization.  *Intelligence*. <span class="doi">doi: 10.1101/113712</span></cite> (NLSYC)</li>
+<li value=68><cite>Hadd, A. R. & Rodgers, J. L. (2017). Intelligence, income, and education as potential influences on a child's home environment: A (maternal) sibling-comparison design. *Developmental Psychology*. <span class="doi">doi: 10.1037/dev0000320</span></cite> (NLSY79; NLSYC)</li>
 
-<li value=67><cite>Hadd, A. R. & Rodgers, J. L. (2017). Intelligence, income, and education as potential influences on a child's home environment: A (maternal) sibling-comparison design. *Developmental Psychology*. <span class="doi">doi: 10.1037/dev0000320</span></cite> (NLSY79; NLSYC)</li>
+<li value=67><cite>Goodnight, J. A., Donahue, K. L., Waldman, I. D., Van Hulle, C. A., Rathouz, P. J., Lahey, B. B., & D'Onofrio, B. M. (2016). Genetic and environmental contributions to associations between infant fussy temperament and antisocial behavior in childhood and adolescence. *Behavior Genetics*. <span class="doi">doi: 10.1007/s10519-016-9794-2</span></cite> (NLSY79; NLSYC)</li>
 
-<li value=66><cite>Goodnight, J. A., Donahue, K. L., Waldman, I. D., Van Hulle, C. A., Rathouz, P. J., Lahey, B. B., & D'Onofrio, B. M. (2016). Genetic and environmental contributions to associations between infant fussy temperament and antisocial behavior in childhood and adolescence. *Behavior Genetics*. <span class="doi">doi: 10.1007/s10519-016-9794-2</span></cite> (NLSY79; NLSYC)</li>
+<li value=66><cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence, 59*, 139-156. <span class="doi">doi: 10.1016/j.intell.2016.08.008</span></cite> (NLSY79; NLSYC)</li>
 
-<li value=65><cite>Garrison, S. M., Rodgers, J. L. (2016) Casting doubt on the causal link between intelligence and age at first intercourse: A cross-generational sibling comparison design using the NLSY. *Intelligence, 59*, 139-156. <span class="doi">doi: 10.1016/j.intell.2016.08.008</span></cite> (NLSY79; NLSYC)</li>
+<li value=65><cite>Brauer, J. R. (2016) [Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.](https://dx.doi.org/10.1111/jora.12283) *Journal of Research on Adolescence*. <span class="doi">doi: 10.1111/jora.12283</span></cite> (NLSYC)</li>
 
-<li value=64><cite>Brauer, J. R. (2016) [Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.](https://dx.doi.org/10.1111/jora.12283) *Journal of Research on Adolescence*. <span class="doi">doi: 10.1111/jora.12283</span></cite> (NLSYC)</li>
+<li value=64><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](https://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <span class="doi">doi: 10.1007/s10519-016-9785-3</span></cite> (NLSY79; NLSYC)</li>
 
-<li value=63><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](https://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <span class="doi">doi: 10.1007/s10519-016-9785-3</span></cite> (NLSY79; NLSYC)</li>
+<li value=63><cite>Garrison, S. Mason (2016) Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters Thesis, Vanderbilt University.</cite> (NLSY79)</li>
 
-<li value=62><cite>Garrison, S. Mason (2016) Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters Thesis, Vanderbilt University.</cite> (NLSY79)</li>
+<li value=62><cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.](https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_Gene-Environment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <span class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</span></cite> (NLSYC)</li>
 
-<li value=61><cite>Connolly, E. J., Beaver, K. M. (2015) [Assessing the Salience of Gene-Environment Interplay in the Development of Anger, Family Conflict, and Physical Violence: A Biosocial Test of General Strain Theory.](https://www.researchgate.net/publication/283794343_Assessing_the_Salience_of_Gene-Environment_Interplay_in_the_Development_of_Anger_Family_Conflict_and_Physical_Violence_A_Biosocial_Test_of_General_Strain_Theory) *Journal of Criminal Justice*. <span class="doi">doi: 10.1016/j.jcrimjus.2015.11.001.</span></cite> (NLSYC)</li>
-
+<li value=61><cite>E.J. Connolly, K.M. Beaver
+Prenatal caloric intake and the development of academic achievement among US children from ages 5 to 14
+Child Development, 86 (2015), pp. 1738-1758 </cite> (NLSYC/YA)</li>
+  
 <li value=60><cite>Connolly, E. J., Schwartz, J. A., Nedelec, J. L., Beaver, K. M., & Barnes, J. C. (2015). [Different Slopes for Different Folks: Genetic Influences on Growth in Delinquent Peer Association and Delinquency During Adolescence.](https://link.springer.com/article/10.1007/s10964-015-0299-8) *Journal of Youth and Adolescence*, 1-15.</cite> (NLSYC)</li>
 
 <li value=59><cite>Vaughan, E. B., Van Hulle, C. A., Beasley, W. H., Rodgers, J. L., & D'Onofrio, B. M. (2015). [Clarifying the associations between age at menarche and adolescent emotional and behavioral problems.](https://pubmed.ncbi.nlm.nih.gov/25687264/) *Journal of Youth and Adolescence, 44*(4), 922-39. <span class="doi">doi: 10.1007/s10964-015-0255-7.</span></cite> (NLSY79; NLSYC)</li>
