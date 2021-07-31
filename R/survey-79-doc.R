@@ -29,8 +29,7 @@
 #' if not.  The values usually agree, but not always.
 #' These two separated variables are available for download,
 #' but withheld from the R package
-#' (otherwise we would exceed CRAN's maximum size)
-#'
+#' (otherwise we would exceed CRAN's maximum size).
 #'
 #' The exact *date* of birth isn't public (only the subject's *month* of birth).
 #' To balance the downward bias of two weeks, their birthday is set to the
