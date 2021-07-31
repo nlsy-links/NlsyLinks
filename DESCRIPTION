@@ -18,7 +18,7 @@ URL: https://nlsy-links.github.io/NlsyLinks/, https://github.com/nlsy-links/Nlsy
     https://groups.google.com/forum/#!forum/nlsy-links
 BugReports: https://github.com/nlsy-links/NlsyLinks/issues
 Depends:
-    R (>= 3.0.0),
+    R (>= 3.5.0),
     stats
 Imports:
     lavaan,
