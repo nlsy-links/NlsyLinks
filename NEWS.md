@@ -123,7 +123,7 @@ New Features:
 * Methods & functions associated with the AceEstimate class.
 * SubjectDetails79 dataset for Gen2.
 * ReadCsvNlsy79 function.
-* Validation functions: (a) OutComeDataset
+* Validation functions: (a) OutcomeDataset
 * Column Utilities: (a) VerifyColumnExists, (c) RenameNlsyColumn
 
 Version 0.19 (2012-03-10)
