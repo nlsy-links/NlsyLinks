@@ -70,3 +70,4 @@
 ^documentation-peek.pdf$
 ^doc$
 ^codecov\.yml$
+^CRAN-RELEASE$
