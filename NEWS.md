@@ -1,9 +1,10 @@
-Version 2.1.0 (2021-07-25)
+Version 2.2.0 (2021-07-25)
 ------------------------------------------------------------------------------
 Updates:
-* [pkgdown](https://hadley.github.io/pkgdown/) documentation
+* [pkgdown](https://pkgdown.r-lib.org/) documentation
 * Incorporate more Nlsy97 info
 * Rename dataset `SurveyDate` to `Survey79`.
+* In `Survey79`, expose only one age variable to save space to stay under CRAN's size limit.
 
 
 Version 2.0.5 (2016-03-17)
