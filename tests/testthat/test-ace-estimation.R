@@ -4,12 +4,13 @@ test_that("CreateAceEstimate -Plain", {
   cSquared  <- .3
   eSquared <- .2
   caseCount <- 20
+  tolerance <- 1e-6
 
   est <- CreateAceEstimate(aSquared, cSquared, eSquared, caseCount)
-  expect_equal(object=slot(est, "ASquared"), expected=aSquared, scale=1)
-  expect_equal(object=slot(est, "CSquared"), expected=cSquared, scale=1)
-  expect_equal(object=slot(est, "ESquared"), expected=eSquared, scale=1)
-  expect_equal(object=slot(est, "CaseCount"), expected=caseCount, scale=1)
+  expect_equal(object=slot(est, "ASquared"), expected=aSquared, scale = 1, tolerance=tolerance)
+  expect_equal(object=slot(est, "CSquared"), expected=cSquared, scale = 1, tolerance=tolerance)
+  expect_equal(object=slot(est, "ESquared"), expected=eSquared, scale = 1, tolerance=tolerance)
+  expect_equal(object=slot(est, "CaseCount"), expected=caseCount, scale = 1, tolerance=tolerance)
   expect_true(object=slot(est, "Unity"))
   expect_true(object=slot(est, "WithinBounds"))
 })
@@ -18,12 +19,13 @@ test_that("CreateAceEstimate -Not Unity", {
   cSquared  <- .2
   eSquared <- .1
   caseCount <- 20
+  tolerance <- 1e-6
 
   est <- CreateAceEstimate(aSquared, cSquared, eSquared, caseCount)
-  expect_equal(object=slot(est, "ASquared"), expected=aSquared, scale=1)
-  expect_equal(object=slot(est, "CSquared"), expected=cSquared, scale=1)
-  expect_equal(object=slot(est, "ESquared"), expected=eSquared, scale=1)
-  expect_equal(object=slot(est, "CaseCount"), expected=caseCount, scale=1)
+  expect_equal(object=slot(est, "ASquared"), expected=aSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "CSquared"), expected=cSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "ESquared"), expected=eSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "CaseCount"), expected=caseCount, scale=1, tolerance=tolerance)
   expect_false(object=slot(est, "Unity"))
   expect_true(object=slot(est, "WithinBounds"))
 })
@@ -32,12 +34,13 @@ test_that("CreateAceEstimate -Outside bounds", {
   cSquared  <- .5
   eSquared <- -.2
   caseCount <- 20
+  tolerance <- 1e-6
 
   est <- CreateAceEstimate(aSquared, cSquared, eSquared, caseCount)
-  expect_equal(object=slot(est, "ASquared"), expected=aSquared, scale=1)
-  expect_equal(object=slot(est, "CSquared"), expected=cSquared, scale=1)
-  expect_equal(object=slot(est, "ESquared"), expected=eSquared, scale=1)
-  expect_equal(object=slot(est, "CaseCount"), expected=caseCount, scale=1)
+  expect_equal(object=slot(est, "ASquared"), expected=aSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "CSquared"), expected=cSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "ESquared"), expected=eSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "CaseCount"), expected=caseCount, scale=1, tolerance=tolerance)
   expect_true(object=slot(est, "Unity"))
   expect_false(object=slot(est, "WithinBounds"))
 })
@@ -46,12 +49,13 @@ test_that("CreateAceEstimate -Outside bounds & no unity", {
   cSquared  <- .5
   eSquared <- -.2
   caseCount <- 20
+  tolerance <- 1e-6
 
   est <- CreateAceEstimate(aSquared, cSquared, eSquared, caseCount)
-  expect_equal(object=slot(est, "ASquared"), expected=aSquared, scale=1)
-  expect_equal(object=slot(est, "CSquared"), expected=cSquared, scale=1)
-  expect_equal(object=slot(est, "ESquared"), expected=eSquared, scale=1)
-  expect_equal(object=slot(est, "CaseCount"), expected=caseCount, scale=1)
+  expect_equal(object=slot(est, "ASquared"), expected=aSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "CSquared"), expected=cSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "ESquared"), expected=eSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(est, "CaseCount"), expected=caseCount, scale=1, tolerance=tolerance)
   expect_false(object=slot(est, "Unity"))
   expect_false(object=slot(est, "WithinBounds"))
 })

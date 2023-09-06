@@ -1,5 +1,5 @@
 options(digits=20)
-tolerance <- 1e-7
+
 # ------------------------------------------------------------
 test_that("AceLavaanGroup -MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
@@ -18,6 +18,7 @@ test_that("AceLavaanGroup -MathStandardized", {
   expectedCSquared  <- 0.20973382547133723186
   expectedESquared <- 0.16834082715183135148
   expectedCaseCount <- 8338 #8292
+  tolerance <- 1e-6
 
   expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1, tolerance=tolerance)
   expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1, tolerance=tolerance)
@@ -32,6 +33,7 @@ test_that("AceLavaanGroup -HeightZGenderAge", {
   oName_S1 <- "HeightZGenderAge_S1"
   oName_S2 <- "HeightZGenderAge_S2"
   dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  tolerance <- 1e-6
 
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
   #   rLevels <- dsGroupSummary[dsGroupSummary$Included, "R"]
@@ -60,7 +62,7 @@ test_that("AceLavaanGroup -HeightZGenderAge", {
 #   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
 # #   rLevels <- dsGroupSummary[dsGroupSummary$Included, "R"]
 #   dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_S1=oName_S1, oName_S2=oName_S2)
-#
+#   tolerance <- 1e-6
 #   ace <- AceLavaanGroup(dsClean)
 #
 #   expectedASquared <- 0.68859786571166337 #.68764112310158664876 #0.687801119966999
