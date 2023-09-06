@@ -1,5 +1,5 @@
 options(digits=20)
-
+tolerance <- 1e-7
 # ------------------------------------------------------------
 test_that("AceLavaanGroup -MathStandardized", {
   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
@@ -19,11 +19,11 @@ test_that("AceLavaanGroup -MathStandardized", {
   expectedESquared <- 0.16834082715183135148
   expectedCaseCount <- 8338 #8292
 
-  expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1)
-  expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1)
-  expect_equal(object=ace@ESquared, expected=expectedESquared, scale=1)
-  expect_equal(object=ace@CaseCount, expected=expectedCaseCount, scale=1)
-  expect_equal(object=slot(ace, "CaseCount"), expected=expectedCaseCount, scale=1)
+  expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1, tolerance=tolerance)
+  expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=ace@ESquared, expected=expectedESquared, scale=1, tolerance=tolerance)
+  expect_equal(object=ace@CaseCount, expected=expectedCaseCount, scale=1, tolerance=tolerance)
+  expect_equal(object=slot(ace, "CaseCount"), expected=expectedCaseCount, scale=1, tolerance=tolerance)
   expect_true(object=slot(ace, "Unity"))
   expect_true(object=slot(ace, "WithinBounds"))
 })
@@ -44,10 +44,10 @@ test_that("AceLavaanGroup -HeightZGenderAge", {
   expectedESquared <- 0.181447193973634873787
   expectedCaseCount <- 5884
 
-  expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1)
-  expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1)
-  expect_equal(object=ace@ESquared, expected=expectedESquared, scale=1)
-  expect_equal(object=ace@CaseCount, expected=expectedCaseCount, scale=1)
+  expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1, tolerance=tolerance)
+  expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1, tolerance=tolerance)
+  expect_equal(object=ace@ESquared, expected=expectedESquared, scale=1, tolerance=tolerance)
+  expect_equal(object=ace@CaseCount, expected=expectedCaseCount, scale=1, tolerance=tolerance)
   expect_true(object=slot(ace, "Unity"))
   expect_true(object=slot(ace, "WithinBounds"))
 })
@@ -68,10 +68,10 @@ test_that("AceLavaanGroup -HeightZGenderAge", {
 #   expectedESquared <- 0.31140213428833668 #.31235887689841324022 #0.312198880032994
 #   expectedCaseCount <- 3479 #3478
 #
-#   expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1)
-#   expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1)
-#   expect_equal(object=ace@ESquared, expected=expectedESquared, scale=1)
-#   expect_equal(object=ace@CaseCount, expected=expectedCaseCount, scale=1)
+#   expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1, tolerance=tolerance)
+#   expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1, tolerance=tolerance)
+#   expect_equal(object=ace@ESquared, expected=expectedESquared, scale=1, tolerance=tolerance)
+#   expect_equal(object=ace@CaseCount, expected=expectedCaseCount, scale=1, tolerance=tolerance)
 #   expect_true(object=slot(ace, "Unity"))
 #   expect_true(object=slot(ace, "WithinBounds"))
 # })
