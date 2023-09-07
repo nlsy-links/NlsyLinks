@@ -23,3 +23,5 @@ Thumbs.db
 Desktop.ini
 /doc/
 /Meta/
+tests/spelling.Rout.save
+vignettes/nlsy-ace.knit.md

@@ -27,44 +27,76 @@
 #' @examples
 #' \dontrun{
 #' filePathGen2 <- "~/Nlsy/Datasets/gen2-birth.csv"
-#' ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
+#' ds <- ReadCsvNlsy79Gen2(filePath = filePathGen2)
 #' }
-
-ReadCsvNlsy79Gen1 <- function( filePath, dsExtract=utils::read.csv(filePath) ) {
+ReadCsvNlsy79Gen1 <- function(filePath,
+                              dsExtract = utils::read.csv(filePath)) {
   d <- NlsyLinks::SubjectDetails79
-  if( !("R0000100" %in% colnames(dsExtract)) ) stop("The NLSY variable 'R0000100' should be present, but was not found.")
+  if (!("R0000100" %in%
+    colnames(dsExtract))) {
+    stop("The NLSY variable 'R0000100' should be present, but was not found.")
+  }
 
-  colnames(dsExtract)[colnames(dsExtract)=='R0000100'] <- "SubjectID"
+  colnames(dsExtract)[colnames(dsExtract) == "R0000100"] <-
+    "SubjectID"
   dsExtract$Generation <- 1
-  dsExtract$SubjectTag <- CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
+  dsExtract$SubjectTag <-
+    CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
 
-  dsWithExtended <- d[d$Generation==1, c("SubjectTag", "ExtendedID")]
-  ds <- merge(x=dsExtract, y=dsWithExtended, by="SubjectTag", all.x=TRUE, all.y=FALSE)
+  dsWithExtended <-
+    d[d$Generation == 1, c("SubjectTag", "ExtendedID")]
+  ds <-
+    merge(
+      x = dsExtract,
+      y = dsWithExtended,
+      by = "SubjectTag",
+      all.x = TRUE,
+      all.y = FALSE
+    )
 
-  firstColumns <- c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
+  firstColumns <-
+    c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
   remaining <- setdiff(colnames(ds), firstColumns)
   ds <- ds[, c(firstColumns, remaining)]
 
-  return( ds )
+  return(ds)
 }
-ReadCsvNlsy79Gen2 <- function( filePath, dsExtract=utils::read.csv(filePath) ) {
-  d <- NlsyLinks::SubjectDetails79
-  #   dsExtract <- read.csv(filePath)
-  if( !("C0000100" %in% colnames(dsExtract)) ) stop("The NLSY variable 'C0000100' should be present, but was not found.")
-  if( !("C0000200" %in% colnames(dsExtract)) ) stop("The NLSY variable 'C0000200' should be present, but was not found.")
+ReadCsvNlsy79Gen2 <-
+  function(filePath,
+           dsExtract = utils::read.csv(filePath)) {
+    d <- NlsyLinks::SubjectDetails79
+    #   dsExtract <- read.csv(filePath)
+    if (!("C0000100" %in% colnames(dsExtract))) {
+      stop("The NLSY variable 'C0000100' should be present, but was not found.")
+    }
+    if (!("C0000200" %in% colnames(dsExtract))) {
+      stop("The NLSY variable 'C0000200' should be present, but was not found.")
+    }
 
-  colnames(dsExtract)[colnames(dsExtract)=='C0000100'] <- "SubjectID"
-  colnames(dsExtract)[colnames(dsExtract)=='C0000200'] <- "SubjectTagOfMother"
-  dsExtract$SubjectTagOfMother <- dsExtract$SubjectTagOfMother * 100
-  dsExtract$Generation <- 2
-  dsExtract$SubjectTag <- dsExtract$SubjectID #CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
+    colnames(dsExtract)[colnames(dsExtract) == "C0000100"] <-
+      "SubjectID"
+    colnames(dsExtract)[colnames(dsExtract) == "C0000200"] <-
+      "SubjectTagOfMother"
+    dsExtract$SubjectTagOfMother <- dsExtract$SubjectTagOfMother * 100
+    dsExtract$Generation <- 2
+    dsExtract$SubjectTag <-
+      dsExtract$SubjectID # CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
 
-  dsWithExtended <- d[d$Generation==2, c("SubjectTag", "ExtendedID")]
-  ds <- merge(x=dsExtract, y=dsWithExtended, by="SubjectTag", all.x=TRUE, all.y=FALSE)
+    dsWithExtended <-
+      d[d$Generation == 2, c("SubjectTag", "ExtendedID")]
+    ds <-
+      merge(
+        x = dsExtract,
+        y = dsWithExtended,
+        by = "SubjectTag",
+        all.x = TRUE,
+        all.y = FALSE
+      )
 
-  firstColumns <- c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
-  remaining <- setdiff(colnames(ds), firstColumns)
-  ds <- ds[, c(firstColumns, remaining)]
+    firstColumns <-
+      c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
+    remaining <- setdiff(colnames(ds), firstColumns)
+    ds <- ds[, c(firstColumns, remaining)]
 
-  return( ds )
-}
+    return(ds)
+  }

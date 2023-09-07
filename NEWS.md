@@ -143,7 +143,6 @@ Version 0.10 (2012-01-16)
 * Initial submission to CRAN
 * Contains Nlsy79 Gen2 sibling links
 
-GitHub Commits and Releases
-------------------------------------------------------------------------------
+# GitHub Commits and Releases
 * For a detailed change log, please see https://github.com/nlsy-links/NlsyLinks/commits/master.
 * For a list of the major releases, please see https://github.com/nlsy-links/NlsyLinks/releases.

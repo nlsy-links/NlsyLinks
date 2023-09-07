@@ -35,12 +35,12 @@ The \code{outcomeNames} parameter must:
 }
 }
 \examples{
-library(NlsyLinks) #Load the package into the current R session.
+library(NlsyLinks) # Load the package into the current R session.
 ds <- ExtraOutcomes79
 outcomeNames <- c("MathStandardized", "WeightZGenderAge")
-ValidateOutcomeDataset(dsOutcome=ds, outcomeNames=outcomeNames) #Returns TRUE.
+ValidateOutcomeDataset(dsOutcome = ds, outcomeNames = outcomeNames) # Returns TRUE.
 outcomeNamesBad <- c("MathMisspelled", "WeightZGenderAge")
-#ValidateOutcomeDataset(dsOutcome=ds, outcomeNames=outcomeNamesBad) #Throws error.
+# ValidateOutcomeDataset(dsOutcome=ds, outcomeNames=outcomeNamesBad) #Throws error.
 
 }
 \author{

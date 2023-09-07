@@ -88,7 +88,7 @@
 #'
 #' @examples
 #' library(NlsyLinks) # Load the package into the current R session.
-#' hist(Links97PairExpanded$R)   # Declare a concise variable name.
+#' hist(Links97PairExpanded$R) # Declare a concise variable name.
 #'
 #' # write.csv(
 #' #   Links97PairExpanded,

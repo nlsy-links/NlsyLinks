@@ -30,53 +30,52 @@
 #'
 #' @examples
 #' library(NlsyLinks) # Load the package into the current R session.
-#' dsLinks  <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-#' dsLinks  <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] # Use only Gen2 Siblings (NLSY79-C)
+#' dsLinks <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
+#' dsLinks <- dsLinks[dsLinks$RelationshipPath == "Gen2Siblings", ] # Use only Gen2 Siblings (NLSY79-C)
 #'
-#' oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
-#' oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+#' oName_S1 <- "MathStandardized_S1" # Stands for Outcome1
+#' oName_S2 <- "MathStandardized_S2" # Stands for Outcome2
 #'
 #' dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
-#' dsClean <- CleanSemAceDataset(dsDirty=dsLinks, dsGroupSummary, oName_S1, oName_S2)
+#' dsClean <- CleanSemAceDataset(dsDirty = dsLinks, dsGroupSummary, oName_S1, oName_S2)
 #'
 #' ace <- AceLavaanGroup(dsClean)
 #' ace
 #'
-#' #Should produce:
+#' # Should produce:
 #' # [1] "Results of ACE estimation: [show]"
 #' #     ASquared     CSquared     ESquared    CaseCount
 #' #    0.6681874    0.1181227    0.2136900 8390.0000000
 #'
-#' library(lavaan) #Load the package to access methods of the lavaan class.
+#' library(lavaan) # Load the package to access methods of the lavaan class.
 #' GetDetails(ace)
 #'
-#' #Exmaine fit stats like Chi-Squared, RMSEA, CFI, etc.
-#' fitMeasures(GetDetails(ace)) #The function 'fitMeasures' is defined in the lavaan package.
+#' # Exmaine fit stats like Chi-Squared, RMSEA, CFI, etc.
+#' fitMeasures(GetDetails(ace)) # The function 'fitMeasures' is defined in the lavaan package.
 #'
-#' #Examine low-level details like each group's individual parameter estimates and standard errors.
+#' # Examine low-level details like each group's individual parameter estimates and standard errors.
 #' summary(GetDetails(ace))
 #'
-#' #Extract low-level details. This may be useful when programming simulations.
-#' inspect(GetDetails(ace), what="converged") #The lavaan package defines 'inspect'.
-#' inspect(GetDetails(ace), what="coef")
-
+#' # Extract low-level details. This may be useful when programming simulations.
+#' inspect(GetDetails(ace), what = "converged") # The lavaan package defines 'inspect'.
+#' inspect(GetDetails(ace), what = "coef")
 AceLavaanGroup <-
-function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
-  # library(lavaan)
-  # library(stringr)
+  function(dsClean, estimateA = TRUE, estimateC = TRUE, printOutput = FALSE) {
+    # library(lavaan)
+    # library(stringr)
 
-  rLevels <- base::sort(base::unique(dsClean$R))
-  #These five lines enumerate the path coefficient labels to be inserted into the model statement.
-  #rString <- stringr::str_c(rLevels, collapse=", ") #The output is typically "1, 0.5, 0.375, 0.25"
-  rString <- base::paste(rLevels, collapse=", ") #The output is typically "1, 0.5, 0.375, 0.25"
-  # aString <- str_c(rep("a", length(rLevels)), collapse=",") #The output is typically "a,a,a,a"
-  # cString <- str_c(rep("c", length(rLevels)), collapse=",") #The output is typically "c,c,c,c"
-  # eString <- str_c(rep("e", length(rLevels)), collapse=",") #The output is typically "e,e,e,e"
-  # intString <- str_c(rep("int", length(rLevels)), collapse=",") #The output is typically "int,int,int,int"
-  groupCount <- base::length(rLevels)
+    rLevels <- base::sort(base::unique(dsClean$R))
+    # These five lines enumerate the path coefficient labels to be inserted into the model statement.
+    # rString <- stringr::str_c(rLevels, collapse=", ") #The output is typically "1, 0.5, 0.375, 0.25"
+    rString <- base::paste(rLevels, collapse = ", ") # The output is typically "1, 0.5, 0.375, 0.25"
+    # aString <- str_c(rep("a", length(rLevels)), collapse=",") #The output is typically "a,a,a,a"
+    # cString <- str_c(rep("c", length(rLevels)), collapse=",") #The output is typically "c,c,c,c"
+    # eString <- str_c(rep("e", length(rLevels)), collapse=",") #The output is typically "e,e,e,e"
+    # intString <- str_c(rep("int", length(rLevels)), collapse=",") #The output is typically "int,int,int,int"
+    groupCount <- base::length(rLevels)
 
-  #Generate the model statements that will exist in all models (ie, ACE, AE, AC, & E)
-  modelBase <- base::paste("
+    # Generate the model statements that will exist in all models (ie, ACE, AE, AC, & E)
+    modelBase <- base::paste("
     O1 ~~ 0 * O2                          #The manifest variables are uncorrelated.
     O1 + O2 ~ rep('int',", groupCount, ") * 1           #The manifest variables are fed the same intercept (for all groups).
 
@@ -90,10 +89,10 @@ function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
   ")
 
 
-  #Generate the model statements that will exist in all models estimating the A component.
-  modelA <- base::paste("
-    A1 =~ rep('a',", groupCount,") * O1   #Declare the contributions of A to Subject1 (for all groups).
-    A2 =~ rep('a',", groupCount,") * O2   #Declare the contributions of A to Subject2 (for all groups).
+    # Generate the model statements that will exist in all models estimating the A component.
+    modelA <- base::paste("
+    A1 =~ rep('a',", groupCount, ") * O1   #Declare the contributions of A to Subject1 (for all groups).
+    A2 =~ rep('a',", groupCount, ") * O2   #Declare the contributions of A to Subject2 (for all groups).
     A1 ~~ c(", rString, ") * A2           #Declare the genetic relatedness between Subject1 and Subject2. This coefficient differs for all groups.
 
     A1 ~~ 1 * A1                          #The As have a variance of 1
@@ -101,10 +100,10 @@ function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
     a2 := a * a                           #Declare a^2 for easy point and variance estimation.
   ")
 
-  #Generate the model statements that will exist in all models estimating the C component.
-  modelC <- base::paste("
-    C1 =~ rep('c',", groupCount,") * O1   #Declare the contributions of C to Subject1 (for all groups).
-    C2 =~ rep('c',", groupCount,") * O2   #Declare the contributions of C to Subject2 (for all groups).
+    # Generate the model statements that will exist in all models estimating the C component.
+    modelC <- base::paste("
+    C1 =~ rep('c',", groupCount, ") * O1   #Declare the contributions of C to Subject1 (for all groups).
+    C2 =~ rep('c',", groupCount, ") * O2   #Declare the contributions of C to Subject2 (for all groups).
 
     C1 ~~ 1 * C2                          #The Cs are perfectly correlated. !!Note this restricts the sample to immediate families!!
     C1 ~~ 1 * C1                          #The Cs have a variance of 1
@@ -112,51 +111,51 @@ function( dsClean, estimateA=TRUE, estimateC=TRUE, printOutput=FALSE) {
     c2 := c * c                           #Declare c^2 for easy point and variance estimation.
   ")
 
-  #If the A/C component's excluded: (1) overwrite the code and (2) declare a2/c2, so the parameter value can be retrieved later without if statements.
-  if( !estimateA ) modelA <- "\n a2 := 0 \n"
-  if( !estimateC ) modelC <- "\n c2 := 0 \n"
+    # If the A/C component's excluded: (1) overwrite the code and (2) declare a2/c2, so the parameter value can be retrieved later without if statements.
+    if (!estimateA) modelA <- "\n a2 := 0 \n"
+    if (!estimateC) modelC <- "\n c2 := 0 \n"
 
-  model <- base::paste(modelBase, modelA, modelC) #Assemble the three parts of the model.
+    model <- base::paste(modelBase, modelA, modelC) # Assemble the three parts of the model.
 
-  #Run the model and review the results
-  fit <- lavaan::lavaan(model, data=dsClean, group="GroupID", missing="listwise", information="observed")
-  if( printOutput ) lavaan::summary(fit)
-  #lavaanify(model) #lavaanify(modelA)
-  #parseModelString(modelA)
-  #lavaanNames(modelA)
-  #parTable(fit)
-  #parameterEstimates(fit)
-  #inspect(fit)
-  #names(fitMeasures(fit)) #str(fitMeasures(fit)[c("chisq", "df")])
-  if( printOutput ) print(paste("Chi Square: ", lavaan::fitMeasures(fit)[["chisq"]])) #Print the Chi Square value
+    # Run the model and review the results
+    fit <- lavaan::lavaan(model, data = dsClean, group = "GroupID", missing = "listwise", information = "observed")
+    if (printOutput) lavaan::summary(fit)
+    # lavaanify(model) #lavaanify(modelA)
+    # parseModelString(modelA)
+    # lavaanNames(modelA)
+    # parTable(fit)
+    # parameterEstimates(fit)
+    # inspect(fit)
+    # names(fitMeasures(fit)) #str(fitMeasures(fit)[c("chisq", "df")])
+    if (printOutput) print(paste("Chi Square: ", lavaan::fitMeasures(fit)[["chisq"]])) # Print the Chi Square value
 
-  #Extract the UNSCALED ACE components.
-  est <- lavaan::parameterEstimates(fit)
-  a2 <- est[est$label=="a2", "est"]
-  c2 <- est[est$label=="c2", "est"]
-  e2 <- est[est$label=="e2", "est"]
+    # Extract the UNSCALED ACE components.
+    est <- lavaan::parameterEstimates(fit)
+    a2 <- est[est$label == "a2", "est"]
+    c2 <- est[est$label == "c2", "est"]
+    e2 <- est[est$label == "e2", "est"]
 
-  #variogram-like diagnostics
-  # plot(dsGroupSummary$R, dsGroupSummary$Covariance, pch=(4-3*dsGroupSummary$Included))
-  # plot(dsGroupSummary$R, dsGroupSummary$Correlation, pch=(4-3*dsGroupSummary$Included))
-  # text(dsGroupSummary$PairCount, x=dsGroupSummary$R, y=dsGroupSummary$Correlation)
-  #
-  # ggplot(data=dsGroupSummary, aes(x=R, y=Correlation, label=PairCount, color=Included)) + #substitute(N == b, list(b=dsGroupSummary$PairCount)) )) + #geom_line()
-  #   layer(geom="line") + layer(geom="text") + scale_x_reverse(limits=c(1,0)) + scale_y_continuous(limits=c(0,1))
-  # ggplot(data=dsGroupSummary, aes(x=R, y=Covariance, label=PairCount, color=Included)) + #substitute(N == b, list(b=dsGroupSummary$PairCount)) )) + #geom_line()
-  #   layer(geom="line") + layer(geom="text") + scale_x_reverse(limits=c(1,0))
+    # variogram-like diagnostics
+    # plot(dsGroupSummary$R, dsGroupSummary$Covariance, pch=(4-3*dsGroupSummary$Included))
+    # plot(dsGroupSummary$R, dsGroupSummary$Correlation, pch=(4-3*dsGroupSummary$Included))
+    # text(dsGroupSummary$PairCount, x=dsGroupSummary$R, y=dsGroupSummary$Correlation)
+    #
+    # ggplot(data=dsGroupSummary, aes(x=R, y=Correlation, label=PairCount, color=Included)) + #substitute(N == b, list(b=dsGroupSummary$PairCount)) )) + #geom_line()
+    #   layer(geom="line") + layer(geom="text") + scale_x_reverse(limits=c(1,0)) + scale_y_continuous(limits=c(0,1))
+    # ggplot(data=dsGroupSummary, aes(x=R, y=Covariance, label=PairCount, color=Included)) + #substitute(N == b, list(b=dsGroupSummary$PairCount)) )) + #geom_line()
+    #   layer(geom="line") + layer(geom="text") + scale_x_reverse(limits=c(1,0))
 
-  components <- base::as.numeric(base::cbind(a2, c2, e2)[1,] / (a2 + c2 + e2)) #The 'as.numeric' gets rid of the vector labels.
-  if( printOutput ) base::print(components) #Print the unity-SCALED ace components.
-  caseCount <- base::nrow(dsClean)
-  details <- base::list(lavaan=fit)
-  #print(paste("R Levels excluded:",  stringr::str_c(rLevelsToExclude, collapse=", "), "; R Levels retained:", rString)) #Print the dropped & retained groups.
-  ace <- NlsyLinks::CreateAceEstimate(
-    aSquared  = components[1],
-    cSquared  = components[2],
-    eSquared  = components[3],
-    caseCount = caseCount,
-    details   = details
-  )
-  return( ace )
-}
+    components <- base::as.numeric(base::cbind(a2, c2, e2)[1, ] / (a2 + c2 + e2)) # The 'as.numeric' gets rid of the vector labels.
+    if (printOutput) base::print(components) # Print the unity-SCALED ace components.
+    caseCount <- base::nrow(dsClean)
+    details <- base::list(lavaan = fit)
+    # print(paste("R Levels excluded:",  stringr::str_c(rLevelsToExclude, collapse=", "), "; R Levels retained:", rString)) #Print the dropped & retained groups.
+    ace <- NlsyLinks::CreateAceEstimate(
+      aSquared  = components[1],
+      cSquared  = components[2],
+      eSquared  = components[3],
+      caseCount = caseCount,
+      details   = details
+    )
+    return(ace)
+  }

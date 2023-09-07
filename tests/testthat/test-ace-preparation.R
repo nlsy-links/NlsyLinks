@@ -1,66 +1,66 @@
 # ------------------------------------------------------------
 test_that("CleanSemAceDataset MathStandardized", {
-  dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
+  dsFull <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
   oName_S1 <- "MathStandardized_S1"
   oName_S2 <- "MathStandardized_S2"
-  dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  dsFull <- dsFull[dsFull$RelationshipPath == "Gen2Siblings", ]
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
 
-  dsClean <- CleanSemAceDataset( dsDirty=dsFull, dsGroupSummary, oName_S1, oName_S2, rName="R" )
+  dsClean <- CleanSemAceDataset(dsDirty = dsFull, dsGroupSummary, oName_S1, oName_S2, rName = "R")
 
   expectedRowCount <- 8338
-  expectedColumnNames <- c('R', 'O1', 'O2', 'GroupID')
+  expectedColumnNames <- c("R", "O1", "O2", "GroupID")
   expectedCompleteRows <- expectedRowCount
   expectedMeanR <- 0.41858059486687454465
   expectedMeanO1 <- 98.242084432717675213
   expectedMeanO2 <- 98.6032621731830119
   expectedMeanGroupID <- 2.3410889901655074219
 
-  expect_equal(object=nrow(dsClean), expected=expectedRowCount, scale=1)
-  expect_equal(object=colnames(dsClean), expected=expectedColumnNames, scale=1)
-  expect_equal(object=mean(dsClean$R), expected=expectedMeanR, scale=1)
-  expect_equal(object=mean(dsClean$O1), expected=expectedMeanO1, scale=1)
-  expect_equal(object=mean(dsClean$O2), expected=expectedMeanO2, scale=1)
-  expect_equal(object=mean(dsClean$GroupID), expected=expectedMeanGroupID, scale=1)
-  expect_equal(object=nrow(subset(dsClean, !is.na(R) & !is.na(O1) & !is.na(O2) & !is.na(GroupID))), expected=expectedCompleteRows, scale=1)
+  expect_equal(object = nrow(dsClean), expected = expectedRowCount, scale = 1)
+  expect_equal(object = colnames(dsClean), expected = expectedColumnNames, scale = 1)
+  expect_equal(object = mean(dsClean$R), expected = expectedMeanR, scale = 1)
+  expect_equal(object = mean(dsClean$O1), expected = expectedMeanO1, scale = 1)
+  expect_equal(object = mean(dsClean$O2), expected = expectedMeanO2, scale = 1)
+  expect_equal(object = mean(dsClean$GroupID), expected = expectedMeanGroupID, scale = 1)
+  expect_equal(object = nrow(subset(dsClean, !is.na(R) & !is.na(O1) & !is.na(O2) & !is.na(GroupID))), expected = expectedCompleteRows, scale = 1)
 })
 test_that("CleanSemAceDataset HeightZGenderAge", {
-  dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
+  dsFull <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
   oName_S1 <- "HeightZGenderAge_S1"
   oName_S2 <- "HeightZGenderAge_S2"
-  dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  dsFull <- dsFull[dsFull$RelationshipPath == "Gen2Siblings", ]
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
 
-  dsClean <- CleanSemAceDataset( dsDirty=dsFull, dsGroupSummary, oName_S1, oName_S2, rName="R" )
+  dsClean <- CleanSemAceDataset(dsDirty = dsFull, dsGroupSummary, oName_S1, oName_S2, rName = "R")
 
   expectedRowCount <- 5884
-  expectedColumnNames <- c('R', 'O1', 'O2', 'GroupID')
+  expectedColumnNames <- c("R", "O1", "O2", "GroupID")
   expectedCompleteRows <- expectedRowCount
   expectedMeanR <- 0.42118456832087014519
   expectedMeanO1 <- -0.0241219488333721
   expectedMeanO2 <- -0.0516293302405181
   expectedMeanGroupID <- 2.3613188307273964561
 
-  expect_equal(object=nrow(dsClean), expected=expectedRowCount, scale=1)
-  expect_equal(object=colnames(dsClean), expected=expectedColumnNames, scale=1)
-  expect_equal(object=mean(dsClean$R), expected=expectedMeanR, scale=1)
-  expect_equal(object=mean(dsClean$O1), expected=expectedMeanO1, scale=1)
-  expect_equal(object=mean(dsClean$O2), expected=expectedMeanO2, scale=1)
-  expect_equal(object=mean(dsClean$GroupID), expected=expectedMeanGroupID, scale=1)
-  expect_equal(object=nrow(subset(dsClean, !is.na(R) & !is.na(O1) & !is.na(O2) & !is.na(GroupID))), expected=expectedCompleteRows, scale=1)
+  expect_equal(object = nrow(dsClean), expected = expectedRowCount, scale = 1)
+  expect_equal(object = colnames(dsClean), expected = expectedColumnNames, scale = 1)
+  expect_equal(object = mean(dsClean$R), expected = expectedMeanR, scale = 1)
+  expect_equal(object = mean(dsClean$O1), expected = expectedMeanO1, scale = 1)
+  expect_equal(object = mean(dsClean$O2), expected = expectedMeanO2, scale = 1)
+  expect_equal(object = mean(dsClean$GroupID), expected = expectedMeanGroupID, scale = 1)
+  expect_equal(object = nrow(subset(dsClean, !is.na(R) & !is.na(O1) & !is.na(O2) & !is.na(GroupID))), expected = expectedCompleteRows, scale = 1)
 })
 
 # ------------------------------------------------------------
 test_that("Group Summary MathStandardized", {
-  dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_S1 <- "MathStandardized_S1" #Stands for Manifest1
-  oName_S2 <- "MathStandardized_S2" #Stands for Manifest2
+  dsFull <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
+  oName_S1 <- "MathStandardized_S1" # Stands for Manifest1
+  oName_S2 <- "MathStandardized_S2" # Stands for Manifest2
 
-  dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  dsFull <- dsFull[dsFull$RelationshipPath == "Gen2Siblings", ]
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
 
   expectedRowCount <- 5
-  expectedColumnNames <- c('R', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
+  expectedColumnNames <- c("R", "Included", "PairCount", "O1Mean", "O2Mean", "O1Variance", "O2Variance", "O1O2Covariance", "Correlation", "Determinant", "PosDefinite")
   expectedR <- c(.25, .375, .5, .75, 1)
   expectedIncluded <- c(T, T, T, F, T)
   expectedPairCount <- c(2689, 137, 5491, 2, 21)
@@ -73,30 +73,30 @@ test_that("Group Summary MathStandardized", {
   expectedDeterminant <- c(17303.4585137582, 19327.7354817445, 21037.6417395154, 0, 9807.93306547619)
   expectedPosDefinite <- expectedIncluded
 
-  expect_equal(object=nrow(dsGroupSummary), expected=expectedRowCount, scale=1)
-  expect_equal(object=colnames(dsGroupSummary), expected=expectedColumnNames, scale=1)
-  expect_equal(object=dsGroupSummary$R, expected=expectedR, scale=1)
-  expect_equal(object=dsGroupSummary$Included, expected=expectedIncluded, scale=1)
-  expect_equal(object=dsGroupSummary$PairCount, expected=expectedPairCount, scale=1)
-  expect_equal(object=dsGroupSummary$O1Mean, expected=expectedO1Mean, scale=1)
-  expect_equal(object=dsGroupSummary$O2Mean, expected=expectedO2Mean, scale=1)
-  expect_equal(object=dsGroupSummary$O1Variance, expected=expectedO1Variance, scale=1)
-  expect_equal(object=dsGroupSummary$O2Variance, expected=expectedO2Variance, scale=1)
-  expect_equal(object=dsGroupSummary$O1O2Covariance, expected=expectedO1O2Covariance, scale=1)
-  expect_equal(object=dsGroupSummary$Correlation, expected=expectedCorrelation, scale=1)
-  expect_equal(object=dsGroupSummary$Determinant, expected=expectedDeterminant, scale=1)
-  expect_equal(object=dsGroupSummary$PosDefinite, expected=expectedPosDefinite, scale=1)
+  expect_equal(object = nrow(dsGroupSummary), expected = expectedRowCount, scale = 1)
+  expect_equal(object = colnames(dsGroupSummary), expected = expectedColumnNames, scale = 1)
+  expect_equal(object = dsGroupSummary$R, expected = expectedR, scale = 1)
+  expect_equal(object = dsGroupSummary$Included, expected = expectedIncluded, scale = 1)
+  expect_equal(object = dsGroupSummary$PairCount, expected = expectedPairCount, scale = 1)
+  expect_equal(object = dsGroupSummary$O1Mean, expected = expectedO1Mean, scale = 1)
+  expect_equal(object = dsGroupSummary$O2Mean, expected = expectedO2Mean, scale = 1)
+  expect_equal(object = dsGroupSummary$O1Variance, expected = expectedO1Variance, scale = 1)
+  expect_equal(object = dsGroupSummary$O2Variance, expected = expectedO2Variance, scale = 1)
+  expect_equal(object = dsGroupSummary$O1O2Covariance, expected = expectedO1O2Covariance, scale = 1)
+  expect_equal(object = dsGroupSummary$Correlation, expected = expectedCorrelation, scale = 1)
+  expect_equal(object = dsGroupSummary$Determinant, expected = expectedDeterminant, scale = 1)
+  expect_equal(object = dsGroupSummary$PosDefinite, expected = expectedPosDefinite, scale = 1)
 })
 test_that("Group Summary HeightZGenderAge", {
-  dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
+  dsFull <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
   oName_S1 <- "HeightZGenderAge_S1"
   oName_S2 <- "HeightZGenderAge_S2"
 
-  dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  dsFull <- dsFull[dsFull$RelationshipPath == "Gen2Siblings", ]
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
 
   expectedRowCount <- 5
-  expectedColumnNames <- c('R', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
+  expectedColumnNames <- c("R", "Included", "PairCount", "O1Mean", "O2Mean", "O1Variance", "O2Variance", "O1O2Covariance", "Correlation", "Determinant", "PosDefinite")
   expectedR <- c(.25, .375, .5, .75, 1)
   expectedIncluded <- c(T, T, T, F, T)
   expectedPairCount <- c(1863, 48, 3957, 0, 16)
@@ -109,33 +109,33 @@ test_that("Group Summary HeightZGenderAge", {
   expectedDeterminant <- c(1.00813475798763, 0.899690810061788, 0.778939826472253, NA, 0.154733001745783)
   expectedPosDefinite <- expectedIncluded
 
-  expect_equal(object=nrow(dsGroupSummary), expected=expectedRowCount, scale=1)
-  expect_equal(object=colnames(dsGroupSummary), expected=expectedColumnNames, scale=1)
-  expect_equal(object=dsGroupSummary$R, expected=expectedR, scale=1)
-  expect_equal(object=dsGroupSummary$Included, expected=expectedIncluded, scale=1)
-  expect_equal(object=dsGroupSummary$PairCount, expected=expectedPairCount, scale=1)
-  expect_equal(object=dsGroupSummary$O1Mean, expected=expectedO1Mean, scale=1)
-  expect_equal(object=dsGroupSummary$O2Mean, expected=expectedO2Mean, scale=1)
-  expect_equal(object=dsGroupSummary$O1Variance, expected=expectedO1Variance, scale=1)
-  expect_equal(object=dsGroupSummary$O2Variance, expected=expectedO2Variance, scale=1)
-  expect_equal(object=dsGroupSummary$O1O2Covariance, expected=expectedO1O2Covariance, scale=1)
-  expect_equal(object=dsGroupSummary$Correlation, expected=expectedCorrelation, scale=1)
-  expect_equal(object=dsGroupSummary$Determinant, expected=expectedDeterminant, scale=1)
-  expect_equal(object=dsGroupSummary$PosDefinite, expected=expectedPosDefinite, scale=1)
+  expect_equal(object = nrow(dsGroupSummary), expected = expectedRowCount, scale = 1)
+  expect_equal(object = colnames(dsGroupSummary), expected = expectedColumnNames, scale = 1)
+  expect_equal(object = dsGroupSummary$R, expected = expectedR, scale = 1)
+  expect_equal(object = dsGroupSummary$Included, expected = expectedIncluded, scale = 1)
+  expect_equal(object = dsGroupSummary$PairCount, expected = expectedPairCount, scale = 1)
+  expect_equal(object = dsGroupSummary$O1Mean, expected = expectedO1Mean, scale = 1)
+  expect_equal(object = dsGroupSummary$O2Mean, expected = expectedO2Mean, scale = 1)
+  expect_equal(object = dsGroupSummary$O1Variance, expected = expectedO1Variance, scale = 1)
+  expect_equal(object = dsGroupSummary$O2Variance, expected = expectedO2Variance, scale = 1)
+  expect_equal(object = dsGroupSummary$O1O2Covariance, expected = expectedO1O2Covariance, scale = 1)
+  expect_equal(object = dsGroupSummary$Correlation, expected = expectedCorrelation, scale = 1)
+  expect_equal(object = dsGroupSummary$Determinant, expected = expectedDeterminant, scale = 1)
+  expect_equal(object = dsGroupSummary$PosDefinite, expected = expectedPosDefinite, scale = 1)
 })
 
 test_that("Group Summary Changed Variable Name for 'R'", {
-  dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
+  dsFull <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
   oName_S1 <- "HeightZGenderAge_S1"
   oName_S2 <- "HeightZGenderAge_S2"
   rName <- "RRR"
   dsFull <- RenameNlsyColumn(dsFull, "R", rName)
 
-  dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  dsFull <- dsFull[dsFull$RelationshipPath == "Gen2Siblings", ]
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2, rName)
 
   expectedRowCount <- 5
-  expectedColumnNames <- c('RRR', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
+  expectedColumnNames <- c("RRR", "Included", "PairCount", "O1Mean", "O2Mean", "O1Variance", "O2Variance", "O1O2Covariance", "Correlation", "Determinant", "PosDefinite")
   expectedR <- c(.25, .375, .5, .75, 1)
   expectedIncluded <- c(T, T, T, F, T)
   expectedPairCount <- c(1863, 48, 3957, 0, 16)
@@ -148,33 +148,33 @@ test_that("Group Summary Changed Variable Name for 'R'", {
   expectedDeterminant <- c(1.00813475798763, 0.899690810061788, 0.778939826472253, NA, 0.154733001745783)
   expectedPosDefinite <- expectedIncluded
 
-  expect_equal(object=nrow(dsGroupSummary), expected=expectedRowCount, scale=1)
-  expect_equal(object=colnames(dsGroupSummary), expected=expectedColumnNames, scale=1)
-  expect_equal(object=dsGroupSummary$R, expected=expectedR, scale=1)
-  expect_equal(object=dsGroupSummary$Included, expected=expectedIncluded, scale=1)
-  expect_equal(object=dsGroupSummary$PairCount, expected=expectedPairCount, scale=1)
-  expect_equal(object=dsGroupSummary$O1Mean, expected=expectedO1Mean, scale=1)
-  expect_equal(object=dsGroupSummary$O2Mean, expected=expectedO2Mean, scale=1)
-  expect_equal(object=dsGroupSummary$O1Variance, expected=expectedO1Variance, scale=1)
-  expect_equal(object=dsGroupSummary$O2Variance, expected=expectedO2Variance, scale=1)
-  expect_equal(object=dsGroupSummary$O1O2Covariance, expected=expectedO1O2Covariance, scale=1)
-  expect_equal(object=dsGroupSummary$Correlation, expected=expectedCorrelation, scale=1)
-  expect_equal(object=dsGroupSummary$Determinant, expected=expectedDeterminant, scale=1)
-  expect_equal(object=dsGroupSummary$PosDefinite, expected=expectedPosDefinite, scale=1)
+  expect_equal(object = nrow(dsGroupSummary), expected = expectedRowCount, scale = 1)
+  expect_equal(object = colnames(dsGroupSummary), expected = expectedColumnNames, scale = 1)
+  expect_equal(object = dsGroupSummary$R, expected = expectedR, scale = 1)
+  expect_equal(object = dsGroupSummary$Included, expected = expectedIncluded, scale = 1)
+  expect_equal(object = dsGroupSummary$PairCount, expected = expectedPairCount, scale = 1)
+  expect_equal(object = dsGroupSummary$O1Mean, expected = expectedO1Mean, scale = 1)
+  expect_equal(object = dsGroupSummary$O2Mean, expected = expectedO2Mean, scale = 1)
+  expect_equal(object = dsGroupSummary$O1Variance, expected = expectedO1Variance, scale = 1)
+  expect_equal(object = dsGroupSummary$O2Variance, expected = expectedO2Variance, scale = 1)
+  expect_equal(object = dsGroupSummary$O1O2Covariance, expected = expectedO1O2Covariance, scale = 1)
+  expect_equal(object = dsGroupSummary$Correlation, expected = expectedCorrelation, scale = 1)
+  expect_equal(object = dsGroupSummary$Determinant, expected = expectedDeterminant, scale = 1)
+  expect_equal(object = dsGroupSummary$PosDefinite, expected = expectedPosDefinite, scale = 1)
 })
 
 test_that("Single Group Summary MathStandardized", {
-  dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_S1 <- "MathStandardized_S1" #Stands for Manifest1
-  oName_S2 <- "MathStandardized_S2" #Stands for Manifest2
+  dsFull <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
+  oName_S1 <- "MathStandardized_S1" # Stands for Manifest1
+  oName_S2 <- "MathStandardized_S2" # Stands for Manifest2
   dsFull$DummyGroup <- 1
   rName <- "DummyGroup"
 
-  dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  dsFull <- dsFull[dsFull$RelationshipPath == "Gen2Siblings", ]
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2, rName)
 
   expectedRowCount <- 1
-  expectedColumnNames <- c('DummyGroup', 'Included', 'PairCount', 'O1Mean', 'O2Mean', 'O1Variance', 'O2Variance', 'O1O2Covariance', 'Correlation', 'Determinant', 'PosDefinite')
+  expectedColumnNames <- c("DummyGroup", "Included", "PairCount", "O1Mean", "O2Mean", "O1Variance", "O2Variance", "O1O2Covariance", "Correlation", "Determinant", "PosDefinite")
   expectedR <- 1
   expectedIncluded <- T
   expectedPairCount <- 8340
@@ -187,20 +187,20 @@ test_that("Single Group Summary MathStandardized", {
   expectedDeterminant <- 20930.4137879396
   expectedPosDefinite <- expectedIncluded
 
-  expect_equal(object=nrow(dsGroupSummary), expected=expectedRowCount, scale=1)
-  expect_equal(object=colnames(dsGroupSummary), expected=expectedColumnNames, scale=1)
-  expect_equal(object=dsGroupSummary[[rName]], expected=expectedR, scale=1)
+  expect_equal(object = nrow(dsGroupSummary), expected = expectedRowCount, scale = 1)
+  expect_equal(object = colnames(dsGroupSummary), expected = expectedColumnNames, scale = 1)
+  expect_equal(object = dsGroupSummary[[rName]], expected = expectedR, scale = 1)
 
-  expect_equal(object=dsGroupSummary$Included, expected=expectedIncluded, scale=1)
-  expect_equal(object=dsGroupSummary$PairCount, expected=expectedPairCount, scale=1)
-  expect_equal(object=dsGroupSummary$O1Mean, expected=expectedO1Mean, scale=1)
-  expect_equal(object=dsGroupSummary$O2Mean, expected=expectedO2Mean, scale=1)
-  expect_equal(object=dsGroupSummary$O1Variance, expected=expectedO1Variance, scale=1)
-  expect_equal(object=dsGroupSummary$O2Variance, expected=expectedO2Variance, scale=1)
-  expect_equal(object=dsGroupSummary$O1O2Covariance, expected=expectedO1O2Covariance, scale=1)
-  expect_equal(object=dsGroupSummary$Correlation, expected=expectedCorrelation, scale=1)
-  expect_equal(object=dsGroupSummary$Determinant, expected=expectedDeterminant, scale=1)
-  expect_equal(object=dsGroupSummary$PosDefinite, expected=expectedPosDefinite, scale=1)
+  expect_equal(object = dsGroupSummary$Included, expected = expectedIncluded, scale = 1)
+  expect_equal(object = dsGroupSummary$PairCount, expected = expectedPairCount, scale = 1)
+  expect_equal(object = dsGroupSummary$O1Mean, expected = expectedO1Mean, scale = 1)
+  expect_equal(object = dsGroupSummary$O2Mean, expected = expectedO2Mean, scale = 1)
+  expect_equal(object = dsGroupSummary$O1Variance, expected = expectedO1Variance, scale = 1)
+  expect_equal(object = dsGroupSummary$O2Variance, expected = expectedO2Variance, scale = 1)
+  expect_equal(object = dsGroupSummary$O1O2Covariance, expected = expectedO1O2Covariance, scale = 1)
+  expect_equal(object = dsGroupSummary$Correlation, expected = expectedCorrelation, scale = 1)
+  expect_equal(object = dsGroupSummary$Determinant, expected = expectedDeterminant, scale = 1)
+  expect_equal(object = dsGroupSummary$PosDefinite, expected = expectedPosDefinite, scale = 1)
 })
 # #
 # # dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)

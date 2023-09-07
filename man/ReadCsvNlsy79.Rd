@@ -34,7 +34,7 @@ The function does seven things.
 \examples{
 \dontrun{
 filePathGen2 <- "~/Nlsy/Datasets/gen2-birth.csv"
-ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
+ds <- ReadCsvNlsy79Gen2(filePath = filePathGen2)
 }
 }
 \author{

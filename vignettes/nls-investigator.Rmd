@@ -21,7 +21,7 @@ This vignette will be useful to behavior genetic researchers interested in using
 
 
 ```{r preliminaries, echo=FALSE, message=FALSE}
-options(width=80)
+options(width = 80)
 ```
 
 
