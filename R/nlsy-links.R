@@ -38,7 +38,7 @@
 #'
 #' [Michael D. Hunter](https://psychology.gatech.edu/michael-hunter) (University of Oklahoma, Norman)
 #'
-#' Maintainer: Will Beasley <wibeasley@@hotmail.com>
+#' Maintainer: S. Mason Garrison <garrissm@wfu.edu>
 #'
 #' @references This package's development was largely supported by the NIH
 #' Grant 1R01HD65865, ["NLSY Kinship Links: Reliable and Valid Sibling

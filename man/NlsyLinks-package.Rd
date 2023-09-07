@@ -86,6 +86,6 @@ Kelly Meredith (Oklahoma City University, OKC)
 
 \href{https://psychology.gatech.edu/michael-hunter}{Michael D. Hunter} (University of Oklahoma, Norman)
 
-Maintainer: Will Beasley \href{mailto:wibeasley@hotmail.com}{wibeasley@hotmail.com}
+Maintainer: S. Mason Garrison \href{mailto:garrissm@wfu.edu}{garrissm@wfu.edu}
 }
 \keyword{package}
