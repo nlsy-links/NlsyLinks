@@ -18,15 +18,16 @@
 #' @author Will Beasley
 #' @keywords ACE
 
-CreateAceEstimate <- function( aSquared, cSquared, eSquared, caseCount, details=list(), unityTolerance=1e-11 ) {
+CreateAceEstimate <- function(aSquared, cSquared, eSquared, caseCount, details = list(), unityTolerance = 1e-11) {
   componentSum <- aSquared + cSquared + eSquared
-  #print(class(caseCount))
-  if( base::missing(caseCount) )
+  # print(class(caseCount))
+  if (base::missing(caseCount)) {
     base::stop("The argument 'caseCount' is missing.")
+  }
 
-  #else if( class(caseCount) != "numeric" ) stop(paste0("The argument 'caseCount' should be class 'numeric', but was '", class(caseCount), "'."))
+  # else if( class(caseCount) != "numeric" ) stop(paste0("The argument 'caseCount' should be class 'numeric', but was '", class(caseCount), "'."))
 
-  unity <- ( base::abs(componentSum - 1.0) < unityTolerance )
-  withinBounds <- (0 <= base::min(aSquared, cSquared, eSquared)) && (base::max( aSquared, cSquared, eSquared) <= 1)
-  return( new("AceEstimate", aSquared, cSquared, eSquared, caseCount, unity, withinBounds, details) )
+  unity <- (base::abs(componentSum - 1.0) < unityTolerance)
+  withinBounds <- (0 <= base::min(aSquared, cSquared, eSquared)) && (base::max(aSquared, cSquared, eSquared) <= 1)
+  return(new("AceEstimate", aSquared, cSquared, eSquared, caseCount, unity, withinBounds, details))
 }

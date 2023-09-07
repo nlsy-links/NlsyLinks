@@ -1,57 +1,57 @@
-options(digits=20)
+options(digits = 20)
 
 # ------------------------------------------------------------
 test_that("AceLavaanGroup -MathStandardized", {
-  dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-  oName_S1 <- "MathStandardized_S1" #Stands for Manifest1
-  oName_S2 <- "MathStandardized_S2" #Stands for Manifest2
-  dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  dsFull <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
+  oName_S1 <- "MathStandardized_S1" # Stands for Manifest1
+  oName_S2 <- "MathStandardized_S2" # Stands for Manifest2
+  dsFull <- dsFull[dsFull$RelationshipPath == "Gen2Siblings", ]
 
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
-#   rLevels <- dsGroupSummary[dsGroupSummary$Included, "R"]
-  dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_S1=oName_S1, oName_S2=oName_S2)
-#   dsClean
+  #   rLevels <- dsGroupSummary[dsGroupSummary$Included, "R"]
+  dsClean <- CleanSemAceDataset(dsDirty = dsFull, dsGroupSummary = dsGroupSummary, oName_S1 = oName_S1, oName_S2 = oName_S2)
+  #   dsClean
 
   ace <- AceLavaanGroup(dsClean)
 
   expectedASquared <- 0.62192534737683147217
-  expectedCSquared  <- 0.20973382547133723186
+  expectedCSquared <- 0.20973382547133723186
   expectedESquared <- 0.16834082715183135148
-  expectedCaseCount <- 8338 #8292
+  expectedCaseCount <- 8338 # 8292
   tolerance <- 1e-6
 
-  expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1, tolerance=tolerance)
-  expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1, tolerance=tolerance)
-  expect_equal(object=ace@ESquared, expected=expectedESquared, scale=1, tolerance=tolerance)
-  expect_equal(object=ace@CaseCount, expected=expectedCaseCount, scale=1, tolerance=tolerance)
-  expect_equal(object=slot(ace, "CaseCount"), expected=expectedCaseCount, scale=1, tolerance=tolerance)
-  expect_true(object=slot(ace, "Unity"))
-  expect_true(object=slot(ace, "WithinBounds"))
+  expect_equal(object = ace@ASquared, expected = expectedASquared, scale = 1, tolerance = tolerance)
+  expect_equal(object = ace@CSquared, expected = expectedCSquared, scale = 1, tolerance = tolerance)
+  expect_equal(object = ace@ESquared, expected = expectedESquared, scale = 1, tolerance = tolerance)
+  expect_equal(object = ace@CaseCount, expected = expectedCaseCount, scale = 1, tolerance = tolerance)
+  expect_equal(object = slot(ace, "CaseCount"), expected = expectedCaseCount, scale = 1, tolerance = tolerance)
+  expect_true(object = slot(ace, "Unity"))
+  expect_true(object = slot(ace, "WithinBounds"))
 })
 test_that("AceLavaanGroup -HeightZGenderAge", {
-  dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
+  dsFull <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
   oName_S1 <- "HeightZGenderAge_S1"
   oName_S2 <- "HeightZGenderAge_S2"
-  dsFull <- dsFull[dsFull$RelationshipPath=='Gen2Siblings', ]
+  dsFull <- dsFull[dsFull$RelationshipPath == "Gen2Siblings", ]
   tolerance <- 1e-6
 
   dsGroupSummary <- RGroupSummary(dsFull, oName_S1, oName_S2)
   #   rLevels <- dsGroupSummary[dsGroupSummary$Included, "R"]
-  dsClean <- CleanSemAceDataset(dsDirty=dsFull, dsGroupSummary=dsGroupSummary, oName_S1=oName_S1, oName_S2=oName_S2)
+  dsClean <- CleanSemAceDataset(dsDirty = dsFull, dsGroupSummary = dsGroupSummary, oName_S1 = oName_S1, oName_S2 = oName_S2)
 
   ace <- AceLavaanGroup(dsClean)
 
   expectedASquared <- 0.786981124753526994908
-  expectedCSquared  <- 0.031571681272838131305
+  expectedCSquared <- 0.031571681272838131305
   expectedESquared <- 0.181447193973634873787
   expectedCaseCount <- 5884
 
-  expect_equal(object=ace@ASquared, expected=expectedASquared, scale=1, tolerance=tolerance)
-  expect_equal(object=ace@CSquared, expected=expectedCSquared, scale=1, tolerance=tolerance)
-  expect_equal(object=ace@ESquared, expected=expectedESquared, scale=1, tolerance=tolerance)
-  expect_equal(object=ace@CaseCount, expected=expectedCaseCount, scale=1, tolerance=tolerance)
-  expect_true(object=slot(ace, "Unity"))
-  expect_true(object=slot(ace, "WithinBounds"))
+  expect_equal(object = ace@ASquared, expected = expectedASquared, scale = 1, tolerance = tolerance)
+  expect_equal(object = ace@CSquared, expected = expectedCSquared, scale = 1, tolerance = tolerance)
+  expect_equal(object = ace@ESquared, expected = expectedESquared, scale = 1, tolerance = tolerance)
+  expect_equal(object = ace@CaseCount, expected = expectedCaseCount, scale = 1, tolerance = tolerance)
+  expect_true(object = slot(ace, "Unity"))
+  expect_true(object = slot(ace, "WithinBounds"))
 })
 # test_that("AceLavaanGroup -WeightStandardizedForAge19To25", {
 #   dsFull <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks

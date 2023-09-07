@@ -24,16 +24,16 @@
 #'
 #' @examples
 #' dsSingleLinks <- data.frame(
-#'   ExtendedID       = c(  1,   1,   1  , 2),
+#'   ExtendedID       = c(1, 1, 1, 2),
 #'   SubjectTag_S1    = c(101, 101, 102, 201),
 #'   SubjectTag_S2    = c(102, 103, 103, 202),
-#'   R                = c( .5, .25, .25,  .5),
+#'   R                = c(.5, .25, .25, .5),
 #'   RelationshipPath = rep("Gen2Siblings", 4)
 #' )
 #' dsSingleOutcomes <- data.frame(
 #'   SubjectTag = c(101, 102, 103, 201, 202),
-#'   DV1        = c( 11,  12,  13,  41,  42),
-#'   DV2        = c( 21,  22,  23,  51,  52)
+#'   DV1        = c(11, 12, 13, 41, 42),
+#'   DV2        = c(21, 22, 23, 51, 52)
 #' )
 #' dsDouble <- CreatePairLinksDoubleEntered(
 #'   outcomeDataset         = dsSingleOutcomes,
@@ -41,29 +41,27 @@
 #'   outcomeNames           = c("DV1", "DV2"),
 #'   validateOutcomeDataset = TRUE
 #' )
-#' dsDouble #Show the 8 rows in the double-entered pair links
-#' summary(dsDouble) #Summarize the variables
+#' dsDouble # Show the 8 rows in the double-entered pair links
+#' summary(dsDouble) # Summarize the variables
 #'
-#' ValidatePairLinksAreSymmetric(dsDouble) #Should return TRUE.
-
-ValidatePairLinksAreSymmetric <- function( linksPair ) {
+#' ValidatePairLinksAreSymmetric(dsDouble) # Should return TRUE.
+ValidatePairLinksAreSymmetric <- function(linksPair) {
   ValidatePairLinks(linksPair)
-  for( rowIndex in base::seq_len(base::nrow(linksPair)) ) {
-
-    r               <- linksPair$R[rowIndex]
+  for (rowIndex in base::seq_len(base::nrow(linksPair))) {
+    r <- linksPair$R[rowIndex]
     # tag1          <- linksPair$SubjectTag_S1[rowIndex]
     # tag2          <- linksPair$SubjectTag_S2[rowIndex]
     # r             <- linksPair$R[rowIndex]
     # path          <- linksPair$RelationshipPath[rowIndex]
 
-    if( !is.na(r) ) {
-      tag1            <- linksPair$SubjectTag_S1[rowIndex]
-      tag2            <- linksPair$SubjectTag_S2[rowIndex]
-      path            <- linksPair$RelationshipPath[rowIndex]
+    if (!is.na(r)) {
+      tag1 <- linksPair$SubjectTag_S1[rowIndex]
+      tag2 <- linksPair$SubjectTag_S2[rowIndex]
+      path <- linksPair$RelationshipPath[rowIndex]
 
       # oppositeCount <- base::nrow(subset(linksPair, SubjectTag_S1==tag2 & SubjectTag_S2==tag1 & R==r & RelationshipPath==path))
-      oppositeCount   <- base::nrow(linksPair[linksPair$SubjectTag_S1==tag2 & linksPair$SubjectTag_S2==tag1 & linksPair$R==r & linksPair$RelationshipPath==path, ])
-      if( oppositeCount != 1 ) {
+      oppositeCount <- base::nrow(linksPair[linksPair$SubjectTag_S1 == tag2 & linksPair$SubjectTag_S2 == tag1 & linksPair$R == r & linksPair$RelationshipPath == path, ])
+      if (oppositeCount != 1) {
         base::stop(paste0(
           "The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (SubjectTag_S1, SubjectTag_S2, R)=(",
           tag1, ", ", tag2, ", ", r, ") was found ", oppositeCount, " time(s)."
@@ -71,5 +69,5 @@ ValidatePairLinksAreSymmetric <- function( linksPair ) {
       }
     }
   }
-  return( TRUE )
+  return(TRUE)
 }

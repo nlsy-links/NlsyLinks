@@ -27,18 +27,18 @@ If you're having trouble with the package, please install the development versio
 your problem, please create a \href{https://github.com/nlsy-links/NlsyLinks/issues}{new issue}, or email Will.
 }
 \examples{
-library(NlsyLinks)    # Load the package into the current R session.
-summary(Links79Pair)  # Summarize the five variables.
-hist(Links79Pair$R)   # Display a histogram of the Relatedness values.
-table(Links79Pair$R)  # Create a table of the Relatedness values for the whole sample.
+library(NlsyLinks) # Load the package into the current R session.
+summary(Links79Pair) # Summarize the five variables.
+hist(Links79Pair$R) # Display a histogram of the Relatedness values.
+table(Links79Pair$R) # Create a table of the Relatedness values for the whole sample.
 
 \dontrun{
 # Install/update NlsyLinks with the release version from CRAN.
-install.packages('NlsyLinks')
+install.packages("NlsyLinks")
 
 # Install/update NlsyLinks with the development version from GitHub
-#install.packages('devtools') #Uncomment if 'devtools' isn't installed already.
-devtools::install_github('nlsy-links/NlsyLinks')
+# install.packages('devtools') #Uncomment if 'devtools' isn't installed already.
+devtools::install_github("nlsy-links/NlsyLinks")
 }
 }
 \references{
@@ -81,6 +81,8 @@ Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{https://psycnet.apa.org:443/jo
 \href{https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
 
 Kelly Meredith (Oklahoma City University, OKC)
+
+\href{https://scholar.google.com/citations?user=5to21boAAAAJ}{S. Mason Garrison} (Wake Forest University)
 
 \href{https://psychology.gatech.edu/michael-hunter}{Michael D. Hunter} (University of Oklahoma, Norman)
 

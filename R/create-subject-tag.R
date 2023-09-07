@@ -18,37 +18,38 @@
 #' @seealso [Links79Pair]
 #'
 #' @examples
-#' library(NlsyLinks) #Load the package into the current R session.
+#' library(NlsyLinks) # Load the package into the current R session.
 #'
-#' #Typically these two vectors will come from a data frame.
+#' # Typically these two vectors will come from a data frame.
 #' subjectIDs <- c(71:82, 10001:10012)
 #' generation <- c(rep(1, 12), rep(2, 12))
 #'
 #' CreateSubjectTag(subjectIDs, generation)
-#' #Returns 7100, ..., 8200, 10001, ..., 10012
+#' # Returns 7100, ..., 8200, 10001, ..., 10012
 #'
 #' # Use the ExtraOutcomes79 dataset, with numeric variables 'SubjectID' and 'Generation'.
 #' ExtraOutcomes79$SubjectTag <- CreateSubjectTag(
-#'    subjectID=ExtraOutcomes79$SubjectID,
-#'    generation=ExtraOutcomes79$Generation
+#'   subjectID = ExtraOutcomes79$SubjectID,
+#'   generation = ExtraOutcomes79$Generation
 #' )
-
-CreateSubjectTag <- function( subjectID, generation ) {
-  if( base::length(subjectID) != base::length(generation) )
+CreateSubjectTag <- function(subjectID, generation) {
+  if (base::length(subjectID) != base::length(generation)) {
     base::stop("The length of the 'subjectID' vector did not match the length of the 'generation' vector.")
+  }
 
   tag <- base::rep(NA, base::length(subjectID))
-   for( i in base::seq(base::length(subjectID)) ) {
-    if( base::is.na(subjectID[i]) || base::is.na(generation[i]) )
+  for (i in base::seq(base::length(subjectID))) {
+    if (base::is.na(subjectID[i]) || base::is.na(generation[i])) {
       tag[i] <- NA
-    else if( generation[i] == 1 )
+    } else if (generation[i] == 1) {
       tag[i] <- subjectID[i] * 100L
-    else if( generation[i] == 2 )
+    } else if (generation[i] == 2) {
       tag[i] <- subjectID[i]
-    else
+    } else {
       base::stop(base::paste("The generation value of '", generation[i], "' at element '", i, "' is not valid.  It must be either 1 or 2."))
-   }
-   return( tag )
+    }
+  }
+  return(tag)
 }
 
 # IncludeSubjectTag <- function( ds ) {

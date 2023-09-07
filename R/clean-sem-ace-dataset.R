@@ -17,7 +17,7 @@
 #' 1. Any row is excluded if it has a missing data point for `O1`, `O2`, or `R`.
 #' 1. The [base::data.frame] is sorted by the `R` value.  This helps program against the multiple-group SEM API sometimes.
 #'
-#'@return A [base::data.frame] with one row per subject pair.  The [base::data.frame] contains the following variables (which can NOT be changed by the user through optional parameters):
+#' @return A [base::data.frame] with one row per subject pair.  The [base::data.frame] contains the following variables (which can NOT be changed by the user through optional parameters):
 #' * **R** The pair's `R` value.
 #' * **O1** The outcome variable for the first subject in each pair.
 #' * **O2** The outcome variable for the second subject in each pair.
@@ -26,55 +26,55 @@
 #' @author Will Beasley
 #'
 #' @examples
-#' library(NlsyLinks) #Load the package into the current R session.
-#' dsLinks        <- Links79PairExpanded #Start with the built-in data.frame in NlsyLinks
-#' dsLinks        <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Use only NLSY79-C siblings
+#' library(NlsyLinks) # Load the package into the current R session.
+#' dsLinks <- Links79PairExpanded # Start with the built-in data.frame in NlsyLinks
+#' dsLinks <- dsLinks[dsLinks$RelationshipPath == "Gen2Siblings", ] # Use only NLSY79-C siblings
 #'
-#' oName_S1       <- "MathStandardized_S1" #Stands for Outcome1
-#' oName_S2       <- "MathStandardized_S2" #Stands for Outcome2
+#' oName_S1 <- "MathStandardized_S1" # Stands for Outcome1
+#' oName_S2 <- "MathStandardized_S2" # Stands for Outcome2
 #' dsGroupSummary <- RGroupSummary(dsLinks, oName_S1, oName_S2)
 #'
-#' dsClean <- CleanSemAceDataset( dsDirty=dsLinks, dsGroupSummary, oName_S1, oName_S2, rName="R" )
+#' dsClean <- CleanSemAceDataset(dsDirty = dsLinks, dsGroupSummary, oName_S1, oName_S2, rName = "R")
 #' summary(dsClean)
 #'
 #' dsClean$AbsDifference <- abs(dsClean$O1 - dsClean$O2)
-#' plot(jitter(dsClean$R), dsClean$AbsDifference, col="gray70")
+#' plot(jitter(dsClean$R), dsClean$AbsDifference, col = "gray70")
 #'
 #' @keywords ACE
 
-CleanSemAceDataset <- function( dsDirty, dsGroupSummary, oName_S1, oName_S2, rName="R" ) {
+CleanSemAceDataset <- function(dsDirty, dsGroupSummary, oName_S1, oName_S2, rName = "R") {
   rLevelsToInclude <- dsGroupSummary[dsGroupSummary$Included, rName]
 
-  #It's necessary to drop the missing Groups & unnecessary columns.  Missing O1s & O2s are dropped for the sake of memory space.
+  # It's necessary to drop the missing Groups & unnecessary columns.  Missing O1s & O2s are dropped for the sake of memory space.
   oldColumnNames <- c(rName, oName_S1, oName_S2)
   newColumnNames <- c("R", "O1", "O2")
   selectedRows <- (
     (!base::is.na(dsDirty[[rName]])) &
-    (dsDirty[[rName]] %in% rLevelsToInclude) &
-    (!base::is.na(dsDirty[[oName_S1]])) &
-    (!base::is.na(dsDirty[[oName_S2]]))
+      (dsDirty[[rName]] %in% rLevelsToInclude) &
+      (!base::is.na(dsDirty[[oName_S1]])) &
+      (!base::is.na(dsDirty[[oName_S2]]))
   )
 
   dsClean <- dsDirty[selectedRows, oldColumnNames]
 
   colnames(dsClean) <- newColumnNames
 
-  dsClean <- dsClean[base::order(dsClean$R), ] #TODO: Rewrite overall code so this statement is not longer necessary anyomre.
+  dsClean <- dsClean[base::order(dsClean$R), ] # TODO: Rewrite overall code so this statement is not longer necessary anyomre.
 
-  #This helper function allows for slight imprecision from floating-point arithmetic.
-  EqualApprox <- function( target, current, toleranceAbsolute=1e-8) {
-    return( abs(target-current) < toleranceAbsolute )
+  # This helper function allows for slight imprecision from floating-point arithmetic.
+  EqualApprox <- function(target, current, toleranceAbsolute = 1e-8) {
+    return(abs(target - current) < toleranceAbsolute)
   }
 
-  #rLevelsToExclude <- dsGroupSummary[!dsGroupSummary$Included, 'R']
+  # rLevelsToExclude <- dsGroupSummary[!dsGroupSummary$Included, 'R']
 
-  #This loop assigns a GroupID, depending on their R value. TODO: possibly rewrite and vectorize with dplyr.
+  # This loop assigns a GroupID, depending on their R value. TODO: possibly rewrite and vectorize with dplyr.
   dsClean$GroupID <- NA
-  for( groupIndex in seq_along(rLevelsToInclude) ) {
+  for (groupIndex in seq_along(rLevelsToInclude)) {
     r <- rLevelsToInclude[groupIndex]
     memberIndices <- base::vapply(dsClean$R, EqualApprox, logical(1), r)
     dsClean$GroupID[memberIndices] <- groupIndex
   }
 
-  return( dsClean )
+  return(dsClean)
 }

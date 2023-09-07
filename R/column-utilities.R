@@ -31,18 +31,18 @@
 #'
 #' @author Will Beasley
 
-VerifyColumnExists <- function( dataFrame, columnName ) {
+VerifyColumnExists <- function(dataFrame, columnName) {
   indices <- base::match(columnName, colnames(dataFrame))
-  if( length(indices) != 1 ) base::stop(paste("Exactly 1 matching column name should be found, but", length(indices), "were found."))
-  return( indices )
+  if (length(indices) != 1) base::stop(paste("Exactly 1 matching column name should be found, but", length(indices), "were found."))
+  return(indices)
 }
 
-RenameColumn <- function( dataFrame, oldColumnName, newColumnName ) {
-  index <- VerifyColumnExists(dataFrame=dataFrame, columnName=oldColumnName)
+RenameColumn <- function(dataFrame, oldColumnName, newColumnName) {
+  index <- VerifyColumnExists(dataFrame = dataFrame, columnName = oldColumnName)
   base::colnames(dataFrame)[index] <- newColumnName
-  return( dataFrame )
+  return(dataFrame)
 }
 
-RenameNlsyColumn <- function( dataFrame, nlsyRNumber, newColumnName ) {
-  return( RenameColumn(dataFrame=dataFrame,  oldColumnName=nlsyRNumber, newColumnName=newColumnName) )
+RenameNlsyColumn <- function(dataFrame, nlsyRNumber, newColumnName) {
+  return(RenameColumn(dataFrame = dataFrame, oldColumnName = nlsyRNumber, newColumnName = newColumnName))
 }

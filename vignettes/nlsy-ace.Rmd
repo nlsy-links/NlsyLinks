@@ -21,9 +21,9 @@ We describe how to use the NlsyLinks package to examine various biometric models
 library(knitr)
 # library(magrittr)
 library(xtable)
-opts_chunk$set(echo=TRUE)
-options(width=88, show.signif.stars = FALSE, continue=" ") #, lattice.theme = function() canonical.theme("pdf", color = FALSE)
-if( any(search()=="package:NlsyLinks") ) detach("package:NlsyLinks")
+opts_chunk$set(echo = TRUE)
+options(width = 88, show.signif.stars = FALSE, continue = " ") # , lattice.theme = function() canonical.theme("pdf", color = FALSE)
+if (any(search() == "package:NlsyLinks")) detach("package:NlsyLinks")
 ```
 
 Terminology
@@ -55,8 +55,8 @@ The **NLS Investigator** (https://www.nlsinfo.org/investigator/) is the best way
 Before starting the real examples, first verify that the NlsyLinks package is installed correctly.  If not, please refer to Appendix.
 
 ```{r}
-any(.packages(all.available = TRUE) == "NlsyLinks") #Should evaluate to TRUE.
-library(NlsyLinks) #Load the package into the current session.
+any(.packages(all.available = TRUE) == "NlsyLinks") # Should evaluate to TRUE.
+library(NlsyLinks) # Load the package into the current session.
 ```
 
 The package's documentation manual can be opened by typing `?NlsyLinks` in
@@ -83,35 +83,36 @@ The steps are:
 
 ```{r}
 ### R Code for Example DF analysis with a simple outcome and Gen2 subjects
-#Step 2: Load the package containing the linking routines.
+# Step 2: Load the package containing the linking routines.
 library(NlsyLinks)
 
-#Step 3: Load the LINKING dataset and filter for the Gen2 subjects
-dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
-summary(dsLinking) #Notice there are 11,088 records (one for each unique pair).
+# Step 3: Load the LINKING dataset and filter for the Gen2 subjects
+dsLinking <- subset(Links79Pair, RelationshipPath == "Gen2Siblings")
+summary(dsLinking) # Notice there are 11,088 records (one for each unique pair).
 
-#Step 4: Load the OUTCOMES dataset, and then examine the summary.
-dsOutcomes <- ExtraOutcomes79 #'ds' stands for 'Data Set'
+# Step 4: Load the OUTCOMES dataset, and then examine the summary.
+dsOutcomes <- ExtraOutcomes79 #' ds' stands for 'Data Set'
 summary(dsOutcomes)
 
-#Step 5: This step isn't necessary for this example, because Kelly Meredith already
+# Step 5: This step isn't necessary for this example, because Kelly Meredith already
 #   groomed the values.  If the negative values (which represent NLSY missing or
 #   skip patterns) still exist, then:
 dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
 
-#Step 6: Create the double entered dataset.
+# Step 6: Create the double entered dataset.
 dsDouble <- CreatePairLinksDoubleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
-  outcomeNames     = c('MathStandardized')
+  outcomeNames     = c("MathStandardized")
 )
-summary(dsDouble) #Notice there are 22176=(2*11088) records now (two for each unique pair).
+summary(dsDouble) # Notice there are 22176=(2*11088) records now (two for each unique pair).
 
-#Step 7: Estimate the ACE components with a DF Analysis
+# Step 7: Estimate the ACE components with a DF Analysis
 ace <- DeFriesFulkerMethod3(
-    dataSet  = dsDouble,
-    oName_S1 = "MathStandardized_S1",
-    oName_S2 = "MathStandardized_S2")
+  dataSet  = dsDouble,
+  oName_S1 = "MathStandardized_S1",
+  oName_S2 = "MathStandardized_S2"
+)
 ace
 ```
 
@@ -138,37 +139,37 @@ The steps are:
 
 ```{r}
 ### R Code for Example of a DF analysis with a simple outcome and Gen2 subjects
-#Step 2: Load the package containing the linking routines.
+# Step 2: Load the package containing the linking routines.
 library(NlsyLinks)
 
-#Step 3: Load the linking dataset and filter for the Gen2 subjects
-dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
+# Step 3: Load the linking dataset and filter for the Gen2 subjects
+dsLinking <- subset(Links79Pair, RelationshipPath == "Gen2Siblings")
 
-#Step 4: Load the outcomes dataset from the hard drive and then examine the summary.
+# Step 4: Load the outcomes dataset from the hard drive and then examine the summary.
 #   Your path might be: filePathOutcomes <- 'C:/BGResearch/NlsExtracts/gen2-birth.csv'
 filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
 dsOutcomes <- ReadCsvNlsy79Gen2(filePathOutcomes)
 summary(dsOutcomes)
 
-#Step 5: Verify and rename an existing column.
-VerifyColumnExists(dsOutcomes, "C0328600") #Should return '10' in this example.
+# Step 5: Verify and rename an existing column.
+VerifyColumnExists(dsOutcomes, "C0328600") # Should return '10' in this example.
 dsOutcomes <- RenameNlsyColumn(dsOutcomes, "C0328600", "BirthWeightInOunces")
 
-#Step 6: For this item, a negative value indicates the parent refused, didn't know,
+# Step 6: For this item, a negative value indicates the parent refused, didn't know,
 #   invalidly skipped, or was missing for some other reason.
 #   For our present purposes, we'll treat these responses equivalently.
 #   Then clip/Winsorized/truncate the weight to something reasonable.
 dsOutcomes$BirthWeightInOunces[dsOutcomes$BirthWeightInOunces < 0] <- NA
 dsOutcomes$BirthWeightInOunces <- pmin(dsOutcomes$BirthWeightInOunces, 200)
 
-#Step 7: Create the double entered dataset.
+# Step 7: Create the double entered dataset.
 dsDouble <- CreatePairLinksDoubleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
-  outcomeNames     = c('BirthWeightInOunces')
+  outcomeNames     = c("BirthWeightInOunces")
 )
 
-#Step 8: Estimate the ACE components with a DF Analysis
+# Step 8: Estimate the ACE components with a DF Analysis
 ace <- AceUnivariate(
   method   = "DeFriesFulkerMethod3",
   dataSet  = dsDouble,
@@ -206,46 +207,46 @@ The steps are:
 
 ```{r}
 ### R Code for Example lavaan estimation analysis with a simple outcome and Gen2 subjects
-#Steps 1-5 are explained in the vignette's first example:
+# Steps 1-5 are explained in the vignette's first example:
 library(NlsyLinks)
-dsLinking <- subset(Links79Pair, RelationshipPath=="Gen2Siblings")
+dsLinking <- subset(Links79Pair, RelationshipPath == "Gen2Siblings")
 dsOutcomes <- ExtraOutcomes79
 dsOutcomes$MathStandardized[dsOutcomes$MathStandardized < 0] <- NA
 
-#Step 6: Create the single entered dataset.
+# Step 6: Create the single entered dataset.
 dsSingle <- CreatePairLinksSingleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
-  outcomeNames     = c('MathStandardized')
+  outcomeNames     = c("MathStandardized")
 )
 
-#Step 7: Declare the names for the two outcome variables.
-oName_S1 <- "MathStandardized_S1" #Stands for Outcome1
-oName_S2 <- "MathStandardized_S2" #Stands for Outcome2
+# Step 7: Declare the names for the two outcome variables.
+oName_S1 <- "MathStandardized_S1" # Stands for Outcome1
+oName_S2 <- "MathStandardized_S2" # Stands for Outcome2
 
-#Step 8: Summarize the R groups and determine which groups can be estimated.
+# Step 8: Summarize the R groups and determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
-#Step 9: Create a cleaned dataset
-dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
+# Step 9: Create a cleaned dataset
+dsClean <- CleanSemAceDataset(dsDirty = dsSingle, dsGroupSummary, oName_S1, oName_S2)
 
-#Step 10: Run the model
+# Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
 ace
-#Notice the 'CaseCount' is 8,390 instead of 17,440.
+# Notice the 'CaseCount' is 8,390 instead of 17,440.
 #  This is because (a) one pair with R=.75 was excluded, and
 #  (b) the SEM uses a single-entered dataset instead of double-entered.
 #
-#Step 11: Inspect the output further
-library(lavaan) #Load the package to access methods of the lavaan class.
+# Step 11: Inspect the output further
+library(lavaan) # Load the package to access methods of the lavaan class.
 GetDetails(ace)
-#Examine fit stats like Chi-Squared, RMSEA, CFI, etc.
-fitMeasures(GetDetails(ace)) #'fitMeasures' is defined in the lavaan package.
+# Examine fit stats like Chi-Squared, RMSEA, CFI, etc.
+fitMeasures(GetDetails(ace)) #' fitMeasures' is defined in the lavaan package.
 
-#Examine low-level details like each group's individual parameter estimates and standard
+# Examine low-level details like each group's individual parameter estimates and standard
 #  errors.  Uncomment the next line to view the entire output (which is roughly 4 pages).
-#summary(GetDetails(ace))
+# summary(GetDetails(ace))
 ```
 
 Example: Multiple Group SEM of a Simple Outcome for Gen1 Subjects
@@ -255,34 +256,35 @@ The example differs from the previous one in three ways.  First, Gen1 subjects a
 
 ```{r}
 ### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects
-#Steps 1-5 are explained in the vignette's first example:
+# Steps 1-5 are explained in the vignette's first example:
 library(NlsyLinks)
-dsLinking <- subset(Links79Pair, RelationshipPath=="Gen1Housemates")
+dsLinking <- subset(Links79Pair, RelationshipPath == "Gen1Housemates")
 dsOutcomes <- ExtraOutcomes79
-#The HeightZGenderAge variable is already groomed
+# The HeightZGenderAge variable is already groomed
 
-#Step 6: Create the single entered dataset.
+# Step 6: Create the single entered dataset.
 dsSingle <- CreatePairLinksSingleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
-  outcomeNames     = c('HeightZGenderAge'))
+  outcomeNames     = c("HeightZGenderAge")
+)
 
-#Step 7: Declare the names for the two outcome variables.
+# Step 7: Declare the names for the two outcome variables.
 oName_S1 <- "HeightZGenderAge_S1"
 oName_S2 <- "HeightZGenderAge_S2"
 
-#Step 8: Summarize the R groups and determine which groups can be estimated.
+# Step 8: Summarize the R groups and determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
-#Step 9: Create a cleaned dataset
-dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
+# Step 9: Create a cleaned dataset
+dsClean <- CleanSemAceDataset(dsDirty = dsSingle, dsGroupSummary, oName_S1, oName_S2)
 
-#Step 10: Run the model
+# Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
 ace
 
-#Step 11: Inspect the output further (see the final step in the previous example).
+# Step 11: Inspect the output further (see the final step in the previous example).
 ```
 
 Most of them responded they were `Non-relative`s  to the explicit items asked in 1979 (*i.e.*, NLSY79 variables `R00001.50` through `R00001.59`).  Yet their height's observed correlations is far larger than would be expected for a sample of unrelated subjects.  Since our team began BG research with the NLSY in the mid-1990s, the $R$=0 group has consistently presented higher than expected correlations, across many domains of outcome variables.  For a long time, we have substantial doubts that subject pairs in this group share a low proportion of their selective genes.  Consequently, we suggest applied researchers consider excluding this group from their biometric analyses.
@@ -290,9 +292,9 @@ Most of them responded they were `Non-relative`s  to the explicit items asked in
 If you wish to exclude additional groups from the analyses, Step 8 should change slightly.  For instance, to MZ twins, replace the two lines in Step 8 with the following four.  This is most for demonstration.  It is unlikely to be useful idea in the current example, and is more likely to be useful when using the `RFull` variable, which includes all values of `R` we were able to determine.
 
 ```{r}
-#Step 8: Summarize the R groups and determine which groups can be estimated.
+# Step 8: Summarize the R groups and determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
-rGroupsToDrop <- c( 1 )
+rGroupsToDrop <- c(1)
 dsGroupSummary[dsGroupSummary$R %in% rGroupsToDrop, "Included"] <- FALSE
 dsGroupSummary
 ```
@@ -302,9 +304,10 @@ Example: Multiple Group SEM of a Simple Outcome all pairs in Gen1 and Gen2
 
 The example differs from the previous example in one way --all possible pairs are considered for the analysis.  Pairs are only excluded  (a) if they belong to one of the small `R` groups that are difficult to estimate, or (b) if the value for adult height is missing.  This includes all \Sexpr{scales::comma(nrow(Links79Pair))} relationships in the follow five types of NLSY79 relationships.
 ```{r, results='asis'}
-xt <- xtable(table(Links79Pair$RelationshipPath, dnn=c("Relationship Frequency")),
-             caption="Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)")
-print.xtable(xt, format.args=list(big.mark=","), type = "html")
+xt <- xtable(table(Links79Pair$RelationshipPath, dnn = c("Relationship Frequency")),
+  caption = "Number of NLSY79 relationship, by `RelationshipPath`.(Recall that 'AuntNiece' also contains uncles and nephews.)"
+)
+print.xtable(xt, format.args = list(big.mark = ","), type = "html")
 ```
 
 In our opinion, using the intergenerational links is one of the most exciting new opportunities for NLSY researchers to pursue.  We will be happy to facilitate such research through consult or collaboration, or even by generating new data structures that may be of value.  The complete kinship linking file facilitates many different kinds of cross-generational research, using both biometrical and other kinds of modeling methods.
@@ -312,39 +315,42 @@ In our opinion, using the intergenerational links is one of the most exciting ne
 
 ```{r}
 ### R Code for Example lavaan estimation analysis with a simple outcome and Gen1 subjects
-#Steps 1-5 are explained in the vignette's first example:
+# Steps 1-5 are explained in the vignette's first example:
 library(NlsyLinks)
 dsLinking <- subset(Links79Pair, RelationshipPath %in%
-                      c("Gen1Housemates", "Gen2Siblings", "Gen2Cousins",
-                        "ParentChild", "AuntNiece"))
-#Because all five paths are specified, the line above is equivalent to:
-#dsLinking <- Links79Pair
+  c(
+    "Gen1Housemates", "Gen2Siblings", "Gen2Cousins",
+    "ParentChild", "AuntNiece"
+  ))
+# Because all five paths are specified, the line above is equivalent to:
+# dsLinking <- Links79Pair
 
 dsOutcomes <- ExtraOutcomes79
-#The HeightZGenderAge variable is already groomed
+# The HeightZGenderAge variable is already groomed
 
-#Step 6: Create the single entered dataset.
+# Step 6: Create the single entered dataset.
 dsSingle <- CreatePairLinksSingleEntered(
   outcomeDataset   = dsOutcomes,
   linksPairDataset = dsLinking,
-  outcomeNames     = c('HeightZGenderAge'))
+  outcomeNames     = c("HeightZGenderAge")
+)
 
-#Step 7: Declare the names for the two outcome variables.
+# Step 7: Declare the names for the two outcome variables.
 oName_S1 <- "HeightZGenderAge_S1"
 oName_S2 <- "HeightZGenderAge_S2"
 
-#Step 8: Summarize the R groups and determine which groups can be estimated.
+# Step 8: Summarize the R groups and determine which groups can be estimated.
 dsGroupSummary <- RGroupSummary(dsSingle, oName_S1, oName_S2)
 dsGroupSummary
 
-#Step 9: Create a cleaned dataset
-dsClean <- CleanSemAceDataset(dsDirty=dsSingle, dsGroupSummary, oName_S1, oName_S2)
+# Step 9: Create a cleaned dataset
+dsClean <- CleanSemAceDataset(dsDirty = dsSingle, dsGroupSummary, oName_S1, oName_S2)
 
-#Step 10: Run the model
+# Step 10: Run the model
 ace <- AceLavaanGroup(dsClean)
 ace
 
-#Step 11: Inspect the output further (see the final step two examples above).
+# Step 11: Inspect the output further (see the final step two examples above).
 ```
 
 Notice the ACE estimates are very similar to the previous version, but the number of pairs has increased by 6x --from 4,185 to 24,700.  The number of *subjects* doubles when Gen2 is added, and the number of *relationship pairs* really takes off.  When an extended family's entire pedigree is considered by the model, many more types of links are possible than if just nuclear families are considered.  This increased statistical power is even more important when the population's $a^2$ is small or moderate, instead of something large like 0.7.
@@ -462,7 +468,7 @@ For the sake of documentation and reproducibility, the current report was render
   <summary>Environment <span class="glyphicon glyphicon-plus-sign"></span></summary>
 ```{r session-info-2, echo=FALSE}
 devtools::session_info()$platform
-knitr::kable(devtools::session_info()$packages[, c("loadedversion", "date")], format="html")
+knitr::kable(devtools::session_info()$packages[, c("loadedversion", "date")], format = "html")
 ```
 </details>
 

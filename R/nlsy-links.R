@@ -34,6 +34,8 @@
 #'
 #' Kelly Meredith (Oklahoma City University, OKC)
 #'
+#' [S. Mason Garrison](https://scholar.google.com/citations?user=5to21boAAAAJ) (Wake Forest University)
+#'
 #' [Michael D. Hunter](https://psychology.gatech.edu/michael-hunter) (University of Oklahoma, Norman)
 #'
 #' Maintainer: Will Beasley <wibeasley@@hotmail.com>
@@ -81,17 +83,17 @@
 #' @keywords package
 #'
 #' @examples
-#' library(NlsyLinks)    # Load the package into the current R session.
-#' summary(Links79Pair)  # Summarize the five variables.
-#' hist(Links79Pair$R)   # Display a histogram of the Relatedness values.
-#' table(Links79Pair$R)  # Create a table of the Relatedness values for the whole sample.
+#' library(NlsyLinks) # Load the package into the current R session.
+#' summary(Links79Pair) # Summarize the five variables.
+#' hist(Links79Pair$R) # Display a histogram of the Relatedness values.
+#' table(Links79Pair$R) # Create a table of the Relatedness values for the whole sample.
 #'
 #' \dontrun{
 #' # Install/update NlsyLinks with the release version from CRAN.
-#' install.packages('NlsyLinks')
+#' install.packages("NlsyLinks")
 #'
 #' # Install/update NlsyLinks with the development version from GitHub
-#' #install.packages('devtools') #Uncomment if 'devtools' isn't installed already.
-#' devtools::install_github('nlsy-links/NlsyLinks')
+#' # install.packages('devtools') #Uncomment if 'devtools' isn't installed already.
+#' devtools::install_github("nlsy-links/NlsyLinks")
 #' }
 NULL

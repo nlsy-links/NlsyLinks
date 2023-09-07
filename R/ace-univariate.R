@@ -51,15 +51,15 @@
 #' *Behavior Genetics, 35* (2), 211-217.
 #'
 #' @examples
-#' library(NlsyLinks) #Load the package into the current R session.
+#' library(NlsyLinks) # Load the package into the current R session.
 #' dsOutcomes <- ExtraOutcomes79
 #' dsOutcomes$SubjectTag <- CreateSubjectTag(
 #'   subjectID    = dsOutcomes$SubjectID,
 #'   generation   = dsOutcomes$Generation
 #' )
-#' dsLinks  <- Links79Pair
-#' dsLinks  <- dsLinks[dsLinks$RelationshipPath=='Gen2Siblings', ] #Only Gen2 Sibs (ie, NLSY79C)
-#' dsDF     <- CreatePairLinksDoubleEntered(
+#' dsLinks <- Links79Pair
+#' dsLinks <- dsLinks[dsLinks$RelationshipPath == "Gen2Siblings", ] # Only Gen2 Sibs (ie, NLSY79C)
+#' dsDF <- CreatePairLinksDoubleEntered(
 #'   outcomeDataset     = dsOutcomes,
 #'   linksPairDataset   = dsLinks,
 #'   outcomeNames       = c("MathStandardized", "HeightZGenderAge", "WeightZGenderAge")
@@ -70,31 +70,31 @@
 #'   oName_S1   = "HeightZGenderAge_S1",
 #'   oName_S2   = "HeightZGenderAge_S2"
 #' )
-#' estimatedAdultHeight #ASquared and CSquared should be 0.60 and 0.10 for this rough analysis.
+#' estimatedAdultHeight # ASquared and CSquared should be 0.60 and 0.10 for this rough analysis.
 #'
 #' estimatedMath <- DeFriesFulkerMethod3(
 #'   dataSet    = dsDF,
 #'   oName_S1   = "MathStandardized_S1",
 #'   oName_S2   = "MathStandardized_S2"
 #' )
-#' estimatedMath #ASquared and CSquared should be 0.85 and 0.045.
+#' estimatedMath # ASquared and CSquared should be 0.85 and 0.045.
 #'
 #' class(GetDetails(estimatedMath))
 #' summary(GetDetails(estimatedMath))
-
 AceUnivariate <-
-function( method=c("DeFriesFulkerMethod1","DeFriesFulkerMethod3"), dataSet, oName_S1, oName_S2, rName="R", manifestScale="Continuous" ) {
-  #print( length(method) )
-  if( length(method) != 1 )
-    base::stop(base::paste0("The method argument must contain exactly one element when calling the AceUnivariate function.  It contained ", length(method), " elements."))
-  else if( method == ""  )
-    base::stop(base::paste0("The method argument must contain exactly one element when calling the AceUnivariate function.  It was blank."))
-  else if( method == 'DeFriesFulkerMethod1' )
-    #return( DeFriesFulkerMethod1(outcomeForSubject1, outcomeForSubject2, relatedness) )
-    return( DeFriesFulkerMethod1(dataSet, oName_S1, oName_S2, rName) )
-  else if( method == 'DeFriesFulkerMethod3' )
-    #return( DeFriesFulkerMethod3(outcomeForSubject1, outcomeForSubject2, relatedness) )
-    return( DeFriesFulkerMethod3(dataSet, oName_S1, oName_S2, rName) )
-  else
-    base::stop(base::paste0("The method argument, '", method ,"' was not recognized as a valid option to the AceUnivariate function."))
-}
+  function(method = c("DeFriesFulkerMethod1", "DeFriesFulkerMethod3"), dataSet, oName_S1, oName_S2, rName = "R", manifestScale = "Continuous") {
+    # print( length(method) )
+    if (length(method) != 1) {
+      base::stop(base::paste0("The method argument must contain exactly one element when calling the AceUnivariate function.  It contained ", length(method), " elements."))
+    } else if (method == "") {
+      base::stop(base::paste0("The method argument must contain exactly one element when calling the AceUnivariate function.  It was blank."))
+    } else if (method == "DeFriesFulkerMethod1") {
+      # return( DeFriesFulkerMethod1(outcomeForSubject1, outcomeForSubject2, relatedness) )
+      return(DeFriesFulkerMethod1(dataSet, oName_S1, oName_S2, rName))
+    } else if (method == "DeFriesFulkerMethod3") {
+      # return( DeFriesFulkerMethod3(outcomeForSubject1, outcomeForSubject2, relatedness) )
+      return(DeFriesFulkerMethod3(dataSet, oName_S1, oName_S2, rName))
+    } else {
+      base::stop(base::paste0("The method argument, '", method, "' was not recognized as a valid option to the AceUnivariate function."))
+    }
+  }

@@ -31,7 +31,7 @@ form:
 }
 
 \examples{
-library(NlsyLinks) #Load the package into the current R session.
+library(NlsyLinks) # Load the package into the current R session.
 
 showClass("AceEstimate")
 est <- CreateAceEstimate(.5, .2, .3, 40)

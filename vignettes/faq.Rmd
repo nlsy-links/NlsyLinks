@@ -60,7 +60,7 @@ Occasionally the mother of twins provided conflicting evidence. Fortunately, the
 
 Gen2 ambiguous twins can be viewed with:
 ```{r}
-subset(Links79Pair, RelationshipPath=='Gen2Siblings' & R==.75)
+subset(Links79Pair, RelationshipPath == "Gen2Siblings" & R == .75)
 ```
 
 
@@ -75,13 +75,13 @@ For instance, there are at least `r nrow(subset(Links79PairExpanded, Relationshi
 
 ```{r, results='hide'}
 dsLinks <- Links79PairExpanded
-isGen2Sib <- dsLinks$RelationshipPath=='Gen2Siblings'
+isGen2Sib <- dsLinks$RelationshipPath == "Gen2Siblings"
 
-olderFullYoungerHalf <- (dsLinks$RExplicitOlderSibVersion==.5 &
-                           dsLinks$RExplicitYoungerSibVersion==.25)
+olderFullYoungerHalf <- (dsLinks$RExplicitOlderSibVersion == .5 &
+  dsLinks$RExplicitYoungerSibVersion == .25)
 
-olderHalfYoungerFull <- (dsLinks$RExplicitOlderSibVersion==.25 &
-                           dsLinks$RExplicitYoungerSibVersion==.5)
+olderHalfYoungerFull <- (dsLinks$RExplicitOlderSibVersion == .25 &
+  dsLinks$RExplicitYoungerSibVersion == .5)
 
 
 dsLinks[isGen2Sib & (olderFullYoungerHalf | olderHalfYoungerFull), ]
@@ -145,13 +145,17 @@ dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214800", "Gender")
 Finally, consider converting the numeric variables to [factor](https://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html) variables so your code will be more readable.
 
 ```{r}
-#The official documentation calls this last level "NON-BLACK, NON-HISPANIC"
-dsDemographics$Race <- factor(x=dsDemographics$Race,
-                          levels=1:3,
-                          labels=c("Hispanic", "Black", "NBNH"))
-dsDemographics$Gender <- factor(x=dsDemographics$Gender,
-                          levels=1:2,
-                          labels=c("Male", "Female"))
+# The official documentation calls this last level "NON-BLACK, NON-HISPANIC"
+dsDemographics$Race <- factor(
+  x = dsDemographics$Race,
+  levels = 1:3,
+  labels = c("Hispanic", "Black", "NBNH")
+)
+dsDemographics$Gender <- factor(
+  x = dsDemographics$Gender,
+  levels = 1:2,
+  labels = c("Male", "Female")
+)
 ```
 
 For Gen2, race and gender can be incorporated with a similar approach.  Remember to change `filePathOutcomes` to your desired location.
@@ -159,25 +163,29 @@ For Gen2, race and gender can be incorporated with a similar approach.  Remember
 ```{r}
 library(NlsyLinks)
 filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
-dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes)  #Notice this function is for Gen2.
+dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes) # Notice this function is for Gen2.
 # summary(dsDemographics) #Uncomment to see the summary
 
 dsDemographics <- RenameNlsyColumn(dsDemographics, "C0005300", "Race")
 dsDemographics <- RenameNlsyColumn(dsDemographics, "C0005400", "Gender")
 
-dsDemographics$Race <- factor(x=dsDemographics$Race,
-                          levels=1:3,
-                          labels=c("Hispanic", "Black", "NBNH"))
-dsDemographics$Gender <- factor(x=dsDemographics$Gender,
-                          levels=1:2,
-                          labels=c("Male", "Female"))
+dsDemographics$Race <- factor(
+  x = dsDemographics$Race,
+  levels = 1:3,
+  labels = c("Hispanic", "Black", "NBNH")
+)
+dsDemographics$Gender <- factor(
+  x = dsDemographics$Gender,
+  levels = 1:2,
+  labels = c("Male", "Female")
+)
 ```
 
 If you have another `data.frame` that needs to be merged with the demographic dataset, use `SubjectTag` as the key, because this variable is guaranteed to be unique when the subjects in both generations are in the same dataset.  Supposed your other dataset is called `dsOutcomes`, the merging code would be
 
 
 ```{r, eval=FALSE}
-dsCombined <- merge(x=dsDemographics, y=dsOutcomes, by="SubjectTag", all=TRUE)
+dsCombined <- merge(x = dsDemographics, y = dsOutcomes, by = "SubjectTag", all = TRUE)
 ```
 
 Make sure that `dsOutcomes` also has the `SubjectTag` variable; this will happen automatically if it was read into R using the `ReadCsvNlsy79Gen1()` or `ReadCsvNlsy79Gen2()` functions.  For more information about `SubjectTag`, please see the `Links79Pair` entry in the [reference manual](https://nlsy-links.github.io/NlsyLinks/).

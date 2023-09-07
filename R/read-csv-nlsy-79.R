@@ -27,17 +27,17 @@
 #' @examples
 #' \dontrun{
 #' filePathGen2 <- "~/Nlsy/Datasets/gen2-birth.csv"
-#' ds <- ReadCsvNlsy79Gen2(filePath=filePathGen2)
+#' ds <- ReadCsvNlsy79Gen2(filePath = filePathGen2)
 #' }
-
 ReadCsvNlsy79Gen1 <- function(filePath,
                               dsExtract = utils::read.csv(filePath)) {
   d <- NlsyLinks::SubjectDetails79
   if (!("R0000100" %in%
-        colnames(dsExtract)))
+    colnames(dsExtract))) {
     stop("The NLSY variable 'R0000100' should be present, but was not found.")
+  }
 
-  colnames(dsExtract)[colnames(dsExtract) == 'R0000100'] <-
+  colnames(dsExtract)[colnames(dsExtract) == "R0000100"] <-
     "SubjectID"
   dsExtract$Generation <- 1
   dsExtract$SubjectTag <-
@@ -66,19 +66,21 @@ ReadCsvNlsy79Gen2 <-
            dsExtract = utils::read.csv(filePath)) {
     d <- NlsyLinks::SubjectDetails79
     #   dsExtract <- read.csv(filePath)
-    if (!("C0000100" %in% colnames(dsExtract)))
+    if (!("C0000100" %in% colnames(dsExtract))) {
       stop("The NLSY variable 'C0000100' should be present, but was not found.")
-    if (!("C0000200" %in% colnames(dsExtract)))
+    }
+    if (!("C0000200" %in% colnames(dsExtract))) {
       stop("The NLSY variable 'C0000200' should be present, but was not found.")
+    }
 
-    colnames(dsExtract)[colnames(dsExtract) == 'C0000100'] <-
+    colnames(dsExtract)[colnames(dsExtract) == "C0000100"] <-
       "SubjectID"
-    colnames(dsExtract)[colnames(dsExtract) == 'C0000200'] <-
+    colnames(dsExtract)[colnames(dsExtract) == "C0000200"] <-
       "SubjectTagOfMother"
     dsExtract$SubjectTagOfMother <- dsExtract$SubjectTagOfMother * 100
     dsExtract$Generation <- 2
     dsExtract$SubjectTag <-
-      dsExtract$SubjectID #CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
+      dsExtract$SubjectID # CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
 
     dsWithExtended <-
       d[d$Generation == 2, c("SubjectTag", "ExtendedID")]

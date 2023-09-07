@@ -96,13 +96,13 @@
 #' @keywords datasets
 #'
 #' @examples
-#' library(NlsyLinks)     # Load the package into the current R session.
-#' summary(Links97Pair)   # Summarize the five variables.
-#' hist(Links97Pair$R)    # Display a histogram of the Relatedness coefficients.
-#' table(Links97Pair$R)   # Create a table of the Relatedness coefficients for the whole sample.
+#' library(NlsyLinks) # Load the package into the current R session.
+#' summary(Links97Pair) # Summarize the five variables.
+#' hist(Links97Pair$R) # Display a histogram of the Relatedness coefficients.
+#' table(Links97Pair$R) # Create a table of the Relatedness coefficients for the whole sample.
 #'
-#' #Create a dataset of only monozygotic sibs.
+#' # Create a dataset of only monozygotic sibs.
 #' mz_sibs <- subset(Links97Pair, R > .9)
-#' summary(mz_sibs)       # Create a table MZ sibs.
+#' summary(mz_sibs) # Create a table MZ sibs.
 #'
 NULL

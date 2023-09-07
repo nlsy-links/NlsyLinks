@@ -49,7 +49,7 @@ summary(Survey79)
 table(Survey79$SurveyYear, Survey79$SurveySource)
 table(is.na(Survey79$AgeSelfReportYears), is.na(Survey79$AgeCalculateYears))
 
-if( require(ggplot2) & require(dplyr) ) {
+if (require(ggplot2) & require(dplyr)) {
   dsSourceYear <- Survey79 \%>\%
     dplyr::count(SurveyYear, SurveySource) \%>\%
     dplyr::filter(SurveySource != "NoInterview")
@@ -58,15 +58,15 @@ if( require(ggplot2) & require(dplyr) ) {
     dplyr::filter(SurveySource != "NoInterview") \%>\%
     dplyr::group_by(SurveySource, SurveyYear) \%>\%
     dplyr::summarize(
-      age_min = min(Age, na.rm=TRUE),
-      age_max = max(Age, na.rm=TRUE)
+      age_min = min(Age, na.rm = TRUE),
+      age_max = max(Age, na.rm = TRUE)
     ) \%>\%
     dplyr::ungroup() \%>\%
-    ggplot(aes(x=SurveyYear, ymin=age_min, ymax=age_max, color=SurveySource)) +
+    ggplot(aes(x = SurveyYear, ymin = age_min, ymax = age_max, color = SurveySource)) +
     geom_errorbar() +
     scale_color_brewer(palette = "Dark2") +
     theme_minimal() +
-    theme(legend.position = c(0, 1), legend.justification=c(0, 1))
+    theme(legend.position = c(0, 1), legend.justification = c(0, 1))
 }
 
 }
