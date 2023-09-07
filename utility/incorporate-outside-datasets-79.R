@@ -19,7 +19,8 @@ directoryDatasetsRda <- "./data" #These RDAs are derived from the CSV, and inclu
 algorithmVersion     <- 85L
 
 pathInputLinks              <- file.path(directoryDatasetsCsv, paste0("links-2017-79.csv"))
-pathInputSubjectDetails     <- file.path(directoryDatasetsCsv, paste0("subject-details-v", algorithmVersion, ".csv"))
+pathInputSubjectDetails     <- file.path(directoryDatasetsCsv, "subject-details.csv")
+# pathInputSubjectDetails     <- file.path(directoryDatasetsCsv, paste0("subject-details-v", algorithmVersion, ".csv"))
 pathInputSurvey79           <- file.path(directoryDatasetsCsv, paste0("survey-79.csv"))
 pathInputExtraOutcomes79    <- file.path(directoryDatasetsCsv, "extra-outcomes-79.csv")
 
@@ -169,14 +170,18 @@ SubjectDetails79 <-
 
 # ---- Groom Survey79 --------------------------------------------------------------
 Survey79 <-
-  Survey79 %>%
+  Survey79 |>
   dplyr::mutate(
     SurveySource  = factor(SurveySource, levels=0:3, labels=c("NoInterview", "Gen1", "Gen2C", "Gen2YA")),
     SurveyDate    = as.Date(SurveyDate),
-    Age           = ifelse(!is.na(AgeCalculateYears), AgeCalculateYears, AgeSelfReportYears)
-  ) %>%
-  dplyr::arrange(SubjectTag, SurveySource, SurveyYear) %>%
+    Age           = dplyr::coalesce(AgeCalculateYears, AgeSelfReportYears),
+    Age           = round(Age, 1),
+  ) |>
+  dplyr::select(SubjectTag, SurveySource, SurveyYear, Age) |>
+  dplyr::arrange(SubjectTag, SurveySource, SurveyYear) |>
   as.data.frame()
+  # object.size() |>
+  # print(units = "MB")
 
 # ---- verify-values -----------------------------------------------------------
 

@@ -1,9 +1,10 @@
-Version 2.1.0 (2021-07-25)
+Version 2.2.0 (2021-07-25)
 ------------------------------------------------------------------------------
 Updates:
-* [pkgdown](https://hadley.github.io/pkgdown/) documentation
+* [pkgdown](https://pkgdown.r-lib.org/) documentation
 * Incorporate more Nlsy97 info
 * Rename dataset `SurveyDate` to `Survey79`.
+* In `Survey79`, expose only one age variable to save space to stay under CRAN's size limit.
 
 
 Version 2.0.5 (2016-03-17)
@@ -123,7 +124,7 @@ New Features:
 * Methods & functions associated with the AceEstimate class.
 * SubjectDetails79 dataset for Gen2.
 * ReadCsvNlsy79 function.
-* Validation functions: (a) OutComeDataset
+* Validation functions: (a) OutcomeDataset
 * Column Utilities: (a) VerifyColumnExists, (c) RenameNlsyColumn
 
 Version 0.19 (2012-03-10)

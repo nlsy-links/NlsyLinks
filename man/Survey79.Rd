@@ -11,9 +11,8 @@ A data frame with 580,752 observations on the following 6 variables.
 \item \strong{SurveySource} The location of that subject's survey responses that year.  Values are \code{NoInterview}, \code{Gen1}, \code{Gen2C} or \code{Gen2YA}.
 \item \strong{SurveyYear} The year/wave of the survey.
 \item \strong{Survey79} The exact date of the administered survey.
-\item \strong{AgeSelfReportYears} The subject's age, according to a their own response, or their mother's response.
-\item \strong{AgeCalculateYears} The subject's age, calculated from subtracting their birthday from the interview date.
-\item \strong{Age} The subject's age, which uses \code{AgeCalculateYears} or \code{AgeSelfReportYears} if it's not available.
+\item \strong{Age} The subject's age at the time of the survey, rounded to 1 decimal.
+See Details below.
 }
 }
 \source{
@@ -33,10 +32,18 @@ These variables are useful to many types of analyses (not just behavior genetics
 provided to save users time.
 }
 \details{
-The \code{AgeSelfReportYears} and \code{AgeCalculateYears} variables usually agree, but not always.  The \code{Age} variable uses \code{AgeCalculateYears} (or \code{AgeSelfReportYears} when \code{AgeCalculateYears} is missing).
+\code{Age} uses a variable called \code{AgeCalculateYears} (according to a their own
+response, or their mother's response) if it's available, and uses
+\code{AgeSelfReportYears} (according to a their own response, or their mother's
+response)
+if not.  The values usually agree, but not always.
+These two separated variables are available for download,
+but withheld from the R package
+(otherwise we would exceed CRAN's maximum size).
 
-The exact \emph{date} of birth isn't public (only the subject's \emph{month} of birth).  To balance the downward bias of two weeks,
-their birthday is set to the 15th day of the month to produce \code{AgeCalculateYears}.
+The exact \emph{date} of birth isn't public (only the subject's \emph{month} of birth).
+To balance the downward bias of two weeks, their birthday is set to the
+15th day of the month to produce \code{AgeCalculateYears}.
 
 In the Gen2 Child dataset, self-reported age is
 stated by month (eg, the child is 38 months old); a constant of 0.5 months has been added to balance the downward bias.  In the Gen2 YA and
