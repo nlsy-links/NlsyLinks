@@ -1,21 +1,19 @@
 Package: NlsyLinks
 Type: Package
 Title: Utilities and Kinship Information for Research with the NLSY
-Version: 2.2.0
+Version: 2.2.1
 Authors@R: c(
-    person("Will", "Beasley", role = c("aut"), email = "wibeasley@hotmail.com", comment = c(ORCID = "0000-0002-5613-5006")), 
-    person("Joe", "Rodgers", role = "ctb", comment = c(ORCID = "0000-0002-8615-6713")),
+    person("William Howard", "Beasley", role = c("aut"), email = "wibeasley@hotmail.com", comment = c(ORCID = "0000-0002-5613-5006")), 
+    person("Joseph Lee", "Rodgers", role = "ctb", comment = c(ORCID = "0000-0002-8615-6713")),
     person("David", "Bard", role = "ctb"),
-    person("Michael", "Hunter", role = "ctb", comment=c(ORCID = "0000-0002-3651-6709")),
-    person("Patrick ", "O'Keefe", role = "ctb", comment = c(ORCID = "0000-0002-5343-0130")),
-    person("Kelly", "Williams", role = "ctb"),
-    person("S. Mason", "Garrison",  role = c("aut", "cre"), email = "garrissm@wfu.edu", comment = c(ORCID = "0000-0002-4804-6003"))
-    )
+    person("Michael D.", "Hunter", role = "ctb", comment=c(ORCID = "0000-0002-3651-6709")),
+    person("Patrick", "O'Keefe", role = "ctb", comment = c(ORCID = "0000-0002-5343-0130")),
+    person("Kelly Meredith", "Williams", role = "ctb"),
+    person("S. Mason", "Garrison",  role = c("aut", "cre"), email = "garrissm@wfu.edu", comment = c(ORCID = "0000-0002-4804-6003")))
 Description: Utilities and kinship information for behavior genetics and
     developmental research using the National Longitudinal Survey of Youth
     (NLSY; <https://www.nlsinfo.org/>).
-URL: https://nlsy-links.github.io/NlsyLinks/, https://github.com/nlsy-links/NlsyLinks,
-    https://groups.google.com/forum/#!forum/nlsy-links
+URL: https://nlsy-links.github.io/NlsyLinks/, https://github.com/nlsy-links/NlsyLinks
 BugReports: https://github.com/nlsy-links/NlsyLinks/issues
 Depends:
     R (>= 3.5.0),

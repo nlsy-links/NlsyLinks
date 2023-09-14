@@ -32,11 +32,13 @@
 #'
 #' [David Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 #'
-#' Kelly Meredith (Oklahoma City University, OKC)
+#' [Michael D. Hunter](https://scholar.google.com/citations?user=TbTNHKwAAAAJ&hl=en) (Pennsylvania State University)
+#'
+#' Patrick O'Keefe (Oregon Health and Science University)
+#'
+#' Kelly Meredith Williams (Oklahoma City University, OKC)
 #'
 #' [S. Mason Garrison](https://scholar.google.com/citations?user=5to21boAAAAJ) (Wake Forest University)
-#'
-#' [Michael D. Hunter](https://psychology.gatech.edu/michael-hunter) (University of Oklahoma, Norman)
 #'
 #' Maintainer: S. Mason Garrison <garrissm@wfu.edu>
 #'
