@@ -33,17 +33,6 @@ Test environments
     - [win-builder](https://win-builder.r-project.org/NgcbF52Z5bOZ/00check.log), development version.
     - [GiHub Actions](https://github.com/OuhscBbmc/REDCapR/actions), Ubuntu 20.04 LTS
 
----
-1. Local Ubuntu, R 4.1.0 patched
-1. Local Win8, R 4.1.0 patched
-1. Local Win10, R 4.3.1 patched
-1. R-hub
-    1. [Ubuntu Linux 20.04 LTS, R-release, GCC](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-af51fce5ccb14c11a0e6052ff081ed80)
-    1. [Fedora Linux, R-devel, clang, gfortran](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-356245764a0544d892f40e076b7e60c8)
-    1. [Windows Server](https://builder.r-hub.io/status/NlsyLinks_2.0.9.9001.tar.gz-00b649ba8e9e4b34ad6362d81e6cd0b0)
-1. [win-builder](https://win-builder.r-project.org/NgcbF52Z5bOZ/00check.log), development version.
-1. [GiHub Actions](https://github.com/OuhscBbmc/REDCapR/actions), Ubuntu 20.04 LTS
-
 R CMD check results
 -----------------------------------------------
 
