@@ -5,7 +5,7 @@ author:
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 - Kelly [Williams](https://oklahoma.gov/omma.html) (Oklahoma City University, OKC)
-- Michael D. [Hunter](https://psychology.gatech.edu/michael-hunter) (Georgia Tech, Atlanta)
+- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Penn State)
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
@@ -389,14 +389,13 @@ Appendix: Creating and Saving R Scripts
 ===============================
 
 There are several options and environments for executing R code.  Our current
-recommendation is [RStudio](https://www.rstudio.com/), because it is easy to
+recommendation is [RStudio](https://posit.co/), because it is easy to
 install, and has features targeting beginner and experienced R users.
 We've had good experiences with it on Windows, OS X, and Ubuntu Linux.
 
 RStudio allows you to create and save R files; these are simply text files
 that have an file extension of '.R'.  RStudio will execute the commands written
-in the file.  Help documentation for RStudio can be found at
-https://support.rstudio.com/hc/en-us.
+in the file.  
 
 Appendix: Installing and Loading the NlsyLinks Package
 ===============================
@@ -455,7 +454,7 @@ Neale, Michael C., & Cardon, Lou R. (1992). [*Methodology for genetic studies of
 Funding
 ===============================
 
-This package's development has been supported by two grants from NIH.  The first, NIH Grant [1R01HD65865](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50), “NLSY Kinship Links: Reliable and Valid Sibling Identiﬁcation” (PI: Joe Rodgers; Vignette Construction by Will Beasley) supported the (virtually) final completion of the NLSY79 and NLSYC/YA kinship linking files.  The second, NIH Grant [1R01HD087395](https://projectreporter.nih.gov/project_info_description.cfm?projectnumber=1R01HD087395-01A1), “New NLSY Kinship Links and Longitudinal/ Cross-Generational Models: Cognition and Fertility Research," (PI:  Joe Rodgers;  Vignette Construction by Will Beasley) is supporting the development of the NLSY97 kinship links, and slight updates/extensions in the links for the two earlier data sources.
+This package's development has been supported by two grants from NIH.  The first, NIH Grant [1R01HD65865](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50), “NLSY Kinship Links: Reliable and Valid Sibling Identiﬁcation” (PI: Joe Rodgers; Vignette Construction by Will Beasley) supported the (virtually) final completion of the NLSY79 and NLSYC/YA kinship linking files.  The second, NIH Grant [1R01HD087395](https://reporter.nih.gov/project-details/9239744), “New NLSY Kinship Links and Longitudinal/ Cross-Generational Models: Cognition and Fertility Research," (PI:  Joe Rodgers;  Vignette Construction by Will Beasley) is supporting the development of the NLSY97 kinship links, and slight updates/extensions in the links for the two earlier data sources.
 
 
 

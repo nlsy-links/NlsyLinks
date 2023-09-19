@@ -25,7 +25,7 @@ In contrast, variables in *structural datasets* are not typically directly state
 * subject characteristics (*e.g.*, Subject 301 is a Native American female; Subject 607 died from heart disease in 2005; Subject 802 is part of the military over-sample), and
 * subject-survey characteristics (*e.g.*, Subject 301 was 15 years old for the 1981 Survey; Subject 301 did not respond to the 1990 survey; Subject 702 completed the NLSY-C survey in 1996 and the NLSY-YA survey in 1998).
 
-The NlsyLinks includes small topical datasets which allows the vignettes and examples to be reproducible and more realistic.  The structural datasets are intended to be the authoritative representations, and are the product of two NIH grants (for a complete history of the familial relationships, see Rodgers et al., [2016](https://link.springer.com/article/10.1007%2Fs10519-016-9785-3)).
+The NlsyLinks includes small topical datasets which allows the vignettes and examples to be reproducible and more realistic.  The structural datasets are intended to be the authoritative representations, and are the product of two NIH grants (for a complete history of the familial relationships, see Rodgers et al., [2016](https://link.springer.com/article/10.1007/s10519-016-9785-3)).
 
 ### Terminology
 

@@ -1,7 +1,7 @@
 # Using SAS with the NlsyLinks R Package
 
 ## Authors
- * [Michael D. Hunter](https://psychology.gatech.edu/michael-hunter), University of Oklahoma Health Sciences Center, OKC
+ * [Michael D. Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter), University of Oklahoma Health Sciences Center, OKC
  * [William Howard Beasley](http://scholar.google.com/citations?user=ffsJTC0AAAAJ), Howard Live Oak LLC, Norman
  * [Joseph Lee Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers), Vanderbilt University, Nashville
  * [David Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd), University of Oklahoma Health Sciences Center, OKC

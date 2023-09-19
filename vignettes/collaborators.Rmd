@@ -39,7 +39,7 @@ OUHSC Pediatrics
 
 The [Pediatrics Dept](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics) of the University of Oklahoma [Health Sciences Center](https://www.ouhsc.edu/) z.  Current investigators are members of the [BBMC](https://ouhsc.edu/BBMC/) (Biomedical and Behavioral Methodology Core) and [CCAN](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Patient-Care/Center-on-Child-Abuse-and-Neglect) (Center for Child Abuse and Neglect).
 
-The participating members include David Bard and [Michael Hunter](https://psychology.gatech.edu/michael-hunter).
+The participating members include David Bard and [Michael Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter).
 
 <!--
 <a href="https://ouhsc.edu/BBMC/">
@@ -118,4 +118,4 @@ National Opinion Research Center (NORC)
 Funding
 =================================
 
-This package’s development has been supported by two grants from NIH.  The first, NIH Grant [1R01HD65865](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50), “NLSY Kinship Links: Reliable and Valid Sibling Identiﬁcation” (PI: Joe Rodgers; Vignette Construction by Will Beasley) supported the (virtually) final completion of the NLSY79 and NLSYC/YA kinship linking files.  The second, NIH Grant [1R01HD087395](https://projectreporter.nih.gov/project_info_description.cfm?projectnumber=1R01HD087395-01A1), “New NLSY Kinship Links and Longitudinal/ Cross-Generational Models: Cognition and Fertility Research," (PI:  Joe Rodgers;  Vignette Construction by Will Beasley) is supporting the development of the NLSY97 kinship links, and slight updates/extensions in the links for the two earlier data sources.
+This package’s development has been supported by two grants from NIH.  The first, NIH Grant [1R01HD65865](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50), “NLSY Kinship Links: Reliable and Valid Sibling Identiﬁcation” (PI: Joe Rodgers; Vignette Construction by Will Beasley) supported the (virtually) final completion of the NLSY79 and NLSYC/YA kinship linking files.  The second, NIH Grant [1R01HD087395](https://reporter.nih.gov/project-details/9239744), “New NLSY Kinship Links and Longitudinal/ Cross-Generational Models: Cognition and Fertility Research," (PI:  Joe Rodgers;  Vignette Construction by Will Beasley) is supporting the development of the NLSY97 kinship links, and slight updates/extensions in the links for the two earlier data sources.
