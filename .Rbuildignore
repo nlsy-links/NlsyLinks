@@ -8,6 +8,7 @@
 ^Meta$
 ^outside-data$
 ^inst/reports$
+^README.Rmd$
 
 # NlsyLinks Articles/Vignettes that are in the website, but not the package vignettes
 # $vignettes/about\.Rmd$
@@ -71,3 +72,4 @@
 ^doc$
 ^codecov\.yml$
 ^CRAN-RELEASE$
+^CRAN-SUBMISSION$
