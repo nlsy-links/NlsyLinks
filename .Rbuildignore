@@ -73,3 +73,4 @@
 ^codecov\.yml$
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
+^vignettes/articles$
