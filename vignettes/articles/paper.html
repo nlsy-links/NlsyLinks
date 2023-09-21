@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>BGmisc: An R Package for Extended Behavior Genetics Analysis</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+
+
+
+<style type="text/css">
+
+div.csl-bib-body { }
+div.csl-entry {
+clear: both;
+}
+.hanging div.csl-entry {
+margin-left:2em;
+text-indent:-2em;
+}
+div.csl-left-margin {
+min-width:2em;
+float:left;
+}
+div.csl-right-inline {
+margin-left:2em;
+padding-left:1em;
+}
+div.csl-indent {
+margin-left: 2em;
+}
+</style>
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">BGmisc: An R Package for Extended Behavior
+Genetics Analysis</h1>
+<h4 class="date">19 September, 2023</h4>
+
+
+
+<!--Guidance 
+JOSS welcomes submissions from broadly diverse research areas. For this reason, we require that authors include in the paper some sentences that explain the software functionality and domain of use to a non-specialist reader. We also require that authors explain the research applications of the software. The paper should be between 250-1000 words. Authors submitting papers significantly longer than 1000 words may be asked to reduce the length of their paper.
+Your paper should include:
+
+A list of the authors of the software and their affiliations, using the correct format (see the example below).
+A summary describing the high-level functionality and purpose of the software for a diverse, non-specialist audience.
+A Statement of need section that clearly illustrates the research purpose of the software and places it in the context of related work.
+A list of key references, including to other software addressing related needs. Note that the references should include full names of venues, e.g., journals and conferences, not abbreviations only understood in the context of a specific discipline.
+Mention (if applicable) a representative set of past or ongoing research projects using the software and recent scholarly publications enabled by it.
+Acknowledgment of any financial support.
+-->
+<div id="summary" class="section level1">
+<h1>Summary</h1>
+<!--  A summary describing the high-level functionality and purpose of the software for a diverse, non-specialist audience. -->
+<p>The field of behavior genetics focuses on illuminating genetic and
+environmental influences on individual differences. Traditionally, twin
+studies have been at the forefront of this discipline. However, research
+has moved beyond the classical twin design to embrace more complex
+family structures such as children of twins (CoT) <span class="citation">(D’Onofrio et al. 2003)</span>,
+mother-daughter-aunt-niece (MDAN) <span class="citation">(Rodgers et al.
+2008)</span>, and other extended family designs. These expansions allow
+for a deeper, more nuanced exploration of genetic and environmental
+influences, but it also introduces challenges, particularly in data
+structuring and modeling. In particular, the data structures inherent in
+these more complicated family designs are orders of magnitude larger
+than traditional designs. In the classical twin study, for example, a
+family will consist of a single pair of twins (i.e., two people),
+whereas in the MDAN design, a family consists of two mother-daughter
+pairs (i.e., four people). This problem quickly becomes intractable when
+applied to very extended family pedigrees, where a single family can be
+of any size. The <code>BGmisc</code> package addresses this gap by
+offering a comprehensive suite of functions for structuring and modeling
+extended family pedigree data.</p>
+</div>
+<div id="statement-of-need" class="section level1">
+<h1>Statement of need</h1>
+<!-- A Statement of need section that clearly illustrates the research purpose of the software and places it in the context of related work. -->
+<p>As behavior genetics delves into more complex data structures like
+extended pedigrees, the limitations of current tools become evident.
+Understandably, packages like <code>OpenMx</code> <span class="citation">(Neale et al. 2016)</span>, <code>EasyMx</code> <span class="citation">(Hunter 2023)</span>, and <code>kinship2</code> <span class="citation">(J. P. Sinnwell, Therneau, and Schaid 2014; J. Sinnwell
+and Therneau 2022)</span> were built for smaller families and classical
+designs. In contrast, the <code>BGmisc</code> R package was specifically
+developed to structure and model extended family pedigree data.</p>
+<p>Two widely-used R packages in genetic modeling are
+<code>OpenMx</code> <span class="citation">(Neale et al. 2016)</span>
+and <code>kinship2</code> <span class="citation">(J. P. Sinnwell,
+Therneau, and Schaid 2014; J. Sinnwell and Therneau 2022)</span>. The
+<code>OpenMx</code> <span class="citation">(Neale et al. 2016)</span>
+package is a general-purpose software for structural equation modeling
+that is popular among behavior geneticists <span class="citation">(Garrison 2018)</span> for its unique features, like
+the <code>mxCheckIdentification()</code> function. This function checks
+whether a model is identified, determining if there is a unique solution
+to estimate the model’s parameters based on the observed data. In
+addition, <code>EasyMx</code> <span class="citation">(Hunter
+2023)</span> is a more user-friendly package that streamlines the
+process of building and estimating structural equation models. It
+seamlessly integrates with <code>OpenMx</code>’s infrastructure. Its
+functionalities range from foundational matrix builders like
+<code>emxCholeskyVariance</code> and
+<code>emxGeneticFactorVariance</code> to more specialized functions like
+<code>emxTwinModel</code> designed for classical twin models. Despite
+their strengths, <code>EasyMx</code> and <code>OpenMx</code> have
+limitations when handling extended family data. Notably, they lack
+functions for handling modern molecular designs <span class="citation">(Kirkpatrick et al. 2021)</span>, modeling complex
+genetic relationships, inferring relatedness, and simulating
+pedigrees.</p>
+<p>Although not a staple in behavior genetics, the <code>kinship2</code>
+<span class="citation">(J. P. Sinnwell, Therneau, and Schaid
+2014)</span> package provides core features to the broader statistical
+genetics scientific community, such as plotting pedigrees and computing
+genetic relatedness matrices. It uses the Lange algorithm <span class="citation">(Lange 2002)</span> to compute relatedness
+coefficients. This recursive algorithm is discussed in great detail
+elsewhere, laying out several boundary conditions and recurrence rules.
+The <code>BGmisc</code> package extends the capabilities of
+<code>kinship2</code> by introducing an alternative algorithm to
+calculate the relatedness coefficient based on network models. By
+applying classic path-tracing rules to the entire network, this new
+method is computationally more efficient by eliminating the need for a
+multi-step recursive approach.</p>
+<div id="features" class="section level2">
+<h2>Features</h2>
+<p>The <code>BGmisc</code> package offers features tailored for extended
+behavior genetics analysis. These features are grouped under two main
+categories, mirroring the structure presented in our vignettes.</p>
+<div id="modeling-and-relatedness" class="section level3">
+<h3>Modeling and Relatedness:</h3>
+<ul>
+<li><p>Model Identification: <code>BGmisc</code> evaluates whether a
+variance components model is identified and fits the model’s estimated
+variance components to observed covariance data. The technical aspects
+related to model identification have been described by <span class="citation">Hunter et al. (2021)</span>.</p></li>
+<li><p>Relatedness Coefficient Calculation: Using path tracing rules
+first described by <span class="citation">Wright (1922)</span> and
+formalized by <span class="citation">McArdle and McDonald (1984)</span>,
+<code>BGmisc</code> calculates the (sparse) relatedness coefficients
+between all pairs of individuals in extended pedigrees based solely on
+mother and father identifiers.</p></li>
+<li><p>Relatedness Inference: <code>BGmisc</code> infers the relatedness
+between two groups based on their observed total correlation, given
+additive genetic and shared environmental parameters.</p></li>
+</ul>
+</div>
+<div id="pedigree-analysis-and-simulation" class="section level3">
+<h3>Pedigree Analysis and Simulation:</h3>
+<ul>
+<li><p>Pedigree Conversion: <code>BGmisc</code> converts pedigrees into
+various relatedness matrices, including additive genetics,
+mitochondrial, common nuclear, and extended environmental relatedness
+matrices.</p></li>
+<li><p>Pedigree Simulation: <code>BGmisc</code> simulates pedigrees
+based on parameters including the number of children per mate,
+generations, sex ratio of newborns, and mating rate.</p></li>
+</ul>
+<!-- Mention (if applicable) a representative set of past or ongoing research projects using the software and recent scholarly publications enabled by it.-->
+<p>Collectively, these tools provide a valuable resource for behavior
+geneticists and others who work with extended family data. They were
+developed as part of a grant and have been used in several ongoing
+projects <span class="citation">(Lyu et al. 2023; Hunter et al. 2023;
+Garrison et al. 2023; Burt 2023)</span> and theses <span class="citation">(Lyu 2023)</span>.</p>
+</div>
+</div>
+</div>
+<div id="availability" class="section level1">
+<h1>Availability</h1>
+<p>The <code>BGmisc</code> package is open-source and available on both
+GitHub at <a href="https://github.com/R-Computing-Lab/BGmisc">https://github.com/R-Computing-Lab/BGmisc</a>
+and the Comprehensive R Archive Network (CRAN) at <a href="https://cran.r-project.org/package=BGmisc">https://cran.r-project.org/package=BGmisc</a>.
+It is licensed under the GNU General Public License.</p>
+</div>
+<div id="acknowledgments" class="section level1">
+<h1>Acknowledgments</h1>
+<p>The current research is supported by the National Institute on Aging
+(NIA), RF1-AG073189. We want to acknowledge assistance from Carlos
+Santos.</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-burt_mom_genes_2023" class="csl-entry">
+Burt, S. Alexandra. 2023. <span>“Mom Genes: Leveraging Maternal Lineage
+to Estimate the Contributions of Mitochondrial DNA.”</span> <em>Behavior
+Genetics</em>.
+</div>
+<div id="ref-DOnofrio2003" class="csl-entry">
+D’Onofrio, Brian M, Eric N. Turkheimer, Lindon J Eaves, Linda A. Corey,
+Kare Berg, Marit H. Solaas, and Robert E Emery. 2003. <span>“The Role of
+the Children of Twins Design in Elucidating Causal Relations Between
+Parent Characteristics and Child Outcomes.”</span> <em>Journal of Child
+Psychology and Psychiatry</em> 44 (8): 1130–44. <a href="https://doi.org/ff3dbm">https://doi.org/ff3dbm</a>.
+</div>
+<div id="ref-Garrison2018" class="csl-entry">
+Garrison, S. Mason. 2018. <span>“Popular <span>Structural</span>
+<span>Equation</span> <span>Modeling</span> <span>Programs</span> for
+<span>Behavior</span> <span>Genetics</span>.”</span> <em>Structural
+Equation Modeling: A Multidisciplinary Journal</em> 25 (6): 972–77. <a href="https://doi.org/10.1080/10705511.2018.1493385">https://doi.org/10.1080/10705511.2018.1493385</a>.
+</div>
+<div id="ref-garrison_analyzing_2023" class="csl-entry">
+Garrison, S. Mason, Xuanyu Lyu, Michael D. Hunter, Joseph L. Rodgers,
+Ken R. Smith, Hilary Coon, and S. Alexandra Burt. 2023. <span>“Analyzing
+Extended Cousin Similarity to Unravel the Mystery of mtDNA and
+Longevity.”</span> <em>Behavior Genetics</em>.
+</div>
+<div id="ref-easy" class="csl-entry">
+Hunter, Michael D. 2023. <em>EasyMx: Easy Model-Builder Functions for
+’OpenMx’</em>. <a href="https://CRAN.R-project.org/package=EasyMx">https://CRAN.R-project.org/package=EasyMx</a>.
+</div>
+<div id="ref-hunter_analytic_2021" class="csl-entry">
+Hunter, Michael D., S. Mason Garrison, S. Alexandra Burt, and Joseph L.
+Rodgers. 2021. <span>“The <span>Analytic</span>
+<span>Identification</span> of <span>Variance</span>
+<span>Component</span> <span>Models</span> <span>Common</span> to
+<span>Behavior</span> <span>Genetics</span>.”</span> <em>Behavior
+Genetics</em> 51 (4): 425–37. <a href="https://doi.org/10.1007/s10519-021-10055-x">https://doi.org/10.1007/s10519-021-10055-x</a>.
+</div>
+<div id="ref-hunter_modeling_2023" class="csl-entry">
+Hunter, Michael D., Xuanyu Lyu, S. Mason Garrison, Joseph L. Rodgers, K.
+Smith, Hilary Coon, and S. Alexandra Burt. 2023. <span>“Modeling mtDNA
+Effects from Extended Pedigrees in the Utah Population Database.”</span>
+<em>Behavior Genetics</em>.
+</div>
+<div id="ref-kirkpatrick_combining_2021" class="csl-entry">
+Kirkpatrick, Robert M., Joshua N. Pritikin, Michael D. Hunter, and
+Michael C. Neale. 2021. <span>“Combining
+<span>Structural</span>-<span>Equation</span> <span>Modeling</span> with
+<span>Genomic</span>-<span>Relatedness</span>-<span>Matrix</span>
+<span>Restricted</span> <span>Maximum</span> <span>Likelihood</span> in
+<span>OpenMx</span>.”</span> <em>Behavior Genetics</em> 51 (3): 331–42.
+<a href="https://doi.org/10.1007/s10519-020-10037-5">https://doi.org/10.1007/s10519-020-10037-5</a>.
+</div>
+<div id="ref-lange_genetic_2002" class="csl-entry">
+Lange, Kenneth. 2002. <span>“Genetic <span>Identity</span>
+<span>Coefficients</span>.”</span> In <em>Mathematical and
+<span>Statistical</span> <span>Methods</span> for <span>Genetic</span>
+<span>Analysis</span></em>, edited by Kenneth Lange, 81–96. Statistics
+for <span>Biology</span> and <span>Health</span>. New York, NY:
+Springer. <a href="https://doi.org/10.1007/978-0-387-21750-5_5">https://doi.org/10.1007/978-0-387-21750-5_5</a>.
+</div>
+<div id="ref-lyu_masters_thesis_2023" class="csl-entry">
+Lyu, Xuanyu. 2023. <span>“Statistical Power Analysis on mtDNA Effects
+Estimation.”</span> Master’s thesis, Wake Forest University.
+</div>
+<div id="ref-lyu_statistical_power_2023" class="csl-entry">
+Lyu, Xuanyu, Michael D. Hunter, Joseph L. Rodgers, Ken R. Smith, Hilary
+Coon, S. Alexandra Burt, and S. Mason Garrison. 2023. <span>“Statistical
+Power Analysis on mtDNA Effects Estimation.”</span> <em>Behavior
+Genetics</em>.
+</div>
+<div id="ref-mcardleRAM" class="csl-entry">
+McArdle, J. Jack, and Roderick P. McDonald. 1984. <span>“Some Algebraic
+Properties of the Reticular Action Model for Moment Structures.”</span>
+<em>British Journal of Mathematical and Statistical Psychology</em> 37:
+234–51. <a href="https://doi.org/10.1111/j.2044-8317.1984.tb00802.x">https://doi.org/10.1111/j.2044-8317.1984.tb00802.x</a>.
+</div>
+<div id="ref-Neale2016" class="csl-entry">
+Neale, Michael C, Michael D Hunter, Joshua N Pritikin, Mahsa Zahery,
+Timothy R Brick, Robert M Kirkpatrick, Ryne Estabrook, Timothy C Bates,
+Hermine H Maes, and Steven M. Boker. 2016. <span>“<span>OpenMx</span>
+2.0: <span>Extended</span> <span>Structural</span> <span>Equation</span>
+and <span>Statistical</span> <span>Modeling</span>.”</span>
+<em>Psychometrika</em> 81 (2): 535–49. <a href="https://doi.org/f8rfrg">https://doi.org/f8rfrg</a>.
+</div>
+<div id="ref-rodgers_mdan" class="csl-entry">
+Rodgers, Joseph Lee, David E. Bard, Amber Johnson, Brian D’Onofrio, and
+Warren B. Miller. 2008. <span>“The
+<span>Cross</span>-<span>Generational</span>
+<span>Mother</span>–<span>Daughter</span>–<span>Aunt</span>–<span>Niece</span>
+<span>Design</span>: <span>Establishing</span> <span>Validity</span> of
+the <span>MDAN</span> <span>Design</span> with <span>NLSY</span>
+<span>Fertility</span> <span>Variables</span>.”</span> <em>Behavior
+Genetics</em> 38 (6): 567–78. <a href="https://doi.org/10.1007/s10519-008-9225-0">https://doi.org/10.1007/s10519-008-9225-0</a>.
+</div>
+<div id="ref-kinship2" class="csl-entry">
+Sinnwell, J. P., T. M. Therneau, and D. J. Schaid. 2014. <span>“The
+Kinship2 r Package for Pedigree Data.”</span> <em>Human Heredity</em>
+78: 91–93. <a href="https://doi.org/10.1159/000363105">https://doi.org/10.1159/000363105</a>.
+</div>
+<div id="ref-kinship2R" class="csl-entry">
+Sinnwell, Jason, and Terry Therneau. 2022. <em>Kinship2: Pedigree
+Functions</em>. <a href="https://CRAN.R-project.org/package=kinship2">https://CRAN.R-project.org/package=kinship2</a>.
+</div>
+<div id="ref-Wright1922" class="csl-entry">
+Wright, Sewall. 1922. <span>“Coefficients of Inbreeding and
+Relationship.”</span> <em>The American Naturalist</em> 56 (645): 330–38.
+<a href="https://doi.org/10.1086/279872">https://doi.org/10.1086/279872</a>.
+</div>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
