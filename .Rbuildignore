@@ -74,3 +74,4 @@
 ^CRAN-RELEASE$
 ^CRAN-SUBMISSION$
 ^vignettes/articles$
+^vignettes/publications$
