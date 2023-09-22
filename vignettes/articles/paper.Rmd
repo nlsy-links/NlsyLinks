@@ -11,20 +11,38 @@ authors:
   - name: S. Mason Garrison
     orcid: 0000-0002-4804-6003
     affiliation: 1
+  - name: William Howard Beasley
+    orcid: 0000-0002-5613-5006
+    affiliation: 4
   - name: Michael D. Hunter
     orcid: 0000-0002-3651-6709
     affiliation: 2
-  - name: MORE MORE
-    orcid: 0000-0000-0000-0000
+  - name: David Bard
+    affiliation: 6
+  - name: Patrick O'Keefe
+    orcid: 0000-0002-5343-0130
+    affiliation: 7
+  - name: Kelly Meredith Williams
     affiliation: 3
+  - name: Joseph Lee Rodgers
+    orcid: 0000-0002-8615-6713
+    affiliation: 5
 affiliations:
- - name: Department of Psychology, Wake Forest University, North Carolina, USA
-   index: 1
- - name:  Department of Human Development and Family Studies, Pennsylvania State University, Pennsylvania, USA
-   index: 2
- - name:  Department of SCHOOL, COLLEGE University, CITY, USA
-   index: 3
-   
+  - name: Department of Psychology, Wake Forest University, North Carolina, USA
+    index: 1
+  - name: Department of Human Development and Family Studies, Pennsylvania State University, Pennsylvania, USA
+    index: 2
+  - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
+    index: 3
+  - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
+    index: 4
+  - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
+    index: 5
+  - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
+    index: 6
+  - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
+    index: 7
+
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 bibliography: paper.bib
 vignette: >
@@ -75,7 +93,7 @@ The `NlsyLinks` package offers features tailored for XXXXXXX. These features are
 
 ### Feature B:
 
--    FEATURE B.1: 
+-   FEATURE B.1: 
 
 -   FEATURE B.2: 
 
