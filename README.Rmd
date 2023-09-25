@@ -51,7 +51,7 @@ Obtaining the Links
 There are roughly three versions of the links:
 
 1. The *release* versions are bundled in the `NlsyLinks` package and updated once or twice a year during development.
-1. The *pre-release* versions are downloadable from our [team's website](https://nlsy-links.github.io/NlsyLinks//) and updated several times a month during development.  Formats include R, SAS, and plain-text CSV.
+1. The *pre-release* versions are downloadable from our [team's website](https://nlsy-links.github.io/NlsyLinks/) and updated several times a month during development.  Formats include R, SAS, and plain-text CSV.
 1. The *development* versions are downloadable from our [determination repo](https://github.com/nlsy-links/nlsy-links-determination-2017) updated several times a day during development.
 
 Locations for Help and Development
