@@ -9,7 +9,7 @@
 #' @note The contents of the `Details` list depends on the underlying
 #' estimation routine.  For example, when the ACE model is estimated with a DF
 #' analysis, the output is an [stats::lm()] object, because the [stats::lm()] function
-#' was used (ie, the basic general linear model).  Alternatively, if the
+#' was used (i.e., the basic general linear model).  Alternatively, if the
 #' user specified the [lavaan::lavaan()] package should estimate that ACE model,
 #' the output is a [lavaan::lavaan()] object.
 #'
