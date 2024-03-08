@@ -54,7 +54,7 @@ Articles and Book Chapters
 
 <li value=65><cite>Brauer, J. R. (2016) [Cultivating Conformists or Raising Rebels? Connecting Parental Control and Autonomy Support to Adolescent Delinquency.](https://dx.doi.org/10.1111/jora.12283) *Journal of Research on Adolescence*. <span class="doi">doi: 10.1111/jora.12283</span></cite> (NLSYC)</li>
 
-<li value=64><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](https://link.springer.com/article/10.1007%2Fs10519-016-9785-3) *Behavior Genetics*. <span class="doi">doi: 10.1007/s10519-016-9785-3</span></cite> (NLSY79; NLSYC)</li>
+<li value=64><cite>Rodgers, J. L., Beasley, W. H., Bard, D. E., Meredith, K. M., Hunter, M., Johnson, A. B., Buster, M., Li,C., May, K. O.,Garrison, S. M., Miller, W. M., van den Oord, E., & Rowe, D. C. (2016) [The NLSYkinship links: Using the NLSY79 and NLSY-Children data to conduct genetically-informed and family-orientedresearch.](https://link.springer.com/article/10.1007/s10519-016-9785-3) *Behavior Genetics*. <span class="doi">doi: 10.1007/s10519-016-9785-3</span></cite> (NLSY79; NLSYC)</li>
 
 <li value=63><cite>Garrison, S. Mason (2016) Multivariate Biometrical Study of the Link between SES and Health Outcomes. Masters Thesis, Vanderbilt University.</cite> (NLSY79)</li>
 
@@ -80,7 +80,7 @@ Articles and Book Chapters
 
 <li value=52><cite>Beaver, Kevin M., Eric J. Connolly, Joseph A. Schwartz, Mohammed Said Al-Ghamdi, and Ahmed Nezar Kobeisy (2013) [Genetic and Environmental Contributions to Stability and Change in Levels of Self-Control](https://www.sciencedirect.com/science/article/pii/S004723521300069X). *Journal of Criminal Justice, 41*, 300-308.</cite> (NLSYC)</li>
 
-<li value=51><cite>Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (2013). [Effects of Multiple Maternal Relationship Transitions on Offspring Antisocial Behavior in Childhood and Adolescence: A Cousin-Comparison Analysis.](https://link.springer.com/article/10.1007%2Fs10802-012-9667-y) *Journal of Abnormal Child Psychology, 41*(2),185-198.</cite> (NLSY79; NLSYC/YA)</li>
+<li value=51><cite>Goodnight, J. A., D'Onofrio, B. M., Cherlin, A. J., Emery, R. E., Van Hulle, C. A., & Lahey, B. B. (2013). [Effects of Multiple Maternal Relationship Transitions on Offspring Antisocial Behavior in Childhood and Adolescence: A Cousin-Comparison Analysis.](https://link.springer.com/article/10.1007/s10802-012-9667-y) *Journal of Abnormal Child Psychology, 41*(2),185-198.</cite> (NLSY79; NLSYC/YA)</li>
 
 <li value=50><cite>Meredith, K. (2013). [Is AFI all in the family? A multi-level family study of age of first intercourse](https://shareok.org/handle/11244/7913). Doctoral dissertation, University of Oklahoma.</cite> (NLSY79)</li>
 
@@ -88,7 +88,7 @@ Articles and Book Chapters
 
 <li value=48><cite>D'Onofrio, B. M., Rickert, M. E., L&aring;ngstr&ouml;m, N., Donahue, K. L., Coyne, C. A., Larsson, H., Ellingson, J. M. , Van Hulle, C. A., Iliadou, A. N., Rathouz, P. J., Lahey, B. B., Lichtenstein, P. (2012). [Familial confounding of the association between maternal smoking during pregnancy and offspring substance use and problems: Converging evidence across samples and measures](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622274/). *Archives of General Psychiatry, 69*, 1140-1150. </cite> (NLSY79; NLSYC/YA)</li>
 
-<li value=47><cite>Dorius, C. (2012). [New approaches to measuring multipartnered fertility over the life course](https://www.psc.isr.umich.edu/pubs/pdf/rr12-769.pdf). University of Michigan Population Studies Center Research Report 12-769.</cite> (NLSY79)</li>
+<li value=47><cite>Dorius, C. (2012). [New approaches to measuring multipartnered fertility over the life course](https://web.archive.org/web/20220611113832/https://www.psc.isr.umich.edu/pubs/pdf/rr12-769.pdf). University of Michigan Population Studies Center Research Report 12-769.</cite> (NLSY79)</li>
 
 <li value=46><cite>Goodnight, J. A., Lahey, B. B., Van Hulle, C. A., Rodgers, J. L., Rathouz, P. J., Waldman, I. D., & D'Onofrio, B. M. (2012). [A quasi-experimental analysis of the influence of neighborhood disadvantage on child and adolescent conduct problems](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3287068/). *Journal of Abnormal Psychology, 121*, 95-108.</cite> (NLSYC/YA)</li>
 

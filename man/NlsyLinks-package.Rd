@@ -80,12 +80,14 @@ Rodgers, J.L., Rowe, D.C., & Li, C. (1994). \href{https://psycnet.apa.org:443/jo
 
 \href{https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
 
-Kelly Meredith (Oklahoma City University, OKC)
+\href{https://scholar.google.com/citations?user=TbTNHKwAAAAJ&hl=en}{Michael D. Hunter} (Pennsylvania State University)
+
+Patrick O'Keefe (Oregon Health and Science University)
+
+Kelly Meredith Williams (Oklahoma City University, OKC)
 
 \href{https://scholar.google.com/citations?user=5to21boAAAAJ}{S. Mason Garrison} (Wake Forest University)
 
-\href{https://psychology.gatech.edu/michael-hunter}{Michael D. Hunter} (University of Oklahoma, Norman)
-
-Maintainer: Will Beasley \href{mailto:wibeasley@hotmail.com}{wibeasley@hotmail.com}
+Maintainer: S. Mason Garrison \href{mailto:garrissm@wfu.edu}{garrissm@wfu.edu}
 }
 \keyword{package}

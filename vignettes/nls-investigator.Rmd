@@ -4,7 +4,7 @@ author:
 - William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
-- Michael D. [Hunter](https://psychology.gatech.edu/michael-hunter) (Georgia Tech, Atlanta)
+- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Georgia Tech, Atlanta)
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
@@ -99,6 +99,6 @@ We recommend saving the tagsets on both the NLS server and your local machine.  
 Notes
 ===============================
 
-This package's development has been supported by two grants from NIH.  The first, NIH Grant [1R01HD65865](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50), “NLSY Kinship Links: Reliable and Valid Sibling Identiﬁcation” (PI: Joe Rodgers; Vignette Construction by Will Beasley) supported the (virtually) final completion of the NLSY79 and NLSYC/YA kinship linking files.  The second, NIH Grant [1R01HD087395](https://projectreporter.nih.gov/project_info_description.cfm?projectnumber=1R01HD087395-01A1), “New NLSY Kinship Links and Longitudinal/ Cross-Generational Models: Cognition and Fertility Research," (PI:  Joe Rodgers;  Vignette Construction by Will Beasley) is supporting the development of the NLSY97 kinship links, and slight updates/extensions in the links for the two earlier data sources.
+This package's development has been supported by two grants from NIH.  The first, NIH Grant [1R01HD65865](https://taggs.hhs.gov/Detail/AwardDetail?arg_awardNum=R01HD065865&arg_ProgOfficeCode=50), “NLSY Kinship Links: Reliable and Valid Sibling Identiﬁcation” (PI: Joe Rodgers; Vignette Construction by Will Beasley) supported the (virtually) final completion of the NLSY79 and NLSYC/YA kinship linking files.  The second, NIH Grant [1R01HD087395](https://reporter.nih.gov/project-details/9239744), “New NLSY Kinship Links and Longitudinal/ Cross-Generational Models: Cognition and Fertility Research," (PI:  Joe Rodgers;  Vignette Construction by Will Beasley) is supporting the development of the NLSY97 kinship links, and slight updates/extensions in the links for the two earlier data sources.
 
 These screenshots were taken February and March 2012 with Google Chrome 17 and Windows 7 SP1 Enterprise.  If you notice something that no longer corresponds to the current version to the NLS Investigator, please tell us.

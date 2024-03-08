@@ -5,7 +5,7 @@ author:
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 
-- Michael D. [Hunter](https://psychology.gatech.edu/michael-hunter) (Georgia Tech, Atlanta)
+- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Georgia Tech, Atlanta)
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
@@ -21,7 +21,7 @@ Components
 
 This website is maintained by the [Joe Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) NLSY Sibling Research Team (see the [collaborators](https://nlsy-links.github.io/NlsyLinks/articles/collaborators.html) page for more details)
 
-The website is hosted on [GitHub Pages](https://pages.github.com/).  It is built with [Jekyll](https://jekyllrb.com/) and [R Markdown](https://rmarkdown.rstudio.com/) (and heavily relied on the latter when forming the site's structure).  The majority of the static reports are created with  [knitr](https://yihui.org/knitr/), while the interactive reports are created with [Shiny](https://shiny.rstudio.com/); both use
+The website is hosted on [GitHub Pages](https://pages.github.com/).  It is built with [Jekyll](https://jekyllrb.com/) and [R Markdown](https://rmarkdown.rstudio.com/) (and heavily relied on the latter when forming the site's structure).  The majority of the static reports are created with  [knitr](https://yihui.org/knitr/), while the interactive reports are created with [Shiny](https://shiny.posit.co/); both use
 [R](https://www.r-project.org/) as a foundation.
 
 Historical Archives
@@ -37,4 +37,4 @@ Our [support forums](https://r-forge.r-project.org/forum/?group_id=1330) are int
 Code Collaboration
 =============================
 
-Interested collaborators are welcome to propose changes or [submit an issue](https://github.com/LiveOak/NlsyLinks/issues) on our public [GitHub repository](https://github.com/LiveOak/NlsyLinks).  If you're new to GitHub, see the "Collaborating" section half-way down their [help site](https://help.github.com/), or post a comment to us below.
+Interested collaborators are welcome to propose changes or [submit an issue](https://github.com/LiveOak/NlsyLinks/issues) on our public [GitHub repository](https://github.com/LiveOak/NlsyLinks).  If you're new to GitHub, see the "Collaborating" section half-way down their [help site](https://support.github.com), or post a comment to us below.
