@@ -36,7 +36,7 @@ affiliations:
     index: 3
   - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
     index: 4
-  - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
+  - name: Department of Psychology and Human Development, Vanderbilt University, Tennessee, USA
     index: 5
   - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
     index: 6
@@ -109,6 +109,6 @@ The `NlsyLinks` package is open-source and available on both GitHub at [https://
 
 # Acknowledgments
 
-The current research is supported by the National Institute GRANT (NIGRANT), R01-XXXXXXX. We want to acknowledge assistance from XXXXXXXX.
+This research has been supported by several grants, including the National Institute GRANT (NIGRANT), R01-XXXXXXX.
 
 # References
