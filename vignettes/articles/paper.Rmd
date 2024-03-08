@@ -26,7 +26,7 @@ authors:
     affiliation: 3
   - name: Joseph Lee Rodgers
     orcid: 0000-0002-8615-6713
-    affiliation: 5
+    affiliation: 4, 5
 affiliations:
   - name: Department of Psychology, Wake Forest University, North Carolina, USA
     index: 1
@@ -34,7 +34,7 @@ affiliations:
     index: 2
   - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
     index: 3
-  - name: Department PLACEHOLDER, University PLACEHOLDER, CITY, USA
+  - name: Department of Psychology, University of Oklahoma, Oklahoma, USA
     index: 4
   - name: Department of Psychology and Human Development, Vanderbilt University, Tennessee, USA
     index: 5
@@ -109,6 +109,6 @@ The `NlsyLinks` package is open-source and available on both GitHub at [https://
 
 # Acknowledgments
 
-This research has been supported by several grants, including the National Institute GRANT (NIGRANT), R01-XXXXXXX.
+Recent work on the NLSY Kinship links has been supported by NIH Grant R01-HD065865 (May 1, 2011 to December 31, 2014; Joe Rodgers, PI) and NIH Grant R01-HD087395 (May 1, 2017 to April 30, 2021). Previous kinship linking activity was supported by two previous NIH grants, the first in the 1990s, the second in the early 2000s.
 
 # References
