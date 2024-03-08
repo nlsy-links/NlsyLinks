@@ -70,7 +70,7 @@ Acknowledgment of any financial support.
 # Summary
 
 <!--  A summary describing the high-level functionality and purpose of the software for a diverse, non-specialist audience. -->
-
+NlsyLinks is an R package designed to facilitate behavior genetics research by providing comprehensive tools for managing and analyzing kinship information derived from the National Longitudinal Survey of Youth (NLSY). This package simplifies the complex processes of linking family members within the NLSY datasets and preparing the data for genetic and environmental influence analysis. By offering both structural and topical dataset management, NlsyLinks enables researchers to focus on hypotheses testing across various domains, including genetic contributions to behaviors and traits.
 
 
 
