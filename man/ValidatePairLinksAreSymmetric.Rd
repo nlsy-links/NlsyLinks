@@ -7,19 +7,20 @@
 ValidatePairLinksAreSymmetric(linksPair)
 }
 \arguments{
-\item{linksPair}{The \link[base:data.frame]{base::data.frame} object that should be symmetric}
+\item{linksPair}{A \link[base:data.frame]{base::data.frame} containing the pair relationships that should be symmetric}
 }
 \value{
 Returns \code{TRUE} if symmetric.  Throw an error with \code{\link[base:stop]{base::stop()}} if asymmetric.
 }
 \description{
-For certain analyses, the pairs links (which can be considered a type of
-sparse matrix) need to be symmetric. For instance, if there is a row for
-Subjects 201 and 202 with \code{R}=0.5, there should be a second row for
-Subjects 202 and 201 with \code{R}=0.5.
-
-This validation function is useful to some types of DF methods and some
-spatially-inspired methods.
+Validates that the \code{linksPair} data frame is symmetric.
+In a symmetric \code{linksPair}, each row has a corresponding row with reversed SubjectTag_S1 and SubjectTag_S2,
+but the same \code{R} value.
+For certain analyses (like types of DF methods and some
+spatially-inspired methods), the pairs links (which can be considered a type of
+sparse matrix) need to be symmetric. For example, if Subject 201 is related to
+Subject 202 with a value of \code{R=0.5}, then there must be
+a reciprocal row where Subject 202 is related to Subject 201 with \code{R=0.5}.
 }
 \examples{
 dsSingleLinks <- data.frame(
@@ -44,6 +45,7 @@ dsDouble # Show the 8 rows in the double-entered pair links
 summary(dsDouble) # Summarize the variables
 
 ValidatePairLinksAreSymmetric(dsDouble) # Should return TRUE.
+
 }
 \seealso{
 \code{\link[=CreatePairLinksDoubleEntered]{CreatePairLinksDoubleEntered()}}

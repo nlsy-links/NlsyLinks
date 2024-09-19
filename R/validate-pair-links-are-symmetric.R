@@ -1,25 +1,22 @@
 #' @name ValidatePairLinksAreSymmetric
 #'
 #' @export
-#'
 #' @title Verifies that the pair relationships are symmetric.
+#' @description Validates that the `linksPair` data frame is symmetric.
+#' In a symmetric `linksPair`, each row has a corresponding row with reversed SubjectTag_S1 and SubjectTag_S2,
+#' but the same `R` value.
+#' For certain analyses (like types of DF methods and some
+#' spatially-inspired methods), the pairs links (which can be considered a type of
+#' sparse matrix) need to be symmetric. For example, if Subject 201 is related to
+#' Subject 202 with a value of `R=0.5`, then there must be
+#' a reciprocal row where Subject 202 is related to Subject 201 with `R=0.5`.
 #'
-#' @description For certain analyses, the pairs links (which can be considered a type of
-#' sparse matrix) need to be symmetric. For instance, if there is a row for
-#' Subjects 201 and 202 with `R`=0.5, there should be a second row for
-#' Subjects 202 and 201 with `R`=0.5.
 #'
-#' This validation function is useful to some types of DF methods and some
-#' spatially-inspired methods.
-#'
-#' @param linksPair The [base::data.frame] object that should be symmetric
-#'
+#' @param linksPair A [base::data.frame] containing the pair relationships that should be symmetric
 #' @return Returns `TRUE` if symmetric.  Throw an error with [base::stop()] if asymmetric.
 #'
-#' @author Will Beasley
-#'
 #' @seealso [CreatePairLinksDoubleEntered()]
-#'
+#' @author Will Beasley
 #' @keywords validation
 #'
 #' @examples
@@ -45,22 +42,28 @@
 #' summary(dsDouble) # Summarize the variables
 #'
 #' ValidatePairLinksAreSymmetric(dsDouble) # Should return TRUE.
+#'
 ValidatePairLinksAreSymmetric <- function(linksPair) {
+  # Preliminary validation of the linksPair data frame
   ValidatePairLinks(linksPair)
-  for (rowIndex in base::seq_len(base::nrow(linksPair))) {
-    r <- linksPair$R[rowIndex]
-    # tag1          <- linksPair$SubjectTag_S1[rowIndex]
-    # tag2          <- linksPair$SubjectTag_S2[rowIndex]
-    # r             <- linksPair$R[rowIndex]
-    # path          <- linksPair$RelationshipPath[rowIndex]
 
+  # Loop through each row to validate symmetry
+  for (rowIndex in base::seq_len(base::nrow(linksPair))) {
+    # Extract the 'R' value for the current row
+    r <- linksPair$R[rowIndex]
+
+    # Proceed only if 'R' is not NA
     if (!is.na(r)) {
+      # Extract other fields for the current row
       tag1 <- linksPair$SubjectTag_S1[rowIndex]
       tag2 <- linksPair$SubjectTag_S2[rowIndex]
       path <- linksPair$RelationshipPath[rowIndex]
 
-      # oppositeCount <- base::nrow(subset(linksPair, SubjectTag_S1==tag2 & SubjectTag_S2==tag1 & R==r & RelationshipPath==path))
+      # Check if an opposite pair exists with the same 'R' value
       oppositeCount <- base::nrow(linksPair[linksPair$SubjectTag_S1 == tag2 & linksPair$SubjectTag_S2 == tag1 & linksPair$R == r & linksPair$RelationshipPath == path, ])
+      # oppositeCount <- base::nrow(subset(linksPair, SubjectTag_S1==tag2 & SubjectTag_S2==tag1 & R==r & RelationshipPath==path))
+
+      # If opposite pair doesn't exist or exists more than once, throw an error
       if (oppositeCount != 1) {
         base::stop(paste0(
           "The 'linksPair' dataset doesn't appear to be double-entered & symmetric.  The reciprocal of (SubjectTag_S1, SubjectTag_S2, R)=(",
@@ -69,5 +72,6 @@ ValidatePairLinksAreSymmetric <- function(linksPair) {
       }
     }
   }
+  # Return TRUE if all pairs are symmetric
   return(TRUE)
 }
