@@ -1,7 +1,7 @@
 Package: NlsyLinks
 Type: Package
 Title: Utilities and Kinship Information for Research with the NLSY
-Version: 2.2.1
+Version: 2.2.2
 Authors@R: c(
     person("William Howard", "Beasley", role = c("aut"), email = "wibeasley@hotmail.com", comment = c(ORCID = "0000-0002-5613-5006")), 
     person("Joseph Lee", "Rodgers", role = "ctb", comment = c(ORCID = "0000-0002-8615-6713")),

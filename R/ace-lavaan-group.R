@@ -111,8 +111,8 @@ AceLavaanGroup <-
     c2 := c * c                           #Declare c^2 for easy point and variance estimation.
   ")
 
-    # If the A/C component's excluded: 
-    # (1) overwrite the code and (2) declare a2/c2, 
+    # If the A/C component's excluded:
+    # (1) overwrite the code and (2) declare a2/c2,
     # so the parameter value can be retrieved later without if statements.
     if (!estimateA) modelA <- "\n a2 := 0 \n"
     if (!estimateC) modelC <- "\n c2 := 0 \n"
@@ -150,7 +150,7 @@ AceLavaanGroup <-
     components <- base::as.numeric(base::cbind(a2, c2, e2)[1, ] / (a2 + c2 + e2)) # The 'as.numeric' gets rid of the vector labels.
     # Print the unity-SCALED ace components.
     if (printOutput) base::print(components)
-        caseCount <- base::nrow(dsClean)
+    caseCount <- base::nrow(dsClean)
     details <- base::list(lavaan = fit)
     # print(paste("R Levels excluded:",  stringr::str_c(rLevelsToExclude, collapse=", "), "; R Levels retained:", rString)) #Print the dropped & retained groups.
     ace <- NlsyLinks::CreateAceEstimate(
