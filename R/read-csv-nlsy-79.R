@@ -29,8 +29,15 @@
 #' filePathGen2 <- "~/Nlsy/Datasets/gen2-birth.csv"
 #' ds <- ReadCsvNlsy79Gen2(filePath = filePathGen2)
 #' }
-ReadCsvNlsy79Gen1 <- function(filePath,
-                              dsExtract = utils::read.csv(filePath)) {
+ReadCsvNlsy79Gen1 <- function(filePath = NULL,
+                              dsExtract = NULL) {
+    if (is.null(dsExtract)) {
+    if (is.null(filePath)) {
+      stop("Either 'filePath' or 'dsExtract' must be provided.")
+    }
+    dsExtract <- utils::read.csv(filePath)
+  }
+  
   d <- NlsyLinks::SubjectDetails79
   if (!("R0000100" %in%
     colnames(dsExtract))) {
@@ -61,9 +68,14 @@ ReadCsvNlsy79Gen1 <- function(filePath,
 
   return(ds)
 }
-ReadCsvNlsy79Gen2 <-
-  function(filePath,
-           dsExtract = utils::read.csv(filePath)) {
+ReadCsvNlsy79Gen2 <- function(filePath = NULL,
+                              dsExtract = NULL) {
+  if (is.null(dsExtract)) {
+    if (is.null(filePath)) {
+      stop("Either 'filePath' or 'dsExtract' must be provided.")
+    }
+    dsExtract <- utils::read.csv(filePath)
+  }
     d <- NlsyLinks::SubjectDetails79
     #   dsExtract <- read.csv(filePath)
     if (!("C0000100" %in% colnames(dsExtract))) {
