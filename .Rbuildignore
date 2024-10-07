@@ -35,6 +35,7 @@
 ^appveyor\.yml$
 ^article/\.vscode$
 ^CONDUCT.md$
+^\.lintr$
 ^CODE_OF_CONDUCT.md$
 ^CODE-OF-CONDUCT.md$
 ^code_of_conduct.md$

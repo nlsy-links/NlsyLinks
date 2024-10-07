@@ -37,7 +37,7 @@ License: GPL
 LazyData: TRUE
 VignetteBuilder: knitr
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
 Language: en-US
 Config/testthat/edition: 2

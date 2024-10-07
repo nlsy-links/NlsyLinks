@@ -1,7 +1,7 @@
-Version 2.2.2 (2024-09-19)
+Version 2.2.2 (2024-10-07)
 ------------------------------------------------------------------------------
 Updates:
-* refreshing tests to meet new CRAN guidelines
+* Refreshing tests to meet new CRAN guidelines
 
 
 Version 2.2.1 (2023-09-14)

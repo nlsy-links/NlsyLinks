@@ -3,12 +3,10 @@
 #' @description Utilities and kinship information for Behavior Genetics and Developmental research using the NLSY.
 #' Researchers and grad students interested using the [NLSY](https://www.nlsinfo.org/) for Behavior Genetics and family research, please start with our 2016 article,
 #' '[*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
-#'
-#' @docType package
-#'
+#'#'
 #' @name NlsyLinks-package
 #'
-#' @aliases NlsyLinks
+#' @aliases NlsyLinks NlsyLinks-package
 #'
 #' @note This package considers both Gen1 and Gen2 subjects.  "Gen1" refers to
 #' subjects in the original NLSY79 sample
