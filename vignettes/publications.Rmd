@@ -104,11 +104,11 @@ Articles and Book Chapters
 -----------------------------
 
 <ol>
-<li value=42><cite>Classen, R. (2010). [Measures of the intergenerational transmission of body mass index between mothers and their children in the United States, 1981-2004](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2821676/). *Economics and Human Biology, 8*, 30-43. </cite> (NLSY79; NLSYC/YA)</li>
+<li value=42><cite>Classen, T. (2010). [Measures of the intergenerational transmission of body mass index between mothers and their children in the United States, 1981-2004](https://doi.org/10.1016/j.ehb.2009.11.002). *Economics and Human Biology, 8*, 30-43. </cite> (NLSY79; NLSYC/YA)</li>
 
 <li value=41><cite>Dorius, C. (2010). [Does serial parent harm women over the long run?:The link between multiple partner fertility and women's mental and physical health at midlife](https://etda.libraries.psu.edu/catalog/11162). Dissertation, Pennsylvania State University.</cite> (NLSYC)</li>
 
-<li value=40><cite>Hart, S. A., Petrill, S. A., & Kamp Dush, C. M. (2010). [Genetic influences on language, reading, and mathematics skills in a national sample: An analysis using the National Longitudinal Survey of Youth](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148850/). *Language, Speech, and Hearing Services in Schools, 41*(1), 118.</cite> (NLSY79)</li>
+<li value=40><cite>Hart, S. A., Petrill, S. A., & Kamp Dush, C. M. (2010). [Genetic influences on language, reading, and mathematics skills in a national sample: An analysis using the National Longitudinal Survey of Youth](https://doi.org/10.1044/0161-1461(2009/08-0052)). *Language, Speech, and Hearing Services in Schools, 41*(1), 118.</cite> (NLSY79)</li>
 
 <li value=39><cite>Miller, W. B., Bard, D. E., Pasta, D. J., & Rodgers, J. L. (2010). [Biodemographic modeling of the links between fertility motivation and fertility outcomes in the NLSY79](https://link.springer.com/article/10.1353/dem.0.0107). *Demography, 47*, 393-414.</cite> (NLSY79)</li>
 
