@@ -23,6 +23,10 @@ Articles and Book Chapters
 
 <ol>
 
+<li value=81><cite>Sims, E. E., Trattner, J. D., & Garrison, S. M. (2024). Exploring the relationship between depression and delinquency: A sibling comparison design using the NLSY. *Frontiers in Psychology, 15*. doi:10.3389/fpsyg.2024.1430978</cite> (NLSY79)</li>
+
+<li value=80><cite>Connolly, E. J., Jackson, D. B., & Semenza, D. C. (2021). Quality over quantity? Using sibling comparisons to examine relations between sleep quality, sleep duration, and delinquency. *Social Science & Medicine, 280*, 114053. doi: 10.1016/j.socscimed.2021.114053</cite> (NLSY79, NLSYC/YA)</li>
+
 <li value=79><cite> Hunter, M. D., Garrison, S. M., Burt, S. A., & Rodgers, J. L.  (2021).  The analytic identification of variance component models common to behavior genetics.  Behavior Genetics. doi:10.1007/s10519-021-10055-x180)</cite> (NLSY79)</li>
 
 <li value=78><cite> O’Keefe P. & Rodgers, J.L. (2020). A simulation study of bootstrap approaches to estimate confidence intervals in DeFries–Fulker regression models (with application to the heritability of BMI changes in the NLSY). Behavior Genetics,50, 127–138. doi.org/10.1007/s10519-020-09993-9</cite> (NLSY79)</li>
