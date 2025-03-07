@@ -5,6 +5,7 @@ author:
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 - Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Georgia Tech, Atlanta)
+- S. Mason [Garrison] Wake Forest University, Winston-Salem
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
@@ -60,6 +61,7 @@ Occasionally the mother of twins provided conflicting evidence. Fortunately, the
 
 Gen2 ambiguous twins can be viewed with:
 ```{r}
+library(NlsyLinks)
 subset(Links79Pair, RelationshipPath == "Gen2Siblings" & R == .75)
 ```
 
@@ -70,7 +72,7 @@ Ambiguous siblings
 **What are "ambiguous siblings"?**
 
 Similar to ambiguous twins, ambiguous siblings are sibling pairs that we cannot comfortably classify as either full-siblings ($R=.5$) or half-siblings ($R=.25$).  All siblings in the NLSY79-C/YA dataset share the same biological mother, so for these pairs, the problem is reduced to determining if they share the same biological father.  There are two typical reasons for classifying siblings as ambiguous: (a) the relevant items are missing responses, or (b) the existing responses conflict with each other.
-
+<!--
 For instance, there are at least `r nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & ((RExplicitOlderSibVersion==.5 & RExplicitYoungerSibVersion==.25) | (RExplicitOlderSibVersion==.25 & RExplicitYoungerSibVersion==.5))))` Gen2 pairs where one sibling explicitly reported they shared a biological father, while the other sibling explicitly reported they did not.  These subjects can be viewed with:
 
 ```{r, results='hide'}
@@ -85,7 +87,10 @@ olderHalfYoungerFull <- (dsLinks$RExplicitOlderSibVersion == .25 &
 
 
 dsLinks[isGen2Sib & (olderFullYoungerHalf | olderHalfYoungerFull), ]
+
+
 ```
+
 
 Another example occurs when a subject reports they are unsure or if their own responses are inconsistent over the years.  These `r nrow(subset(Links79PairExpanded, RelationshipPath=='Gen2Siblings' & (RExplicitOlderSibVersion==.375 | RExplicitYoungerSibVersion==.375)))` Gen2 pairs can be viewed with:
 
@@ -96,6 +101,7 @@ dsLinks[ isGen2Sib & (dsLinks$RExplicitOlderSibVersion==.375 |
 
 When the one perspective provided inconclusive evidence of $R$, we looked at other perspectives to resolve their relationship.
 
+-->
 
 Retaining vs. dropping the ambiguous twins and siblings
 ===============================
@@ -123,28 +129,37 @@ The [NlsyAce vignette](https://nlsy-links.github.io/NlsyLinks/articles/nlsy-ace.
 
 For Gen1, create a string variable that points to your extract (*e.g.*, `filePathOutcomes <- "C:/BGResearch/NlsExtracts/gen2-birth.csv"`).  For the code to work on your computer, this example will reference a file it knows exists; but make sure you replace this with your unique path.
 
-```{r}
+```{r include=FALSE}
 library(NlsyLinks)
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen1-life-course.csv")
+library(readr)
+filePathOutcomes <- read_csv("../inst/extdata/gen1-life-course.csv")
+#filePathOutcomes  <- read.csv("inst/extdata/gen1-life-course.csv") # This is a sample file
+filePathOutcomes <- "../inst/extdata/gen1-life-course.csv"
+
+
+```
+
+```r
+filePathOutcomes <-  "C:/BGResearch/NlsExtracts/gen2-birth.csv"
 ```
 
 Next, pass that path to the `ReadCsvNlsy79Gen1()` function, which converts that CSV into an R `data.frame` and adds a few extra columns that will make NLSY research easier.
 
-```{r}
+```{r,error=TRUE}
 dsDemographics <- ReadCsvNlsy79Gen1(filePathOutcomes)
 summary(dsDemographics)
 ```
 
 You can see which variables were added or renamed by `ReadCsvNlsy79Gen1()` (*i.e.*, the first four), and which still retain the original names from the NLS Investigator (*i.e.*, the ones that start with `R' and are followed by numbers).  The first two original variables happen to correspond to Gen1's race and gender.  Rename to something more salient to you, such as
 
-```{r}
+```{r,error=TRUE}
 dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214700", "Race")
 dsDemographics <- RenameNlsyColumn(dsDemographics, "R0214800", "Gender")
 ```
 
 Finally, consider converting the numeric variables to [factor](https://stat.ethz.ch/R-manual/R-devel/library/base/html/factor.html) variables so your code will be more readable.
 
-```{r}
+```{r,error=TRUE}
 # The official documentation calls this last level "NON-BLACK, NON-HISPANIC"
 dsDemographics$Race <- factor(
   x = dsDemographics$Race,
@@ -160,9 +175,10 @@ dsDemographics$Gender <- factor(
 
 For Gen2, race and gender can be incorporated with a similar approach.  Remember to change `filePathOutcomes` to your desired location.
 
-```{r}
+```{r,error=TRUE}
 library(NlsyLinks)
-filePathOutcomes <- file.path(path.package("NlsyLinks"), "extdata", "gen2-birth.csv")
+library(readr)
+filePathOutcomes <- "../inst/extdata/gen2-birth.csv"
 dsDemographics <- ReadCsvNlsy79Gen2(filePathOutcomes) # Notice this function is for Gen2.
 # summary(dsDemographics) #Uncomment to see the summary
 
