@@ -6,6 +6,7 @@ author:
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 - Kelly [Williams](https://oklahoma.gov/omma.html) (Oklahoma City University, OKC)
 - Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Penn State)
+- S. Mason [Garrison](https://psychology.wfu.edu/s-mason-garrison/) (Wake Forest University, Winston-Salem)
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
@@ -15,7 +16,8 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-We describe how to use the NlsyLinks package to examine various biometric models, using the NLSY79.
+
+We describe how to use the `NlsyLinks` package to examine various biometric models, using the NLSY79. The NLSY79 is a longitudinal study that began in 1979 with a sample of 12,686 young adults. The NLSY79 has been used in a wide variety of studies, including behavior genetics research. The `NlsyLinks` package provides a set of functions that allow researchers to easily access and analyze the NLSY79 data. In this vignette, we focus on the ACE model, which is a biometric model that estimates the proportion of variance in a trait that is due to additive genetic effects (A), shared environmental effects (C), and non-shared environmental effects (E). We provide an overview of the ACE model and describe how to use the NlsyLinks package to estimate the parameters of the ACE model using the NLSY79 data.
 
 ```{r preliminaries, echo=FALSE, message=FALSE}
 library(knitr)

@@ -4,8 +4,8 @@ author:
 - William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
-- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Georgia Tech, Atlanta)
-- S. Mason [Garrison] Wake Forest University, Winston-Salem
+- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Penn State University, State College)
+- S. Mason [Garrison](https://psychology.wfu.edu/s-mason-garrison/) Wake Forest University, Winston-Salem
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:

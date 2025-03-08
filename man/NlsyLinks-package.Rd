@@ -91,15 +91,11 @@ Useful links:
 Authors:
 \itemize{
   \item William Howard Beasley \email{wibeasley@hotmail.com} (\href{https://orcid.org/0000-0002-5613-5006}{ORCID})
-}
-
-Other contributors:
-\itemize{
-  \item Joseph Lee Rodgers (\href{https://orcid.org/0000-0002-8615-6713}{ORCID}) [contributor]
-  \item David Bard [contributor]
-  \item Michael D. Hunter (\href{https://orcid.org/0000-0002-3651-6709}{ORCID}) [contributor]
-  \item Patrick O'Keefe (\href{https://orcid.org/0000-0002-5343-0130}{ORCID}) [contributor]
-  \item Kelly Meredith Williams [contributor]
+  \item Joseph Lee Rodgers (\href{https://orcid.org/0000-0002-8615-6713}{ORCID})
+  \item David Bard
+  \item Michael D. Hunter (\href{https://orcid.org/0000-0002-3651-6709}{ORCID})
+  \item Patrick O'Keefe (\href{https://orcid.org/0000-0002-5343-0130}{ORCID})
+  \item Kelly Meredith Williams
 }
 
 

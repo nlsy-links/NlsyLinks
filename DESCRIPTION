@@ -4,11 +4,11 @@ Title: Utilities and Kinship Information for Research with the NLSY
 Version: 2.2.3
 Authors@R: c(
     person("William Howard", "Beasley", role = c("aut"), email = "wibeasley@hotmail.com", comment = c(ORCID = "0000-0002-5613-5006")), 
-    person("Joseph Lee", "Rodgers", role = "ctb", comment = c(ORCID = "0000-0002-8615-6713")),
-    person("David", "Bard", role = "ctb"),
-    person("Michael D.", "Hunter", role = "ctb", comment=c(ORCID = "0000-0002-3651-6709")),
-    person("Patrick", "O'Keefe", role = "ctb", comment = c(ORCID = "0000-0002-5343-0130")),
-    person("Kelly Meredith", "Williams", role = "ctb"),
+    person("Joseph Lee", "Rodgers", role = c("aut"), comment = c(ORCID = "0000-0002-8615-6713")),
+    person("David", "Bard", role = c("aut")),
+    person("Michael D.", "Hunter", role = c("aut"), comment=c(ORCID = "0000-0002-3651-6709")),
+    person("Patrick", "O'Keefe", role = c("aut"), comment = c(ORCID = "0000-0002-5343-0130")),
+    person("Kelly Meredith", "Williams", role = c("aut")),
     person("S. Mason", "Garrison",  role = c("aut", "cre"), email = "garrissm@wfu.edu", comment = c(ORCID = "0000-0002-4804-6003")))
 Description: Utilities and kinship information for behavior genetics and
     developmental research using the National Longitudinal Survey of Youth
@@ -28,6 +28,7 @@ Suggests:
     spelling,
     ggplot2,
     knitr,
+    readr,
     rmarkdown,
     scales,
     testit,
