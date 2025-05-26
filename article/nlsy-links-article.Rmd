@@ -36,8 +36,25 @@ abstract: |
 bibliography: bibliography.bib
 bibstyle: spphys
 # bibstyle options spbasic(default), spphys, spmpsci
-output: rticles::springer_article
+output:
+  rmarkdown::html_vignette:
+    toc: true
+
 ---
+
+```{r, include = FALSE}
+ options(rmarkdown.html_vignette.check_title = FALSE)
+ knitr::opts_chunk$set(
+   collapse = TRUE,
+   comment = "#>",
+   fig.width = 7,
+   fig.height = 5,
+   fig.align = "center",
+   message = FALSE,
+   warning = FALSE
+ )
+
+```
 
 Introduction {#intro}
 ====================================================

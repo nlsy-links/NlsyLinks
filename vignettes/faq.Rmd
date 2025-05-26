@@ -87,8 +87,6 @@ olderHalfYoungerFull <- (dsLinks$RExplicitOlderSibVersion == .25 &
 
 
 dsLinks[isGen2Sib & (olderFullYoungerHalf | olderHalfYoungerFull), ]
-
-
 ```
 
 
@@ -131,12 +129,10 @@ For Gen1, create a string variable that points to your extract (*e.g.*, `filePat
 
 ```{r include=FALSE}
 library(NlsyLinks)
-#library(readr)
-#filePathOutcomes <- read_csv("../inst/extdata/gen1-life-course.csv")
-#filePathOutcomes  <- read.csv("inst/extdata/gen1-life-course.csv") # This is a sample file
+# library(readr)
+# filePathOutcomes <- read_csv("../inst/extdata/gen1-life-course.csv")
+# filePathOutcomes  <- read.csv("inst/extdata/gen1-life-course.csv") # This is a sample file
 filePathOutcomes <- "../inst/extdata/gen1-life-course.csv"
-
-
 ```
 
 ```r

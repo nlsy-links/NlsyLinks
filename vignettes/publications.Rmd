@@ -23,7 +23,13 @@ Articles and Book Chapters
 
 <ol>
 
-<li value=81><cite>Sims, E. E., Trattner, J. D., & Garrison, S. M. (2024). Exploring the relationship between depression and delinquency: A sibling comparison design using the NLSY. *Frontiers in Psychology, 15*. doi:10.3389/fpsyg.2024.1430978</cite> (NLSY79)</li>
+<li value=84><cite>Tyson, H. (2025). ADHD and Sexual Debut. (Unpublished Honors Thesis)</cite> (NLSYC/YA)</li>
+
+<li value=83><cite>Sims, E. E., Trattner, J. D., & Garrison, S. M. (2024). Exploring the relationship between depression and delinquency: A sibling comparison design using the NLSY. *Frontiers in Psychology, 15*. doi:10.3389/fpsyg.2024.1430978</cite> (NLSY79)</li>
+
+<li value=82><cite>King, M. (2023). Disruptive Forces Related to Parental Death and Childhood Depression. (Unpublished Honors Thesis)</cite> (NLSY79, NLSYC/YA)</li>
+
+<li value=81><cite>Good, R. (2022).  Alcohol Use Patterns in a National Military Subsample. (Unpublished Honors Thesis) </cite> (NLSY79)</li>
 
 <li value=80><cite>Connolly, E. J., Jackson, D. B., & Semenza, D. C. (2021). Quality over quantity? Using sibling comparisons to examine relations between sleep quality, sleep duration, and delinquency. *Social Science & Medicine, 280*, 114053. doi: 10.1016/j.socscimed.2021.114053</cite> (NLSY79, NLSYC/YA)</li>
 
@@ -39,7 +45,6 @@ Articles and Book Chapters
   
 <li value=74><cite>Garrison, S. M., & Rodgers, J. L. (2019). Decomposing the Causes of the Socioeconomic Status-Health Gradient with Biometrical Modeling. *Journal of Personality and Social Psychology*.</cite> (NLSY79)</li>
 
-  
 <li value=73><cite>Kavish, N., Connolly, E. J., & Boutwell, B. B. (2019). Genetic and environmental contributions to the association between violent victimization and major depressive disorder. *Personality and Individual Differences*. <span class="doi">doi: 10.1016/j.paid.2018.05.034</span></cite> (NLSY79, NLSYC/YA)</li>
 
 <li value=72><cite>Johansson, O. (2017). Special Needs Children and Sibling Spillover Effects: Evidence from the National Longitudinal Study of Youth. (Unpublished Thesis) </cite> (NLSYC)</li>
