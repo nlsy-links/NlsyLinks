@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>NlsyLinks</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+<style type="text/css">
+p.abstract{
+text-align: center;
+font-weight: bold;
+}
+div.abstract{
+margin: auto;
+width: 90%;
+}
+</style>
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">NlsyLinks</h1>
+<h3 class="subtitle">An R package for research with the NLSY (National
+Longitudinal Survey of Youth)</h3>
+<div class="abstract">
+<p class="abstract">Abstract</p>
+<p>The text of your abstract. 150 – 250 words.</p>
+</div>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#intro" id="toc-intro">Introduction</a>
+<ul>
+<li><a href="#structural-and-topical-information" id="toc-structural-and-topical-information">Structural and Topical
+information</a></li>
+<li><a href="#terminology" id="toc-terminology">Terminology</a></li>
+</ul></li>
+<li><a href="#retrieving-data-with-the-nls-investigator" id="toc-retrieving-data-with-the-nls-investigator">Retrieving Data with
+the NLS Investigator</a></li>
+<li><a href="#illustrative-examples" id="toc-illustrative-examples">Illustrative Examples</a>
+<ul>
+<li><a href="#ace-df-analysis-of-one-generation-nlsy79-gen1" id="toc-ace-df-analysis-of-one-generation-nlsy79-gen1">ACE DF Analysis
+of One Generation (Nlsy79 Gen1)</a></li>
+<li><a href="#ace-df-analysis-of-one-generation-nlsy79-gen2" id="toc-ace-df-analysis-of-one-generation-nlsy79-gen2">ACE DF Analysis
+of One Generation (Nlsy79 Gen2)</a></li>
+<li><a href="#ace-sem-of-one-generation-nlsy79-gen2" id="toc-ace-sem-of-one-generation-nlsy79-gen2">ACE SEM of One Generation
+(Nlsy79 Gen2)</a></li>
+<li><a href="#ace-sem-of-two-generations" id="toc-ace-sem-of-two-generations">ACE SEM of Two Generations</a></li>
+<li><a href="#more-advanced-ace-analyses" id="toc-more-advanced-ace-analyses">More Advanced ACE Analyses</a></li>
+</ul></li>
+<li><a href="#further-topics" id="toc-further-topics">Further Topics</a>
+<ul>
+<li><a href="#data-manipulation-and-non-biometric-analyses" id="toc-data-manipulation-and-non-biometric-analyses">Data Manipulation
+and Non-Biometric Analyses</a></li>
+<li><a href="#sas-analogues" id="toc-sas-analogues">SAS
+Analogues</a></li>
+<li><a href="#additional-resources" id="toc-additional-resources">Additional Resources</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="intro" class="section level1">
+<h1>Introduction</h1>
+<ul>
+<li>Benefits of Accounting for Kinships
+<ul>
+<li>BG</li>
+<li>D’Onofrio-type research</li>
+</ul></li>
+</ul>
+<div id="structural-and-topical-information" class="section level2">
+<h2>Structural and Topical information</h2>
+<p>The NlsyLinks package offers two types of datasets: topical and
+structural. <em>Topical datasets</em> contain predictor and outcome
+variables typically used to test a focused hypotheses. For instance, the
+NLSY79 Gen2 variables Rqqq.qq and Rqqq.qq are critical when studying the
+relationship between conduct disorder and menarche (<em>e.g.</em>,
+Rodgers et al, <a href="https://link.springer.com/article/10.1007/s10519-014-9676-4">2015</a>),
+but are not relevant to many hypotheses outside these fields.</p>
+<p>In contrast, variables in <em>structural datasets</em> are not
+typically directly stated in the hypotheses, yet are essential to many
+NLSY-related investigations including:</p>
+<ul>
+<li>familial relationships (<em>e.g.</em>, Subjects 301 and 302 are
+half-brothers; Subjects 301 and 403 are first-cousins),</li>
+<li>subject characteristics (<em>e.g.</em>, Subject 301 is a Native
+American female; Subject 607 died from heart disease in 2005; Subject
+802 is part of the military over-sample), and</li>
+<li>subject-survey characteristics (<em>e.g.</em>, Subject 301 was 15
+years old for the 1981 Survey; Subject 301 did not respond to the 1990
+survey; Subject 702 completed the NLSY-C survey in 1996 and the NLSY-YA
+survey in 1998).</li>
+</ul>
+<p>The NlsyLinks includes small topical datasets which allows the
+vignettes and examples to be reproducible and more realistic. The
+structural datasets are intended to be the authoritative
+representations, and are the product of two NIH grants (for a complete
+history of the familial relationships, see Rodgers et al., <a href="https://link.springer.com/article/10.1007/s10519-016-9785-3">2016</a>).</p>
+</div>
+<div id="terminology" class="section level2">
+<h2>Terminology</h2>
+<p>Starting in the late 1960s, the NLS has provided multiple
+longitudinal cohorts to researcher and as a field, we have not always
+been consistent with cohort terminology. The package pertains to
+multiple generations of the “Nlsy79” and a single generation of the
+“Nlsy97”. Because the NlsyLinks package structures information within
+and between generations of the NLSY simultaneously, it requires slightly
+unconventional NLSY terminology to reduce ambiguity.</p>
+<p>The Nlsy79 sample refers to both the original 12,686 subjects
+interviewed in 1979, and their 11,500+ children (termed “Nlsy79 Gen1”
+and “Nlsy79 Gen2”, respectively). Nlsy79 Gen1 reflects the <a href="https://www.nlsinfo.org/content/cohorts/nlsy79">original NLSY79
+study</a>, while Nlsy Gen2 reflects their children, the <a href="https://www.nlsinfo.org/content/cohorts/nlsy79-children">NLSY79
+Children and Young Adults</a>. The NLSY does not interview “Nlsy79 Gen0”
+(the parents of Gen1) or “Nlsy79 Gen3” (the children of Gen2), though it
+does contain direct and indirect information about them.</p>
+<p>More specifically, the Nlsy79 Gen2 subjects are the biological
+offspring of the Nlsy79 Gen1 mothers. Until roughly the age of 14, the
+“children” completed the NLSY-C survey, and then became “young adults”
+and completed the NLSY-YA survey. Though they are the same respondents,
+different funding mechanisms and different survey items necessitate the
+distinction. This cohort is sometimes abbreviated as “NLSY79-C”,
+“NLSY79C”, “NLSY-C” or “NLSYC”. This packages uses “Nlsy79 Gen2” to
+refer to subjects of this generation, regardless of their age at the
+time of the survey.</p>
+<p>The terminology for the Nlsy97 sample is similar yet simpler than the
+Nlsy79, because the explicit respondents come from a single generation
+(in a sense the Nlsy97 Gen1). A few variables reflect Gen0 and Gen2. In
+contrast to the Nlsy79, the Nlsy97 contains more information about their
+housemates, even if the housemates are not subjects themselves.</p>
+<p>The Nlsy79 and Nlsy97 are both nationally-representative samples.</p>
+<p>Within our own research team, we have mostly stopped using terms like
+“NLSY79”, “NLSY79-C” and “NLSY79-YA”, because we conceptualize it as one
+big sample containing two related generations. It many senses, the
+responses collected from the second generation can be viewed as outcomes
+of the first generation. Likewise, the parents in the first generation
+provide many responses that can be viewed as explanatory variables for
+the 2nd generation. Depending on your research, there can be advantages
+of using one cohort to augment the other. There are also survey items
+that provide information about the 3rd generation and the 0th
+generation.</p>
+<p><em>Ambiguous Categories</em>: In some cases, the kinship of
+relatives can be safely narrowed to two categories, but not to one. The
+most common scenario involves the <em>ambiguous siblings</em> (among
+Nlsy79 Gen2 siblings); due to the sampling design, we know that the two
+subjects share the same mother, so they are either full siblings
+(<em>R</em>=.50) or half siblings (<em>R</em>=.25). For the qqq% that we
+could not satisfactorily classify, we categorize them as “ambiguous
+siblings” and assign them <em>R</em>=.375. Another common scenario
+involves the <em>ambiguous twins</em> (among Nlsy97 and both generations
+of Nlsy79). For qqq% of the twins we comfortably classify their
+relationship as either MZ or DZ; the remaining qqq% percent are
+classified as “ambiguous twins” and assigned <em>R</em>=0.75.
+Empirically, this approach has been successful in the previous 20 years
+of our previous research, and is discussed further in (Rodgers,
+qqq).</p>
+<p>The <code>SubjectTag</code> variable uniquely identify Nlsy79
+subjects when a dataset contains both generations. For Gen2 subjects,
+the <code>SubjectTag</code> is identical to their CID (<em>i.e.</em>,
+C00001.00 -the ID assigned in the NLSY79-Children files). However for
+Gen1 subjects, the <code>SubjectTag</code> is their CaseID
+(<em>i.e.</em>, R00001.00), appended with “00”. This manipulation is
+necessary to identify subjects uniquely in inter-generational datasets.
+A Gen1 subject with an ID of 43 becomes 4300. The
+<code>SubjectTag</code>s of her four children remain 4301, 4302, 4303,
+and 4304.</p>
+<p>The <em>expected coefficient of relatedness</em> of a pair of
+subjects is typically represented by the statistical variable
+<code>R</code>. Examples are: Monozygotic twins have <code>R</code>=1;
+dizygotic twins have <code>R</code>=0.5; full siblings (<em>i.e.</em>,
+those who share both biological parents) have <code>R</code>=0.5;
+half-siblings (<em>i.e.</em>, those who share exactly one biological
+parent) have <code>R</code>=0.25; adopted siblings have
+<code>R</code>=0.0. Other uncommon possibilities are mentioned the
+documentation for <code>Links79Pair</code>.</p>
+<p>In both the Nlsy79 and Nlsy97 samples, the <code>ExtendedID</code>
+variable indicates a subject’s extended family. Because there are two
+generations within the Nlsy79 sample, two subjects will be in the same
+extended family if either: [1] they are Gen1 housemates, [2] they are
+Gen2 siblings, [3] they are Gen2 cousins (<em>i.e.</em>, they have
+mothers who are Gen1 sisters in the NLSY79), [4] they are mother and
+child (in Gen1 and Gen2, respectively), or [5] they are (aunt|uncle) and
+(niece|nephew) (in Gen1 and Gen2, respectively). Because there is only
+one generation in the Nlsy97, two subjects will be in the same extended
+family only if they are housemates.</p>
+<p>Note that housemates range from sharing all their genes
+(<em>i.e.</em>, monozygotic twins) to none (<em>e.g.</em>, adopted
+siblings). A primary product of our efforts has been to leverage
+implicit and explicit information about the subjects in order to
+facilitate behavior genetics (BG) research, or any other investigation
+that needs to control for shared genetics.</p>
+<p>An <strong>outcome variable</strong> is directly relevant to the
+applied researcher; these might represent constructs like height, IQ,
+and income. A <strong>structural variable</strong> is necessary to
+manage BG datasets; examples are <code>R</code>, a subject’s ID, and the
+date of a subject’s last survey.</p>
+<p>An <strong>ACE model</strong> is the basic biometrical model used by
+BG researchers, where the genetic and environmental effects are assumed
+to be additive. The three primary variance components are (1) the
+proportion of variability due to a shared genetic influence (typically
+represented as <span class="math inline">\(a^2\)</span>, or sometimes
+<span class="math inline">\(h^2\)</span>), (2) the proportion of
+variability due to shared common environmental influence (typically
+<span class="math inline">\(c^2\)</span>), and (3) the proportion of
+variability due to unexplained/residual/error influence (typically <span class="math inline">\(e^2\)</span>).</p>
+<p>The variables are scaled so that they account for all observed
+variability in the outcome variable; specifically: <span class="math inline">\(a^2 + c^2 + e^2 = 1\)</span>. Using appropriate
+designs that can logically distinguish these different components (under
+carefully specified assumptions), the basic biometrical modeling
+strategy is to estimate the magnitude of <span class="math inline">\(a^2\)</span>, <span class="math inline">\(c^2\)</span>, and <span class="math inline">\(e^2\)</span> within the context of a particular
+model. For gentle introductions to BG research, we recommend <a href="https://books.google.com/books?id=r7AgAQAAIAAJ&amp;source=gbs_navlinks_s">Plomin
+(1990)</a> and <a href="https://www.colorado.edu/psych-neuro/gregory-carey">Carey
+(2003)</a>. For more in-depth ACE model-fitting strategies, we recommend
+<a href="http://ibgwww.colorado.edu/workshop2006/cdrom/HTML/book2004a.pdf">Neale
+&amp; Maes, (2004)</a>.</p>
+</div>
+</div>
+<div id="retrieving-data-with-the-nls-investigator" class="section level1">
+<h1>Retrieving Data with the NLS Investigator</h1>
+<p>When a researcher pursues a new idea, we suggest to start by
+exploring what the NLSY can offer by exploring the (a) vast online
+documentation and (b) <a href="https://www.nlsinfo.org/investigator">NLS
+Investigator</a>. The documentation online (<a href="https://www.nlsinfo.org/content/getting-started" class="uri">https://www.nlsinfo.org/content/getting-started</a>) has
+general information (<em>e.g.</em>, how to connect the nationally
+representative sample was collected), topical information
+(<em>e.g.</em>, what medical and health information has been collected
+across survey waves and subject ages), and descriptive summaries
+(<em>e.g.</em>, attrition over time for different race and ethnic
+groups). This material has helpful suggestions which variables are
+available and appropriate.</p>
+<p>With these hints, identify and download the specific variables from
+the NLS Investigator. The NLS Investigator is described briefly in the
+second example. For more detailed instruction see the NlsyLink package’s
+<a href="https://nlsy-links.github.io/NlsyLinks/articles/nls-investigator.html">NLS
+Investigator vignette</a> or the official <a href="https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide">NLS
+documentation</a>). Researchers new to the NLSY should expect at least a
+dozen round trips as they iteratively improve and complete their set of
+variables. First, select the “Study”, such as “NLSY79 Child &amp; Young
+Adult” (which corresponds to Nlsy79 Gen2 in our terminology. Second,
+select your desired variables, out of the tens of thousands available
+ones.</p>
+<p>Before starting the examples, first verify that the NlsyLinks and
+dplyr packages are installed correctly; for the later examples, the
+lavaan package is required. If you are using an older version of R,
+replace the native pipes (<code>|&gt;</code>) with pipes from the
+magrittr package (<code>%&gt;%</code>).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Should evaluate to TRUE.</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">.packages</span>(<span class="at">all.available =</span> <span class="cn">TRUE</span>) <span class="sc">==</span> <span class="st">&quot;NlsyLinks&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">.packages</span>(<span class="at">all.available =</span> <span class="cn">TRUE</span>) <span class="sc">==</span> <span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">.packages</span>(<span class="at">all.available =</span> <span class="cn">TRUE</span>) <span class="sc">==</span> <span class="st">&quot;lavaan&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">library</span>(NlsyLinks) <span class="co"># Load the package into the current session.</span></span></code></pre></div>
+</div>
+<div id="illustrative-examples" class="section level1">
+<h1>Illustrative Examples</h1>
+<p>We will start with a simple example and gradually increase
+complexity.</p>
+<div id="ace-df-analysis-of-one-generation-nlsy79-gen1" class="section level2">
+<h2>ACE DF Analysis of One Generation (Nlsy79 Gen1)</h2>
+<p>The first example should provide an initial feel for the inputs,
+mechanics, and goals of a typical NLSY analysis. It uses a simple
+statistical model and all available Nlsy79 Gen1 subjects. The
+<code>CreatePairLinksDoubleEntered</code> function will create a data
+frame where each represents one pair of siblings, respective of order
+(<em>i.e.</em>, there is a row for Subjects 201 and 202, and a second
+row for Subjects 202 and 201). This function examines the subjects’ IDs
+and determines who is related to whom (and by how much). By default,
+each row has at least six values/columns: (i) ID for the older member of
+the kinship pair: <code>Subject1Tag</code>, (ii) ID for the younger
+member: <code>Subject2Tag</code>, (iii) ID for their extended family:
+<code>ExtendedID</code>, (iv) their estimated coefficient of genetic
+relatedness: <code>R</code>, (v <em>and beyond</em>) outcome values for
+the older member; (vi <em>and beyond</em>) outcome values for the
+younger member.</p>
+<p>A DeFries-Fulker (<strong>DF</strong>) Analysis uses linear
+regression to estimate the <span class="math inline">\(a^2\)</span>,
+<span class="math inline">\(c^2\)</span>, and <span class="math inline">\(e^2\)</span> of a univariate biometric system. The
+interpretations of the DF analysis can be found in Rodgers &amp; Kohler
+(2005) and Rodgers, Rowe, &amp; Li (1999). This
+<code>DeFriesFulkerMethod3()</code> function estimates two parameters.
+The steps are:</p>
+<ol style="list-style-type: decimal">
+<li>Use the NLS Investigator to select and download a Gen2 dataset.</li>
+<li>Open R and create a new script (see <a href="#appendix-creating-and-saving-r-scripts">Appendix: R Scripts</a>
+and load the NlsyLinks package. Within the R script, identify the
+locations of the downloaded data file, and load it into a data
+frame.</li>
+<li>Within the R script, load the linking dataset. Then select only Gen2
+subjects. The “Pair” version of the linking dataset is essentially an
+upper triangle of a symmetric sparse matrix.</li>
+<li>Load and assign the <code>ExtraOutcomes79</code> dataset.</li>
+<li>Specify the outcome variable name and filter out all subjects who
+have a negative value in this variable. The NLSY typically uses negative
+values to indicate different types of missingness (see Further
+Information below).</li>
+<li>Create a double-entered file by calling the
+<code>CreatePairLinksDoubleEntered()</code> function. At minimum, pass
+the (i) outcome dataset, the (ii) linking dataset, and the (iii) name(s)
+of the outcome variable(s). <em>(There are occasions when a
+single-entered file is more appropriate for a DF analysis. See Rodgers
+&amp; Kohler, 2005, for additional information.)</em></li>
+<li>Use <code>DeFriesFulkerMethod3()</code> function (<em>i.e.</em>,
+general linear model) to estimate the coefficients of the DF model.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Step 2: Load the package containing the linking routines.</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(NlsyLinks)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Step 3: Load the LINKING dataset and filter for the Gen2 subjects</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>dsLinking <span class="ot">&lt;-</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  Links79Pair <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(RelationshipPath <span class="sc">==</span> <span class="st">&quot;Gen2Siblings&quot;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">summary</span>(dsLinking) <span class="co"># Notice there are 11k records (one for each pair).</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;    ExtendedID    SubjectTag_S1     SubjectTag_S2           R        </span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;  Min.   :    2   Min.   :    201   Min.   :    202   Min.   :0.250  </span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt;  1st Qu.: 3154   1st Qu.: 315401   1st Qu.: 315403   1st Qu.:0.250  </span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;  Median : 6105   Median : 610703   Median : 610705   Median :0.500  </span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt;  Mean   : 5927   Mean   : 593061   Mean   : 593063   Mean   :0.417  </span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.: 8507   3rd Qu.: 851001   3rd Qu.: 851003   3rd Qu.:0.500  </span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt;  Max.   :12673   Max.   :1267301   Max.   :1267302   Max.   :1.000  </span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt;        RelationshipPath</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt;  Gen1Housemates:    0  </span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt;  Gen2Siblings  :11114  </span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">#&gt;  Gen2Cousins   :    0  </span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#&gt;  ParentChild   :    0  </span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">#&gt;  AuntNiece     :    0  </span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="co"># Step 4: Load the OUTCOMES dataset, and then examine the summary.</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>dsOutcomes <span class="ot">&lt;-</span> ExtraOutcomes79 <span class="co"># ds stands for Data Set</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="fu">summary</span>(dsOutcomes)</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="co">#&gt;    SubjectTag        SubjectID         Generation    HeightZGenderAge </span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="co">#&gt;  Min.   :    100   Min.   :      1   Min.   :1.000   Min.   :-2.9855  </span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">#&gt;  1st Qu.: 314025   1st Qu.:   5998   1st Qu.:1.000   1st Qu.:-0.7238  </span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="co">#&gt;  Median : 620050   Median :  12000   Median :1.000   Median :-0.0448  </span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">#&gt;  Mean   : 618600   Mean   : 289254   Mean   :1.476   Mean   :-0.0057  </span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.: 914501   3rd Qu.: 577403   3rd Qu.:2.000   3rd Qu.: 0.6484  </span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a><span class="co">#&gt;  Max.   :1268600   Max.   :1267501   Max.   :2.000   Max.   : 2.9965  </span></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="co">#&gt;                                                      NA&#39;s   :4711     </span></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co">#&gt;  WeightZGenderAge  AfqtRescaled2006Gaussified      Afi             Afm       </span></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">#&gt;  Min.   :-2.9855   Min.   :-2.8947            Min.   : 2.00   Min.   : 0.00  </span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:-0.6773   1st Qu.:-0.6919            1st Qu.:15.00   1st Qu.:12.00  </span></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="co">#&gt;  Median :-0.1490   Median :-0.0235            Median :17.00   Median :13.00  </span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="co">#&gt;  Mean   : 0.0005   Mean   :-0.0106            Mean   :16.66   Mean   :12.78  </span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.: 0.5331   3rd Qu.: 0.6600            3rd Qu.:18.00   3rd Qu.:14.00  </span></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="co">#&gt;  Max.   : 4.9448   Max.   : 2.9945            Max.   :27.00   Max.   :19.00  </span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="co">#&gt;  NA&#39;s   :4719      NA&#39;s   :12510              NA&#39;s   :12740   NA&#39;s   :18165  </span></span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="co">#&gt;  MathStandardized</span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="co">#&gt;  Min.   : 65.0   </span></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="co">#&gt;  1st Qu.: 92.5   </span></span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="co">#&gt;  Median :100.0   </span></span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="co">#&gt;  Mean   :100.1   </span></span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:108.5   </span></span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="co">#&gt;  Max.   :135.0   </span></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="co">#&gt;  NA&#39;s   :15085</span></span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a><span class="co"># Step 5: If the negative values (which represent NLSY missing or</span></span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="co">#   skip patterns) still exist, then:</span></span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a>dsOutcomes <span class="ot">&lt;-</span></span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a>  dsOutcomes <span class="sc">|&gt;</span></span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a>    <span class="at">MathStandardized =</span> dplyr<span class="sc">::</span><span class="fu">if_else</span>(</span>
+<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a>      MathStandardized <span class="sc">&lt;</span> <span class="dv">0</span>,</span>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a>      <span class="cn">NA_real_</span>,</span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>      MathStandardized</span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>    ),</span>
+<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a>  )</span>
+<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a><span class="co"># Step 6: Create the double entered dataset.</span></span>
+<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a>dsDouble <span class="ot">&lt;-</span></span>
+<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a>  <span class="fu">CreatePairLinksDoubleEntered</span>(</span>
+<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a>    <span class="at">outcomeDataset   =</span> dsOutcomes,</span>
+<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a>    <span class="at">linksPairDataset =</span> dsLinking,</span>
+<span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a>    <span class="at">outcomeNames     =</span> <span class="fu">c</span>(<span class="st">&quot;MathStandardized&quot;</span>)</span>
+<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a>  )</span>
+<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a><span class="co"># Notice there are now two records for each unique pair.</span></span>
+<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a><span class="fu">summary</span>(dsDouble)</span>
+<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a><span class="co">#&gt;  SubjectTag_S1     SubjectTag_S2       ExtendedID          R        </span></span>
+<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a><span class="co">#&gt;  Min.   :    201   Min.   :    201   Min.   :    2   Min.   :0.250  </span></span>
+<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a><span class="co">#&gt;  1st Qu.: 315402   1st Qu.: 315402   1st Qu.: 3154   1st Qu.:0.250  </span></span>
+<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a><span class="co">#&gt;  Median : 610704   Median : 610704   Median : 6105   Median :0.500  </span></span>
+<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a><span class="co">#&gt;  Mean   : 593062   Mean   : 593062   Mean   : 5927   Mean   :0.417  </span></span>
+<span id="cb2-78"><a href="#cb2-78" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.: 851002   3rd Qu.: 851002   3rd Qu.: 8508   3rd Qu.:0.500  </span></span>
+<span id="cb2-79"><a href="#cb2-79" tabindex="-1"></a><span class="co">#&gt;  Max.   :1267302   Max.   :1267302   Max.   :12673   Max.   :1.000  </span></span>
+<span id="cb2-80"><a href="#cb2-80" tabindex="-1"></a><span class="co">#&gt;                                                                     </span></span>
+<span id="cb2-81"><a href="#cb2-81" tabindex="-1"></a><span class="co">#&gt;        RelationshipPath MathStandardized_S1 MathStandardized_S2</span></span>
+<span id="cb2-82"><a href="#cb2-82" tabindex="-1"></a><span class="co">#&gt;  Gen1Housemates:    0   Min.   : 65.0       Min.   : 65.0      </span></span>
+<span id="cb2-83"><a href="#cb2-83" tabindex="-1"></a><span class="co">#&gt;  Gen2Siblings  :22228   1st Qu.: 90.0       1st Qu.: 90.0      </span></span>
+<span id="cb2-84"><a href="#cb2-84" tabindex="-1"></a><span class="co">#&gt;  Gen2Cousins   :    0   Median : 98.5       Median : 98.5      </span></span>
+<span id="cb2-85"><a href="#cb2-85" tabindex="-1"></a><span class="co">#&gt;  ParentChild   :    0   Mean   : 98.4       Mean   : 98.4      </span></span>
+<span id="cb2-86"><a href="#cb2-86" tabindex="-1"></a><span class="co">#&gt;  AuntNiece     :    0   3rd Qu.:107.0       3rd Qu.:107.0      </span></span>
+<span id="cb2-87"><a href="#cb2-87" tabindex="-1"></a><span class="co">#&gt;                         Max.   :135.0       Max.   :135.0      </span></span>
+<span id="cb2-88"><a href="#cb2-88" tabindex="-1"></a><span class="co">#&gt;                         NA&#39;s   :3926        NA&#39;s   :3926</span></span>
+<span id="cb2-89"><a href="#cb2-89" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" tabindex="-1"></a><span class="co"># Step 7: Estimate the ACE components with a DF Analysis</span></span>
+<span id="cb2-91"><a href="#cb2-91" tabindex="-1"></a>ace <span class="ot">&lt;-</span></span>
+<span id="cb2-92"><a href="#cb2-92" tabindex="-1"></a>  <span class="fu">DeFriesFulkerMethod3</span>(</span>
+<span id="cb2-93"><a href="#cb2-93" tabindex="-1"></a>    <span class="at">dataSet  =</span> dsDouble,</span>
+<span id="cb2-94"><a href="#cb2-94" tabindex="-1"></a>    <span class="at">oName_S1 =</span> <span class="st">&quot;MathStandardized_S1&quot;</span>,</span>
+<span id="cb2-95"><a href="#cb2-95" tabindex="-1"></a>    <span class="at">oName_S2 =</span> <span class="st">&quot;MathStandardized_S2&quot;</span></span>
+<span id="cb2-96"><a href="#cb2-96" tabindex="-1"></a>  )</span>
+<span id="cb2-97"><a href="#cb2-97" tabindex="-1"></a>ace</span>
+<span id="cb2-98"><a href="#cb2-98" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Results of ACE estimation: [show]&quot;</span></span>
+<span id="cb2-99"><a href="#cb2-99" tabindex="-1"></a><span class="co">#&gt;     ASquared     CSquared     ESquared    CaseCount </span></span>
+<span id="cb2-100"><a href="#cb2-100" tabindex="-1"></a><span class="co">#&gt; 7.734447e-01 1.469204e-01 7.963486e-02 1.668000e+04</span></span></code></pre></div>
+<p><em>Further Information</em>: If the different reasons of missingness
+are important, further work is necessary. For instance, some analyses
+that use item <code>Y19940000</code> might need to distinguish a
+response of “Don’t Know” (which is coded as -2) from “Missing” (which is
+coded as -7). For this example, it is adequate to combine the
+non-response values.</p>
+</div>
+<div id="ace-df-analysis-of-one-generation-nlsy79-gen2" class="section level2">
+<h2>ACE DF Analysis of One Generation (Nlsy79 Gen2)</h2>
+<p>The second example differs from the previous example in two ways.
+First, the outcome variables are read from a CSV (<a href="https://en.wikipedia.org/wiki/Comma-separated_values">comma
+separated values</a> file) that was downloaded from the NLS
+Investigator. Second, the DF analysis is called through the function
+<code>AceUnivariate</code>; this function is a wrapper around some
+simple ACE methods, and will help us smoothly transition to more
+techniques later.</p>
+<p>The steps are:</p>
+<ol style="list-style-type: decimal">
+<li>Use the NLS Investigator to select and download a Gen2 dataset.
+Select the variables “length of gestation of child in weeks”
+(<code>C03280.00</code>), “weight of child at birth in ounces”
+(<code>C03286.00</code>), and “length of child at birth”
+(<code>C03288.00</code>), and then download the *.zip file to your local
+computer.</li>
+<li><a href="#appendix-creating-and-saving-r-scripts">Open R and create
+a new script</a> and load the NlsyLinks package.</li>
+<li>Within the R script, load the linking dataset. Then select only Gen2
+subjects.</li>
+<li>Read the CSV into R as a <code>data.frame</code> using
+<code>ReadCsvNlsy79Gen2()</code>.</li>
+<li>Verify the desired outcome column exists, and rename it something
+meaningful to your project. In this example, we rename column
+<code>C0328800</code> to <code>BirthWeightInOunces</code>.</li>
+<li>Filter out all subjects who have a negative
+<code>BirthWeightInOunces</code> value. See the Further Information note
+in the previous example.</li>
+<li>Create a double-entered file by calling
+<code>CreatePairLinksDoubleEntered()</code>. At minimum, pass the (i)
+outcome dataset, the (ii) linking dataset, and the (iii) name(s) of the
+outcome variable(s).</li>
+<li>Call <code>AceUnivariate()</code> to estimate the coefficients.</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Step 2: Load the package containing the linking routines.</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">library</span>(NlsyLinks)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Step 3: Load the linking dataset and filter for the Gen2 subjects</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>dsLinking <span class="ot">&lt;-</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  Links79Pair <span class="sc">|&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(RelationshipPath <span class="sc">==</span> <span class="st">&quot;Gen2Siblings&quot;</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co"># Step 4: Read the outcomes dataset then examine the summary.</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#   Your path might be `filePathOutcomes &lt;- &quot;C:/Nls/gen2-birth.csv&quot;`</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>filePathOutcomes <span class="ot">&lt;-</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="fu">system.file</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>    <span class="st">&quot;extdata/gen2-birth.csv&quot;</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    <span class="at">package =</span> <span class="st">&quot;NlsyLinks&quot;</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  )</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>dsOutcomes <span class="ot">&lt;-</span> <span class="fu">ReadCsvNlsy79Gen2</span>(filePathOutcomes)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="fu">summary</span>(dsOutcomes)</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt;    SubjectTag        SubjectID         ExtendedID      Generation</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt;  Min.   :    201   Min.   :    201   Min.   :    2   Min.   :2   </span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt;  1st Qu.: 310302   1st Qu.: 310302   1st Qu.: 3101   1st Qu.:2   </span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="co">#&gt;  Median : 604607   Median : 604607   Median : 6045   Median :2   </span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="co">#&gt;  Mean   : 601313   Mean   : 601313   Mean   : 6007   Mean   :2   </span></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.: 876203   3rd Qu.: 876203   3rd Qu.: 8757   3rd Qu.:2   </span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt;  Max.   :1267501   Max.   :1267501   Max.   :12675   Max.   :2   </span></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt;                                      NA&#39;s   :2                   </span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt;  SubjectTagOfMother    C0005300        C0005400         C0005700   </span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt;  Min.   :    200    Min.   :1.000   Min.   :-3.000   Min.   :  -3  </span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt;  1st Qu.: 310300    1st Qu.:2.000   1st Qu.: 1.000   1st Qu.:1981  </span></span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt;  Median : 604600    Median :3.000   Median : 1.000   Median :1985  </span></span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co">#&gt;  Mean   : 601311    Mean   :2.338   Mean   : 1.489   Mean   :1986  </span></span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.: 876200    3rd Qu.:3.000   3rd Qu.: 2.000   3rd Qu.:1990  </span></span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt;  Max.   :1267500    Max.   :3.000   Max.   : 2.000   Max.   :2008  </span></span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">#&gt;                                                                    </span></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co">#&gt;     C0328000        C0328600        C0328800    </span></span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#&gt;  Min.   :-7.00   Min.   : -7.0   Min.   :-7.00  </span></span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:37.00   1st Qu.: 99.0   1st Qu.:18.00  </span></span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a><span class="co">#&gt;  Median :39.00   Median :115.0   Median :20.00  </span></span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a><span class="co">#&gt;  Mean   :33.51   Mean   :103.9   Mean   :16.51  </span></span>
+<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:39.00   3rd Qu.:128.0   3rd Qu.:21.00  </span></span>
+<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a><span class="co">#&gt;  Max.   :51.00   Max.   :768.0   Max.   :48.00  </span></span>
+<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a><span class="co"># Step 5: Verify and rename an existing column.</span></span>
+<span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a><span class="fu">VerifyColumnExists</span>(dsOutcomes, <span class="st">&quot;C0328600&quot;</span>) <span class="co"># Should return 10 in this example.</span></span>
+<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a><span class="co">#&gt; [1] 10</span></span>
+<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a>dsOutcomes <span class="ot">&lt;-</span></span>
+<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a>  dsOutcomes <span class="sc">|&gt;</span></span>
+<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(</span>
+<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a>    <span class="at">BirthWeightInOunces =</span> C0328600,</span>
+<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a>  )</span>
+<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a><span class="co"># Step 6: For this item, a negative value indicates the parent</span></span>
+<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a><span class="co">#   refused, didn&#39;t know, invalidly skipped, or was missing.</span></span>
+<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a><span class="co">#   For present purposes, treat these responses equivalently.</span></span>
+<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a><span class="co">#   Then clip/Winsorize/truncate the weight.</span></span>
+<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a>dsOutcomes <span class="ot">&lt;-</span></span>
+<span id="cb3-57"><a href="#cb3-57" tabindex="-1"></a>  dsOutcomes <span class="sc">|&gt;</span></span>
+<span id="cb3-58"><a href="#cb3-58" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb3-59"><a href="#cb3-59" tabindex="-1"></a>    <span class="co"># Set to NA</span></span>
+<span id="cb3-60"><a href="#cb3-60" tabindex="-1"></a>    <span class="at">BirthWeightInOunces =</span> dplyr<span class="sc">::</span><span class="fu">if_else</span>(</span>
+<span id="cb3-61"><a href="#cb3-61" tabindex="-1"></a>      BirthWeightInOunces <span class="sc">&lt;</span> <span class="dv">0</span><span class="dt">L</span>,</span>
+<span id="cb3-62"><a href="#cb3-62" tabindex="-1"></a>      <span class="cn">NA_integer_</span>,</span>
+<span id="cb3-63"><a href="#cb3-63" tabindex="-1"></a>      BirthWeightInOunces</span>
+<span id="cb3-64"><a href="#cb3-64" tabindex="-1"></a>    ),</span>
+<span id="cb3-65"><a href="#cb3-65" tabindex="-1"></a>    <span class="co"># Winsorize</span></span>
+<span id="cb3-66"><a href="#cb3-66" tabindex="-1"></a>    <span class="at">BirthWeightInOunces =</span> <span class="fu">pmin</span>(BirthWeightInOunces, <span class="dv">200</span><span class="dt">L</span>),</span>
+<span id="cb3-67"><a href="#cb3-67" tabindex="-1"></a>  )</span>
+<span id="cb3-68"><a href="#cb3-68" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" tabindex="-1"></a></span>
+<span id="cb3-70"><a href="#cb3-70" tabindex="-1"></a><span class="co"># Step 7: Create the double entered dataset.</span></span>
+<span id="cb3-71"><a href="#cb3-71" tabindex="-1"></a>dsDouble <span class="ot">&lt;-</span></span>
+<span id="cb3-72"><a href="#cb3-72" tabindex="-1"></a>  <span class="fu">CreatePairLinksDoubleEntered</span>(</span>
+<span id="cb3-73"><a href="#cb3-73" tabindex="-1"></a>    <span class="at">outcomeDataset   =</span> dsOutcomes,</span>
+<span id="cb3-74"><a href="#cb3-74" tabindex="-1"></a>    <span class="at">linksPairDataset =</span> dsLinking,</span>
+<span id="cb3-75"><a href="#cb3-75" tabindex="-1"></a>    <span class="at">outcomeNames     =</span> <span class="fu">c</span>(<span class="st">&quot;BirthWeightInOunces&quot;</span>)</span>
+<span id="cb3-76"><a href="#cb3-76" tabindex="-1"></a>  )</span>
+<span id="cb3-77"><a href="#cb3-77" tabindex="-1"></a></span>
+<span id="cb3-78"><a href="#cb3-78" tabindex="-1"></a><span class="co"># Step 8: Estimate the ACE components with a DF Analysis</span></span>
+<span id="cb3-79"><a href="#cb3-79" tabindex="-1"></a>ace <span class="ot">&lt;-</span></span>
+<span id="cb3-80"><a href="#cb3-80" tabindex="-1"></a>  <span class="fu">AceUnivariate</span>(</span>
+<span id="cb3-81"><a href="#cb3-81" tabindex="-1"></a>    <span class="at">method   =</span> <span class="st">&quot;DeFriesFulkerMethod3&quot;</span>,</span>
+<span id="cb3-82"><a href="#cb3-82" tabindex="-1"></a>    <span class="at">dataSet  =</span> dsDouble,</span>
+<span id="cb3-83"><a href="#cb3-83" tabindex="-1"></a>    <span class="at">oName_S1 =</span> <span class="st">&quot;BirthWeightInOunces_S1&quot;</span>,</span>
+<span id="cb3-84"><a href="#cb3-84" tabindex="-1"></a>    <span class="at">oName_S2 =</span> <span class="st">&quot;BirthWeightInOunces_S2&quot;</span></span>
+<span id="cb3-85"><a href="#cb3-85" tabindex="-1"></a>  )</span>
+<span id="cb3-86"><a href="#cb3-86" tabindex="-1"></a>ace</span>
+<span id="cb3-87"><a href="#cb3-87" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Results of ACE estimation: [show]&quot;</span></span>
+<span id="cb3-88"><a href="#cb3-88" tabindex="-1"></a><span class="co">#&gt;     ASquared     CSquared     ESquared    CaseCount </span></span>
+<span id="cb3-89"><a href="#cb3-89" tabindex="-1"></a><span class="co">#&gt; 5.103108e-01 1.752415e-01 3.144477e-01 1.744000e+04</span></span></code></pre></div>
+<p>For another example of incorporating CSVs downloaded from the NLS
+Investigator, please see the “Race and Gender Variables” entry in the <a href="https://nlsy-links.github.io/NlsyLinks/articles/faq.html">FAQ</a>.</p>
+</div>
+<div id="ace-sem-of-one-generation-nlsy79-gen2" class="section level2">
+<h2>ACE SEM of One Generation (Nlsy79 Gen2)</h2>
+<p>The example differs from the first one by the statistical mechanism
+used to estimate the components. The first example uses multiple
+regression to estimate the influence of the shared genetic and
+environmental factors, while this example uses structural equation
+modeling (SEM).</p>
+<p>The <code>CreatePairLinksSingleEntered</code> function will create a
+<code>data.frame</code> where each row represents one unique pair of
+siblings, <em>irrespective of order</em>. Other than producing half the
+number of rows, this function is identical to
+<code>CreatePairLinksDoubleEntered</code>.</p>
+<p>The steps are:</p>
+<p>(Steps 1-5 proceed identically to the first example.)</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Create a <em>single</em>-entered file by calling the
+<code>CreatePairLinksSingleEntered</code> function. At minimum, pass the
+(i) outcome dataset, the (ii) linking dataset, and the (iii) name(s) of
+the outcome variable(s).</li>
+<li>Declare the names of the outcome variables corresponding to the two
+members in each pair. Assuming the variable is called <code>ZZZ</code>
+and the preceding steps have been followed, the variable
+<code>ZZZ\_S1</code> corresponds to the first members and
+<code>ZZZ\_S2</code> corresponds to the second members.</li>
+<li>Create a GroupSummary <code>data.frame</code>, which identifies the
+<code>R</code> groups that should be considered by the model. Inspect
+the output to see if the groups show unexpected or fishy
+differences.</li>
+<li>Create a <code>data.frame</code> with cleaned variables to pass to
+the SEM function. This <code>data.frame</code> contains only the three
+necessary rows and columns.</li>
+<li>Estimate the SEM with the lavaan package. The function returns an
+<code>S4</code> object, which shows the basic ACE information.</li>
+<li>Inspect details of the SEM, beyond the ACE components. In this
+example, we look at the fit stats and the parameter estimates. The
+lavaan package has additional methods that may be useful for your
+purposes.</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Steps 1-5 are explained in the first example:</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">library</span>(NlsyLinks)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>dsLinking <span class="ot">&lt;-</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  Links79Pair <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(RelationshipPath <span class="sc">==</span> <span class="st">&quot;Gen2Siblings&quot;</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>dsOutcomes <span class="ot">&lt;-</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>  ExtraOutcomes79 <span class="sc">|&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>    <span class="at">MathStandardized =</span> dplyr<span class="sc">::</span><span class="fu">if_else</span>(</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>      MathStandardized <span class="sc">&lt;</span> <span class="dv">0</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>      <span class="cn">NA_real_</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a>      MathStandardized</span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>    ),</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>  )</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co"># Step 6: Create the single entered dataset.</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>dsSingle <span class="ot">&lt;-</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>  <span class="fu">CreatePairLinksSingleEntered</span>(</span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a>    <span class="at">outcomeDataset   =</span> dsOutcomes,</span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>    <span class="at">linksPairDataset =</span> dsLinking,</span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>    <span class="at">outcomeNames     =</span> <span class="fu">c</span>(<span class="st">&quot;MathStandardized&quot;</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>  )</span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co"># Step 7: Declare the names for the two outcome variables.</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>oName_S1 <span class="ot">&lt;-</span> <span class="st">&quot;MathStandardized_S1&quot;</span> <span class="co">#Stands for Outcome1</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a>oName_S2 <span class="ot">&lt;-</span> <span class="st">&quot;MathStandardized_S2&quot;</span> <span class="co">#Stands for Outcome2</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co"># Step 8: Summarize the R groups and</span></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#   determine which groups can be estimated.</span></span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a>dsGroupSummary <span class="ot">&lt;-</span> <span class="fu">RGroupSummary</span>(dsSingle, oName_S1, oName_S2)</span>
+<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a>dsGroupSummary</span>
+<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="co">#&gt;       R Included PairCount    O1Mean    O2Mean O1Variance O2Variance</span></span>
+<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a><span class="co">#&gt; 1 0.250     TRUE      2689  95.10450  95.97936   126.9489   150.1775</span></span>
+<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a><span class="co">#&gt; 2 0.375     TRUE       137  93.63139  93.36861   160.0120   136.6628</span></span>
+<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a><span class="co">#&gt; 3 0.500     TRUE      5491  99.89374 100.02868   168.7326   172.7293</span></span>
+<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a><span class="co">#&gt; 4 0.750    FALSE         2 108.50000 106.00000   220.5000    18.0000</span></span>
+<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a><span class="co">#&gt; 5 1.000     TRUE        21  98.21429  96.02381   289.4393   215.2369</span></span>
+<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a><span class="co">#&gt;   O1O2Covariance Correlation Determinant PosDefinite</span></span>
+<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a><span class="co">#&gt; 1       41.96914   0.3039577   17303.459        TRUE</span></span>
+<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a><span class="co">#&gt; 2       50.39790   0.3408090   19327.735        TRUE</span></span>
+<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a><span class="co">#&gt; 3       90.04116   0.5274225   21037.642        TRUE</span></span>
+<span id="cb4-43"><a href="#cb4-43" tabindex="-1"></a><span class="co">#&gt; 4       63.00000   1.0000000       0.000       FALSE</span></span>
+<span id="cb4-44"><a href="#cb4-44" tabindex="-1"></a><span class="co">#&gt; 5      229.10714   0.9179130    9807.933        TRUE</span></span>
+<span id="cb4-45"><a href="#cb4-45" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" tabindex="-1"></a><span class="co"># Step 9: Create a cleaned dataset</span></span>
+<span id="cb4-47"><a href="#cb4-47" tabindex="-1"></a>dsClean <span class="ot">&lt;-</span></span>
+<span id="cb4-48"><a href="#cb4-48" tabindex="-1"></a>  <span class="fu">CleanSemAceDataset</span>(</span>
+<span id="cb4-49"><a href="#cb4-49" tabindex="-1"></a>    <span class="at">dsDirty         =</span> dsSingle,</span>
+<span id="cb4-50"><a href="#cb4-50" tabindex="-1"></a>    <span class="at">dsGroupSummary  =</span> dsGroupSummary,</span>
+<span id="cb4-51"><a href="#cb4-51" tabindex="-1"></a>    <span class="at">oName_S1        =</span> oName_S1,</span>
+<span id="cb4-52"><a href="#cb4-52" tabindex="-1"></a>    <span class="at">oName_S2        =</span> oName_S2</span>
+<span id="cb4-53"><a href="#cb4-53" tabindex="-1"></a>  )</span>
+<span id="cb4-54"><a href="#cb4-54" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" tabindex="-1"></a><span class="co"># Step 10: Run the model</span></span>
+<span id="cb4-56"><a href="#cb4-56" tabindex="-1"></a>ace <span class="ot">&lt;-</span> <span class="fu">AceLavaanGroup</span>(dsClean)</span>
+<span id="cb4-57"><a href="#cb4-57" tabindex="-1"></a>ace</span>
+<span id="cb4-58"><a href="#cb4-58" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Results of ACE estimation: [show]&quot;</span></span>
+<span id="cb4-59"><a href="#cb4-59" tabindex="-1"></a><span class="co">#&gt;     ASquared     CSquared     ESquared    CaseCount </span></span>
+<span id="cb4-60"><a href="#cb4-60" tabindex="-1"></a><span class="co">#&gt;    0.6219254    0.2097338    0.1683407 8338.0000000</span></span>
+<span id="cb4-61"><a href="#cb4-61" tabindex="-1"></a><span class="co"># Notice the CaseCount is 8.5k instead of 17k.</span></span>
+<span id="cb4-62"><a href="#cb4-62" tabindex="-1"></a><span class="co">#   This is because (a) one pair with R=.75 was excluded, and</span></span>
+<span id="cb4-63"><a href="#cb4-63" tabindex="-1"></a><span class="co">#   (b) the SEM uses a single-entered dataset (not double).</span></span>
+<span id="cb4-64"><a href="#cb4-64" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" tabindex="-1"></a><span class="co"># Step 11: Inspect the output further</span></span>
+<span id="cb4-66"><a href="#cb4-66" tabindex="-1"></a><span class="fu">library</span>(lavaan)</span>
+<span id="cb4-67"><a href="#cb4-67" tabindex="-1"></a><span class="fu">GetDetails</span>(ace)</span>
+<span id="cb4-68"><a href="#cb4-68" tabindex="-1"></a><span class="co">#&gt; lavaan 0.6-19 ended normally after 39 iterations</span></span>
+<span id="cb4-69"><a href="#cb4-69" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-70"><a href="#cb4-70" tabindex="-1"></a><span class="co">#&gt;   Estimator                                         ML</span></span>
+<span id="cb4-71"><a href="#cb4-71" tabindex="-1"></a><span class="co">#&gt;   Optimization method                           NLMINB</span></span>
+<span id="cb4-72"><a href="#cb4-72" tabindex="-1"></a><span class="co">#&gt;   Number of model parameters                        32</span></span>
+<span id="cb4-73"><a href="#cb4-73" tabindex="-1"></a><span class="co">#&gt;   Number of equality constraints                    28</span></span>
+<span id="cb4-74"><a href="#cb4-74" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-75"><a href="#cb4-75" tabindex="-1"></a><span class="co">#&gt;   Number of observations per group:                   </span></span>
+<span id="cb4-76"><a href="#cb4-76" tabindex="-1"></a><span class="co">#&gt;     1                                             2689</span></span>
+<span id="cb4-77"><a href="#cb4-77" tabindex="-1"></a><span class="co">#&gt;     2                                              137</span></span>
+<span id="cb4-78"><a href="#cb4-78" tabindex="-1"></a><span class="co">#&gt;     3                                             5491</span></span>
+<span id="cb4-79"><a href="#cb4-79" tabindex="-1"></a><span class="co">#&gt;     4                                               21</span></span>
+<span id="cb4-80"><a href="#cb4-80" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-81"><a href="#cb4-81" tabindex="-1"></a><span class="co">#&gt; Model Test User Model:</span></span>
+<span id="cb4-82"><a href="#cb4-82" tabindex="-1"></a><span class="co">#&gt;                                                       </span></span>
+<span id="cb4-83"><a href="#cb4-83" tabindex="-1"></a><span class="co">#&gt;   Test statistic                               447.241</span></span>
+<span id="cb4-84"><a href="#cb4-84" tabindex="-1"></a><span class="co">#&gt;   Degrees of freedom                                16</span></span>
+<span id="cb4-85"><a href="#cb4-85" tabindex="-1"></a><span class="co">#&gt;   P-value (Chi-square)                           0.000</span></span>
+<span id="cb4-86"><a href="#cb4-86" tabindex="-1"></a><span class="co">#&gt;   Test statistic for each group:</span></span>
+<span id="cb4-87"><a href="#cb4-87" tabindex="-1"></a><span class="co">#&gt;     1                                          281.866</span></span>
+<span id="cb4-88"><a href="#cb4-88" tabindex="-1"></a><span class="co">#&gt;     2                                           30.277</span></span>
+<span id="cb4-89"><a href="#cb4-89" tabindex="-1"></a><span class="co">#&gt;     3                                          127.671</span></span>
+<span id="cb4-90"><a href="#cb4-90" tabindex="-1"></a><span class="co">#&gt;     4                                            7.428</span></span>
+<span id="cb4-91"><a href="#cb4-91" tabindex="-1"></a><span class="co"># Examine fit stats like Chi-Squared, RMSEA, CFI, etc.</span></span>
+<span id="cb4-92"><a href="#cb4-92" tabindex="-1"></a><span class="fu">fitMeasures</span>(<span class="fu">GetDetails</span>(ace)) <span class="co"># lavaan defines fitMeasures</span></span>
+<span id="cb4-93"><a href="#cb4-93" tabindex="-1"></a><span class="co">#&gt;                  npar                  fmin                 chisq </span></span>
+<span id="cb4-94"><a href="#cb4-94" tabindex="-1"></a><span class="co">#&gt;                 4.000                 0.027               447.241 </span></span>
+<span id="cb4-95"><a href="#cb4-95" tabindex="-1"></a><span class="co">#&gt;                    df                pvalue        baseline.chisq </span></span>
+<span id="cb4-96"><a href="#cb4-96" tabindex="-1"></a><span class="co">#&gt;                16.000                 0.000              2106.324 </span></span>
+<span id="cb4-97"><a href="#cb4-97" tabindex="-1"></a><span class="co">#&gt;           baseline.df       baseline.pvalue                   cfi </span></span>
+<span id="cb4-98"><a href="#cb4-98" tabindex="-1"></a><span class="co">#&gt;                 4.000                 0.000                 0.795 </span></span>
+<span id="cb4-99"><a href="#cb4-99" tabindex="-1"></a><span class="co">#&gt;                   tli                  nnfi                   rfi </span></span>
+<span id="cb4-100"><a href="#cb4-100" tabindex="-1"></a><span class="co">#&gt;                 0.949                 0.949                    NA </span></span>
+<span id="cb4-101"><a href="#cb4-101" tabindex="-1"></a><span class="co">#&gt;                   nfi                  pnfi                   ifi </span></span>
+<span id="cb4-102"><a href="#cb4-102" tabindex="-1"></a><span class="co">#&gt;                    NA                 3.151                 0.794 </span></span>
+<span id="cb4-103"><a href="#cb4-103" tabindex="-1"></a><span class="co">#&gt;                   rni                  logl     unrestricted.logl </span></span>
+<span id="cb4-104"><a href="#cb4-104" tabindex="-1"></a><span class="co">#&gt;                 0.795            -65103.779            -64880.158 </span></span>
+<span id="cb4-105"><a href="#cb4-105" tabindex="-1"></a><span class="co">#&gt;                   aic                   bic                ntotal </span></span>
+<span id="cb4-106"><a href="#cb4-106" tabindex="-1"></a><span class="co">#&gt;            130215.557            130243.671              8338.000 </span></span>
+<span id="cb4-107"><a href="#cb4-107" tabindex="-1"></a><span class="co">#&gt;                  bic2                 rmsea        rmsea.ci.lower </span></span>
+<span id="cb4-108"><a href="#cb4-108" tabindex="-1"></a><span class="co">#&gt;            130230.960                 0.114                 0.105 </span></span>
+<span id="cb4-109"><a href="#cb4-109" tabindex="-1"></a><span class="co">#&gt;        rmsea.ci.upper        rmsea.ci.level          rmsea.pvalue </span></span>
+<span id="cb4-110"><a href="#cb4-110" tabindex="-1"></a><span class="co">#&gt;                 0.123                 0.900                 0.000 </span></span>
+<span id="cb4-111"><a href="#cb4-111" tabindex="-1"></a><span class="co">#&gt;        rmsea.close.h0 rmsea.notclose.pvalue     rmsea.notclose.h0 </span></span>
+<span id="cb4-112"><a href="#cb4-112" tabindex="-1"></a><span class="co">#&gt;                 0.050                 1.000                 0.080 </span></span>
+<span id="cb4-113"><a href="#cb4-113" tabindex="-1"></a><span class="co">#&gt;                   rmr            rmr_nomean                  srmr </span></span>
+<span id="cb4-114"><a href="#cb4-114" tabindex="-1"></a><span class="co">#&gt;                 9.992                12.765                 0.130 </span></span>
+<span id="cb4-115"><a href="#cb4-115" tabindex="-1"></a><span class="co">#&gt;          srmr_bentler   srmr_bentler_nomean                  crmr </span></span>
+<span id="cb4-116"><a href="#cb4-116" tabindex="-1"></a><span class="co">#&gt;                 0.130                 0.089                 0.138 </span></span>
+<span id="cb4-117"><a href="#cb4-117" tabindex="-1"></a><span class="co">#&gt;           crmr_nomean            srmr_mplus     srmr_mplus_nomean </span></span>
+<span id="cb4-118"><a href="#cb4-118" tabindex="-1"></a><span class="co">#&gt;                 0.026                 0.153                 0.083 </span></span>
+<span id="cb4-119"><a href="#cb4-119" tabindex="-1"></a><span class="co">#&gt;                 cn_05                 cn_01                   gfi </span></span>
+<span id="cb4-120"><a href="#cb4-120" tabindex="-1"></a><span class="co">#&gt;               491.246               597.581                 0.999 </span></span>
+<span id="cb4-121"><a href="#cb4-121" tabindex="-1"></a><span class="co">#&gt;                  agfi                  pgfi                   mfi </span></span>
+<span id="cb4-122"><a href="#cb4-122" tabindex="-1"></a><span class="co">#&gt;                 0.999                 0.799                 0.974 </span></span>
+<span id="cb4-123"><a href="#cb4-123" tabindex="-1"></a><span class="co">#&gt;                  ecvi </span></span>
+<span id="cb4-124"><a href="#cb4-124" tabindex="-1"></a><span class="co">#&gt;                 0.055</span></span>
+<span id="cb4-125"><a href="#cb4-125" tabindex="-1"></a></span>
+<span id="cb4-126"><a href="#cb4-126" tabindex="-1"></a><span class="co"># Examine low-level details like each group&#39;s individual estimates</span></span>
+<span id="cb4-127"><a href="#cb4-127" tabindex="-1"></a><span class="co">#  and SEs.  Uncomment next line to view entire output (~4 pages).</span></span>
+<span id="cb4-128"><a href="#cb4-128" tabindex="-1"></a><span class="co"># summary(GetDetails(ace))</span></span></code></pre></div>
+</div>
+<div id="ace-sem-of-two-generations" class="section level2">
+<h2>ACE SEM of Two Generations</h2>
+<p>{This is a more moderately difficult analysis with a more common
+estimation mechanism.}</p>
+<p>{Benefits of cross-generational analysis}</p>
+<p>The example differs from the previous example in one way –all
+possible pairs are considered for the analysis. Pairs are only excluded
+(a) if they belong to one of the small <code>R</code> groups that are
+difficult to estimate, or (b) if the value for adult height is missing.
+This includes all 42,836 relationships in the follow five types of
+NLSY79 relationships.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>Links79Pair <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">count</span>(RelationshipPath, <span class="at">name =</span> <span class="st">&quot;Relationship Frequency&quot;</span>)</span></code></pre></div>
+<p>In our opinion, using the intergenerational links is one of the most
+exciting new opportunities for NLSY researchers to pursue. We will be
+happy to facilitate such research through consult or collaboration, or
+even by generating new data structures that may be of value. The
+complete kinship linking file facilitates many different kinds of
+cross-generational research, using both biometrical and other kinds of
+modeling methods.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Steps 1-5 are explained in the vignette&#39;s first example:</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">library</span>(NlsyLinks)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>desiredPaths <span class="ot">&lt;-</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    <span class="st">&quot;Gen1Housemates&quot;</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="st">&quot;Gen2Siblings&quot;</span>, <span class="st">&quot;Gen2Cousins&quot;</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>    <span class="st">&quot;ParentChild&quot;</span>, <span class="st">&quot;AuntNiece&quot;</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  )</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>dsLinking <span class="ot">&lt;-</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>  Links79Pair <span class="sc">|&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(RelationshipPath <span class="sc">%in%</span> desiredPaths)</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co"># Because all five paths are specified, the line above is equivalent to:</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co"># dsLinking &lt;- Links79Pair</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>dsOutcomes <span class="ot">&lt;-</span> ExtraOutcomes79</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co"># The HeightZGenderAge variable is already groomed</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="co"># Step 6: Create the single entered dataset.</span></span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a>dsSingle <span class="ot">&lt;-</span></span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a>  <span class="fu">CreatePairLinksSingleEntered</span>(</span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>    <span class="at">outcomeDataset   =</span> dsOutcomes,</span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a>    <span class="at">linksPairDataset =</span> dsLinking,</span>
+<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a>    <span class="at">outcomeNames     =</span> <span class="fu">c</span>(<span class="st">&quot;HeightZGenderAge&quot;</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a>  )</span>
+<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a><span class="co"># Step 7: Declare the names for the two outcome variables.</span></span>
+<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a>oName_S1 <span class="ot">&lt;-</span> <span class="st">&quot;HeightZGenderAge_S1&quot;</span></span>
+<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a>oName_S2 <span class="ot">&lt;-</span> <span class="st">&quot;HeightZGenderAge_S2&quot;</span></span>
+<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" tabindex="-1"></a><span class="co"># Step 8: Summarize the R groups and determine which groups can be estimated.</span></span>
+<span id="cb6-32"><a href="#cb6-32" tabindex="-1"></a>dsGroupSummary <span class="ot">&lt;-</span> <span class="fu">RGroupSummary</span>(dsSingle, oName_S1, oName_S2)</span>
+<span id="cb6-33"><a href="#cb6-33" tabindex="-1"></a>dsGroupSummary</span>
+<span id="cb6-34"><a href="#cb6-34" tabindex="-1"></a><span class="co">#&gt;        R Included PairCount      O1Mean      O2Mean O1Variance O2Variance</span></span>
+<span id="cb6-35"><a href="#cb6-35" tabindex="-1"></a><span class="co">#&gt; 1 0.0625     TRUE       202  0.22968753 -0.07575395  1.0509023  0.8271487</span></span>
+<span id="cb6-36"><a href="#cb6-36" tabindex="-1"></a><span class="co">#&gt; 2 0.1250     TRUE      2422 -0.02213186  0.01502572  1.0334694  0.9809845</span></span>
+<span id="cb6-37"><a href="#cb6-37" tabindex="-1"></a><span class="co">#&gt; 3 0.2500     TRUE      7136 -0.05441460 -0.03885252  1.0189426  1.0294526</span></span>
+<span id="cb6-38"><a href="#cb6-38" tabindex="-1"></a><span class="co">#&gt; 4 0.3750     TRUE        48  0.13536238 -0.10786196  1.1497643  0.9269109</span></span>
+<span id="cb6-39"><a href="#cb6-39" tabindex="-1"></a><span class="co">#&gt; 5 0.5000     TRUE     14862 -0.05738494 -0.01738686  0.9602559  0.9851045</span></span>
+<span id="cb6-40"><a href="#cb6-40" tabindex="-1"></a><span class="co">#&gt; 6 0.7500    FALSE         0          NA          NA         NA         NA</span></span>
+<span id="cb6-41"><a href="#cb6-41" tabindex="-1"></a><span class="co">#&gt; 7 1.0000     TRUE        27 -0.11092113 -0.12601206  0.6934418  0.9891146</span></span>
+<span id="cb6-42"><a href="#cb6-42" tabindex="-1"></a><span class="co">#&gt;   O1O2Covariance Correlation Determinant PosDefinite</span></span>
+<span id="cb6-43"><a href="#cb6-43" tabindex="-1"></a><span class="co">#&gt; 1      0.1112158   0.1192871   0.8568836        TRUE</span></span>
+<span id="cb6-44"><a href="#cb6-44" tabindex="-1"></a><span class="co">#&gt; 2      0.1487539   0.1477368   0.9916897        TRUE</span></span>
+<span id="cb6-45"><a href="#cb6-45" tabindex="-1"></a><span class="co">#&gt; 3      0.2721042   0.2656790   0.9749124        TRUE</span></span>
+<span id="cb6-46"><a href="#cb6-46" tabindex="-1"></a><span class="co">#&gt; 4      0.4074779   0.3947123   0.8996908        TRUE</span></span>
+<span id="cb6-47"><a href="#cb6-47" tabindex="-1"></a><span class="co">#&gt; 5      0.4146816   0.4263636   0.7739915        TRUE</span></span>
+<span id="cb6-48"><a href="#cb6-48" tabindex="-1"></a><span class="co">#&gt; 6             NA          NA          NA       FALSE</span></span>
+<span id="cb6-49"><a href="#cb6-49" tabindex="-1"></a><span class="co">#&gt; 7      0.6863894   0.8287857   0.2147630        TRUE</span></span>
+<span id="cb6-50"><a href="#cb6-50" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" tabindex="-1"></a><span class="co"># Step 9: Create a cleaned dataset</span></span>
+<span id="cb6-52"><a href="#cb6-52" tabindex="-1"></a>dsClean <span class="ot">&lt;-</span></span>
+<span id="cb6-53"><a href="#cb6-53" tabindex="-1"></a>  <span class="fu">CleanSemAceDataset</span>(</span>
+<span id="cb6-54"><a href="#cb6-54" tabindex="-1"></a>    <span class="at">dsDirty         =</span> dsSingle,</span>
+<span id="cb6-55"><a href="#cb6-55" tabindex="-1"></a>    <span class="at">dsGroupSummary  =</span> dsGroupSummary,</span>
+<span id="cb6-56"><a href="#cb6-56" tabindex="-1"></a>    <span class="at">oName_S1        =</span> oName_S1,</span>
+<span id="cb6-57"><a href="#cb6-57" tabindex="-1"></a>    <span class="at">oName_S2        =</span> oName_S2</span>
+<span id="cb6-58"><a href="#cb6-58" tabindex="-1"></a>  )</span>
+<span id="cb6-59"><a href="#cb6-59" tabindex="-1"></a></span>
+<span id="cb6-60"><a href="#cb6-60" tabindex="-1"></a><span class="co"># Step 10: Run the model</span></span>
+<span id="cb6-61"><a href="#cb6-61" tabindex="-1"></a>ace <span class="ot">&lt;-</span> <span class="fu">AceLavaanGroup</span>(dsClean)</span>
+<span id="cb6-62"><a href="#cb6-62" tabindex="-1"></a>ace</span>
+<span id="cb6-63"><a href="#cb6-63" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Results of ACE estimation: [show]&quot;</span></span>
+<span id="cb6-64"><a href="#cb6-64" tabindex="-1"></a><span class="co">#&gt;     ASquared     CSquared     ESquared    CaseCount </span></span>
+<span id="cb6-65"><a href="#cb6-65" tabindex="-1"></a><span class="co">#&gt; 7.366543e-01 6.580003e-02 1.975457e-01 2.469700e+04</span></span>
+<span id="cb6-66"><a href="#cb6-66" tabindex="-1"></a></span>
+<span id="cb6-67"><a href="#cb6-67" tabindex="-1"></a><span class="co"># Step 11: Inspect the output further (see the final step two examples above).</span></span></code></pre></div>
+<p>Notice the ACE estimates are very similar to the previous example,
+but the number of pairs has increased by 6x –from 4,185 to 24,700. The
+number of <em>subjects</em> doubles when Gen2 is added, and the number
+of <em>relationship pairs</em> increases combinatorially. When an
+extended family’s entire pedigree is considered by the model, many more
+types of links are possible than if just nuclear families are
+considered. This increased statistical power is even more important when
+the population’s <span class="math inline">\(a^2\)</span> is small or
+moderate.</p>
+<p>Note that the analysis has 24,697 relationships instead of the entire
+42,836. This is primarily because not all subjects have a value for
+adult height (and that’s mostly because a lot of Gen2 subjects are too
+young). There are 42,088 pairs with a nonmissing value in
+<code>RFull</code>, meaning that 98.3 are classified. We feel
+comfortable claiming that if a researcher has a phenotype for both
+members of a pair, the pair will likely have an <code>RFull</code>. For
+a description of the <code>R</code> and <code>RFull</code> variables,
+please see the <code>Links79Pair</code> entry in the package <a href="https://nlsy-links.github.io/NlsyLinks/">reference manual</a>.</p>
+</div>
+<div id="more-advanced-ace-analyses" class="section level2">
+<h2>More Advanced ACE Analyses</h2>
+<ul>
+<li>When the analysis grows beyond a single outcome at one time point,
+researchers are better off using the modeling software itself
+(<em>e.g.</em>, OpenMx, lavaan, Mplus) than then wrappers provided by
+<code>NlsyLinks</code>, or any other package.</li>
+</ul>
+</div>
+</div>
+<div id="further-topics" class="section level1">
+<h1>Further Topics</h1>
+<div id="data-manipulation-and-non-biometric-analyses" class="section level2">
+<h2>Data Manipulation and Non-Biometric Analyses</h2>
+<ul>
+<li>Even if the investigation doesn’t involve family structure,
+<code>NlsyLinks</code> functions and dataset can make the research can
+be more efficient.</li>
+</ul>
+</div>
+<div id="sas-analogues" class="section level2">
+<h2>SAS Analogues</h2>
+<ul>
+<li>The <code>NlsyLinks</code> datasets can be used in any statistical
+package, and we demonstrate that here with SAS.</li>
+<li>Downloadable from qqq.-qqqq</li>
+</ul>
+</div>
+<div id="additional-resources" class="section level2">
+<h2>Additional Resources</h2>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

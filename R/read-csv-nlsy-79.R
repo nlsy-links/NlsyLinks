@@ -31,13 +31,13 @@
 #' }
 ReadCsvNlsy79Gen1 <- function(filePath = NULL,
                               dsExtract = NULL) {
-    if (is.null(dsExtract)) {
+  if (is.null(dsExtract)) {
     if (is.null(filePath)) {
       stop("Either 'filePath' or 'dsExtract' must be provided.")
     }
     dsExtract <- utils::read.csv(filePath)
   }
-  
+
   d <- NlsyLinks::SubjectDetails79
   if (!("R0000100" %in%
     colnames(dsExtract))) {
@@ -76,39 +76,39 @@ ReadCsvNlsy79Gen2 <- function(filePath = NULL,
     }
     dsExtract <- utils::read.csv(filePath)
   }
-    d <- NlsyLinks::SubjectDetails79
-    #   dsExtract <- read.csv(filePath)
-    if (!("C0000100" %in% colnames(dsExtract))) {
-      stop("The NLSY variable 'C0000100' should be present, but was not found.")
-    }
-    if (!("C0000200" %in% colnames(dsExtract))) {
-      stop("The NLSY variable 'C0000200' should be present, but was not found.")
-    }
-
-    colnames(dsExtract)[colnames(dsExtract) == "C0000100"] <-
-      "SubjectID"
-    colnames(dsExtract)[colnames(dsExtract) == "C0000200"] <-
-      "SubjectTagOfMother"
-    dsExtract$SubjectTagOfMother <- dsExtract$SubjectTagOfMother * 100
-    dsExtract$Generation <- 2
-    dsExtract$SubjectTag <-
-      dsExtract$SubjectID # CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
-
-    dsWithExtended <-
-      d[d$Generation == 2, c("SubjectTag", "ExtendedID")]
-    ds <-
-      merge(
-        x = dsExtract,
-        y = dsWithExtended,
-        by = "SubjectTag",
-        all.x = TRUE,
-        all.y = FALSE
-      )
-
-    firstColumns <-
-      c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
-    remaining <- setdiff(colnames(ds), firstColumns)
-    ds <- ds[, c(firstColumns, remaining)]
-
-    return(ds)
+  d <- NlsyLinks::SubjectDetails79
+  #   dsExtract <- read.csv(filePath)
+  if (!("C0000100" %in% colnames(dsExtract))) {
+    stop("The NLSY variable 'C0000100' should be present, but was not found.")
   }
+  if (!("C0000200" %in% colnames(dsExtract))) {
+    stop("The NLSY variable 'C0000200' should be present, but was not found.")
+  }
+
+  colnames(dsExtract)[colnames(dsExtract) == "C0000100"] <-
+    "SubjectID"
+  colnames(dsExtract)[colnames(dsExtract) == "C0000200"] <-
+    "SubjectTagOfMother"
+  dsExtract$SubjectTagOfMother <- dsExtract$SubjectTagOfMother * 100
+  dsExtract$Generation <- 2
+  dsExtract$SubjectTag <-
+    dsExtract$SubjectID # CreateSubjectTag(dsExtract$SubjectID, dsExtract$Generation)
+
+  dsWithExtended <-
+    d[d$Generation == 2, c("SubjectTag", "ExtendedID")]
+  ds <-
+    merge(
+      x = dsExtract,
+      y = dsWithExtended,
+      by = "SubjectTag",
+      all.x = TRUE,
+      all.y = FALSE
+    )
+
+  firstColumns <-
+    c("SubjectTag", "SubjectID", "ExtendedID", "Generation")
+  remaining <- setdiff(colnames(ds), firstColumns)
+  ds <- ds[, c(firstColumns, remaining)]
+
+  return(ds)
+}
