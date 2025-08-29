@@ -3,9 +3,9 @@ title: "About this Website"
 author:
 - William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
-- David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
+- David [Bard](https://medicine.ouhsc.edu/academic-departments/pediatrics/sections/developmental-behavioral-pediatrics/faculty/david-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 
-- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Pennsylvania State University)
+- Michael D. [Hunter](https://hhd.psu.edu/contact/michael-hunter) (Pennsylvania State University)
 - S. Mason [Garrison](https://scholar.google.com/citations?user=5to21boAAAAJ) (Wake Forest University)
 date: "`r Sys.Date()`"
 output:

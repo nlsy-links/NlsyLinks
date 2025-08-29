@@ -3,8 +3,8 @@ title: "The NLS Investigator"
 author: 
 - William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
-- David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
-- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Georgia Tech, Atlanta)
+- David [Bard](https://medicine.ouhsc.edu/academic-departments/pediatrics/sections/developmental-behavioral-pediatrics/faculty/david-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
+- Michael D. [Hunter](https://hhd.psu.edu/contact/michael-hunter) (Georgia Tech, Atlanta)
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
@@ -43,7 +43,7 @@ Steps to Select Variables and Download Data
 
 1. Select the variables.  There are tens of thousands of variables in some cohorts, and selecting the correct ones can require careful attention and a few tricks.  A thorough tutorial begins on the NLS Investigator page: [https://www.nlsinfo.org/content/access-data-investigator/investigator-user-guide].  To better leverage the NLSY's extensive variable set (and to avoid mistakes), we recommend that researchers dedicate time to this tutorial.  However for the purposes of this vignette, we'll simply select a few easy variables.  
 
-    First, in the 'Variables Search' tab, select 'Word in Title (enter search term)'.  Second, type "other symptom - f" in the textbox.  Third, clicking the 'Display Variables' button should retrieve at least four NLSYC variables whose title starts with "other symptom - f".  Fourth, supposing we care about only their fevers, click their two corresponding checkboxes.  (If you're curious, the 'XRND' value for year stands for [cross round](https://www.nlsinfo.org/nls138.pdf); XRND variables are calculated by the NLS staff, and typically come from the subject's most recent survey).
+    First, in the 'Variables Search' tab, select 'Word in Title (enter search term)'.  Second, type "other symptom - f" in the textbox.  Third, clicking the 'Display Variables' button should retrieve at least four NLSYC variables whose title starts with "other symptom - f".  Fourth, supposing we care about only their fevers, click their two corresponding checkboxes.  (If you're curious, the 'XRND' value for year stands for [cross round](https://www.bls.gov/nls/additional-publications/news-letter-discontinued/release-138.pdf); XRND variables are calculated by the NLS staff, and typically come from the subject's most recent survey).
 
     [<img src="https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T" style="width: 750px;"/>](https://github.com/nlsy-links/NlsyLinks/blob/master/vignettes/GraphicsNlsInvestigator/Select.png?raw=T)
 

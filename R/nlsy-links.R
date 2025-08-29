@@ -28,7 +28,7 @@
 #'
 #' [Joseph Lee Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 #'
-#' [David Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
+#' [David Bard](https://medicine.ouhsc.edu/academic-departments/pediatrics/sections/developmental-behavioral-pediatrics/faculty/david-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 #'
 #' [Michael D. Hunter](https://scholar.google.com/citations?user=TbTNHKwAAAAJ&hl=en) (Pennsylvania State University)
 #'
