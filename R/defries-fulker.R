@@ -1,4 +1,12 @@
 # roxygen2 documentation in AceUnivariate.R
+
+#' @rdname AceUnivariate
+#' @export DeFriesFulkerMethod1
+#' @title  Estimates the heritability of additive traits using DeFries-Fulker Method 1.
+
+
+
+
 DeFriesFulkerMethod1 <- function(dataSet, oName_S1, oName_S2, rName = "R") {
   lmDetails <- stats::lm(
     dataSet[, oName_S1] ~
@@ -22,7 +30,12 @@ DeFriesFulkerMethod1 <- function(dataSet, oName_S1, oName_S2, rName = "R") {
   return(aceEstimate)
 }
 
-# roxygen2 documentation in AceUnivariate.R
+#' @rdname AceUnivariate
+#' @export DeFriesFulkerMethod3
+#' @title  Estimates the heritability of additive traits using DeFries-Fulker Method 3.
+
+
+
 DeFriesFulkerMethod3 <- function(dataSet, oName_S1, oName_S2, rName = "R") {
   dv_S1Centered <- base::scale(dataSet[, oName_S1], center = TRUE, scale = FALSE)
   dv_S2Centered <- base::scale(dataSet[, oName_S2], center = TRUE, scale = FALSE)
@@ -43,6 +56,10 @@ DeFriesFulkerMethod3 <- function(dataSet, oName_S1, oName_S2, rName = "R") {
   eSquared <- 1 - (b1 + b2)
 
   details <- base::list(lm = lmDetails)
-  aceEstimate <- NlsyLinks::CreateAceEstimate(aSquared = b2, cSquared = b1, eSquared = eSquared, caseCount = nDouble, details = details)
+  aceEstimate <- NlsyLinks::CreateAceEstimate(aSquared = b2,
+                                              cSquared = b1,
+                                              eSquared = eSquared,
+                                              caseCount = nDouble,
+                                              details = details)
   return(aceEstimate)
 }
