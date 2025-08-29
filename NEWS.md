@@ -1,11 +1,12 @@
 # Version 2.2.3
 
-**Released:** 2025-03-08
+**Released:** 2025-08-29
 
 ## Updates
 
 - Rebuilding vignettes to be compatible with packagedown.
 - Minor copyediting and efficiency updates.
+- Added more roxygen2 tags to functions.
 
 # Version 2.2.2
 

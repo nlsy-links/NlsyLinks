@@ -1,5 +1,17 @@
 # Roxygen comments in CreatePairLinks file.
 
+
+#' @rdname CreatePairLinks
+#' @export CreatePairLinksDoubleEnteredWithNoOutcomes
+#' @title Creates a pairs linking file without outcomes.
+#' @description Creates a linking file for BG designs using this file structure (e.g., DF analysis, other ACE modeling).
+#' DF analysis requires a double-entered file that contains the `R`
+#' value for the pair, and their two outcome variable values.
+#' [CreatePairLinksDoubleEnteredWithNoOutcomes()] is intended to be a
+#' primarily a helper function for [CreateSpatialNeighbours()].
+
+
+
 CreatePairLinksDoubleEnteredWithNoOutcomes <- function(linksPairDataset, linksNames = c("ExtendedID", "R", "RelationshipPath")) {
   ValidatePairLinks(linksPairDataset)
 

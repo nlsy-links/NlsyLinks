@@ -1,13 +1,18 @@
-# Roxygen comments in CreatePairLinks file.
+#' @rdname CreatePairLinks
+#' @export CreatePairLinksSingleEntered
+#' @title Creates a pairs linking file for single-entered outcome data.
+
 
 CreatePairLinksSingleEntered <- function(
     outcomeDataset, linksPairDataset, outcomeNames,
     linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE,
     subject1Qualifier = "_S1", subject2Qualifier = "_S2") {
   ValidatePairLinks(linksPairDataset)
-  if (validateOutcomeDataset) ValidateOutcomeDataset(dsOutcome = outcomeDataset, outcomeNames = outcomeNames)
+  if (validateOutcomeDataset) ValidateOutcomeDataset(dsOutcome = outcomeDataset,
+                                                     outcomeNames = outcomeNames)
 
-  dsLinksLeftHand <- base::subset(linksPairDataset, select = c("SubjectTag_S1", "SubjectTag_S2", linksNames)) #' Lefthand' is my slang for Subjec1Tag is less than the SubjectTag_S2
+  dsLinksLeftHand <- base::subset(linksPairDataset,
+                                  select = c("SubjectTag_S1", "SubjectTag_S2", linksNames)) #' Lefthand' is my slang for Subjec1Tag is less than the SubjectTag_S2
 
   dsOutcomeSubject1 <- base::subset(outcomeDataset, select = c("SubjectTag", outcomeNames))
   dsOutcomeSubject2 <- base::subset(outcomeDataset, select = c("SubjectTag", outcomeNames))
@@ -20,8 +25,12 @@ CreatePairLinksSingleEntered <- function(
     }
   }
 
-  ds <- base::merge(x = dsLinksLeftHand, y = dsOutcomeSubject1, by.x = "SubjectTag_S1", by.y = "SubjectTag", all.x = TRUE)
-  ds <- base::merge(x = ds, y = dsOutcomeSubject2, by.x = "SubjectTag_S2", by.y = "SubjectTag", all.x = TRUE)
+  ds <- base::merge(x = dsLinksLeftHand, y = dsOutcomeSubject1,
+                    by.x = "SubjectTag_S1", by.y = "SubjectTag",
+                    all.x = TRUE)
+  ds <- base::merge(x = ds, y = dsOutcomeSubject2,
+                    by.x = "SubjectTag_S2",
+                    by.y = "SubjectTag", all.x = TRUE)
 
   base::rm(dsLinksLeftHand, dsOutcomeSubject1, dsOutcomeSubject2)
 
