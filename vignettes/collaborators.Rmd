@@ -37,18 +37,18 @@ Recent work on the NLSY Kinship links has been supported by NIH Grant R01-HD0658
 OUHSC Pediatrics
 -----------------------------
 
-The [Pediatrics Dept](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics) of the University of Oklahoma [Health Sciences Center](https://www.ouhsc.edu/) z.  Current investigators are members of the [BBMC](https://ouhsc.edu/BBMC/) (Biomedical and Behavioral Methodology Core) and [CCAN](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Patient-Care/Center-on-Child-Abuse-and-Neglect) (Center for Child Abuse and Neglect).
+The [Pediatrics Dept](https://medicine.ouhsc.edu/academic-departments/pediatrics) of the University of Oklahoma [Health Sciences Center](https://www.ouhsc.edu/) z.  Current investigators are members of the [BBMC](https://ouhsc.edu/BBMC/) (Biomedical and Behavioral Methodology Core) and [CCAN](https://medicine.ouhsc.edu/academic-departments/pediatrics/sections/developmental-behavioral-pediatrics/patient-care/center-on-child-abuse-and-neglect)) (Center for Child Abuse and Neglect).
 
-The participating members include David Bard and [Michael Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter).
+The participating members include David Bard and [Michael Hunter](https://hhd.psu.edu/contact/michael-hunter).
 
 <!--
 <a href="https://ouhsc.edu/BBMC/">
   <img src="./images/BbmcDistributionsBackgroundClear.png" alt="BBMC" style="width: 300px;"/>
 </a>
-<a href="https://medicine.ouhsc.edu/Academic-Departments/Pediatrics">
+<a href="https://medicine.ouhsc.edu/academic-departments/pediatrics">
   <img src="./images/pediatrics_logo.png" alt="OUHSC Pediatrics" style="width: 250px;"/>
 </a>
-<a href="https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Patient-Care/Center-on-Child-Abuse-and-Neglect">
+<a href="https://medicine.ouhsc.edu/academic-departments/pediatrics/sections/developmental-behavioral-pediatrics/patient-care/center-on-child-abuse-and-neglect)">
   <img src="./images/ccanlogo.jpg" alt="CCAN" style="width: 170px;"/>
 </a>
 -->

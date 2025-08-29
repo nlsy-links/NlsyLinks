@@ -3,8 +3,8 @@ title: "FAQ for the NlsyLinks Package"
 author: 
 - William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
-- David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
-- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Penn State University, State College)
+- David [Bard](https://medicine.ouhsc.edu/academic-departments/pediatrics/sections/developmental-behavioral-pediatrics/faculty/david-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
+- Michael D. [Hunter](https://hhd.psu.edu/contact/michael-hunter) (Penn State University, State College)
 - S. Mason [Garrison](https://psychology.wfu.edu/s-mason-garrison/) Wake Forest University, Winston-Salem
 date: "`r Sys.Date()`"
 output: 
@@ -30,7 +30,7 @@ Getting Started
 
 **Where is a good place to start?**
 
-Welcome to the `NlsyLinks` package, which facilitates research with the [NLSY](https://www.nlsinfo.org/home.htm).  The initial focus of the package was to assist behavior genetics, but it has been expanded to help with NLSY research in general.
+Welcome to the `NlsyLinks` package, which facilitates research with the [NLSY](https://www.nlsinfo.org/).  The initial focus of the package was to assist behavior genetics, but it has been expanded to help with NLSY research in general.
 
 Researchers and grad students interested using the [NLSY](https://www.nlsinfo.org/) for Behavior Genetics and family research, please start with our 2016 article, [*The NLSY Kinship Links: Using the NLSY79 and NLSY-Children Data to Conduct Genetically-Informed and Family-Oriented Research*](https://link.springer.com/article/10.1007/s10519-016-9785-3).
 

@@ -103,7 +103,7 @@ Authors:
 
 \href{https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers}{Joseph Lee Rodgers} (Vanderbilt University, Nashville)
 
-\href{https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
+\href{https://medicine.ouhsc.edu/academic-departments/pediatrics/sections/developmental-behavioral-pediatrics/faculty/david-bard-phd}{David Bard} (University of Oklahoma Health Sciences Center, OKC)
 
 \href{https://scholar.google.com/citations?user=TbTNHKwAAAAJ&hl=en}{Michael D. Hunter} (Pennsylvania State University)
 

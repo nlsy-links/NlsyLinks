@@ -3,9 +3,9 @@ title: "ACE Models with the NLSY"
 author: 
 - William Howard [Beasley](https://scholar.google.com/citations?user=ffsJTC0AAAAJ) (Howard Live Oak LLC, Norman)
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
-- David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
+- David [Bard](https://medicine.ouhsc.edu/academic-departments/pediatrics/sections/developmental-behavioral-pediatrics/faculty/david-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 - Kelly [Williams](https://oklahoma.gov/omma.html) (Oklahoma City University, OKC)
-- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Penn State)
+- Michael D. [Hunter](https://hhd.psu.edu/contact/michael-hunter) (Penn State)
 - S. Mason [Garrison](https://psychology.wfu.edu/s-mason-garrison/) (Wake Forest University, Winston-Salem)
 date: "`r Sys.Date()`"
 output: 

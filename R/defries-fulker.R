@@ -1,6 +1,6 @@
 # roxygen2 documentation in AceUnivariate.R
 
-#' @rdname AceUnivariate
+#' @rdname Ace
 #' @export DeFriesFulkerMethod1
 #' @title  Estimates the heritability of additive traits using DeFries-Fulker Method 1.
 
@@ -30,7 +30,7 @@ DeFriesFulkerMethod1 <- function(dataSet, oName_S1, oName_S2, rName = "R") {
   return(aceEstimate)
 }
 
-#' @rdname AceUnivariate
+#' @rdname Ace
 #' @export DeFriesFulkerMethod3
 #' @title  Estimates the heritability of additive traits using DeFries-Fulker Method 3.
 
