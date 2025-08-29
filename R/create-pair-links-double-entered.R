@@ -84,23 +84,32 @@
 #'
 #' ValidatePairLinksAreSymmetric(dsDouble) # Should return TRUE.
 CreatePairLinksDoubleEntered <- function(
-    outcomeDataset, linksPairDataset, outcomeNames,
-    linksNames = c("ExtendedID", "R", "RelationshipPath"), validateOutcomeDataset = TRUE,
-    subject1Qualifier = "_S1", subject2Qualifier = "_S2") {
+    outcomeDataset,
+    linksPairDataset,
+    outcomeNames,
+    linksNames = c("ExtendedID", "R", "RelationshipPath"),
+    validateOutcomeDataset = TRUE,
+    subject1Qualifier = "_S1",
+    subject2Qualifier = "_S2") {
   ValidatePairLinks(linksPairDataset)
   if (validateOutcomeDataset) {
-    ValidateOutcomeDataset(dsOutcome = outcomeDataset, outcomeNames = outcomeNames)
+    ValidateOutcomeDataset(dsOutcome = outcomeDataset,
+                           outcomeNames = outcomeNames)
   }
 
-  dsLinksLeftHand <- base::subset(linksPairDataset, select = c("SubjectTag_S1", "SubjectTag_S2", linksNames)) #' Lefthand' is my slang for Subjec1Tag is less than the SubjectTag_S2
-  dsLinksRightHand <- base::subset(linksPairDataset, select = c("SubjectTag_S1", "SubjectTag_S2", linksNames))
+  dsLinksLeftHand <- base::subset(linksPairDataset,
+                                  select = c("SubjectTag_S1", "SubjectTag_S2", linksNames)) #' Lefthand' is my slang for Subjec1Tag is less than the SubjectTag_S2
+  dsLinksRightHand <- base::subset(linksPairDataset,
+                                   select = c("SubjectTag_S1", "SubjectTag_S2", linksNames))
 
   base::colnames(dsLinksRightHand)[base::colnames(dsLinksRightHand) == "SubjectTag_S1"] <- "SubjectTempTag"
   base::colnames(dsLinksRightHand)[base::colnames(dsLinksRightHand) == "SubjectTag_S2"] <- "SubjectTag_S1"
   base::colnames(dsLinksRightHand)[base::colnames(dsLinksRightHand) == "SubjectTempTag"] <- "SubjectTag_S2"
 
-  dsOutcomeSubject1 <- base::subset(outcomeDataset, select = c("SubjectTag", outcomeNames))
-  dsOutcomeSubject2 <- base::subset(outcomeDataset, select = c("SubjectTag", outcomeNames))
+  dsOutcomeSubject1 <- base::subset(outcomeDataset,
+                                    select = c("SubjectTag", outcomeNames))
+  dsOutcomeSubject2 <- base::subset(outcomeDataset,
+                                    select = c("SubjectTag", outcomeNames))
 
   for (j in seq_along(dsOutcomeSubject1)) {
     columnName <- base::colnames(dsOutcomeSubject1)[j]
@@ -109,12 +118,26 @@ CreatePairLinksDoubleEntered <- function(
       base::colnames(dsOutcomeSubject2)[colnames(dsOutcomeSubject2) == columnName] <- base::paste0(columnName, subject2Qualifier)
     }
   }
+  dsLeftHand <- base::merge(x = dsLinksLeftHand,
+                            y = dsOutcomeSubject1,
+                            by.x = "SubjectTag_S1",
+                            by.y = "SubjectTag", all.x = TRUE)
+  dsLeftHand <- base::merge(x = dsLeftHand,
+                            y = dsOutcomeSubject2,
+                            by.x = "SubjectTag_S2",
+                            by.y = "SubjectTag",
+                            all.x = TRUE)
 
-  dsLeftHand <- base::merge(x = dsLinksLeftHand, y = dsOutcomeSubject1, by.x = "SubjectTag_S1", by.y = "SubjectTag", all.x = TRUE)
-  dsLeftHand <- base::merge(x = dsLeftHand, y = dsOutcomeSubject2, by.x = "SubjectTag_S2", by.y = "SubjectTag", all.x = TRUE)
-
-  dsRightHand <- base::merge(x = dsLinksRightHand, y = dsOutcomeSubject2, by.x = "SubjectTag_S2", by.y = "SubjectTag", all.x = TRUE)
-  dsRightHand <- base::merge(x = dsRightHand, y = dsOutcomeSubject1, by.x = "SubjectTag_S1", by.y = "SubjectTag", all.x = TRUE)
+  dsRightHand <- base::merge(x = dsLinksRightHand,
+                             y = dsOutcomeSubject2,
+                             by.x = "SubjectTag_S2",
+                             by.y = "SubjectTag",
+                             all.x = TRUE)
+  dsRightHand <- base::merge(x = dsRightHand,
+                             y = dsOutcomeSubject1,
+                             by.x = "SubjectTag_S1",
+                             by.y = "SubjectTag",
+                             all.x = TRUE)
 
   base::rm(dsLinksLeftHand, dsLinksRightHand, dsOutcomeSubject1, dsOutcomeSubject2)
 

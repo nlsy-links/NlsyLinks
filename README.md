@@ -52,7 +52,7 @@ There are roughly three versions of the links:
 1.  The *release* versions are bundled in the `NlsyLinks` package and
     updated once or twice a year during development.
 2.  The *pre-release* versions are downloadable from our [team’s
-    website](https://nlsy-links.github.io/NlsyLinks//) and updated
+    website](https://nlsy-links.github.io/NlsyLinks/) and updated
     several times a month during development. Formats include R, SAS,
     and plain-text CSV.
 3.  The *development* versions are downloadable from our [determination
@@ -121,13 +121,13 @@ PI).
 
 ## Build Status and Package Characteristics
 
-| [Branch](https://github.com/nlsy-links/NlsyLinks)             |                                            [GitHub Actions](https://github.com/nlsy-links/NlsyLinks/actions)                                             |                                             [Codecov](https://app.codecov.io/gh/nlsy-links/NlsyLinks)                                              |
-|:--------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------:|
-| [Master](https://github.com/nlsy-links/NlsyLinks/tree/master) | [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=master)](https://github.com/nlsy-links/NlsyLinks/actions) |     [![codecov](https://app.codecov.io/gh/nlsy-links/NlsyLinks/branch/master/graph/badge.svg)](https://app.codecov.io/gh/nlsy-links/NlsyLinks)     |
-| [Dev](https://github.com/nlsy-links/NlsyLinks/tree/dev)       |  [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=dev)](https://github.com/nlsy-links/NlsyLinks/actions)   | [![codecov](https://app.codecov.io/gh/nlsy-links/NlsyLinks/branch/dev/graph/badge.svg)](https://app.codecov.io/gh/nlsy-links/NlsyLinks/branch/dev) |
-|                                                               |                                                                     *Ubuntu Latest*                                                                      |                                                                  *Test Coverage*                                                                   |
+| [Branch](https://github.com/nlsy-links/NlsyLinks) | [GitHub Actions](https://github.com/nlsy-links/NlsyLinks/actions) | [Codecov](https://app.codecov.io/gh/nlsy-links/NlsyLinks) |
+|:---|:--:|:--:|
+| [Master](https://github.com/nlsy-links/NlsyLinks/tree/master) | [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=master)](https://github.com/nlsy-links/NlsyLinks/actions) | [![codecov](https://app.codecov.io/gh/nlsy-links/NlsyLinks/branch/master/graph/badge.svg)](https://app.codecov.io/gh/nlsy-links/NlsyLinks) |
+| [Dev](https://github.com/nlsy-links/NlsyLinks/tree/dev) | [![R-CMD-check](https://github.com/nlsy-links/NlsyLinks/workflows/R-CMD-check/badge.svg?branch=dev)](https://github.com/nlsy-links/NlsyLinks/actions) | [![codecov](https://app.codecov.io/gh/nlsy-links/NlsyLinks/branch/dev/graph/badge.svg)](https://app.codecov.io/gh/nlsy-links/NlsyLinks/branch/dev) |
+|  | *Ubuntu Latest* | *Test Coverage* |
 
-| [CRAN](https://cran.r-project.org/)                    |                               [Version](https://cran.r-project.org/package=NlsyLinks)                               |           [Rate](https://cranlogs.r-pkg.org:443/)            |                          [Zenodo](https://zenodo.org/search?ln=en&p=nlsylinks)                          |
-|:-------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------:|
+| [CRAN](https://cran.r-project.org/) | [Version](https://cran.r-project.org/package=NlsyLinks) | [Rate](https://cranlogs.r-pkg.org:443/) | [Zenodo](https://zenodo.org/search?ln=en&p=nlsylinks) |
+|:---|:--:|:--:|:--:|
 | [Latest](https://cran.r-project.org/package=NlsyLinks) | [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/NlsyLinks)](https://cran.r-project.org/package=NlsyLinks) | ![CRANPace](https://cranlogs.r-pkg.org:443/badges/NlsyLinks) | [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.49941.svg)](http://dx.doi.org/10.5281/zenodo.49941) |
-|                                                        |                                                *Latest CRAN version*                                                |                       *CRAN Downloads*                       |                                     *Independently-hosted Archive*                                      |
+|  | *Latest CRAN version* | *CRAN Downloads* | *Independently-hosted Archive* |
