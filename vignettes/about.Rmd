@@ -5,7 +5,8 @@ author:
 - Joseph Lee [Rodgers](https://www.vanderbilt.edu/psychological_sciences/bio/joe-rodgers) (Vanderbilt University, Nashville)
 - David [Bard](https://medicine.ouhsc.edu/Academic-Departments/Pediatrics/Sections/Developmental-Behavioral-Pediatrics/Faculty/david-e-bard-phd) (University of Oklahoma Health Sciences Center, OKC)
 
-- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Georgia Tech, Atlanta)
+- Michael D. [Hunter](https://acquia-prod.hhd.psu.edu/contact/michael-hunter) (Pennsylvania State University)
+- S. Mason [Garrison](https://scholar.google.com/citations?user=5to21boAAAAJ) (Wake Forest University)
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
@@ -27,14 +28,12 @@ The website is hosted on [GitHub Pages](https://pages.github.com/).  It is built
 Historical Archives
 =============================
 
-To increase transparency and promote reproducibility, this website and software components are assigned a unique [DOI](https://www.doi.org/) (digital object identifier) after each substantial modification.  Each major version is archived (and [available for download indefinitely](https://zenodo.org/search?ln=en&p=MReportingPublic)) on a third-party site --where we cannot modify it.  See the [Software and Support](https://nlsy-links.github.io/NlsyLinks/articles/software-and-support.html) page for the DOIs of each component; all previous archives associated with the current project can be found by [searching the Zenodo site](https://zenodo.org/search?ln=en&p=NlsyLinks).
+To increase transparency and promote reproducibility, this website and software components are assigned a unique [DOI](https://www.doi.org/) (digital object identifier) after each substantial modification.  Each major version is archived (and [available for download indefinitely](https://zenodo.org/search?ln=en&p=MReportingPublic)) on a third-party site --where we cannot modify it.  See the [Software and Support](https://nlsy-links.github.io/NlsyLinks/articles/software-and-support.html) page for the DOIs of each component; all previous archives associated with the current project can be found by [searching the Zenodo site](https://zenodo.org/search?q=NlsyLinks&l=list&p=1&s=10&sort=bestmatch
+).
 
-Support Forums
+Support and Code Collaboration
 =============================
 
-Our [support forums](https://r-forge.r-project.org/forum/?group_id=1330) are intended to cover all aspects of this project, not just software.
-
-Code Collaboration
-=============================
+Our [support forums](https://github.com/LiveOak/NlsyLinks/issues) are intended to cover all aspects of this project, not just software.
 
 Interested collaborators are welcome to propose changes or [submit an issue](https://github.com/LiveOak/NlsyLinks/issues) on our public [GitHub repository](https://github.com/LiveOak/NlsyLinks).  If you're new to GitHub, see the "Collaborating" section half-way down their [help site](https://support.github.com), or post a comment to us below.

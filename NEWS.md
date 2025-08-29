@@ -5,6 +5,7 @@
 ## Updates
 
 - Rebuilding vignettes to be compatible with packagedown.
+- Minor copyediting and efficiency updates.
 
 # Version 2.2.2
 
